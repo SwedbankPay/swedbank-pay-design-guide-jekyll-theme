@@ -1,1 +1,26 @@
-{{ content }}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{ page.title | default: "PayEx Design Guide theme for Jekyll" }}</title>
+        <link rel="stylesheet" href="https://design.payex.com/v/0.15.1/styles/px.css" />
+    </head>
+    <body>
+        <div class="topbar">
+            <a class="topbar-logo logo-default" title="Home" href="/"></a>
+        </div>
+        
+        <div class="container">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h1>{{ page.title | default: "PayEx Design Guide theme for Jekyll" }}</h1>
+                    <hr>
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://design.payex.com/v/0.15.1/scripts/px-script.js"></script>    
+    </body>
+</html>
