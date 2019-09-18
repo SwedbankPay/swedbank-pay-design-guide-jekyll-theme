@@ -1,12 +1,12 @@
-# PayEx Design Guide Theme for Jekyll
+# Swedbank Pay Design Guide Theme for Jekyll
 
-This repository hosts the PayEx Design Guide theme for Jekyll, used for
-[PayEx on GitHub][1] among other things.
+This repository hosts the Swedbank Pay Design Guide theme for Jekyll, used for
+[Swedbank Pay on GitHub][1] among other things.
 
 ## Usage
 
-To view this theme, browse to [payex.github.io][1]. If you'd like to host it
-locally on your computer, you need to do the following:
+To view this theme, browse to [swedbankpay.github.io][1]. If you'd like to host
+it locally on your computer, you need to do the following:
 
 1. [Clone this repository][4].
 2. Jekyll is written in [Ruby][5], so you'll need to download and install that.
@@ -24,7 +24,7 @@ you should see the changes in the browser after a refresh, just like normal.
 
 When the theme is released, only the files in `_layouts`, `_includes`, `_sass`
 and `assets` tracked with Git will be bundled. To add a custom directory to
-your theme-gem, please edit the regexp in `payex.gemspec` accordingly.
+your theme-gem, please edit the regexp in `swedbankpay.gemspec` accordingly.
 
 ## Contributing
 
@@ -38,14 +38,14 @@ well as [PayEx Open Source Development Guidelines][10].
 This website is available as open source under the terms of the
 [MIT License][11].
 
-[1]: https://payex.github.io
+[1]: https://swedbankpay.github.io
 [2]: https://jekyllrb.com/
 [3]: https://pages.github.com/
 [4]: https://help.github.com/articles/cloning-a-repository/
 [5]: https://www.ruby-lang.org/en/
 [6]: https://rubygems.org/
 [7]: https://bundler.io/
-[8]: https://github.com/PayEx/payex.github.io/
+[8]: https://github.com/SwedbankPay/swedbankpay.github.io/
 [9]: http://contributor-covenant.org
 [10]: https://developer.payex.com/xwiki/wiki/developer/view/Main/guidelines/open-source-development-guidelines/
 [11]: https://opensource.org/licenses/MIT
