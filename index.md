@@ -1,6 +1,11 @@
 ---
 layout: default
 title: Index
+menu:
+- url: /page1
+  title: Menu Item 1
+- url: /page2
+  title: Menu Item 2
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
