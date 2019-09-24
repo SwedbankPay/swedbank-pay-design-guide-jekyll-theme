@@ -1,3 +1,11 @@
 repository: SwedbankPay/swedbank-pay-design-guide-jekyll-theme
 plugins:
   - "jekyll-github-metadata"
+defaults:
+  - values:
+      layout: default
+      menu:
+      - url: /page1
+        title: Menu Item 1
+      - url: /page2
+        title: Menu Item 2
