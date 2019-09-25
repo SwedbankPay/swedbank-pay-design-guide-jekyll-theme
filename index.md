@@ -22,19 +22,33 @@ This is a normal paragraph following a header. GitHub is a code hosting platform
 
 ### Header 3
 
+{:.code-label}
+**JavaScript code with syntax highlighting.**
 ```js
-// Javascript code with syntax highlighting.
 var fun = function lang(l) {
   dateformat.i18n = require('./lang/' + l)
   return true;
 }
 ```
 
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
+{:.code-label}
+**HTTP request**
+```http
+POST /psp/consumers HTTP/1.1
+Host: api.externalintegration.payex.com
+Authorization: Bearer <AccessToken>
+Content-Type: application/json
+
+{
+    "operation": "initiate-consumer-session",
+    "msisdn": "+4798765432",
+    "email": "olivia.nyhuus@example.com",
+    "consumerCountryCode": "NO",
+    "nationalIdentifier": {
+        "socialSecurityNumber": "26026708248",
+        "countryCode": "NO"
+    }
+}
 ```
 
 #### Header 4

@@ -2,6 +2,18 @@
 # This front matter makes Jekyll read the file as a template.
 ---
 
+$bg: #f5f2f0;
+$darkened-bg: darken($bg, 10%);
+
 img {
     max-width: 100%;
+}
+
+p.code-label {
+    display: block;
+    padding: 5px 19px;
+    background-color: $darkened-bg;
+    color: #512b2b;
+    border-bottom: 1px solid darken($bg, 30%);;
+    margin-bottom: -7px;
 }
