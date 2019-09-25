@@ -13,7 +13,9 @@
         <meta name="msapplication-TileImage" content="{{ page.design_guide.base_url }}/icons/mstile-144x144.png">
         <title>{{ page.title | default: "PayEx Design Guide theme for Jekyll" }}</title>
         <link rel="stylesheet" href="{{ page.design_guide.version_url }}/styles/dg-style.css" />
+        <link rel="stylesheet" href="{{ page.design_guide.version_url }}/styles/dg-documentation-theme.css" />
         <link rel="stylesheet" href="{{ '/assets/css/swedbank-pay-design-guide-theme.css' | relative_url }}" />
+        <link rel="stylesheet" href="{{ '/assets/css/prism.css' | relative_url }}" />
         <link rel="shortcut icon" href="{{ page.design_guide.base_url }}/icons/favicon.ico">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ page.design_guide.base_url }}/icons/favicon-16x16.png">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ page.design_guide.base_url }}/icons/favicon-32x32.png">
@@ -130,5 +132,6 @@
         </div>
 
         <script src="{{ page.design_guide.version_url }}/scripts/dg.js"></script>
+        <script src="{{ '/assets/js/prism.js' | relative_url }}"></script>
     </body>
 </html>
