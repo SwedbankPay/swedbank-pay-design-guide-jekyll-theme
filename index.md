@@ -103,13 +103,13 @@ sequenceDiagram
                       body='This is a successful alert.' %}
 
 {% include alert.html icon='info_outline'
-                      header='Informational alert'
-                      body='This is an informational alert.' %}
+                      header='**Informational** *alert*'
+                      body='This is an **informational** alert *with* `<markdown/>`{:.language-html}.' %}
 
 {% include alert.html type='warning'
                       icon='warning'
-                      header='Warning alert'
-                      body='This is a warning alert.' %}
+                      header='`{ "warning": "alert" }`{:.language-js}'
+                      body='This is a **warning** alert with `<markdown/>`{:.language-html}.' %}
 
 # There's a horizontal rule below this.
 
