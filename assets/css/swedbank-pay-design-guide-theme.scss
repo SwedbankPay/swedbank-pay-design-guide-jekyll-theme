@@ -2,34 +2,50 @@
 # This front matter makes Jekyll read the file as a template.
 ---
 
-$text-muted: rgba(60, 60, 60, .75);
+$bg: #f5f2f0;
+$darkened-bg: darken($bg, 10%);
 
-.topbar {
-    .topbar-info {
-        margin-right: 0.5rem;
-        margin-top: 0.5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
+img {
+    max-width: 100%;
+}
 
-        a {
-            margin: 5px;
-            color: $text-muted;
-            fill: $text-muted;
-            border: none;
+p.code-label {
+    display: block;
+    padding: 5px 19px;
+    background-color: $darkened-bg;
+    color: #512b2b;
+    border-bottom: 1px solid darken($bg, 30%);;
+    margin-bottom: -7px;
+}
 
-            svg {
-                overflow: visible;
-                width: 2rem;
-                height: 2rem;
-                display: inline-block;
-                vertical-align: top;
-            }
+h1 > a.header-anchor,
+h2 > a.header-anchor,
+h3 > a.header-anchor,
+h4 > a.header-anchor,
+h5 > a.header-anchor,
+h6 > a.header-anchor {
+    color: #ebf8f2;
+    text-decoration: none;
+}
 
-            &:hover {
-                color: darken($text-muted, 20%);
-                fill: darken($text-muted, 20%);
-            }
-        }
-    }
+h1:hover > a.header-anchor,
+h2:hover > a.header-anchor,
+h3:hover > a.header-anchor,
+h4:hover > a.header-anchor,
+h5:hover > a.header-anchor,
+h6:hover > a.header-anchor {
+    color: #8acdc3;
+}
+
+h1 > a.header-anchor:hover,
+h2 > a.header-anchor:hover,
+h3 > a.header-anchor:hover,
+h4 > a.header-anchor:hover,
+h5 > a.header-anchor:hover,
+h6 > a.header-anchor:hover {
+    color: #257886;
+}
+
+a.header-anchor::before {
+    content: '#';
 }
