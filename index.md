@@ -69,6 +69,9 @@ language.
 
 ###### Header 6
 
+Here's a nice, striped table.
+
+{:.table .table-striped}
 | head1        | head two          | three |
 |:-------------|:------------------|:------|
 | ok           | good swedish fish | nice  |
