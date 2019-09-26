@@ -111,18 +111,22 @@ sequenceDiagram
                       header='`{ "warning": "alert" }`{:.language-js}'
                       body='This is a **warning** alert with `<markdown/>`{:.language-html}.' %}
 
-# There's a horizontal rule below this.
+# Jumbotron
+
+{% include jumbotron.html body='**This text** right here is of such utter importance it needs to be in a jumbo box with a jumbo font size.' %}
+
+# There's a horizontal rule below this
 
 * * *
 
-# Here is an unordered list:
+# Here is an unordered list
 
 *   Item foo
 *   Item bar
 *   Item baz
 *   Item zip
 
-# And an ordered list:
+# And an ordered list
 
 1.  Item one
 1.  Item two
