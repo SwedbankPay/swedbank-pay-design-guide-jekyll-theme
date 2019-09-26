@@ -51,6 +51,10 @@ Content-Type: application/json
 }
 ```
 
+Here's some `<inline>`{:.language-html} `{ "code": true }`{:.language-js}
+that should `.be { highlighted: according }`{:.language-css} to their
+language.
+
 #### Header 4
 
 *   This is an unordered list following a header.

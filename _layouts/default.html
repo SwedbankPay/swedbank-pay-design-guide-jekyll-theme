@@ -151,9 +151,12 @@
                     return;
                 }
 
-                var preElements = document.querySelectorAll('.highlighter-rouge:not(.language-mermaid) pre.highlight');
+                var preElements = document.querySelectorAll('.highlighter-rouge:not(.language-mermaid) pre.highlight, code[class*="language"]:not(.language-mermaid)');
+
+                console.log(preElements);
                 
-                // TODO: This performs like ass. Follow up on https://github.com/PrismJS/prism/issues/2068 to figure out a better way to do this.
+                // TODO: This seems to performs like ass and requires maintenance to get working.
+                //       Follow up on https://github.com/PrismJS/prism/issues/2068 to figure out a better way to do this.
                 for (var preElement of preElements) {
                     Prism.highlightElement(preElement, false);
                 }
