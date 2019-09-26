@@ -22,7 +22,7 @@ This is a normal paragraph following a header. GitHub is a code hosting platform
 
 ### Header 3
 
-{:.code-label}
+{:.code-header}
 **JavaScript code with syntax highlighting.**
 ```js
 var fun = function lang(l) {
@@ -31,7 +31,7 @@ var fun = function lang(l) {
 }
 ```
 
-{:.code-label}
+{:.code-header}
 **HTTP request**
 ```http
 POST /psp/consumers HTTP/1.1
