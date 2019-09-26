@@ -1,0 +1,39 @@
+{% assign type = include.type | default: 'default' %}
+{% assign type_class = 'alert-' | append: type %}
+{% assign icon = include.icon %}
+{% assign header = include.header %}
+{% assign body = include.body %}
+
+{% comment %}
+TODO: Add | markdownify to header and body so Markdown is supported.
+      That probably requires a massive rewrite from HTML to Markdown
+      of this entire include.
+{% endcomment %}
+
+<div class="alert {% if header %}alert-complex{% endif %} {{ type_class }}">
+    {% if header %}
+        <header class="alert-header">
+            {% if icon %}
+                <i class="material-icons alert-icon">{{ icon }}</i>
+            {% endif %}
+            
+            {% if header %}
+                <h3>{{ header }}</h3>
+            {% endif %}
+        </header>
+    {% else %}
+        {% if icon %}
+            <i class="material-icons alert-icon">{{ icon }}</i>
+        {% endif %}
+    {% endif %}
+
+    {% if body %}
+        {% if header %}
+            <div class="alert-body">
+                <p>{{ body }}</p>
+            </div>
+        {% else %}
+            <p>{{ body }}</p>
+        {% endif %}
+    {% endif %}
+</div>

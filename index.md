@@ -94,6 +94,22 @@ sequenceDiagram
     John->>Bob: How about you?
     Bob-->>John: Jolly good!
 ```
+# Alerts
+
+{% include alert.html body='This is a standard alert.' %}
+
+{% include alert.html type='success'
+                      icon='check_circle'
+                      body='This is a successful alert.' %}
+
+{% include alert.html icon='info_outline'
+                      header='Informational alert'
+                      body='This is an informational alert.' %}
+
+{% include alert.html type='warning'
+                      icon='warning'
+                      header='Warning alert'
+                      body='This is a warning alert.' %}
 
 # There's a horizontal rule below this.
 
