@@ -72,25 +72,41 @@ Content-Type: application/json
 | ok           | good `oreos`      | hmm   |
 | ok           | good `zoute` drop | yumm  |
 
-### There's a horizontal rule below this.
+# Mermaid
+
+```mermaid
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail!
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+```
+
+# There's a horizontal rule below this.
 
 * * *
 
-### Here is an unordered list:
+# Here is an unordered list:
 
 *   Item foo
 *   Item bar
 *   Item baz
 *   Item zip
 
-### And an ordered list:
+# And an ordered list:
 
 1.  Item one
 1.  Item two
 1.  Item three
 1.  Item four
 
-### And a nested list:
+# And a nested list
 
 - level 1 item
   - level 2 item
@@ -106,16 +122,16 @@ Content-Type: application/json
   - level 2 item
 - level 1 item
 
-### Small image
+# Small image
 
 ![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
 
-### Large image
+# Large image
 
 ![Branching](https://guides.github.com/activities/hello-world/branching.png)
 
 
-### Definition lists can be used with HTML syntax.
+# Definition lists can be used with HTML syntax.
 
 <dl>
 <dt>Name</dt>

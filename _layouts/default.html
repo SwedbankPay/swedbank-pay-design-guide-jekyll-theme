@@ -40,6 +40,7 @@
         <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="{{ page.design_guide.base_url }}/icons/apple-touch-startup-image-1496x2048.png">
         <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="{{ page.design_guide.base_url }}/icons/apple-touch-startup-image-1536x2008.png">
         <link rel="icon" type="image/png" sizes="228x228" href="{{ page.design_guide.base_url }}/icons/coast-228x228.png">
+        <script src="{{ '/assets/js/mermaid.min.js' | relative_url }}"></script>
     </head>
     <body>
         <div id="designguide">
@@ -130,7 +131,7 @@
 
                                 <div class="col-2 d-none d-lg-block">
                                     <div class="doc-toc">
-                                        {% include toc.html html=content h_max=1 %}
+                                        {% include toc.html html=content h_max=1 item_class='toc-%level%' %}
                                     </div>
                                 </div>            
                             </div>
@@ -143,6 +144,24 @@
         </div>
 
         <script src="{{ page.design_guide.version_url }}/scripts/dg.js"></script>
-        <script src="{{ '/assets/js/prism.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/prism.js' | relative_url }}" data-manual></script>
+        <script>
+            (function(){
+                if (typeof self === 'undefined' || !self.Prism || !self.document || !document.querySelector) {
+                    return;
+                }
+
+                var preElements = document.querySelectorAll('.highlighter-rouge:not(.language-mermaid) pre.highlight');
+                
+                // TODO: This performs like ass. Follow up on https://github.com/PrismJS/prism/issues/2068 to figure out a better way to do this.
+                for (var preElement of preElements) {
+                    Prism.highlightElement(preElement, false);
+                }
+                
+                mermaid.initialize({ startOnLoad: true, securityLevel: 'loose' });
+                mermaid.init(undefined, 'code.language-mermaid');
+            })();
+
+        </script>
     </body>
 </html>
