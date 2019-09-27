@@ -65,12 +65,105 @@ a.header-anchor::before {
     margin-bottom: 1rem;
     border-radius: 4px;
     background-color: #ebe7e2;
+
+    strong {
+        font-weight: bold;
+    }
+
+    p:last-of-type {
+        margin-bottom: 0;
+    }
 }
 
-.jumbotron strong {
-    font-weight: bold;
-}
+.documentation .language-mermaid {
+    $apricot: #fbf2ea;
+    $pink: #efb7b6;
+    $brand-success-light: #f2f7eb;
+    $brand-warning-light: #fff3d5;
+    $darker-apricot: darken($apricot, 10%);
+    $black: #222;
+    $brown: #2f2424;
+    
+    rect.actor {
+        fill: $apricot !important;
+        stroke: $darker-apricot !important;
+    }
 
-.jumbotron p:last-of-type {
-    margin-bottom: 0;
+    .activation0,
+    .activation1,
+    .activation2 {
+        fill: $brand-success-light !important;
+        stroke: darken($brand-success-light, 10%) !important;
+    }
+    
+    text.actor {
+        font-family: Arial, sans-serif !important;
+        font-size: 1rem !important;
+    }
+
+    .actor-line {
+        stroke: $apricot !important;
+        stroke-width: 4 !important;
+    }
+
+    .messageLine0 {
+        stroke-width: 2 !important;
+        stroke-dasharray: "2 2";
+        marker-end: "url(#arrowhead)";
+        stroke: $black !important;
+    }
+    
+    .messageLine1 {
+        stroke-width:1.5;
+        stroke-dasharray: "2 2";
+        stroke: $brown !important;
+    }
+    
+    #arrowhead {
+        fill: $brown !important;
+    }
+    
+    .messageText {
+        fill: $black !important;
+        stroke: none;
+        font-family: Arial, sans-serif !important;
+        font-size: 1rem !important;
+    }
+    
+    .labelBox {
+        stroke: $pink !important;
+        fill: $pink !important;
+    }
+    
+    .labelText {
+        fill: $black !important;
+        stroke: none;
+        font-family: Arial, sans-serif !important;
+    }
+    
+    .loopText {
+        fill: $black !important;
+        stroke: none;
+        font-family: Arial, sans-serif !important;
+        font-size: 1rem !important;
+    }
+    
+    .loopLine {
+        stroke-width:2;
+        stroke-dasharray: "2 2";
+        marker-end:"url(#arrowhead)";
+        stroke: $pink !important;
+    }
+    
+    .note {
+        stroke: darken($brand-warning-light, 30%) !important;
+        fill: $brand-warning-light !important;
+    }
+    
+    .noteText {
+        fill: $black !important;
+        stroke: none;
+        font-family: Arial, sans-serif !important;
+        font-size: 1rem !important;
+    }
 }
