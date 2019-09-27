@@ -44,8 +44,6 @@
                                      - document.body.clientHeight
                                      - buffer;
 
-        console.log(scrollDistanceFromBottom);
-
         if (scrollDistanceFromBottom <= 0) {
             for (var link of tocLinks) {
                 link.parentElement.classList.remove("active");
