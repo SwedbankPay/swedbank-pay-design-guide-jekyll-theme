@@ -23,8 +23,8 @@
 
     var getPosition = function(el) {
       if (el) {
-        const bodyRect = document.body.getBoundingClientRect();
-        const elemRect = el.getBoundingClientRect();
+        var bodyRect = document.body.getBoundingClientRect();
+        var elemRect = el.getBoundingClientRect();
 
         return elemRect.top - bodyRect.top;
       }
@@ -33,7 +33,24 @@
     };
 
     window.addEventListener("scroll", function() {
-        var currentPos = window.pageYOffset + 150;
+        // TODO: Figure out a way to compute the buffer
+        var buffer = 150;
+        var currentPos = window.pageYOffset + buffer;
+
+        // TODO: Probably a stupid way to compute "how far left can we scroll", but it seems to work.
+        var scrollOffset = document.documentElement.scrollHeight
+                         - document.documentElement.scrollTop
+                         - document.body.clientHeight
+                         - buffer;
+
+        if (scrollOffset <= 0) {
+            for (var link of tocLinks) {
+                link.parentElement.classList.remove("active");
+            }
+
+            tocLinks[tocLinks.length - 1].parentElement.classList.add("active");
+            return;
+      }
 
         for (var i = 0; i < headings.length; i++) {
             var heading = headings[i];
