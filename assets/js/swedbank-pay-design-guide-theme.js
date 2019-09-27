@@ -18,26 +18,37 @@
 
 // Initialize sidebar navigation scroll activation
 (function() {
-    // From https://css-tricks.com/sticky-smooth-active-nav/
-    var mainNavLinks = document.querySelectorAll('nav.doc-toc ul li a');
-    var mainSections = document.querySelectorAll('.doc-container');
+    var headings = document.querySelectorAll("h2");
+    var tocLinks = document.querySelectorAll("nav.doc-toc ul li a");
 
-    var lastId;
-    var cur = [];
+    var getPosition = function(el) {
+      if (el) {
+        const bodyRect = document.body.getBoundingClientRect();
+        const elemRect = el.getBoundingClientRect();
 
-    window.addEventListener('scroll', event => {
-        let fromTop = window.scrollY;
+        return elemRect.top - bodyRect.top;
+      }
 
-        mainNavLinks.forEach(link => {
-            let section = document.querySelector(link.hash);
+      return null;
+    };
 
-            if (section.offsetTop <= fromTop &&
-                section.offsetTop + section.offsetHeight > fromTop) {
-                link.parentElement.classList.add('active');
-            } else {
-                link.parentElement.classList.remove('active');
+    window.addEventListener("scroll", function() {
+        var currentPos = window.pageYOffset + 150;
+
+        for (var i = 0; i < headings.length; i++) {
+            var heading = headings[i];
+            var headingPos = getPosition(heading);
+            var nextHeadingPos = getPosition(headings[i + 1]);
+
+            if (currentPos > headingPos && currentPos < nextHeadingPos) {
+                for (var link of tocLinks) {
+                  link.parentElement.classList.remove("active");
+                }
+
+                tocLinks[i].parentElement.classList.add("active");
+                return;
             }
-        });
+        }
     });
 })();
 
@@ -53,4 +64,4 @@
     for (var preElement of preElements) {
         Prism.highlightElement(preElement, false);
     }
-});
+})();
