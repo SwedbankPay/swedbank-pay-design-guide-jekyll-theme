@@ -130,10 +130,10 @@
                                 </div>
 
                                 <div class="col-2 d-none d-lg-block">
-                                    <div class="doc-toc">
-                                        {% include toc.html html=content h_max=1 item_class='toc-%level%' %}
-                                    </div>
-                                </div>            
+                                    <nav class="doc-toc">
+                                        {% include toc.html html=content h_max=2 item_class='toc-%level%' %}
+                                    </nav>
+                                </div>
                             </div>
                         </div>
                     </main>
@@ -145,37 +145,6 @@
 
         <script src="{{ page.design_guide.version_url }}/scripts/dg.js"></script>
         <script src="{{ '/assets/js/prism.js' | relative_url }}" data-manual></script>
-        <script>
-            (function(){
-                if (typeof self === 'undefined' || !self.Prism || !self.document || !document.querySelector) {
-                    return;
-                }
-
-                var preElements = document.querySelectorAll('.highlighter-rouge:not(.language-mermaid) pre.highlight, code[class*="language"]:not(.language-mermaid)');
-
-                console.log(preElements);
-                
-                // TODO: This seems to performs like ass and requires maintenance to get working.
-                //       Follow up on https://github.com/PrismJS/prism/issues/2068 to figure out a better way to do this.
-                for (var preElement of preElements) {
-                    Prism.highlightElement(preElement, false);
-                }
-
-                mermaid.initialize({
-                    startOnLoad: true,
-                    securityLevel: 'loose',
-                    htmlLabels: true,
-                    sequence: {
-                        useMaxWidth: false,
-                        width: 300
-                    },
-                    flowchart: {
-                        useMaxWidth: false
-                    }
-                });
-                mermaid.init(undefined, 'code.language-mermaid');
-            })();
-
-        </script>
+        <script src="{{ '/assets/js/swedbank-pay-design-guide-theme.js' | relative_url }}"></script>
     </body>
 </html>
