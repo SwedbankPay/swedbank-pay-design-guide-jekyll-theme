@@ -1,6 +1,8 @@
 repository: SwedbankPay/swedbank-pay-design-guide-jekyll-theme
 plugins:
   - "jekyll-github-metadata"
+# To include node_modules and other folders that are excluded by default:
+# exclude: []
 defaults:
   - values:
       layout: default
