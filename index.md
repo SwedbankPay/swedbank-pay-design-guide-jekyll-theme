@@ -83,25 +83,24 @@ Here's a nice, striped table.
 
 ```mermaid
 sequenceDiagram
-    participant Alice
-    participant Bob
-    activate Alice
-      Alice->>John: Hello John, how are you?
-      activate John
-        loop Healthcheck
-          John->>John: Fight against hypochondria
-        end
-        Note right of John: Rational thoughts <br/>prevail!
-        John-->>Alice: Great!
-      deactivate John
-    deactivate Alice
+    participant Merchant
+    participant SwedbankPay
+    
+    activate SwedbankPay
+        SwedbankPay->>Merchant: POST <callbackUrl>
+        activate Merchant
+            note right of SwedbankPay: Callback POST by SwedbankPay
+            Merchant->>SwedbankPay: Callback response
+        deactivate Merchant
+    deactivate SwedbankPay
 
-    activate John
-      John->>Bob: How about you?
-      activate Bob
-        Bob-->>John: Jolly good!
-      deactivate Bob
-    deactivate John
+    activate Merchant
+        Merchant->>SwedbankPay: GET <payment instrument> payment
+        note left of Merchant: First API request
+        activate SwedbankPay
+            SwedbankPay-->>Merchant: payment resource
+        deactivate SwedbankPay
+    deactivate Merchant
 ```
 # Alerts
 

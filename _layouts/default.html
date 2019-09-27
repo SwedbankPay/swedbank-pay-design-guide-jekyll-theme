@@ -160,8 +160,19 @@
                 for (var preElement of preElements) {
                     Prism.highlightElement(preElement, false);
                 }
-                
-                mermaid.initialize({ startOnLoad: true, securityLevel: 'loose' });
+
+                mermaid.initialize({
+                    startOnLoad: true,
+                    securityLevel: 'loose',
+                    htmlLabels: true,
+                    sequence: {
+                        useMaxWidth: false,
+                        width: 300
+                    },
+                    flowchart: {
+                        useMaxWidth: false
+                    }
+                });
                 mermaid.init(undefined, 'code.language-mermaid');
             })();
 

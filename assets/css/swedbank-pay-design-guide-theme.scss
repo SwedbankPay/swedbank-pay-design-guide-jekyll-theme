@@ -83,6 +83,10 @@ a.header-anchor::before {
     $darker-apricot: darken($apricot, 10%);
     $black: #222;
     $brown: #2f2424;
+
+    svg {
+        width: 100% !important;
+    }
     
     rect.actor {
         fill: $apricot !important;
