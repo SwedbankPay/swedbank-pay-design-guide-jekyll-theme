@@ -87,7 +87,7 @@ a.header-anchor::before {
     svg {
         width: 100% !important;
     }
-    
+
     rect.actor {
         fill: $apricot !important;
         stroke: $darker-apricot !important;
@@ -99,7 +99,7 @@ a.header-anchor::before {
         fill: $brand-success-light !important;
         stroke: darken($brand-success-light, 10%) !important;
     }
-    
+
     text.actor {
         font-family: Arial, sans-serif !important;
         font-size: 1rem !important;
@@ -116,54 +116,54 @@ a.header-anchor::before {
         marker-end: "url(#arrowhead)";
         stroke: $black !important;
     }
-    
+
     .messageLine1 {
         stroke-width:1.5;
         stroke-dasharray: "2 2";
         stroke: $brown !important;
     }
-    
+
     #arrowhead {
         fill: $brown !important;
     }
-    
+
     .messageText {
         fill: $black !important;
         stroke: none;
         font-family: Arial, sans-serif !important;
         font-size: 1rem !important;
     }
-    
+
     .labelBox {
         stroke: $pink !important;
         fill: $pink !important;
     }
-    
+
     .labelText {
         fill: $black !important;
         stroke: none;
         font-family: Arial, sans-serif !important;
     }
-    
+
     .loopText {
         fill: $black !important;
         stroke: none;
         font-family: Arial, sans-serif !important;
         font-size: 1rem !important;
     }
-    
+
     .loopLine {
         stroke-width:2;
         stroke-dasharray: "2 2";
         marker-end:"url(#arrowhead)";
         stroke: $pink !important;
     }
-    
+
     .note {
         stroke: darken($brand-warning-light, 30%) !important;
         fill: $brand-warning-light !important;
     }
-    
+
     .noteText {
         fill: $black !important;
         stroke: none;

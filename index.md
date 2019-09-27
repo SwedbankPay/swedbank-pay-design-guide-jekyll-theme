@@ -85,7 +85,7 @@ Here's a nice, striped table.
 sequenceDiagram
     participant Merchant
     participant SwedbankPay
-    
+
     activate SwedbankPay
         SwedbankPay->>Merchant: POST <callbackUrl>
         activate Merchant
@@ -121,7 +121,9 @@ sequenceDiagram
 
 # Jumbotron
 
-{% include jumbotron.html body='**This text** right here is of such utter importance it needs to be in a jumbo box with a jumbo font size.' %}
+{% include jumbotron.html body='**PayEx Checkout** is a complete reimagination of the checkout experience, integrating seamlessly into the merchant website through highly customizable and flexible components.
+
+Visit our [demoshop](https://ecom.externalintegration.payex.com/pspdemoshop) and try out PayEx Checkout for yourself!' %}
 
 # There's a horizontal rule below this
 
