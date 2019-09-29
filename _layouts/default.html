@@ -41,6 +41,14 @@
         <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="{{ page.design_guide.base_url }}/icons/apple-touch-startup-image-1536x2008.png">
         <link rel="icon" type="image/png" sizes="228x228" href="{{ page.design_guide.base_url }}/icons/coast-228x228.png">
         <script src="{{ '/assets/js/mermaid.min.js' | relative_url }}"></script>
+        {% if page.search.enabled == true %}
+        <link rel="stylesheet" href="{{ "/assets/tipuesearch/css/normalize.css" | relative_url }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="{{ "/assets/tipuesearch/tipuesearch_content.js" | relative_url }}"></script>
+        <link rel="stylesheet" href="{{ "/assets/tipuesearch/css/tipuesearch.css" | relative_url }}">
+        <script src="{{ "/assets/tipuesearch/tipuesearch_set.js" | relative_url }}"></script>
+        <script src="{{ "/assets/tipuesearch/tipuesearch.min.js" | relative_url }}"></script>
+        {% endif %}
     </head>
     <body>
         <div id="designguide">
@@ -90,10 +98,12 @@
                 <div class="row">
                     <div class="col-xxl-2 col-md-3">
                         <div class="doc-sidebar">
-                            {% if page.sidebar.search.enabled == true %}
-                            <form class="doc-search"><input type="text" class="form-control" name="designguide-search" placeholder="Search..." autocomplete="off"></form>
+                            {% if page.search.enabled == true %}
+                            <form class="doc-search" action="{{ page.search.url | relative_url }}">
+                                <input type="text" class="form-control" name="q" id="tipue_search_input" placeholder="Search..." autocomplete="off" pattern=".{3,}" title="At least 3 characters">
+                            </form>
                             {% endif %}
-
+                              
                             {% if page.sidebar.navigation != nil and page.sidebar.navigation != empty %}
                             <nav class="documentation-nav">
                                 {% for group in page.sidebar.navigation %}
@@ -126,7 +136,11 @@
                             <h1>{{ page.title | default: "Swedbank Pay Design Guide theme for Jekyll" }}</h1>
                             <div class="row">
                                 <div class="doc-body col-lg-10">
-                                    {% include anchor_headings.html html=content anchorClass='header-anchor' %}
+                                    {% if page.type == 'search' %}
+                                        <div id="tipue_search_content"></div>
+                                    {% else %}
+                                        {% include anchor_headings.html html=content anchorClass='header-anchor' %}
+                                    {% endif %}
                                 </div>
 
                                 <div class="col-2 d-none d-lg-block">

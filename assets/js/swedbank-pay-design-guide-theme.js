@@ -83,3 +83,10 @@
         Prism.highlightElement(preElement, false);
     }
 })();
+
+// Initialize Tipue search
+(function() {
+    $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+    });
+})();

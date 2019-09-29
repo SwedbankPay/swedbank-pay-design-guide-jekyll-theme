@@ -3,12 +3,18 @@ plugins:
   - "jekyll-github-metadata"
 # To include node_modules and other folders that are excluded by default:
 # exclude: []
+tipue_search:
+  include:
+    pages: true
 defaults:
   - values:
       layout: default
       design_guide:
         base_url: https://design.swedbankpay.com
         version_url: https://design.swedbankpay.com/v/4.1.0
+      search:
+        enabled: true
+        url: /search
       topbar:
         navigation:
         - url: /page1
@@ -16,8 +22,6 @@ defaults:
         - url: /page2
           title: Top 2
       sidebar:
-        search:
-          enabled: true
         navigation:
           - title: Group 1
             items:
