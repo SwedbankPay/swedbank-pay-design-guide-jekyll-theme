@@ -22,6 +22,7 @@ This is a normal paragraph following a header. GitHub is a code hosting platform
 
 {:.code-header}
 **JavaScript code with syntax highlighting.**
+
 ```js
 var fun = function lang(l) {
   dateformat.i18n = require('./lang/' + l)
@@ -31,6 +32,7 @@ var fun = function lang(l) {
 
 {:.code-header}
 **HTTP request**
+
 ```http
 POST /psp/consumers HTTP/1.1
 Host: api.externalintegration.payex.com
@@ -55,15 +57,15 @@ language.
 
 #### Header 4
 
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
+* This is an unordered list following a header.
+* This is an unordered list following a header.
+* This is an unordered list following a header.
 
 ##### Header 5
 
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
+1. This is an ordered list following a header.
+2. This is an ordered list following a header.
+3. This is an ordered list following a header.
 
 ###### Header 6
 
