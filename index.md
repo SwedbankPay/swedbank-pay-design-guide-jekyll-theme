@@ -18,7 +18,7 @@ sidebar:
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](./another-page.html).
+[Link to an external URL](https://www.wikipedia.org).
 
 There should be whitespace between paragraphs.
 
