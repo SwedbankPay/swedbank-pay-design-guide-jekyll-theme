@@ -1,5 +1,6 @@
 ---
 title: Index
+description: The index page
 sidebar:
   navigation:
     - title: Group 1

@@ -6,18 +6,21 @@ plugins:
 tipue_search:
   include:
     pages: true
+opengraph:
+  description: Swedbank Pay Design Guide theme for Jekyll
+  image: /image1.png
+design_guide:
+  base_url: https://design.swedbankpay.com
+  version: 4.1.0
+search:
+  enabled: true
+  url: /search
+topbar:
+  navigation:
+  - url: /page1
+    title: Top 1
+  - url: /page2
+    title: Top 2
 defaults:
   - values:
       layout: default
-      design_guide:
-        base_url: https://design.swedbankpay.com
-        version_url: https://design.swedbankpay.com/v/4.1.0
-      search:
-        enabled: true
-        url: /search
-      topbar:
-        navigation:
-        - url: /page1
-          title: Top 1
-        - url: /page2
-          title: Top 2

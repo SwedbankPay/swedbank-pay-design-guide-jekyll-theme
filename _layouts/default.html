@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+{%
+
+    assign title = page.title | default: "PayEx Design Guide theme for Jekyll" %}{%
+    assign description = page.opengraph.description | default: site.opengraph.description %}{%
+    assign image = page.opengraph.image | default: site.opengraph.image %}{%
+    assign design_guide_base_url = design_guide_version_url | default: 'https://design.swedbankpay.com' %}{%
+    assign design_guide_version = site.design_guide.version | default: '4.1.0' %}{%
+    assign design_guide_version_url = design_guide_base_url | append: '/v/' | append: design_guide_version
+
+%}<!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
     <head>
         <meta charset="utf-8" />
@@ -10,38 +19,46 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <meta name="apple-mobile-web-app-title" content="{{ page.title | default: 'PayEx Design Guide theme for Jekyll' }}">
         <meta name="msapplication-TileColor" content="#000">
-        <meta name="msapplication-TileImage" content="{{ page.design_guide.base_url }}/icons/mstile-144x144.png">
-        <title>{{ page.title | default: "PayEx Design Guide theme for Jekyll" }}</title>
-        <link rel="stylesheet" href="{{ page.design_guide.version_url }}/styles/dg-style.css" />
+        <meta name="msapplication-TileImage" content="{{ design_guide_version_url }}/icons/mstile-144x144.png">
+        <meta property="og:type" value="website" />
+        {% if page.url != nil %}<meta property="og:url" value="{{ page.url | absolute_url }}" />{% endif %}
+        <meta property="og:title" value="{{ title }}" />
+        <meta name="title" content="{{ title }}" />
+        {% if description != nil %}
+        <meta property="og:description" value="{{ description }}" />
+        <meta name="description" content="{{ description }}" />{% endif %}
+        {% if image != nil %}<meta property="og:image" value="{{ image }}" />{% endif %}
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="{{ design_guide_version_url }}/styles/dg-style.css" />
         <link rel="stylesheet" href="{{ '/assets/css/swedbank-pay-design-guide-theme.css' | relative_url }}" />
         <link rel="stylesheet" href="{{ '/assets/css/prism.css' | relative_url }}" />
-        <link rel="shortcut icon" href="{{ page.design_guide.base_url }}/icons/favicon.ico">
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ page.design_guide.base_url }}/icons/favicon-16x16.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ page.design_guide.base_url }}/icons/favicon-32x32.png">
-        <link rel="apple-touch-icon" sizes="57x57" href="{{ page.design_guide.base_url }}/icons/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="{{ page.design_guide.base_url }}/icons/apple-touch-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="{{ page.design_guide.base_url }}/icons/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="{{ page.design_guide.base_url }}/icons/apple-touch-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="{{ page.design_guide.base_url }}/icons/apple-touch-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="{{ page.design_guide.base_url }}/icons/apple-touch-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="{{ page.design_guide.base_url }}/icons/apple-touch-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="{{ page.design_guide.base_url }}/icons/apple-touch-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="167x167" href="{{ page.design_guide.base_url }}/icons/apple-touch-icon-167x167.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ page.design_guide.base_url }}/icons/apple-touch-icon-180x180.png">
-        <link rel="apple-touch-icon" sizes="1024x1024" href="{{ page.design_guide.base_url }}/icons/apple-touch-icon-1024x1024.png">
-        <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" href="{{ page.design_guide.base_url }}/icons/apple-touch-startup-image-320x460.png">
-        <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" href="{{ page.design_guide.base_url }}/icons/apple-touch-startup-image-640x920.png">
-        <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="{{ page.design_guide.base_url }}/icons/apple-touch-startup-image-640x1096.png">
-        <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="{{ page.design_guide.base_url }}/icons/apple-touch-startup-image-750x1294.png">
-        <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)" href="{{ page.design_guide.base_url }}/icons/apple-touch-startup-image-1182x2208.png">
-        <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)" href="{{ page.design_guide.base_url }}/icons/apple-touch-startup-image-1242x2148.png">
-        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" href="{{ page.design_guide.base_url }}/icons/apple-touch-startup-image-748x1024.png">
-        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" href="{{ page.design_guide.base_url }}/icons/apple-touch-startup-image-768x1004.png">
-        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="{{ page.design_guide.base_url }}/icons/apple-touch-startup-image-1496x2048.png">
-        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="{{ page.design_guide.base_url }}/icons/apple-touch-startup-image-1536x2008.png">
-        <link rel="icon" type="image/png" sizes="228x228" href="{{ page.design_guide.base_url }}/icons/coast-228x228.png">
+        <link rel="shortcut icon" href="{{ design_guide_version_url }}/icons/favicon.ico">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ design_guide_version_url }}/icons/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ design_guide_version_url }}/icons/favicon-32x32.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="{{ design_guide_version_url }}/icons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{ design_guide_version_url }}/icons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ design_guide_version_url }}/icons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ design_guide_version_url }}/icons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{ design_guide_version_url }}/icons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ design_guide_version_url }}/icons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{ design_guide_version_url }}/icons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ design_guide_version_url }}/icons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="167x167" href="{{ design_guide_version_url }}/icons/apple-touch-icon-167x167.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ design_guide_version_url }}/icons/apple-touch-icon-180x180.png">
+        <link rel="apple-touch-icon" sizes="1024x1024" href="{{ design_guide_version_url }}/icons/apple-touch-icon-1024x1024.png">
+        <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-320x460.png">
+        <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-640x920.png">
+        <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-640x1096.png">
+        <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-750x1294.png">
+        <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)" href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-1182x2208.png">
+        <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)" href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-1242x2148.png">
+        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-748x1024.png">
+        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-768x1004.png">
+        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-1496x2048.png">
+        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-1536x2008.png">
+        <link rel="icon" type="image/png" sizes="228x228" href="{{ design_guide_version_url }}/icons/coast-228x228.png">
         <script src="{{ '/assets/js/mermaid.min.js' | relative_url }}"></script>
-        {% if page.search.enabled == true %}
+        {% if site.search.enabled == true %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="{{ "/assets/tipuesearch/tipuesearch_content.js" | relative_url }}"></script>
         <script src="{{ "/assets/tipuesearch/tipuesearch_set.js" | relative_url }}"></script>
@@ -52,7 +69,7 @@
         <div id="designguide">
             <header class="topbar topbar-md-wide designguide-header">
                 <button type="button" class="topbar-btn"><i class="material-icons topbar-btn-icon">menu</i></button>
-                <a href="{{ site.url }}" class="topbar-logo"><img src="{{ page.design_guide.version_url }}/img/swedbankpay-logo.svg" alt="logo"></a>
+                <a href="{{ site.url }}" class="topbar-logo"><img src="{{ design_guide_version_url }}/img/swedbankpay-logo.svg" alt="logo"></a>
                 <nav class="topbar-nav">
                     <div class="topbar-link-container">
                         <button type="button" class="topbar-close"><i class="material-icons">close</i></button>
@@ -73,7 +90,7 @@
 
                         <a {% if page_url == site_url %} aria-current="page" class="active" {% endif %} href="{{ site_url }}"><span>Home</span></a>
 
-                        {% for nav in page.topbar.navigation %}
+                        {% for nav in site.topbar.navigation %}
                             {% assign nav_url = nav.url | relative_url %}
                             <a {% if page_url == nav_url %} aria-current="page" class="active" {% endif %} href="{{ nav_url }}"><span>{{ nav.title }}</span></a>
                         {% endfor %}
@@ -96,8 +113,8 @@
                 <div class="row">
                     <div class="col-xxl-2 col-md-3">
                         <div class="doc-sidebar">
-                            {% if page.search.enabled == true %}
-                            <form class="doc-search" action="{{ page.search.url | relative_url }}">
+                            {% if site.search.enabled == true %}
+                            <form class="doc-search" action="{{ site.search.url | relative_url }}">
                                 <input type="text" class="form-control" name="q" id="tipue_search_input" placeholder="Search..." autocomplete="off" pattern=".{3,}" title="At least 3 characters">
                             </form>
                             {% endif %}
@@ -155,7 +172,7 @@
             <footer class="page-footer"><p class="page-footer-rights">© Swedbank Pay</p></footer>
         </div>
 
-        <script src="{{ page.design_guide.version_url }}/scripts/dg.js"></script>
+        <script src="{{ design_guide_version_url }}/scripts/dg.js"></script>
         <script src="{{ '/assets/js/prism.js' | relative_url }}" data-manual></script>
         <script src="{{ '/assets/js/swedbank-pay-design-guide-theme.js' | relative_url }}"></script>
     </body>
