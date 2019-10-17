@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 Gem::Specification.new do |spec|
-  spec.name          = "swedbankpay"
-  spec.version       = "0.1.0"
+  spec.name          = "swedbank-pay-design-guide-jekyll-theme"
+  spec.version       = "1.0.0"
   spec.authors       = ["Asbjørn Ulsberg"]
   spec.email         = ["asbjorn@ulsberg.no"]
 
