@@ -142,9 +142,21 @@ sequenceDiagram
 
 ## Jumbotron
 
-{% include jumbotron.html body='**PayEx Checkout** is a complete reimagination of the checkout experience, integrating seamlessly into the merchant website through highly customizable and flexible components.
+{% include jumbotron.html body='**PayEx Checkout** is a complete reimagination
+of the checkout experience, integrating seamlessly into the merchant website
+through highly customizable and flexible components.
 
-Visit our [demoshop](https://ecom.externalintegration.payex.com/pspdemoshop) and try out PayEx Checkout for yourself!' %}
+Visit our [demoshop](https://ecom.externalintegration.payex.com/pspdemoshop)
+and try out PayEx Checkout for yourself!' %}
+
+## Iterator
+
+{% include iterator.html next_href="page2" %}
+{% include iterator.html prev_href="page1" %}
+{% include iterator.html prev_href="page1"
+                         prev_title="Go back"
+                         next_href="page2"
+                         next_title="Go forward" %}
 
 ## There's a horizontal rule below this
 

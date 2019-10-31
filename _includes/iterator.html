@@ -1,0 +1,20 @@
+{% assign prev_href = include.prev_href | strip %}
+{% assign prev_title = include.prev_title | default: 'Previous' | strip %}
+{% assign next_href = include.next_href | strip %}
+{% assign next_title = include.next_title | default: 'Next' | strip %}
+
+<nav class="iterator">
+    <ul>
+    {% if next_href != blank and next_href != empty and next_href != nil %}
+        <li>
+            <a class="btn btn-executive" role="button" rel="next" href="{{ next_href }}">{{ next_title }}</a>
+        </li>
+    {% endif %}
+
+    {% if prev_href != blank and prev_href != empty and prev_href != nil %}
+        <li>
+            <a class="btn btn-guiding" role="button" rel="back" href="{{ prev_href }}">{{ prev_title }}</a>
+        </li>
+    {% endif %}
+    </ul>
+</nav>

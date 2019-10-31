@@ -91,6 +91,32 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
     display: inline;
 }
 
+.iterator {
+    clear: both;
+    margin: 1rem 0;
+}
+
+.iterator ul,
+.iterator li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.iterator a.btn {
+    display: block;
+    width: 49%;
+    min-width: 8rem;
+}
+
+.iterator a[rel = 'prev'] {
+    float: left;
+}
+
+.iterator a[rel = 'next'] {
+    float: right;
+}
+
 .documentation .language-mermaid {
     $apricot: #fbf2ea;
     $pink: #efb7b6;
