@@ -75,15 +75,16 @@ a.header-anchor::before {
     }
 }
 
-a:not([href *= '{{ site.url }}']):not([href ^= '#']):not([href ^= '/']):not([href ^= './']):after {
-    content: url('../img/external-url.svg');;
+a[href ^= '//']:not([href *= '{{ site.url }}']):after,
+a[href ^= 'http://']:not([href *= '{{ site.url }}']):after,
+a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
+        content: url('../img/external-url.svg');;
     margin-left: .3rem;
     display: inline-block;
     width: .8rem;
     background-repeat: none;
     color: #257886;
 }
-
 
 #designguide .designguide-header .topbar-info a:after {
     content: none;

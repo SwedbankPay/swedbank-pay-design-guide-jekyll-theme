@@ -19,8 +19,12 @@ sidebar:
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-* [External link](https://www.wikipedia.org)
-* [Internal link](./page1)
+* [External absolute full link](https://www.wikipedia.org)
+* [External protocol relative link](//www.wikipedia.org)
+* [Internal absolute full link]({{ site.url }})
+* [Internal explicit relative link](./page1)
+* [Internal implicit relative link](page1)
+* [Internal absolute link](/page1)
 
 There should be whitespace between paragraphs.
 
