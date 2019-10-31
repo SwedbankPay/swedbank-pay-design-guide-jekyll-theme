@@ -19,7 +19,8 @@ sidebar:
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to an external URL](https://www.wikipedia.org).
+* [External link](https://www.wikipedia.org)
+* [Internal link](./page1)
 
 There should be whitespace between paragraphs.
 
