@@ -99,12 +99,6 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
     display: inline-block;
     width: 49%;
     min-width: 8rem;
-    vertical-align: middle;
-
-    .title {
-        display: block;
-        text-align: center;
-    }
 }
 
 .iterator a.btn[rel='prev']:before {
@@ -116,15 +110,6 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
     content: '❯';
     float: right;
 }
-
-/*.iterator a.btn[rel='prev'] .material-icons {
-    float: left;
-}
-
-.iterator a.btn[rel='next'] .material-icons {
-    float: right;
-    text-align: right;
-}*/
 
 .documentation .language-mermaid {
     $apricot: #fbf2ea;
