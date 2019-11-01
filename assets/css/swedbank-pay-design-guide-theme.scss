@@ -92,30 +92,39 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
 }
 
 .iterator {
-    clear: both;
     margin: 1rem 0;
 }
 
-.iterator ul,
-.iterator li {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
 .iterator a.btn {
-    display: block;
+    display: inline-block;
     width: 49%;
     min-width: 8rem;
+    vertical-align: middle;
+
+    .title {
+        display: block;
+        text-align: center;
+    }
 }
 
-.iterator a[rel = 'prev'] {
+.iterator a.btn[rel='prev']:before {
+    content: '❮';
     float: left;
 }
 
-.iterator a[rel = 'next'] {
+.iterator a.btn[rel='next']:before {
+    content: '❯';
     float: right;
 }
+
+/*.iterator a.btn[rel='prev'] .material-icons {
+    float: left;
+}
+
+.iterator a.btn[rel='next'] .material-icons {
+    float: right;
+    text-align: right;
+}*/
 
 .documentation .language-mermaid {
     $apricot: #fbf2ea;
