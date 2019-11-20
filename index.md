@@ -180,6 +180,9 @@ sequenceDiagram
 
 {% include alert.html body='This is a standard alert.' %}
 
+{% include alert.html type='default' icon='info'
+body='This is a low-key informational alert.' %}
+
 {% include alert.html type='success' icon='check_circle'
 body='This is a successful alert.' %}
 
