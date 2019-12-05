@@ -33,8 +33,7 @@
     };
 
     window.addEventListener("scroll", function() {
-        // TODO: Figure out a way to compute the buffer instead of hard coding it.
-        var buffer = 150;
+        var buffer = document.body.clientHeight * 0.1;
         var currentPos = window.pageYOffset + buffer;
 
         // TODO: Probably a stupid way to compute "how far left can we scroll until
