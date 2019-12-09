@@ -114,8 +114,8 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
 .documentation .language-mermaid {
     $apricot: #fbf2ea;
     $pink: #efb7b6;
+    $brand-info-light: #e8eff9;
     $brand-success-light: #f2f7eb;
-    $brand-warning-light: #fff3d5;
     $darker-apricot: darken($apricot, 10%);
     $black: #222;
     $brown: #2f2424;
@@ -197,8 +197,8 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
     }
 
     .note {
-        stroke: darken($brand-warning-light, 30%) !important;
-        fill: $brand-warning-light !important;
+        stroke: darken($brand-info-light, 20%) !important;
+        fill: $brand-info-light !important;
     }
 
     .noteText {
