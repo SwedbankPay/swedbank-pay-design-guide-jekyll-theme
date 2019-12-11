@@ -224,4 +224,4 @@ The final element.
 
 ## Emoji support
 
-:+1: :heavy_checkmark: :unicorn_face: :fire:
+:+1: :heavy_check_mark: :fire: 💡 :unicorn:
