@@ -93,7 +93,7 @@ Here's a nice, striped table.
 
 {:.table .table-striped}
 | head1        | head two          | three |
-|:-------------|:------------------|:------|
+| :----------- | :---------------- | :---- |
 | ok           | good swedish fish | nice  |
 | out of stock | good and plenty   | nice  |
 | ok           | good `oreos`      | hmm   |
@@ -221,3 +221,7 @@ Long, single-line code blocks should not wrap. They should horizontally scroll i
 ```
 The final element.
 ```
+
+## Emoji support
+
+:+1: :heavy_check_mark: :fire: 💡 :unicorn:
