@@ -159,7 +159,7 @@
                         {% endif %}
 
                         {% if page.sidebar.navigation != nil and page.sidebar.navigation != empty %}
-                        <nav class="documentation-nav">
+                        <li class="documentation-nav">
                             {% for group in page.sidebar.navigation %}
                             {% comment %}
                             TODO: Make "class='active'" conditional on whether one of the group's nav items are active
@@ -182,6 +182,14 @@
                                 {% endif %}
                             </div>
                             {% endfor %}
+                            {% assign pages_list = site.pages %}
+                            {% for node in pages_list %}
+                            {% if node.title != null %}
+                        <li><a {% if page.url == nav_url %} aria-current=" page" class="active" {% endif %}
+                                href="{{ site.baseurl }}{{ node.url  | remove_first: '/' }}">{{ node.title }}</a></li>
+                        {% endif %}
+                        {{site.pages}}
+                        {% endfor %}
                         </nav>
                         {% endif %}
                     </div>
