@@ -1,91 +1,51 @@
 <nav class="documentation-nav">
-  <div class="nav-group active">
+  {% assign pages = site.pages | sort: 'menu-order' %}
+  {% for node in pages %}
+  {% assign node_parts = node.url | split: '/' %}
+  {% assign node_depth = node_parts | size %}
+
+  {% if node_depth == 2 %}
+  <div class="nav-group {% if page.url contains node.url %} active {% endif %}">
     <div class="nav-heading">
-      <i class="material-icons">keyboard_arrow_right</i>
-      <span>Folder name</span>
+      <i class="material-icons">
+        {% if page.url contains node.url %}
+        keyboard_arrow_down
+        {% else %}
+        keyboard_arrow_right
+        {% endif %}</i>
+      <a {% if page.url contains node.url %} aria-current="page" class="active" {% endif %} href="{{ node.url }}">
+        {{ node.title }}
+      </a>
     </div>
-    {% comment %}
-    Create nav bellow
-    {% endcomment %}
+
+    {% assign node_root = '/' | append: node_parts[1] | append: '/' %}
+    {% assign has_children = false %}
+    {% for subnode in pages %}
+    {% if subnode.url contains node_root and subnode.url != node_root %}
+    {% assign has_children = true %}
+    {% endif %}
+    {% endfor %}
+
+    {% if has_children == true %}
     <ul>
-      {% assign pages = site.pages | sort:'menu-order' %}
-      {% for node in pages %}
-      <li><a {% if page.url contains node.url %} aria-current="page" class="active" {% endif %}
-          href="{{ node.url }}">{{ node.title }}</a>
+      {% for subnode in pages %}
+      {% if subnode.url contains node_root and subnode.url != node_root %}
+      {% assign node_parts = subnode.url | split: '/' %}
+      {% assign node_depth = node_parts | size %}
+
+      {% if node_depth == 3 %}
+      <li>
+        <a {% if page.url contains subnode.url %} aria-current="page" class="active" {% endif %}
+          href="{{ subnode.url }}">
+          {{ subnode.title }} subnode title
+        </a>
       </li>
+      {% endif %}
+      {% endif %}
       {% endfor %}
     </ul>
+    {% endif %}
   </div>
-  {% assign pages = site.pages | sort: 'menu-order' %}
-
-  <ul> {% for node in pages %}
-    {% assign node_parts = node.url | split: '/' %}
-    {% assign node_depth = node_parts | size %}
-
-    {% if node_depth == 2 %}
-    <div class="nav-group {% if page.url contains node.url %} active {% endif %}">
-      <div class="nav-heading">
-        <i class="material-icons">{% if page.url contains node.url %} keyboard_arrow_down {% else %}
-          keyboard_arrow_right{% endif %}</i>
-        <a href="{{ node.url }}">
-          {{ node.title }}
-        </a>
-      </div>
-      <li{% if page.url contains node.url %} class="active" {% endif %}>
-
-
-        {% assign node_root = '/' | append: node_parts[1] | append: '/' %}
-        {% assign has_children = false %}
-        {% for subnode in pages %}
-        {% if subnode.url contains node_root and subnode.url != node_root %}
-        {% assign has_children = true %}
-        {% endif %}
-        {% endfor %}
-
-        {% if has_children == true %}
-        <ul>
-          {% for subnode in pages %}
-          {% if subnode.url contains node_root and subnode.url != node_root %}
-          {% assign node_parts = subnode.url | split: '/' %}
-          {% assign node_depth = node_parts | size %}
-
-
-          {% if node_depth == 3 %}
-          <li{% if page.url contains subnode.url %} aria-current="page" class="active" {% endif %}>
-            <a href="{{ subnode.url }}">
-              {{ subnode.title }}
-            </a>
-
-            {% assign subnode_root = '/' | append: node_parts[1] | append: '/' | append: node_parts[2] | append: '/' %}
-            {% assign has_children = false %}
-            {% for subsubnode in pages %}
-            {% if subsubnode.url contains subnode_root and subsubnode.url != subnode_root %}
-            {% assign has_children = true %}
-            {% endif %}
-            {% endfor %}
-
-            {% if has_children == true %}
-            <ul>
-              {% for subsubnode in pages %}
-              {% if subsubnode.url contains subnode_root and subsubnode.url != subnode_root %}
-              <li{% if page.url contains subsubnode.url %} class="active" {% endif %}>
-                <a href="{{ subsubnode.url }}">
-                  {{ subsubnode.title }}
-                </a>
-                </li>
-                {% endif %}
-                {% endfor %}
-            </ul>
-            {% endif %}
-            </li>
-            {% endif %}
-            {% endif %}
-            {% endfor %}
-        </ul>
-        {% endif %}
-        </li>
-        {% endif %}
-        {% endfor %}
-  </ul>
-</nav>
+  {% endif %}
+  {% endfor %}
 </nav>
