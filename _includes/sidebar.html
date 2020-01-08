@@ -1,19 +1,23 @@
-{% assign url_parts = page.url | split: '/' %}
-{% assign url_parts_size = url_parts | size %}
-{% assign rm = url_parts | last %}
-{% assign base_url = page.url | replace: rm %}
-
 <nav class="documentation-nav">
   <div class="nav-group active">
     <div class="nav-heading">
       <i class="material-icons">keyboard_arrow_right</i>
       <span>Folder name</span>
     </div>
+
     <ul>
-      {% for node in site.pages %}
-      <li><a {% if node.url == nav_url %} aria-current=" page" class="active" {% endif %}
-          href='{{node.url}}'>{{node.title}}</a></li>
+      {% assign nav_url = nav.url | relative_url %}
+      <li><a {% if page_url == nav_url %} aria-current="page" class="active" {% endif %}
+          href="{{ nav_url }}"><span>{{ nav.title }}</span></a></li>
       {% endfor %}
+      {% comment %}
+      Create nav bellow
+      {% endcomment %}
+      {% assign pages = site.pages | sort:'menu-order' %}
+      {% for node in pages %}
+      <li><a {% if page.url == nav_url %} aria-current=" page" class="active" {% endif %}
+          href="{{ site.baseurl }}{{ node.url  | remove_first: '/' }}">{{ node.title }}</a>
+      </li>
     </ul>
   </div>
 </nav>
