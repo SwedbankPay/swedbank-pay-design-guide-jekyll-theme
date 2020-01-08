@@ -1,5 +1,6 @@
 ---
 title: After payment is completed
+menu-order: 20
 ---
 
 ## After paaaayment

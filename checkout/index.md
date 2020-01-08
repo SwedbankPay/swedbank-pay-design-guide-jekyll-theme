@@ -1,5 +1,6 @@
 ---
 title: Checkout
+menu-order: 10
 ---
 
 ## You'd like to checko out

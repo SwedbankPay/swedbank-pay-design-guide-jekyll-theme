@@ -159,44 +159,7 @@
                         </form>
                         {% endif %}
 
-                        {% if page.sidebar.navigation != nil and page.sidebar.navigation != empty %}
-                        <nav class="documentation-nav">
-                            {% for group in page.sidebar.navigation %}
-                            {% comment %}
-                            TODO: Make "class='active'" conditional on whether one of the group's nav items are active
-                            or not
-                            {% endcomment %}
-                            <div class="nav-group active">
-                                <div class="nav-heading">
-                                    <i class="material-icons">keyboard_arrow_right</i>
-                                    <span>{{ group.title }}</span>
-                                </div>
-
-                                {% if group.items != nil and group.items != empty %}
-                                <ul>
-                                    {% for nav in group.items %}
-                                    {% assign nav_url = nav.url | relative_url %}
-                                    <li><a {% if page_url == nav_url %} aria-current="page" class="active" {% endif %}
-                                            href="{{ nav_url }}"><span>{{ nav.title }}</span></a></li>
-                                    {% endfor %}
-                                    {% comment %}
-                                    Create nav bellow
-                                    {% endcomment %}
-                                    {% assign pages_list = site.pages %}
-                                    {% for node in pages_list %}
-                                    {% if node.title != null %}
-                                    <li><a {% if page.url == nav_url %} aria-current=" page" class="active" {% endif %}
-                                            href="{{ site.baseurl }}{{ node.url  | remove_first: '/' }}">{{ node.title }}</a>
-                                    </li>
-                                    {% endif %}
-                                    {{site.pages}}
-                                    {% endfor %}
-                                </ul>
-                                {% endif %}
-                            </div>
-                            {% endfor %}
-                        </nav>
-                        {% endif %}
+                        {% include sidebar.html %}
                     </div>
                 </div>
 

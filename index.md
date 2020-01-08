@@ -1,20 +1,6 @@
 ---
 title: Index
 description: The index page
-sidebar:
-  navigation:
-    - title: Group 1
-      items:
-      - url: /page1
-        title: Side 1
-      - url: /page2
-        title: Side 2
-    - title: Group 2
-      items:
-      - url: /page1
-        title: Side 3
-      - url: /page2
-        title: Side 4
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
