@@ -1,3 +1,6 @@
+{% comment %}
+Original creator: https://sebnitu.com/2016/10/13/dynamic-menus-in-jekyll/
+{% endif %}
 <nav class="documentation-nav">
   {% assign pages = site.pages | sort: 'menu-order' %}
   {% for node in pages %}
@@ -37,7 +40,7 @@
       <li>
         <a {% if page.url contains subnode.url %} aria-current="page" class="active" {% endif %}
           href="{{ subnode.url }}">
-          {{ subnode.title }} subnode title
+          {{ subnode.title }}
         </a>
       </li>
       {% endif %}

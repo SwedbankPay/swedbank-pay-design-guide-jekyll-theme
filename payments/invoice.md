@@ -1,5 +1,6 @@
 ---
 title: Invoicing
+menu-order: 5
 ---
 
 ## Invoices
