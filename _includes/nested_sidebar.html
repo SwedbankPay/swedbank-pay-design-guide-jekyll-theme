@@ -1,0 +1,21 @@
+{% assign subnode_root = '/' | append: node_parts[1] | append: '/' | append: node_parts[2] | append: '/' %}
+{% assign has_children = false %}
+{% for subsubnode in pages %}
+{% if subsubnode.url contains subnode_root and subsubnode.url != subnode_root %}
+{% assign has_children = true %}
+{% endif %}
+{% endfor %}
+
+{% if has_children == true %}
+<ul>
+  {% for subsubnode in pages %}
+  {% if subsubnode.url contains subnode_root and subsubnode.url != subnode_root %}
+  <li{% if page.url contains subsubnode.url %} class="active" {% endif %}>
+    <a href="{{ subsubnode.url }}">
+      {{ subsubnode.title }} subsubnode title
+    </a>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
+{% endif %}
