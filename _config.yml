@@ -22,7 +22,6 @@ topbar:
     title: Top 1
   - url: /page2
     title: Top 2
-github: [metadata]
 defaults:
   - values:
       layout: default
