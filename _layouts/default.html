@@ -65,6 +65,7 @@
         <script src="{{ "/assets/tipuesearch/tipuesearch.min.js" | relative_url }}"></script>
         {% endif %}
     </head>
+
     <body>
         <div id="designguide">
             <header class="topbar topbar-md-wide designguide-header">
@@ -118,30 +119,31 @@
                                 <input type="text" class="form-control" name="q" id="tipue_search_input" placeholder="Search..." autocomplete="off" pattern=".{3,}" title="At least 3 characters">
                             </form>
                             {% endif %}
-
-                            {% if page.sidebar.navigation != nil and page.sidebar.navigation != empty %}
+                            {% if page.sidebar.navigation != nil %}
                             <nav class="documentation-nav">
                                 {% for group in page.sidebar.navigation %}
                                 {% comment %}
-                                TODO: Make "class='active'" conditional on whether one of the group's nav items are active or not
+                                TODO: Make "class='active'" conditional on whether one of the group's nav items are active or not.
                                 {% endcomment %}
                                 <div class="nav-group active">
-                                        <div class="nav-heading">
-                                            <i class="material-icons">keyboard_arrow_right</i>
-                                            <span>{{ group.title }}</span>
-                                        </div>
-
-                                        {% if group.items != nil and group.items != empty %}
-                                        <ul>
-                                        {% for nav in group.items %}
-                                            {% assign nav_url = nav.url | relative_url %}
-                                            <li><a {% if page_url == nav_url %} aria-current="page" class="active" {% endif %} href="{{ nav_url }}"><span>{{ nav.title }}</span></a></li>
-                                        {% endfor %}
-                                        </ul>
-                                        {% endif %}
+                                    <div class="nav-heading">
+                                        <i class="material-icons">keyboard_arrow_right</i>
+                                        <span>{{ group.title }}</span>
                                     </div>
-                                    {% endfor %}
+
+                                    {% if group.items != nil and group.items != empty %}
+                                    <ul>
+                                        {% for nav in group.items %}
+                                        {% assign nav_url = nav.url | relative_url %}
+                                        <li><a {% if page_url == nav_url %} aria-current="page" class="active" {% endif %} href="{{ nav_url }}"><span>{{ nav.title }}</span></a></li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                </div>
+                                {% endfor %}
                             </nav>
+                            {% else %}
+                                {% include sidebar.html %}
                             {% endif %}
                         </div>
                     </div>
@@ -176,4 +178,5 @@
         <script src="{{ '/assets/js/prism.js' | relative_url }}" data-manual></script>
         <script src="{{ '/assets/js/swedbank-pay-design-guide-theme.js' | relative_url }}"></script>
     </body>
+
 </html>
