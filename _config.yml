@@ -23,7 +23,7 @@ topbar:
   - url: /page2
     title: Top 2
 google_analytics:
-  tracking_id: 
+  tracking_id: false 
 defaults:
   - values:
       layout: default
