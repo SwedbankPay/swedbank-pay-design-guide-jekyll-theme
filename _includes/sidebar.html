@@ -10,12 +10,7 @@ Original creator: https://sebnitu.com/2016/10/13/dynamic-menus-in-jekyll/
   {% if node_depth == 2 %}
   <div class="nav-group {% if page.url contains node.url %} active {% endif %}">
     <div class="nav-heading">
-      <i class="material-icons">
-        {% if page.url contains node.url %}
-        keyboard_arrow_down
-        {% else %}
-        keyboard_arrow_right
-        {% endif %}</i>
+      <i class="material-icons">keyboard_arrow_right</i>
       <a {% if page.url contains node.url %} aria-current="page" class="active" {% endif %} href="{{ node.url }}">
         {{ node.title }}
       </a>
