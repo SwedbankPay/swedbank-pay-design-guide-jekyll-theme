@@ -7,10 +7,21 @@
     assign design_guide_version = site.design_guide.version | default: '4.1.0' %}{%
     assign design_guide_version_url = design_guide_base_url | append: '/v/' | append: design_guide_version
 
-%}<!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
-    <head>
+%}
 
+{% unless page.name contains "index" %}
+
+{% assign dirname = page.dir | remove: "/" | capitalize %}
+
+{% unless dirname == "" %}
+{% assign title = dirname | append: " – " | append: title %}
+{% endunless %}
+
+{% endunless %}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+
+    <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="mobile-web-app-capable" content="yes">
@@ -151,7 +162,7 @@
 
                     <main class="doc-view col-xxl-10 col-md-9">
                         <div class="doc-container">
-                            <h1>{{ page.title | default: "Swedbank Pay Design Guide theme for Jekyll" }}</h1>
+                            <h1>{{ title }}</h1>
                             <div class="row">
                                 <div class="doc-body col-lg-10">
                                     {% if page.type == 'search' %}
