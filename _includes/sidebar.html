@@ -2,13 +2,12 @@
 Original creator: https://sebnitu.com/2016/10/13/dynamic-menus-in-jekyll/
 {% endcomment %}
 <nav class="documentation-nav">
-  {% assign filtered_pages = site.pages | where: 'hide_from_sidebar', nil %}
-  {% assign pages = filtered_pages | sort: 'menu-order' %}
+  {% assign pages = site.pages | sort: 'menu-order' %}
   {% for node in pages %}
   {% assign node_parts = node.url | split: '/' %}
   {% assign node_depth = node_parts | size %}
 
-  {% if node_depth == 2 %}
+  {% if node_depth == 2 and node.hide_from_sidebar == nil %}
   <div class="nav-group {% if page.url contains node.url %} active {% endif %}">
     <div class="nav-heading">
       <i class="material-icons">keyboard_arrow_right</i>
@@ -32,7 +31,7 @@ Original creator: https://sebnitu.com/2016/10/13/dynamic-menus-in-jekyll/
       {% assign node_parts = subnode.url | split: '/' %}
       {% assign node_depth = node_parts | size %}
 
-      {% if node_depth == 3 %}
+      {% if node_depth == 3 and node.hide_from_sidebar == nil %}
       <li>
         <a {% if page.url contains subnode.url %} aria-current="page" class="active" {% endif %}
           href="{{ subnode.url }}">
