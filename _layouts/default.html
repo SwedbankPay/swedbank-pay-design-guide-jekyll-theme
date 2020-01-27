@@ -11,7 +11,7 @@
 
 {% unless page.name contains "index" %}
 
-{% assign dirname = page.dir | remove: "/" | capitalize %}
+{% assign dirname = page.dir | split: "/" | last | remove: "/" | capitalize %}
 
 {% unless dirname == "" %}
 {% assign title = dirname | append: " – " | append: title %}
