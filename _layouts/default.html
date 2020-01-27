@@ -29,17 +29,20 @@
         <meta name="application-name" content="{{ page.title | default: 'PayEx Design Guide theme for Jekyll' }}">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="apple-mobile-web-app-title" content="{{ page.title | default: 'PayEx Design Guide theme for Jekyll' }}">
+        <meta name="apple-mobile-web-app-title"
+            content="{{ page.title | default: 'PayEx Design Guide theme for Jekyll' }}">
         <meta name="msapplication-TileColor" content="#000">
         <meta name="msapplication-TileImage" content="{{ design_guide_version_url }}/icons/mstile-144x144.png">
         <meta property="og:type" value="website" />
-        {% if page.url != nil %}<meta property="og:url" value="{{ page.url | absolute_url }}" />{% endif %}
+        {% if page.url != nil %}
+        <meta property="og:url" value="{{ page.url | absolute_url }}" />{% endif %}
         <meta property="og:title" value="{{ title }}" />
         <meta name="title" content="{{ title }}" />
         {% if description != nil %}
         <meta property="og:description" value="{{ description }}" />
         <meta name="description" content="{{ description }}" />{% endif %}
-        {% if image != nil %}<meta property="og:image" value="{{ image }}" />{% endif %}
+        {% if image != nil %}
+        <meta property="og:image" value="{{ image }}" />{% endif %}
         <title>{{ title }}</title>
         <link rel="stylesheet" href="{{ design_guide_version_url }}/styles/dg-style.css" />
         <link rel="stylesheet" href="{{ '/assets/css/swedbank-pay-design-guide-theme.css' | relative_url }}" />
@@ -47,27 +50,58 @@
         <link rel="shortcut icon" href="{{ design_guide_version_url }}/icons/favicon.ico">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ design_guide_version_url }}/icons/favicon-16x16.png">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ design_guide_version_url }}/icons/favicon-32x32.png">
-        <link rel="apple-touch-icon" sizes="57x57" href="{{ design_guide_version_url }}/icons/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="{{ design_guide_version_url }}/icons/apple-touch-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="{{ design_guide_version_url }}/icons/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="{{ design_guide_version_url }}/icons/apple-touch-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="{{ design_guide_version_url }}/icons/apple-touch-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="{{ design_guide_version_url }}/icons/apple-touch-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="{{ design_guide_version_url }}/icons/apple-touch-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="{{ design_guide_version_url }}/icons/apple-touch-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="167x167" href="{{ design_guide_version_url }}/icons/apple-touch-icon-167x167.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ design_guide_version_url }}/icons/apple-touch-icon-180x180.png">
-        <link rel="apple-touch-icon" sizes="1024x1024" href="{{ design_guide_version_url }}/icons/apple-touch-icon-1024x1024.png">
-        <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-320x460.png">
-        <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-640x920.png">
-        <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-640x1096.png">
-        <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-750x1294.png">
-        <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)" href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-1182x2208.png">
-        <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)" href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-1242x2148.png">
-        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-748x1024.png">
-        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-768x1004.png">
-        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-1496x2048.png">
-        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-1536x2008.png">
+        <link rel="apple-touch-icon" sizes="57x57"
+            href="{{ design_guide_version_url }}/icons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60"
+            href="{{ design_guide_version_url }}/icons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72"
+            href="{{ design_guide_version_url }}/icons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76"
+            href="{{ design_guide_version_url }}/icons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114"
+            href="{{ design_guide_version_url }}/icons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120"
+            href="{{ design_guide_version_url }}/icons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144"
+            href="{{ design_guide_version_url }}/icons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152"
+            href="{{ design_guide_version_url }}/icons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="167x167"
+            href="{{ design_guide_version_url }}/icons/apple-touch-icon-167x167.png">
+        <link rel="apple-touch-icon" sizes="180x180"
+            href="{{ design_guide_version_url }}/icons/apple-touch-icon-180x180.png">
+        <link rel="apple-touch-icon" sizes="1024x1024"
+            href="{{ design_guide_version_url }}/icons/apple-touch-icon-1024x1024.png">
+        <link rel="apple-touch-startup-image"
+            media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)"
+            href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-320x460.png">
+        <link rel="apple-touch-startup-image"
+            media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"
+            href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-640x920.png">
+        <link rel="apple-touch-startup-image"
+            media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
+            href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-640x1096.png">
+        <link rel="apple-touch-startup-image"
+            media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
+            href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-750x1294.png">
+        <link rel="apple-touch-startup-image"
+            media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)"
+            href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-1182x2208.png">
+        <link rel="apple-touch-startup-image"
+            media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)"
+            href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-1242x2148.png">
+        <link rel="apple-touch-startup-image"
+            media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)"
+            href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-748x1024.png">
+        <link rel="apple-touch-startup-image"
+            media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)"
+            href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-768x1004.png">
+        <link rel="apple-touch-startup-image"
+            media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"
+            href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-1496x2048.png">
+        <link rel="apple-touch-startup-image"
+            media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"
+            href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-1536x2008.png">
         <link rel="icon" type="image/png" sizes="228x228" href="{{ design_guide_version_url }}/icons/coast-228x228.png">
         <script src="{{ '/assets/js/mermaid.min.js' | relative_url }}"></script>
         {% if site.search.enabled == true %}
@@ -82,7 +116,8 @@
         <div id="designguide">
             <header class="topbar topbar-md-wide designguide-header">
                 <button type="button" class="topbar-btn"><i class="material-icons topbar-btn-icon">menu</i></button>
-                <a href="{{ site.url }}" class="topbar-logo"><img src="{{ design_guide_version_url }}/img/swedbankpay-logo.svg" alt="logo"></a>
+                <a href="{{ site.url }}" class="topbar-logo"><img
+                        src="{{ design_guide_version_url }}/img/swedbankpay-logo.svg" alt="logo"></a>
                 <nav class="topbar-nav">
                     <div class="topbar-link-container">
                         <button type="button" class="topbar-close"><i class="material-icons">close</i></button>
@@ -92,8 +127,8 @@
 
                         {% comment %}
                         TODO: Enumerate pages through site.pages instead of hard coded in _config.yml.
-                              Requires a bit sophisticated logic to differ between topbar and sidebar
-                              pages as well as support for page/menu hierarchies.
+                        Requires a bit sophisticated logic to differ between topbar and sidebar
+                        pages as well as support for page/menu hierarchies.
                         {% for page in site.pages %}
                         {% unless page.dir contains 'assets/' %}
                         * {{ page.title }}
@@ -101,19 +136,24 @@
                         {% endfor %}
                         {% endcomment %}
 
-                        <a {% if page_url == site_url %} aria-current="page" class="active" {% endif %} href="{{ site_url }}"><span>Home</span></a>
+                        <a {% if page_url == site_url %} aria-current="page" class="active" {% endif %}
+                            href="{{ site_url }}"><span>Home</span></a>
 
                         {% for nav in site.topbar.navigation %}
-                            {% assign nav_url = nav.url | relative_url %}
-                            <a {% if page_url == nav_url %} aria-current="page" class="active" {% endif %} href="{{ nav_url }}"><span>{{ nav.title }}</span></a>
+                        {% assign nav_url = nav.url | relative_url %}
+                        <a {% if page_url == nav_url %} aria-current="page" class="active" {% endif %}
+                            href="{{ nav_url }}"><span>{{ nav.title }}</span></a>
                         {% endfor %}
 
                         <div class="topbar-info topbar-link-right">
                             <div class="topbar-info-contact">
-                                <a href="{{ site.github.repository_url }}/tree/master/{{ page.path }}" target="_blank" rel="noopener noreferrer" title="Edit this page on GitHub">
-                                    <svg aria-labelledby="simpleicons-github-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <a href="{{ site.github.repository_url }}/tree/master/{{ page.path }}" target="_blank"
+                                    rel="noopener noreferrer" title="Edit this page on GitHub">
+                                    <svg aria-labelledby="simpleicons-github-icon" role="img" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
                                         <title id="simpleicons-github-icon">Edit this page on GitHub</title>
-                                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                                        <path
+                                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
                                     </svg>
                                 </a>
                             </div>
@@ -128,14 +168,17 @@
                         <div class="doc-sidebar">
                             {% if site.search.enabled == true %}
                             <form class="doc-search" action="{{ site.search.url | relative_url }}">
-                                <input type="text" class="form-control" name="q" id="tipue_search_input" placeholder="Search..." autocomplete="off" pattern=".{3,}" title="At least 3 characters">
+                                <input type="text" class="form-control" name="q" id="tipue_search_input"
+                                    placeholder="Search..." autocomplete="off" pattern=".{3,}"
+                                    title="At least 3 characters">
                             </form>
                             {% endif %}
                             {% if page.sidebar.navigation != nil %}
                             <nav class="documentation-nav">
                                 {% for group in page.sidebar.navigation %}
                                 {% comment %}
-                                TODO: Make "class='active'" conditional on whether one of the group's nav items are active or not.
+                                TODO: Make "class='active'" conditional on whether one of the group's nav items are
+                                active or not.
                                 {% endcomment %}
                                 <div class="nav-group active">
                                     <div class="nav-heading">
@@ -147,7 +190,8 @@
                                     <ul>
                                         {% for nav in group.items %}
                                         {% assign nav_url = nav.url | relative_url %}
-                                        <li><a {% if page_url == nav_url %} aria-current="page" class="active" {% endif %} href="{{ nav_url }}"><span>{{ nav.title }}</span></a></li>
+                                        <li><a {% if page_url == nav_url %} aria-current="page" class="active"
+                                                {% endif %} href="{{ nav_url }}"><span>{{ nav.title }}</span></a></li>
                                         {% endfor %}
                                     </ul>
                                     {% endif %}
@@ -155,7 +199,7 @@
                                 {% endfor %}
                             </nav>
                             {% else %}
-                                {% include sidebar.html %}
+                            {% include sidebar.html %}
                             {% endif %}
                         </div>
                     </div>
@@ -166,9 +210,9 @@
                             <div class="row">
                                 <div class="doc-body col-lg-10">
                                     {% if page.type == 'search' %}
-                                        <div id="tipue_search_content"></div>
+                                    <div id="tipue_search_content"></div>
                                     {% else %}
-                                        {% include anchor_headings.html html=content anchorClass='header-anchor' %}
+                                    {% include anchor_headings.html html=content anchorClass='header-anchor' %}
                                     {% endif %}
                                 </div>
 
@@ -183,7 +227,9 @@
                 </div>
             </div>
 
-            <footer class="page-footer"><p class="page-footer-rights">© Swedbank Pay</p></footer>
+            <footer class="page-footer">
+                <p class="page-footer-rights">© Swedbank Pay</p>
+            </footer>
         </div>
 
         <script src="{{ design_guide_version_url }}/scripts/dg.js"></script>
