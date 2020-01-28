@@ -9,7 +9,7 @@
 
 %}
 
-{% unless page.name contains "index" %}
+{% unless page.name contains "index" and  page.sidebar.navigation != nil %}
 
 {% assign dirname = page.dir | split: "/" | last | remove: "/" | capitalize %}
 
