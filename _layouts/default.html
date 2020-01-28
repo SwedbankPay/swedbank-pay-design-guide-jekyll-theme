@@ -9,7 +9,8 @@
 
 %}
 
-{% unless page.name contains "index" or page.sidebar.navigation == nil %}
+{% if page.sidebar.navigation != nil %}
+{% unless page.name contains "index"  %}
 
 {% assign dirname = page.dir | split: "/" | last | remove: "/" | capitalize %}
 
@@ -18,6 +19,7 @@
 {% endunless %}
 
 {% endunless %}
+{% endif %}
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
 
