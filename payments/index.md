@@ -1,5 +1,6 @@
 ---
 title: Payments
+menu-order: 1000
 ---
 
 ## Woah bby

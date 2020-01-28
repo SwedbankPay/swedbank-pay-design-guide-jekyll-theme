@@ -31,7 +31,7 @@ Original creator: https://sebnitu.com/2016/10/13/dynamic-menus-in-jekyll/
       {% assign node_parts = subnode.url | split: '/' %}
       {% assign node_depth = node_parts | size %}
 
-      {% if node_depth == 3 and node.hide_from_sidebar == nil %}
+      {% if node_depth == 3 and subnode.hide_from_sidebar == nil %}
       <li>
         <a {% if page.url contains subnode.url %} aria-current="page" class="active" {% endif %}
           href="{{ subnode.url }}">
