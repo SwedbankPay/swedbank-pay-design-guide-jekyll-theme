@@ -3,6 +3,7 @@
     assign title = page.title | default: "PayEx Design Guide theme for Jekyll" %}{%
     assign description = page.opengraph.description | default: site.opengraph.description %}{%
     assign image = page.opengraph.image | default: site.opengraph.image %}{%
+    assign github_branch = site.github.branch | default : "develop" %}{%
     assign design_guide_base_url = design_guide_version_url | default: 'https://design.swedbankpay.com' %}{%
     assign design_guide_version = site.design_guide.version | default: '4.1.0' %}{%
     assign design_guide_version_url = design_guide_base_url | append: '/v/' | append: design_guide_version
@@ -149,7 +150,7 @@
 
                         <div class="topbar-info topbar-link-right">
                             <div class="topbar-info-contact">
-                                <a href="{{ site.github.repository_url }}/tree/master/{{ page.path }}" target="_blank"
+                                <a href="{{ site.github.repository_url }}/tree/{{github_branch}}/{{ page.path }}" target="_blank"
                                     rel="noopener noreferrer" title="Edit this page on GitHub">
                                     <svg aria-labelledby="simpleicons-github-icon" role="img" viewBox="0 0 24 24"
                                         xmlns="http://www.w3.org/2000/svg">
