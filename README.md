@@ -1,5 +1,7 @@
 # Swedbank Pay Design Guide Theme for Jekyll
 
+![Swedbank Pay Design Guide Theme for Jekyll][opengraph-image]
+
 This repository hosts the Swedbank Pay Design Guide theme for Jekyll, used for
 [Swedbank Pay on GitHub][swedbankpay] among other things.
 
@@ -67,3 +69,4 @@ This website is available as open source under the terms of the
 [repo]: https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/
 [ruby]: https://www.ruby-lang.org/en/
 [swedbankpay]: https://swedbankpay.github.io/swedbank-pay-design-guide-jekyll-theme/
+[opengraph-image]: https://repository-images.githubusercontent.com/209270355/36818080-53ee-11ea-896c-082addb851a6
