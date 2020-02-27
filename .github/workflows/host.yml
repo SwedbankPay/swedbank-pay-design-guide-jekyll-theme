@@ -1,0 +1,15 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: ./.github/actions/build-jekyll
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

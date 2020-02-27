@@ -1,0 +1,6 @@
+
+name: 'Jekyll'
+description: 'Build Jekyll'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
