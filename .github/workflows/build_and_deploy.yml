@@ -13,4 +13,5 @@ jobs:
       - uses: meitar/jekyll-builder-for-github-pages-action@master
         with:
           secret_gh_pages_api_token: ${{ secrets.GH_PAGES_TOKEN }}
+          debug: true
           
