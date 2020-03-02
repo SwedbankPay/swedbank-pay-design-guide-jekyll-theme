@@ -12,4 +12,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: meitar/jekyll-builder-for-github-pages-action@master
         with:
-          secret_gh_pages_api_token: ${{ secrets.GH_PAGES_TOKEN }}          
+          secret_gh_pages_api_token: ${{ secrets.GH_PAGES_TOKEN }}     
+        env:
+          DEBUG: "true"
