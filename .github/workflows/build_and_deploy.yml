@@ -14,6 +14,7 @@ jobs:
         with:
           secret_gh_pages_api_token: ${{ secrets.GH_PAGES_TOKEN }}
           git_committer_email: dev@payex.com
-          git_committer_name: dev@payex.com
+          git_committer_name: payex-dev
         env:
           DEBUG: "true"
+          GITHUB_ACTOR: payex-dev
