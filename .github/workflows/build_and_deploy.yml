@@ -19,3 +19,4 @@ jobs:
         env:
           DEBUG: "true"
           GITHUB_ACTOR: payex-dev
+          JEKYLL_GITHUB_TOKEN : ${{ secrets.GH_PAGES_TOKEN }}
