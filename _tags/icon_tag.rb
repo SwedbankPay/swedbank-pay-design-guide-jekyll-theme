@@ -1,7 +1,6 @@
-module Jekyll
+module SwedbankPay
   class IconTag < Liquid::Tag
     safe true
-    priority: normal
 
     def initialize(tag_name, text, tokens)
       super
@@ -14,4 +13,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag('icon', Jekyll::IconTag)
+Liquid::Template.register_tag('icon', SwedbankPay::IconTag)
