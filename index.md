@@ -213,4 +213,3 @@ The final element.
 
 ## Material design icons
 
-{% icon credit_card %}
