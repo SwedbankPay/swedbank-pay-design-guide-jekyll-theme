@@ -1,7 +1,5 @@
 module SwedbankPay
   class IconTag < Liquid::Tag
-    safe true
-
     def initialize(tag_name, text, tokens)
       super
       @text = text
