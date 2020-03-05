@@ -52,13 +52,14 @@ Original creator: https://sebnitu.com/2016/10/13/dynamic-menus-in-jekyll/
             {% assign has_children = true %}
             {% endif %}
             {% endfor %}
-
-            {% if has_children == true %}
             <ul class="nav-ul">
               <li {% if page.url contains subnode.url %} aria-current="page" class="nav-leaf active" {% else %}
                 class="nav-leaf" {% endif %}>
                 <a href="{{ subnode.url }}">{{ subnode.title }}</a>
               </li>
+
+              {% if has_children == true %}
+
               {% for subsubnode in pages %}
               {% if subsubnode.url contains subnode_root and subsubnode.url != subnode_root %}
               <li {% if page.url contains subsubnode.url %} class=" nav-leaf active" {% else %} class="nav-leaf"
@@ -69,8 +70,8 @@ Original creator: https://sebnitu.com/2016/10/13/dynamic-menus-in-jekyll/
               </li>
               {% endif %}
               {% endfor %}
+              {% endif %}
             </ul>
-            {% endif %}
 
             {% endif %}
             {% endif %}
