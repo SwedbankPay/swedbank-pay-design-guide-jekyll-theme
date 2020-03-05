@@ -1,20 +1,21 @@
 {% comment %}
 Original creator: https://sebnitu.com/2016/10/13/dynamic-menus-in-jekyll/
 {% endcomment %}
-<nav class="documentation-nav">
-  {% assign pages = site.pages | sort: 'menu-order' %}
-  {% for node in pages %}
-  {% assign node_parts = node.url | split: '/' %}
-  {% assign node_depth = node_parts | size %}
+<div id="dg-sidebar" class="sidebar">
+  <nav class="sidebar-nav">
+    <ul class="main-nav-u"></ul>
+    {% assign pages = site.pages | sort: 'menu-order' %}
+    {% for node in pages %}
+    {% assign node_parts = node.url | split: '/' %}
+    {% assign node_depth = node_parts | size %}
 
-  {% if node_depth == 2 and node.hide_from_sidebar == nil %}
-  <div class="nav-group {% if page.url contains node.url %} active {% endif %}">
-    <div class="nav-heading">
-      <i class="material-icons">keyboard_arrow_right</i>
-      <a {% if page.url contains node.url %} aria-current="page" class="active" {% endif %} href="{{ node.url }}">
-        {{ node.title }}
-      </a>
-    </div>
+    {% if node_depth == 2 and node.hide_from_sidebar == nil %}
+
+    <li class="nav-group">
+      <div class="nav-group-heading">
+        <i class="material-icons">arrow_right</i>
+        <span>{{ node.title }}</span></div>
+    </li>
 
     {% assign node_root = '/' | append: node_parts[1] | append: '/' %}
     {% assign has_children = false %}
@@ -25,25 +26,50 @@ Original creator: https://sebnitu.com/2016/10/13/dynamic-menus-in-jekyll/
     {% endfor %}
 
     {% if has_children == true %}
-    <ul>
+    <ul class="nav-ul">
+
       {% for subnode in pages %}
       {% if subnode.url contains node_root and subnode.url != node_root %}
       {% assign node_parts = subnode.url | split: '/' %}
       {% assign node_depth = node_parts | size %}
 
       {% if node_depth == 3 and subnode.hide_from_sidebar == nil %}
-      <li>
-        <a {% if page.url contains subnode.url %} aria-current="page" class="active" {% endif %}
-          href="{{ subnode.url }}">
-          {{ subnode.title }}
-        </a>
+      <li {% if page.url contains subnode.url %} aria-current="page" class="nav-subgroup active" {% else %}
+        class="nav-subgroup" {% endif %}>
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <span>{{ subnode.title}}</span>
+        </div>
+        {% assign subnode_root = '/' | append: node_parts[1] | append: '/' | append: node_parts[2] | append: '/' %}
+        {% assign has_children = false %}
+        {% for subsubnode in pages %}
+        {% if subsubnode.url contains subnode_root and subsubnode.url != subnode_root %}
+        {% assign has_children = true %}
+        {% endif %}
+        {% endfor %}
+
+        {% if has_children == true %}
+        <ul class="nav-ul">
+          {% for subsubnode in pages %}
+          {% if subsubnode.url contains subnode_root and subsubnode.url != subnode_root %}
+          <li {% if page.url contains subsubnode.url %} class=" nav-leaf active" {% else %} class="nav-leaf"
+            {% endif %}>
+            <a href="{{ subsubnode.url }}">
+              {{ subsubnode.title }} subsubnode title
+            </a>
+          </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+        {% endif %}
       </li>
       {% endif %}
       {% endif %}
       {% endfor %}
     </ul>
     {% endif %}
-  </div>
-  {% endif %}
-  {% endfor %}
-</nav>
+    {% endif %}
+    {% endfor %}
+    </ul>
+  </nav>
+</div>
