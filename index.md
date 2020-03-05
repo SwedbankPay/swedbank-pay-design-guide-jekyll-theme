@@ -213,5 +213,5 @@ The final element.
 
 ## Material design icons
 
-{% icon checkmark %} {% icon gavel %} {% icon visibility %}
+{% icon check %} {% icon line_weight %} {% icon gavel %} {% icon visibility %}
 {% icon work %}
