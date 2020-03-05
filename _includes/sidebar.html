@@ -1,7 +1,7 @@
 {% comment %}
 Original creator: https://sebnitu.com/2016/10/13/dynamic-menus-in-jekyll/
 {% endcomment %}
-<div id="dg-sidebar" class="sidebar">
+<div id="dg-sidebar" class="sidebar sidebar-topbar-sticky">
   <nav class="sidebar-nav">
     <ul class="main-nav-ul">
       {% assign pages = site.pages | sort: 'menu-order' %}
@@ -14,19 +14,24 @@ Original creator: https://sebnitu.com/2016/10/13/dynamic-menus-in-jekyll/
       <li class="nav-group">
         <div class="nav-group-heading">
           <i class="material-icons">arrow_right</i>
-          <span>{{ node.title }}</span></div>
-
-
-        {% assign node_root = '/' | append: node_parts[1] | append: '/' %}
-        {% assign has_children = false %}
-        {% for subnode in pages %}
-        {% if subnode.url contains node_root and subnode.url != node_root %}
-        {% assign has_children = true %}
-        {% endif %}
-        {% endfor %}
-
-        {% if has_children == true %}
+          <span>{{ node.title }}</span>
+        </div>
         <ul class="nav-ul">
+          <li {% if page.url contains node.url %} aria-current="page" class="nav-leaf active" {% else %}
+            class="nav-leaf" {% endif %}>
+            <a href="{{ node.url }}">{{ node.title }}</a>
+          </li>
+
+
+          {% assign node_root = '/' | append: node_parts[1] | append: '/' %}
+          {% assign has_children = false %}
+          {% for subnode in pages %}
+          {% if subnode.url contains node_root and subnode.url != node_root %}
+          {% assign has_children = true %}
+          {% endif %}
+          {% endfor %}
+
+          {% if has_children == true %}
 
           {% for subnode in pages %}
           {% if subnode.url contains node_root and subnode.url != node_root %}
@@ -50,6 +55,10 @@ Original creator: https://sebnitu.com/2016/10/13/dynamic-menus-in-jekyll/
 
             {% if has_children == true %}
             <ul class="nav-ul">
+              <li {% if page.url contains subnode.url %} aria-current="page" class="nav-leaf active" {% else %}
+                class="nav-leaf" {% endif %}>
+                <a href="{{ subnode.url }}">{{ subnode.title }}</a>
+              </li>
               {% for subsubnode in pages %}
               {% if subsubnode.url contains subnode_root and subsubnode.url != subnode_root %}
               <li {% if page.url contains subsubnode.url %} class=" nav-leaf active" {% else %} class="nav-leaf"
@@ -62,12 +71,13 @@ Original creator: https://sebnitu.com/2016/10/13/dynamic-menus-in-jekyll/
               {% endfor %}
             </ul>
             {% endif %}
+
+            {% endif %}
+            {% endif %}
+            {% endfor %}
           </li>
           {% endif %}
-          {% endif %}
-          {% endfor %}
         </ul>
-        {% endif %}
         {% endif %}
         {% endfor %}
     </ul>
