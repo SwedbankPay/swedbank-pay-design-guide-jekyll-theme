@@ -5,7 +5,7 @@ module SwedbankPay
       @text = text
     end
 
-    def render(context)
+    def render(_)
       "<i class=\"material-icons\">#{@text.strip}</i>"
     end
   end
