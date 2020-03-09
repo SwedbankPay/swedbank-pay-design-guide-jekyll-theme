@@ -215,3 +215,16 @@ The final element.
 
 {% icon check %} {% icon line_weight %} {% icon gavel %} {% icon visibility %}
 {% icon work %}
+
+## PlantUML
+
+```plantUML
+@startuml component
+actor client
+node app
+database db
+
+db -> app
+app -> client
+@enduml
+```
