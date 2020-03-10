@@ -20,8 +20,6 @@ jobs:
           git_committer_email: dev@payex.com
           git_committer_name: payex-dev
           gh_pages_publishing_source: gh-pages
-          post_build_commands: |
-            ruby ./.github/scripts/plantUml.rb
         env:
           GITHUB_ACTOR: payex-dev
           JEKYLL_GITHUB_TOKEN : ${{ secrets.GH_PAGES_TOKEN }}
