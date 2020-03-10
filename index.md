@@ -219,7 +219,7 @@ The final element.
 ## PlantUML
 
 ```plantUML
-@startuml component
+@startuml
 actor client
 node app
 database db

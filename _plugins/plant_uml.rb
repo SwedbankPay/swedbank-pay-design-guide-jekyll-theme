@@ -1,14 +1,12 @@
 require 'fileutils'
 
-Jekyll::Hooks.register([:pages, :posts], :post_render) do |post|
-  
-  plant_uml_jar_file = "./.github/scripts/plantuml.1.2020.2.jar"
+Jekyll::Hooks.register([:pages, :posts], :post_render) do |post|  
+  plant_uml_jar_file = "./_plugins/plantuml.1.2020.2.jar"
   diagram_directory = "assets/diagrams"
 
   FileUtils.mkdir_p "./_site/#{diagram_directory}"
 
   parsed_html = Nokogiri::HTML.parse(post.output)
-
 
   parsed_html.css(".language-plantUML").each_with_index do | tag, tag_index |
     uml_file_base_name = "#{post.name}_#{tag_index}"
