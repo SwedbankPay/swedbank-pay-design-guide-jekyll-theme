@@ -15,13 +15,9 @@ html_files.each_with_index do |file, file_index|
     uml_file_base_name = "#{File.basename(file, ".*")}_#{file_index}_#{tag_index}"
     uml_file_name = "./_site/#{diagram_directory}/#{uml_file_base_name}"
     uml_file = File.open("#{uml_file_name}.puml", "w+"){ |f| f.write(tag.text)}
-    system("java -jar #{plant_uml_jar_file} -tpng #{uml_file_name}.puml") or raise "PlantUml error"
-    image_node = parsed_html.create_element "img"
-    image_node['src'] = "#{diagram_directory}/#{uml_file_base_name}.png"
-    image_node['width'] = "#{Dimensions.width("#{uml_file_name}.png")}"
-    image_node['height'] = "#{Dimensions.height("#{uml_file_name}.png")}"
-    puts image_node
-    tag.replace(image_node)
+    system("java -jar #{plant_uml_jar_file} -tsvg #{uml_file_name}.puml") or raise "PlantUml error"
+
+    tag.parent.replace(File.read("#{uml_file_name}.svg"))
   end
   File.write(file, parsed_html)
 end
