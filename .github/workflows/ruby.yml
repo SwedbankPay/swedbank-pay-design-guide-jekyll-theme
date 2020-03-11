@@ -10,12 +10,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby 2.6
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.6.x
     - uses: actions/setup-java@v1
       with:
         java-version: '1.8'
-    - uses: actions/setup-ruby@v1
-      with:
-        ruby-version: 2.6.x
     - uses: kamiazya/setup-graphviz@v1
     - name: Build and test with Rake
       run: |
