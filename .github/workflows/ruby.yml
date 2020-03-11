@@ -14,8 +14,6 @@ jobs:
       with:
         ruby-version: 2.6.x
     - uses: kamiazya/setup-graphviz@v1
-      with:
-        java-version: '8'
     - name: Build and test with Rake
       run: |
         gem install bundler
