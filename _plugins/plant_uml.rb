@@ -1,6 +1,7 @@
 require 'fileutils'
 
 Jekyll::Hooks.register([:pages, :posts], :post_render) do |post|
+  puts `java -version`
   plant_uml_jar_file = "./_plugins/plantuml.1.2020.2.jar"
   diagram_directory = "assets/diagrams"
 
