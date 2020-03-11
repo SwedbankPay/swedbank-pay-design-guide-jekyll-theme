@@ -14,8 +14,8 @@ jobs:
       with:
         ruby-version: 2.6.x
     - uses: actions/setup-java@v1
-        with:
-          java-version: '6'
+      with:
+        java-version: '6'
     - uses: actions/setup-graphviz@v1
     - name: Build and test with Rake
       run: |
