@@ -12,7 +12,7 @@ jobs:
     - uses: actions/setup-java@v1
       with:
         java-version: '6'
-    - uses: actions/setup-graphviz@v1
+    - uses: kamiazya/setup-graphviz@v1
     - name: Build the site in the jekyll/builder container
       run: |
         docker run \

@@ -13,7 +13,7 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6.x
-    - uses: actions/setup-java@v1
+    - uses: kamiazya/setup-graphviz@v1
       with:
         java-version: '6'
     - uses: actions/setup-graphviz@v1

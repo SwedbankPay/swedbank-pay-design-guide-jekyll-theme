@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: '6'
-      - uses: actions/setup-graphviz@v1
+      - uses: kamiazya/setup-graphviz@v1
       - uses: SwedbankPay/jekyll-builder-for-github-pages-action@master
         with:
           secret_gh_pages_api_token: ${{ secrets.GH_PAGES_TOKEN }}
