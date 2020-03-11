@@ -15,7 +15,7 @@ jobs:
     - uses: kamiazya/setup-graphviz@v1
     - name: Get libfontconfig
       run: |
-        apt-get install -y libfontconfig
+        sudo apt-get install -y libfontconfig
     - name: Build the site in the jekyll/builder container
       run: |
         docker run \
