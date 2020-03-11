@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
   cmake \
   git
 
+#COPY . /srv/jekyll
 WORKDIR /srv/jekyll
 
 RUN bundle install
@@ -16,4 +17,4 @@ EXPOSE 4000
 
 ENTRYPOINT [ "bundle", "exec", "jekyll" ]
 
-CMD [ "bundle", "exec", "jekyll", "serve", "--force_polling", "-H", "0.0.0.0", "-P", "4000" ]
+CMD [ "bundle", "exec", "jekyll", "serve"]
