@@ -16,10 +16,8 @@ jobs:
     - name: Get libfontconfig
       run: |
         sudo apt-get install -y libfontconfig
-    - name: Build the site in the jekyll/builder container
+    - name: Build the site
       run: |
-        docker run \
-          -v ${{ github.workspace }}:/srv/jekyll \
-          -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-          jekyll/builder:latest /bin/bash \
-          -c "chmod 777 /srv/jekyll && jekyll build --future"
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+        bundle exec jekyll build
