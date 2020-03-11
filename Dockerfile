@@ -8,11 +8,11 @@ RUN apt-get update && apt-get install -y \
   cmake \
   git
 
+WORKDIR /srv/jekyll
+
 RUN bundle install
 
 EXPOSE 4000
-
-WORKDIR /site
 
 ENTRYPOINT [ "bundle", "exec", "jekyll" ]
 
