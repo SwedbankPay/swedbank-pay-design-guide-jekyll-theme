@@ -14,13 +14,14 @@ jobs:
         with:
           java-version: '1.8'
       - uses: kamiazya/setup-graphviz@v1
+      - name: Installs libfontconfig
+        run: apt-get install -y libfontconfig
       - uses: SwedbankPay/jekyll-builder-for-github-pages-action@master
         with:
           secret_gh_pages_api_token: ${{ secrets.GH_PAGES_TOKEN }}
           git_committer_email: dev@payex.com
           git_committer_name: payex-dev
           gh_pages_publishing_source: gh-pages
-          pre_build_commands: apt-get install -y libfontconfig
         env:
           GITHUB_ACTOR: payex-dev
           JEKYLL_GITHUB_TOKEN : ${{ secrets.GH_PAGES_TOKEN }}
