@@ -17,7 +17,8 @@ RUN apt-get update && apt-get install -y \
 RUN bundle install
 
 EXPOSE 4000
+EXPOSE 35729
 
 ENTRYPOINT [ "bundle", "exec", "jekyll", "serve" ]
 
-CMD [ "bundle", "exec", "jekyll", "serve", "--livereload", "--trace", "--host", "0.0.0.0"]
+CMD [ "bundle", "exec", "jekyll", "serve", "--force_polling","--livereload", "--host", "0.0.0.0"]
