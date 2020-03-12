@@ -18,4 +18,4 @@ EXPOSE 4000
 
 ENTRYPOINT [ "bundle", "exec", "jekyll", "serve" ]
 
-CMD [ "bundle", "exec", "jekyll", "serve"]
+CMD [ "bundle", "exec", "jekyll", "serve", "--trace"]
