@@ -7,3 +7,4 @@ Gemfile.lock
 /.env
 /component.png
 /plant_uml.txt
+.jekyll-cache
