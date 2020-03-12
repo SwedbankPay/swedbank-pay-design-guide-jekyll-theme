@@ -1,5 +1,8 @@
 FROM ruby:2.7
 
+COPY . /srv/jekyll
+WORKDIR /srv/jekyll
+
 RUN gem install bundler
 RUN apt-get update && apt-get install -y \
   libfontconfig \
@@ -9,8 +12,6 @@ RUN apt-get update && apt-get install -y \
   cmake \
   git
 
-COPY . /srv/jekyll
-WORKDIR /srv/jekyll
 
 RUN bundle install
 
