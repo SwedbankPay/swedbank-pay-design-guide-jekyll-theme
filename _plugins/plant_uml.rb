@@ -4,7 +4,7 @@ Jekyll::Hooks.register([:pages, :posts], :post_render) do |post|
   plant_uml_jar_file = "./_plugins/plantuml.1.2020.2.jar"
   diagram_directory = "_site/assets/diagrams"
 
-  Dir.mkdir(diagram_directory) unless File.exists?(diagram_directory)
+  FileUtils.mkdir_p(diagram_directory) unless File.exists?(diagram_directory)
 
   parsed_html = Nokogiri::HTML.parse(post.output)
 
