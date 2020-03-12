@@ -2,7 +2,7 @@ require 'fileutils'
 
 Jekyll::Hooks.register([:pages, :posts], :post_render) do |post|
   plant_uml_jar_file = "./_plugins/plantuml.1.2020.2.jar"
-  diagram_directory = "./_site/assets/diagrams"
+  diagram_directory = "_site/assets/diagrams"
 
   Dir.mkdir(diagram_directory) unless File.exists?(diagram_directory)
 
@@ -13,9 +13,9 @@ Jekyll::Hooks.register([:pages, :posts], :post_render) do |post|
     uml_file_name = "#{diagram_directory}/#{uml_file_base_name}"
     uml_file = File.open("#{uml_file_name}.puml", "w+"){ |f| f.write(tag.text)}
     
-    system("java -jar #{plant_uml_jar_file} -tsvg #{uml_file_name}.puml -v") or next
+    system("java -jar #{plant_uml_jar_file} -tsvg #{uml_file_name}.puml -v") or raise "PlantUml error"
 
-    tag.parent.replace(File.read("#{uml_file_name}.svg"))
+    tag.parent.replace(File.read("./#{uml_file_name}.svg"))
   end
   post.output = parsed_html.to_html
 end

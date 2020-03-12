@@ -10,7 +10,8 @@ RUN apt-get update && apt-get install -y \
   gcc \
   bash \
   cmake \
-  git
+  git \
+  default-jre
 
 
 RUN bundle install
@@ -19,4 +20,4 @@ EXPOSE 4000
 
 ENTRYPOINT [ "bundle", "exec", "jekyll", "serve" ]
 
-CMD [ "bundle", "exec", "jekyll", "serve", "--trace"]
+CMD [ "bundle", "exec", "jekyll", "serve", "--livereload", "--trace", "--host", "0.0.0.0"]
