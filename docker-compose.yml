@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  jekyll:
+  jekyll-container:
     build:
       context: .
       dockerfile: ./dockerfile
