@@ -20,7 +20,7 @@ p.code-header {
     background-color: $darkened-bg;
     color: #512b2b;
     border-bottom: 1px solid darken($bg, 30%);;
-    margin-bottom: -7px;
+    margin-bottom: 0;
 }
 
 h1 > a.header-anchor,
@@ -111,100 +111,129 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
     float: right;
 }
 
-.documentation .language-mermaid {
-    $apricot: #fbf2ea;
-    $pink: #efb7b6;
-    $brand-info-light: #e8eff9;
-    $brand-success-light: #f2f7eb;
-    $darker-apricot: darken($apricot, 10%);
-    $black: #222;
-    $brown: #2f2424;
+.documentation {
+    .highlighter-rouge {
+        margin-bottom: 1rem;
 
-    svg {
-        width: 100% !important;
-        height: 100%;
+        code {
+            padding: 0;
+            background-color: none;
+            border: none;
+            font-size: 1rem;
+        }
+
+        pre.highlight {
+            background-color: #f5f2f0;
+            margin: 0;
+        }
+
+        .rouge-table {
+            pre {
+                font-family: 'Akkurat Mono', monospace;
+            }
+
+            .rouge-gutter {
+                padding: 0 .7rem;
+            }
+        }
     }
 
-    rect.actor {
-        fill: $apricot !important;
-        stroke: $darker-apricot !important;
-    }
 
-    .activation0,
-    .activation1,
-    .activation2 {
-        fill: $brand-success-light !important;
-        stroke: darken($brand-success-light, 10%) !important;
-    }
+    .language-mermaid {
+        $apricot: #fbf2ea;
+        $pink: #efb7b6;
+        $brand-info-light: #e8eff9;
+        $brand-success-light: #f2f7eb;
+        $darker-apricot: darken($apricot, 10%);
+        $black: #222;
+        $brown: #2f2424;
 
-    text.actor {
-        font-family: Arial, sans-serif !important;
-        font-size: 1rem !important;
-    }
+        svg {
+            width: 100% !important;
+            height: 100%;
+        }
 
-    .actor-line {
-        stroke: $apricot !important;
-        stroke-width: 4 !important;
-    }
+        rect.actor {
+            fill: $apricot !important;
+            stroke: $darker-apricot !important;
+        }
 
-    .messageLine0 {
-        stroke-width: 2 !important;
-        stroke-dasharray: "2 2";
-        marker-end: "url(#arrowhead)";
-        stroke: $black !important;
-    }
+        .activation0,
+        .activation1,
+        .activation2 {
+            fill: $brand-success-light !important;
+            stroke: darken($brand-success-light, 10%) !important;
+        }
 
-    .messageLine1 {
-        stroke-width:1.5;
-        stroke-dasharray: "2 2";
-        stroke: $brown !important;
-    }
+        text.actor {
+            font-family: Arial, sans-serif !important;
+            font-size: 1rem !important;
+        }
 
-    #arrowhead {
-        fill: $brown !important;
-    }
+        .actor-line {
+            stroke: $apricot !important;
+            stroke-width: 4 !important;
+        }
 
-    .messageText {
-        fill: $black !important;
-        stroke: none;
-        font-family: Arial, sans-serif !important;
-        font-size: 1rem !important;
-    }
+        .messageLine0 {
+            stroke-width: 2 !important;
+            stroke-dasharray: "2 2";
+            marker-end: "url(#arrowhead)";
+            stroke: $black !important;
+        }
 
-    .labelBox {
-        stroke: $pink !important;
-        fill: $pink !important;
-    }
+        .messageLine1 {
+            stroke-width:1.5;
+            stroke-dasharray: "2 2";
+            stroke: $brown !important;
+        }
 
-    .labelText {
-        fill: $black !important;
-        stroke: none;
-        font-family: Arial, sans-serif !important;
-    }
+        #arrowhead {
+            fill: $brown !important;
+        }
 
-    .loopText {
-        fill: $black !important;
-        stroke: none;
-        font-family: Arial, sans-serif !important;
-        font-size: 1rem !important;
-    }
+        .messageText {
+            fill: $black !important;
+            stroke: none;
+            font-family: Arial, sans-serif !important;
+            font-size: 1rem !important;
+        }
 
-    .loopLine {
-        stroke-width:2;
-        stroke-dasharray: "2 2";
-        marker-end:"url(#arrowhead)";
-        stroke: $pink !important;
-    }
+        .labelBox {
+            stroke: $pink !important;
+            fill: $pink !important;
+        }
 
-    .note {
-        stroke: darken($brand-info-light, 20%) !important;
-        fill: $brand-info-light !important;
-    }
+        .labelText {
+            fill: $black !important;
+            stroke: none;
+            font-family: Arial, sans-serif !important;
+        }
 
-    .noteText {
-        fill: $black !important;
-        stroke: none;
-        font-family: Arial, sans-serif !important;
-        font-size: 1rem !important;
+        .loopText {
+            fill: $black !important;
+            stroke: none;
+            font-family: Arial, sans-serif !important;
+            font-size: 1rem !important;
+        }
+
+        .loopLine {
+            stroke-width:2;
+            stroke-dasharray: "2 2";
+            marker-end:"url(#arrowhead)";
+            stroke: $pink !important;
+        }
+
+        .note {
+            stroke: darken($brand-info-light, 20%) !important;
+            fill: $brand-info-light !important;
+        }
+
+        .noteText {
+            fill: $black !important;
+            stroke: none;
+            font-family: Arial, sans-serif !important;
+            font-size: 1rem !important;
+        }
     }
 }

@@ -57,8 +57,9 @@ Content-Type: application/json
 }
 ```
 
-Here's some `<inline>`{:.language-html} `{ "code": true }`{:.language-js}
-that should `.be { highlighted: according }`{:.language-css} to their
+Here's some `<inline>`{:.language-html .highlight}
+`{ "code": true }`{:.language-js .highlight}
+that should `.be { highlighted: according; }`{:.language-css .highlight} to their
 language.
 
 #### Header 4
