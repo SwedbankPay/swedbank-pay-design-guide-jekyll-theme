@@ -6,6 +6,9 @@ module Rouge
       tag 'platnuml'
 
       def stream(tokens, &block)
+        if tokens.inspect.include? 'Rouge::Lexers::PlantUml'
+          puts "PlantUML"
+        end
         # 1. We need to figure out which lexer is used for the given tokens.
         #    This is visible if we do `puts tokens.inspect`, but I have no
         #    idea how to write an `if` statement for it.
@@ -50,6 +53,11 @@ module Rouge
     class PlantUml < PlainText
       title "A passthrough lexer used for PlantUML input"
       tag 'plantuml'
+
+      def initialize(*)
+        super
+        @plantuml = true
+      end
     end
   end
 end
