@@ -8,7 +8,7 @@ Jekyll::Hooks.register([:pages, :posts], :post_render) do |post|
 
   parsed_html = Nokogiri::HTML.parse(post.output)
 
-  parsed_html.css(".language-plantUML").each_with_index do | tag, tag_index |
+  parsed_html.css(".language-plantUML, .language-plantuml, .language-plantUml").each_with_index do | tag, tag_index |
     uml_file_base_name = "#{post.name}_#{tag_index}"
     uml_file_name = "#{diagram_directory}/#{uml_file_base_name}"
     uml_file = File.open("#{uml_file_name}.puml", "w+"){ |f| f.write(tag.text)}
