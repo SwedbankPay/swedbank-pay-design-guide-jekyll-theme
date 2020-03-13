@@ -4,11 +4,12 @@ plugins:
   - jemoji
 # To include node_modules and other folders that are excluded by default:
 # exclude: []
-#markdown: PlantUmlProcessor
 kramdown:
   input: GFM
   syntax_highlighter: rouge
   syntax_highlighter_opts:
+    guess_lang: true
+    formatter: PlantUmlFormatter
     default_lang: html
     css_class: 'highlight'
     block:
