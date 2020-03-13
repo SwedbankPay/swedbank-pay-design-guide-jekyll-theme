@@ -4,6 +4,19 @@ plugins:
   - jemoji
 # To include node_modules and other folders that are excluded by default:
 # exclude: []
+#markdown: PlantUmlProcessor
+highlighter: rogue
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    default_lang: html
+    css_class: 'highlight'
+    span:
+      line_numbers: true
+      start_line: 1
+    block:
+      line_numbers: true
+      start_line: 1
 tipue_search:
   include:
     pages: true

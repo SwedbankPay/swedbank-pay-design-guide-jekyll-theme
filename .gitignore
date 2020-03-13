@@ -8,3 +8,5 @@ Gemfile.lock
 /component.png
 /plant_uml.txt
 .jekyll-cache
+.gem-cache
+.cache
