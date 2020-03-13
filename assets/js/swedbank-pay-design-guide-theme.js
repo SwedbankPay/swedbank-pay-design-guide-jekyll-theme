@@ -69,20 +69,6 @@
     });
 })();
 
-// Inititialize Prism.js
-(function() {
-    if (typeof self === 'undefined' || !self.Prism || !self.document || !document.querySelector) {
-        return;
-    }
-
-    var preElements = document.querySelectorAll('.highlighter-rouge:not(.language-mermaid) pre.highlight, code[class*="language"]:not(.language-mermaid)');
-
-    // TODO: Replace with https://github.com/PrismJS/prism/pull/2074 once it's in production.
-    for (var preElement of preElements) {
-        Prism.highlightElement(preElement, false);
-    }
-})();
-
 // Initialize Tipue search
 (function() {
     $(document).ready(function() {
