@@ -57,6 +57,22 @@ Content-Type: application/json
 }
 ```
 
+{:.code-header}
+**JSON**
+
+```json
+{
+    "operation": "initiate-consumer-session",
+    "msisdn": "+4798765432",
+    "email": "olivia.nyhuus@example.com",
+    "consumerCountryCode": "NO",
+    "nationalIdentifier": {
+        "socialSecurityNumber": "26026708248",
+        "countryCode": "NO"
+    }
+}
+```
+
 Here's some `<inline>`{:.language-html .highlight}
 `{ "code": true }`{:.language-js .highlight}
 that should `.be { highlighted: according; }`{:.language-css .highlight} to their
@@ -219,7 +235,7 @@ The final element.
 
 ## PlantUML
 
-```plantUML
+```plantuml
 @startuml
 actor client
 node app
