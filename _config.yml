@@ -9,7 +9,6 @@ kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     guess_lang: true
-    formatter: PlantUmlFormatter
     default_lang: html
     css_class: 'highlight'
     block:
