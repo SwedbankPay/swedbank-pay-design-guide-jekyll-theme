@@ -1,4 +1,4 @@
-require 'shell'
+require 'open3'
 
 class Kramdown::Converter::Html
   alias_method :super_convert_codeblock, :convert_codeblock
@@ -14,16 +14,14 @@ class Kramdown::Converter::Html
   def convert_plantuml_to_svg(content)
     # We should find a way to download the JAR file on `bundle install`
     plant_uml_jar_file = "./_plugins/plantuml.1.2020.2.jar"
+    cmd = "java -jar #{plant_uml_jar_file} -tsvg -pipe"
 
-    sh = Shell.new
-    svg = (
-      sh.echo(content) |
-      # We need to capture the std and err output from the Java process
-      # because even if conversion fails due to missing dot executable
-      # or other problems, the exit code seems to be 0.
-      sh.system("java -jar #{plant_uml_jar_file} -tsvg -pipe")
-    ).to_s
+    stdout, stderr, status = Open3.capture3(cmd, :stdin_data => content)
 
-    return svg
+    unless stderr.empty?
+      raise stderr
+    end
+
+    return stdout
   end
 end
