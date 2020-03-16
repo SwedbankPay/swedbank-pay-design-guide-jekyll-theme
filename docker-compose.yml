@@ -11,3 +11,9 @@ services:
       - 35729:35729
     volumes:
       - .:/home/jekyll
+      - cache-box
+
+  cache-box:
+    image: busybox
+    volumes:
+      - /box

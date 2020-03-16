@@ -12,7 +12,8 @@ RUN apk add \
 EXPOSE 4000
 EXPOSE 35729
 
+ENV BUNDLE_PATH /box
 RUN gem install bundler
-RUN bundle install
+RUN bundle check || bundle install
 
 CMD [ "bundle", "exec", "jekyll", "build", "JEKYLL_ENV=production"]
