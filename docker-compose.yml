@@ -1,7 +1,10 @@
 version: '3'
 
+volumes:
+  bundle-cache:
+
 services:
-  jekyll-container:
+  jekyll:
     build:
       context: .
       dockerfile: ./dockerfile
@@ -11,9 +14,9 @@ services:
       - 35729:35729
     volumes:
       - .:/home/jekyll
-      - cache-box
+      - bundle-cache:/bundle-cache
 
-  cache-box:
+  bundle-cache-box:
     image: busybox
     volumes:
-      - /box
+      - bundle-cache:/bundle-cache
