@@ -1,11 +1,5 @@
 version: '3'
 
-volumes:
-  bundle-cache:
-    driver: local-persist
-    driver_opts:
-      mountpoint: ./.bundle
-
 services:
   jekyll:
     container_name: jekyll
@@ -18,10 +12,4 @@ services:
       - 35729:35729
     volumes:
       - .:/home/jekyll
-      - bundle-cache:/bundle-cache
-
-  bundle-cache-box:
-    container_name: bundle-cache-box
-    image: busybox
-    volumes:
-      - bundle-cache:/bundle-cache
+      - .bundle:/home/bundle
