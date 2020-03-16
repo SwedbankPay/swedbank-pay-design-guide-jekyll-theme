@@ -12,8 +12,9 @@ RUN apk add \
 EXPOSE 4000
 EXPOSE 35729
 
+ENV BUNDLE_PATH '/usr/local/bundle'
+#RUN bundle config set path '/usr/local/bundle'
 RUN gem install bundler
-RUN bundle config set path '/usr/local/bundle'
 RUN bundle install
 
 CMD [ "bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--livereload"]
