@@ -14,9 +14,9 @@ RUN apk add \
 # https://github.com/instructure/canvas-lms/issues/1221#issuecomment-362690811
 
 ENV BUNDLE_PATH /home/bundle-cache
-RUN mkdir /home/bundle-cache && \
+RUN mkdir -p /home/bundle-cache && \
     chmod -R a+w /home/bundle-cache && \
-    mkdir .bundle && \
+    mkdir -p .bundle && \
     chmod -R a+w .bundle && \
     gem install bundler && \
     bundle package --all
