@@ -2,6 +2,9 @@ version: '3'
 
 volumes:
   bundle-cache:
+    driver: local-persist
+    driver_opts:
+      mountpoint: ./.bundle
 
 services:
   jekyll:
