@@ -19,7 +19,7 @@ RUN mkdir -p /home/bundle-cache && \
     mkdir -p .bundle && \
     chmod -R a+w .bundle && \
     gem install bundler && \
-    bundle package --all
+    bundle check || bundle install
 
 EXPOSE 4000
 EXPOSE 35729
