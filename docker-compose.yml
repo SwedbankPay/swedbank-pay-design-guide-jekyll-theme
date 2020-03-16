@@ -1,5 +1,8 @@
 version: '3'
 
+volumes:
+  bundle-cache:
+
 services:
   jekyll:
     build:
@@ -11,3 +14,9 @@ services:
       - 35729:35729
     volumes:
       - .:/home/jekyll
+      - bundle-cache:/bundle-cache
+
+  bundle-cache-box:
+    image: busybox
+    volumes:
+      - bundle-cache:/bundle-cache

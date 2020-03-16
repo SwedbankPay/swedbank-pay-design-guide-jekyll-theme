@@ -13,8 +13,9 @@ RUN apk add \
 # details:
 # https://github.com/instructure/canvas-lms/issues/1221#issuecomment-362690811
 
-RUN touch Gemfile.lock && \
-    chmod a+w Gemfile.lock && \
+ENV BUNDLE_PATH /home/bundle-cache
+RUN mkdir /home/bundle-cache && \
+    chmod -R a+w /home/bundle-cache && \
     mkdir .bundle && \
     chmod -R a+w .bundle && \
     gem install bundler && \
