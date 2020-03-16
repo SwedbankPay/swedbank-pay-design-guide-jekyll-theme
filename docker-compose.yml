@@ -12,4 +12,4 @@ services:
       - 35729:35729
     volumes:
       - .:/home/jekyll
-      - .bundle:/home/bundle
+      - .bundle:/home/jekyll/.bundle
