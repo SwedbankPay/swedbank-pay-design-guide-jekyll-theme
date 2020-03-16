@@ -5,6 +5,7 @@ volumes:
 
 services:
   jekyll:
+    container_name: jekyll
     build:
       context: .
       dockerfile: ./dockerfile
@@ -17,6 +18,7 @@ services:
       - bundle-cache:/bundle-cache
 
   bundle-cache-box:
+    container_name: bundle-cache-box
     image: busybox
     volumes:
       - bundle-cache:/bundle-cache
