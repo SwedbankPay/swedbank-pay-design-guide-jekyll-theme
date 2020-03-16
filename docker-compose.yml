@@ -5,9 +5,9 @@ services:
     build:
       context: .
       dockerfile: ./dockerfile
+    entrypoint: bundle exec jekyll serve --host 0.0.0.0 --livereload -i --force_polling
     ports:
       - 4000:4000
       - 35729:35729
     volumes:
       - .:/home/jekyll
-      - ./.gem-cache:/usr/local/bundle
