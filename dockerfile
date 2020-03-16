@@ -15,6 +15,7 @@ RUN apk add \
 
 RUN touch Gemfile.lock && \
     chmod a+w Gemfile.lock && \
+    mkdir .bundle && \
     chmod -R a+w .bundle && \
     gem install bundler && \
     bundle package --all
