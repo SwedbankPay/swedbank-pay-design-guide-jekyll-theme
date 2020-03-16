@@ -4,7 +4,7 @@ WORKDIR /home/jekyll
 COPY . /home/jekyll
 
 RUN gem install bundler
-RUN apk --no-cache add \
+RUN apk add \
   graphviz \
   openjdk8-jre-base \
   fontconfig \
