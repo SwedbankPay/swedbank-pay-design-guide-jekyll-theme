@@ -8,6 +8,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Docker compose build
+      run: |
+        docker-compose build
+    - name: Docker compose up
+      run: |
+        docker-compose up
     - uses: actions/checkout@v2
     - uses: actions/setup-java@v1
       with:
