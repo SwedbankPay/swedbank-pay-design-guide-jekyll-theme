@@ -10,3 +10,4 @@ Gemfile.lock
 .jekyll-cache
 .gem-cache
 .cache
+.java/

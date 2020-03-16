@@ -16,4 +16,4 @@ EXPOSE 35729
 RUN chmod +x docker-startup.sh
 ENTRYPOINT [ "./docker-startup.sh" ]
 
-CMD [ "bundle", "exec", "jekyll", "serve", "--force_polling","--livereload", "--host", "0.0.0.0", "-i"]
+CMD [ "bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--livereload"]
