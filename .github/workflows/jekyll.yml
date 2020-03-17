@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: Docker compose build
       run: |
-        docker build
+        docker-compose build
     - name: Docker compose up
       run: |
-        docker run
+        docker-compose run
