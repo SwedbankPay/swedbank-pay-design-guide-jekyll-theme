@@ -9,8 +9,4 @@ jobs:
 
     steps:
     - name: Docker compose build
-      run: |
-        docker-compose build
-    - name: Docker compose up
-      run: |
-        docker-compose run
+      run: docker-compose up --build
