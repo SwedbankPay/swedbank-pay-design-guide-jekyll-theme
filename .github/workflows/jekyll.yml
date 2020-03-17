@@ -10,4 +10,4 @@ jobs:
     steps:
     - name: Docker compose build
       run: |
-        docker-compose build -f ../docker-compose.yml -f ../docker-compose.ci.yml
+        docker-compose build -f ./docker-compose.yml -f ./docker-compose.ci.yml
