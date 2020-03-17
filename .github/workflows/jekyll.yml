@@ -9,4 +9,8 @@ jobs:
 
     steps:
     - name: Docker compose build
-      run: docker-compose up --build
+      run: |
+      docker run \
+      --volume="${pwd}:/srv/jekyll" \
+      --volume="${pwd}/.bundle-cache:/usr/local/bundle" \
+      jekyll/minimal:3.8 jekyll build
