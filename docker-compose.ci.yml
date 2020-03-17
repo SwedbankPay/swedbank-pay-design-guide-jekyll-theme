@@ -1,0 +1,5 @@
+version: '3'
+
+services:
+  jekyll:
+    entrypoint: bundle exec jekyll build
