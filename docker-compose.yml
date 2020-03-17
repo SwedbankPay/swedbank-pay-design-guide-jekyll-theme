@@ -3,13 +3,11 @@ version: '3'
 services:
   jekyll:
     container_name: jekyll
-    build:
-      context: .
-    entrypoint: bundle exec jekyll serve --host 0.0.0.0 --livereload -i --force_polling
     image: jekyll/jekyll:3.8
     ports:
       - 4000:4000
       - 35729:35729
+    command: jekyll serve --livereload -i --force_polling --verbose --watch
     volumes:
-      - .:/home/jekyll
+      - .:/srv/jekyll
       - .bundle-cache:/usr/local/bundle
