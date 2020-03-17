@@ -11,6 +11,6 @@ jobs:
     - name: Docker compose build
       run: |
         docker run \
-        --volume="${pwd}:/srv/jekyll" \
+        --volume="${pwd}:/home/jekyll" \
         --volume="${pwd}/.bundle-cache:/usr/local/bundle" \
         jekyll/minimal:3.8 jekyll build
