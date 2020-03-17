@@ -5,11 +5,11 @@ services:
     container_name: jekyll
     build:
       context: .
-      dockerfile: ./dockerfile
     entrypoint: bundle exec jekyll serve --host 0.0.0.0 --livereload -i --force_polling
+    image: jekyll/jekyll:3.8
     ports:
       - 4000:4000
       - 35729:35729
     volumes:
       - .:/home/jekyll
-      - .bundle:/home/jekyll/.bundle
+      - .bundle-cache:/usr/local/bundle
