@@ -8,9 +8,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Show me your files
-      run: |
-        echo ls
     - name: Docker compose up
       run: |
         docker-compose \
