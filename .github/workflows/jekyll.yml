@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: Show me your files
       run: |
-        ls
+        echo ls
     - name: Docker compose up
       run: |
         docker-compose \
