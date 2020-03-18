@@ -11,6 +11,6 @@ jobs:
     - name: Docker compose up
       run: |
         docker-compose \
-          -f ../../docker-compose.yml \
-          -f ../../docker-compose.ci.yml \
+          -f docker-compose.yml \
+          -f docker-compose.ci.yml \
           up -d
