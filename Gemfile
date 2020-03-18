@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 gemspec
 
-gem 'jekyll', group: :jekyll_plugins
+gem 'jekyll', '~> 4.0', group: :jekyll_plugins
 gem 'jekyll-github-metadata'
 gem 'jekyll-assets'
 gem 'jemoji'

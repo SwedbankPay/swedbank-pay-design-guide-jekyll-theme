@@ -139,7 +139,7 @@ PLATFORMS
 DEPENDENCIES
   bundler
   faraday (~> 0.17.3)
-  jekyll
+  jekyll (~> 4.0)
   jekyll-assets
   jekyll-github-metadata
   jemoji
