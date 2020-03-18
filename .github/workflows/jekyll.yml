@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Docker compose test
+      run: |
+        docker-compose up 
     - name: Docker compose up
       run: |
         docker-compose \
