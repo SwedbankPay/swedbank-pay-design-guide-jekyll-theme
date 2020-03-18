@@ -8,6 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Docker run
+      run: |
+        docker run --rm \
+        --volume="${PWD}:/srv/jekyll" \
+        -it jekyll/jekyll:3.8 jekyll build
     - name: Docker compose build
       run: |
         docker-compose \
