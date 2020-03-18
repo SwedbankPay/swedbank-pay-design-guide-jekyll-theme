@@ -10,4 +10,4 @@ services:
     command: jekyll serve --livereload -i --force_polling --verbose --watch
     volumes:
       - .:/srv/jekyll
-      - .bundle-cache:/usr/local/bundle
+      - .bundle:/usr/local/bundle
