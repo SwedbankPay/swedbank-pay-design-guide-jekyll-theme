@@ -8,11 +8,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Docker compose build
-      run: |
-        docker-compose \
-          -f docker-compose.ci.yml \
-          build
     - name: Docker compose up
       run: |
         docker-compose \
