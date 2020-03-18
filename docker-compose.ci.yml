@@ -2,6 +2,4 @@ version: '3'
 
 services:
   jekyll:
-    extends:
-        file: common-services.yml
-        entrypoint: bundle exec jekyll build
+    command: jekyll build --verbose
