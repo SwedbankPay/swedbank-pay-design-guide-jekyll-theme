@@ -8,9 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Docker compose test
-      run: |
-        docker-compose up 
+    - uses: actions/checkout@v2
     - name: Docker compose up
       run: |
         docker-compose \
