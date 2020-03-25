@@ -1,4 +1,14 @@
 PATH
+  remote: ../swedbank_pay_jeyll_icon_tag
+  specs:
+    swedbank_pay_jekyll_icon_tag (0.1.0)
+
+PATH
+  remote: ../swedbanky-pay-jekyll-plugins-gem
+  specs:
+    swedbank_pay_jekyll_plugins (0.1.0)
+
+PATH
   remote: .
   specs:
     swedbank-pay-design-guide-jekyll-theme (1.0.0)
@@ -145,6 +155,8 @@ DEPENDENCIES
   jemoji
   rake (~> 13.0.1)
   swedbank-pay-design-guide-jekyll-theme!
+  swedbank_pay_jekyll_icon_tag!
+  swedbank_pay_jekyll_plugins!
 
 BUNDLED WITH
    2.1.4

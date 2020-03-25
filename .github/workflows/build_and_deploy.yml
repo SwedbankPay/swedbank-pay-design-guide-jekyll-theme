@@ -26,4 +26,3 @@ jobs:
           GITHUB_ACTOR: payex-dev
           JEKYLL_GITHUB_TOKEN : ${{ secrets.GH_PAGES_TOKEN }}
           JEKYLL_ENV: production
-          DEBUG: "true"
