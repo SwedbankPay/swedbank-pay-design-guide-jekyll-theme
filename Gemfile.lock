@@ -1,7 +1,7 @@
 PATH
   remote: ../swedbank-pay-jekyll-icon-tag
   specs:
-    swedbank-pay-jekyll-icon-tag (0.1.0)
+    swedbank_pay_jekyll_icon_tag (0.1.0)
 
 PATH
   remote: ../swedbank-pay-jekyll-plantuml
@@ -36,11 +36,13 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     eventmachine (1.2.7)
+    eventmachine (1.2.7-x64-mingw32)
     faraday (0.17.3)
       multipart-post (>= 1.2, < 3)
     fastimage (1.8.1)
       addressable (~> 2.3, >= 2.3.5)
     ffi (1.12.2)
+    ffi (1.12.2-x64-mingw32)
     forwardable-extended (2.6.0)
     gemoji (3.0.1)
     hike (1.2.3)
@@ -99,6 +101,8 @@ GEM
     multipart-post (2.1.1)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
+    nokogiri (1.10.9-x64-mingw32)
+      mini_portile2 (~> 2.4.0)
     octokit (4.18.0)
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
@@ -118,6 +122,8 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
     sassc (2.2.1)
+      ffi (~> 1.9)
+    sassc (2.2.1-x64-mingw32)
       ffi (~> 1.9)
     sawyer (0.8.2)
       addressable (>= 2.3.5)
@@ -143,6 +149,7 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   bundler
@@ -153,9 +160,9 @@ DEPENDENCIES
   jemoji
   rake (~> 13.0.1)
   swedbank-pay-design-guide-jekyll-theme!
-  swedbank-pay-jekyll-icon-tag!
   swedbank-pay-jekyll-plantuml!
   swedbank-pay-jekyll-plugins!
+  swedbank_pay_jekyll_icon_tag!
 
 BUNDLED WITH
    2.1.4

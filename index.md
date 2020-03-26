@@ -227,8 +227,17 @@ The final element.
 ## Emoji support
 
 :+1: :heavy_check_mark: :fire: 💡 :unicorn:
+{% icon check %}
 
 
 ## PlantUML
 
-{% icon test %}
+```plantuml
+@startuml\
+actor client
+node app
+database db
+db -> app
+app -> client
+@endum
+```
