@@ -6,7 +6,7 @@ PATH
 PATH
   remote: ../swedbank-pay-jekyll-plantuml
   specs:
-    swedbank-pay-jekyll-plantuml (0.1.0)
+    swedbank-pay-jekyll-plantuml (0.2.0)
 
 PATH
   remote: ../swedbank-pay-jekyll-plugins
