@@ -6,12 +6,7 @@ PATH
 PATH
   remote: ../swedbank-pay-jekyll-plantuml
   specs:
-    swedbank-pay-jekyll-plantuml (0.2.0)
-
-PATH
-  remote: ../swedbank-pay-jekyll-plugins
-  specs:
-    swedbank-pay-jekyll-plugins (0.1.0)
+    kramdown-plantuml (0.2.0)
 
 PATH
   remote: .
@@ -158,10 +153,9 @@ DEPENDENCIES
   jekyll-assets
   jekyll-github-metadata
   jemoji
+  kramdown-plantuml!
   rake (~> 13.0.1)
   swedbank-pay-design-guide-jekyll-theme!
-  swedbank-pay-jekyll-plantuml!
-  swedbank-pay-jekyll-plugins!
   swedbank_pay_jekyll_icon_tag!
 
 BUNDLED WITH

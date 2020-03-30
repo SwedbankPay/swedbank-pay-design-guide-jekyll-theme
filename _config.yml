@@ -3,7 +3,7 @@ plugins:
   - "jekyll-github-metadata"
   - jemoji
   - swedbank_pay_jekyll_icon_tag
-  - "swedbank-pay-jekyll-plantuml"
+  - "kramdown-plantuml"
 # To include node_modules and other folders that are excluded by default:
 # exclude: []
 kramdown:
