@@ -2,7 +2,7 @@ repository: SwedbankPay/swedbank-pay-design-guide-jekyll-theme
 plugins:
   - "jekyll-github-metadata"
   - jemoji
-  - swedbank_pay_jekyll_icon_tag
+  - "jekyll-material-icon-tag"
   - "kramdown-plantuml"
 # To include node_modules and other folders that are excluded by default:
 # exclude: []
