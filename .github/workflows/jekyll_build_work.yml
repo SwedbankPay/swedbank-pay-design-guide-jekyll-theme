@@ -1,9 +1,6 @@
 name: Build and push to gh_pages
 
-on:
-  push:
-    branches:
-    - '*'
+on: [push, pull_request]
 
 jobs:
   test:
