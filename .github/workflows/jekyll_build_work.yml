@@ -3,7 +3,7 @@ name: Build and push to gh_pages
 on:
   push:
     branches:
-    - master
+    - '*'
 
 jobs:
   test:
