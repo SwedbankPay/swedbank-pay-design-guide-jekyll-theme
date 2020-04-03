@@ -1,0 +1,22 @@
+name: No Java
+
+on:
+  push:
+    branches:
+    - '*'
+
+jobs:
+  test:
+    name: Docker Compose up works as expected
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Docker compose up
+      run: |
+        docker-compose \
+          -f docker-compose.yml \
+          -f docker-compose.ci.yml \
+          up -d
+
