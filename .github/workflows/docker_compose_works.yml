@@ -1,4 +1,4 @@
-name: No Java
+name: Docker Compose up works as expected
 
 on: [push, pull_request]
 
