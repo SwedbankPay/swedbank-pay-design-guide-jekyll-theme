@@ -26,3 +26,9 @@ jobs:
           bundle install --jobs 4 --retry 3
       - name: Run build
         run: bundle exec jekyll build
+      - name: Check for plantUml
+        run: |
+          grep './_site/index.html' -e 'PlantUML version 1.2020.05'
+      - name: Check for material icon
+        run: |
+          grep './_site/index.html' -e '<i class="material-icons">check</i>'
