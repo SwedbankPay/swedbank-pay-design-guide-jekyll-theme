@@ -22,7 +22,7 @@ GEM
       http_parser.rb (~> 0.6.0)
     eventmachine (1.2.7)
     eventmachine (1.2.7-x64-mingw32)
-    faraday (0.17.3)
+    faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
     fastimage (1.8.1)
       addressable (~> 2.3, >= 2.3.5)
@@ -140,7 +140,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
-  faraday (~> 0.17.3)
+  faraday (~> 1.0.1)
   jekyll (~> 4.0)
   jekyll-assets
   jekyll-github-metadata
