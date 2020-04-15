@@ -112,6 +112,12 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
 }
 
 .documentation {
+    code[data-processed='true'].language-mermaid {
+        background: none;
+        border: none;
+        padding: 0px
+    }
+
     .highlighter-rouge {
         margin-bottom: 1rem;
 
@@ -128,12 +134,30 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
         }
 
         .rouge-table {
+            position: relative;
+
+            &, tbody, tr {
+                display: block;
+            }
+
             pre {
                 font-family: 'Akkurat Mono', monospace;
             }
 
             .rouge-gutter {
+                text-align: right;
                 padding: 0 .7rem;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background-color: #f5f2f0;
+                border-right: 1px solid #e1d7d1;
+            }
+
+            .rouge-code {
+                padding-left: 50px;
+                display: block;
+                overflow-x: auto;
             }
         }
     }
