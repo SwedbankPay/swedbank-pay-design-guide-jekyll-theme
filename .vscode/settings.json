@@ -1,9 +1,0 @@
-{
-    "editor.rulers": [
-        80
-    ],
-    "editor.codeActionsOnSave": {
-        "source.fixAll.markdownlint": true
-    },
-    "html.format.indentInnerHtml": true
-}
