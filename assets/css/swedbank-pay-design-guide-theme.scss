@@ -134,12 +134,28 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
         }
 
         .rouge-table {
+            position: relative;
+
+            &, tbody, tr {
+                display: block;
+            }
+
             pre {
                 font-family: 'Akkurat Mono', monospace;
             }
 
             .rouge-gutter {
                 padding: 0 .7rem;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background-color: #f5f2f0;
+            }
+
+            .rouge-code {
+                padding-left: 40px;
+                display: block;
+                overflow-x: auto;
             }
         }
     }
