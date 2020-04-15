@@ -3,7 +3,8 @@ version: '3'
 services:
   jekyll:
     container_name: jekyll
-    image: jekyll/jekyll:4.0.0
+    context: .
+    dockerfile: dockerfile
     ports:
       - 4000:4000
       - 35729:35729
