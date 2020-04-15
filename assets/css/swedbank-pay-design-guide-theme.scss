@@ -112,6 +112,12 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
 }
 
 .documentation {
+    code[data-processed='true'].language-mermaid {
+        background: none;
+        border: none;
+        padding: 0px
+    }
+
     .highlighter-rouge {
         margin-bottom: 1rem;
 
