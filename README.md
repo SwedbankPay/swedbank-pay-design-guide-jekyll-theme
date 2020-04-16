@@ -75,11 +75,10 @@ This website is available as open source under the terms of the
 [dev-guide]: https://developer.swedbankpay.com/resources/development-guidelines/
 [docker]: https://www.docker.com/
 [gems]: <https://rubygems.org/>
-[ghp]: <https://pages.github.com/>
-[jekyll]: <https://jekyllrb.com/>
 [license]: <https://opensource.org/licenses/MIT>
 [liquid]: <https://jekyllrb.com/docs/liquid/>
+[opengraph-image]: <https://repository-images.githubusercontent.com/209270355/36818080-53ee-11ea-896c-082addb851a6>
 [repo]: <https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/>
 [ruby]: <https://www.ruby-lang.org/en/>
 [swedbankpay]: <https://swedbankpay.github.io/swedbank-pay-design-guide-jekyll-theme/>
-[opengraph-image]: <https://repository-images.githubusercontent.com/209270355/36818080-53ee-11ea-896c-082addb851a6>
+[vsc-ruler]: https://stackoverflow.com/questions/29968499/vertical-rulers-in-visual-studio-code
