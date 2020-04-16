@@ -5,3 +5,5 @@ RUN apk add --no-cache --no-progress\
     openjdk8-jre-base\
     fontconfig\
     ttf-dejavu
+
+RUN gem install bundler
