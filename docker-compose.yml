@@ -6,7 +6,7 @@ services:
       context: .
       cache_from:
         - jekyll/jekyll:4.0.0
-      dockerfile: dockerfile
+      dockerfile: .docker/Dockerfile
     container_name: jekyll
     ports:
       - 4000:4000
