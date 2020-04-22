@@ -1,9 +1,6 @@
 name: Jekyll build works
 
-on:
-  push:
-    branches:
-    - master
+on: [push, pull_request]
 
 jobs:
   test:
