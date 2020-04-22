@@ -24,7 +24,7 @@ git config user.email "$committer_email"
 git config user.name "${INPUT_GIT_COMMITTER_NAME}}"
 git config remote.origin.url "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 git fetch
-git checkout -B "$gh_pages_publishing_source"
+git checkout -B "$publishing_branch"
 
 # Build project
 $(bundle exec jekyll build JEKYLL_ENV=production)
