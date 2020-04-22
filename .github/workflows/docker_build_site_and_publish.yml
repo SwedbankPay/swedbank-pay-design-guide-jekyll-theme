@@ -10,11 +10,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Docker compose up
-      run: |
-        docker-compose \
-          -f docker-compose.yml \
-          -f .docker/docker-compose.ci.yml \
-          up -d
       with:
         secret_gh_pages_api_token: ${{ secrets.GH_PAGES_TOKEN }}
         git_committer_email: dev@payex.com
@@ -25,5 +20,9 @@ jobs:
         GITHUB_ACTOR: payex-dev
         JEKYLL_GITHUB_TOKEN : ${{ secrets.GH_PAGES_TOKEN }}
         JEKYLL_ENV: production
-  
+      run: |
+        docker-compose \
+          -f docker-compose.yml \
+          -f .docker/docker-compose.ci.yml \
+          up -d
   
