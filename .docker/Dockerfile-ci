@@ -6,4 +6,6 @@ RUN apk add --no-cache --no-progress\
     fontconfig\
     ttf-dejavu
 
+COPY . .
+
 ENTRYPOINT [ ".docker/ci-build-publish" ]
