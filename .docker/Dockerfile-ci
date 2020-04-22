@@ -8,4 +8,5 @@ RUN apk add --no-cache --no-progress\
 
 COPY . .
 
+CMD [ "jekyll" ]
 ENTRYPOINT [ ".docker/ci-build-publish" ]
