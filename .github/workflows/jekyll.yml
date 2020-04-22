@@ -14,7 +14,7 @@ jobs:
         docker-compose \
           -f docker-compose.yml \
           -f .docker/docker-compose.ci.yml \
-          build -d
+          up -d
       env:
         DEBUG: "true"
         secret_gh_pages_api_token: ${{ secrets.GH_PAGES_TOKEN }}
