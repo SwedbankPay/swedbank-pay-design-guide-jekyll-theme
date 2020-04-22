@@ -1,0 +1,27 @@
+name: Docker build site and publish
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Docker build site and publish
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Docker compose up
+      env:
+        secret_gh_pages_api_token: ${{ secrets.GH_PAGES_TOKEN }}
+        git_committer_email: dev@payex.com
+        git_committer_name: payex-dev
+        gh_pages_publishing_source: gh-pages
+        DEBUG: "true"
+        GITHUB_ACTOR: payex-dev
+        JEKYLL_GITHUB_TOKEN : ${{ secrets.GH_PAGES_TOKEN }}
+        JEKYLL_ENV: production
+      run: |
+        docker-compose \
+          -f docker-compose.yml \
+          -f .docker/docker-compose.ci.yml \
+          up --build -d
+  

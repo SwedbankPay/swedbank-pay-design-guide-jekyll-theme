@@ -1,0 +1,40 @@
+#!/bin/bash
+
+if [ "true" = "$DEBUG" ]; then
+    env                      # ...showing the environment
+    cat "$GITHUB_EVENT_PATH" # ...and the GitHub webhook payload
+    set -x                   # ...and script execution.
+fi
+
+# Any errors should cause an immediate exit and failure.
+set -e
+
+# Set input variables
+readonly gh_api_token="$INPUT_API_TOKEN"
+readonly commiter_email="$INPUT_COMITTER_EMAIL"
+readonly committer_name="$INPUT_COMITTER_NAME"
+readonly publishing_branch="$INPUT_PUBLISHING_BRANCH"
+
+# Install bundler and gems 
+$(gem install bundler)
+$(bundle install)
+
+# Set up git
+git config user.email "$committer_email"
+git config user.name "${INPUT_GIT_COMMITTER_NAME}}"
+git config remote.origin.url "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+git fetch
+git checkout -B "$publishing_branch"
+
+# Build project
+$(bundle exec jekyll build JEKYLL_ENV=production)
+
+cd _site
+git add -a
+git commit -m "Autodeployed"
+
+branch_name="$(git rev-parse --abbrev-ref HEAD)"
+
+if [ $branch_name = "master" ]; then
+    git push --force origin "$publishing_branch"
+fi
