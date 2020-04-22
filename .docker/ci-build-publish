@@ -33,6 +33,8 @@ cd _site
 git add -a
 git commit -m "Autodeployed"
 
-if [ "true" != "$DEBUG" ]; then
+branch_name="$(git rev-parse --abbrev-ref HEAD)"
+
+if [ $branch_name = "master" ]; then
     git push --force origin "$publishing_branch"
 fi
