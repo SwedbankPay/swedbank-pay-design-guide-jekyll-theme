@@ -4,8 +4,7 @@ services:
   jekyll:
     command: jekyll build --verbose
     environment: 
-      - environment: 'production'
-      - DEBUG: "true"
+      environment: 'production'
     build:
       context: .
       dockerfile: .docker/Dockerfile-ci
