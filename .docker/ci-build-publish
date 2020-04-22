@@ -36,5 +36,6 @@ git commit -m "Autodeployed"
 branch_name="$(git rev-parse --abbrev-ref HEAD)"
 
 if [ $branch_name = "master" ]; then
+    echo "Pushing to $publishing_branch"
     git push --force origin "$publishing_branch"
 fi
