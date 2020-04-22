@@ -9,8 +9,3 @@ services:
     build:
       context: .
       dockerfile: .docker/Dockerfile-ci
-      args: 
-        - api_token: ${{ secrets.GH_PAGES_TOKEN }}
-        - committer_email: dev@payex.com
-        - committer_name: payex-dev
-        - publishing_branch: gh-pages
