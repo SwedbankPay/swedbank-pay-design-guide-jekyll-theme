@@ -8,6 +8,4 @@ RUN apk add --no-cache --no-progress\
 
 COPY . .
 
-RUN chmod +x .docker/ci-build-publish
-
 ENTRYPOINT [ ".docker/ci-build-publish" ]
