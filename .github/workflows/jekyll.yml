@@ -1,10 +1,10 @@
-name: Jekyll site CI
+name: Docker build site and publish
 
 on: [push, pull_request]
 
 jobs:
   build:
-
+    name: Docker build site and publish
     runs-on: ubuntu-latest
 
     steps:
