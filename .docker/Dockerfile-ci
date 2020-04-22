@@ -6,16 +6,4 @@ RUN apk add --no-cache --no-progress\
     fontconfig\
     ttf-dejavu
 
-RUN gem install bundler
-
-WORKDIR /srv/jekyll
-
-RUN bundle install
-
-RUN bundle exec jekyll build JEKYLL_ENV=production
-
-WORKDIR /srv/jekyll/_site
-
-RUN git add -a
-RUN git commit -m "Autodeployed from Docker"
-
+ENTRYPOINT [ ".docker/ci-build-publish" ]
