@@ -22,3 +22,4 @@ jobs:
         git_committer_email: dev@payex.com
         git_committer_name: payex-dev
         publishing_branch: gh-pages
+        DEBUG: "true"
