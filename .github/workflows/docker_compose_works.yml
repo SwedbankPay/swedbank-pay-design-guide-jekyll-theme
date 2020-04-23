@@ -17,9 +17,8 @@ jobs:
           -f .docker/docker-compose.ci.yml \
           up -d
       env:
-        GITHUB_ACTOR: payex-dev
         GITHUB_TOKEN : ${{ secrets.GITHUB_TOKEN }}
         JEKYLL_ENV: production
         git_committer_email: dev@payex.com
         git_committer_name: payex-dev
-        gh_pages_publishing_source: gh-pages
+        publishing_branch: gh-pages
