@@ -17,7 +17,10 @@ jobs:
         DockerCli.exe -SwitchDaemon
     - name: Docker compose up
       run: |
-        docker-compose -f docker-compose.yml up -d --build
+        docker-compose \
+        -f docker-compose.yml \
+        -f .docker/docker-compose-ci.yml \
+        up -d --build
       env:
         GITHUB_TOKEN : ${{ secrets.GITHUB_TOKEN }}
         JEKYLL_ENV: production
