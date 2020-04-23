@@ -11,8 +11,8 @@ jobs:
         os: [ubuntu-latest, windows-latest]
     steps:
     - uses: actions/checkout@v2
-    if: contains(matrix.os, 'windows')
     - name: Switch agent
+      if: contains(matrix.os, 'windows')
       run: |
         DockerCli.exe -SwitchDaemon
     - name: Docker compose up
