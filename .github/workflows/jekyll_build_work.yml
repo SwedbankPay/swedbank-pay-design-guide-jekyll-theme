@@ -13,7 +13,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Docker compose up
       run: |
-        docker-compose -f docker-compose.yml up -d --build --verbose
+        docker-compose up -d --build --verbose
       env:
         GITHUB_TOKEN : ${{ secrets.GITHUB_TOKEN }}
         JEKYLL_ENV: production
