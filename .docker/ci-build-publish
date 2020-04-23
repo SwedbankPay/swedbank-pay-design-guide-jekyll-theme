@@ -17,19 +17,19 @@ readonly publishing_branch="$INPUT_PUBLISHING_BRANCH"
 readonly jekyll_env="$INPUT_JEKYLL_ENV"
 
 # Install bundler and gems 
-gem install bundler
-bundle install
+gem install bundler || exit $?
+bundle install || exit $?
 echo "install done"
 # Set up git
 echo "setup git"
-git config user.email "$committer_email"
-git config user.name "${INPUT_GIT_COMMITTER_NAME}}"
-git config remote.origin.url "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-git fetch
-git checkout -B "$publishing_branch"
+git config user.email "$committer_email" || exit $?
+git config user.name "${INPUT_GIT_COMMITTER_NAME}}" || exit $?
+git config remote.origin.url "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" || exit $?
+git fetch || exit $?
+git checkout -B "$publishing_branch" || exit $?
 echo "done that"
 # Build project
-bundle exec jekyll build JEKYLL_ENV=$jekyll_env --verbose
+bundle exec jekyll build JEKYLL_ENV=$jekyll_env --verbose || exit $?
 
 echo "Branch name: $branch_name"
 if [ $branch_name = "master" ]; then
@@ -40,6 +40,6 @@ if [ $branch_name = "master" ]; then
     echo "commited"
     branch_name="$(git rev-parse --abbrev-ref HEAD)"
     echo "Pushing to $publishing_branch"
-    git push --force origin "$publishing_branch"
+    git push --force origin "$publishing_branch" || exit $?
 fi
 echo "done"
