@@ -6,7 +6,7 @@ RUN apk add --no-cache --no-progress\
     fontconfig\
     ttf-dejavu
 
-COPY copy /
+COPY . /
 
 RUN mkdir -p $JEKYLL_VAR_DIR
 RUN mkdir -p /srv/jekyll
