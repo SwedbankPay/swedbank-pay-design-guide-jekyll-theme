@@ -8,7 +8,7 @@ RUN apk add --no-cache --no-progress\
 
 COPY . /
 
-RUN mkdir -p $JEKYLL_VAR_DIR
+RUN mkdir -p /var/jekyll
 RUN mkdir -p /srv/jekyll
 RUN chown -R jekyll:jekyll /srv/jekyll
 RUN chown -R jekyll:jekyll /usr/jekyll/bin
