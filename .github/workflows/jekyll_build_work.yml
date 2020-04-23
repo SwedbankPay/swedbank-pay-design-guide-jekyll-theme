@@ -14,7 +14,7 @@ jobs:
     - name: Switch agent
       if: contains(matrix.os, 'windows')
       run: |
-        DockerCli.exe -SwitchLinuxEngine
+        & 'C:\Program Files\Docker\Docker\DockerCli.exe' -SwitchDaemon
     - name: Docker compose up
       run: |
         docker-compose \
