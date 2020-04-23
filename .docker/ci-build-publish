@@ -44,4 +44,3 @@ if [ $branch_name = "master" ]; then
     git push --force origin "$publishing_branch"
 fi
 echo "done"
-exit 5
