@@ -14,7 +14,8 @@ jobs:
     - name: Switch agent
       if: contains(matrix.os, 'windows')
       run: |
-        & 'C:\Program Files\Docker\Docker\DockerCli.exe' -SwitchLinuxEngine && echo "Error level: %errorlevel%"
+        & 'C:\Program Files\Docker\Docker\DockerCli.exe' -SwitchLinuxEngine
+        Write-Host $LastExitCode
     - name: Docker compose up
       run: |
         docker-compose -f docker-compose.yml -f .docker/docker-compose.ci.yml up -d --build
