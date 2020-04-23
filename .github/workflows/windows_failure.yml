@@ -1,4 +1,4 @@
-name: Docker Compose up works as expected
+name: Windows workflow
 
 on: [push]
 
