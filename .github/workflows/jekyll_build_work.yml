@@ -17,9 +17,9 @@ jobs:
     #    & 'C:\Program Files\Docker\Docker\DockerCli.exe' -SwitchLinuxEngine
     - name: Docker compose up
       run: |
-        docker-compose \
-        -f docker-compose.yml \
-        -f .docker/docker-compose.ci.yml \
+        docker-compose 
+        -f docker-compose.yml 
+        -f .docker/docker-compose.ci.yml 
         up -d --build
       env:
         GITHUB_TOKEN : ${{ secrets.GITHUB_TOKEN }}
