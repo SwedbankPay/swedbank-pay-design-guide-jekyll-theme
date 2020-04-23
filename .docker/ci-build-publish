@@ -29,17 +29,16 @@ git fetch
 git checkout -B "$publishing_branch"
 echo "done that"
 # Build project
-bundle exec jekyll build JEKYLL_ENV=$jekyll_env
-
-cd _site
-echo "in site"
-git add -a
-git commit -m "Autodeployed"
-echo "commited"
-branch_name="$(git rev-parse --abbrev-ref HEAD)"
+bundle exec jekyll build JEKYLL_ENV=$jekyll_env --verbose
 
 echo "Branch name: $branch_name"
 if [ $branch_name = "master" ]; then
+    cd _site
+    echo "in site"
+    git add -a
+    git commit -m "Autodeployed"
+    echo "commited"
+    branch_name="$(git rev-parse --abbrev-ref HEAD)"
     echo "Pushing to $publishing_branch"
     git push --force origin "$publishing_branch"
 fi
