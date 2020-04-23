@@ -18,9 +18,8 @@ jobs:
           up -d
       env:
         GITHUB_ACTOR: payex-dev
-        JEKYLL_GITHUB_TOKEN : ${{ secrets.GH_PAGES_TOKEN }}
+        GITHUB_TOKEN : ${{ secrets.GITHUB_TOKEN }}
         JEKYLL_ENV: production
-        secret_gh_pages_api_token: ${{ secrets.GH_PAGES_TOKEN }}
         git_committer_email: dev@payex.com
         git_committer_name: payex-dev
         gh_pages_publishing_source: gh-pages
