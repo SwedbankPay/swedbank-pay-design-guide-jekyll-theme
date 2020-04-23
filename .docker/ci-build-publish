@@ -10,7 +10,7 @@ fi
 set -e
 
 # Set input variables
-readonly gh_api_token="$INPUT_API_TOKEN"
+readonly gh_api_token="$INPUT_GITHUB_TOKEN"
 readonly commiter_email="$INPUT_COMITTER_EMAIL"
 readonly committer_name="$INPUT_COMITTER_NAME"
 readonly publishing_branch="$INPUT_PUBLISHING_BRANCH"
@@ -36,5 +36,6 @@ git commit -m "Autodeployed"
 branch_name="$(git rev-parse --abbrev-ref HEAD)"
 
 if [ $branch_name = "master" ]; then
+    echo "Pushing to $publishing_branch"
     git push --force origin "$publishing_branch"
 fi

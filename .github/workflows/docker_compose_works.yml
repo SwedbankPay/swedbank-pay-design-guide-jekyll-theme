@@ -16,13 +16,9 @@ jobs:
           -f docker-compose.yml \
           -f .docker/docker-compose.ci.yml \
           up -d
-      with:
-        secret_gh_pages_api_token: ${{ secrets.GH_PAGES_TOKEN }}
+      env:
+        GITHUB_TOKEN : ${{ secrets.GITHUB_TOKEN }}
+        JEKYLL_ENV: production
         git_committer_email: dev@payex.com
         git_committer_name: payex-dev
-        gh_pages_publishing_source: gh-pages
-      env:
-        GITHUB_ACTOR: payex-dev
-        JEKYLL_GITHUB_TOKEN : ${{ secrets.GH_PAGES_TOKEN }}
-        JEKYLL_ENV: production
-
+        publishing_branch: gh-pages
