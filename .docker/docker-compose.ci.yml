@@ -5,4 +5,11 @@ services:
     container_name: built_jekyll
     command: jekyll build --verbose
     build:
-      dockerfile: .docker/Dockerfile-ci
+      dockerfile: .docker/ci.Dockerfile
+    environment:
+      - DEBUG=${DEBUG}
+      - GITHUB_ACTOR=${GITHUB_ACTOR}
+      - GITHUB_ACTOR_EMAIL=${GITHUB_ACTOR_EMAIL}
+      - GH_PAGES_BRANCH=${GH_PAGES_BRANCH}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - JEKYLL_ENV=${JEKYLL_ENV}
