@@ -11,7 +11,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Docker compose up for CI
       env:
-        DEBUG: "true"
         GITHUB_ACTOR: payex-dev
         GITHUB_ACTOR_EMAIL: dev@payex.com
         GH_PAGES_BRANCH: gh-pages
