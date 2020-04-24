@@ -22,7 +22,7 @@ echo "setup git"
 if [ "true" != "$DEBUG" ]; then
     git config user.email "$committer_email" || exit $?
     git config user.name "${INPUT_GIT_COMMITTER_NAME}}" || exit $?
-    git config remote.origin.url "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" || exit $?
+    git config remote.origin.url "https://x-access-token:${gh_api_token}@github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme.git" || exit $?
     git fetch || exit $?
     git checkout -B "$publishing_branch" || exit $?
 fi
