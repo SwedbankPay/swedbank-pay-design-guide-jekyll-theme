@@ -20,7 +20,8 @@ COPY . .
 
 # Work around a nonsense RubyGem permission bug.
 RUN unset GEM_HOME && unset GEM_BIN && yes | gem install --force bundler
-RUN bundle install --no-cache --jobs $(($(nproc) * 2))
+RUN bundle config set no-cache 'true' && \
+    bundle install --jobs $(($(nproc) * 2))
 
 CMD ["jekyll", "--help"]
 ENTRYPOINT [ ".docker/ci-build-publish" ]
