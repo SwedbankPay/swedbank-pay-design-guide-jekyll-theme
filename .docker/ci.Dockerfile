@@ -21,7 +21,8 @@ COPY . .
 # RUN unset GEM_HOME && unset GEM_BIN && yes | gem install --force bundler
 RUN bundle config set no-cache 'true' && \
     bundle config set path 'vendor/bundle' && \
-    bundle install --jobs $(($(nproc) * 2))
+    bundle install --deployment --jobs $(($(nproc) * 2)) && \
+    bundle check
 
 CMD ["jekyll", "--help"]
 ENTRYPOINT [ ".docker/ci-build-publish" ]

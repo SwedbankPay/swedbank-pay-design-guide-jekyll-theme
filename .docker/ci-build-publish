@@ -28,6 +28,7 @@ fi
 # Build project
 echo "Jekyll build:${jekyll_env}"
 cat Gemfile.lock
+bundle check
 bundle exec jekyll build JEKYLL_ENV=$jekyll_env --verbose || exit $?
 
 branch_name="$(git rev-parse --abbrev-ref HEAD)"
