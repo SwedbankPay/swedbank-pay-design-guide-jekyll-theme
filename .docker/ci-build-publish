@@ -9,34 +9,34 @@ fi
 # Any errors should cause an immediate exit and failure.
 set -e
 
-echo $INPUT_GITHUB_TOKEN
-echo $INPUT_COMITTER_EMAIL
-echo $INPUT_COMITTER_NAME
-echo $INPUT_PUBLISHING_BRANCH
-echo $INPUT_JEKYLL_ENV
-echo $GITHUB_REPOSITORY
+echo "GITHUB_TOKEN: $GITHUB_TOKEN"
+echo "GITHUB_ACTOR_EMAIL: $GITHUB_ACTOR_EMAIL"
+echo "GITHUB_ACTOR: $GITHUB_ACTOR"
+echo "GH_PAGES_BRANCH: $GH_PAGES_BRANCH"
+echo "JEKYLL_ENV: $JEKYLL_ENV"
+echo "DEBUG: $DEBUG"
 
 # Set input variables
-readonly gh_api_token="$INPUT_GITHUB_TOKEN"
-readonly commiter_email="$INPUT_COMITTER_EMAIL"
-readonly committer_name="$INPUT_COMITTER_NAME"
-readonly publishing_branch="$INPUT_PUBLISHING_BRANCH"
-readonly jekyll_env="$INPUT_JEKYLL_ENV"
+readonly gh_api_token="$GITHUB_TOKEN"
+readonly commiter_email="$GITHUB_ACTOR_EMAIL"
+readonly committer_name="$GITHUB_ACTOR"
+readonly publishing_branch="$GH_PAGES_BRANCH"
+readonly jekyll_env="$JEKYLL_ENV"
 
-# Build project
-bundle exec jekyll build JEKYLL_ENV=$jekyll_env --verbose || exit $?
-
-# Install gems 
+# Install gems
 # Set up git
 echo "setup git"
 if [ "true" != "$DEBUG" ]; then
-    git config user.email "$committer_email" || exit $?
-    git config user.name "${INPUT_GIT_COMMITTER_NAME}}" || exit $?
+    git config user.email "${commiter_email}" || exit $?
+    git config user.name "${committer_name}" || exit $?
     git config remote.origin.url "https://x-access-token:${gh_api_token}@github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme.git" || exit $?
     git fetch || exit $?
     git checkout -B "$publishing_branch" || exit $?
 fi
 echo "done that"
+
+# Build project
+bundle exec jekyll build JEKYLL_ENV=$jekyll_env --verbose || exit $?
 
 echo "Branch name: $branch_name"
 if [ $branch_name = "master" ]; then
