@@ -2,10 +2,7 @@ version: '3.7'
 
 services:
   jekyll:
-    container_name: built_jekyll
-    command: jekyll build --verbose
-    build:
-      dockerfile: .docker/ci.Dockerfile
+    command: .docker/ci-build-publish
     environment:
       - DEBUG=${DEBUG}
       - GITHUB_ACTOR=${GITHUB_ACTOR}

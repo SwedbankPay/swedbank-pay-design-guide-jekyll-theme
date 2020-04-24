@@ -17,6 +17,11 @@ readonly publishing_branch="$GH_PAGES_BRANCH"
 readonly jekyll_env="$JEKYLL_ENV"
 readonly github_repository="${GITHUB_REPO}"
 
+# Build project
+echo "Jekyll build:${jekyll_env}"
+bundle check
+bundle exec jekyll build JEKYLL_ENV=$jekyll_env --verbose || exit $?
+
 branch_name="$(git rev-parse --abbrev-ref HEAD)"
 
 if [ "$branch_name" = "master" ]; then
