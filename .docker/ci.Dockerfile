@@ -20,7 +20,7 @@ COPY . .
 # Work around a nonsense RubyGem permission bug.
 RUN unset GEM_HOME && unset GEM_BIN && yes | gem install --force bundler
 RUN bundle config set no-cache 'true' && \
-    bundle config path /srv/jekyll/.gems && \
+    bundle config set path 'vendor/bundle' && \
     bundle install --jobs $(($(nproc) * 2))
 
 CMD ["jekyll", "--help"]
