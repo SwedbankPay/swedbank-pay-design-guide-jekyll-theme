@@ -16,24 +16,21 @@ readonly committer_name="$GITHUB_ACTOR"
 readonly publishing_branch="$GH_PAGES_BRANCH"
 readonly jekyll_env="$JEKYLL_ENV"
 
-# Set up git
-if [ "true" != "$DEBUG" ]; then
-    git config user.email "${commiter_email}" || exit $?
-    git config user.name "${committer_name}" || exit $?
-    git config remote.origin.url "https://x-access-token:${gh_api_token}@github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme.git" || exit $?
-    git fetch || exit $?
-    git checkout -B "$publishing_branch" || exit $?
-fi
-
 # Build project
 echo "Jekyll build:${jekyll_env}"
-cat Gemfile.lock
 bundle check
 bundle exec jekyll build JEKYLL_ENV=$jekyll_env --verbose || exit $?
 
 branch_name="$(git rev-parse --abbrev-ref HEAD)"
 
 if [ "$branch_name" = "master" ]; then
+    # Set up Git for commit and push
+    if [ "true" != "$DEBUG" ]; then
+        git config user.email "${commiter_email}" || exit $?
+        git config user.name "${committer_name}" || exit $?
+        git config remote.origin.url "https://x-access-token:${gh_api_token}@github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme.git" || exit $?
+    fi
+
     cd _site
     git add -a
     git commit -m "Autodeployed"
