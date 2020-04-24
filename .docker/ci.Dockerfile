@@ -9,7 +9,7 @@ RUN mkdir -p /var/jekyll && \
     mkdir -p /usr/gem/cache && \
     mkdir -p /srv/jekyll/.jekyll-cache
 
-RUN apk add --no-progress\
+RUN apk add --no-cache --no-progress\
     graphviz\
     openjdk8-jre-base\
     fontconfig\
@@ -19,7 +19,7 @@ COPY . .
 
 # Work around a nonsense RubyGem permission bug.
 RUN unset GEM_HOME && unset GEM_BIN && yes | gem install --force bundler
-RUN bundle install
+RUN bundle install --no-cache --jobs $(($(nproc) * 2))
 
 CMD ["jekyll", "--help"]
 ENTRYPOINT [ ".docker/ci-build-publish" ]
