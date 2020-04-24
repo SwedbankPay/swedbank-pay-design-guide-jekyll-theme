@@ -14,7 +14,7 @@ echo $INPUT_COMITTER_EMAIL
 echo $INPUT_COMITTER_NAME
 echo $INPUT_PUBLISHING_BRANCH
 echo $INPUT_JEKYLL_ENV
-
+echo $GITHUB_REPOSITORY
 
 # Set input variables
 readonly gh_api_token="$INPUT_GITHUB_TOKEN"
@@ -22,6 +22,9 @@ readonly commiter_email="$INPUT_COMITTER_EMAIL"
 readonly committer_name="$INPUT_COMITTER_NAME"
 readonly publishing_branch="$INPUT_PUBLISHING_BRANCH"
 readonly jekyll_env="$INPUT_JEKYLL_ENV"
+
+# Build project
+bundle exec jekyll build JEKYLL_ENV=$jekyll_env --verbose || exit $?
 
 # Install gems 
 # Set up git
@@ -34,8 +37,6 @@ if [ "true" != "$DEBUG" ]; then
     git checkout -B "$publishing_branch" || exit $?
 fi
 echo "done that"
-# Build project
-bundle exec jekyll build JEKYLL_ENV=$jekyll_env --verbose || exit $?
 
 echo "Branch name: $branch_name"
 if [ $branch_name = "master" ]; then
