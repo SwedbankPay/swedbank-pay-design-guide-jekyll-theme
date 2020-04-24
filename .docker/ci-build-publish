@@ -27,8 +27,6 @@ fi
 
 # Build project
 echo "Jekyll build:${jekyll_env}"
-bundle list | grep rake
-bundle info rake
 bundle exec jekyll build JEKYLL_ENV=$jekyll_env --verbose || exit $?
 
 branch_name="$(git rev-parse --abbrev-ref HEAD)"
