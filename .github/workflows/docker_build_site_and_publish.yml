@@ -9,16 +9,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Docker compose up
+    - name: Docker compose up for CI
       env:
-        DEBUG: "true"
-        GITHUB_ACTOR: payex-dev
-        GITHUB_ACTOR_EMAIL: dev@payex.com
-        GH_PAGES_BRANCH: gh-pages
-        GITHUB_TOKEN : ${{ secrets.GH_PAGES_TOKEN }}
+        GITHUB_TOKEN : ${{ secrets.GITHUB_TOKEN }}
         JEKYLL_ENV: production
+        git_committer_email: dev@payex.com
+        git_committer_name: payex-dev
+        publishing_branch: gh-pages
+        # DEBUG: "true"
       run: |
-        docker-compose \
-          -f docker-compose.yml \
-          -f .docker/docker-compose.ci.yml \
-          up --build -d
+        docker-compose -f docker-compose.yml -f .docker/docker-compose.ci.yml up --build
