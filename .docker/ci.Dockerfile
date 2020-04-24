@@ -6,6 +6,7 @@ VOLUME  /srv/jekyll
 RUN mkdir -p /var/jekyll && \
     mkdir -p /srv/jekyll && \
     mkdir -p /srv/jekyll/_site && \
+    mkdir -p /usr/gem/cache && \
     mkdir -p /srv/jekyll/.jekyll-cache
 
 RUN apk add --no-progress\
