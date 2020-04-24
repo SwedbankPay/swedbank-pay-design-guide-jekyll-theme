@@ -16,6 +16,7 @@ jobs:
         GH_PAGES_BRANCH: gh-pages
         GITHUB_TOKEN : ${{ secrets.GITHUB_TOKEN }}
         JEKYLL_ENV: production
+        GITHUB_REPO: ${{ github.repository }}
       run: |
         docker-compose \
           -f docker-compose.yml \

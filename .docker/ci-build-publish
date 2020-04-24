@@ -15,6 +15,7 @@ readonly commiter_email="$GITHUB_ACTOR_EMAIL"
 readonly committer_name="$GITHUB_ACTOR"
 readonly publishing_branch="$GH_PAGES_BRANCH"
 readonly jekyll_env="$JEKYLL_ENV"
+readonly github_repository="${GITHUB_REPO}"
 
 branch_name="$(git rev-parse --abbrev-ref HEAD)"
 
@@ -23,7 +24,7 @@ if [ "$branch_name" = "master" ]; then
     if [ "true" != "$DEBUG" ]; then
         git config user.email "${commiter_email}" || exit $?
         git config user.name "${committer_name}" || exit $?
-        git config remote.origin.url "https://x-access-token:${gh_api_token}@github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme.git" || exit $?
+        git config remote.origin.url "https://x-access-token:${gh_api_token}@github.com/${github_repository}.git" || exit $?
     fi
 
     cd _site
