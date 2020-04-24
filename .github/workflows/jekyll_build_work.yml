@@ -18,7 +18,7 @@ jobs:
         Write-Host $LastExitCode
     - name: Docker compose up
       run: |
-        docker-compose -f docker-compose.yml -f .docker/docker-compose.ci.yml up --build --exit-code-from built_jekyll
+        docker-compose -f docker-compose.yml -f .docker/docker-compose.ci.yml up --build
       env:
         GITHUB_TOKEN : ${{ secrets.GITHUB_TOKEN }}
         JEKYLL_ENV: production
