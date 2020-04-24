@@ -6,7 +6,7 @@ VOLUME  /srv/jekyll
 RUN mkdir -p /var/jekyll && \
     mkdir -p /srv/jekyll && \
     mkdir -p /srv/jekyll/_site && \
-    mkdir -p /usr/gem/cache && \
+#    mkdir -p /usr/gem/cache && \
     mkdir -p /srv/jekyll/.jekyll-cache
 
 RUN apk add --no-cache --no-progress\
@@ -18,7 +18,7 @@ RUN apk add --no-cache --no-progress\
 COPY . .
 
 # Work around a nonsense RubyGem permission bug.
-RUN unset GEM_HOME && unset GEM_BIN && yes | gem install --force bundler
+# RUN unset GEM_HOME && unset GEM_BIN && yes | gem install --force bundler
 RUN bundle config set no-cache 'true' && \
     bundle config set path 'vendor/bundle' && \
     bundle install --jobs $(($(nproc) * 2))
