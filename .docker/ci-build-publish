@@ -19,11 +19,13 @@ readonly jekyll_env="$INPUT_JEKYLL_ENV"
 # Install gems 
 # Set up git
 echo "setup git"
-git config user.email "$committer_email" || exit $?
-git config user.name "${INPUT_GIT_COMMITTER_NAME}}" || exit $?
-git config remote.origin.url "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" || exit $?
-git fetch || exit $?
-git checkout -B "$publishing_branch" || exit $?
+if [ "true" != "$DEBUG" ]; then
+    git config user.email "$committer_email" || exit $?
+    git config user.name "${INPUT_GIT_COMMITTER_NAME}}" || exit $?
+    git config remote.origin.url "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" || exit $?
+    git fetch || exit $?
+    git checkout -B "$publishing_branch" || exit $?
+fi
 echo "done that"
 # Build project
 bundle exec jekyll build JEKYLL_ENV=$jekyll_env --verbose || exit $?
