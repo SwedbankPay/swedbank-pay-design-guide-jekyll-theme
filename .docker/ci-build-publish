@@ -38,8 +38,10 @@ echo "done that"
 # Build project
 bundle exec jekyll build JEKYLL_ENV=$jekyll_env --verbose || exit $?
 
+branch_name="$(git rev-parse --abbrev-ref HEAD)"
 echo "Branch name: $branch_name"
-if [ $branch_name = "master" ]; then
+
+if [ "$branch_name" = "master" ]; then
     cd _site
     echo "in site"
     git add -a
@@ -48,5 +50,7 @@ if [ $branch_name = "master" ]; then
     branch_name="$(git rev-parse --abbrev-ref HEAD)"
     echo "Pushing to $publishing_branch"
     git push --force origin "$publishing_branch" || exit $?
+else
+    echo "Branch '$branch_name' is not 'master', so nothing to do."
 fi
 echo "done"
