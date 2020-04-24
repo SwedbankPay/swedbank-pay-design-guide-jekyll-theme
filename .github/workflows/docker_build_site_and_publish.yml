@@ -20,4 +20,4 @@ jobs:
         docker-compose \
           -f docker-compose.yml \
           -f .docker/docker-compose.ci.yml \
-          up --build -d
+          up --build

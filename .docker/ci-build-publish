@@ -16,7 +16,6 @@ readonly committer_name="$GITHUB_ACTOR"
 readonly publishing_branch="$GH_PAGES_BRANCH"
 readonly jekyll_env="$JEKYLL_ENV"
 
-# Install gems
 # Set up git
 if [ "true" != "$DEBUG" ]; then
     git config user.email "${commiter_email}" || exit $?
