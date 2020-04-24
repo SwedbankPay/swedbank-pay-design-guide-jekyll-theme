@@ -16,10 +16,7 @@ readonly committer_name="$INPUT_COMITTER_NAME"
 readonly publishing_branch="$INPUT_PUBLISHING_BRANCH"
 readonly jekyll_env="$INPUT_JEKYLL_ENV"
 
-# Install bundler and gems 
-gem install bundler || exit $?
-bundle install || exit $?
-echo "install done"
+# Install gems 
 # Set up git
 echo "setup git"
 git config user.email "$committer_email" || exit $?
