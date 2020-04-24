@@ -14,7 +14,11 @@ RUN chown -R jekyll:jekyll /srv/jekyll
 RUN chown -R jekyll:jekyll /usr/jekyll/bin
 RUN chown -R jekyll:jekyll /usr/local/bundle
 
-FROM swedbankpay/jekyll-plantuml:1.1.1
+# Work around a nonsense RubyGem permission bug.
+RUN unset GEM_HOME && unset GEM_BIN && yes | gem install --force bundler
+RUN bundle install
 
-CMD [ "jekyll" ]
+CMD ["jekyll", "--help"]
 ENTRYPOINT [ ".docker/ci-build-publish" ]
+WORKDIR /srv/jekyll
+VOLUME  /srv/jekyll
