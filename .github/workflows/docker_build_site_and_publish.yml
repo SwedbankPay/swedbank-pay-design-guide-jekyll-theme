@@ -20,4 +20,6 @@ jobs:
         docker-compose \
           -f docker-compose.yml \
           -f .docker/docker-compose.ci.yml \
-          up --build
+          up --build \
+          --abort-on-container-exit \
+          --exit-code-from jekyll
