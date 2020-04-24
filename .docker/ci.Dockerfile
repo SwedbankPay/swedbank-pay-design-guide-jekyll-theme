@@ -10,9 +10,7 @@ COPY . /
 
 RUN mkdir -p /var/jekyll
 RUN mkdir -p /srv/jekyll
-RUN chown -R jekyll:jekyll /srv/jekyll
-RUN chown -R jekyll:jekyll /usr/jekyll/bin
-RUN chown -R jekyll:jekyll /usr/local/bundle
+RUN mkdir -p /srv/jekyll/.jekyll-cache
 
 # Work around a nonsense RubyGem permission bug.
 RUN unset GEM_HOME && unset GEM_BIN && yes | gem install --force bundler

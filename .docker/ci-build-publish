@@ -9,10 +9,6 @@ fi
 # Any errors should cause an immediate exit and failure.
 set -e
 
-chown -R jekyll:jekyll /srv/jekyll
-chown -R jekyll:jekyll /usr/jekyll/bin
-chown -R jekyll:jekyll /usr/local/bundle
-
 # Set input variables
 readonly gh_api_token="$GITHUB_TOKEN"
 readonly commiter_email="$GITHUB_ACTOR_EMAIL"
