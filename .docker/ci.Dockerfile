@@ -6,8 +6,7 @@ VOLUME  /srv/jekyll
 RUN mkdir -p /var/jekyll && \
     mkdir -p /srv/jekyll && \
     mkdir -p /srv/jekyll/_site && \
-    mkdir -p /srv/jekyll/.jekyll-cache \
-    chown jekyll:jekyll -R /usr/gem
+    mkdir -p /srv/jekyll/.jekyll-cache
 
 RUN apk add --no-cache --no-progress\
     graphviz\
