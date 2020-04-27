@@ -1,4 +1,4 @@
-FROM jekyll/jekyll:4.0.0
+FROM jekyll/jekyll:3.8.6
 
 WORKDIR /srv/jekyll
 VOLUME  /srv/jekyll
