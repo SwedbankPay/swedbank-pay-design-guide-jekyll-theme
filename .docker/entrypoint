@@ -1,18 +1,8 @@
 #!/bin/bash
 
-mkdir -p /var/jekyll
-mkdir -p /srv/jekyll
-chown -R jekyll:jekyll /srv/jekyll
-chown -R jekyll:jekyll /var/jekyll
-chown -R jekyll:jekyll /usr/local/bundle
 
-apt-get update && \
-    apt-get install -y \
-    git
-
-gem update --system
-gem install --force bundler
-
+# This config comes from Nokogiri error output as a suggestion
+bundle config build.nokogiri --use-system-libraries
 bundle install
 
 bundle check
