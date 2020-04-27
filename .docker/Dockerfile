@@ -22,10 +22,12 @@ RUN apt-get clean && \
     apt-get \
         --no-install-recommends \
         install -y \
-        locales \
-        default-jre \
-        graphviz \
-        fontconfig
+        locales=2.28-10 \
+        default-jre=2:1.11-71 \
+        graphviz=2.40.1-6 \
+        fontconfig=2.13.1-2 && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN echo "Europe/Oslo" > /etc/timezone && \
     dpkg-reconfigure -f noninteractive tzdata && \
