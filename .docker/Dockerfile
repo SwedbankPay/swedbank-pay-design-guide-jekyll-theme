@@ -33,10 +33,10 @@ RUN /bin/sh -c unset GEM_HOME \
 RUN /bin/sh -c unset GEM_HOME \
     && unset GEM_BIN \
     && yes | gem install --force bundler
-RUN /bin/sh -c gem install jekyll -v4.0.0 --     --use-system-libraries
-RUN /bin/sh -c gem install html-proofer jekyll-reload jekyll-mentions jekyll-coffeescript jekyll-sass-converter jekyll-commonmark jekyll-paginate jekyll-compose jekyll-assets RedCloth kramdown jemoji jekyll-redirect-from jekyll-sitemap jekyll-feed minima --     --use-system-libraries
-RUN /bin/sh -c addgroup -Sg 1000 jekyll
-RUN /bin/sh -c adduser  -Su 1000 -G   jekyll jekyll
+RUN /bin/sh -c gem install jekyll -v4.0.0 --use-system-libraries
+RUN /bin/sh -c gem install html-proofer jekyll-reload jekyll-mentions jekyll-coffeescript jekyll-sass-converter jekyll-commonmark jekyll-paginate jekyll-compose jekyll-assets RedCloth kramdown jemoji jekyll-redirect-from jekyll-sitemap jekyll-feed minima --use-system-libraries
+RUN addgroup --system -gid 1000 jekyll
+RUN adduser --system --gid 1000 jekyll jekyll
 RUN /bin/sh -c mkdir -p $JEKYLL_VAR_DIR
 RUN /bin/sh -c mkdir -p $JEKYLL_DATA_DIR
 RUN /bin/sh -c chown -R jekyll:jekyll $JEKYLL_DATA_DIR
@@ -46,6 +46,8 @@ RUN /bin/sh -c rm -rf /root/.gem
 RUN /bin/sh -c rm -rf /home/jekyll/.gem
 RUN /bin/sh -c rm -rf $BUNDLE_HOME/cache
 RUN /bin/sh -c rm -rf $GEM_HOME/cache
+
+RUN /bin/sh -c apt install default-jre
 
 WORKDIR /srv/jekyll
 COPY . .
