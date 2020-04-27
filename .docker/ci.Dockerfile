@@ -19,12 +19,12 @@ COPY . .
 
 # Work around a nonsense RubyGem permission bug.
 # RUN unset GEM_HOME && unset GEM_BIN && yes |
-RUN gem install --force bundler && \
-    bundle config no-cache 'true' && \
-    bundle config path 'vendor/bundle' && \
-    bundle install --jobs $(($(nproc) * 2)) && \
-    bundle check && \
-    bundle exec jekyll build JEKYLL_ENV=$JEKYLL_ENV --verbose
+RUN gem install --force bundler
+RUN bundle config no-cache 'true'
+RUN bundle config path 'vendor/bundle'
+RUN bundle install --deployment --jobs $(($(nproc) * 2))
+RUN bundle check
+RUN bundle exec jekyll build JEKYLL_ENV=$JEKYLL_ENV --verbose
 
 CMD ["jekyll", "--help"]
 ENTRYPOINT [ ".docker/ci-build-publish" ]
