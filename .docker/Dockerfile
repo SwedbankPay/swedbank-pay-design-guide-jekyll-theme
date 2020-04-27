@@ -27,9 +27,17 @@ ENV VERBOSE=false
 ENV FORCE_POLLING=false
 ENV DRAFTS=false
 
+RUN apt-get clean && \
+    apt-get update && \
+    apt-get install -y \
+        locales \
+        default-jre
+#RUN locale-gen en_US.UTF-8 && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+RUN localedef -i en_US -f UTF-8 en_US.UTF-8 && update-locale LANG=en_US.UTF-8
+
 RUN unset GEM_HOME \
     && unset GEM_BIN \
-    &&   yes | gem update --system
+    && yes | gem update --system
 RUN unset GEM_HOME \
     && unset GEM_BIN \
     && yes | gem install --force bundler
@@ -47,13 +55,8 @@ RUN rm -rf /home/jekyll/.gem
 RUN rm -rf $BUNDLE_HOME/cache
 RUN rm -rf $GEM_HOME/cache
 
-RUN apt install default-jre
-
 WORKDIR /srv/jekyll
 COPY . .
-
-RUN addgroup jekyll && \
-    useradd -g jekyll jekyll
 
 ENTRYPOINT [ ".docker/entrypoint" ]
 
