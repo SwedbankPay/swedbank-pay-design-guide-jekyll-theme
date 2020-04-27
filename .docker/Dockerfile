@@ -3,13 +3,6 @@ FROM ruby:2.7.1
 WORKDIR /srv/jekyll
 COPY . .
 
-# Ruby env
-ENV BUNDLE_APP_CONFIG=/usr/local/bundle
-ENV BUNDLE_BIN=/usr/local/bundle/bin
-ENV GEM_BIN=/usr/gem/bin
-ENV GEM_HOME=/usr/gem
-
-
 RUN addgroup jekyll && \
     useradd -g jekyll jekyll
 
@@ -23,12 +16,16 @@ RUN apt-get update && \
     apt-get install -y \
     git
 
-RUN unset GEM_HOME && unset GEM_BIN && \
+RUN unset /usr/local/bundle && unset /usr/gem/bin && \
     yes | gem update --system
 
-RUN unset GEM_HOME && unset GEM_BIN && yes | gem install --force bundler
+RUN unset /usr/local/bundle && unset /usr/gem/bin && yes | gem install --force bundler
 
 RUN bundle install
+
+RUN bundle check
+
+ENTRYPOINT [ "bundle", "exec" ]
 
 VOLUME  /srv/jekyll
 EXPOSE 35729
