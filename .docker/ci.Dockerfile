@@ -21,7 +21,7 @@ COPY . .
 RUN gem install --force bundler && \
     bundle config no-cache 'true' && \
     bundle config path 'vendor/bundle' && \
-    bundle install --deployment --jobs $(($(nproc) * 2)) && \
+    bundle install --deployment && \
     bundle check && \
     bundle exec jekyll build JEKYLL_ENV=$JEKYLL_ENV --verbose
 
