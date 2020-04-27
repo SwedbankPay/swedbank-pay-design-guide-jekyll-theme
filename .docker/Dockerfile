@@ -1,39 +1,44 @@
 FROM ruby:2.7.1
 
-ENV GEM_HOME=/usr/local/bundle
-ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-ENV BUNDLE_HOME=/usr/local/bundle
-ENV BUNDLE_APP_CONFIG=/usr/local/bundle
-ENV BUNDLE_BIN=/usr/local/bundle/bin
-ENV GEM_BIN=/usr/gem/bin
-ENV GEM_HOME=/usr/gem
-ENV JEKYLL_VAR_DIR=/var/jekyll
-ENV JEKYLL_DOCKER_TAG=4.0.0
-ENV JEKYLL_VERSION=4.0.0
-ENV JEKYLL_DOCKER_COMMIT=d567ca8e579ba0798a1a1137f3aab0fd06a75fb6
-ENV JEKYLL_DOCKER_NAME=jekyll
-ENV JEKYLL_DATA_DIR=/srv/jekyll
-ENV JEKYLL_BIN=/usr/jekyll/bin
-ENV JEKYLL_ENV=development
-ENV LANG=en_US.UTF-8
-ENV LANGUAGE=en_US:en
-ENV TZ=America/Chicago
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 \
+    BUNDLE_APP_CONFIG=/usr/local/bundle \
+    BUNDLE_HOME=/usr/local/bundle \
+    BUNDLE_APP_CONFIG=/usr/local/bundle \
+    BUNDLE_BIN=/usr/local/bundle/bin
+ENV GEM_BIN=/usr/gem/bin \
+    GEM_HOME=/usr/gem
+ENV JEKYLL_VAR_DIR=/var/jekyll \
+    JEKYLL_VERSION=4.0.0 \
+    JEKYLL_DATA_DIR=/srv/jekyll \
+    JEKYLL_BIN=/usr/jekyll/bin \
+    JEKYLL_ENV=development
 ENV PATH=/usr/jekyll/bin:/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-ENV LC_ALL=en_US.UTF-8
-ENV LANG=en_US.UTF-8
-ENV LANGUAGE=en_US
 ENV VERBOSE=false
 ENV FORCE_POLLING=false
 ENV DRAFTS=false
 
 RUN apt-get clean && \
     apt-get update && \
-    apt-get install -y \
+    apt-get \
+        --no-install-recommends \
+        install -y \
         locales \
         default-jre
-#RUN locale-gen en_US.UTF-8 && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
-RUN localedef -i en_US -f UTF-8 en_US.UTF-8 && update-locale LANG=en_US.UTF-8
+
+RUN echo "Europe/Oslo" > /etc/timezone && \
+    dpkg-reconfigure -f noninteractive tzdata && \
+    sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+    sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+    echo 'LANG="en_US.UTF-8"'>/etc/default/locale && \
+    dpkg-reconfigure --frontend=noninteractive locales && \
+    update-locale LANG=en_US.UTF-8
+
+ENV LANG=en_US.UTF-8 \
+    LANGUAGE=en_US:en \
+    TZ=Europe/Oslo \
+    LC_ALL=en_US.UTF-8 \
+    LANG=en_US.UTF-8 \
+    LANGUAGE=en_US
 
 RUN unset GEM_HOME \
     && unset GEM_BIN \
@@ -41,7 +46,7 @@ RUN unset GEM_HOME \
 RUN unset GEM_HOME \
     && unset GEM_BIN \
     && yes | gem install --force bundler
-RUN gem install jekyll --version 4.0.0 -- --use-system-libraries
+RUN gem install jekyll --version $JEKYLL_VERSION -- --use-system-libraries
 RUN gem install html-proofer jekyll-reload jekyll-mentions jekyll-coffeescript jekyll-sass-converter jekyll-commonmark jekyll-paginate jekyll-compose jekyll-assets RedCloth kramdown jemoji jekyll-redirect-from jekyll-sitemap jekyll-feed minima -- --use-system-libraries
 RUN addgroup --system --gid 1000 jekyll
 RUN adduser --system --gid 1000 jekyll
