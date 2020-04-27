@@ -19,10 +19,10 @@ COPY . .
 # Work around a nonsense RubyGem permission bug.
 # RUN unset GEM_HOME && unset GEM_BIN && yes |
 RUN gem install --force bundler && \
-    #bundle config no-cache 'true' && \
-    #bundle config path 'vendor/bundle' && \
+    bundle config no-cache 'true' && \
+    bundle config path 'vendor/bundle' && \
     bundle install --deployment --jobs $(($(nproc) * 2)) && \
-    #bundle check && \
+    bundle check && \
     chown jekyll:jekyll -R /usr/gem && \
     bundle exec jekyll build JEKYLL_ENV=$JEKYLL_ENV --verbose
 
