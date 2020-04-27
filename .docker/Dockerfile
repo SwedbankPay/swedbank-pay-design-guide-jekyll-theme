@@ -35,8 +35,8 @@ RUN unset GEM_HOME \
     && yes | gem install --force bundler
 RUN gem install jekyll --version 4.0.0 -- --use-system-libraries
 RUN gem install html-proofer jekyll-reload jekyll-mentions jekyll-coffeescript jekyll-sass-converter jekyll-commonmark jekyll-paginate jekyll-compose jekyll-assets RedCloth kramdown jemoji jekyll-redirect-from jekyll-sitemap jekyll-feed minima -- --use-system-libraries
-RUN addgroup --system -gid 1000 jekyll
-RUN adduser --system --gid 1000 jekyll jekyll
+RUN addgroup --system --gid 1000 jekyll
+RUN adduser --system --gid 1000 jekyll
 RUN mkdir -p $JEKYLL_VAR_DIR
 RUN mkdir -p $JEKYLL_DATA_DIR
 RUN chown -R jekyll:jekyll $JEKYLL_DATA_DIR
