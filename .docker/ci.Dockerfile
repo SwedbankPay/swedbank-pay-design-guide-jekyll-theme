@@ -23,6 +23,7 @@ RUN gem install --force bundler && \
     bundle config path 'vendor/bundle' && \
     bundle install --deployment --jobs $(($(nproc) * 2)) && \
     bundle check && \
+    chown jekyll:jekyll -R /usr/gem && \
     bundle exec jekyll build JEKYLL_ENV=$JEKYLL_ENV --verbose
 
 CMD ["jekyll", "--help"]
