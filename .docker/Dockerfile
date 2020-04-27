@@ -23,7 +23,9 @@ RUN apt-get clean && \
         --no-install-recommends \
         install -y \
         locales \
-        default-jre
+        default-jre \
+        graphviz \
+        fontconfig
 
 RUN echo "Europe/Oslo" > /etc/timezone && \
     dpkg-reconfigure -f noninteractive tzdata && \
@@ -47,7 +49,23 @@ RUN unset GEM_HOME \
     && unset GEM_BIN \
     && yes | gem install --force bundler
 RUN gem install jekyll --version $JEKYLL_VERSION -- --use-system-libraries
-RUN gem install html-proofer jekyll-reload jekyll-mentions jekyll-coffeescript jekyll-sass-converter jekyll-commonmark jekyll-paginate jekyll-compose jekyll-assets RedCloth kramdown jemoji jekyll-redirect-from jekyll-sitemap jekyll-feed minima -- --use-system-libraries
+RUN gem install \
+        html-proofer \
+        jekyll-reload \
+        jekyll-mentions \
+        jekyll-coffeescript \
+        jekyll-sass-converter \
+        jekyll-commonmark \
+        jekyll-paginate \
+        jekyll-compose \
+        jekyll-assets \
+        RedCloth \
+        kramdown \
+        jemoji \
+        jekyll-redirect-from \
+        jekyll-sitemap \
+        jekyll-feed minima \
+        -- --use-system-libraries
 RUN addgroup --system --gid 1000 jekyll
 RUN adduser --system --gid 1000 jekyll
 RUN mkdir -p $JEKYLL_VAR_DIR
