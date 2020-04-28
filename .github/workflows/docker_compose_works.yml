@@ -12,9 +12,9 @@ jobs:
 
     - name: Docker compose up
       run: docker-compose \
-      -f docker-compose.yml \
-      -f .docker/docker-compose.ci-cont.yml \
-      up --build \
-      --abort-on-container-exit \
-      --exit-code-from jekyll
+        -f docker-compose.yml \
+        -f .docker/docker-compose.ci-cont.yml \
+        up --build \
+        --abort-on-container-exit \
+        --exit-code-from jekyll
 
