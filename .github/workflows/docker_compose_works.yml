@@ -11,10 +11,11 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Docker compose up
-      run: docker-compose \
-        -f docker-compose.yml \
-        -f .docker/docker-compose.ci-cont.yml \
-        up --build \
-        --abort-on-container-exit \
-        --exit-code-from jekyll
+      run: |
+        docker-compose \
+          -f docker-compose.yml \
+          -f .docker/docker-compose.ci-cont.yml \
+          up --build \
+          --abort-on-container-exit \
+          --exit-code-from jekyll
 
