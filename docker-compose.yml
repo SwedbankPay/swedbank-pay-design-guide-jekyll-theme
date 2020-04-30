@@ -5,13 +5,13 @@ services:
     build:
       context: .
       cache_from:
-        - jekyll/jekyll:4.0.0
+        - jekyll/jekyll:3.8.6
       dockerfile: .docker/Dockerfile
     container_name: jekyll
     ports:
       - 4000:4000
       - 35729:35729
-    command: jekyll serve --livereload -i --force_polling --watch
+    command: rake test
     volumes:
       - .:/srv/jekyll
       - .bundle:/usr/local/bundle
