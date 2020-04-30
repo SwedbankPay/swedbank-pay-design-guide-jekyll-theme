@@ -1,5 +1,6 @@
 # coding: utf-8
 require 'jekyll'
+require 'html-proofer'
 
 # Extend string to allow for bold text.
 class String
@@ -17,6 +18,13 @@ end
 task :clean do
   puts 'Cleaning up _site...'.bold
   Jekyll::Commands::Clean.process({})
+end
+
+# Test generated output has valid HTML and links.
+task :test do
+  sh "bundle exec jekyll build"
+  options = { :assume_extension => true }
+  HTMLProofer.check_directory("./_site", options).run
 end
 
 task :default => ["build"]
