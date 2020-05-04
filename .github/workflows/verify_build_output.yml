@@ -13,4 +13,5 @@ jobs:
         docker-compose \
           -f docker-compose.yml \
           -f .docker/docker-compose.test.yml \
-          up
+          up --abort-on-container-exit \
+          --exit-code-from jekyll
