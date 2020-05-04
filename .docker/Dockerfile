@@ -1,4 +1,4 @@
-FROM jekyll/jekyll:3.8.6
+FROM jekyll/jekyll:4.0.0
 
 RUN apk add --no-cache --no-progress\
     graphviz\

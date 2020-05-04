@@ -5,7 +5,7 @@ services:
     build:
       context: .
       cache_from:
-        - jekyll/jekyll:3.8.6
+        - jekyll/jekyll:4.0.0
       dockerfile: .docker/Dockerfile
     container_name: jekyll
     ports:
