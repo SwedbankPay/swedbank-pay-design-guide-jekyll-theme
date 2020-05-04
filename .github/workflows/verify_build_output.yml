@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Docker compose up
+    - name: Docker compose up with rake
       run: |
         docker-compose \
           -f docker-compose.yml \
