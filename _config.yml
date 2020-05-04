@@ -39,3 +39,5 @@ google_analytics:
 defaults:
   - values:
       layout: default
+github:
+  branch: master
