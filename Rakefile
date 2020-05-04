@@ -22,7 +22,7 @@ end
 
 # Test generated output has valid HTML and links.
 task :test do
-  sh "bundle exec jekyll build"
+  Jekyll::Commands::Build.process(profile: true)
   options = { :assume_extension => true }
   HTMLProofer.check_directory("./_site", options).run
 end
