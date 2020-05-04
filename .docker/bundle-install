@@ -2,3 +2,5 @@
 
 set -e -x
 bundle install
+
+$@
