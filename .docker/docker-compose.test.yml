@@ -5,4 +5,4 @@ services:
     command: rake test --trace
     build:
       context: .
-      dockerfile: .docker/Dockerfile
+      dockerfile: .docker/Dockerfile-test

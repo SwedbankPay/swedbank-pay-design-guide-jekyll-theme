@@ -12,6 +12,6 @@ services:
       - 4000:4000
       - 35729:35729
     command: jekyll serve --livereload -i --force_polling --watch
-    volumes:
-      - .:/srv/jekyll
-      - .bundle:/usr/local/bundle
+    #volumes:
+    #  - .:/srv/jekyll
+    #  - .bundle:/usr/local/bundle
