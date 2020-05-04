@@ -8,7 +8,5 @@ RUN apk add --no-cache --no-progress\
 
 RUN gem install bundler
 
-COPY . .
-
 CMD [ "jekyll" ]
 ENTRYPOINT [ ".docker/bundle-install" ]
