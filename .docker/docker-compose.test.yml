@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   jekyll:
-    command: install && bundle exec rake test --trace
+    command: rake test --trace
     build:
       context: .
       dockerfile: .docker/Dockerfile
