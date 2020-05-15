@@ -2,9 +2,12 @@ version: '3.7'
 
 services:
   jekyll:
-    command: jekyll build --verbose
-    environment: 
-      environment: 'production'
-    build:
-      context: .
-      dockerfile: .docker/Dockerfile-ci
+    command: gh-pages-publish
+    environment:
+      - DEBUG=${DEBUG}
+      - GITHUB_ACTOR=${GITHUB_ACTOR}
+      - GITHUB_ACTOR_EMAIL=${GITHUB_ACTOR_EMAIL}
+      - GH_PAGES_BRANCH=${GH_PAGES_BRANCH}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - JEKYLL_ENV=${JEKYLL_ENV}
+      - GITHUB_REPO=${GITHUB_REPO}

@@ -1,4 +1,0 @@
-FROM swedbankpay/jekyll-plantuml:1.1.1
-
-CMD [ "jekyll" ]
-ENTRYPOINT [ ".docker/ci-build-publish" ]

@@ -9,19 +9,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Docker compose up
+    - name: Docker compose up for CI
       env:
-        secret_gh_pages_api_token: ${{ secrets.GH_PAGES_TOKEN }}
-        git_committer_email: dev@payex.com
-        git_committer_name: payex-dev
-        gh_pages_publishing_source: gh-pages
-        DEBUG: "true"
         GITHUB_ACTOR: payex-dev
-        JEKYLL_GITHUB_TOKEN : ${{ secrets.GH_PAGES_TOKEN }}
+        GITHUB_ACTOR_EMAIL: dev@payex.com
+        GH_PAGES_BRANCH: gh-pages
+        GITHUB_TOKEN : ${{ secrets.GITHUB_TOKEN }}
         JEKYLL_ENV: production
+        GITHUB_REPO: ${{ github.repository }}
       run: |
         docker-compose \
           -f docker-compose.yml \
           -f .docker/docker-compose.ci.yml \
-          up --build -d
-  
+          up \
+          --abort-on-container-exit \
+          --exit-code-from jekyll
