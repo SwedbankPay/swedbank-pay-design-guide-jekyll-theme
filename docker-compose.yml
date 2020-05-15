@@ -2,16 +2,11 @@ version: '3.7'
 
 services:
   jekyll:
-    build:
-      context: .
-      cache_from:
-        - ruby:2.7.1
-      dockerfile: .docker/Dockerfile
+    image: swedbankpay/jekyll-plantuml:1.1.1
     container_name: jekyll
     ports:
       - 4000:4000
       - 35729:35729
-    command: jekyll serve --livereload -i --force_polling --watch --trace --host 0.0.0.0
     volumes:
       - .:/srv/jekyll
       - .bundle:/usr/local/bundle
