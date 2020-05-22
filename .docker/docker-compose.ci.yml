@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   jekyll:
-    command: gh-pages-publish
+    command: deploy
     environment:
       - DEBUG=${DEBUG}
       - GITHUB_ACTOR=${GITHUB_ACTOR}
