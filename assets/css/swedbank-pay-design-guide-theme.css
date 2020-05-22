@@ -18,7 +18,7 @@ a.header-anchor::before { content: '#'; }
 
 .jumbotron p:last-of-type { margin-bottom: 0; }
 
-a[href^='//']:not([href*='https://swedbankpay.github.io']):after, a[href^='http://']:not([href*='https://swedbankpay.github.io']):after, a[href^='https://']:not([href*='https://swedbankpay.github.io']):after { content: url("../img/external-url.svg"); margin-left: .3rem; display: inline-block; width: .8rem; background-repeat: none; color: #257886; }
+a[href^='//']:not([href*='https://github.com']):after, a[href^='http://']:not([href*='https://github.com']):after, a[href^='https://']:not([href*='https://github.com']):after { content: url("../img/external-url.svg"); margin-left: .3rem; display: inline-block; width: .8rem; background-repeat: none; color: #257886; }
 
 #designguide .designguide-header .topbar-info a:after { content: none; display: inline; }
 
