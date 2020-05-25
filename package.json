@@ -1,0 +1,16 @@
+{
+  "name": "swedbank-pay-design-guide-jekyll-theme",
+  "version": "1.0.0",
+  "description": "Swedbank Pay Design Guide theme for Jekyll",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme.git"
+  },
+  "author": "SwedbankPay",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/issues"
+  },
+  "homepage": "https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme#readme"
+}
