@@ -24,7 +24,7 @@ The Docker installation is the one we recommend and use.
 1. Install [Docker][docker], using Linux containers.
    Make sure virtualization is enabled on your machine.
 2. Open a console window at the root of the repository and run
-   `docker-compose up --build`
+   `docker-compose up`
 
 ### Manual install
 
