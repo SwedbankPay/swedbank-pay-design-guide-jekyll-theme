@@ -2,12 +2,9 @@ version: '3.7'
 
 services:
   jekyll:
-    command: jekyll build
+    command: deploy
     environment:
-      - DEBUG=${DEBUG}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
       - GITHUB_ACTOR=${GITHUB_ACTOR}
       - GITHUB_ACTOR_EMAIL=${GITHUB_ACTOR_EMAIL}
-      - GH_PAGES_BRANCH=${GH_PAGES_BRANCH}
-      - GITHUB_TOKEN=${GITHUB_TOKEN}
-      - JEKYLL_ENV=${JEKYLL_ENV}
       - GITHUB_REPO=${GITHUB_REPO}
