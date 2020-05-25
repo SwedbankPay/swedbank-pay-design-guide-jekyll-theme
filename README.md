@@ -15,8 +15,16 @@ expected to adhere to the [Contributor Covenant][cc] code of conduct as well as
 ## Usage
 
 To view this theme, browse to [swedbankpay.github.io][swedbankpay]. If you'd
-like to host it locally on your computer, you have to options, manual install
-or [Docker][docker]:
+like to host it locally on your computer, you have two options, manual install
+or [Docker][docker].
+The Docker installation is the one we recommend and use.
+
+### Docker
+
+1. Install [Docker][docker], using Linux containers.
+   Make sure virtualization is enabled on your machine.
+2. Open a console window at the root of the repository and run
+   `docker-compose up --build`
 
 ### Manual install
 
@@ -30,13 +38,6 @@ or [Docker][docker]:
    folder of this repository.
 6. Run `bundle exec jekyll serve` to start the website.
 7. Open `http://localhost:4000` in a browser.
-
-### Docker
-
-1. Install [Docker][docker], using Linux containers.
-   Make sure virtualization is enabled on your machine.
-2. Open a console window at the root of the repository and run
-   `docker-compose up --build`
 
 ### Required Visual Studio Code plugins
 
