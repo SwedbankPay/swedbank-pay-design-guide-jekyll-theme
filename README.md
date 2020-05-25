@@ -20,15 +20,16 @@ or [Docker][docker]:
 
 ### Manual install
 
-1. [Clone this repository][clone].
+1. [Clone this repository][cloning].
 2. Jekyll is written in [Ruby][ruby], so you'll need to download and install
-   that.
+   that. If you're installing on Windows, choose setup with DevKit.
 3. To install the [Ruby Gems][gems] this web site requires, you first need to
    install [Bundler][bundler].
-4. Once Ruby and Bundler is in place, type `bundle install` inside the root
+4. Install [Graphviz][graphviz], this will require Java.
+5. Once Ruby ,Bundler, and Graphviz, is in place, type `bundle install` inside the root
    folder of this repository.
-5. Run `bundle exec jekyll serve` to start the website.
-6. Open `http://localhost:4000` in a browser.
+6. Run `bundle exec jekyll serve` to start the website.
+7. Open `http://localhost:4000` in a browser.
 
 ### Docker
 
@@ -75,6 +76,7 @@ This website is available as open source under the terms of the
 [dev-guide]: https://developer.swedbankpay.com/resources/development-guidelines/
 [docker]: https://www.docker.com/
 [gems]: <https://rubygems.org/>
+[graphviz]: https://graphviz.org/download/
 [license]: <https://opensource.org/licenses/MIT>
 [liquid]: <https://jekyllrb.com/docs/liquid/>
 [opengraph-image]: <https://repository-images.githubusercontent.com/209270355/36818080-53ee-11ea-896c-082addb851a6>
