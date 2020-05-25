@@ -17,7 +17,7 @@ expected to adhere to the [Contributor Covenant][cc] code of conduct as well as
 To view this theme, browse to [swedbankpay.github.io][swedbankpay]. If you'd
 like to host it locally on your computer, you have two options, manual install
 or [Docker][docker].
-The Docker installation is the one we recommend and use.
+The Docker installation is the one we recommend to use for its simplicity.
 
 ### Docker
 
