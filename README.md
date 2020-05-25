@@ -20,7 +20,7 @@ or [Docker][docker]:
 
 ### Manual install
 
-1. [Clone this repository][cloning].
+1. [Clone this repository][clone].
 2. Jekyll is written in [Ruby][ruby], so you'll need to download and install
    that. If you're installing on Windows, choose setup with DevKit.
 3. To install the [Ruby Gems][gems] this web site requires, you first need to
