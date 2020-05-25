@@ -1,0 +1,27 @@
+name: Deploy to GitHub Pages
+
+on: 
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Docker compose up
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_ACTOR: payex-dev
+        GITHUB_ACTOR_EMAIL: dev@payex.com
+        GITHUB_REPO: ${{ github.repository }}
+      run: |
+        docker-compose \
+          -f docker-compose.yml \
+          -f .docker/docker-compose.deploy.yml \
+          up \
+          --build \
+          --abort-on-container-exit \
+          --exit-code-from jekyll
