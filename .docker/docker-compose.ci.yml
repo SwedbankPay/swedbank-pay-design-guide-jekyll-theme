@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   jekyll:
-    command: deploy
+    command: jekyll build
     environment:
       - DEBUG=${DEBUG}
       - GITHUB_ACTOR=${GITHUB_ACTOR}
