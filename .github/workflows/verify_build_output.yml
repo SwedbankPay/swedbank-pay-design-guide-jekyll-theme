@@ -17,7 +17,5 @@ jobs:
           --build \
           --abort-on-container-exit \
           --exit-code-from jekyll
-
-    - name: Run remark
-      - run: npm install
-      - run: npm run remark
+    - run: npm install
+    - run: npm run remark
