@@ -1,0 +1,30 @@
+{
+  "name": "swedbank-pay-design-guide-jekyll-theme",
+  "version": "1.0.0",
+  "description": "![Swedbank Pay Design Guide Theme for Jekyll][opengraph-image]",
+  "main": "index.js",
+  "dependencies": {
+    "remark": "^12.0.0",
+    "remark-cli": "^8.0.0",
+    "remark-lint": "^7.0.0",
+    "remark-lint-code": "^2.0.0",
+    "remark-lint-heading-whitespace": "^1.0.0",
+    "remark-lint-no-repeat-punctuation": "^0.1.3",
+    "remark-preset-lint-markdown-style-guide": "^3.0.0",
+    "remark-preset-lint-recommended": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "remark": "remark ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/issues"
+  },
+  "homepage": "https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme#readme"
+}
