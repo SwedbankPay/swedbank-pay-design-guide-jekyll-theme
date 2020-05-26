@@ -31,7 +31,15 @@
   "remarkConfig": {
     "plugins": [
       "remark-preset-lint-recommended",
-      "remark-lint-code",
+      [
+        "remark-lint-code",
+        {
+          "js": {
+            "module": "node_modules/remark-lint-code-eslint",
+            "options": {}
+          }
+        }
+      ],
       "remark-lint-no-repeat-punctuation",
       "remark-lint-heading-whitespace",
       "remark-lint-write-good",
