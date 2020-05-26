@@ -27,5 +27,15 @@
   "bugs": {
     "url": "https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/issues"
   },
-  "homepage": "https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme#readme"
+  "homepage": "https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme#readme",
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-recommended",
+      "remark-lint-code",
+      "remark-lint-no-repeat-punctuation",
+      "remark-lint-heading-whitespace",
+      "remark-preset-lint-markdown-style-guide",
+      "remark-lint-write-good"
+    ]
+  }
 }
