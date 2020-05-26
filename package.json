@@ -34,8 +34,16 @@
       "remark-lint-code",
       "remark-lint-no-repeat-punctuation",
       "remark-lint-heading-whitespace",
+      "remark-lint-write-good",
       "remark-preset-lint-markdown-style-guide",
-      "remark-lint-write-good"
+      [
+        "ordered-list-marker-value",
+        "one"
+      ],
+      [
+        "remark-lint-list-item-spacing",
+        false
+      ]
     ]
   }
 }
