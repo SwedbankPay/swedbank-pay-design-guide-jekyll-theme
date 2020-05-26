@@ -37,7 +37,7 @@
       "remark-lint-write-good",
       "remark-preset-lint-markdown-style-guide",
       [
-        "ordered-list-marker-value",
+        "remark-lint-ordered-list-marker-value",
         "one"
       ],
       [
