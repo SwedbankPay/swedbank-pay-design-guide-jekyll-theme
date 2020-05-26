@@ -22,7 +22,7 @@ jobs:
     #- run: npm run remark
 
     - name: remark-lint
-        uses: prologic/action-remark-lint@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: github-pr-review # Change reporter. (Only `github-pr-check` is supported at the moment).
+      uses: prologic/action-remark-lint@v1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        reporter: github-pr-review # Change reporter. (Only `github-pr-check` is supported at the moment).
