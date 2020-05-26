@@ -22,7 +22,7 @@ jobs:
     #- run: npm run remark
 
     - name: remark-lint
-      uses: swedbankpay/action-remark-lint@v0.0.5
+      uses: swedbankpay/action-remark-lint@test
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         reporter: github-pr-review # Change reporter. (Only `github-pr-check` is supported at the moment).
