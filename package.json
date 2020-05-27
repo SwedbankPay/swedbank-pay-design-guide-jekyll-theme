@@ -43,6 +43,10 @@
         "ordered"
       ],
       [
+        "remark-lint-heading-style",
+        false
+      ],
+      [
         "remark-lint-list-item-spacing",
         false
       ]
