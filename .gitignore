@@ -13,3 +13,4 @@ Gemfile.lock
 .java
 .bundle-cache
 node_modules
+vendor
