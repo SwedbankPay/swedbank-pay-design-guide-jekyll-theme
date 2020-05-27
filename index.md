@@ -26,8 +26,6 @@ This is a normal paragraph following a header. GitHub is a code hosting platform
 
 ### Header 3
 
-### Header 3
-
 {:.code-header}
 **JavaScript code with syntax highlighting.**
 
@@ -210,7 +208,7 @@ and try out PayEx Checkout for yourself!' %}
 
 ## There's a horizontal rule below this
 
-* * *
+---
 
 ## Here is an unordered list
 
