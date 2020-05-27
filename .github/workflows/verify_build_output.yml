@@ -1,6 +1,6 @@
 name: Verify build output
 
-on: [pull_request]
+on: [pull_request, push]
 
 jobs:
   test:
@@ -24,7 +24,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         level: info
-        reporter: github-pr-check
+        reporter: github-pr-review
 
     - run: npm install
     - run: npm run remark
