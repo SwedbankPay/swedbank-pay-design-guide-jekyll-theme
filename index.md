@@ -222,9 +222,9 @@ and try out PayEx Checkout for yourself!' %}
 ## And an ordered list
 
 1. Item one
-1. Item two
-1. Item three
-1. Item four
+2. Item two
+3. Item three
+4. Item four
 
 ## And a nested list
 
