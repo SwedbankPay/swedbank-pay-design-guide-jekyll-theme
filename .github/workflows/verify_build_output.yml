@@ -19,7 +19,7 @@ jobs:
           --exit-code-from jekyll
     
     - run: npm install
-    #- run: npm run remark
+    - run: npm run remark
 
     - name: remark-lint
       uses: swedbankpay/action-remark-lint@master
