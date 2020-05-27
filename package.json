@@ -49,6 +49,10 @@
       [
         "remark-lint-list-item-spacing",
         false
+      ],
+      [
+        "lint-unordered-list-marker-style",
+        "*"
       ]
     ]
   }
