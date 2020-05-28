@@ -136,9 +136,9 @@ their language.
 
 ##### Header 5
 
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
+1.  This is an ordered list following a header.
+2.  This is an ordered list following a header.
+3.  This is an ordered list following a header.
 
 ###### Header 6
 
@@ -230,15 +230,18 @@ and try out PayEx Checkout for yourself!' %}
 ## And a nested list
 
 * level 1 item
+  
   * level 2 item
   * level 2 item
     * level 3 item
     * level 3 item
 * level 1 item
+  
   * level 2 item
   * level 2 item
   * level 2 item
 * level 1 item
+  
     * level 2 item
     * level 2 item
 * level 1 item
