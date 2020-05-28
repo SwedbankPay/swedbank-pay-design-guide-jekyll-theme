@@ -279,7 +279,7 @@ The final element.
 ## Material design icons
 
 {% icon check %} {% icon line_weight %} {% icon gavel %} {% icon visibility %}
-{% icon work %}
+{% icon work %} {% icon alarm_on two-tone %} {% icon aspect_ratio round %}
 
 ## PlantUML
 
