@@ -1,62 +1,56 @@
-module.exports = {
-  "settings": {
-    "bullet": "*",
-    "emphasis": "_",
-    "strong": "*",
-    "fence": "`",
-    "rule": "-",
-    "ruleSpaces": false,
-    "ruleRepetition": 3,
-    "gfm": true,
-    "footnotes": true,
-    "commonmark": false,
-    "pedantic": false,
-    "entities": false,
-    "fences": true,
-    "spacedTable": true,
-    "listItemIndent": "💩",
-    "remarkLinstListItemIndent": "💩",
+exports.plugins = {
+  settings: {
+    bullet: "*",
+    emphasis: "_",
+    strong: "*",
+    fence: "`",
+    rule: "-",
+    ruleSpaces: false,
+    ruleRepetition: 3,
+    gfm: true,
+    footnotes: true,
+    commonmark: false,
+    pedantic: false,
+    entities: false,
+    fences: true,
+    spacedTable: true,
+    listItemIndent: "💩",
+    remarkLinstListItemIndent: "💩",
     "list-item-indent": "💩",
-    "remark-lint-list-item-indent": "💩"
+    "remark-lint-list-item-indent": "💩",
   },
-  "plugins": [
+  plugins: [
     ["remark-frontmatter", "yaml"],
     "remark-squeeze-paragraphs",
     "remark-slug",
     [
       "remark-heading-gap",
       {
-        "2": { "before": "", "after": "" }
-      }
+        "2": { before: "", after: "" },
+      },
     ],
     "remark-inline-links",
     [
       "remark-textr",
       {
-        "options": { "locale": "en-us" },
-        "plugins": [
+        options: { locale: "en-us" },
+        plugins: [
           "typographic-em-dashes",
           "typographic-en-dashes",
-          "typographic-single-spaces"
-        ]
-      }
+          "typographic-single-spaces",
+        ],
+      },
     ],
     "remark-lint",
     "remark-lint-no-empty-sections",
     "remark-lint-code",
     ["remark-lint-blockquote-indentation", 2],
-    [
-      "remark-lint-checkbox-character-style",
-      { "checked": "x", "unchecked": " " }
-    ],
+    ["remark-lint-checkbox-character-style", { checked: "x", unchecked: " " }],
     "remark-lint-checkbox-content-indent",
     ["remark-lint-code-block-style", "fenced"],
     "remark-lint-definition-case",
     "remark-lint-definition-spacing",
-    [
-      "remark-lint-fenced-code-flag",
-      { "allowEmpty": true }
-    ],
+    ["remark-lint-fenced-code-flag", { allowEmpty: true }],
     ["remark-lint-fenced-code-marker", "`"],
     ["remark-lint-file-extension", "md"],
     "remark-lint-final-definition",
@@ -100,6 +94,6 @@ module.exports = {
     "remark-lint-table-pipe-alignment",
     "remark-lint-table-pipes",
     ["remark-lint-unordered-list-marker-style", "*"],
-    ["remark-lint-list-item-indent", "space"]
-  ]
-}
+    ["remark-lint-list-item-indent", "space"],
+  ],
+};
