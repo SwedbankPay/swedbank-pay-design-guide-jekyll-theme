@@ -13,11 +13,7 @@ exports.plugins = {
     pedantic: false,
     entities: false,
     fences: true,
-    spacedTable: true,
-    listItemIndent: "💩",
-    remarkLinstListItemIndent: "💩",
-    "list-item-indent": "💩",
-    "remark-lint-list-item-indent": "💩",
+    spacedTable: true
   },
   plugins: [
     ["remark-frontmatter", "yaml"],

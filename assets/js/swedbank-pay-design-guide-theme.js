@@ -12,7 +12,7 @@
         flowchart: {
             useMaxWidth: false
         }
-    }
+    };
     mermaid.initialize(configObject);
 
     mermaid.init(configObject, "code.language-mermaid");
