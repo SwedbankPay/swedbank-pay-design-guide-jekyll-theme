@@ -1,6 +1,5 @@
 plugins:
   - "remark-frontmatter"
-  - "remark-squeeze-paragraphs"
   - "remark-slug"
   - "remark-inline-links"
   - "remark-lint"
