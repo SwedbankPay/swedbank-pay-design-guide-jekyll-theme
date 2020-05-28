@@ -15,7 +15,7 @@
     };
     mermaid.initialize(configObject);
 
-    mermaid.init(configObject, "code.language-mermaid");
+    mermaid.init(undefined, "code.language-mermaid");
 })();
 
 // Initialize sidebar navigation scroll activation
@@ -46,7 +46,7 @@
             - buffer;
 
         if (scrollDistanceFromBottom <= 0) {
-            for (let link of tocLinks) {
+            for (var link of tocLinks) {
                 link.parentElement.classList.remove("active");
             }
 
@@ -60,7 +60,7 @@
             var nextHeadingPos = getPosition(headings[i + 1]);
 
             if (currentPos > headingPos && currentPos < nextHeadingPos) {
-                for (let link of tocLinks) {
+                for (var link of tocLinks) {
                     link.parentElement.classList.remove("active");
                 }
 
