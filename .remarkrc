@@ -1,6 +1,23 @@
 {
   "settings": {
-    "list-item-indent": "mixed"
+    "bullet": "*",
+    "emphasis": "_",
+    "strong": "*",
+    "fence": "`",
+    "rule": "-",
+    "ruleSpaces": false,
+    "ruleRepetition": 3,
+    "gfm": true,
+    "footnotes": true,
+    "commonmark": false,
+    "pedantic": false,
+    "entities": false,
+    "fences": true,
+    "spacedTable": true,
+    "listItemIndent": "💩",
+    "remarkLinstListItemIndent": "💩",
+    "list-item-indent": "💩",
+    "remark-lint-list-item-indent": "💩"
   },
   "plugins": [
     ["remark-frontmatter", "yaml"],
@@ -82,6 +99,7 @@
     ["remark-lint-table-cell-padding", "padded"],
     "remark-lint-table-pipe-alignment",
     "remark-lint-table-pipes",
-    ["remark-lint-unordered-list-marker-style", "*"]
+    ["remark-lint-unordered-list-marker-style", "*"],
+    ["remark-lint-list-item-indent", "space"]
   ]
 }
