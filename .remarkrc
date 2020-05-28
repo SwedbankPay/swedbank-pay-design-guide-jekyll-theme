@@ -1,4 +1,4 @@
-exports.plugins = {
+{
   settings: {
     bullet: "*",
     emphasis: "_",

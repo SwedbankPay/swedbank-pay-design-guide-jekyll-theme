@@ -8,10 +8,10 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 *   [External absolute full link](https://www.wikipedia.org)
 *   [External protocol relative link](//www.wikipedia.org)
-*   [Internal absolute full link]({{ site.url }})
-*   [Internal explicit relative link](./page1)
-*   [Internal implicit relative link](page1)
-*   [Internal absolute link](/page1)
+*   [Internal absolute full link][internal-absolute-full-link]
+*   [Internal explicit relative link][explicit-relative-link]
+*   [Internal implicit relative link][implicit-relative-link]
+*   [Internal absolute link][internal-absolute-link]
 
 There should be whitespace between paragraphs.
 
@@ -417,3 +417,8 @@ More complex example:
     end box
 @enduml
 ```
+
+[internal-absolute-full-link]: {{ site.url }}
+[explicit-relative-link]: ./page1
+[implicit-relative-link]: page1
+[internal-absolute-link]: /page1
