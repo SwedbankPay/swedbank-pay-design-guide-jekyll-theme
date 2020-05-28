@@ -1,16 +1,17 @@
 ---
+
 title: Index
 description: The index page
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-* [External absolute full link](https://www.wikipedia.org)
-* [External protocol relative link](//www.wikipedia.org)
-* [Internal absolute full link]({{ site.url }})
-* [Internal explicit relative link](./page1)
-* [Internal implicit relative link](page1)
-* [Internal absolute link](/page1)
+*   [External absolute full link](https://www.wikipedia.org)
+*   [External protocol relative link](//www.wikipedia.org)
+*   [Internal absolute full link]({{ site.url }})
+*   [Internal explicit relative link](./page1)
+*   [Internal implicit relative link](page1)
+*   [Internal absolute link](/page1)
 
 There should be whitespace between paragraphs.
 
@@ -129,9 +130,9 @@ their language.
 
 #### Header 4
 
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-* This is an unordered list following a header.
+*   This is an unordered list following a header.
+*   This is an unordered list following a header.
+*   This is an unordered list following a header.
 
 ##### Header 5
 
@@ -182,17 +183,17 @@ sequenceDiagram
 {% include alert.html type='success' icon='check_circle'
 body='This is a successful alert.' %}
 
-{% include alert.html icon='info_outline' header='**Informational** *alert*'
-body='This is an **informational** alert *with* `<markdown/>`{:.language-html}.'
+{% include alert.html icon='info_outline' header='**Informational**     *alert*'
+body='This is an **informational**   alert *with*   `<markdown/>`{:.language-html}.'
 %}
 
 {% include alert.html type='warning' icon='warning' 
 header='`{ "warning": "alert" }`{:.language-js}'
-body='This is a **warning** alert with `<markdown/>`{:.language-html}.' %}
+body='This is a **warning**   alert with `<markdown/>`{:.language-html}.' %}
 
 ## Jumbotron
 
-{% include jumbotron.html body='**PayEx Checkout** is a complete reimagination
+{% include jumbotron.html body='**PayEx Checkout**   is a complete reimagination
 of the checkout experience, integrating seamlessly into the merchant website
 through highly customizable and flexible components.
 
@@ -214,10 +215,10 @@ and try out PayEx Checkout for yourself!' %}
 
 ## Here is an unordered list
 
-* Item foo
-* Item bar
-* Item baz
-* Item zip
+*   Item foo
+*   Item bar
+*   Item baz
+*   Item zip
 
 ## And an ordered list
 
@@ -228,19 +229,19 @@ and try out PayEx Checkout for yourself!' %}
 
 ## And a nested list
 
-* level 1 item
-  * level 2 item
-  * level 2 item
-    * level 3 item
-    * level 3 item
-* level 1 item
-  * level 2 item
-  * level 2 item
-  * level 2 item
-* level 1 item
-  * level 2 item
-  * level 2 item
-* level 1 item
+*   level 1 item
+    *   level 2 item
+    *   level 2 item
+      *   level 3 item
+      *   level 3 item
+*   level 1 item
+    *   level 2 item
+    *   level 2 item
+    *   level 2 item
+*   level 1 item
+    *   level 2 item
+    *   level 2 item
+*   level 1 item
 
 ## Small image
 
