@@ -222,22 +222,22 @@ and try out PayEx Checkout for yourself!' %}
 
 ## And an ordered list
 
-1. Item one
-2. Item two
-3. Item three
-4. Item four
+1.  Item one
+2.  Item two
+3.  Item three
+4.  Item four
 
 ## And a nested list
 
 *   level 1 item
-    *   level 2 item
-    *   level 2 item
-      *   level 3 item
-      *   level 3 item
+  *   level 2 item
+  *   level 2 item
+    *   level 3 item
+    *   level 3 item
 *   level 1 item
-    *   level 2 item
-    *   level 2 item
-    *   level 2 item
+  *   level 2 item
+  *   level 2 item
+  *   level 2 item
 *   level 1 item
     *   level 2 item
     *   level 2 item
