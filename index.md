@@ -8,10 +8,10 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 *   [External absolute full link](https://www.wikipedia.org)
 *   [External protocol relative link](//www.wikipedia.org)
-*   [Internal absolute full link]({{ site.url }})
-*   [Internal explicit relative link](./page1)
-*   [Internal implicit relative link](page1)
-*   [Internal absolute link](/page1)
+*   [Internal absolute full link][internal-absolute-full-link]
+*   [Internal explicit relative link][explicit-relative-link]
+*   [Internal implicit relative link][implicit-relative-link]
+*   [Internal absolute link][internal-absolute-link]
 
 There should be whitespace between paragraphs.
 
@@ -136,9 +136,9 @@ their language.
 
 ##### Header 5
 
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
+1.  This is an ordered list following a header.
+2.  This is an ordered list following a header.
+3.  This is an ordered list following a header.
 
 ###### Header 6
 
@@ -183,7 +183,7 @@ sequenceDiagram
 {% include alert.html type='success' icon='check_circle'
 body='This is a successful alert.' %}
 
-{% include alert.html icon='info_outline' header='**Informational**     *alert*'
+{% include alert.html icon='info_outline' header='**Informational**       *alert*'
 body='This is an **informational**   alert *with*   `<markdown/>`{:.language-html}.'
 %}
 
@@ -229,16 +229,16 @@ and try out PayEx Checkout for yourself!' %}
 
 ## And a nested list
 
-*   level 1 item
-  *   level 2 item
-  *   level 2 item
+*   level 1 item  
+    *   level 2 item
+    *   level 2 item
     *   level 3 item
     *   level 3 item
-*   level 1 item
-  *   level 2 item
-  *   level 2 item
-  *   level 2 item
-*   level 1 item
+*   level 1 item  
+    *   level 2 item
+    *   level 2 item
+    *   level 2 item
+*   level 1 item  
     *   level 2 item
     *   level 2 item
 *   level 1 item
@@ -264,11 +264,11 @@ and try out PayEx Checkout for yourself!' %}
     <dd>Green</dd>
 </dl>
 
-```
+```plain
 Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
 ```
 
-```
+```plain
 The final element.
 ```
 
@@ -414,3 +414,8 @@ More complex example:
     end box
 @enduml
 ```
+
+[internal-absolute-full-link]: {{ site.url }}
+[explicit-relative-link]: ./page1
+[implicit-relative-link]: page1
+[internal-absolute-link]: /page1

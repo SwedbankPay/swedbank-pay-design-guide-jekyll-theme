@@ -21,23 +21,23 @@ The Docker installation is the one we recommend to use for its simplicity.
 
 ### Docker
 
-1. Install [Docker][docker], using Linux containers.
-   Make sure virtualization is enabled on your machine.
-2. Open a console window at the root of the repository and run
-   `docker-compose up`
+1.  Install [Docker][docker], using Linux containers.
+    Make sure virtualization is enabled on your machine.
+2.  Open a console window at the root of the repository and run
+    `docker-compose up`
 
 ### Manual install
 
-1. [Clone this repository][clone].
-2. Jekyll is written in [Ruby][ruby], so you'll need to download and install
-   that. If you're installing on Windows, choose setup with DevKit.
-3. To install the [Ruby Gems][gems] this web site requires, you first need to
-   install [Bundler][bundler].
-4. Install [Graphviz][graphviz], this will require Java.
-5. Once Ruby ,Bundler, and Graphviz, is in place, type `bundle install` inside the root
-   folder of this repository.
-6. Run `bundle exec jekyll serve` to start the website.
-7. Open `http://localhost:4000` in a browser.
+1.  [Clone this repository][clone].
+2.  Jekyll is written in [Ruby][ruby], so you'll need to download and install
+    that. If you're installing on Windows, choose setup with DevKit.
+3.  To install the [Ruby Gems][gems] this web site requires, you first need to
+    install [Bundler][bundler].
+4.  Install [Graphviz][graphviz], this will require Java.
+5.  Once Ruby ,Bundler, and Graphviz, is in place, type `bundle install` inside the root
+    folder of this repository.
+6.  Run `bundle exec jekyll serve` to start the website.
+7.  Open `http://localhost:4000` in a browser.
 
 ### Required Visual Studio Code plugins
 
