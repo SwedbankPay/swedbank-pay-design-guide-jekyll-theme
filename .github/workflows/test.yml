@@ -1,15 +1,14 @@
-name: Docker build site and publish
+name: Build & Test
 
 on: [push, pull_request]
 
 jobs:
   build:
-    name: Docker build site and publish
+    name: Jekyll Build
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    - name: Docker compose up for CI
+    - name: Jekyll Build
       env:
         GITHUB_ACTOR: payex-dev
         GITHUB_ACTOR_EMAIL: dev@payex.com
@@ -20,7 +19,22 @@ jobs:
       run: |
         docker-compose \
           -f docker-compose.yml \
-          -f .docker/docker-compose.ci.yml \
+          -f .docker/docker-compose.build.yml \
           up \
+          --abort-on-container-exit \
+          --exit-code-from jekyll
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Test
+      run: |
+        docker-compose \
+          -f docker-compose.yml \
+          -f .docker/docker-compose.test.yml \
+          up \
+          --build \
           --abort-on-container-exit \
           --exit-code-from jekyll
