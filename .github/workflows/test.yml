@@ -9,13 +9,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Jekyll Build
-      env:
-        GITHUB_ACTOR: payex-dev
-        GITHUB_ACTOR_EMAIL: dev@payex.com
-        GH_PAGES_BRANCH: gh-pages
-        GITHUB_TOKEN : ${{ secrets.GITHUB_TOKEN }}
-        JEKYLL_ENV: production
-        GITHUB_REPO: ${{ github.repository }}
       run: |
         docker-compose \
           -f docker-compose.yml \
