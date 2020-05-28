@@ -1,4 +1,4 @@
-{
+module.exports = {
   "settings": {
     "bullet": "*",
     "emphasis": "_",
@@ -26,14 +26,14 @@
     [
       "remark-heading-gap",
       {
-        "2": {"before": "", "after": ""}
+        "2": { "before": "", "after": "" }
       }
     ],
     "remark-inline-links",
     [
       "remark-textr",
       {
-        "options": {"locale": "en-us"},
+        "options": { "locale": "en-us" },
         "plugins": [
           "typographic-em-dashes",
           "typographic-en-dashes",
@@ -47,7 +47,7 @@
     ["remark-lint-blockquote-indentation", 2],
     [
       "remark-lint-checkbox-character-style",
-      {"checked": "x", "unchecked": " "}
+      { "checked": "x", "unchecked": " " }
     ],
     "remark-lint-checkbox-content-indent",
     ["remark-lint-code-block-style", "fenced"],
@@ -55,7 +55,7 @@
     "remark-lint-definition-spacing",
     [
       "remark-lint-fenced-code-flag",
-      {"allowEmpty": true}
+      { "allowEmpty": true }
     ],
     ["remark-lint-fenced-code-marker", "`"],
     ["remark-lint-file-extension", "md"],
