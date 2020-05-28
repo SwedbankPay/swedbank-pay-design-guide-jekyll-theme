@@ -10,3 +10,5 @@ gem 'faraday', '~> 1.0.1'
 gem 'jekyll-material-icon-tag'
 gem 'kramdown-plantuml'
 gem 'html-proofer'
+
+gem "rake", "~> 13.0"
