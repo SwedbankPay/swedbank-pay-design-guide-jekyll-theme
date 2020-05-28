@@ -1,22 +1,22 @@
-name: Deploy to GitHub Pages
+name: Deploy
 
-on: 
+on:
   push:
     branches: [ master ]
 
 jobs:
   build:
-    name: Deploy to GitHub Pages
+    name: Deploy
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: Docker compose up
+    - name: Deploy to GitHub Pages
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GITHUB_ACTOR: payex-dev
         GITHUB_ACTOR_EMAIL: dev@payex.com
-        GITHUB_REPO: ${{ github.repository }}
+        GITHUB_REPO: https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
       run: |
         docker-compose \
           -f docker-compose.yml \
