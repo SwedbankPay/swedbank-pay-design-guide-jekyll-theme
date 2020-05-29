@@ -72,3 +72,4 @@ settings:
   entities: false
   fences: true
   spacedTable: true
+  squeezeParagraphs: false
