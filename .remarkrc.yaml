@@ -72,3 +72,4 @@ settings:
   fences: true
   spacedTable: true
   squeezeParagraphs: false
+  remarkSqueezeParagraphs: false
