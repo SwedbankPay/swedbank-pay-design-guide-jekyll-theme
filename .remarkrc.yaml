@@ -56,6 +56,7 @@ plugins:
   - "remark-lint-table-pipes"
   - "remark-lint-unordered-list-marker-style"
   - "remark-lint-list-item-indent"
+  - "remark-squeeze-paragraphs": false
 settings:
   bullet: "*"
   emphasis: "_"
@@ -71,5 +72,3 @@ settings:
   entities: false
   fences: true
   spacedTable: true
-  squeezeParagraphs: false
-  remarkSqueezeParagraphs: false
