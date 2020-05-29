@@ -71,7 +71,7 @@
     "remark-preset-lint-recommended": "^4.0.0",
     "remark-retext": "^4.0.0",
     "remark-slug": "^4.2.3",
-    "remark-squeeze-paragraphs": "^3.0.1",
+    "remark-squeeze-paragraphs": "^3.0.4",
     "remark-textr": "^3.0.1",
     "retext-english": "^3.0.4",
     "retext-repeated-words": "^3.0.0",
