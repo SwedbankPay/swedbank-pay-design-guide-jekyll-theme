@@ -31,8 +31,8 @@ projects from anywhere.
 
 ### Header 3
 
-{:.code-header}
-**JavaScript code with syntax highlighting.**
+{:.code-view-header}
+JavaScript code with syntax highlighting.
 
 ```js
 var fun = function lang(l) {
@@ -41,8 +41,8 @@ var fun = function lang(l) {
 }
 ```
 
-{:.code-header}
-**HTTP request**
+{:.code-view-header}
+HTTP request
 
 ```http
 POST /psp/consumers HTTP/1.1
@@ -62,8 +62,8 @@ Content-Type: application/json
 }
 ```
 
-{:.code-header}
-**Response**
+{:.code-view-header}
+Response
 
 ```http
 HTTP/1.1 200 OK
@@ -107,8 +107,8 @@ Content-Type: application/json
 }
 ```
 
-{:.code-header}
-**JSON**
+{:.code-view-header}
+JSON
 
 ```json
 {
