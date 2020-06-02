@@ -27,7 +27,7 @@ opengraph:
   image: /image1.png
 design_guide:
   base_url: https://design.swedbankpay.com
-  version: 4.6.1
+  version: 4.7.0
 search:
   enabled: true
   url: /search
