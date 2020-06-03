@@ -2,15 +2,16 @@
 
 ![Swedbank Pay Design Guide Theme for Jekyll][opengraph-image]
 
-This repository hosts the Swedbank Pay Design Guide theme for Jekyll, used for
-[Swedbank Pay on GitHub][swedbankpay] among other things.
+![Test status][test-badge]
+![Deploy status][deploy-badge]
+[![License][license-badge]][license]
+[![Dependabot Status][dependabot-badge]][dependabot]
+[![CLA assistant][cla-badge]][cla]
+[![Contributor Covenant][coc-badge]][coc]
 
-## Contributing
-
-Bug reports and pull requests are welcome on [GitHub][repo]. This project is
-intended to be a safe, welcoming space for collaboration, and contributors are
-expected to adhere to the [Contributor Covenant][cc] code of conduct as well as
-[PayEx Open Source Development Guidelines][dev-guide].
+This repository hosts the [Swedbank Pay Design Guide][design-guide] theme for
+Jekyll, used for [Swedbank Pay Developer Portal][developer-portal] among other
+things.
 
 ## Usage
 
@@ -22,27 +23,25 @@ The Docker installation is the one we recommend to use for its simplicity.
 ### Docker
 
 1. Install [Docker][docker], using Linux containers.
-   Make sure virtualization is enabled on your machine.
+    Make sure virtualization is enabled on your machine.
 2. Open a console window at the root of the repository and run
-   `docker-compose up`
+    `docker-compose up`
 
 ### Manual install
 
 1. [Clone this repository][clone].
 2. Jekyll is written in [Ruby][ruby], so you'll need to download and install
-   that. If you're installing on Windows, choose setup with DevKit.
+    that. If you're installing on Windows, choose setup with DevKit.
 3. To install the [Ruby Gems][gems] this web site requires, you first need to
-   install [Bundler][bundler].
+    install [Bundler][bundler].
 4. Install [Graphviz][graphviz], this will require Java.
 5. Once Ruby ,Bundler, and Graphviz, is in place, type `bundle install` inside the root
-   folder of this repository.
+    folder of this repository.
 6. Run `bundle exec jekyll serve` to start the website.
 7. Open `http://localhost:4000` in a browser.
 
 ### Required Visual Studio Code plugins
 
-* `davidanson.vscode-markdownlint`, to lint Markdown files according to our
-  defined set of rules.
 * `shd101wyy.markdown-preview-enhanced`, to render Markdown to HTML in a
   preview window.
 * `bpruitt-goddard.mermaid-markdown-syntax-highlighting`, to give syntax
@@ -66,22 +65,39 @@ When the theme is released, only the files in `_layouts`, `_includes`, `_sass`
 and `assets` tracked with Git will be bundled. To add a custom directory to your
 theme-gem, please edit the regexp in `swedbankpay.gemspec` accordingly.
 
+## Contributing
+
+Bug reports and pull requests are welcome on [GitHub][github]. This project is
+intended to be a safe, welcoming space for collaboration, and contributors are
+expected to adhere to the [code of conduct][coc] and sign the
+[contributor's license agreement][cla].
+
 ## License
 
-This website is available as open source under the terms of the
-[MIT License][license].
+The code within this repository is available as open source under the terms of
+the [Apache 2.0 License][license] and the [contributor's license
+agreement][cla].
 
-[bundler]: https://bundler.io/
-[cc]: http://contributor-covenant.org
-[clone]: https://help.github.com/articles/cloning-a-repository/
-[dev-guide]: https://developer.swedbankpay.com/resources/development-guidelines/
-[docker]: https://www.docker.com/
-[gems]: <https://rubygems.org/>
-[graphviz]: https://graphviz.org/download/
-[license]: <https://opensource.org/licenses/MIT>
-[liquid]: <https://jekyllrb.com/docs/liquid/>
-[opengraph-image]: <https://repository-images.githubusercontent.com/209270355/36818080-53ee-11ea-896c-082addb851a6>
-[repo]: <https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/>
-[ruby]: <https://www.ruby-lang.org/en/>
-[swedbankpay]: <https://swedbankpay.github.io/swedbank-pay-design-guide-jekyll-theme/>
-[vsc-ruler]: https://stackoverflow.com/questions/29968499/vertical-rulers-in-visual-studio-code
+[bundler]:              <https://bundler.io/>
+[cla-badge]:            <https://cla-assistant.io/readme/badge/SwedbankPay/swedbank-pay-design-guide-jekyll-theme>
+[cla]:                  <https://cla-assistant.io/SwedbankPay/swedbank-pay-design-guide-jekyll-theme>
+[clone]:                <https://help.github.com/articles/cloning-a-repository/>
+[coc-badge]:            <https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg>
+[coc]:                  <./CODE_OF_CONDUCT.md>
+[dependabot-badge]:     <https://api.dependabot.com/badges/status?host=github&repo=SwedbankPay/swedbank-pay-design-guide-jekyll-theme>
+[dependabot]:           <https://dependabot.com>
+[deploy-badge]:         <https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/workflows/Deploy/badge.svg>
+[design-guide]:         <https://design.swedbankpay.com/>
+[developer-portal]:     <https://developer.swedbankpay.com/>
+[docker]:               <https://www.docker.com/>
+[gems]:                 <https://rubygems.org/>
+[graphviz]:             <https://graphviz.org/download/>
+[license-badge]:        https://img.shields.io/github/license/SwedbankPay/swedbank-pay-design-guide-jekyll-theme
+[license]:              <https://opensource.org/licenses/MIT>
+[liquid]:               <https://jekyllrb.com/docs/liquid/>
+[opengraph-image]:      <https://repository-images.githubusercontent.com/209270355/36818080-53ee-11ea-896c-082addb851a6>
+[repo]:                 <https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/>
+[ruby]:                 <https://www.ruby-lang.org/en/>
+[swedbankpay]:          <https://swedbankpay.github.io/swedbank-pay-design-guide-jekyll-theme/>
+[test-badge]:           <https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/workflows/Test/badge.svg>
+[vsc-ruler]:            <https://stackoverflow.com/questions/29968499/vertical-rulers-in-visual-studio-code>
