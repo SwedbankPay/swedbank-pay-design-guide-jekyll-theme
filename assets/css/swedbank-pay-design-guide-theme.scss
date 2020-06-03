@@ -14,6 +14,15 @@ img {
     max-width: 100%;
 }
 
+.table {
+    th,
+    td {
+        > .material-icons {
+            float: none;
+        }
+    }
+}
+
 p.code-header {
     display: block;
     padding: 5px 19px;
