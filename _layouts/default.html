@@ -3,7 +3,7 @@
 {%- assign image = page.opengraph.image | default: site.opengraph.image -%}
 {%- assign github_branch = site.github.branch | default : "develop" -%}
 {%- assign design_guide_base_url = site.design_guide.base_url | default: 'https://design.swedbankpay.com' -%}
-{%- assign design_guide_version = site.design_guide.version | default: '4.1.0' -%}
+{%- assign design_guide_version = site.design_guide.version | default: '4.7.0' -%}
 {%- assign design_guide_version_url = design_guide_base_url | append: '/v/' | append: design_guide_version -%}
 {%- if page.sidebar.navigation == nil -%}
     {%- unless page.name contains "index"  -%}
