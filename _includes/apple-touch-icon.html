@@ -1,0 +1,4 @@
+{%- assign stripped_size = include.size | strip -%}
+{%- assign size_string = stripped_size | append: 'x' | append: stripped_size -%}
+{%- assign design_guide_version_url = include.design_guide_version_url -%}
+<link rel="apple-touch-icon" sizes="{{ size_string }}" href="{{ design_guide_version_url }}/icons/apple-touch-icon-{{ size_string }}.png">
