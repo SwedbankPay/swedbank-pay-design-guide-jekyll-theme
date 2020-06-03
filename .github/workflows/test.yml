@@ -4,7 +4,6 @@ on: [push, pull_request]
 
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -18,7 +17,6 @@ jobs:
           --exit-code-from jekyll
 
   test:
-    name: Test
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
