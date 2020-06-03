@@ -87,7 +87,7 @@ a.header-anchor::before {
 a[href ^= '//']:not([href *= '{{ site.url }}']):after,
 a[href ^= 'http://']:not([href *= '{{ site.url }}']):after,
 a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
-        content: url('../img/external-url.svg');;
+    content: url('../img/external-url.svg');
     margin-left: .3rem;
     display: inline-block;
     width: .8rem;
@@ -95,9 +95,29 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
     color: #257886;
 }
 
+#designguide .designguide-header .topbar-info a {
+    margin-left: 5px;
+    color: rgba(34,34,34,.75);
+    fill: rgba(34,34,34,.75);
+    border: none
+}
+
 #designguide .designguide-header .topbar-info a:after {
     content: none;
     display: inline;
+}
+
+#designguide .designguide-header .topbar-info a svg {
+    overflow: visible;
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#designguide .designguide-header .topbar-info a:hover {
+    color: rgba(0,0,0,.75);
+    fill: rgba(0,0,0,.75)
 }
 
 .iterator {
