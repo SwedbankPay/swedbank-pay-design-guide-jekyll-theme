@@ -1,4 +1,4 @@
-{%- assign design_guide_version_url = include.design_guide_version_url -%}
+{%- assign design_guide_url = include.design_guide_url -%}
 {%- capture startup_image_configs -%}
 320,480,1,320x460
 320,480,2,640x920
@@ -27,5 +27,5 @@
         pixel_ratio=pixel_ratio
         size=size
         orientation=orientation
-        design_guide_version_url=design_guide_version_url -%}
+        design_guide_url=design_guide_url -%}
 {%- endfor -%}

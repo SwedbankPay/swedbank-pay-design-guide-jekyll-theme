@@ -3,7 +3,7 @@
 {%- assign image_size = include.size | strip -%}
 {%- assign device_orientation = include.orientation | default: nil | strip -%}
 {%- assign device_pixel_ratio = include.pixel_ratio | strip -%}
-{%- assign design_guide_version_url = include.design_guide_version_url -%}
+{%- assign design_guide_url = include.design_guide_url -%}
 {%- capture device_width_string -%}
 (device-width: {{ device_width }})
 {%- endcapture -%}
@@ -20,4 +20,4 @@
 {%- endcapture -%}
 <link rel="apple-touch-startup-image"
     media="{{ device_width_string }} and {{ device_height_string }} and {{ device_orientation_string }} {{ pixel_ratio_string }}"
-    href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-{{- image_size -}}.png">
+    href="{{ design_guide_url }}/icons/apple-touch-startup-image-{{- image_size -}}.png">

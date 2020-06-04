@@ -4,7 +4,7 @@
 {%- assign github_branch = site.github.branch | default : "develop" -%}
 {%- assign design_guide_base_url = site.design_guide.base_url | default: 'https://design.swedbankpay.com' -%}
 {%- assign design_guide_version = site.design_guide.version | default: '4.7.0' -%}
-{%- assign design_guide_version_url = design_guide_base_url | append: '/v/' | append: design_guide_version -%}
+{%- assign design_guide_url = design_guide_base_url | append: '/v/' | append: design_guide_version -%}
 {%- if page.sidebar.navigation == nil -%}
     {%- unless page.name contains "index"  -%}
         {%- assign dirname = page.dir | split: "/" | last | remove: "/" | capitalize -%}
@@ -22,7 +22,7 @@
         <meta name="theme-color" content="#000">
         <meta name="application-name" content="{{ page.title }}">
         <meta name="msapplication-TileColor" content="#000">
-        <meta name="msapplication-TileImage" content="{{ design_guide_version_url }}/icons/mstile-144x144.png">
+        <meta name="msapplication-TileImage" content="{{ design_guide_url }}/icons/mstile-144x144.png">
         <meta property="og:type" value="website" />
         {%- if page.url != nil %}
         <meta property="og:url" value="{{ page.url | absolute_url }}" />{% endif %}
@@ -34,14 +34,14 @@
         {%- if image != nil %}
         <meta property="og:image" value="{{ image }}" />{% endif %}
         <title>{{ title }}</title>
-        <link rel="stylesheet" href="{{ design_guide_version_url }}/styles/dg-style.css" />
+        <link rel="stylesheet" href="{{ design_guide_url }}/styles/dg-style.css" />
         <link rel="stylesheet" href="{{ '/assets/css/swedbank-pay-design-guide-theme.css' | relative_url }}" />
         <link rel="stylesheet" href="{{ '/assets/css/pygments-autumn.css' | relative_url }}" />
-        <link rel="shortcut icon" href="{{ design_guide_version_url }}/icons/favicon.ico">
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ design_guide_version_url }}/icons/favicon-16x16.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ design_guide_version_url }}/icons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="228x228" href="{{ design_guide_version_url }}/icons/coast-228x228.png">
-        {%- include apple-mobile-headers.html design_guide_version_url=design_guide_version_url -%}
+        <link rel="shortcut icon" href="{{ design_guide_url }}/icons/favicon.ico">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ design_guide_url }}/icons/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ design_guide_url }}/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="228x228" href="{{ design_guide_url }}/icons/coast-228x228.png">
+        {%- include apple-mobile-headers.html design_guide_url=design_guide_url -%}
         <script src="{{ '/assets/js/mermaid.min.js' | relative_url }}"></script>
         {%- if site.search.enabled == true %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -57,7 +57,7 @@
             <header class="topbar topbar-md-wide designguide-header">
                 <button type="button" class="topbar-btn"><i class="material-icons topbar-btn-icon">menu</i></button>
                 <a href="{{ site.url }}" class="topbar-logo"><img
-                        src="{{ design_guide_version_url }}/img/swedbankpay-logo.svg" alt="logo"></a>
+                        src="{{ design_guide_url }}/img/swedbankpay-logo.svg" alt="logo"></a>
                 <nav class="topbar-nav">
                     <div class="topbar-link-container">
                         <button type="button" class="topbar-close"><i class="material-icons">close</i></button>
@@ -172,7 +172,7 @@
             </footer>
         </div>
 
-        <script src="{{ design_guide_version_url }}/scripts/dg.js"></script>
+        <script src="{{ design_guide_url }}/scripts/dg.js"></script>
         <script src="{{ '/assets/js/swedbank-pay-design-guide-theme.js' | relative_url }}"></script>
         {%- if site.google_analytics.tracking_id %}
             {% include google_analytics.html %}
