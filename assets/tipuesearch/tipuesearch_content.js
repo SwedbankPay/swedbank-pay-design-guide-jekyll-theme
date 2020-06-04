@@ -9,7 +9,7 @@
         <meta name="msapplication-TileColor" content="#000">
         <meta name="msapplication-TileImage" content="https://design.swedbankpay.com/v/4.7.0/icons/mstile-144x144.png">
         <meta property="og:type" value="website" />
-        <meta property="og:url" value="https://github.com/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/assets/tipuesearch/tipuesearch_content.js" />
+        <meta property="og:url" value="/assets/tipuesearch/tipuesearch_content.js" />
         <meta property="og:title" value="Tipuesearch – PayEx Design Guide theme for Jekyll" />
         <meta name="title" content="Tipuesearch – PayEx Design Guide theme for Jekyll" />
         <meta property="og:description" value="Swedbank Pay Design Guide theme for Jekyll" />
@@ -17,8 +17,8 @@
         <meta property="og:image" value="/image1.png" />
         <title>Tipuesearch – PayEx Design Guide theme for Jekyll</title>
         <link rel="stylesheet" href="https://design.swedbankpay.com/v/4.7.0/styles/dg-style.css" />
-        <link rel="stylesheet" href="/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/assets/css/swedbank-pay-design-guide-theme.css" />
-        <link rel="stylesheet" href="/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/assets/css/pygments-autumn.css" />
+        <link rel="stylesheet" href="/assets/css/swedbank-pay-design-guide-theme.css" />
+        <link rel="stylesheet" href="/assets/css/pygments-autumn.css" />
         <link rel="shortcut icon" href="https://design.swedbankpay.com/v/4.7.0/icons/favicon.ico">
         <link rel="icon" type="image/png" sizes="16x16" href="https://design.swedbankpay.com/v/4.7.0/icons/favicon-16x16.png">
         <link rel="icon" type="image/png" sizes="32x32" href="https://design.swedbankpay.com/v/4.7.0/icons/favicon-32x32.png">
@@ -67,11 +67,11 @@
 <link rel="apple-touch-startup-image"
     media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"
     href="https://design.swedbankpay.com/v/4.7.0/icons/apple-touch-startup-image-1536x2008.png">
-<script src="/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/assets/js/mermaid.min.js"></script>
+<script src="/assets/js/mermaid.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/assets/tipuesearch/tipuesearch_content.js"></script>
-        <script src="/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/assets/tipuesearch/tipuesearch_set.js"></script>
-        <script src="/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/assets/tipuesearch/tipuesearch.min.js"></script>
+        <script src="/assets/tipuesearch/tipuesearch_content.js"></script>
+        <script src="/assets/tipuesearch/tipuesearch_set.js"></script>
+        <script src="/assets/tipuesearch/tipuesearch.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
     </head>
 
@@ -85,23 +85,23 @@
                     <div class="topbar-link-container">
                         <button type="button" class="topbar-close"><i class="material-icons">close</i></button>
 
-                        
-                        
 
-                        
 
-                        <a 
-                            href="/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/"><span>Home</span></a>
 
-                        
-                        
-                        <a 
-                            href="/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/page1"><span>Top 1</span></a>
-                        
-                        
-                        <a 
-                            href="/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/page2"><span>Top 2</span></a>
-                        
+
+
+                        <a
+                            href="/"><span>Home</span></a>
+
+
+
+                        <a
+                            href="/page1"><span>Top 1</span></a>
+
+
+                        <a
+                            href="/page2"><span>Top 2</span></a>
+
 
                         <div class="topbar-info topbar-link-right">
                             <div class="topbar-info-contact">
@@ -124,39 +124,39 @@
                 <div class="row">
                     <div class="col-xxl-2 col-md-3">
                         <div class="doc-sidebar">
-                            
-                            <form class="doc-search" action="/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/search">
+
+                            <form class="doc-search" action="/search">
                                 <input type="text" class="form-control" name="q" id="tipue_search_input"
                                     placeholder="Search..." autocomplete="off" pattern=".{3,}"
                                     title="At least 3 characters">
                             </form>
-                            
-                            
-                            
+
+
+
 <div id="dg-sidebar" class="sidebar sidebar-topbar-sticky">
   <nav class="sidebar-nav">
     <ul class="main-nav-ul">
-      
-      
-      
-      
 
-      
-        
-      
-      
 
-      
-        
-      
-      
 
-      
-        
-      
-      
 
-      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <li class="nav-group">
         <div class="nav-group-heading">
@@ -164,24 +164,24 @@
           <span>Page 1</span>
         </div>
         <ul class="nav-ul">
-          <li 
+          <li
             class="nav-leaf" >
             <a href="/page1.html">Page 1</a>
           </li>
 
 
-          
-          
-          
 
-          
+
+
+
+
         </ul>
-        
-        
-      
-      
 
-      
+
+
+
+
+
 
       <li class="nav-group">
         <div class="nav-group-heading">
@@ -189,59 +189,59 @@
           <span>Page 2</span>
         </div>
         <ul class="nav-ul">
-          <li 
+          <li
             class="nav-leaf" >
             <a href="/page2.html">Page 2</a>
           </li>
 
 
-          
-          
-          
 
-          
+
+
+
+
         </ul>
-        
-        
-      
-      
 
-      
-        
-      
-      
 
-      
-        
-      
-      
 
-      
-        
-      
-      
 
-      
-        
-      
-      
 
-      
-        
-      
-      
 
-      
-        
-      
-      
 
-      
-        
-      
-      
 
-      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <li class="nav-group">
         <div class="nav-group-heading">
@@ -249,80 +249,80 @@
           <span>Checkout</span>
         </div>
         <ul class="nav-ul">
-          <li 
+          <li
             class="nav-leaf" >
             <a href="/checkout/">Checkout</a>
           </li>
 
 
-          
-          
-          
 
-          
 
-          
-          
-          
-          
 
-          
-          <li 
+
+
+
+
+
+
+
+
+
+          <li
             class="nav-subgroup" >
             <div class="nav-subgroup-heading">
               <i class="material-icons">arrow_right</i>
               <span>After payment is completed</span>
             </div>
-            
-            
-            
+
+
+
             <ul class="nav-ul">
-              <li 
+              <li
                 class="nav-leaf" >
                 <a href="/checkout/after-payment.html">After payment is completed</a>
               </li>
 
-              
+
             </ul>
 
-            
-            
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          </li>
-          
-        </ul>
-        
-        
-      
-      
 
-      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </li>
+
+        </ul>
+
+
+
+
+
+
 
       <li class="nav-group">
         <div class="nav-group-heading">
@@ -330,171 +330,171 @@
           <span>Payments</span>
         </div>
         <ul class="nav-ul">
-          <li 
+          <li
             class="nav-leaf" >
             <a href="/payments/">Payments</a>
           </li>
 
 
-          
-          
-          
 
-          
 
-          
-          
-            
-          
-          
-          
 
-          
-          <li 
+
+
+
+
+
+
+
+
+
+
+
+          <li
             class="nav-subgroup" >
             <div class="nav-subgroup-heading">
               <i class="material-icons">arrow_right</i>
               <span>Secret payments</span>
             </div>
-            
-            
-            
+
+
+
             <ul class="nav-ul">
-              <li 
+              <li
                 class="nav-leaf" >
                 <a href="/payments/secrets/">Secret payments</a>
               </li>
 
-              
 
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
               <li  class="nav-leaf"
                 >
                 <a href="/payments/secrets/super-secret.html">
                   Secrets in payments subsubnode title
                 </a>
               </li>
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </ul>
 
-            
-            
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-          
-          
 
-          
-            
-            
-          
-            
-          
-            
-          
-            
-          
-          
-          
 
-          
-          <li 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <li
             class="nav-subgroup" >
             <div class="nav-subgroup-heading">
               <i class="material-icons">arrow_right</i>
               <span>Invoicing</span>
             </div>
-            
-            
-            
+
+
+
             <ul class="nav-ul">
-              <li 
+              <li
                 class="nav-leaf" >
                 <a href="/payments/invoice.html">Invoicing</a>
               </li>
 
-              
+
             </ul>
 
-            
-            
-            
-          
-          
-          
 
-          
-          <li 
+
+
+
+
+
+
+
+          <li
             class="nav-subgroup" >
             <div class="nav-subgroup-heading">
               <i class="material-icons">arrow_right</i>
               <span>Creditting?</span>
             </div>
-            
-            
-            
+
+
+
             <ul class="nav-ul">
-              <li 
+              <li
                 class="nav-leaf" >
                 <a href="/payments/credit.html">Creditting?</a>
               </li>
 
-              
+
             </ul>
 
-            
-            
-            
-          
-            
-          
-            
+
+
+
+
+
+
+
           </li>
-          
+
         </ul>
-        
-        
+
+
     </ul>
   </nav>
 </div>
-                            
+
                         </div>
                     </div>
 
@@ -503,69 +503,69 @@
                             <h1>Tipuesearch – PayEx Design Guide theme for Jekyll</h1>
                             <div class="row">
                                 <div class="doc-body col-lg-10">
-                                    
+
                                     <hvar tipuesearch = {"pages": [{
     "title": "After payment is completed",
     "text": "After paaaayment Payment is done? Great, here is what will happen now. First we’ll subtract the money from your account, then a wizard will attempt a grand spell to carry the money on the back of ants to transfer it to a safe place. A secret place. A place with a secret.",
     "tags": "",
-    "url": "/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/checkout/after-payment.html"
+    "url": "/checkout/after-payment.html"
   },{
     "title": "Creditting?",
     "text": "Don’t read this If you see this. It means you are credited.",
     "tags": "",
-    "url": "/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/payments/credit.html"
+    "url": "/payments/credit.html"
   },{
     "title": "Secret payments",
     "text": "How we do secret payments We don’t.",
     "tags": "",
-    "url": "/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/payments/secrets/"
+    "url": "/payments/secrets/"
   },{
     "title": "Payments",
     "text": "Woah bby Here we list a few details about payment",
     "tags": "",
-    "url": "/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/payments/"
+    "url": "/payments/"
   },{
     "title": "Checkout",
     "text": "You’d like to checko out Great! Just check in first and we’ll get you sorted.",
     "tags": "",
-    "url": "/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/checkout/"
+    "url": "/checkout/"
   },{
     "title": "Index",
     "text": "Text can be bold, italic, or strikethrough. External absolute full link External protocol relative link Internal absolute full link Internal explicit relative link Internal implicit relative link Internal absolute link There should be whitespace between paragraphs. There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project. Header 2 This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere. This is a blockquote following a header. When something is important enough, you do it even if the odds are not in your favor. Header 3 JavaScript code with syntax highlighting. 1 2 3 4 var fun = function lang(l) { dateformat.i18n = require('./lang/' + l) return true; } HTTP request 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 POST /psp/consumers HTTP/1.1 Host: api.externalintegration.payex.com Authorization: Bearer &lt;AccessToken&gt; Content-Type: application/json { \"operation\": \"initiate-consumer-session\", \"msisdn\": \"+4798765432\", \"email\": \"olivia.nyhuus@example.com\", \"consumerCountryCode\": \"NO\", \"nationalIdentifier\": { \"socialSecurityNumber\": \"26026708248\", \"countryCode\": \"NO\" } } Response 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 HTTP/1.1 200 OK Content-Type: application/json { \"payment\": \"/psp/creditcard/payments/\", \"authorization\": { \"direct\": true, \"cardBrand\": \"Visa\", \"cardType\": \"Credit\", \"issuingBank\": \"Utl. Visa\", \"paymentToken\": \"\", \"maskedPan\": \"454778******3329\", \"expiryDate\": \"12/2020\", \"panToken\": \"cca2d98d-8bb3-4bd6-9cf3-365acbbaff96\", \"panEnrolled\": true, \"acquirerTransactionTime\": \"0001-01-01T00:00:00Z\", \"id\": \"/psp/creditcard/payments/7e6cdfc3-1276-44e9-9992-7cf4419750e1/authorizations/ec2a9b09-601a-42ae-8e33-a5737e1cf177\", \"transaction\": { \"id\": \"/psp/creditcard/payments/7e6cdfc3-1276-44e9-9992-7cf4419750e1/transactions/ec2a9b09-601a-42ae-8e33-a5737e1cf177\", \"created\": \"2020-03-10T13:15:01.9586254Z\", \"updated\": \"2020-03-10T13:15:02.0493818Z\", \"type\": \"Authorization\", \"state\": \"AwaitingActivity\", \"number\": 70100366758, \"amount\": 4201, \"vatAmount\": 0, \"description\": \"Test transaction\", \"payeeReference\": \"1583846100\", \"isOperational\": true, \"operations\": [ { \"method\": \"GET\", \"href\": \"https://api.stage.payex.com/psp/creditcard/confined/payments/authorizations/authenticate/ec2a9b09-601a-42ae-8e33-a5737e1cf177\", \"rel\": \"redirect-authentication\" } ] } } } JSON 1 2 3 4 5 6 7 8 9 10 { \"operation\": \"initiate-consumer-session\", \"msisdn\": \"+4798765432\", \"email\": \"olivia.nyhuus@example.com\", \"consumerCountryCode\": \"NO\", \"nationalIdentifier\": { \"socialSecurityNumber\": \"26026708248\", \"countryCode\": \"NO\" } } Here’s some &lt;inline&gt; { \"code\": true } that should .be { highlighted: according; } to their language. Header 4 This is an unordered list following a header. This is an unordered list following a header. This is an unordered list following a header. Header 5 This is an ordered list following a header. This is an ordered list following a header. This is an ordered list following a header. Header 6 Here’s a nice, striped table. head1 head two three ok good swedish fish nice out of stock good and plenty nice ok good oreos hmm ok good zoute drop yumm Mermaid sequenceDiagram participant Merchant participant SwedbankPay activate SwedbankPay SwedbankPay-&gt;&gt;Merchant: POST &lt;callbackUrl&gt; activate Merchant note right of SwedbankPay: Callback POST by SwedbankPay Merchant-&gt;&gt;SwedbankPay: Callback response deactivate Merchant deactivate SwedbankPay activate Merchant Merchant-&gt;&gt;SwedbankPay: GET &lt;payment instrument&gt; payment note left of Merchant: First API request activate SwedbankPay SwedbankPay--&gt;&gt;Merchant: payment resource deactivate SwedbankPay deactivate Merchant Alerts This is a standard alert. check_circle This is a successful alert. info_outline Informational alert This is an informational alert with &lt;markdown/&gt;. warning { \"warning\": \"alert\" } This is a warning alert with &lt;markdown/&gt;. Jumbotron PayEx Checkout is a complete reimagination of the checkout experience, integrating seamlessly into the merchant website through highly customizable and flexible components. Visit our demoshop and try out PayEx Checkout for yourself! Iterator Next Previous Go back Go forward There’s a horizontal rule below this Here is an unordered list Item foo Item bar Item baz Item zip And an ordered list Item one Item two Item three Item four And a nested list level 1 item level 2 item level 2 item level 3 item level 3 item level 1 item level 2 item level 2 item level 2 item level 1 item level 2 item level 2 item level 1 item Small image Large image Definition lists can be used with HTML syntax Name Godzilla Born 1952 Birthplace Japan Color Green Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this. The final element. Emoji support :+1: :heavy_check_mark: :fire: 💡 :unicorn: Material design icons check line_weight gavel visibility work alarm_on PlantUML clientappdb More complex example: PayerPayerMerchantMerchantSwedbankPaySwedbankPay3rdParty3rdPartyCheckinStart CheckinPOST /psp/consumersrel:view-consumer-identification ①Show Checkin on Merchant PageInitiate Consumer Hosted View (open iframe) ②Show Consumer UI page in iframe ③Consumer identification processConsumer identification processshow consumer completed iframeEVENT: onConsumerIdentified (consumerProfileRef) ④Payment MenuInitiate PurchasePOST /psp/paymentorders (paymentUrl, consumerProfileRef)rel:view-paymentorderDisplay Payment Menu on Merchant PageInitiate Payment Menu Hosted View (open iframe)Show Payment UI page in iframeDo payment logicDo payment logicopt[Consumer perform payment out of iFrame]Redirect to 3rd partyRedirect to 3rdPartyUrl URLRedirect back to paymentUrl (merchant)Initiate Payment Menu Hosted View (open iframe)Show Payment UI page in iframePayment statusEvent: onPaymentCompletedCheck payment statusGET &lt;paymentorder.id&gt;rel: paid-paymentorderopt[Get PaymentOrder Details (if paid-paymentorder operation exist)]GET rel: paid-paymentorderPayment Detailsopt[If payment is failed]Event: OnPaymentFailedCheck payment statusGET {paymentorder.id}rel: failed-paymentorderopt[Get PaymentOrder Details (if failed-paymentorder operation exist)]GET rel: failed-paymentorderPayment DetailsShow Purchase completeopt[PaymentOrder Callback (if callbackUrls is set)]POST Payment CallbackCapturerel:create-paymentorder-captureCapture statusCapture here only if the purchased&lt;br/&gt;goods don't require shipping.&lt;br/&gt;If shipping is required, perform capture&lt;br/&gt;after the goods have shipped.&lt;br&gt;Should only be used for &lt;br&gt;PaymentInstruments that support &lt;br&gt;Authorizations.",
     "tags": "",
-    "url": "/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/"
+    "url": "/"
   },{
     "title": "Invoicing",
     "text": "Invoices It’s a weird thing this invoice, some like it, most dont. I have no particularly strong feeling seeing that I am just text on a page.",
     "tags": "",
-    "url": "/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/payments/invoice.html"
+    "url": "/payments/invoice.html"
   },{
     "title": "Page 1",
     "text": "",
     "tags": "",
-    "url": "/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/page1.html"
+    "url": "/page1.html"
   },{
     "title": "Page 2",
     "text": "",
     "tags": "",
-    "url": "/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/page2.html"
+    "url": "/page2.html"
   },{
     "title": "Search",
     "text": "Hidden true.",
     "tags": "",
-    "url": "/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/search.html"
+    "url": "/search.html"
   },{
     "title": "Secrets in payments",
     "text": "Don’t render this Payments have plenty of secrets due to it being secure and mostly encrypted. Only the end user and their bank can really see much data if any. We in between mostly see tokens.",
     "tags": "",
-    "url": "/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/payments/secrets/super-secret.html"
+    "url": "/payments/secrets/super-secret.html"
   }]};
-                                    
+
                                 </div>
 
                                 <div class="col-2 d-none d-lg-block">
                                     <nav class="doc-toc">
-                                        
+
                                     </nav>
                                 </div>
                             </div>
@@ -580,6 +580,6 @@
         </div>
 
         <script src="https://design.swedbankpay.com/v/4.7.0/scripts/dg.js"></script>
-        <script src="/pages/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/assets/js/swedbank-pay-design-guide-theme.js"></script>
+        <script src="/assets/js/swedbank-pay-design-guide-theme.js"></script>
     </body>
 </html>
