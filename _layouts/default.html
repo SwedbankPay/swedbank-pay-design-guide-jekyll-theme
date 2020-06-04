@@ -1,118 +1,54 @@
-{%
-
-    assign title = page.title | default: "PayEx Design Guide theme for Jekyll" %}{%
-    assign description = page.opengraph.description | default: site.opengraph.description %}{%
-    assign image = page.opengraph.image | default: site.opengraph.image %}{%
-    assign github_branch = site.github.branch | default : "develop" %}{%
-    assign design_guide_base_url = site.design_guide.base_url | default: 'https://design.swedbankpay.com' %}{%
-    assign design_guide_version = site.design_guide.version | default: '4.1.0' %}{%
-    assign design_guide_version_url = design_guide_base_url | append: '/v/' | append: design_guide_version
-
-%}
-
-{% if page.sidebar.navigation == nil %}
-{% unless page.name contains "index"  %}
-
-{% assign dirname = page.dir | split: "/" | last | remove: "/" | capitalize %}
-
-{% unless dirname == "" %}
-{% assign title = dirname | append: " – " | append: title %}
-{% endunless %}
-
-{% endunless %}
-{% endif %}
+{%- assign title = page.title | default: "PayEx Design Guide theme for Jekyll" -%}
+{%- assign description = page.opengraph.description | default: site.opengraph.description -%}
+{%- assign image = page.opengraph.image | default: site.opengraph.image -%}
+{%- assign github_branch = site.github.branch | default : "develop" -%}
+{%- assign design_guide_base_url = site.design_guide.base_url | default: 'https://design.swedbankpay.com' -%}
+{%- assign design_guide_version = site.design_guide.version | default: '4.7.0' -%}
+{%- assign design_guide_url = design_guide_base_url | append: '/v/' | append: design_guide_version -%}
+{%- if page.sidebar.navigation == nil -%}
+    {%- unless page.name contains "index"  -%}
+        {%- assign dirname = page.dir | split: "/" | last | remove: "/" | capitalize -%}
+        {%- unless dirname == "" -%}
+            {%- assign title = dirname | append: " – " | append: title -%}
+        {%- endunless -%}
+    {%- endunless -%}
+{%- endif -%}
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
-
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="theme-color" content="#000">
-        <meta name="application-name" content="{{ page.title | default: 'PayEx Design Guide theme for Jekyll' }}">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="apple-mobile-web-app-title"
-            content="{{ page.title | default: 'PayEx Design Guide theme for Jekyll' }}">
+        <meta name="application-name" content="{{ page.title }}">
         <meta name="msapplication-TileColor" content="#000">
-        <meta name="msapplication-TileImage" content="{{ design_guide_version_url }}/icons/mstile-144x144.png">
+        <meta name="msapplication-TileImage" content="{{ design_guide_url }}/icons/mstile-144x144.png">
         <meta property="og:type" value="website" />
-        {% if page.url != nil %}
+        {%- if page.url != nil %}
         <meta property="og:url" value="{{ page.url | absolute_url }}" />{% endif %}
         <meta property="og:title" value="{{ title }}" />
         <meta name="title" content="{{ title }}" />
-        {% if description != nil %}
+        {%- if description != nil %}
         <meta property="og:description" value="{{ description }}" />
         <meta name="description" content="{{ description }}" />{% endif %}
-        {% if image != nil %}
+        {%- if image != nil %}
         <meta property="og:image" value="{{ image }}" />{% endif %}
         <title>{{ title }}</title>
-        <link rel="stylesheet" href="{{ design_guide_version_url }}/styles/dg-style.css" />
+        <link rel="stylesheet" href="{{ design_guide_url }}/styles/dg-style.css" />
         <link rel="stylesheet" href="{{ '/assets/css/swedbank-pay-design-guide-theme.css' | relative_url }}" />
         <link rel="stylesheet" href="{{ '/assets/css/pygments-autumn.css' | relative_url }}" />
-        <link rel="shortcut icon" href="{{ design_guide_version_url }}/icons/favicon.ico">
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ design_guide_version_url }}/icons/favicon-16x16.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ design_guide_version_url }}/icons/favicon-32x32.png">
-        <link rel="apple-touch-icon" sizes="57x57"
-            href="{{ design_guide_version_url }}/icons/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60"
-            href="{{ design_guide_version_url }}/icons/apple-touch-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72"
-            href="{{ design_guide_version_url }}/icons/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76"
-            href="{{ design_guide_version_url }}/icons/apple-touch-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114"
-            href="{{ design_guide_version_url }}/icons/apple-touch-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120"
-            href="{{ design_guide_version_url }}/icons/apple-touch-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144"
-            href="{{ design_guide_version_url }}/icons/apple-touch-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152"
-            href="{{ design_guide_version_url }}/icons/apple-touch-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="167x167"
-            href="{{ design_guide_version_url }}/icons/apple-touch-icon-167x167.png">
-        <link rel="apple-touch-icon" sizes="180x180"
-            href="{{ design_guide_version_url }}/icons/apple-touch-icon-180x180.png">
-        <link rel="apple-touch-icon" sizes="1024x1024"
-            href="{{ design_guide_version_url }}/icons/apple-touch-icon-1024x1024.png">
-        <link rel="apple-touch-startup-image"
-            media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)"
-            href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-320x460.png">
-        <link rel="apple-touch-startup-image"
-            media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"
-            href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-640x920.png">
-        <link rel="apple-touch-startup-image"
-            media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
-            href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-640x1096.png">
-        <link rel="apple-touch-startup-image"
-            media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
-            href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-750x1294.png">
-        <link rel="apple-touch-startup-image"
-            media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)"
-            href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-1182x2208.png">
-        <link rel="apple-touch-startup-image"
-            media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)"
-            href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-1242x2148.png">
-        <link rel="apple-touch-startup-image"
-            media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)"
-            href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-748x1024.png">
-        <link rel="apple-touch-startup-image"
-            media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)"
-            href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-768x1004.png">
-        <link rel="apple-touch-startup-image"
-            media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"
-            href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-1496x2048.png">
-        <link rel="apple-touch-startup-image"
-            media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"
-            href="{{ design_guide_version_url }}/icons/apple-touch-startup-image-1536x2008.png">
-        <link rel="icon" type="image/png" sizes="228x228" href="{{ design_guide_version_url }}/icons/coast-228x228.png">
+        <link rel="shortcut icon" href="{{ design_guide_url }}/icons/favicon.ico">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ design_guide_url }}/icons/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ design_guide_url }}/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="228x228" href="{{ design_guide_url }}/icons/coast-228x228.png">
+        {%- include apple-mobile-headers.html design_guide_url=design_guide_url -%}
         <script src="{{ '/assets/js/mermaid.min.js' | relative_url }}"></script>
-        {% if site.search.enabled == true %}
+        {%- if site.search.enabled == true %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="{{ "/assets/tipuesearch/tipuesearch_content.js" | relative_url }}"></script>
         <script src="{{ "/assets/tipuesearch/tipuesearch_set.js" | relative_url }}"></script>
         <script src="{{ "/assets/tipuesearch/tipuesearch.min.js" | relative_url }}"></script>
-        {% endif %}
+        {%- endif %}
         <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
     </head>
 
@@ -121,7 +57,7 @@
             <header class="topbar topbar-md-wide designguide-header">
                 <button type="button" class="topbar-btn"><i class="material-icons topbar-btn-icon">menu</i></button>
                 <a href="{{ site.url }}" class="topbar-logo"><img
-                        src="{{ design_guide_version_url }}/img/swedbankpay-logo.svg" alt="logo"></a>
+                        src="{{ design_guide_url }}/img/swedbankpay-logo.svg" alt="logo"></a>
                 <nav class="topbar-nav">
                     <div class="topbar-link-container">
                         <button type="button" class="topbar-close"><i class="material-icons">close</i></button>
@@ -151,8 +87,8 @@
 
                         <div class="topbar-info topbar-link-right">
                             <div class="topbar-info-contact">
-                                <a href="{{ site.github.repository_url }}/tree/{{github_branch}}/{{ page.path }}"
-                                    target="_blank" rel="noopener noreferrer" title="Edit this page on GitHub">
+                                <a href="{{ site.github.repository_url }}/tree/{{ github_branch }}/{{ page.path }}" target="_blank"
+                                    rel="noopener noreferrer" title="Edit this page on GitHub">
                                     <svg aria-labelledby="simpleicons-github-icon" role="img" viewBox="0 0 24 24"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <title id="simpleicons-github-icon">Edit this page on GitHub</title>
@@ -236,14 +172,10 @@
             </footer>
         </div>
 
-        <script src="{{ design_guide_version_url }}/scripts/dg.js"></script>
+        <script src="{{ design_guide_url }}/scripts/dg.js"></script>
         <script src="{{ '/assets/js/swedbank-pay-design-guide-theme.js' | relative_url }}"></script>
-        {% if site.google_analytics.tracking_id %}
-        {% include google_analytics.html %}
-        {% endif %}
+        {%- if site.google_analytics.tracking_id %}
+            {% include google_analytics.html %}
+        {%- endif %}
     </body>
-    {% if jekyll.environment == "development" %}
-    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
-    {% endif %}
-
 </html>

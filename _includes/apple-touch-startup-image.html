@@ -1,0 +1,23 @@
+{%- assign device_width = include.width | strip | append: 'px' -%}
+{%- assign device_height = include.height | strip | append: 'px' -%}
+{%- assign image_size = include.size | strip -%}
+{%- assign device_orientation = include.orientation | default: nil | strip -%}
+{%- assign device_pixel_ratio = include.pixel_ratio | strip -%}
+{%- assign design_guide_url = include.design_guide_url -%}
+{%- capture device_width_string -%}
+(device-width: {{ device_width }})
+{%- endcapture -%}
+{%- capture device_height_string -%}
+(device-height: {{ device_height }})
+{%- endcapture -%}
+{%- if device_orientation != nil && device_orientation != empty -%}
+    {%- capture device_orientation_string -%}
+    (orientation: {{ device_orientation }}) and
+    {%- endcapture -%}
+{%- endif -%}
+{%- capture pixel_ratio_string -%}
+(-webkit-device-pixel-ratio: {{ device_pixel_ratio }})
+{%- endcapture -%}
+<link rel="apple-touch-startup-image"
+    media="{{ device_width_string }} and {{ device_height_string }} and {{ device_orientation_string }} {{ pixel_ratio_string }}"
+    href="{{ design_guide_url }}/icons/apple-touch-startup-image-{{- image_size -}}.png">
