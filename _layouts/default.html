@@ -21,9 +21,6 @@
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="theme-color" content="#000">
         <meta name="application-name" content="{{ page.title }}">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="apple-mobile-web-app-title" content="{{ page.title }}">
         <meta name="msapplication-TileColor" content="#000">
         <meta name="msapplication-TileImage" content="{{ design_guide_version_url }}/icons/mstile-144x144.png">
         <meta property="og:type" value="website" />
@@ -44,8 +41,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="{{ design_guide_version_url }}/icons/favicon-16x16.png">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ design_guide_version_url }}/icons/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="228x228" href="{{ design_guide_version_url }}/icons/coast-228x228.png">
-        {% include apple-touch-icons.md design_guide_version_url=design_guide_version_url -%}
-        {% include apple-touch-startup-images.md design_guide_version_url=design_guide_version_url -%}
+        {%- include apple-mobile-headers.html design_guide_version_url=design_guide_version_url -%}
         <script src="{{ '/assets/js/mermaid.min.js' | relative_url }}"></script>
         {%- if site.search.enabled == true %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
