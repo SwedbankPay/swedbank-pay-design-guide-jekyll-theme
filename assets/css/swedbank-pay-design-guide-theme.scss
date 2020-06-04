@@ -125,19 +125,21 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
 }
 
 .iterator a.btn {
-    display: inline-block;
+    justify-content: center;
     width: 49%;
     min-width: 8rem;
 }
 
 .iterator a.btn[rel='prev']:before {
     content: '❮';
-    float: left;
+    position: absolute;
+    left: 1rem;
 }
 
-.iterator a.btn[rel='next']:before {
+.iterator a.btn[rel='next']:after {
     content: '❯';
-    float: right;
+    position: absolute;
+    right: 1rem;
 }
 
 .documentation {
