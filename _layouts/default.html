@@ -15,14 +15,19 @@
 {%- endif -%}
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
+
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="theme-color" content="#000">
         <meta name="application-name" content="{{ page.title }}">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title"
+            content="{{ page.title | default: 'PayEx Design Guide theme for Jekyll' }}">
         <meta name="msapplication-TileColor" content="#000">
-        <meta name="msapplication-TileImage" content="{{ design_guide_url }}/icons/mstile-144x144.png">
+        <meta name="msapplication-TileImage" content="{{ design_guide_version_url }}/icons/mstile-144x144.png">
         <meta property="og:type" value="website" />
         {%- if page.url != nil %}
         <meta property="og:url" value="{{ page.url | absolute_url }}" />{% endif %}
@@ -105,7 +110,7 @@
             <div class="documentation">
                 <div class="row">
                     <div class="col-xxl-2 col-md-3">
-                        <div class="doc-sidebar">
+                        <div class="sidebar">
                             {% if site.search.enabled == true %}
                             <form class="doc-search" action="{{ site.search.url | relative_url }}">
                                 <input type="text" class="form-control" name="q" id="tipue_search_input"
@@ -114,29 +119,33 @@
                             </form>
                             {% endif %}
                             {% if page.sidebar.navigation != nil %}
-                            <nav class="documentation-nav">
-                                {% for group in page.sidebar.navigation %}
-                                {% comment %}
-                                TODO: Make "class='active'" conditional on whether one of the group's nav items are
-                                active or not.
-                                {% endcomment %}
-                                <div class="nav-group active">
-                                    <div class="nav-heading">
-                                        <i class="material-icons">keyboard_arrow_right</i>
-                                        <span>{{ group.title }}</span>
+                            <nav class="sidebar-nav">
+                                <ul class="main-nav-ul">
+                                    {% for group in page.sidebar.navigation %}
+                                    {% comment %}
+                                    TODO: Make "class='active'" conditional on whether one of the group's nav items are
+                                    active or not.
+                                    {% endcomment %}
+                                    <div class="nav-group active">
+                                        <div class="nav-group-heading">
+                                            <i class="material-icons">arrow_right</i>
+                                            <span>{{ group.title }}</span>
+                                        </div>
+    
+                                        {% if group.items != nil and group.items != empty %}
+                                        <ul class="nav-ul">
+                                            {% for nav in group.items %}
+                                            {% assign nav_url = nav.url | relative_url %}
+                                            <li {% if page_url == nav_url %} aria-current="page" class="nav-leaf active" {% else %}
+                                                class="nav-leaf" {% endif %}>
+                                                <a href="{{ nav_url }}">{{ nav.title }}</a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                        {% endif %}
                                     </div>
-
-                                    {% if group.items != nil and group.items != empty %}
-                                    <ul>
-                                        {% for nav in group.items %}
-                                        {% assign nav_url = nav.url | relative_url %}
-                                        <li><a {% if page_url == nav_url %} aria-current="page" class="active"
-                                                {% endif %} href="{{ nav_url }}"><span>{{ nav.title }}</span></a></li>
-                                        {% endfor %}
-                                    </ul>
-                                    {% endif %}
-                                </div>
-                                {% endfor %}
+                                    {% endfor %}
+                                </ul>
                             </nav>
                             {% else %}
                             {% include sidebar.html %}
@@ -178,4 +187,8 @@
             {% include google_analytics.html %}
         {%- endif %}
     </body>
+    {% if jekyll.environment == "development" %}
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+    {% endif %}
+
 </html>
