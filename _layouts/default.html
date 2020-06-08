@@ -59,7 +59,7 @@
 
     <body>
         <div id="designguide">
-            <header class="topbar topbar-md-wide designguide-header">
+            <header class="topbar topbar-md-wide designguide-header d-none">
                 <button type="button" class="topbar-btn"><i class="material-icons topbar-btn-icon">menu</i></button>
                 <a href="{{ site.url }}" class="topbar-logo"><img
                         src="{{ design_guide_url }}/img/swedbankpay-logo.svg" alt="logo"></a>
@@ -109,68 +109,48 @@
 
             <div class="documentation">
                 <div class="row">
-                    <div class="col-xxl-2 col-md-3">
-                        <div class="sidebar">
-                            {% if site.search.enabled == true %}
-                            <form class="doc-search" action="{{ site.search.url | relative_url }}">
-                                <input type="text" class="form-control" name="q" id="tipue_search_input"
-                                    placeholder="Search..." autocomplete="off" pattern=".{3,}"
-                                    title="At least 3 characters">
-                            </form>
-                            {% endif %}
-                            {% if page.sidebar.navigation != nil %}
+                    <div class="col-xxl-2 col-lg-3">
+                        <div class="sidebar dg-sidebar">
                             <nav class="sidebar-nav">
+                                <a href="/" class="sidebar-header">
+                                    <img src="{{ design_guide_url }}/img/swedbankpay-logo-v.svg" alt="Swedbank Pay vertical logo" />
+                                    <div class="sidebar-header-text">
+                                        <span>{</span>Developer portal<span>}</span>
+                                    </div>
+                                </a>
+                                {% if site.search.enabled == true %}
+                                <form class="doc-search" action="{{ site.search.url | relative_url }}">
+                                    <input type="text" class="form-control" name="q" id="tipue_search_input"
+                                        placeholder="Search..." autocomplete="off" pattern=".{3,}"
+                                        title="At least 3 characters">
+                                </form>
+                                {% endif %}
+
                                 <ul class="main-nav-ul">
-                                    {% for group in page.sidebar.navigation %}
-                                    {% comment %}
-                                    TODO: Make "class='active'" conditional on whether one of the group's nav items are
-                                    active or not.
-                                    {% endcomment %}
-                                    <div class="nav-group active">
+                                    {% if site.repository == "SwedbankPay/swedbank-pay-design-guide-jekyll-theme" %}
+                                    <li {% if page.url == "/" %} class="nav-group active" {% else %}
+                                    class="nav-group" {% endif %}>
                                         <div class="nav-group-heading">
                                             <i class="material-icons">arrow_right</i>
-                                            <span>{{ group.title }}</span>
+                                            <span>Home</span>
                                         </div>
-    
-                                        {% if group.items != nil and group.items != empty %}
-                                        <ul class="nav-ul">
-                                            {% for nav in group.items %}
-                                            {% assign nav_url = nav.url | relative_url %}
-                                            <li {% if page_url == nav_url %} aria-current="page" class="nav-leaf active" {% else %}
-                                                class="nav-leaf" {% endif %}>
-                                                <a href="{{ nav_url }}">{{ nav.title }}</a>
-                                            </li>
-                                            {% endfor %}
-                                        </ul>
-                                        {% endif %}
-                                    </div>
-                                    {% endfor %}
+                                        {% include toc.html html=page.content h_max=2 item_class='nav-leaf' class='nav-ul' %}
+                                    </li>
+                                    {% endif %}
+                                    {% include sidebar.html %}
                                 </ul>
                             </nav>
-                            {% else %}
-                            {% include sidebar.html %}
-                            {% endif %}
                         </div>
                     </div>
 
-                    <main class="doc-view col-xxl-10 col-md-9">
+                    <main class="doc-view col-xxl-10 col-lg-9">
                         <div class="doc-container">
                             <h1>{{ title }}</h1>
-                            <div class="row">
-                                <div class="doc-body col-lg-10">
-                                    {% if page.type == 'search' %}
-                                    <div id="tipue_search_content"></div>
-                                    {% else %}
-                                    {% include anchor_headings.html html=content anchorClass='header-anchor' %}
-                                    {% endif %}
-                                </div>
-
-                                <div class="col-2 d-none d-lg-block">
-                                    <nav class="doc-toc">
-                                        {% include toc.html html=content h_max=2 item_class='toc-%level%' %}
-                                    </nav>
-                                </div>
-                            </div>
+                            {% if page.type == 'search' %}
+                            <div id="tipue_search_content"></div>
+                            {% else %}
+                            {% include anchor_headings.html html=content anchorClass='header-anchor' %}
+                            {% endif %}
                         </div>
                     </main>
                 </div>

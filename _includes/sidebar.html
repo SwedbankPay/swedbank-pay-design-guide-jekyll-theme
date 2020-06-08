@@ -1,101 +1,83 @@
 {% comment %}
 Original creator: https://sebnitu.com/2016/10/13/dynamic-menus-in-jekyll/
 {% endcomment %}
-<nav class="sidebar-nav">
-  <ul class="main-nav-ul">
-    {% assign pages = site.pages | sort: 'menu-order' %}
-    {% for node in pages %}
-    {% assign node_parts = node.url | split: '/' %}
-    {% assign node_depth = node_parts | size %}
+{% assign pages = site.pages | sort: 'menu-order' %}
+{% for node in pages %}
+{% assign node_parts = node.url | split: '/' %}
+{% assign node_depth = node_parts | size %}
+{% assign node_title_first = node.title | split: '–' | first | | remove: 'Swedbank Pay' | strip %}
+{% assign node_title_last = node.title | split: '–' | last | strip %}
 
-    {% if node_depth == 2 and node.hide_from_sidebar == nil %}
+{% if node_depth == 2 and node.hide_from_sidebar == nil %}
 
-    <li {% if page.url contains node.url %} class="nav-group active" {% else %}
-    class="nav-group" {% endif %}>
-      <div class="nav-group-heading">
+
+<li {% if page.url contains node.url %} class="nav-group active" {% else %}
+class="nav-group" {% endif %}>
+  <div class="nav-group-heading">
+    <i class="material-icons">arrow_right</i>
+    <span>{{ node_title_first }}</span>
+  </div>
+  <ul class="nav-ul">
+    {% assign node_root = '/' | append: node_parts[1] | append: '/' %}
+    {% assign has_children = false %}
+    {% for subnode in pages %}
+    {% if subnode.url contains node_root and subnode.url != node_root %}
+    {% assign has_children = true %}
+    {% endif %}
+    {% endfor %}
+
+    {% if has_children == true %}
+
+    <li {% if page.url == node.url %} aria-current="page" class="nav-subgroup active" {% else %}
+      class="nav-subgroup" {% endif %}>
+      <div class="nav-subgroup-heading">
         <i class="material-icons">arrow_right</i>
-        <span>{{ node.title }}</span>
+        <a href="{{ node.url }}">{{ node_title_last}}</a>
       </div>
-      <ul class="nav-ul">
-        {% assign node_root = '/' | append: node_parts[1] | append: '/' %}
-        {% assign has_children = false %}
-        {% for subnode in pages %}
-        {% if subnode.url contains node_root and subnode.url != node_root %}
-        {% assign has_children = true %}
-        {% endif %}
-        {% endfor %}
+      
+      {% assign node_content = node.content | markdownify %}
 
-        {% if has_children == true %}
-        <li {% if page.url == node.url %} aria-current="page" class="nav-leaf nav-subgroup-leaf active" {% else %}
-          class="nav-leaf nav-subgroup-leaf" {% endif %}>
-          <a href="{{ node.url }}">{{ node.title }}</a>
-        </li>
+      {% include toc.html html=node_content baseurl=node.url h_max=2 item_class='nav-leaf' class='nav-ul' %}
+    </li>
 
-        {% for subnode in pages %}
-        {% if subnode.url contains node_root and subnode.url != node_root %}
-        {% assign node_parts = subnode.url | split: '/' %}
-        {% assign node_depth = node_parts | size %}
-
-        <!-- {% if node_depth == 2 and subnode.hide_from_sidebar == nil %}
-        <li {% if page.url == subnode.url %} aria-current="page" class="nav-leaf nav-subgroup-leaf active" {% else %}
-              class="nav-leaf nav-subgroup-leaf" {% endif %}>
-              <a href="{{ subnode.url }}">{{ subnode.title }}</a>
-        </li>
-        {% endif %} -->
+    {% for subnode in pages %}
+    {% if subnode.url contains node_root and subnode.url != node_root %}
+    {% assign node_parts = subnode.url | split: '/' %}
+    {% assign node_depth = node_parts | size %}
+    {% assign subnode_title = subnode.title | split: '–' | last | strip %}
 
 
-        {% if node_depth == 3 and subnode.hide_from_sidebar == nil %}
-        <li {% if page.url == subnode.url %} aria-current="page" class="nav-subgroup active" {% else %}
-          class="nav-subgroup" {% endif %}>
-          <div class="nav-subgroup-heading">
-            <i class="material-icons">arrow_right</i>
-            <a href="{{ subnode.url }}">{{ subnode.title}}</a>
-          </div>
-          {% assign subnode_root = '/' | append: node_parts[1] | append: '/' | append: node_parts[2] | append: '/' %}
-          {% assign has_children = false %}
-          {% for subsubnode in pages %}
-          {% if subsubnode.url contains subnode_root and subsubnode.url != subnode_root %}
-          {% assign has_children = true %}
-          {% endif %}
-          {% endfor %}
-          
-          {% assign subnode_content = subnode.content | markdownify %}
 
-          {% include toc.html html=subnode_content baseurl=subnode.url h_max=2 item_class='nav-leaf' class='nav-ul' %}
-          <!-- <ul class="nav-ul">
-            <li {% if page.url == subnode.url %} aria-current="page" class="nav-leaf active" {% else %}
-              class="nav-leaf" {% endif %}>
-              <a href="{{ subnode.url }}">{{ subnode.title }}</a>
-            </li>
-
-
-            {% if has_children == true %}
-
-            {% for subsubnode in pages %}
-            {% if subsubnode.url contains subnode_root and subsubnode.url != subnode_root %}
-            <li {% if page.url == subsubnode.url %} class=" nav-leaf active" {% else %} class="nav-leaf"
-              {% endif %}>
-              <a href="{{ subsubnode.url }}">
-                {{ subsubnode.title }} subsubnode title
-              </a>
-            </li>
-            {% endif %}
-            {% endfor %}
-            {% endif %}
-          </ul> -->
-
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </li>
-        {% else %}
-        <li {% if page.url == node.url %} aria-current="page" class="nav-leaf active" {% else %}
-          class="nav-leaf" {% endif %}>
-          <a href="{{ node.url }}">{{ node.title }}</a>
-        </li>
-        {% endif %}
-      </ul>
+    {% if node_depth == 3 and subnode.hide_from_sidebar == nil %}
+    <li {% if page.url == subnode.url %} aria-current="page" class="nav-subgroup active" {% else %}
+      class="nav-subgroup" {% endif %}>
+      <div class="nav-subgroup-heading">
+        <i class="material-icons">arrow_right</i>
+        <a href="{{ subnode.url }}">{{ subnode_title}}</a>
+      </div>
+      {% assign subnode_root = '/' | append: node_parts[1] | append: '/' | append: node_parts[2] | append: '/' %}
+      {% assign has_children = false %}
+      {% for subsubnode in pages %}
+      {% if subsubnode.url contains subnode_root and subsubnode.url != subnode_root %}
+      {% assign has_children = true %}
       {% endif %}
       {% endfor %}
+      
+      {% assign subnode_content = subnode.content | markdownify %}
+
+      {% include toc.html html=subnode_content baseurl=subnode.url h_max=2 item_class='nav-leaf' class='nav-ul' %}
+
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+    </li>
+    {% else %}
+    <li {% if page.url == node.url %} aria-current="page" class="nav-leaf active" {% else %}
+      class="nav-leaf" {% endif %}>
+      <a href="{{ node.url }}">{{ node.title }}</a>
+    </li>
+    {% endif %}
   </ul>
-</nav>
+  {% endif %}
+  {% endfor %}
+

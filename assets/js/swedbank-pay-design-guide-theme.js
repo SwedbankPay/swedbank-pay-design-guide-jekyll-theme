@@ -22,7 +22,11 @@
 (function () {
     var headings = document.querySelectorAll("h2");
     var tocLinks = document.querySelectorAll("nav.sidebar-nav .nav-subgroup.active .nav-leaf");
-    
+
+    if (tocLinks.length == 0) {
+        var tocLinks = document.querySelectorAll("nav.sidebar-nav .doc-toc .nav-leaf");
+    }
+
     var getPosition = function (el) {
         if (el) {
             var bodyRect = document.body.getBoundingClientRect();
@@ -50,15 +54,11 @@
             const scrollNumber = [...headings].filter(heading => getPosition(heading) <= currentPos).length - 1;
 
             activeLeaf && activeLeaf.classList.remove("active")
-    
-            if (scrollNumber >= 0) {
-                tocLinks[scrollNumber].classList.add("active");
-            }
-    
-    
-            if (scrollDistanceFromBottom <= 0) {
-                activeLeaf && activeLeaf.classList.remove("active")
-    
+            
+            
+            if (scrollDistanceFromBottom > 0) {
+                scrollNumber >= 0 && tocLinks[scrollNumber].classList.add("active");
+            } else {
                 tocLinks[tocLinks.length - 1].classList.add("active");
             }
         }
