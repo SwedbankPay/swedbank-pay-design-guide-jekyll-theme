@@ -65,14 +65,19 @@ img {
                         }
 
                         .nav-subgroup-heading {
+                            padding: 0;
 
+                            i {
+                                padding: 0.5rem 0;
+                            }
 
                             a {
                                 color: #512b2b;
-                                padding-left: .5rem;
+                                padding: .5rem;
                                 font-size: 1rem;
                                 line-height: 1.5rem;
                                 text-decoration: none;
+                                width: 100%;
 
                                 &:hover,
                                 &:focus {

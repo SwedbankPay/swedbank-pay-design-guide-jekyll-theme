@@ -2,6 +2,7 @@
 
 title: Index
 description: The index page
+menu-order: 0
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.

@@ -1,5 +1,6 @@
 ---
 title: Gift Cards – Introduction
+menu-order: 4
 # sidebar:
 #   navigation:
 #   - title: Gift Cards

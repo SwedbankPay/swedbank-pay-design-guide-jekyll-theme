@@ -24,7 +24,7 @@
     var tocLinks = document.querySelectorAll("nav.sidebar-nav .nav-subgroup.active .nav-leaf");
 
     if (tocLinks.length == 0) {
-        var tocLinks = document.querySelectorAll("nav.sidebar-nav .doc-toc .nav-leaf");
+        var tocLinks = document.querySelectorAll("nav.sidebar-nav .nav-group.active .nav-leaf");
     }
 
     var getPosition = function (el) {
@@ -40,7 +40,7 @@
     
     window.addEventListener("scroll", function () {
         if (tocLinks.length > 0) {
-            var activeLeaf = document.querySelector("nav.sidebar-nav .nav-leaf.active")
+            var activeLeaf = document.querySelector("nav.sidebar-nav .nav-leaf.active");
             var buffer = document.body.clientHeight * 0.1;
             var currentPos = window.pageYOffset + buffer;
     
@@ -53,7 +53,7 @@
                 
             const scrollNumber = [...headings].filter(heading => getPosition(heading) <= currentPos).length - 1;
 
-            activeLeaf && activeLeaf.classList.remove("active")
+            activeLeaf && activeLeaf.classList.remove("active");
             
             
             if (scrollDistanceFromBottom > 0) {
@@ -62,6 +62,40 @@
                 tocLinks[tocLinks.length - 1].classList.add("active");
             }
         }
+    });
+})();
+
+// Simple sidebar functionality while dg.js is loaded
+
+function _handleSimpleSidebar (e) {
+    const target = e.target.parentElement.parentElement;
+
+    if (target.tagName === "LI") {
+        if (target.classList.contains("active")) {
+            target.classList.remove("active")
+        } else {
+            const sidebar = document.querySelector(".sidebar");
+            const closeElement = sidebar.querySelector(`.${target.classList[0]}.active`);
+
+            closeElement && closeElement.classList.remove("active");
+
+            target.classList.add("active");
+        }
+    }
+}
+
+(function () {
+    const sidebar = document.querySelector(".sidebar");
+
+    sidebar.addEventListener("click", _handleSimpleSidebar);
+})();
+
+// Remove simple sidebar functionality when proper sidebar functionality is loaded
+(function () {
+    document.addEventListener("DOMContentLoaded", (e) => {
+        const sidebar = document.querySelector(".sidebar");
+
+        sidebar.removeEventListener("click", _handleSimpleSidebar);
     });
 })();
 

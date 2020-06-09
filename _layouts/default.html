@@ -110,37 +110,7 @@
             <div class="documentation">
                 <div class="row">
                     <div class="col-xxl-2 col-lg-3">
-                        <div class="sidebar dg-sidebar">
-                            <nav class="sidebar-nav">
-                                <a href="/" class="sidebar-header">
-                                    <img src="{{ design_guide_url }}/img/swedbankpay-logo-v.svg" alt="Swedbank Pay vertical logo" />
-                                    <div class="sidebar-header-text">
-                                        <span>{</span>Developer portal<span>}</span>
-                                    </div>
-                                </a>
-                                {% if site.search.enabled == true %}
-                                <form class="doc-search" action="{{ site.search.url | relative_url }}">
-                                    <input type="text" class="form-control" name="q" id="tipue_search_input"
-                                        placeholder="Search..." autocomplete="off" pattern=".{3,}"
-                                        title="At least 3 characters">
-                                </form>
-                                {% endif %}
-
-                                <ul class="main-nav-ul">
-                                    {% if site.repository == "SwedbankPay/swedbank-pay-design-guide-jekyll-theme" %}
-                                    <li {% if page.url == "/" %} class="nav-group active" {% else %}
-                                    class="nav-group" {% endif %}>
-                                        <div class="nav-group-heading">
-                                            <i class="material-icons">arrow_right</i>
-                                            <span>Home</span>
-                                        </div>
-                                        {% include toc.html html=page.content h_max=2 item_class='nav-leaf' class='nav-ul' %}
-                                    </li>
-                                    {% endif %}
-                                    {% include sidebar.html %}
-                                </ul>
-                            </nav>
-                        </div>
+                        {% include sidebar.html %}
                     </div>
 
                     <main class="doc-view col-xxl-10 col-lg-9">

@@ -1,5 +1,6 @@
 ---
 title: Swedbank Pay Checkout – Introduction
+menu-order: 3
 # sidebar:
 #   navigation:
 #   - title: Checkout
