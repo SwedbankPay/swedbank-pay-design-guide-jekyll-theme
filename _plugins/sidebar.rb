@@ -21,10 +21,15 @@ Jekyll::Hooks.register :site, :post_render do |site, payload|
     unless page.html?
       next
     end
+
+    sidebar_content = {}
+    sidebar_content["title"] = page.data["title"]
+    sidebar_content["file_name"] = page.name
+    sidebar_content["url"] = page.url
     
     doc = Nokogiri::HTML.parse(page.content)
-    doc_xpath = doc.xpath("//h[1-6]")
-    File.open("page-#{index}.txt", 'w') { |file| file.write(doc) }
+    doc_xpath = doc.xpath("//h[2]")
+    File.open("page-#{index}.txt", 'w') { |file| file.write("#{doc_xpath}") }
     
   end
   sidebar = Jekyll::Sidebar.new
