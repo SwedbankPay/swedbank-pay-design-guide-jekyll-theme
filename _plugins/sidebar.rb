@@ -28,7 +28,7 @@ Jekyll::Hooks.register :site, :post_render do |site, payload|
     sidebar_content["url"] = page.url
     
     doc = Nokogiri::HTML.parse(page.content)
-    doc_xpath = doc.xpath("//h[2]")
+    doc_xpath = doc.css("h1, h2, h3, h4, h5, h6")
     File.open("page-#{index}.txt", 'w') { |file| file.write("#{doc_xpath}") }
     
   end
