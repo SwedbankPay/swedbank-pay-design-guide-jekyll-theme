@@ -17,9 +17,12 @@ end
 Jekyll::Hooks.register :site, :post_render do |site, payload|
   # code to call after Jekyll renders a post
   menu = {}
-  site.pages.each.with_index do | value, index |
+  site.pages.each.with_index do | page, index |
+    unless page.html?
+      next
+    end
     
-    doc = Nokogiri::HTML.parse(value.content)
+    doc = Nokogiri::HTML.parse(page.content)
     doc_xpath = doc.xpath("//h[1-6]")
     File.open("page-#{index}.txt", 'w') { |file| file.write(doc) }
     
