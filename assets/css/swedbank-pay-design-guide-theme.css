@@ -1,5 +1,39 @@
 @charset "UTF-8";
 /* TODO: Implement a table element style that @extends .table and .table-striped so we don't have to decorate all Markdown tables. */
+.dx-card { display: flex; position: relative; padding: 2.25rem 1.5rem 1.5rem; margin: 2.5rem 0 1rem; flex-direction: column; border-radius: 4px; box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1); color: #512b2b; text-decoration: none; }
+
+.dx-card:hover, .dx-card:focus { box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.15); color: #512b2b; }
+
+.dx-card:hover:after, .dx-card:focus:after { position: absolute; bottom: 0; left: 0; content: ""; width: 100%; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-bottom: 4px solid #fdc129; }
+
+.dx-card > i { color: #512b2b; }
+
+.dx-card .dx-card-icon { display: flex; position: absolute; top: -1.25rem; left: 2rem; width: 2.5rem; height: 2.5rem; border-radius: 4px; align-items: center; justify-content: center; color: #512b2b; background-color: #fdc129; }
+
+.dx-card .dx-card-content { display: flex; flex-direction: column; margin-bottom: 1.25rem; }
+
+.dx-card .dx-card-content h4 { margin-top: 0; }
+
+.dx-card.dx-card-horizontal { flex-direction: row; justify-content: space-between; align-items: center; padding-top: 1.5rem; }
+
+.dx-card.dx-card-horizontal .dx-card-icon { font-family: "Akkurat Mono", monospace; }
+
+.dx-card.dx-card-horizontal .dx-card-content { margin-bottom: 0; margin-top: 0.75rem; }
+
+.dx-card.dx-card-horizontal .dx-card-content h3 { margin-top: 0; }
+
+.dx-card.dx-card-sdk:hover:after, .dx-card.dx-card-sdk:focus:after { border-bottom: 4px solid #31a3ae; }
+
+.dx-card.dx-card-sdk > i { color: #31a3ae; }
+
+.dx-card.dx-card-sdk .dx-card-icon { color: #fff; background-color: #31a3ae; }
+
+.dx-card.dx-card-plugin:hover:after, .dx-card.dx-card-plugin:focus:after { border-bottom: 4px solid #4572c0; }
+
+.dx-card.dx-card-plugin > i { color: #4572c0; }
+
+.dx-card.dx-card-plugin .dx-card-icon { color: #fff; background-color: #4572c0; }
+
 img { max-width: 100%; }
 
 .table th > .material-icons, .table td > .material-icons { float: none; }
