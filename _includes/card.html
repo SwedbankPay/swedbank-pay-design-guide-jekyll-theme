@@ -1,0 +1,36 @@
+{% assign title = include.title %}
+{% assign icon_content = include.icon_content %}
+{% assign icon_outlined = include.icon_outlined %}
+{% assign text = include.text %}
+{% assign horizontal = include.horizontal %}
+{% assign to = include.to %}
+{% if include.type %}
+{% assign type = include.type %}
+{% assign type_class = 'dx-card-' | append: type %}
+{% else %}
+{% assign type_class = '' %}
+{% endif %}
+
+{% if horizontal %}
+<a href="{{ to }}" class="dx-card dx-card-horizontal {{type_class}}">
+    <span class="dx-card-icon">
+        {{ icon_content }}
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">{{ title }}</span>
+        <span>{{ text }}</span>
+    </span>
+    <i class="material-icons">arrow_forward</i>
+</a>
+{% else %}
+<a href="{{ to }}" class="dx-card {{type_class}}">
+    <span class="dx-card-icon">
+        <i class="material-icons{% if icon_outlined %}-outlined{% endif %}">{{ icon_content }}</i>
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">{{ title }}</span>
+        <span>{{ text }}</span>
+    </span>
+    <i class="material-icons">arrow_forward</i>
+</a>
+{% endif %}
