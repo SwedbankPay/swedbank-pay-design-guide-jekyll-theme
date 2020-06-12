@@ -3,8 +3,7 @@ require "nokogiri"
 require 'json'
 
 Jekyll::Hooks.register :site, :post_write do | site |
-  File.open("site.log", 'w') { |file| file.write(site.inspect) }
-
+  filename_with_headers = {}
   Dir.glob("#{site.config["destination"]}/**/*.html") do | filename |
 #    puts filename
     doc = File.open(filename) { |f| Nokogiri::HTML(f) }
@@ -13,7 +12,6 @@ Jekyll::Hooks.register :site, :post_write do | site |
     doc.xpath("/html/head/meta").each do | meta |
       url = meta.attr("value") if meta.attr("property").eql? "og:url"
     end
-
 
     headers = {}
     doc.xpath("//h2 | //h2 | //h3 | //h4 | //h5 | //h6").each do | header |
@@ -26,7 +24,8 @@ Jekyll::Hooks.register :site, :post_write do | site |
         :url => "#{url}#{child["href"]}"
       }
     end
-    puts headers
+    filename_with_headers[filename] = headers
   end
+  puts filename_with_headers
   raise "hel"
 end
