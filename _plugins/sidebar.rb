@@ -1,12 +1,21 @@
 require "jekyll"
 require "nokogiri"
-require "securerandom"
 
 module Jekyll
   class Sidebar
-    attr_accessor :uuid
+    attr_accessor :hash_pre_render
     def initialize
-      @uuid = SecureRandom.uuid 
+      @hash_pre_render = {}
+    end
+
+    def pre_render(page)
+      menu_order = unless page["menu-order"].nil? then page["menu-order"] else 0 end
+      @hash_pre_render[page["path"]] = {
+        :title => page["title"],
+        :url => page["url"].slice(".html"),
+        :name => page["name"],
+        "menu-order" => menu_order
+      }
     end
 
     def post_write(site)
@@ -28,25 +37,32 @@ module Jekyll
           end
           child = header.last_element_child 
           headers[header["id"]] = {
-            :content => header.content.strip,
+            :title => header.content.strip,
             :url => "#{url}#{child["href"]}"
           }
         end
         filename_with_headers[filename] = headers
       end
-      puts filename_with_headers
+      File.open("filename_with_headers.log", "w") { |f| f.write(filename_with_headers.inspect)}
+      File.open("hash_pre_render.log", "w") { |f| f.write(hash_pre_render.inspect)}
       raise "hel"
+    end
+
+    def render      
+      
     end
   end
 end
 
 sidebar = Jekyll::Sidebar.new
 
-Jekyll::Hooks.register :site, :post_render do |post|
-  puts sidebar.uuid
+Jekyll::Hooks.register :site, :pre_render do | site, payload |
+  site.pages.each do | page |
+    sidebar.pre_render page
+  end
+  
 end
 
 Jekyll::Hooks.register :site, :post_write do | site |
-  puts sidebar.uuid
   sidebar.post_write site
 end
