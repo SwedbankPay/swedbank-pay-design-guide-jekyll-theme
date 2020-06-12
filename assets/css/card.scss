@@ -105,17 +105,17 @@
         &:focus {
 
             &:after {
-                border-bottom: 4px solid $brand-info;
+                border-bottom: 4px solid $card-pink;
             }
         }
 
         > i {
-            color: $brand-info;
+            color: $card-pink;
         }
 
         .dx-card-icon {
             color: $white;
-            background-color: $brand-info;
+            background-color: $card-pink;
         }
     }
 
