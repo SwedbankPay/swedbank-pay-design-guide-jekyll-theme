@@ -4,8 +4,10 @@ require "nokogiri"
 module Jekyll
   class Sidebar
     attr_accessor :hash_pre_render
+    attr_accessor :filename_with_headers
     def initialize
       @hash_pre_render = {}
+      @filename_with_headers = {}
     end
 
     def pre_render(page)
@@ -19,7 +21,6 @@ module Jekyll
     end
 
     def post_write(site)
-      filename_with_headers = {}
       Dir.glob("#{site.config["destination"]}/**/*.html") do | filename |
         doc = File.open(filename) { |f| Nokogiri::HTML(f) }
         title = doc.title
@@ -41,15 +42,16 @@ module Jekyll
             :url => "#{url}#{child["href"]}"
           }
         end
-        filename_with_headers[filename] = headers
+        @filename_with_headers[filename] = headers
       end
-      File.open("filename_with_headers.log", "w") { |f| f.write(filename_with_headers.inspect)}
-      File.open("hash_pre_render.log", "w") { |f| f.write(hash_pre_render.inspect)}
-      raise "hel"
+
+      render
     end
 
-    def render      
-      
+    def render
+      File.open("filename_with_headers.log", "w") { |f| f.write(@filename_with_headers.inspect)}
+      File.open("hash_pre_render.log", "w") { |f| f.write(hash_pre_render.inspect)}
+      raise "hell on earth"
     end
   end
 end
