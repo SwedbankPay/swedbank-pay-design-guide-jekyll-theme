@@ -1,9 +1,15 @@
 require "jekyll"
 require "nokogiri"
+require "securerandom"
 
 module Jekyll
   class Sidebar
-    def post_write (site)
+    attr_accessor :uuid
+    def initialize
+      @uuid = SecureRandom.uuid 
+    end
+
+    def post_write(site)
       filename_with_headers = {}
       Dir.glob("#{site.config["destination"]}/**/*.html") do | filename |
         doc = File.open(filename) { |f| Nokogiri::HTML(f) }
@@ -29,13 +35,18 @@ module Jekyll
         filename_with_headers[filename] = headers
       end
       puts filename_with_headers
-      #raise "hel"
+      raise "hel"
     end
   end
 end
 
+sidebar = Jekyll::Sidebar.new
+
+Jekyll::Hooks.register :site, :post_render do |post|
+  puts sidebar.uuid
+end
+
 Jekyll::Hooks.register :site, :post_write do | site |
-  sidebar = Jekyll::Sidebar
-  puts sidebar.inspect
+  puts sidebar.uuid
   sidebar.post_write site
 end
