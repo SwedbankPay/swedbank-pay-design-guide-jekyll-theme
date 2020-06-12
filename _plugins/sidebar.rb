@@ -20,9 +20,13 @@ Jekyll::Hooks.register :site, :post_write do | site |
       if not header["id"]
         next
       end
-      headers[header["id"]] = header.content.strip
+      child = header.last_element_child 
+      headers[header["id"]] = {
+        :content => header.content.strip,
+        :url => "#{url}#{child["href"]}"
+      }
     end
-    #puts headers
+    puts headers
   end
   raise "hel"
 end
