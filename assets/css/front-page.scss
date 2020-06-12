@@ -1,0 +1,73 @@
+.front-page-top {
+    width: 100%;
+    position: relative;
+    padding: 5.5rem 4rem 0;
+    
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $dark-brown;
+        width: 100%;
+        height: 35rem;
+        z-index: 0;
+    }
+
+    .front-page-hero {
+        position: relative;
+        max-width: 35rem;
+        margin-bottom: 3.5rem; 
+        z-index: 1;
+
+        h3 {
+            color: $yellow;
+            font-family: $headline;
+            line-height: 2.5rem;
+        }
+
+        p {
+            color: $white;
+        }
+
+        .front-page-hero-name {
+            font-family: $mono;
+            font-size: 2rem;
+            color: $yellow;
+            margin-bottom: 1rem;
+
+            span {
+                color: $white;
+            }
+        }
+
+    }
+
+    .front-page-intro-cards {
+        h2 {
+            color: $white;
+            position: relative;
+
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: -0.75rem;
+                left: 0;
+                width: 3.75rem;
+                height: 4px;
+                background-color: $white;
+                border-radius: 0.625rem;
+            }
+        }
+
+        .cards-container {
+            margin-top: 1.5rem;
+
+            > div {
+                display: flex;
+                align-items: stretch;
+            }
+        }
+    }
+}

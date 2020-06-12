@@ -8,7 +8,9 @@ TODO: Implement a table element style that @extends .table and .table-striped
 */
 
 @import 'colors';
+@import 'fonts';
 @import 'card';
+@import 'front-page';
 
 $bg: #f5f2f0;
 $darkened-bg: darken($bg, 10%);
@@ -194,6 +196,10 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
                 overflow-x: auto;
             }
         }
+    }
+
+    .no-padding {
+        padding: 0;
     }
 
 

@@ -1,5 +1,6 @@
 ---
-title: Page 1
-sidebar:
-  navigation: false
+title: Front page
 ---
+
+{% include front-page.html %}
+

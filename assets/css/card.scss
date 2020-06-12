@@ -8,6 +8,7 @@
     box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
     color: $brown;
     text-decoration: none;
+    background-color: $white;
 
     &:hover,
     &:focus {
@@ -28,6 +29,7 @@
 
     > i {
         color: $brown;
+        margin-top: auto;
     }
     
 
@@ -60,6 +62,10 @@
         justify-content: space-between;
         align-items: center;
         padding-top: 1.5rem;
+
+        > i {
+            margin-top: initial;
+        }
 
         .dx-card-icon {
             font-family: "Akkurat Mono", monospace;
