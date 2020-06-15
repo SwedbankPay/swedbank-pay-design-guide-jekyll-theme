@@ -54,7 +54,25 @@ module Jekyll
       File.open("hash_pre_render.log", "w") { |f| f.write(JSON.pretty_generate @hash_pre_render)}
       merged = @hash_pre_render.merge(@filename_with_headers) {|key, a_val, b_val| a_val.merge b_val }
       File.open("merged.log", "w") { |f| f.write(JSON.pretty_generate merged)}
-      raise "hell on earth"
+
+      sidebar = "<div id=\"dg-sidebar\" class=\"sidebar\">"
+      sidebar << "<nav class=\"sidebar-nav\">"
+      sidebar << "<ul class=\"main-nav-ul\">"
+
+      merged.each do | row, value |
+        leaf = "<li class=\"nav-group\">"
+        leaf << "<div class=\"nav-group-heading\"><i class=\"material-icons\">arrow_right</i><span>#{value[:title]}</span></div>"
+        #puts row
+        #puts value
+        leaf << "</li>"
+        sidebar << leaf
+      end
+
+      sidebar << "</ul>"
+      sidebar << "</nav>"
+      sidebar << "</div>"
+      puts sidebar
+      raise "army of hell"
     end
   end
 end
