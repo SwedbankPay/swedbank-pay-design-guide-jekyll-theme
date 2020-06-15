@@ -52,6 +52,8 @@ module Jekyll
     def render
       File.open("filename_with_headers.log", "w") { |f| f.write(JSON.pretty_generate @filename_with_headers)}
       File.open("hash_pre_render.log", "w") { |f| f.write(JSON.pretty_generate @hash_pre_render)}
+      merged = @hash_pre_render.merge(@filename_with_headers)
+      File.open("merged.log", "w") { |f| f.write(JSON.pretty_generate merged)}
       raise "hell on earth"
     end
   end
