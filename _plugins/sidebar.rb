@@ -43,7 +43,7 @@ module Jekyll
             :url => "#{url}#{child["href"]}"
           }
         end
-        @filename_with_headers[filename] = headers
+        @filename_with_headers[filename.match(/(?m)(?<=\b_site).*$/)] = headers
       end
 
       render
@@ -52,7 +52,7 @@ module Jekyll
     def render
       File.open("filename_with_headers.log", "w") { |f| f.write(JSON.pretty_generate @filename_with_headers)}
       File.open("hash_pre_render.log", "w") { |f| f.write(JSON.pretty_generate @hash_pre_render)}
-      merged = @hash_pre_render.merge(@filename_with_headers)
+      merged = @hash_pre_render.merge(@filename_with_headers) {|key, a_val, b_val| a_val.merge b_val }
       File.open("merged.log", "w") { |f| f.write(JSON.pretty_generate merged)}
       raise "hell on earth"
     end
