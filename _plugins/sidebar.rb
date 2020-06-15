@@ -43,15 +43,18 @@ module Jekyll
             :url => "#{url}#{child["href"]}"
           }
         end
-        @filename_with_headers[filename.match(/(?m)(?<=\b_site).*$/)] = headers
+        sanitized_filename = filename.match(/(?m)(?<=\b_site).*$/)[0]
+        sanitized_filename = sanitized_filename.gsub("index.html","")
+        sanitized_filename = sanitized_filename.gsub(".html", "")
+        @filename_with_headers[sanitized_filename] = headers
       end
 
       render
     end
 
     def render
-      File.open("filename_with_headers.log", "w") { |f| f.write(JSON.pretty_generate @filename_with_headers)}
-      File.open("hash_pre_render.log", "w") { |f| f.write(JSON.pretty_generate @hash_pre_render)}
+      #File.open("filename_with_headers.log", "w") { |f| f.write(JSON.pretty_generate @filename_with_headers)}
+      #File.open("hash_pre_render.log", "w") { |f| f.write(JSON.pretty_generate @hash_pre_render)}
       merged = @hash_pre_render.merge(@filename_with_headers) {|key, a_val, b_val| a_val.merge b_val }
       File.open("merged.log", "w") { |f| f.write(JSON.pretty_generate merged)}
 
@@ -60,10 +63,10 @@ module Jekyll
       sidebar << "<ul class=\"main-nav-ul\">"
 
       merged.each do | row, value |
+        next if value[:title].nil?
         leaf = "<li class=\"nav-group\">"
         leaf << "<div class=\"nav-group-heading\"><i class=\"material-icons\">arrow_right</i><span>#{value[:title]}</span></div>"
-        #puts row
-        #puts value
+        
         leaf << "</li>"
         sidebar << leaf
       end
@@ -71,7 +74,7 @@ module Jekyll
       sidebar << "</ul>"
       sidebar << "</nav>"
       sidebar << "</div>"
-      puts sidebar
+      #File.open("sidebar.html", "w") { |f| f.write(sidebar)}
       raise "army of hell"
     end
   end
