@@ -33,7 +33,7 @@ module Jekyll
         end
 
         headers = {}
-        doc.xpath("//h2 | //h2 | //h3 | //h4 | //h5 | //h6").each do | header |
+        doc.xpath("//h1 | //h2 | //h2 | //h3 | //h4 | //h5 | //h6").each do | header |
           if not header["id"]
             next
           end
@@ -66,7 +66,17 @@ module Jekyll
         next if value[:title].nil?
         leaf = "<li class=\"nav-group\">"
         leaf << "<div class=\"nav-group-heading\"><i class=\"material-icons\">arrow_right</i><span>#{value[:title]}</span></div>"
-        
+        leaf << "<ul class=\"nav-ul\">"
+        p row
+        p value
+        value.each do | hmm |
+          #p hmm
+          next if hmm[:title].nil? || hmm[:url].nil?
+          leaf << "<li class=\"nav-leaf\"><a href=\"#{hmm[":url"]}\">#{mhm[":title"]}</a></li>"
+        end
+
+        #puts value
+        leaf << "</ul>"
         leaf << "</li>"
         sidebar << leaf
       end
@@ -74,7 +84,7 @@ module Jekyll
       sidebar << "</ul>"
       sidebar << "</nav>"
       sidebar << "</div>"
-      #File.open("sidebar.html", "w") { |f| f.write(sidebar)}
+      File.open("sidebar.html", "w") { |f| f.write(sidebar)}
       raise "army of hell"
     end
   end
