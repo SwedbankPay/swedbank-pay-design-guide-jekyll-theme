@@ -1,5 +1,6 @@
 require "jekyll"
 require "nokogiri"
+require 'json'
 
 module Jekyll
   class Sidebar
@@ -12,9 +13,9 @@ module Jekyll
 
     def pre_render(page)
       menu_order = unless page["menu-order"].nil? then page["menu-order"] else 0 end
-      @hash_pre_render[page["path"]] = {
+      @hash_pre_render[page["url"]] = {
         :title => page["title"],
-        :url => page["url"].slice(".html"),
+        :url => page["url"],
         :name => page["name"],
         "menu-order" => menu_order
       }
@@ -49,8 +50,8 @@ module Jekyll
     end
 
     def render
-      File.open("filename_with_headers.log", "w") { |f| f.write(@filename_with_headers.inspect)}
-      File.open("hash_pre_render.log", "w") { |f| f.write(hash_pre_render.inspect)}
+      File.open("filename_with_headers.log", "w") { |f| f.write(JSON.pretty_generate @filename_with_headers)}
+      File.open("hash_pre_render.log", "w") { |f| f.write(JSON.pretty_generate @hash_pre_render)}
       raise "hell on earth"
     end
   end
