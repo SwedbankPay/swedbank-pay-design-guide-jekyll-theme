@@ -65,13 +65,8 @@ module Jekyll
       sidebar << "<nav class=\"sidebar-nav\">"
       sidebar << "<ul class=\"main-nav-ul\">"
 
-      merged.each do | row, value |
-        begin
-          hash = value.to_h  
-        rescue => exception
-          p value
-          puts exception
-        end
+      merged.each do | row, hash |
+        p hash
         
         #puts value.methods - Object.methods
         #p hash
