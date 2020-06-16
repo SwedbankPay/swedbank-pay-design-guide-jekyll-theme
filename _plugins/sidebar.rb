@@ -13,7 +13,8 @@ module Jekyll
 
     def pre_render(page)
       menu_order = unless page["menu-order"].nil? then page["menu-order"] else 0 end
-      @hash_pre_render[page["url"]] = {
+      url = page["url"].gsub("index.html","").gsub(".html","")
+      @hash_pre_render[url] = {
         :title => page["title"],
         :url => page["url"],
         :name => page["name"],
@@ -32,16 +33,18 @@ module Jekyll
           end
         end
 
-        headers = {}
+        headers = []
         doc.xpath("//h1 | //h2 | //h2 | //h3 | //h4 | //h5 | //h6").each do | header |
           if not header["id"]
             next
           end
-          child = header.last_element_child 
-          headers[header["id"]] = {
+          child = header.last_element_child
+          header = {
+            :id => header["id"],
             :title => header.content.strip,
             :url => "#{url}#{child["href"]}"
           }
+          headers.push(header)
         end
         sanitized_filename = filename.match(/(?m)(?<=\b_site).*$/)[0]
         sanitized_filename = sanitized_filename.gsub("index.html","")
@@ -53,9 +56,9 @@ module Jekyll
     end
 
     def render
-      #File.open("filename_with_headers.log", "w") { |f| f.write(JSON.pretty_generate @filename_with_headers)}
-      #File.open("hash_pre_render.log", "w") { |f| f.write(JSON.pretty_generate @hash_pre_render)}
-      merged = @hash_pre_render.merge(@filename_with_headers) {|key, a_val, b_val| a_val.merge b_val }
+      File.open("filename_with_headers.log", "w") { |f| f.write(JSON.pretty_generate @filename_with_headers)}
+      File.open("hash_pre_render.log", "w") { |f| f.write(JSON.pretty_generate @hash_pre_render)}
+      merged = @hash_pre_render.merge(@filename_with_headers) #{|key, a_val, b_val| a_val.merge b_val }
       File.open("merged.log", "w") { |f| f.write(JSON.pretty_generate merged)}
 
       sidebar = "<div id=\"dg-sidebar\" class=\"sidebar\">"
