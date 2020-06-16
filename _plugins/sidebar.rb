@@ -66,16 +66,25 @@ module Jekyll
       sidebar << "<ul class=\"main-nav-ul\">"
 
       merged.each do | row, value |
-        next if value[:title].nil?
+        begin
+          hash = value.to_h  
+        rescue => exception
+          p value
+          puts exception
+        end
+        
+        #puts value.methods - Object.methods
+        #p hash
+        next if hash[:title].nil?
         leaf = "<li class=\"nav-group\">"
-        leaf << "<div class=\"nav-group-heading\"><i class=\"material-icons\">arrow_right</i><span>#{value[:title]}</span></div>"
-        leaf << "<ul class=\"nav-ul\">"
-        value.each do | hmm |
-          next if hmm[:title].nil? || hmm[:url].nil?
-          leaf << "<li class=\"nav-leaf\"><a href=\"#{hmm[":url"]}\">#{mhm[":title"]}</a></li>"
+        leaf << "<div class=\"nav-group-heading\"><i class=\"material-icons\">arrow_right</i><span>#{hash[:title]}</span></div>"
+        
+        if hash[:title].nil? || hash[:url].nil?
+          leaf << "<ul class=\"nav-ul\">"
+          leaf << "<li class=\"nav-leaf\"><a href=\"#{hash[":url"]}\">#{hash[":title"]}</a></li>"
+          leaf << "</ul>"
         end
 
-        leaf << "</ul>"
         leaf << "</li>"
         sidebar << leaf
       end
