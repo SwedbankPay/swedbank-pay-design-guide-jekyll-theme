@@ -77,9 +77,14 @@ module Jekyll
         leaf = "<li class=\"nav-group\">"
         leaf << "<div class=\"nav-group-heading\"><i class=\"material-icons\">arrow_right</i><span>#{value[:title]}</span></div>"
 
-        if !value[:title].nil? && !value[:url].nil?
+        unless value[:title].nil? && !value[:url].nil?
           leaf << "<ul class=\"nav-ul\">"
           leaf << "<li class=\"nav-leaf\"><a href=\"#{value[:url]}\">#{value[:title]}</a></li>"
+          if value[:headers]
+            value[:headers].each do | header |
+              leaf << "<li class=\"nav-leaf\"><a href=\"#{header[:url]}\">#{header[:title]}</a></li>"
+            end
+          end
           leaf << "</ul>"
         end
 
