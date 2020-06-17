@@ -1,6 +1,5 @@
 ---
 title: Checkout
-
 menu-order: 10
 ---
 

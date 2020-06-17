@@ -1,5 +1,4 @@
 ---
-
 title: Index
 description: The index page
 ---
