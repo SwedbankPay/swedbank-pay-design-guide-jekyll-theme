@@ -67,8 +67,8 @@ module Jekyll
       sidebar << "<ul class=\"main-nav-ul\">"
 
       merged.each do |key, value|
-        p key
-        p value
+        #p key
+        #p value
 
         #puts value.methods - Object.methods
         #p hash
@@ -77,18 +77,18 @@ module Jekyll
         leaf = "<li class=\"nav-group\">"
         leaf << "<div class=\"nav-group-heading\"><i class=\"material-icons\">arrow_right</i><span>#{value[:title]}</span></div>"
 
-        unless value[:title].nil? && !value[:url].nil?
+        leaf << "<ul class=\"nav-ul\">"
+        leaf << "<li class=\"nav-leaf\"><a href=\"#{value[:url]}\">#{value[:title]}</a></li>"
+        if value[:headers].any?
+          #leaf << "<div class=\"nav-subgroup-heading\"><i class=\"material-icons\">arrow_right</i><span>#{value[:headers][0][:title]}</span></div>"
           leaf << "<ul class=\"nav-ul\">"
-          leaf << "<li class=\"nav-leaf\"><a href=\"#{value[:url]}\">#{value[:title]}</a></li>"
-          if value[:headers]
-            value[:headers].each do | header |
-              leaf << "<li class=\"nav-leaf\"><a href=\"#{header[:url]}\">#{header[:title]}</a></li>"
-            end
+          value[:headers].each do | header |
+            leaf << "<li class=\"nav-leaf\"><a href=\"#{header[:url]}\">#{header[:title]}</a></li>"
           end
           leaf << "</ul>"
         end
 
-        leaf << "</li>"
+        leaf << "</li></ul>"
         sidebar << leaf
       end
 
