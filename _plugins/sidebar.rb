@@ -24,8 +24,10 @@ module Jekyll
     end
 
     def post_write(site)
+      files = []
       Dir.glob("#{site.config["destination"]}/**/*.html") do |filename|
         doc = File.open(filename) { |f| Nokogiri::HTML(f) }
+        files.push(doc)
         title = doc.title
         url = ""
         doc.xpath("/html/head/meta").each do |meta|
@@ -53,25 +55,22 @@ module Jekyll
         @filename_with_headers[sanitized_filename] = { :headers => headers }
       end
 
-      render
+      sidebar = render
+      files.each do | file |
+        file.xpath("//*[@id=\"dg-sidebar\"]").each do | location |
+          location.content = sidebar
+        end
+      end
+      raise "undead"
     end
 
     def render
-      File.open("filename_with_headers.log", "w") { |f| f.write(JSON.pretty_generate @filename_with_headers) }
-      File.open("hash_pre_render.log", "w") { |f| f.write(JSON.pretty_generate @hash_pre_render) }
-      merged = merge(@hash_pre_render, @filename_with_headers)
-      File.open("merged.log", "w") { |f| f.write(JSON.pretty_generate merged) }
-
       sidebar = "<div id=\"dg-sidebar\" class=\"sidebar\">"
       sidebar << "<nav class=\"sidebar-nav\">"
       sidebar << "<ul class=\"main-nav-ul\">"
 
+      merged = merge(@hash_pre_render, @filename_with_headers)
       merged.each do |key, value|
-        #p key
-        #p value
-
-        #puts value.methods - Object.methods
-        #p hash
         next if value[:title].nil?
 
         leaf = "<li class=\"nav-group\">"
@@ -79,8 +78,8 @@ module Jekyll
 
         leaf << "<ul class=\"nav-ul\">"
         leaf << "<li class=\"nav-leaf\"><a href=\"#{value[:url]}\">#{value[:title]}</a></li>"
+
         if value[:headers].any?
-          #leaf << "<div class=\"nav-subgroup-heading\"><i class=\"material-icons\">arrow_right</i><span>#{value[:headers][0][:title]}</span></div>"
           leaf << "<ul class=\"nav-ul\">"
           value[:headers].each do | header |
             leaf << "<li class=\"nav-leaf\"><a href=\"#{header[:url]}\">#{header[:title]}</a></li>"
@@ -88,7 +87,7 @@ module Jekyll
           leaf << "</ul>"
         end
 
-        leaf << "</li></ul>"
+        leaf << "</li>"
         sidebar << leaf
       end
 
@@ -96,7 +95,7 @@ module Jekyll
       sidebar << "</nav>"
       sidebar << "</div>"
       File.open("sidebar.html", "w") { |f| f.write(sidebar) }
-      raise "army of hell"
+      return sidebar
     end
 
     private
