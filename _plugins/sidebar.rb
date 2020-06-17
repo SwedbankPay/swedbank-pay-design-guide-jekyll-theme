@@ -61,7 +61,7 @@ module Jekyll
           location.content = sidebar
         end
       end
-      raise "undead"
+      #raise "undead"
     end
 
     def render
@@ -80,13 +80,11 @@ module Jekyll
         leaf << "<li class=\"nav-leaf\"><a href=\"#{value[:url]}\">#{value[:title]}</a></li>"
 
         if value[:headers].any?
-          leaf << "<ul class=\"nav-ul\">"
           value[:headers].each do | header |
             leaf << "<li class=\"nav-leaf\"><a href=\"#{header[:url]}\">#{header[:title]}</a></li>"
           end
-          leaf << "</ul>"
         end
-
+        leaf << "</ul>"
         leaf << "</li>"
         sidebar << leaf
       end
