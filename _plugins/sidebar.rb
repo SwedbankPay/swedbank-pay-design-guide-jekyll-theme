@@ -56,12 +56,14 @@ module Jekyll
       end
 
       sidebar = render
-      files.each do | file |
+      Dir.glob("#{site.config["destination"]}/**/*.html") do |filename|
+        file = File.open(filename) { |f| Nokogiri::HTML(f) }
         file.xpath("//*[@id=\"dg-sidebar\"]").each do | location |
-          location.content = sidebar
+          location.inner_html = sidebar
         end
+        File.open(filename, 'w') { |f| f.write(file.to_xhtml(encoding: 'UTF-8')) }
       end
-      #raise "undead"
+      File.open("_site/sidebar.html", 'w') { |f| f.write(sidebar) }
     end
 
     def render
