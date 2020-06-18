@@ -1,5 +1,4 @@
 ---
-
 title: Index
 description: The index page
 menu-order: 0
@@ -191,6 +190,33 @@ body='This is an **informational**   alert *with*   `<markdown/>`{:.language-htm
 {% include alert.html type='warning' icon='warning' 
 header='`{ "warning": "alert" }`{:.language-js}'
 body='This is a **warning**   alert with `<markdown/>`{:.language-html}.' %}
+
+## Cards
+
+{% include card.html title='Default'
+    text='This is a default card'
+    icon_content='credit_card'
+    to='/#cards'
+%}
+{% include card.html title='SDK'
+    text='This is a .dx-card-sdk card'
+    icon_content='settings'
+    type='sdk'
+    to='/#cards'
+%}
+{% include card.html title='Plugin'
+    text='This is a .dx-card-plugin card. This also has outlined icon'
+    icon_content='build'
+    icon_outlined=true
+    type='plugin'
+    to='/#cards'
+%}
+{% include card.html title='Horizontal'
+    text='This is a dx-card-horizontal card. Icons used with this card are just numbers'
+    icon_content='01'
+    horizontal=true
+    to='/#cards'
+%}
 
 ## Jumbotron
 

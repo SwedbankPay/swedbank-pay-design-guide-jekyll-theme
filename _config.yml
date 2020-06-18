@@ -44,3 +44,5 @@ defaults:
       layout: default
 github:
   branch: master
+sass:
+  sass_dir: assets/css
