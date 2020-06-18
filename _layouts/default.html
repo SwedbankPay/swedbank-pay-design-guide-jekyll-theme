@@ -107,41 +107,6 @@
                 <div class="row">
                     <div class="col-xxl-2 col-md-3">
                         <div class="doc-sidebar" id="dg-sidebar">
-                            {% if site.search.enabled == true %}
-                            <form class="doc-search" action="{{ site.search.url | relative_url }}">
-                                <input type="text" class="form-control" name="q" id="tipue_search_input"
-                                    placeholder="Search..." autocomplete="off" pattern=".{3,}"
-                                    title="At least 3 characters">
-                            </form>
-                            {% endif %}
-                            {% if page.sidebar.navigation != nil %}
-                            <nav class="documentation-nav">
-                                {% for group in page.sidebar.navigation %}
-                                {% comment %}
-                                TODO: Make "class='active'" conditional on whether one of the group's nav items are
-                                active or not.
-                                {% endcomment %}
-                                <div class="nav-group active">
-                                    <div class="nav-heading">
-                                        <i class="material-icons">keyboard_arrow_right</i>
-                                        <span>{{ group.title }}</span>
-                                    </div>
-
-                                    {% if group.items != nil and group.items != empty %}
-                                    <ul>
-                                        {% for nav in group.items %}
-                                        {% assign nav_url = nav.url | relative_url %}
-                                        <li><a {% if page_url == nav_url %} aria-current="page" class="active"
-                                                {% endif %} href="{{ nav_url }}"><span>{{ nav.title }}</span></a></li>
-                                        {% endfor %}
-                                    </ul>
-                                    {% endif %}
-                                </div>
-                                {% endfor %}
-                            </nav>
-                            {% else %}
-                            {% include sidebar.html %}
-                            {% endif %}
                         </div>
                     </div>
 

@@ -92,7 +92,7 @@ module Jekyll
       sidebar << "</ul>"
       sidebar << "</nav>"
       sidebar << "</div>"
-      #File.open("sidebar.html", "w") { |f| f.write(sidebar) }
+      File.open("_site/sidebar.html", "w") { |f| f.write(sidebar) }
       return sidebar
     end
 
