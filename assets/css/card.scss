@@ -1,9 +1,10 @@
 .dx-card {
     display: flex;
+    flex-grow: 1;
+    flex-direction: column;
     position: relative;
     padding: 2.25rem 1.5rem 1.5rem;
     margin: 2.5rem 0 1rem;
-    flex-direction: column;
     border-radius: 4px;
     box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
     color: $brown;
@@ -45,6 +46,11 @@
         justify-content: center;
         color: $brown;
         background-color: $yellow;
+
+        svg {
+            fill: $brown;
+            max-width: 24px;
+        }
     }
 
     .dx-card-content {
@@ -52,7 +58,7 @@
         flex-direction: column;
         margin-bottom: 1.25rem;
 
-        h4 {
+        .h4 {
             margin-top: 0;
         }
     }
@@ -69,14 +75,17 @@
 
         .dx-card-icon {
             font-family: "Akkurat Mono", monospace;
+            height: 2rem;
+            top: -1rem;
         }
         
         .dx-card-content {
             margin-bottom: 0;
             margin-top: 0.75rem;
 
-            h3 {
+            .h3 {
                 margin-top: 0;
+                margin-bottom: 0.25rem;
             }
         }
     }
@@ -97,6 +106,10 @@
         .dx-card-icon {
             color: $white;
             background-color: $turquoise;
+
+            svg {
+                fill: $white;
+            }
         }
     }
 
@@ -116,6 +129,10 @@
         .dx-card-icon {
             color: $white;
             background-color: $card-pink;
+
+            svg {
+                fill: $white;
+            }
         }
     }
 

@@ -202,6 +202,10 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
         padding: 0;
     }
 
+    .doc-container {
+        padding: 2rem 2rem 5rem;
+    }
+
 
     .language-mermaid {
         $apricot: #fbf2ea;
