@@ -37,7 +37,7 @@ module Jekyll
         end
 
         headers = []
-        doc.xpath("//h1 | //h2 | //h2 | //h3 | //h4 | //h5 | //h6").each do |header|
+        doc.xpath("//h2 ").each do |header|
           if not header["id"]
             next
           end
@@ -66,27 +66,63 @@ module Jekyll
       File.open("_site/sidebar.html", 'w') { |f| f.write(sidebar) }
     end
 
+    def generateSubgroup (key, value, has_subgroups)
+      subgroup = ""
+      if value[:headers].any?
+        if has_subgroups
+          subgroup << "<li class=\"nav-subgroup\">"
+          subgroup << "<div class=\"nav-subgroup-heading\"><i class=\"material-icons\">arrow_right</i><a href=\"#{value[:url]}\">#{value[:title].split("–").last}</a></div>"
+          subgroup << "<ul class=\"nav-ul\">"
+          value[:headers].each do | header |
+            subgroup << "<li class=\"nav-leaf\"><a href=\"#{header[:url]}\">#{header[:title]}</a></li>"
+          end
+          subgroup << "</ul>"
+          subgroup << "</li>"
+        else
+          value[:headers].each do | header |
+            subgroup << "<li class=\"nav-leaf\"><a href=\"#{header[:url]}\">#{header[:title]}</a></li>"
+          end
+        end
+      else
+        if has_subgroups
+          subgroup << "<li class=\"nav-leaf nav-subgroup-leaf\"><a href=\"#{value[:url]}\">#{value[:title]}</a></li>"
+        else
+          subgroup << "<li class=\"nav-leaf\"><a href=\"#{value[:url]}\">#{value[:title]}</a></li>"
+        end
+      end
+
+      return subgroup
+    end
+
     def render
       sidebar = ""
 
       merged = merge(@hash_pre_render, @filename_with_headers)
-      merged.each do |key, value|
+      merged.select{|key, value| key.split("/").length <= 2}.sort_by{|key, value| value[:menu_order]}.each do |key, value|
         next if value[:title].nil?
 
-        leaf = "<li class=\"nav-group\">"
-        leaf << "<div class=\"nav-group-heading\"><i class=\"material-icons\">arrow_right</i><span>#{value[:title]}</span></div>"
 
-        leaf << "<ul class=\"nav-ul\">"
-        leaf << "<li class=\"nav-leaf\"><a href=\"#{value[:url]}\">#{value[:title]}</a></li>"
+        subgroups = merged.select{|subgroup_key, subgroup_value| subgroup_key.include? key and subgroup_key != key and key != "/"}
+        
+        child = "<li class=\"nav-group\">"
+        child << "<div class=\"nav-group-heading\"><i class=\"material-icons\">arrow_right</i><span>#{value[:title].split("–").first}</span></div>"
 
-        if value[:headers].any?
-          value[:headers].each do | header |
-            leaf << "<li class=\"nav-leaf\"><a href=\"#{header[:url]}\">#{header[:title]}</a></li>"
+        child << "<ul class=\"nav-ul\">"
+        
+        subgroup = generateSubgroup key, value, subgroups.length > 0
+
+        child << subgroup
+
+        if subgroups.any?
+          subgroups.each do |subgroup_key, subgroup_value|
+            subgroup = generateSubgroup subgroup_key, subgroup_value, true
+            child << subgroup
           end
         end
-        leaf << "</ul>"
-        leaf << "</li>"
-        sidebar << leaf
+
+        child << "</ul>"
+        child << "</li>"
+        sidebar << child
       end
 
       File.open("_site/sidebar.html", "w") { |f| f.write(sidebar) }

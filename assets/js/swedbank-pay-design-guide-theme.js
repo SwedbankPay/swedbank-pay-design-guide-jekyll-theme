@@ -20,6 +20,15 @@
 
 // Initialize sidebar navigation scroll activation
 (function () {
+    const pathHash = window.location.pathname + window.location.hash;
+    const originPath = window.location.origin + window.location.pathname
+    const activeGroup = [...document.querySelectorAll(".nav-group")]
+    .filter(group => group.querySelector(`[href="${pathHash}"], [href^="${originPath}#"]`))[0];
+    const activeSubgroup = [...document.querySelectorAll(".nav-subgroup")].filter(group => group.querySelector(`[href="${pathHash}"]`))
+
+    activeGroup.classList.add("active")
+    activeSubgroup.map(subgroup => subgroup.classList.add("active"))
+
     var headings = document.querySelectorAll("h2");
     var tocLinks = document.querySelectorAll("nav.sidebar-nav .nav-subgroup.active .nav-leaf");
 
@@ -37,8 +46,8 @@
         
         return null;
     };
-    
-    window.addEventListener("scroll", function () {
+
+    var setActiveLeafScroll = function () {
         if (tocLinks.length > 0) {
             var activeLeaf = document.querySelector("nav.sidebar-nav .nav-leaf.active");
             var buffer = document.body.clientHeight * 0.1;
@@ -62,7 +71,11 @@
                 tocLinks[tocLinks.length - 1].classList.add("active");
             }
         }
-    });
+    }
+
+    setActiveLeafScroll();
+    
+    window.addEventListener("scroll", setActiveLeafScroll);
 })();
 
 // Simple sidebar functionality while dg.js is loaded
