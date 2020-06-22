@@ -148,12 +148,7 @@
                     <main class="doc-view col-xxl-10 col-md-9">
                         <div class="doc-container">
                             <h1>{{ title }}</h1>
-                            {% if page.type == 'search' %}
-                            <div id="tipue_search_content"></div>
-                            {% else %}
-                            {% include anchor_headings.html html=content anchorClass='header-anchor' %}
-                            {% endif %}
-                            <!-- <div class="row">
+                            <div class="row">
                                 <div class="doc-body col-lg-10">
                                     {% if page.type == 'search' %}
                                     <div id="tipue_search_content"></div>
@@ -167,7 +162,7 @@
                                         {% include toc.html html=content h_max=2 item_class='toc-%level%' %}
                                     </nav>
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
                     </main>
                 </div>
