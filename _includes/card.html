@@ -3,6 +3,7 @@
 {% assign icon_content = include.icon_content %}
 {% assign icon_outlined = include.icon_outlined %}
 {% assign icon_svg = include.icon_svg %}
+{% assign no_icon = include.no_icon %}
 {% assign text = include.text %}
 {% assign horizontal = include.horizontal %}
 {% assign to = include.to %}
@@ -20,7 +21,7 @@ when Liquid is mixed in between and the cards are not wrapped in a div
 
 {% if horizontal %}
 <a href="{{ to }}" class="dx-card dx-card-horizontal {{type_class}}">
-    <span class="dx-card-icon">
+    <span class="dx-card-icon{% if no_icon %} d-none{% endif %}">
         {{ icon_content }}
     </span>
     <span class="dx-card-content">
@@ -43,7 +44,7 @@ when Liquid is mixed in between and the cards are not wrapped in a div
 </a>
 {% else %}
 <a href="{{ to }}" class="dx-card {{type_class}}">
-    <span class="dx-card-icon">
+    <span class="dx-card-icon{% if no_icon %} d-none{% endif %}">
         <i class="material-icons{% if icon_outlined %}-outlined{% endif %}">
             {{ icon_content }}
         </i>
