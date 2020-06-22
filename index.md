@@ -212,6 +212,7 @@ body='This is a **warning**   alert with `<markdown/>`{:.language-html}.' %}
     to='/#cards'
 %}
 {% include card.html title='Horizontal'
+    title_type="h3"
     text='This is a dx-card-horizontal card. Icons used with this card are just numbers'
     icon_content='01'
     horizontal=true
