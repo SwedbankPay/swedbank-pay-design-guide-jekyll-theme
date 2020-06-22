@@ -1,0 +1,29 @@
+{% assign num_dates = include.num_dates %}
+{% assign pages = site.pages  %}
+{% for node in pages %}
+{% if node.url contains '/resources/release-notes' %}
+<div class="release-notes-container">
+    {% assign dates = node.content | markdownify | split: '<h2' | | slice: 1, num_dates %}
+    {% assign variable = value %}
+
+    {% for date in dates %}
+        <div class="row">
+            {% assign versions = date | split: '<h3' %}
+            <div class="col-md-2 release-notes-date">
+                {% assign date_value = versions[0] | remove: '</h2>' | | split: '>' %}
+                {{ date_value[1] }}
+            </div>
+            {% assign version_list = versions | shift %}
+            <div class="col-md-10">
+                {% for version in version_list %}
+                    {% assign version_parts = version | | split: '</h3>' %}
+                    {% assign version_value = version_parts[0] | split: '>' %}
+                    <p class="h4">{{ version_value[1] }}</p>
+                    {{ version_parts[1] }}
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endfor %}

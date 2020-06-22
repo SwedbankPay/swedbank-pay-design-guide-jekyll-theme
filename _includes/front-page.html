@@ -1,0 +1,231 @@
+{% assign card_col_class = "col-xxl-3 col-xl-6 col-lg-6" %}
+
+<div class="front-page">
+    <div class="front-page-top">
+        <div class="front-page-hero">
+            <h3>Welcome to the Swedbank Pay</h3>
+            <div class="front-page-hero-name">
+                {<span>developer portal</span>} 
+            </div>
+            <p>
+                Our developer portal gives you the full tool box for integrating
+                our payment instruments and getting started with easy, flexible and
+                safe payments on your e-commerce website.
+            </p>
+        </div>
+        <div class="front-page-intro-cards">
+            <h2 id="front-page-start">Start your integration</h2>
+            <div class="row mt-4">
+                <div class="{{ card_col_class }}">
+                    {% include card.html title='Checkout'
+                        title_type="h2"
+                        text='With our Checkout you get the pre-built all-in-one
+                        payment solution, complete with a checkin interface and
+                        payment menu.'
+                        icon_content='shopping_cart'
+                        icon_outlined=true
+                        to='/checkout'
+                    %}
+                </div>
+                <div class="{{ card_col_class }}">
+                    {% include card.html title='Payments'
+                        title_type="h2"
+                        text='Payments gives you a one-by-one integration with more
+                        customization for each payment method to build your own
+                        payment menu.'
+                        icon_content='credit_card'
+                        to='/payments'
+                    %}
+                </div>
+                <div class="{{ card_col_class }}">
+                    {% include card.html title='Gift Cards'
+                        title_type="h2"
+                        text='Our Gift Cards API allows your customers to pay with
+                        prepaid gift cards issued by Swedbank Pay in your Checkout.'
+                        icon_content='card_giftcard'
+                        to='/gift-cards'
+                    %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="front-page-merchants">
+        <h6>Trusted by</h6>
+        <div class="merchants-container justify-content-xxl-between">
+            <a class="merchant-link">
+                {% include img/merchants/logo-schibsted.svg %}
+            </a>
+            <a class="merchant-link">
+                {% include img/merchants/logo-ica.svg %}
+            </a>
+            <a class="merchant-link">
+                {% include img/merchants/logo-elkjop.svg %}
+            </a>
+            <a class="merchant-link">
+                {% include img/merchants/logo-synsam.svg %}
+            </a>
+            <a class="merchant-link">
+                {% include img/merchants/logo-coop.svg %}
+            </a>
+            <a class="merchant-link">
+                {% include img/merchants/logo-svenskaspel.svg %}
+            </a>
+            <a class="merchant-link">
+                {% include img/merchants/logo-skanetrafiken.svg %}
+            </a>
+        </div>
+    </div>
+    
+    <a href="/demoshop" class="front-page-demoshop">
+        <span class="front-page-demoshop-text">
+            <span class="h2">Try our Demoshop<span>.</span></span>
+            <span class="demoshop-text-description">
+                Unsure about how it all works? See how our checkout and payment is used
+                in practice!
+            </span>
+        </span>
+        <span class="front-page-demoshop-link">
+            <span class="h3">Go to the demoshop</span>
+            <i class="material-icons">arrow_forward</i>
+            <img class="demoshop-link-img d-none d-xl-flex" 
+                src="/assets/img/demoshop.svg"
+                alt="demoshop"
+            />
+        </span>
+    </a>
+    
+    <div class="front-page-cards-sdk">
+        <h2 id="front-page-sdk">Looking for SDKs?</h2>
+        <div class="row mt-4">
+            <div class="{{ card_col_class }}">
+                {% include card.html title='Android SDK'
+                    text='Learn more about how to integrate our Android SDK'
+                    icon_content='img/sdks/logo-android.svg'
+                    icon_svg=true
+                    type='sdk'
+                    to='/sdk/android'
+                %}
+            </div>
+            <div class="{{ card_col_class }}">
+                {% include card.html title='Swift SDK'
+                    text='Learn more about how to integrate our Swift SDK'
+                    icon_content='img/sdks/logo-swift.svg'
+                    icon_svg=true
+                    type='sdk'
+                    to='/sdk/swift'
+                %}
+            </div>
+            <div class="{{ card_col_class }}">
+                {% include card.html title='.NET SDK'
+                    text='Learn more about how to integrate our .NET SDK'
+                    icon_content='img/sdks/logo-net.svg'
+                    icon_svg=true
+                    type='sdk'
+                    to='/sdk/net'
+                %}
+            </div>
+            <div class="{{ card_col_class }}">
+                {% include card.html title='PHP SDK'
+                text='Learn more about how to integrate our PHP SDK'
+                icon_content='img/sdks/logo-php.svg'
+                icon_svg=true
+                type='sdk'
+                to='/sdk/php'
+                %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="front-page-cards-plugin">
+        <h2 id="front-page-plugins">Or perhaps plugins?</h2>
+        <div class="row mt-4">
+            <div class="{{ card_col_class }}">
+                {% include card.html title='Episerver'
+                    text='See how you can integrate the Episerver plugin'
+                    icon_content='img/plugins/logo-episerver.svg'
+                    icon_svg=true
+                    type='plugin'
+                    to='/plugin/episerver'
+                %}
+            </div>
+            <div class="{{ card_col_class }}">
+                {% include card.html title='Magento 2'
+                    text='See how you can integrate the Magento 2 plugin'
+                    icon_content='img/plugins/logo-magento2.svg'
+                    icon_svg=true
+                    type='plugin'
+                    to='/plugin/magento-2'
+                %}
+            </div>
+            <div class="{{ card_col_class }}">
+                {% include card.html title='WooCommerce'
+                    text='See how you can integrate the WooCommerce plugin'
+                    icon_content='img/plugins/logo-woocommerce.svg'
+                    icon_svg=true
+                    type='plugin'
+                    to='/plugin/woocommerce'
+                %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="front-page-release-notes">
+        <h2 id="front-page-release-notes">What's new in the documentation</h2>
+        {% include release_notes.html num_dates=4 %}
+        <a href="/resources/release-notes">See full release notes</a>
+    </div>
+    
+    <div class="front-page-cards-extra">
+        <h2 id="front-page-plugins">Extra resources</h2>
+        <div class="row mt-4">
+            <div class="{{ card_col_class }}">
+                {% include card.html title='OS development guidelines'
+                    text='This is how we create an inclusive environment'
+                    icon_content='account_circle'
+                    icon_outlined=true
+                    to=''
+                %}
+            </div>
+            <div class="{{ card_col_class }}">
+                {% include card.html title='Test data'
+                    text='Get the required data for testing in our interfaces'
+                    icon_content='content_paste'
+                    to=''
+                %}
+            </div>
+            <div class="{{ card_col_class }}">
+                {% include card.html title='Terminology'
+                text='Get a better understanding of the terms we use'
+                icon_content='menu_book'
+                to=''
+                %}
+            </div>
+            <div class="{{ card_col_class }}">
+                {% include card.html title='See all resources (7)'
+                    text='Data protection, public migration key etc'
+                    no_icon=true
+                    to=''
+                %}
+            </div>
+        </div>
+    </div>
+
+    <div class="front-page-contact">
+        <div class="front-page-contact-content">
+            <div class="row">
+                <div class="col-xl-7">
+                    <h2>Can't find what you are looking for?</h2>
+                    <p>
+                        We are always trying to make the developer portal as
+                        good as it can be please don’t hesitate to contact us.
+                    </p>
+                </div>
+                <div class="col-xl-5 d-flex align-items-center justify-content-center">
+                    <button class="btn">Contact us here</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

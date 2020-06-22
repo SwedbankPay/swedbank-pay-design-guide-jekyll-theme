@@ -1,6 +1,9 @@
 {% assign title = include.title %}
+{% assign title_type = include.title_type | default: 'h4', %}
 {% assign icon_content = include.icon_content %}
 {% assign icon_outlined = include.icon_outlined %}
+{% assign icon_svg = include.icon_svg %}
+{% assign no_icon = include.no_icon %}
 {% assign text = include.text %}
 {% assign horizontal = include.horizontal %}
 {% assign to = include.to %}
@@ -11,26 +14,46 @@
 {% assign type_class = '' %}
 {% endif %}
 
+{% comment %} 
+card.html is structured this way due to issues with rendering
+when Liquid is mixed in between and the cards are not wrapped in a div
+{% endcomment %}
+
 {% if horizontal %}
 <a href="{{ to }}" class="dx-card dx-card-horizontal {{type_class}}">
-    <span class="dx-card-icon">
+    <span class="dx-card-icon{% if no_icon %} d-none{% endif %}">
         {{ icon_content }}
     </span>
     <span class="dx-card-content">
-        <span class="h4">{{ title }}</span>
+        <span class="{{ title_type }}">{{ title }}</span>
+        <span>{{ text }}</span>
+    </span>
+    <i class="material-icons">arrow_forward</i>
+</a>
+{% else %}
+{% if icon_svg %}
+<a href="{{ to }}" class="dx-card {{type_class}}">
+    <span class="dx-card-icon">
+        {% include {{ icon_content }} %}
+    </span>
+    <span class="dx-card-content">
+        <span class="{{ title_type }}">{{ title }}</span>
         <span>{{ text }}</span>
     </span>
     <i class="material-icons">arrow_forward</i>
 </a>
 {% else %}
 <a href="{{ to }}" class="dx-card {{type_class}}">
-    <span class="dx-card-icon">
-        <i class="material-icons{% if icon_outlined %}-outlined{% endif %}">{{ icon_content }}</i>
+    <span class="dx-card-icon{% if no_icon %} d-none{% endif %}">
+        <i class="material-icons{% if icon_outlined %}-outlined{% endif %}">
+            {{ icon_content }}
+        </i>
     </span>
     <span class="dx-card-content">
-        <span class="h4">{{ title }}</span>
+        <span class="{{ title_type }}">{{ title }}</span>
         <span>{{ text }}</span>
     </span>
     <i class="material-icons">arrow_forward</i>
 </a>
+{% endif %}
 {% endif %}
