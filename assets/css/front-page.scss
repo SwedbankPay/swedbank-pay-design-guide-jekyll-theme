@@ -290,6 +290,12 @@ $front-page-padding: 0 4rem;
                 width: 18rem;
                 justify-content: center;
                 margin: 1rem 0;
+
+                &:focus,
+                &:focus,
+                &:hover {
+                    color: $medium-brown;
+                }
             }
         }
 
