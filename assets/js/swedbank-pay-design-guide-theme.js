@@ -51,13 +51,14 @@
                 - document.body.clientHeight
                 - buffer;
                 
-            const scrollNumber = [...headings].filter(heading => getPosition(heading) <= currentPos).length - 1;
+            const scrollNumber = [...headings].filter((heading) => getPosition(heading) <= currentPos).length - 1;
 
             activeLeaf && activeLeaf.classList.remove("active");
             
             
             if (scrollDistanceFromBottom > 0) {
-                scrollNumber >= 0 && tocLinks[scrollNumber].classList.add("active");
+                const tocLinkTarget = tocLinks[scrollNumber]
+                scrollNumber >= 0 && tocLinkTarget.classList.add("active");
             } else {
                 tocLinks[tocLinks.length - 1].classList.add("active");
             }
