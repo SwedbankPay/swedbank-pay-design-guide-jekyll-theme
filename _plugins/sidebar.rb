@@ -85,13 +85,13 @@ module Jekyll
           subgroup << "<div class=\"nav-subgroup-heading\"><i class=\"material-icons\">arrow_right</i><a href=\"#{url}\">#{value[:title].split('–').last}</a></div>"
           subgroup << '<ul class="nav-ul">'
           value[:headers].each do |header|
-            subgroup << "<li class=\"nav-leaf\"><a href=\"#{url}\">#{header[:title]}</a></li>"
+            subgroup << "<li class=\"nav-leaf\"><a href=\"#{header[:url]}\">#{header[:title]}</a></li>"
           end
           subgroup << '</ul>'
           subgroup << '</li>'
         else
           value[:headers].each do |header|
-            subgroup << "<li class=\"nav-leaf\"><a href=\"#{url}\">#{header[:title]}</a></li>"
+            subgroup << "<li class=\"nav-leaf\"><a href=\"#{header[:url]}\">#{header[:title]}</a></li>"
           end
         end
       else
