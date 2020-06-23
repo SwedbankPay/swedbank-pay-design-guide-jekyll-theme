@@ -58,7 +58,7 @@
             if (scrollDistanceFromBottom > 0) {
                 const scrollNumber = [...headings].filter((heading) => getPosition(heading) <= currentPos).length - 1;
 
-                scrollNumber >= 0 && tocLinks[parseInt(scrollNumber)].classList.add("active");
+                scrollNumber >= 0 && tocLinks[parseInt(scrollNumber, 10)].classList.add("active");
             } else {
                 tocLinks[tocLinks.length - 1].classList.add("active");
             }
