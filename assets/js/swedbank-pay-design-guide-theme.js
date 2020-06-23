@@ -20,7 +20,7 @@
 
 // Initialize sidebar navigation scroll activation
 (function () {
-    var headings = document.querySelectorAll("h2");
+    var headings = document.querySelectorAll(".doc-container h2");
     var tocLinks = document.querySelectorAll("nav.sidebar-nav .nav-subgroup.active .nav-leaf");
 
     if (tocLinks.length === 0) {
@@ -51,14 +51,14 @@
                 - document.body.clientHeight
                 - buffer;
                 
-            const scrollNumber = [...headings].filter((heading) => getPosition(heading) <= currentPos).length - 1;
-
-            activeLeaf && activeLeaf.classList.remove("active");
-            
-            
+                
+                activeLeaf && activeLeaf.classList.remove("active");
+                
+                
             if (scrollDistanceFromBottom > 0) {
-                const tocLinkTarget = tocLinks[scrollNumber]
-                scrollNumber >= 0 && tocLinkTarget.classList.add("active");
+                const scrollNumber = [...headings].filter((heading) => getPosition(heading) <= currentPos).length - 1;
+
+                scrollNumber >= 0 && tocLinks[parseInt(scrollNumber)].classList.add("active");
             } else {
                 tocLinks[tocLinks.length - 1].classList.add("active");
             }
