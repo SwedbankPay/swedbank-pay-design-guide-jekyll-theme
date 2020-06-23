@@ -73,21 +73,25 @@ module Jekyll
       sanitized_filename.gsub('.html', '')
     end
 
-    def generateSubgroup(value, has_subgroups)
+    def generateSubgroup(filename, _key, value, has_subgroups)
       subgroup = ''
       if value[:headers].any?
         if has_subgroups
-          subgroup << '<li class="nav-subgroup">'
-          subgroup << "<div class=\"nav-subgroup-heading\"><i class=\"material-icons\">arrow_right</i><a href=\"#{value[:url]}\">#{value[:title].split('–').last}</a></div>"
+          url = value[:url]
+          active = active?(filename, url, true)
+          # puts "#{url}, #{filename}, #{key}" if active
+          item_class = active ? 'nav-subgroup active' : 'nav-subgroup'
+          subgroup << "<li class=\"#{item_class}\">"
+          subgroup << "<div class=\"nav-subgroup-heading\"><i class=\"material-icons\">arrow_right</i><a href=\"#{url}\">#{value[:title].split('–').last}</a></div>"
           subgroup << '<ul class="nav-ul">'
           value[:headers].each do |header|
-            subgroup << "<li class=\"nav-leaf\"><a href=\"#{header[:url]}\">#{header[:title]}</a></li>"
+            subgroup << "<li class=\"nav-leaf\"><a href=\"#{url}\">#{header[:title]}</a></li>"
           end
           subgroup << '</ul>'
           subgroup << '</li>'
         else
           value[:headers].each do |header|
-            subgroup << "<li class=\"nav-leaf\"><a href=\"#{header[:url]}\">#{header[:title]}</a></li>"
+            subgroup << "<li class=\"nav-leaf\"><a href=\"#{url}\">#{header[:title]}</a></li>"
           end
         end
       else
@@ -110,20 +114,22 @@ module Jekyll
 
         subgroups = merged.select { |subgroup_key, _subgroup_value| subgroup_key.include? key and subgroup_key != key and key != '/' }
 
-        item_class = filename == key ? 'nav-group active' : 'nav-group'
+        active = active?(filename, key)
+        # puts "#{filename}, #{key}" if active
+        item_class = active ? 'nav-group active' : 'nav-group'
 
         child = "<li class=\"#{item_class}\">"
         child << "<div class=\"nav-group-heading\"><i class=\"material-icons\">arrow_right</i><span>#{value[:title].split('–').first}</span></div>"
 
         child << '<ul class="nav-ul">'
 
-        subgroup = generateSubgroup(value, !subgroups.empty?)
+        subgroup = generateSubgroup(filename, key, value, !subgroups.empty?)
 
         child << subgroup
 
         if subgroups.any?
           subgroups.each do |_subgroup_key, subgroup_value|
-            subgroup = generateSubgroup(subgroup_value, true)
+            subgroup = generateSubgroup(filename, key, subgroup_value, true)
             child << subgroup
           end
         end
@@ -135,6 +141,18 @@ module Jekyll
 
       File.open('_site/sidebar.html', 'w') { |f| f.write(sidebar) }
       sidebar
+    end
+
+    def active?(filename, url, exact = false)
+      if filename == '/' || url == '/'
+        if filename == '/' && url == '/'
+          return true
+        else
+          return false
+        end
+      end
+
+      exact ? filename == url : filename.start_with?(url)
     end
 
     def merge(hash1, hash2)
