@@ -1,4 +1,5 @@
 {%- assign title = page.title | default: "PayEx Design Guide theme for Jekyll" -%}
+{%- assign front_page = page.front_page | default: false -%}
 {%- assign description = page.opengraph.description | default: site.opengraph.description -%}
 {%- assign image = page.opengraph.image | default: site.opengraph.image -%}
 {%- assign github_branch = site.github.branch | default : "develop" -%}
@@ -110,22 +111,15 @@
 
             <div class="documentation">
                 <div class="row">
-                    <div class="col-xxl-2 col-lg-3">
+                    <div class="col-xxl-2 col-lg-3 pr-0">
                         <div class="sidebar dg-sidebar">
                             <nav class="sidebar-nav">
                                 <a href="/" class="sidebar-header">
                                     <img src="{{ design_guide_url }}/img/swedbankpay-logo-v.svg" alt="Swedbank Pay vertical logo" />
                                     <div class="sidebar-header-text">
-                                        <span>{</span>Developer portal<span>}</span>
+                                        <span>{</span>developer portal<span>}</span>
                                     </div>
                                 </a>
-                                {% if site.search.enabled == true %}
-                                <form class="doc-search" action="{{ site.search.url | relative_url }}">
-                                    <input type="text" class="form-control" name="q" id="tipue_search_input"
-                                        placeholder="Search..." autocomplete="off" pattern=".{3,}"
-                                        title="At least 3 characters">
-                                </form>
-                                {% endif %}
                           
                                 <ul id="dx-sidebar-main-nav-ul" class="main-nav-ul">
                                 </ul>
@@ -134,8 +128,10 @@
                     </div>
 
                     <main class="doc-view col-xxl-10 col-lg-9">
-                        <div class="doc-container">
-                            <h1>{{ title }}</h1>
+                        <div class="doc-container{% if front_page == true %} no-padding {% else %} normal-padding max-width{% endif %}">
+                            {% if front_page != true %}
+                                <h1>{{ title }}</h1>
+                            {% endif %}
                             {% if page.type == 'search' %}
                             <div id="tipue_search_content"></div>
                             {% else %}

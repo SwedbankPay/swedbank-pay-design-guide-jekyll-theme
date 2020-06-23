@@ -24,8 +24,8 @@
     const originPath = window.location.origin + window.location.pathname
     const activeGroup = [...document.querySelectorAll(".nav-group")]
     .filter(group => group.querySelector(`[href="${pathHash}"], [href^="${originPath}#"]`))[0];
-    const activeSubgroup = [...document.querySelectorAll(".nav-subgroup")].filter(group => group.querySelector(`[href="${pathHash}"]`))
-
+    const activeSubgroup = [...document.querySelectorAll(".nav-subgroup")].filter(group => group.querySelector(`[href="${pathHash}"], [href^="${originPath}#"]`))
+    
     activeGroup.classList.add("active")
     activeSubgroup.map(subgroup => subgroup.classList.add("active"))
 

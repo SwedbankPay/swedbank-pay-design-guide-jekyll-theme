@@ -17,7 +17,7 @@ module Jekyll
       url = page["url"].gsub("index.html", "").gsub(".html", "")
       @hash_pre_render[url] = {
         :title => page["title"],
-        :url => page["url"],
+        :url => page["url"].gsub(".html", ""),
         :name => page["name"],
         :menu_order => menu_order,
       }
@@ -45,7 +45,7 @@ module Jekyll
           header = {
             :id => header["id"],
             :title => header.content.strip,
-            :url => "#{url}#{child["href"]}",
+            :url => "#{url.gsub(".html", "")}#{child["href"]}",
           }
           headers.push(header)
         end
