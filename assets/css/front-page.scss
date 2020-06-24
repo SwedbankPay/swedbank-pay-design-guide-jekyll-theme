@@ -208,7 +208,11 @@ $front-page-padding: 0 4rem;
                     position: relative;
                     margin-bottom: 1.5rem;
     
-                    @include headline-line($yellow, 6.875rem)
+                    @include headline-line($yellow, 6.875rem);
+
+                    .header-anchor {
+                        display: none;
+                    }
                 }
     
                 p {

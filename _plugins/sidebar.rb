@@ -30,11 +30,6 @@ module Jekyll
       Dir.glob("#{site.config['destination']}/**/*.html") do |filename|
         doc = File.open(filename) { |f| Nokogiri::HTML(f) }
         files.push(doc)
-        title = doc.title
-        url = ''
-        doc.xpath('/html/head/meta').each do |meta|
-          url = meta.attr('value') if meta.attr('property').eql? 'og:url'
-        end
 
         headers = []
         doc.xpath('//h2 ').each do |header|
@@ -44,7 +39,7 @@ module Jekyll
           header = {
             id: header['id'],
             title: header.content.strip,
-            url: "#{url.gsub('.html', '')}#{child['href']}"
+            hash: "#{child['href']}"
           }
           headers.push(header)
         end
@@ -85,13 +80,13 @@ module Jekyll
           subgroup << "<div class=\"nav-subgroup-heading\"><i class=\"material-icons\">arrow_right</i><a href=\"#{url}\">#{value[:title].split('–').last}</a></div>"
           subgroup << '<ul class="nav-ul">'
           value[:headers].each do |header|
-            subgroup << "<li class=\"nav-leaf\"><a href=\"#{header[:url]}\">#{header[:title]}</a></li>"
+            subgroup << "<li class=\"nav-leaf\"><a href=\"#{value[:url]}#{header[:hash]}\">#{header[:title]}</a></li>"
           end
           subgroup << '</ul>'
           subgroup << '</li>'
         else
           value[:headers].each do |header|
-            subgroup << "<li class=\"nav-leaf\"><a href=\"#{header[:url]}\">#{header[:title]}</a></li>"
+            subgroup << "<li class=\"nav-leaf\"><a href=\"#{value[:url]}#{header[:hash]}\">#{header[:title]}</a></li>"
           end
         end
       else
