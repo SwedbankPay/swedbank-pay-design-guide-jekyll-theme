@@ -103,7 +103,7 @@ function _handleSimpleSidebar (e) {
             target.classList.add("active");
         }
     }
-}
+};
 
 (function () {
     const sidebar = document.querySelector(".sidebar");
