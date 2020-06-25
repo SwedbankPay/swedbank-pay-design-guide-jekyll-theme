@@ -27,26 +27,26 @@
         tocLinks = document.querySelectorAll("nav.sidebar-nav .nav-group.active .nav-leaf");
     }
 
-    var getPosition = function (el) {
+    var getPosition = function (parent, el) {
         if (el) {
-            var bodyRect = document.body.getBoundingClientRect();
+            var parentRect = parent.getBoundingClientRect();
             var elemRect = el.getBoundingClientRect();
             
-            return elemRect.top - bodyRect.top;
+            return elemRect.top - parentRect.top;
         }
         
         return null;
     };
-    
-    window.addEventListener("scroll", function () {
+
+    const _handleLeafScrollListener = function () {
         if (tocLinks.length > 0) {
-            var activeLeaf = document.querySelector("nav.sidebar-nav .nav-leaf.active");
-            var buffer = document.body.clientHeight * 0.1;
-            var currentPos = window.pageYOffset + buffer;
+            const activeLeaf = document.querySelector("nav.sidebar-nav .nav-leaf.active");
+            const buffer = document.body.clientHeight * 0.1;
+            const currentPos = window.pageYOffset + buffer;
     
             // TODO: Probably a stupid way to compute "how far left can we scroll until
             //       we reach the bottom of the page", but it seems to work.
-            var scrollDistanceFromBottom = document.documentElement.scrollHeight
+            const scrollDistanceFromBottom = document.documentElement.scrollHeight
                 - document.documentElement.scrollTop
                 - document.body.clientHeight
                 - buffer;
@@ -56,14 +56,33 @@
                 
                 
             if (scrollDistanceFromBottom > 0) {
-                const scrollNumber = [...headings].filter((heading) => getPosition(heading) <= currentPos).length - 1;
+                const scrollNumber = [...headings].filter((heading) => getPosition(document.body, heading) <= currentPos).length - 1;
 
                 scrollNumber >= 0 && tocLinks[parseInt(scrollNumber, 10)].classList.add("active");
             } else {
                 tocLinks[tocLinks.length - 1].classList.add("active");
             }
+
         }
-    });
+    };
+
+    _handleLeafScrollListener();
+    
+    window.addEventListener("scroll", _handleLeafScrollListener);
+
+    // Makes sidebar scroll so that the active element is in view
+    const pathHash = window.location.pathname + window.location.hash;
+    var activeLeaf = document.querySelector("nav.sidebar-nav .nav-leaf.active");
+    if (!activeLeaf) {
+        activeLeaf = [...document.querySelectorAll(`nav.sidebar-nav .nav-leaf`)]
+            .filter((navLeaf) => navLeaf.querySelector(`a[href="${pathHash}"]`))[0];
+    }
+    const sidebarNav = document.querySelector("nav.sidebar-nav");
+
+    if (activeLeaf) {
+        sidebarNav.scrollTop = activeLeaf.offsetTop + activeLeaf.clientHeight - sidebarNav.clientHeight / 2;
+    };
+    
 })();
 
 // Simple sidebar functionality while dg.js is being loaded
