@@ -1,4 +1,5 @@
 {%- assign title = page.title | default: "PayEx Design Guide theme for Jekyll" -%}
+{%- assign front_page = page.front_page | default: false -%}
 {%- assign description = page.opengraph.description | default: site.opengraph.description -%}
 {%- assign image = page.opengraph.image | default: site.opengraph.image -%}
 {%- assign github_branch = site.github.branch | default : "develop" -%}
@@ -15,14 +16,19 @@
 {%- endif -%}
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
+
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="theme-color" content="#000">
         <meta name="application-name" content="{{ page.title }}">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title"
+            content="{{ page.title | default: 'PayEx Design Guide theme for Jekyll' }}">
         <meta name="msapplication-TileColor" content="#000">
-        <meta name="msapplication-TileImage" content="{{ design_guide_url }}/icons/mstile-144x144.png">
+        <meta name="msapplication-TileImage" content="{{ design_guide_version_url }}/icons/mstile-144x144.png">
         <meta property="og:type" value="website" />
         {%- if page.url != nil %}
         <meta property="og:url" value="{{ page.url | absolute_url }}" />{% endif %}
@@ -55,7 +61,7 @@
 
     <body>
         <div id="designguide">
-            <header class="topbar topbar-md-wide designguide-header">
+            <header class="topbar topbar-md-wide designguide-header d-none">
                 <button type="button" class="topbar-btn"><i class="material-icons topbar-btn-icon">menu</i></button>
                 <a href="{{ site.url }}" class="topbar-logo"><img
                         src="{{ design_guide_url }}/img/swedbankpay-logo.svg" alt="logo"></a>
@@ -105,64 +111,32 @@
 
             <div class="documentation">
                 <div class="row">
-                    <div class="col-xxl-2 col-md-3">
-                        <div class="doc-sidebar">
-                            {% if site.search.enabled == true %}
-                            <form class="doc-search" action="{{ site.search.url | relative_url }}">
-                                <input type="text" class="form-control" name="q" id="tipue_search_input"
-                                    placeholder="Search..." autocomplete="off" pattern=".{3,}"
-                                    title="At least 3 characters">
-                            </form>
-                            {% endif %}
-                            {% if page.sidebar.navigation != nil %}
-                            <nav class="documentation-nav">
-                                {% for group in page.sidebar.navigation %}
-                                {% comment %}
-                                TODO: Make "class='active'" conditional on whether one of the group's nav items are
-                                active or not.
-                                {% endcomment %}
-                                <div class="nav-group active">
-                                    <div class="nav-heading">
-                                        <i class="material-icons">keyboard_arrow_right</i>
-                                        <span>{{ group.title }}</span>
+                    <div class="col-xxl-2 col-lg-3 pr-0">
+                        <div class="sidebar dg-sidebar">
+                            <nav class="sidebar-nav">
+                                <a href="/" class="sidebar-header">
+                                    <img src="{{ design_guide_url }}/img/swedbankpay-logo-v.svg" alt="Swedbank Pay vertical logo" />
+                                    <div class="sidebar-header-text">
+                                        <span>{</span>developer portal<span>}</span>
                                     </div>
-
-                                    {% if group.items != nil and group.items != empty %}
-                                    <ul>
-                                        {% for nav in group.items %}
-                                        {% assign nav_url = nav.url | relative_url %}
-                                        <li><a {% if page_url == nav_url %} aria-current="page" class="active"
-                                                {% endif %} href="{{ nav_url }}"><span>{{ nav.title }}</span></a></li>
-                                        {% endfor %}
-                                    </ul>
-                                    {% endif %}
-                                </div>
-                                {% endfor %}
+                                </a>
+                          
+                                <ul id="dx-sidebar-main-nav-ul" class="main-nav-ul">
+                                </ul>
                             </nav>
-                            {% else %}
-                            {% include sidebar.html %}
-                            {% endif %}
-                        </div>
+                          </div>
                     </div>
 
-                    <main class="doc-view col-xxl-10 col-md-9">
-                        <div class="doc-container">
-                            <h1>{{ title }}</h1>
-                            <div class="row">
-                                <div class="doc-body col-lg-10">
-                                    {% if page.type == 'search' %}
-                                    <div id="tipue_search_content"></div>
-                                    {% else %}
-                                    {% include anchor_headings.html html=content anchorClass='header-anchor' %}
-                                    {% endif %}
-                                </div>
-
-                                <div class="col-2 d-none d-lg-block">
-                                    <nav class="doc-toc">
-                                        {% include toc.html html=content h_max=2 item_class='toc-%level%' %}
-                                    </nav>
-                                </div>
-                            </div>
+                    <main class="doc-view col-xxl-10 col-lg-9">
+                        <div class="doc-container{% if front_page == true %} no-padding {% else %} normal-padding max-width{% endif %}">
+                            {% if front_page != true %}
+                                <h1>{{ title }}</h1>
+                            {% endif %}
+                            {% if page.type == 'search' %}
+                            <div id="tipue_search_content"></div>
+                            {% else %}
+                            {% include anchor_headings.html html=content anchorClass='header-anchor' %}
+                            {% endif %}
                         </div>
                     </main>
                 </div>

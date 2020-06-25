@@ -9,8 +9,10 @@ TODO: Implement a table element style that @extends .table and .table-striped
 
 @import 'colors';
 @import 'fonts';
+@import 'variables';
 @import 'card';
 @import 'front-page';
+@import 'sidebar';
 
 $bg: #f5f2f0;
 $darkened-bg: darken($bg, 10%);
@@ -147,6 +149,16 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
     right: 1rem;
 }
 
+#designguide {
+    .dg-sidebar {
+        border-right: 1px solid $background-gray;
+    
+        .main-nav-ul {
+            border-bottom: 1px solid $background-gray;
+        }
+    }
+}
+
 .documentation {
     code[data-processed='true'].language-mermaid {
         background: none;
@@ -200,10 +212,15 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
 
     .no-padding {
         padding: 0;
+        padding-bottom: 5rem;
     }
 
-    .doc-container {
+    .normal-padding {
         padding: 2rem 2rem 5rem;
+    }
+
+    .max-width {
+        max-width: $max-width;
     }
 
 

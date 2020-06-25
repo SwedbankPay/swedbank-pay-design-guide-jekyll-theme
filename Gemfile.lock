@@ -167,6 +167,7 @@ DEPENDENCIES
   jekyll-material-icon-tag
   jemoji
   kramdown-plantuml
+  nokogiri (~> 1.10)
   rake (~> 13.0)
   swedbank-pay-design-guide-jekyll-theme!
 

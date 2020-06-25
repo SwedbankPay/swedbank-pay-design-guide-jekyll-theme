@@ -1,7 +1,7 @@
 ---
 title: Page 1
-sidebar:
-  navigation: false
+menu-order: 1
+front_page: true
 ---
 
-{% include front-page.html %}
+{% include front-page.html num_dates=1 %}

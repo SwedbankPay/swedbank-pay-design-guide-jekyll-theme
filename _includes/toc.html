@@ -37,6 +37,8 @@ generate the table of contents and will NOT output the markdown given to it
 
 {% capture listModifier %}{% if orderedList %}1.{% else %}-{% endif %}{% endcapture %}
 
+{{ include.ordered }}
+
 {% for node in nodes %}
 {% if node == "" %}
 {% continue %}
