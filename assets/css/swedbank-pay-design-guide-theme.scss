@@ -13,6 +13,7 @@ TODO: Implement a table element style that @extends .table and .table-striped
 @import 'card';
 @import 'front-page';
 @import 'sidebar';
+@import 'title-header';
 
 $bg: #f5f2f0;
 $darkened-bg: darken($bg, 10%);
