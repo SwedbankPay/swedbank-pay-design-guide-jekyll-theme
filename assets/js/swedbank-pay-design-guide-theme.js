@@ -72,12 +72,13 @@
 
     // Makes sidebar scroll so that the active element is in view
     const pathHash = window.location.pathname + window.location.hash;
+    const sidebarNav = document.querySelector("nav.sidebar-nav");
     var activeLeaf = document.querySelector("nav.sidebar-nav .nav-leaf.active");
+
     if (!activeLeaf) {
         activeLeaf = [...document.querySelectorAll(`nav.sidebar-nav .nav-leaf`)]
             .filter((navLeaf) => navLeaf.querySelector(`a[href="${pathHash}"]`))[0];
     }
-    const sidebarNav = document.querySelector("nav.sidebar-nav");
 
     if (activeLeaf) {
         sidebarNav.scrollTop = activeLeaf.offsetTop + activeLeaf.clientHeight - sidebarNav.clientHeight / 2;
