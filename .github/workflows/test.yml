@@ -17,6 +17,15 @@ jobs:
       - name: verify
         run: docker-compose run jekyll build --verify
 
+  remark-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: prologic/action-remark-lint@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
+
   deploy-dry-run:
     runs-on: ubuntu-latest
     steps:
