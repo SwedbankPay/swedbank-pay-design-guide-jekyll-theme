@@ -6,26 +6,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: jekyll build
-      run: |
-        docker-compose \
-          -f docker-compose.yml \
-          -f .docker/docker-compose.build.yml \
-          up \
-          --abort-on-container-exit \
-          --exit-code-from jekyll
+      - uses: actions/checkout@v2
+      - name: jekyll build
+        run: docker-compose run jekyll build
 
-  test:
+  verify:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: rake test
-      run: |
-        docker-compose \
-          -f docker-compose.yml \
-          -f .docker/docker-compose.test.yml \
-          up \
-          --build \
-          --abort-on-container-exit \
-          --exit-code-from jekyll
+      - uses: actions/checkout@v2
+      - name: verify
+        run: docker-compose run jekyll build --verify
+
+  deploy-dry-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: deploy dry-run
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR: payex-dev
+          GITHUB_ACTOR_EMAIL: dev@payex.com
+          GITHUB_REPO: https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: docker-compose run jekyll deploy --dry-run
