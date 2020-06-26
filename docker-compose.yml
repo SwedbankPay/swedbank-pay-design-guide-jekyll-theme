@@ -4,6 +4,8 @@ services:
   jekyll:
     image: swedbankpay/jekyll-plantuml:2.0.1
     command: serve
+    environment:
+      - DEBUG=true
     container_name: jekyll
     ports:
       - 4000:4000
