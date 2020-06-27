@@ -2,25 +2,18 @@ name: Deploy
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Deploy to GitHub Pages
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GITHUB_ACTOR: payex-dev
-        GITHUB_ACTOR_EMAIL: dev@payex.com
-        GITHUB_REPO: https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-      run: |
-        docker-compose \
-          -f docker-compose.yml \
-          -f .docker/docker-compose.deploy.yml \
-          up \
-          --build \
-          --abort-on-container-exit \
-          --exit-code-from jekyll
+      - uses: actions/checkout@v2
+      - name: Deploy to GitHub Pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR: payex-dev
+          GITHUB_ACTOR_EMAIL: dev@payex.com
+          GITHUB_REPO: https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: docker-compose run jekyll deploy

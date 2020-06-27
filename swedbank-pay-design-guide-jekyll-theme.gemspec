@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Swedbank Pay Design Guide theme for Jekyll"
   spec.homepage      = "https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme"
-  spec.license       = "MIT"
+  spec.license       = "Apache 2.0"
 
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_includes|_sass|LICENSE|README)!i) }
 
