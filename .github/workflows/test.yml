@@ -8,7 +8,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: jekyll build
-        run: docker-compose run jekyll build
+        run: |
+          docker-compose run \
+            -e PAGES_REPO_NWO=${{ github.repository }} \
+            -e JEKYLL_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
+            jekyll build
+      - name: Upload site
+        uses: actions/upload-artifact@v2
+        with:
+          name: site
+          path: _site
 
   verify:
     runs-on: ubuntu-latest
@@ -20,12 +29,6 @@ jobs:
             -e PAGES_REPO_NWO=${{ github.repository }} \
             -e JEKYLL_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
             jekyll build --verify
-      - name: Upload site
-        uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: site
-          path: _site
 
   remark-lint:
     runs-on: ubuntu-latest
