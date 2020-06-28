@@ -15,7 +15,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: verify
-        run: docker-compose run jekyll build --verify
+        run: |
+          docker-compose run \
+            -e PAGES_REPO_NWO=${{ github.repository }} \
+            -e JEKYLL_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
+            jekyll build --verify
 
   remark-lint:
     runs-on: ubuntu-latest
@@ -32,9 +36,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: deploy dry-run
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_ACTOR: payex-dev
-          GITHUB_ACTOR_EMAIL: dev@payex.com
-          GITHUB_REPO: https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-        run: docker-compose run jekyll deploy --dry-run
+        run: |
+          docker-compose run \
+            -e PAGES_REPO_NWO=${{ github.repository }} \
+            -e JEKYLL_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
+            jekyll deploy --dry-run
