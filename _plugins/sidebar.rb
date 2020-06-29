@@ -108,8 +108,7 @@ module Jekyll
       merged = merge(@hash_pre_render, @filename_with_headers)
       merged.select { |key, _value| key.split('/').length <= 2 }.sort_by { |_key, value| value[:menu_order] }.each do |key, value|
         next if value[:title].nil?
-        next unless value[:sidebar_hidden]
-        puts "#{ filename} is shown: #{value[:sidebar_hidden}"
+        next if value[:sidebar_hidden]
 
         subgroups = merged.select { |subgroup_key, _subgroup_value| subgroup_key.include? key and subgroup_key != key and key != '/' }
 
