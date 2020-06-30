@@ -15,6 +15,7 @@ TODO: Implement a table element style that @extends .table and .table-striped
 @import 'code-view';
 @import 'front-page';
 @import 'heading';
+@import 'paragraph-highlight';
 @import 'sidebar';
 @import 'title-header';
 
@@ -63,6 +64,10 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
     width: .8rem;
     background-repeat: none;
     color: #257886;
+
+    &.front-page-demoshop {
+        display: none;
+    }
 }
 
 #designguide .designguide-header .topbar-info a {

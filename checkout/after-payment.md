@@ -4,7 +4,7 @@ description: |
     Add After-payment operation to your order system
 icon:
     content: add
-
+additional: true
 menu-order: 4
 ---
 

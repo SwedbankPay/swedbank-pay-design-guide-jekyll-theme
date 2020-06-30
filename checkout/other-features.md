@@ -4,6 +4,7 @@ description: |
     See what other features you can implement for your checkout
 icon:
     content: developer_board
+additional: true
 menu-order: 5
 ---
 

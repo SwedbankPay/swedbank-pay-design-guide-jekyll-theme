@@ -68,21 +68,36 @@ module Jekyll
       sanitized_filename.gsub('.html', '')
     end
 
-    def generateSubgroup(filename, _key, value, has_subgroups)
+    def generateSubgroup(filename, key, value, all_subgroups, level)
       title = value[:title].split('–').last
+      subsubgroup_list = all_subgroups.select {|subsubgroup_key, _subsubgroup_value| subsubgroup_key.include? key and subsubgroup_key != key and \
+                                                key.split('/').length > level}
+      
       subgroup = ''
-      if value[:headers].any?
+      has_subgroups = !all_subgroups.empty?
+      if value[:headers].any? or !subsubgroup_list.empty?
         if has_subgroups
           url = value[:url]
           active = active?(filename, url, true)
           # puts "#{url}, #{filename}, #{key}" if active
-          item_class = active ? 'nav-subgroup active' : 'nav-subgroup'
+          item_class = active || (url.split('/').length > level && filename.start_with?(url)) ? 'nav-subgroup active' : 'nav-subgroup'
           subgroup << "<li class=\"#{item_class}\">"
           subgroup << "<div class=\"nav-subgroup-heading\"><i class=\"material-icons\">arrow_right</i><a href=\"#{url}\">#{title}</a></div>"
           subgroup << '<ul class="nav-ul">'
-          value[:headers].each do |header|
-            subgroup << "<li class=\"nav-leaf\"><a href=\"#{value[:url]}#{header[:hash]}\">#{header[:title]}</a></li>"
+
+          if subsubgroup_list.empty? 
+            value[:headers].each do |header|
+              subgroup << "<li class=\"nav-leaf\"><a href=\"#{value[:url]}#{header[:hash]}\">#{header[:title]}</a></li>"
+            end
+          else
+            subgroup_leaf_class = active ? 'nav-leaf nav-subgroup-leaf active' : 'nav-leaf nav-subgroup-leaf'
+            subgroup << "<li class=\"#{subgroup_leaf_class}\"><a href=\"#{value[:url]}\">#{title}</a></li>"
+            
+            subsubgroup_list.each do |subsubgroup_key, subsubgroup_value|
+              subgroup << generateSubgroup(filename, subsubgroup_key, subsubgroup_value, subsubgroup_list, 3)
+            end
           end
+
           subgroup << '</ul>'
           subgroup << '</li>'
         else
@@ -119,13 +134,13 @@ module Jekyll
 
         child << '<ul class="nav-ul">'
 
-        subgroup = generateSubgroup(filename, key, value, !subgroups.empty?)
+        subgroup = generateSubgroup(filename, key, value, subgroups, 2)
 
         child << subgroup
 
         if subgroups.any?
-          subgroups.each do |_subgroup_key, subgroup_value|
-            subgroup = generateSubgroup(filename, key, subgroup_value, true)
+          subgroups.select {|subgroup_key, _subgroup_value| subgroup_key.split('/').length <= 3 }.each do |subgroup_key, subgroup_value|
+            subgroup = generateSubgroup(filename, subgroup_key, subgroup_value, subgroups, 2)
             child << subgroup
           end
         end

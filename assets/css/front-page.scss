@@ -47,7 +47,6 @@ $front-page-max-width: 1280px;
 
 .front-page {
     position: relative;
-    background-color: $background-front-page;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,7 +56,7 @@ $front-page-max-width: 1280px;
         margin: $front-page-padding;
 
         .front-page-top {
-            padding-top: 3.5rem;
+            padding-top: 4rem;
             width: 100%;
             margin-bottom: 3rem;
             
@@ -82,11 +81,12 @@ $front-page-max-width: 1280px;
                 h3 {
                     color: $yellow;
                     font-family: $headline;
-                    line-height: 2.5rem;
+                    margin-bottom: 0;
                 }
         
                 p {
                     color: $white;
+                    font-size: 1.125rem;
                 }
         
                 .front-page-hero-name {
@@ -168,7 +168,8 @@ $front-page-max-width: 1280px;
         }
     
         .front-page-contact {
-            display: flex;
+            display: none; // Not currently in use
+            // display: flex;
             
             .front-page-contact-content {
                 background-color: $dark-brown;
@@ -230,6 +231,11 @@ $front-page-max-width: 1280px;
         
             }
         }
+
+        &:after {
+            display: none;
+            content: none;
+        }
     
         .front-page-demoshop-text {
             display: flex;
@@ -248,7 +254,7 @@ $front-page-max-width: 1280px;
         
             .demoshop-text-description {
                 color: $white;
-                width: 35%;
+                width: 45%;
                 height: 4.5rem;
             }
         }
@@ -268,9 +274,10 @@ $front-page-max-width: 1280px;
 
             .demoshop-link-img {
                 display: flex;
+                align-items: center;
                 position: absolute;
                 bottom:-1rem;
-                right: 3rem;
+                right: 3%;
                 
                 .demoshop-link-img-web {
                     width: 26.5rem;

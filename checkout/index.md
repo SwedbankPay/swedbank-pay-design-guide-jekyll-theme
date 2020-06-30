@@ -26,16 +26,18 @@ card_list:
 {:.heading-line}
 ## Core implementation overview
 
-{% assign core_card_list = site.pages | where: 'dir', page.dir | where: 'core', true | 
+{% assign core_card_list = site.pages | where: 'dir', page.dir | where: 'core', true |
 where_exp: 'page', 'page.name != "index.md"' | sort: 'menu-order' %}
 
-{% include card-horizontal-list.html card_list=page.card_list %}
+{% include card-horizontal-list.html card_list=core_card_list %}
 
 {:.heading-line}
 ## Additional features
 
-{% assign additional_card_list = site.pages | where: 'dir', page.dir |
-where_exp: 'page', 'page.name != "index.md" and page.core != true' | sort: 'menu-order' %}
+{% assign additional_card_list = site.pages |
+where_exp: 'page', 'page.url != "/checkout/" and page.core != true and page.dir contains "/checkout/"' 
+| where: 'additional', true | sort: 'menu-order' 
+%}
 
 {% include card-list.html card_list=additional_card_list
     col_class="col-lg-6 col-md-6 col-sm-6"

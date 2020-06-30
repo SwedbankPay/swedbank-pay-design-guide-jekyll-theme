@@ -1,15 +1,17 @@
 ---
-title: Checkout – Overview
+title: Checkout – Features
 estimated_read: 10
 card_overview: true
 description: |
     In this section you find various resources for Swedbank Pay’s API Platform.
 icon:
   content: remove_red_eye
+additional: true
 menu-order: 0
 card_list: 
 - title: Payment orders
   description: When initiating a payment process
+  url: /checkout/features/payment-orders
   icon:
     content: view_list
     outlined: true
@@ -51,8 +53,7 @@ card_list:
     content: undo
 ---
 
-{:.heading-line}
-## Features
+
 
 {% include card-list.html card_list=page.card_list
     col_class="col-lg-4"

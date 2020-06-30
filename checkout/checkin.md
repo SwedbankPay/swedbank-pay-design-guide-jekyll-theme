@@ -18,6 +18,15 @@ The payer will be identified with the `consumers` resource and will be
 persisted to streamline future Payment Menu processes. Payer identification
 is done through the `initiate-consumer-session` operation.
 
+{% include paragraph-highlight.html title="Optional integration"
+    body="The response from the POST of consumer information contains a few
+    operations. The combination of rel, method and contentType should give you a
+    clue how the operation should be performed. The view-consumer-identification
+    operation and its application/javascript content type gives us a clue that
+    the operation is meant to be embedded in a \<script\> element in an HTML
+    document."
+%}
+
 {:.code-view-header}
 **Request**
 
