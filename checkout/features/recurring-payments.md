@@ -12,7 +12,7 @@ need to create a **recurrence token**. This token will be utilized after the
 initial payment order. **Recurring payments must be activated on the contract
 with Swedbank Pay in order to work.**
 
-### Recurrence Token 2
+### Recurrence Token
 
 *   When initiating a `Purchase` payment order, you need to make sure that the
     field `generateRecurrenceToken` is set to `true`. This recurrence token
