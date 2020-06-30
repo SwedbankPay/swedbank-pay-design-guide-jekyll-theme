@@ -10,7 +10,7 @@ body="In order to use the `direct-authorization` operation, you need to collect
 card data on your website, which means it must be [PCI-DSS
 Compliant](https://www.pcisecuritystandards.org/)." %}
 
-{:.code-header}
+{:.code-view-header}
 **Request**
 
 ```http

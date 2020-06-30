@@ -9,7 +9,7 @@ that target the payment resource directly produce a response similar to the
 example seen below. The response given contains all operations that are
 possible to perform in the current state of the payment.
 
-{:.code-header}
+{:.code-view-header}
 **Request**
 
 ```http
@@ -19,7 +19,7 @@ Authorization: Bearer <AccessToken>
 Content-Type: application/json
 ```
 
-{:.code-header}
+{:.code-view-header}
 **Response**
 
 ```http

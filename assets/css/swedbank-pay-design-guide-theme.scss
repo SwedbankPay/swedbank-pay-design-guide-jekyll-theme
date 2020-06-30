@@ -10,8 +10,11 @@ TODO: Implement a table element style that @extends .table and .table-striped
 @import 'colors';
 @import 'fonts';
 @import 'variables';
+
 @import 'card';
+@import 'code-view';
 @import 'front-page';
+@import 'heading';
 @import 'sidebar';
 @import 'title-header';
 
@@ -29,47 +32,6 @@ img {
             float: none;
         }
     }
-}
-
-p.code-header {
-    display: block;
-    padding: 5px 19px;
-    background-color: $darkened-bg;
-    color: #512b2b;
-    border-bottom: 1px solid darken($bg, 30%);;
-    margin-bottom: 0;
-}
-
-h1 > a.header-anchor,
-h2 > a.header-anchor,
-h3 > a.header-anchor,
-h4 > a.header-anchor,
-h5 > a.header-anchor,
-h6 > a.header-anchor {
-    color: #ebf8f2;
-    text-decoration: none;
-}
-
-h1:hover > a.header-anchor,
-h2:hover > a.header-anchor,
-h3:hover > a.header-anchor,
-h4:hover > a.header-anchor,
-h5:hover > a.header-anchor,
-h6:hover > a.header-anchor {
-    color: #8acdc3;
-}
-
-h1 > a.header-anchor:hover,
-h2 > a.header-anchor:hover,
-h3 > a.header-anchor:hover,
-h4 > a.header-anchor:hover,
-h5 > a.header-anchor:hover,
-h6 > a.header-anchor:hover {
-    color: #257886;
-}
-
-a.header-anchor::before {
-    content: '#';
 }
 
 .jumbotron {
@@ -217,11 +179,15 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
     }
 
     .normal-padding {
-        padding: 2rem 2rem 5rem;
+        padding: 3rem 1rem 5rem;
     }
 
     .max-width {
         max-width: $max-width;
+    }
+
+    .max-width-card-overview {
+        max-width: 880px;
     }
 
 

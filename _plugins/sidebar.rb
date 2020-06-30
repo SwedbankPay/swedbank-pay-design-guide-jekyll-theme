@@ -69,6 +69,7 @@ module Jekyll
     end
 
     def generateSubgroup(filename, _key, value, has_subgroups)
+      title = value[:title].split('–').last
       subgroup = ''
       if value[:headers].any?
         if has_subgroups
@@ -77,7 +78,7 @@ module Jekyll
           # puts "#{url}, #{filename}, #{key}" if active
           item_class = active ? 'nav-subgroup active' : 'nav-subgroup'
           subgroup << "<li class=\"#{item_class}\">"
-          subgroup << "<div class=\"nav-subgroup-heading\"><i class=\"material-icons\">arrow_right</i><a href=\"#{url}\">#{value[:title].split('–').last}</a></div>"
+          subgroup << "<div class=\"nav-subgroup-heading\"><i class=\"material-icons\">arrow_right</i><a href=\"#{url}\">#{title}</a></div>"
           subgroup << '<ul class="nav-ul">'
           value[:headers].each do |header|
             subgroup << "<li class=\"nav-leaf\"><a href=\"#{value[:url]}#{header[:hash]}\">#{header[:title]}</a></li>"
@@ -91,9 +92,9 @@ module Jekyll
         end
       else
         subgroup << if has_subgroups
-                      "<li class=\"nav-leaf nav-subgroup-leaf\"><a href=\"#{value[:url]}\">#{value[:title]}</a></li>"
+                      "<li class=\"nav-leaf nav-subgroup-leaf\"><a href=\"#{value[:url]}\">#{title}</a></li>"
                     else
-                      "<li class=\"nav-leaf\"><a href=\"#{value[:url]}\">#{value[:title]}</a></li>"
+                      "<li class=\"nav-leaf\"><a href=\"#{value[:url]}\">#{title}</a></li>"
                     end
       end
 
@@ -103,8 +104,8 @@ module Jekyll
     def render(filename)
       sidebar = ''
 
-      merged = merge(@hash_pre_render, @filename_with_headers)
-      merged.select { |key, _value| key.split('/').length <= 2 }.sort_by { |_key, value| value[:menu_order] }.each do |key, value|
+      merged = merge(@hash_pre_render, @filename_with_headers).sort_by { |_key, value| value[:menu_order] }
+      merged.select { |key, _value| key.split('/').length <= 2 }.each do |key, value|
         next if value[:title].nil?
 
         subgroups = merged.select { |subgroup_key, _subgroup_value| subgroup_key.include? key and subgroup_key != key and key != '/' }

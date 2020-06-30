@@ -16,7 +16,7 @@
                 </p>
             </div>
             <div class="front-page-intro-cards">
-                <h2 id="front-page-start">Start your integration</h2>
+                <h2 id="front-page-start" class="heading-line heading-line-white" >Start your integration</h2>
                 <div class="row mt-4">
                     <div class="{{ card_col_class }}">
                         {% include card.html title='Checkout'
@@ -52,7 +52,7 @@
             </div>
         </div>
         
-        <div class="front-page-merchants">
+        <!-- <div class="front-page-merchants">
             <h6>Trusted by</h6>
             <div class="merchants-container justify-content-xxl-between">
                 <a class="merchant-link">
@@ -77,7 +77,7 @@
                     {% include img/merchants/logo-skanetrafiken.svg %}
                 </a>
             </div>
-        </div>
+        </div> -->
     </div>
         
         <a href="/demoshop" class="front-page-demoshop">
@@ -100,7 +100,7 @@
     
     <div class="front-page-container">
         <div class="front-page-cards-sdk">
-            <h2 id="front-page-sdk">Looking for SDKs?</h2>
+            <h2 id="front-page-sdk" class="heading-line heading-line-sdk">Looking for SDKs?</h2>
             <div class="row mt-4">
                 <div class="{{ card_col_class }}">
                     {% include card.html title='Android SDK'
@@ -141,47 +141,47 @@
             </div>
         </div>
         
-        <div class="front-page-cards-plugin">
-            <h2 id="front-page-plugins">Or perhaps plugins?</h2>
+        <div class="front-page-cards-module">
+            <h2 id="front-page-module" class="heading-line heading-line-module">Or perhaps modules?</h2>
             <div class="row mt-4">
                 <div class="{{ card_col_class }}">
                     {% include card.html title='Episerver'
-                        text='See how you can integrate the Episerver plugin'
-                        icon_content='img/plugins/logo-episerver.svg'
+                        text='See how you can integrate the Episerver module'
+                        icon_content='img/modules/logo-episerver.svg'
                         icon_svg=true
-                        type='plugin'
-                        to='/plugin/episerver'
+                        type='module'
+                        to='/module/episerver'
                     %}
                 </div>
                 <div class="{{ card_col_class }}">
                     {% include card.html title='Magento 2'
-                        text='See how you can integrate the Magento 2 plugin'
-                        icon_content='img/plugins/logo-magento2.svg'
+                        text='See how you can integrate the Magento 2 module'
+                        icon_content='img/modules/logo-magento2.svg'
                         icon_svg=true
-                        type='plugin'
-                        to='/plugin/magento-2'
+                        type='module'
+                        to='/module/magento-2'
                     %}
                 </div>
                 <div class="{{ card_col_class }}">
                     {% include card.html title='WooCommerce'
-                        text='See how you can integrate the WooCommerce plugin'
-                        icon_content='img/plugins/logo-woocommerce.svg'
+                        text='See how you can integrate the WooCommerce module'
+                        icon_content='img/modules/logo-woocommerce.svg'
                         icon_svg=true
-                        type='plugin'
-                        to='/plugin/woocommerce'
+                        type='module'
+                        to='/module/woocommerce'
                     %}
                 </div>
             </div>
         </div>
         
         <div class="front-page-release-notes">
-            <h2 id="front-page-release-notes">What's new in the documentation</h2>
+            <h2 id="front-page-release-notes" class="heading-line heading-line-green">What's new in the documentation</h2>
             {% include release_notes.html num_dates=num_dates %}
             <a href="/resources/release-notes">See full release notes</a>
         </div>
         
         <div class="front-page-cards-extra">
-            <h2 id="front-page-extra-resources">Extra resources</h2>
+            <h2 id="front-page-extra-resources" class="heading-line">Extra resources</h2>
             <div class="row mt-4">
                 <div class="{{ card_col_class }}">
                     {% include card.html title='OS development guidelines'
@@ -219,7 +219,7 @@
             <div class="front-page-contact-content">
                 <div class="row">
                     <div class="col-xl-7">
-                        <h2 id="front-page-contact">Can't find what you are looking for?</h2>
+                        <h2 id="front-page-contact" class="heading-line heading-line-long">Can't find what you are looking for?</h2>
                         <p>
                             We are always trying to make the developer portal as
                             good as it can be please don’t hesitate to contact us.

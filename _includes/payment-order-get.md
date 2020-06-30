@@ -4,7 +4,7 @@ order is a container for the payment instrument object selected by the payer. Th
 will generate a payment that is accessed through the sub-resources `payments`
 and `currentPayment`.
 
-{:.code-header}
+{:.code-view-header}
 **Request**
 
 ```http
@@ -14,7 +14,7 @@ Authorization: Bearer <AccessToken>
 Content-Type: application/json
 ```
 
-{:.code-header}
+{:.code-view-header}
 **Response**
 
 ```http

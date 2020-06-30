@@ -134,7 +134,11 @@
                             {% assign description = page.description %}
                             {% assign estimated_read = page.estimated_read %}
                             <div class="title-header">
-                                <div class="title-header-container">
+                                <div class="title-header-container 
+                                    {% if page.card_overview%} max-width-card-overview
+                                    {% else %} max-width
+                                    {% endif %}"
+                                >
                                     {% if title_lead != title_main %}
                                         <h4>{{ title_lead }}</h4>
                                     {% endif %}
@@ -151,7 +155,11 @@
                                 </div>
                             </div>
                         {% endif %}
-                        <div class="doc-container{% if front_page == true %} no-padding {% else %} normal-padding max-width{% endif %}">
+                        <div class="doc-container{% if front_page == true %} no-padding
+                            {% elsif page.card_overview%} normal-padding max-width-card-overview
+                            {% else %} normal-padding max-width
+                            {% endif %}"
+                        >
                             {% include anchor_headings.html html=content anchorClass='header-anchor' %}
                         </div>
                     </main>

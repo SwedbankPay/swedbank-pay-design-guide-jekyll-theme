@@ -1,21 +1,10 @@
 ---
 title: Swedbank Pay Checkout – Other Features
-# sidebar:
-#   navigation:
-#   - title: Checkout
-#     items:
-#     - url: /checkout/
-#       title: Introduction
-#     - url: /checkout/checkin
-#       title: Checkin
-#     - url: /checkout/payment-menu
-#       title: Payment Menu
-#     - url: /checkout/capture
-#       title: Capture
-#     - url: /checkout/after-payment
-#       title: After Payment
-#     - url: /checkout/other-features
-#       title: Other Features
+description: |
+    See what other features you can implement for your checkout
+icon:
+    content: developer_board
+menu-order: 5
 ---
 
 {% include jumbotron.html body="After a successful integration, it may be worth
@@ -70,7 +59,7 @@ for Credit Card Payments" full_reference=true %}
 It is possible to perform a `GET` request on the `urls` resource to retrieve its
 contents.
 
-{:.code-header}
+{:.code-view-header}
 Request
 
 ```http
@@ -80,7 +69,7 @@ Authorization: Bearer <AccessToken>
 Content-Type: application/json
 ```
 
-{:.code-header}
+{:.code-view-header}
 Response
 
 ```http
@@ -174,7 +163,7 @@ to do, the chosen payment instrument and its transactional states, etc.
 determine the available operations before the initial purchase.
 A list of possible operations and their explanation is given below.
 
-{:.code-header}
+{:.code-view-header}
 **Operations**
 
 ```js
@@ -318,7 +307,7 @@ Change amount and vat amount on a payment order. If you implement `UpdateOrder`
 **you need to `refresh()`** the [Payment Menu front end][payment-menu] so the
 new amount is shown to the end customer.
 
-{:.code-header}
+{:.code-view-header}
 **Request**
 
 ```http
@@ -367,7 +356,7 @@ Content-Type: application/json
 }
 ```
 
-{:.code-header}
+{:.code-view-header}
 **Response**
 
 ```http
@@ -438,7 +427,7 @@ To abort a payment order, perform the `update-paymentorder-abort` operation that
 is returned in the payment order response. You need to include the following
 in the request body:
 
-{:.code-header}
+{:.code-view-header}
 **Request**
 
 ```http
@@ -455,7 +444,7 @@ Content-Type: application/json
 }
 ```
 
-{:.code-header}
+{:.code-view-header}
 **Response**
 
 ```http
@@ -558,7 +547,7 @@ other payment instrument properties, by [expanding the sub-resource][expanding]
 [`currentpayment`][current-payment] when doing a `GET` request on the
 `paymentorders` resource.
 
-{:.code-header}
+{:.code-view-header}
 **Request**
 
 ```http
@@ -573,7 +562,7 @@ token in a subsequent `Recur` payment order. This will be a server-to-server
 affair, as we have tied all necessary payment instrument details related to the
 recurrence token during the initial payment order.
 
-{:.code-header}
+{:.code-view-header}
 **Request**
 
 ```http
@@ -701,7 +690,7 @@ sequenceDiagram
 
 The `Purchase` operation is used in all common purchase scenarios.
 
-{:.code-header}
+{:.code-view-header}
 **Purchase**
 
 ```js
@@ -723,7 +712,7 @@ A [recurrence token][payment-orders-resource] will be generated automatically,
 rendering the parameter `generateRecurrenceToken` unnecessary for this
 operation.
 
-{:.code-header}
+{:.code-view-header}
 **Verify**
 
 ```js
@@ -744,7 +733,7 @@ transaction will still be tied to that particular invoice payment resource. This
 payment resource will continue to exist, even if the consumer successfully
 should finish the purchase with a credit card payment instead.
 
-{:.code-header}
+{:.code-view-header}
 **Request**
 
 ```http
@@ -789,7 +778,7 @@ Content-Type: application/json
 The `currentpayment` resource displays the payment that are active within the
 payment order container.
 
-{:.code-header}
+{:.code-view-header}
 **Request**
 
 ```http
@@ -799,7 +788,7 @@ Authorization: Bearer <AccessToken>
 Content-Type: application/json
 ```
 
-{:.code-header}
+{:.code-view-header}
 **Response**
 
 ```http
@@ -881,7 +870,7 @@ The information is retrieved via a consumer profile token
 (`consumerProfileRef`), from the [Consumers resource][payee-reference]
 during login/checkin.
 
-{:.code-header}
+{:.code-view-header}
 **Request**
 
 ```http
@@ -891,7 +880,7 @@ Authorization: Bearer <AccessToken>
 Content-Type: application/json
 ```
 
-{:.code-header}
+{:.code-view-header}
 **Response**
 
 ```http
@@ -977,7 +966,7 @@ if the Payment Menu is not loaded and in the DOM.
 The `onConsumerIdentified` event is raised with the following event argument
 object:
 
-{:.code-header}
+{:.code-view-header}
 **`onConsumerIdentified` event object**
 
 ```js
@@ -995,7 +984,7 @@ updated.
 completed before any shipping details are finalized, as the Checkin component
 provides shipping address via the `onShippingDetailsAvailable` event." %}
 
-{:.code-header}
+{:.code-view-header}
 **`onShippingDetailsAvailable` event object**
 
 ```js
@@ -1009,7 +998,7 @@ provides shipping address via the `onShippingDetailsAvailable` event." %}
 
 Triggered when a consumer has been identified
 
-{:.code-header}
+{:.code-view-header}
 **`onBillingDetailsAvailable` event object**
 
 ```js
@@ -1029,7 +1018,7 @@ It is possible to disable the payment menu when only one instrument exist by
 setting the `disablePaymentMenu` field to `true`. The default value is
 `false`, exemplified below.
 
-{:.code-header}
+{:.code-view-header}
 **Request**
 
 ```js
@@ -1049,7 +1038,7 @@ This feature is only valuable to set to `true` if you have only one payment
 instrument available. By setting it to `true` will remove the frame around the
 menu and show only the instrument.
 
-{:.code-header}
+{:.code-view-header}
 **Request**
 
 ```js
@@ -1074,7 +1063,7 @@ This event triggers when a user actively changes payment instrument in the
 Payment Menu. The `onPaymentMenuInstrumentSelected` event is raised with the
 following event argument object:
 
-{:.code-header}
+{:.code-view-header}
 **`onPaymentMenuInstrumentSelected` event object**
 
 ```js
@@ -1096,7 +1085,7 @@ This event triggers when a user has selected a payment instrument and actively
 attempts to perform a payment. The `onPaymentCreate` event is raised with the
 following event argument object:
 
-{:.code-header}
+{:.code-view-header}
 **`onPaymentCreated` event object**
 
 ```js
@@ -1118,7 +1107,7 @@ This event triggers when a payment has completed successfully.
 The `onPaymentCompleted` event is raised with the following event argument
 object:
 
-{:.code-header}
+{:.code-view-header}
 **`onPaymentCompleted` event object**
 
 ```js
@@ -1140,7 +1129,7 @@ This event triggers when the user cancels the payment.
 The `onPaymentCanceled` event is raised with the following event argument
 object:
 
-{:.code-header}
+{:.code-view-header}
 **`onPaymentCanceled` event object**
 
 ```js
@@ -1164,7 +1153,7 @@ consumer will be able to try again or choose another payment instrument. The
 `onPaymentTransactionFailed` event is raised with the following event argument
 object:
 
-{:.code-header}
+{:.code-view-header}
 **`onPaymentTransactionFailed` event object**
 
 ```js
@@ -1186,7 +1175,7 @@ This event triggers when a payment has failed, disabling further attempts to
 perform a payment. The `onPaymentFailed` event is raised with the following
 event argument object:
 
-{:.code-header}
+{:.code-view-header}
 **`onPaymentFailed` event object**
 
 ```js
@@ -1208,7 +1197,7 @@ This event triggers when the user clicks on the "Display terms and conditions"
 link. The `onPaymentTermsOfService` event is raised with the following event
 argument object:
 
-{:.code-header}
+{:.code-view-header}
 **`onPaymentTermsOfService` event object**
 
 ```js
@@ -1230,7 +1219,7 @@ This event triggers during terminal errors or if the configuration fails
 validation. The `onError` event will be raised with the following event argument
 object:
 
-{:.code-header}
+{:.code-view-header}
 **`onError` event object**
 
 ```js
@@ -1252,7 +1241,7 @@ object:
     payment_order=true
     api_resource="paymentorders" %}
 
-{:.code-header}
+{:.code-view-header}
 **Payment Order Callback**
 
 ```js

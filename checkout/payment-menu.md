@@ -1,21 +1,9 @@
 ---
 title: Swedbank Pay Checkout – Payment Menu
-# sidebar:
-#   navigation:
-#   - title: Checkout
-#     items:
-#     - url: /checkout/
-#       title: Introduction
-#     - url: /checkout/checkin
-#       title: Checkin
-#     - url: /checkout/payment-menu
-#       title: Payment Menu
-#     - url: /checkout/capture
-#       title: Capture
-#     - url: /checkout/after-payment
-#       title: After Payment
-#     - url: /checkout/other-features
-#       title: Other Features
+estimated_read: 15
+card_title: Create and display payment menu
+core: true
+menu-order: 2
 ---
 
 {% include jumbotron.html body="**Payment Menu** begins where **Checkin** left
@@ -47,7 +35,7 @@ for Credit Card Payments" %}
 
 The response back should look something like this (abbreviated for brevity):
 
-{:.code-header}
+{:.code-view-header}
 **Response**
 
 ```http
@@ -99,7 +87,7 @@ create the script element with JavaScript, all inside the event handler for
 [`onConsumerIdentified`][technical-reference-onconsumer-identified].
 The HTML code will be unchanged in this example.
 
-{:.code-header}
+{:.code-view-header}
 **JavaScript**
 
 ```js

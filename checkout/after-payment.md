@@ -1,21 +1,11 @@
 ---
 title: Swedbank Pay Checkout – After Payment
-# sidebar:
-#   navigation:
-#   - title: Checkout
-#     items:
-#     - url: /checkout/
-#       title: Introduction
-#     - url: /checkout/checkin
-#       title: Checkin
-#     - url: /checkout/payment-menu
-#       title: Payment Menu
-#     - url: /checkout/capture
-#       title: Capture
-#     - url: /checkout/after-payment
-#       title: After Payment
-#     - url: /checkout/other-features
-#       title: Other Features
+description: |
+    Add After-payment operation to your order system
+icon:
+    content: add
+
+menu-order: 4
 ---
 
 {% include jumbotron.html body="When the consumer has **completed** the entire
@@ -62,7 +52,7 @@ capture or cancel. For a full list of the available operations, see the
 To identify the operations that are available we need to do a `GET` request
 against the URI of `paymentorder.id`:
 
-{:.code-header}
+{:.code-view-header}
 **Request**
 
 ```http
@@ -74,7 +64,7 @@ The (abbreviated) response containing an `updateorder`, `capture`,
 `cancellation`, and `reversal` operation should look similar to the response
 below:
 
-{:.code-header}
+{:.code-view-header}
 **Response**
 
 ```http

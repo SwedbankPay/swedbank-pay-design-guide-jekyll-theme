@@ -32,7 +32,7 @@ body="The version numbers used in headers on this page refers to the version of
 this very documentation, not to a version of any APIs described by it." %}
 
 
-## May 2020
+## 28 May 2020
 
 ### Version 1.11.0
 
@@ -40,10 +40,14 @@ this very documentation, not to a version of any APIs described by it." %}
 *   Added information about [Storing URIs][storing-uri] in the [Technical
   Information][home-technical-information] section.
 
+## 23 May 2020
+
 ### Version 1.10.1
 
 *   Updated [Swish Redirect][swish-redirect] requests.
 *   Added `orderReference` information in Payment Order Callback in [Checkout Other features][checkout-callback].
+
+## 10 May 2020
 
 ### Version 1.10.0
 
@@ -51,9 +55,13 @@ this very documentation, not to a version of any APIs described by it." %}
 *   Added a new section [Co-badge Card Choice for Dankort][co-badge-card] in
   [Card Payments][card-payment-url].
 
+## 02 May 2020
+
 ### Version 1.9.2
 
 *   Corrected table in [payments page][payments]
+
+## 01 May 2020
 
 ### Version 1.9.1
 

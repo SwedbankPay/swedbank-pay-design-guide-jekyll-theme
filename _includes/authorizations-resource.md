@@ -5,7 +5,7 @@
 The `authorizations` resource will list the authorization transactions
 made on a specific payment.
 
-{:.code-header}
+{:.code-view-header}
 **Request**
 
 ```http
@@ -15,7 +15,7 @@ Authorization: Bearer <AccessToken>
 Content-Type: application/json
 ```
 
-{:.code-header}
+{:.code-view-header}
 **Response**
 
 ```http
@@ -76,7 +76,7 @@ Content-Type: application/json
 To create an `authorization` transaction, perform the `create-authorization`
 operation as returned in a previously created invoice payment.
 
-{:.code-header}
+{:.code-view-header}
 **Request**
 
 ```http
@@ -146,7 +146,7 @@ Note: The legal address must be the registered address of the consumer." %}
 The `authorization` resource will be returned, containing information about
 the newly created authorization transaction.
 
-{:.code-header}
+{:.code-view-header}
 **Response**
 
 ```http

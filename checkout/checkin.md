@@ -1,29 +1,16 @@
 ---
 title: Swedbank Pay Checkout – Checkin
-# sidebar:
-#   navigation:
-#   - title: Checkout
-#     items:
-#     - url: /checkout/
-#       title: Introduction
-#     - url: /checkout/checkin
-#       title: Checkin
-#     - url: /checkout/payment-menu
-#       title: Payment Menu
-#     - url: /checkout/capture
-#       title: Capture
-#     - url: /checkout/after-payment
-#       title: After Payment
-#     - url: /checkout/other-features
-#       title: Other Features
+description: |
+    In the sections that follow you'll find
+    examples of the HTTP requests, responses and HTML code you will need to
+    implement in order to complete the Swedbank Pay Checkout integration. To
+    finalize Checkout you first have to Checkin. To check in, the payer needs to
+    be identified.
+card_title: Initiate session and display checkin module
+estimated_read: 15
+core: true
+menu-order: 1
 ---
-
-{% include jumbotron.html body="Swedbank Pay Checkout consists of two parts:
-**Checkin** and **Payment Menu**. In the sections that follow you'll find
-examples of the HTTP requests, responses and HTML code you will need to
-implement in order to complete the Swedbank Pay Checkout integration. To
-finalize Checkout you first have to Checkin. To check in, the payer needs to be
-identified." %}
 
 ## Step 1: Initiate session for consumer identification
 
@@ -31,7 +18,7 @@ The payer will be identified with the `consumers` resource and will be
 persisted to streamline future Payment Menu processes. Payer identification
 is done through the `initiate-consumer-session` operation.
 
-{:.code-header}
+{:.code-view-header}
 **Request**
 
 ```http
@@ -47,7 +34,7 @@ Content-Type: application/json
 }
 ```
 
-{:.table .table-striped}
+{:.table .table-plain}
 |     Required     | Field                                     | Type     | Description                                                                                                                            |
 | :--------------: | :---------------------------------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------- |
 | {% icon check %} | `operation`                               | `string` | `initiate-consumer-session`, the operation to perform.                                                                                 |
@@ -56,7 +43,7 @@ Content-Type: application/json
 
 When the request has been sent, a response containing an array of operations that can be acted upon will be returned:
 
-{:.code-header}
+{:.code-view-header}
 **Response**
 
 ```http
@@ -82,7 +69,7 @@ Content-Type: application/json
 }
 ```
 
-{:.table .table-striped}
+{:.table .table-plain .mb-5}
 | Field                 | Type     | Description                                                                                                                                       |
 | :-------------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `token`               | `string` | A session token used to initiate Checkout UI.                                                                                                     |
@@ -114,7 +101,7 @@ operation is meant to be embedded in a `<script>` element in an HTML document.
                     environment as there is no simple way of retrieving the
                     `consumerProfileRef`."%}
 
-{:.code-header}
+{:.code-view-header}
 **HTML**
 
 ```html
@@ -140,7 +127,7 @@ In the HTML, you only need to add two `<div>` elements to place the
 check-in and payment menu inside of. The JavaScript will handle the rest when
 it comes to handling the check-in and payment menu.
 
-{:.code-header}
+{:.code-view-header}
 **JavaScript**
 
 ```js

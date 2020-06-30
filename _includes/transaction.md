@@ -18,7 +18,7 @@ When a transaction is created it will have one of three states:
     card) up to a maximum amount of retries (in that case which the payment
     order gets the state `failed` as well).
 
-{:.code-header}
+{:.code-view-header}
 **Request**
 
 ```http
@@ -28,7 +28,7 @@ Authorization: Bearer <AccessToken>
 Content-Type: application/json
 ```
 
-{:.code-header}
+{:.code-view-header}
 **Response**
 
 ```http
