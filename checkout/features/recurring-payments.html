@@ -149,10 +149,10 @@ need to create a <strong>recurrence token</strong>. This token will be utilized 
 initial payment order. <strong>Recurring payments must be activated on the contract
 with Swedbank Pay in order to work.</strong></p>&#13;
     &#13;
-      <h3 id="recurrence-token">&#13;
+      <h3 id="recurrence-token-2">&#13;
         &#13;
         &#13;
-          Recurrence Token <a href="#recurrence-token" class="header-anchor"></a>&#13;
+          Recurrence Token 2 <a href="#recurrence-token-2" class="header-anchor"></a>&#13;
         &#13;
         &#13;
       </h3>
@@ -207,68 +207,10 @@ need to create a <strong>recurrence token</strong>. This token will be utilized 
 initial payment order. <strong>Recurring payments must be activated on the contract
 with Swedbank Pay in order to work.</strong></p>&#13;
     &#13;
-      <h3 id="recurrence-token-1">&#13;
+      <h3 id="recurrence-token-2-1">&#13;
         &#13;
         &#13;
-          Recurrence Token <a href="#recurrence-token-1" class="header-anchor"></a>&#13;
-        &#13;
-        &#13;
-      </h3>
-
-<ul>
-  <li>When initiating a <code class="language-html highlighter-rouge">Purchase</code> payment order, you need to make sure that the
-field <code class="language-html highlighter-rouge">generateRecurrenceToken</code> is set to <code class="language-html highlighter-rouge">true</code>. This recurrence token
-will stored in the [authorization transaction][transaction]
-sub-resource on the underlying payment resource.</li>
-  <li>When initiating a <code class="language-html highlighter-rouge">Verify</code> payment order, a recurrence token will be
-generated automatically. This recurrence token is stored in the
-[verification][verification-transaction]  sub-resource on the underlying
-payment resource.</li>
-</ul>
-
-<p>You can view the current payment resource, containg the recurrence token and
-other payment instrument properties, by [expanding the sub-resource][expanding]
-[<code class="language-html highlighter-rouge">currentpayment</code>][current-payment] when doing a <code class="language-html highlighter-rouge">GET</code> request on the
-<code class="language-html highlighter-rouge">paymentorders</code> resource.</p>
-
-<p class="code-view-header"><strong>Request</strong></p>
-
-<div class="language-http highlighter-rouge"><div class="highlight"><pre class="code-view"><code><table class="code-view-table"><tbody><tr><td class="code-view-numbers gl"><pre class="lineno">1
-2
-</pre></td><td class="code-view-code"><pre><span class="nf">GET</span> <span class="nn">/psp/paymentorders/?$expand=currentpayment</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">Host</span><span class="p">:</span><span class="s"> </span>
-</pre></td></tr></tbody></table></code></pre></div></div>&#13;
-    &#13;
-      <h3 id="creating-recurring-payments-1">&#13;
-        &#13;
-        &#13;
-          Creating Recurring Payments <a href="#creating-recurring-payments-1" class="header-anchor"></a>&#13;
-        &#13;
-        &#13;
-      </h3>
-
-<p>When you have a <code class="language-html highlighter-rouge">recurrenceToken</code> token safely tucked away, you can use this
-token in a subsequent <code class="language-html highlighter-rouge">Recur</code> payment order. This will be a server-to-server
-affair, as we have tied all necessary payment instrument details related to the
-recurrence token during the initial payment order.</p>&#13;
-    &#13;
-      <h2 id="recurring-payments-3">&#13;
-        &#13;
-        &#13;
-          Recurring Payments 3 <a href="#recurring-payments-3" class="header-anchor"></a>&#13;
-        &#13;
-        &#13;
-      </h2>
-
-<p>If you want to enable subsequent recurring – server-to-server – payments, you
-need to create a <strong>recurrence token</strong>. This token will be utilized after the
-initial payment order. <strong>Recurring payments must be activated on the contract
-with Swedbank Pay in order to work.</strong></p>&#13;
-    &#13;
-      <h3 id="recurrence-token-2">&#13;
-        &#13;
-        &#13;
-          Recurrence Token <a href="#recurrence-token-2" class="header-anchor"></a>&#13;
+          Recurrence Token 2 <a href="#recurrence-token-2-1" class="header-anchor"></a>&#13;
         &#13;
         &#13;
       </h3>
@@ -300,7 +242,65 @@ other payment instrument properties, by [expanding the sub-resource][expanding]
       <h3 id="creating-recurring-payments-2">&#13;
         &#13;
         &#13;
-          Creating Recurring Payments <a href="#creating-recurring-payments-2" class="header-anchor"></a>&#13;
+          Creating Recurring Payments 2 <a href="#creating-recurring-payments-2" class="header-anchor"></a>&#13;
+        &#13;
+        &#13;
+      </h3>
+
+<p>When you have a <code class="language-html highlighter-rouge">recurrenceToken</code> token safely tucked away, you can use this
+token in a subsequent <code class="language-html highlighter-rouge">Recur</code> payment order. This will be a server-to-server
+affair, as we have tied all necessary payment instrument details related to the
+recurrence token during the initial payment order.</p>&#13;
+    &#13;
+      <h2 id="recurring-payments-3">&#13;
+        &#13;
+        &#13;
+          Recurring Payments 3 <a href="#recurring-payments-3" class="header-anchor"></a>&#13;
+        &#13;
+        &#13;
+      </h2>
+
+<p>If you want to enable subsequent recurring – server-to-server – payments, you
+need to create a <strong>recurrence token</strong>. This token will be utilized after the
+initial payment order. <strong>Recurring payments must be activated on the contract
+with Swedbank Pay in order to work.</strong></p>&#13;
+    &#13;
+      <h3 id="recurrence-token-3">&#13;
+        &#13;
+        &#13;
+          Recurrence Token 3 <a href="#recurrence-token-3" class="header-anchor"></a>&#13;
+        &#13;
+        &#13;
+      </h3>
+
+<ul>
+  <li>When initiating a <code class="language-html highlighter-rouge">Purchase</code> payment order, you need to make sure that the
+field <code class="language-html highlighter-rouge">generateRecurrenceToken</code> is set to <code class="language-html highlighter-rouge">true</code>. This recurrence token
+will stored in the [authorization transaction][transaction]
+sub-resource on the underlying payment resource.</li>
+  <li>When initiating a <code class="language-html highlighter-rouge">Verify</code> payment order, a recurrence token will be
+generated automatically. This recurrence token is stored in the
+[verification][verification-transaction]  sub-resource on the underlying
+payment resource.</li>
+</ul>
+
+<p>You can view the current payment resource, containg the recurrence token and
+other payment instrument properties, by [expanding the sub-resource][expanding]
+[<code class="language-html highlighter-rouge">currentpayment</code>][current-payment] when doing a <code class="language-html highlighter-rouge">GET</code> request on the
+<code class="language-html highlighter-rouge">paymentorders</code> resource.</p>
+
+<p class="code-view-header"><strong>Request</strong></p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="code-view"><code><table class="code-view-table"><tbody><tr><td class="code-view-numbers gl"><pre class="lineno">1
+2
+</pre></td><td class="code-view-code"><pre><span class="nf">GET</span> <span class="nn">/psp/paymentorders/?$expand=currentpayment</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span><span class="s"> </span>
+</pre></td></tr></tbody></table></code></pre></div></div>&#13;
+    &#13;
+      <h3 id="creating-recurring-payments-3">&#13;
+        &#13;
+        &#13;
+          Creating Recurring Payments 3 <a href="#creating-recurring-payments-3" class="header-anchor"></a>&#13;
         &#13;
         &#13;
       </h3>
