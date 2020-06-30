@@ -5,7 +5,6 @@ description: |
 menu-order: 2
 ---
 
-
 ## Recurring Payments
 
 If you want to enable subsequent recurring – server-to-server – payments, you
@@ -13,7 +12,7 @@ need to create a **recurrence token**. This token will be utilized after the
 initial payment order. **Recurring payments must be activated on the contract
 with Swedbank Pay in order to work.**
 
-### Recurrence Token
+### Recurrence Token 2
 
 *   When initiating a `Purchase` payment order, you need to make sure that the
     field `generateRecurrenceToken` is set to `true`. This recurrence token
@@ -51,7 +50,7 @@ need to create a **recurrence token**. This token will be utilized after the
 initial payment order. **Recurring payments must be activated on the contract
 with Swedbank Pay in order to work.**
 
-### Recurrence Token
+### Recurrence Token 2
 
 *   When initiating a `Purchase` payment order, you need to make sure that the
     field `generateRecurrenceToken` is set to `true`. This recurrence token
@@ -75,7 +74,7 @@ GET /psp/paymentorders/{{ page.payment_order_id }}?$expand=currentpayment HTTP/1
 Host: {{ page.api_host }}
 ```
 
-### Creating Recurring Payments
+### Creating Recurring Payments 2
 
 When you have a `recurrenceToken` token safely tucked away, you can use this
 token in a subsequent `Recur` payment order. This will be a server-to-server
@@ -89,7 +88,7 @@ need to create a **recurrence token**. This token will be utilized after the
 initial payment order. **Recurring payments must be activated on the contract
 with Swedbank Pay in order to work.**
 
-### Recurrence Token
+### Recurrence Token 3
 
 *   When initiating a `Purchase` payment order, you need to make sure that the
     field `generateRecurrenceToken` is set to `true`. This recurrence token
@@ -113,7 +112,7 @@ GET /psp/paymentorders/{{ page.payment_order_id }}?$expand=currentpayment HTTP/1
 Host: {{ page.api_host }}
 ```
 
-### Creating Recurring Payments
+### Creating Recurring Payments 3
 
 When you have a `recurrenceToken` token safely tucked away, you can use this
 token in a subsequent `Recur` payment order. This will be a server-to-server

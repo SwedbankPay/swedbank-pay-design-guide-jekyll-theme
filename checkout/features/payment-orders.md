@@ -10,3 +10,5 @@ menu-order: 1
 {% include payment-order-get.md show_status_operations=true %}
 
 ## Payment Orders 2
+
+{% include payment-order-get.md show_status_operations=true %}
