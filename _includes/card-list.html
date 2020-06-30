@@ -1,0 +1,19 @@
+{% assign card_list = include.card_list %}
+{% assign type = include.type %}
+{% assign col_class = include.col_class %}
+
+<div class="row card-list">
+    {% for card in card_list %}
+        {% assign title = card.title | split: '–' | last %}
+        <div class="{{ col_class }}">
+            {% include card.html title=title
+                text=card.description
+                icon_content=card.icon.content
+                icon_outlined=card.icon.outlined
+                icon_svg=card.icon.svg
+                to=card.url
+                type=type
+            %}
+        </div>
+    {% endfor %}
+</div>
