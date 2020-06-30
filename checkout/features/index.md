@@ -53,7 +53,8 @@ card_list:
     content: undo
 ---
 
-
+{:.heading-line}
+## All features
 
 {% include card-list.html card_list=page.card_list
     col_class="col-lg-4"
