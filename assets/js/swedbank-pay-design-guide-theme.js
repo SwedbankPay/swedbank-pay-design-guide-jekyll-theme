@@ -22,7 +22,7 @@
 (function () {
     var headings = document.querySelectorAll(".doc-container h2");
     const activeSubgroup = document.querySelector("nav.sidebar-nav .nav-subgroup.active");
-    var tocLinks = []
+    var tocLinks = [];
 
     if (activeSubgroup) {
         if (activeSubgroup.querySelector(".nav-subgroup.active")) {
