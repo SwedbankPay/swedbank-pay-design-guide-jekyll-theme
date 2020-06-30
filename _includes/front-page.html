@@ -1,3 +1,11 @@
+
+{%- comment -%}
+**Parameters
+card_col_class: Grid column class the cards should be wrapped in
+num_dates: Amount of rows (based on dates in release_notes) should be displayed
+    in release-notes
+{%- endcomment -%}
+
 {% assign card_col_class = include.card_col_class | default: "col-xxl-3 col-xl-6 col-lg-6" %}
 {% assign num_dates = include.num_dates | default: 3 %}
 
