@@ -25,7 +25,7 @@ with Swedbank Pay in order to work.**
 
 You can view the current payment resource, containg the recurrence token and
 other payment instrument properties, by expanding the sub-resource
-[`currentpayment`][current-payment] when doing a `GET` request on the
+`currentpayment` when doing a `GET` request on the
 `paymentorders` resource.
 
 {:.code-view-header}
@@ -63,7 +63,7 @@ with Swedbank Pay in order to work.**
 
 You can view the current payment resource, containg the recurrence token and
 other payment instrument properties, by expanding the sub-resource
-[`currentpayment`][current-payment] when doing a `GET` request on the
+`currentpayment` when doing a `GET` request on the
 `paymentorders` resource.
 
 {:.code-view-header}
@@ -101,7 +101,7 @@ with Swedbank Pay in order to work.**
 
 You can view the current payment resource, containg the recurrence token and
 other payment instrument properties, by expanding the sub-resource
-[`currentpayment`][current-payment] when doing a `GET` request on the
+`currentpayment` when doing a `GET` request on the
 `paymentorders` resource.
 
 {:.code-view-header}
