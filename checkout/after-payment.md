@@ -39,8 +39,7 @@ Most payment instruments are two-phase payments –
 in which a successful payment order will result in an authorized transaction –
 that must be followed up by a capture or cancellation transaction in a later
 stage. One-phase payments like Swish are settled directly without the option to
-capture or cancel. For a full list of the available operations, see the
-[techincal reference][payment-order-operations].
+capture or cancel. For a full list of the available operations, see the.
 
 {:.table .table-striped}
 | Operation                      | Description                                                                                                                                                                                                                                                                    |
@@ -118,7 +117,7 @@ operations `Cancel`, `Capture` and `Reversal` must be implemented." %}
 
 {% include iterator.html prev_href="capture"
                          prev_title="Back: Capture"
-                         next_href="other-features"
+                         next_href=""
                          next_title="Next: Other Features" %}
 
 [https]: /home/technical-information#connection-and-protocol

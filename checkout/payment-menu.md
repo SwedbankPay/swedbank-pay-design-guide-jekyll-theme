@@ -17,7 +17,7 @@ using `consumerProfileRef` retrieved in the previous step.
 We start by performing a `POST` request towards the `paymentorder` resource
 with the payer information (such as `consumerProfileRef`) we obtained in the
 checkin process described above.
-Remember to read up on our [URL resource][urls].
+Remember to read up on our.
 
 
 
@@ -155,12 +155,6 @@ request.send(JSON.stringify({
 
 This should bring up the Payment Menu in a Seamless View. It should look like
 this, depending on whether the payer is logged in (top) or a guest user (bottom):
-
-{:.text-center}
-![Payment Menu with payer logged in and card payment opened][login-payment-menu-image]{:width="450" height="900"}
-
-{:.text-center}
-![Payment Menu with guest payer and card payment opened][guest-payment-menu-image]{:width="450" height="850"}
 
 When the consumer completes the payment, the Payment Menu script will be
 signaled and a full redirect to the `completeUrl` sent in with the

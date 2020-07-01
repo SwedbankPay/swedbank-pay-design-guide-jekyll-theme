@@ -196,8 +196,6 @@ With the scripts loading in after the entire page is loaded, we can access the
 `<div>` container that the Checkin will be hosted in.
 After that has all loaded, you should see something like this:
 
-{:.text-center}
-![Consumer UI][checkin-image]{:width="564" height="293"}
 
 As you can see, the payer's information is pre-filled as provided by the
 initial `POST`. With a `consumerProfileRef` safely tucked into our pocket,
@@ -241,13 +239,12 @@ menu must be shown even though `onConsumerIdentified` is not invoked.
 
 Additional events during Checkin  can also be implemented
 in the `configuration` object, such as `onConsumerIdentified`, `onShippingDetailsAvailable`and
-`onBillingDetailsAvailable`. Read more about these in the
-[Checkin events][checkin-events] section.
+`onBillingDetailsAvailable`. Read more about these in the section.
 
 ### Note on consumer data
 
 During this stage some consumer data is stored.
-Read more about our [Data Protection Policy][data-protection] for details on which
+Read more about our for details on which
 information we store and its duration.
 
 {% include iterator.html prev_href="./"
