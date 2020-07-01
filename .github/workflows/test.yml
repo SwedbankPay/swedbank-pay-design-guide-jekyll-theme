@@ -24,7 +24,7 @@ jobs:
       - uses: prologic/action-remark-lint@v0.0.5
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: github-pr-review
+          reporter: github-pr-check
 
   deploy-dry-run:
     runs-on: ubuntu-latest
