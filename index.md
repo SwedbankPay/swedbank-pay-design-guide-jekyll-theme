@@ -13,10 +13,10 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 *   [External absolute full link](https://www.wikipedia.org)
 *   [External protocol relative link](//www.wikipedia.org)
-*   [Internal absolute full link][internal-absolute-full-link]
-*   [Internal explicit relative link][explicit-relative-link]
-*   [Internal implicit relative link][implicit-relative-link]
-*   [Internal absolute link][internal-absolute-link]
+*   Internal absolute full link
+*   Internal explicit relative link
+*   Internal implicit relative link
+*   Internal absolute link
 
 There should be whitespace between paragraphs.
 

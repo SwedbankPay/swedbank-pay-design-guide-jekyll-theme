@@ -16,15 +16,15 @@ with Swedbank Pay in order to work.**
 
 *   When initiating a `Purchase` payment order, you need to make sure that the
     field `generateRecurrenceToken` is set to `true`. This recurrence token
-    will stored in the [authorization transaction][transaction]
+    will stored in the authorization transaction
     sub-resource on the underlying payment resource.
 *   When initiating a `Verify` payment order, a recurrence token will be
     generated automatically. This recurrence token is stored in the
-    [verification][verification-transaction]  sub-resource on the underlying
+    verification  sub-resource on the underlying
     payment resource.
 
 You can view the current payment resource, containg the recurrence token and
-other payment instrument properties, by [expanding the sub-resource][expanding]
+other payment instrument properties, by expanding the sub-resource
 [`currentpayment`][current-payment] when doing a `GET` request on the
 `paymentorders` resource.
 
@@ -54,15 +54,15 @@ with Swedbank Pay in order to work.**
 
 *   When initiating a `Purchase` payment order, you need to make sure that the
     field `generateRecurrenceToken` is set to `true`. This recurrence token
-    will stored in the [authorization transaction][transaction]
+    will stored in the authorization transaction
     sub-resource on the underlying payment resource.
 *   When initiating a `Verify` payment order, a recurrence token will be
     generated automatically. This recurrence token is stored in the
-    [verification][verification-transaction]  sub-resource on the underlying
+    verification sub-resource on the underlying
     payment resource.
 
 You can view the current payment resource, containg the recurrence token and
-other payment instrument properties, by [expanding the sub-resource][expanding]
+other payment instrument properties, by expanding the sub-resource
 [`currentpayment`][current-payment] when doing a `GET` request on the
 `paymentorders` resource.
 
@@ -92,15 +92,15 @@ with Swedbank Pay in order to work.**
 
 *   When initiating a `Purchase` payment order, you need to make sure that the
     field `generateRecurrenceToken` is set to `true`. This recurrence token
-    will stored in the [authorization transaction][transaction]
+    will stored in the authorization transaction
     sub-resource on the underlying payment resource.
 *   When initiating a `Verify` payment order, a recurrence token will be
     generated automatically. This recurrence token is stored in the
-    [verification][verification-transaction]  sub-resource on the underlying
+    verification sub-resource on the underlying
     payment resource.
 
 You can view the current payment resource, containg the recurrence token and
-other payment instrument properties, by [expanding the sub-resource][expanding]
+other payment instrument properties, by expanding the sub-resource
 [`currentpayment`][current-payment] when doing a `GET` request on the
 `paymentorders` resource.
 

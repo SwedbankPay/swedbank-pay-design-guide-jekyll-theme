@@ -1,20 +1,6 @@
 ---
 title: Gift Cards – Introduction
 menu-order: 4
-# sidebar:
-#   navigation:
-#   - title: Gift Cards
-#     items:
-#     - url: /gift-cards/
-#       title: Introduction
-#     - url: /gift-cards/operations
-#       title: Operations
-#     - url: /gift-cards/security
-#       title: Security
-#     - url: /gift-cards/payment-client
-#       title: Test Client
-#     - url: /gift-cards/other-features
-#       title: Other Features
 ---
 
 ## Overview
