@@ -16,12 +16,14 @@ module Jekyll
 
     def pre_render(page)
       menu_order = page['menu-order'].nil? ? 0 : page['menu-order']
+      hide_from_sidebar = page['hide_from_sidebar'].nil? ? false : page['hide_from_sidebar']
       url = page['url'].gsub('index.html', '').gsub('.html', '')
       @hash_pre_render[url] = {
         title: page['title'],
         url: page['url'].gsub('.html', ''),
         name: page['name'],
-        menu_order: menu_order
+        menu_order: menu_order,
+        hide_from_sidebar: hide_from_sidebar
       }
     end
 
@@ -106,6 +108,7 @@ module Jekyll
       merged = merge(@hash_pre_render, @filename_with_headers)
       merged.select { |key, _value| key.split('/').length <= 2 }.sort_by { |_key, value| value[:menu_order] }.each do |key, value|
         next if value[:title].nil?
+        next if value[:hide_from_sidebar]
 
         subgroups = merged.select { |subgroup_key, _subgroup_value| subgroup_key.include? key and subgroup_key != key and key != '/' }
 
