@@ -108,16 +108,10 @@ Content-Type: application/json
 | Field          | Type     | Description                                                                        |
 | :------------- | :------- | :--------------------------------------------------------------------------------- |
 | `paymentorder` | `object` | The payment order object.                                                          |
-| └➔&nbsp;`id`   | `string` | {% include field-description-id.md resource="paymentorder" %}                      |
+| └➔&nbsp;`id`   | `string` |                      |
 | `operations`   | `array`  | The array of possible operations to perform, given the state of the payment order. |
 
-## Cancel
 
-{% include payment-order-cancel.md %}
-
-## Reversal
-
-{% include payment-order-reversal.md %}
 
 {% include alert.html type="informative" icon="info" body=" Note that all of the
 operations `Cancel`, `Capture` and `Reversal` must be implemented." %}

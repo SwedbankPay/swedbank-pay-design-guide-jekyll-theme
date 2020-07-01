@@ -36,7 +36,7 @@ card_list in front matter above.
 {% assign core_card_list = site.pages | where: 'dir', page.dir | where: 'core', true |
 where_exp: 'page', 'page.name != "index.md"' | sort: 'menu-order' %}
 
-{% include card-horizontal-list.html card_list=core_card_list %}
+{% include card-horizontal-list.html card_list=page.card_list %}
 
 {:.heading-line}
 ## Additional features
@@ -49,14 +49,3 @@ where_exp: 'page', 'page.url != "/checkout/" and page.core != true and page.dir 
 {% include card-list.html card_list=additional_card_list
     col_class="col-lg-6 col-md-6 col-sm-6"
 %}
-
-{% include jumbotron.html body="**Swedbank Pay Checkout** is a complete reimagination
-of the checkout experience, integrating seamlessly into the merchant website
-through highly customizable and flexible components.
-
-Visit our [demoshop](https://ecom.externalintegration.payex.com/pspdemoshop)
-and try out Swedbank Pay Checkout for yourself!" %}
-
-Swedbank Pay Checkout allows your customers to be identified with Swedbank Pay,
-enabling existing Swedbank Pay Checkout users to pay with their favorite payment
-methods in just a few simple steps.

@@ -19,17 +19,7 @@ with the payer information (such as `consumerProfileRef`) we obtained in the
 checkin process described above.
 Remember to read up on our [URL resource][urls].
 
-{% include alert-risk-indicator.md %}
 
-### Payment Url
-
-{% include payment-url.md payment_order=true
-when="selecting the payment instrument Vipps or in the 3-D Secure verification
-for Credit Card Payments" %}
-
-### Request
-
-{% include payment-order-purchase.md %}
 
 ### Response
 
@@ -61,7 +51,7 @@ Content-Type: application/json
 | Field          | Type     | Description                                                                        |
 | :------------- | :------- | :--------------------------------------------------------------------------------- |
 | `paymentorder` | `object` | The payment order object.                                                          |
-| └➔&nbsp;`id`   | `string` | {% include field-description-id.md resource="paymentorder" %}                      |
+| └➔&nbsp;`id`   | `string` |                     |
 | `operations`   | `array`  | The array of possible operations to perform, given the state of the payment order. |
 
 The `paymentorder` object is abbreviated since it's just the `id` and

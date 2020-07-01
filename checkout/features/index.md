@@ -7,7 +7,7 @@ description: |
 icon:
   content: remove_red_eye
 additional: true
-menu-order: 0
+menu-order: 5
 card_list: 
 - title: Payment orders
   description: When initiating a payment process
@@ -15,6 +15,11 @@ card_list:
   icon:
     content: view_list
     outlined: true
+- title: Recurring Payments
+  description: Initialize payment process containing the order
+  url:  /checkout/features/recurring-payments
+  icon:
+    content: autorenew
 - title: Description
   description: Initialize payment process containing the order
   icon:
@@ -29,10 +34,6 @@ card_list:
   description: Initialize payment process containing the order
   icon:
     content: http
-- title: Recurring Payments
-  description: Initialize payment process containing the order
-  icon:
-    content: autorenew
 - title: Purchase Payments
   description: Initialize payment process containing the order
   icon:
@@ -59,4 +60,3 @@ card_list:
 {% include card-list.html card_list=page.card_list
     col_class="col-lg-4"
 %}
-
