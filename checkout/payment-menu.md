@@ -1,21 +1,9 @@
 ---
 title: Swedbank Pay Checkout – Payment Menu
-# sidebar:
-#   navigation:
-#   - title: Checkout
-#     items:
-#     - url: /checkout/
-#       title: Introduction
-#     - url: /checkout/checkin
-#       title: Checkin
-#     - url: /checkout/payment-menu
-#       title: Payment Menu
-#     - url: /checkout/capture
-#       title: Capture
-#     - url: /checkout/after-payment
-#       title: After Payment
-#     - url: /checkout/other-features
-#       title: Other Features
+estimated_read: 15
+card_title: Create and display payment menu
+core: true
+menu-order: 2
 ---
 
 {% include jumbotron.html body="**Payment Menu** begins where **Checkin** left
@@ -29,25 +17,15 @@ using `consumerProfileRef` retrieved in the previous step.
 We start by performing a `POST` request towards the `paymentorder` resource
 with the payer information (such as `consumerProfileRef`) we obtained in the
 checkin process described above.
-Remember to read up on our [URL resource][urls].
+Remember to read up on our.
 
-{% include alert-risk-indicator.md %}
 
-### Payment Url
-
-{% include payment-url.md payment_order=true
-when="selecting the payment instrument Vipps or in the 3-D Secure verification
-for Credit Card Payments" %}
-
-### Request
-
-{% include payment-order-purchase.md %}
 
 ### Response
 
 The response back should look something like this (abbreviated for brevity):
 
-{:.code-header}
+{:.code-view-header}
 **Response**
 
 ```http
@@ -73,7 +51,7 @@ Content-Type: application/json
 | Field          | Type     | Description                                                                        |
 | :------------- | :------- | :--------------------------------------------------------------------------------- |
 | `paymentorder` | `object` | The payment order object.                                                          |
-| └➔&nbsp;`id`   | `string` | {% include field-description-id.md resource="paymentorder" %}                      |
+| └➔&nbsp;`id`   | `string` |                     |
 | `operations`   | `array`  | The array of possible operations to perform, given the state of the payment order. |
 
 The `paymentorder` object is abbreviated since it's just the `id` and
@@ -99,7 +77,7 @@ create the script element with JavaScript, all inside the event handler for
 [`onConsumerIdentified`][technical-reference-onconsumer-identified].
 The HTML code will be unchanged in this example.
 
-{:.code-header}
+{:.code-view-header}
 **JavaScript**
 
 ```js
@@ -177,12 +155,6 @@ request.send(JSON.stringify({
 
 This should bring up the Payment Menu in a Seamless View. It should look like
 this, depending on whether the payer is logged in (top) or a guest user (bottom):
-
-{:.text-center}
-![Payment Menu with payer logged in and card payment opened][login-payment-menu-image]{:width="450" height="900"}
-
-{:.text-center}
-![Payment Menu with guest payer and card payment opened][guest-payment-menu-image]{:width="450" height="850"}
 
 When the consumer completes the payment, the Payment Menu script will be
 signaled and a full redirect to the `completeUrl` sent in with the

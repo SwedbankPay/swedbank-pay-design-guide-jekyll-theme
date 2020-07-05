@@ -1,6 +1,11 @@
 ---
-title: Index
-description: The index page
+title: Home
+estimated_read: 30
+description: |
+    The index page. Lorem Ipsum is simply dummy text of the printing and
+    typesetting industry. Lorem Ipsum has been the industry's standard dummy
+    text ever since the 1500s, when an unknown printer took a galley of type and
+    scrambled it to make a type specimen book.
 menu-order: 0
 ---
 
@@ -8,10 +13,10 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 *   [External absolute full link](https://www.wikipedia.org)
 *   [External protocol relative link](//www.wikipedia.org)
-*   [Internal absolute full link][internal-absolute-full-link]
-*   [Internal explicit relative link][explicit-relative-link]
-*   [Internal implicit relative link][implicit-relative-link]
-*   [Internal absolute link][internal-absolute-link]
+*   Internal absolute full link
+*   Internal explicit relative link
+*   Internal implicit relative link
+*   Internal absolute link
 
 There should be whitespace between paragraphs.
 
@@ -204,15 +209,15 @@ body='This is a **warning**   alert with `<markdown/>`{:.language-html}.' %}
     type='sdk'
     to='/#cards'
 %}
-{% include card.html title='Plugin'
-    text='This is a .dx-card-plugin card. This also has outlined icon'
+{% include card.html title='module'
+    text='This is a .dx-card-module card. This also has outlined icon'
     icon_content='build'
     icon_outlined=true
-    type='plugin'
+    type='module'
     to='/#cards'
 %}
 {% include card.html title='Horizontal'
-    title_type="h3"
+    title_type='h3'
     text='This is a dx-card-horizontal card. Icons used with this card are just numbers'
     icon_content='01'
     horizontal=true

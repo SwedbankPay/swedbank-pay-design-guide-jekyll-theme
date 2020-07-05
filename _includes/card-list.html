@@ -1,0 +1,28 @@
+{%- comment -%}
+**Parameters
+card_list(required): An array with items having the attributes title(required),
+    url(required), description, icon.content(required), icon.outlined, icon.svg.
+    Works with site.pages
+type: sdk | module - Empty type result in default card styling
+col_class(required): Describes what grid column class(es) each card should be wrapped in
+{%- endcomment -%}
+
+{% assign card_list = include.card_list %}
+{% assign type = include.type %}
+{% assign col_class = include.col_class %}
+
+<div class="row card-list">
+    {% for card in card_list %}
+        {% assign title = card.title | split: '–' | last %}
+        <div class="{{ col_class }}">
+            {% include card.html title=title
+                text=card.description
+                icon_content=card.icon.content
+                icon_outlined=card.icon.outlined
+                icon_svg=card.icon.svg
+                to=card.url
+                type=type
+            %}
+        </div>
+    {% endfor %}
+</div>

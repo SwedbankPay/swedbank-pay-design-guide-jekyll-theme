@@ -1,3 +1,11 @@
+
+{%- comment -%}
+**Parameters
+card_col_class: Grid column class the cards should be wrapped in
+num_dates: Amount of rows (based on dates in release_notes) should be displayed
+    in release-notes
+{%- endcomment -%}
+
 {% assign card_col_class = include.card_col_class | default: "col-xxl-3 col-xl-6 col-lg-6" %}
 {% assign num_dates = include.num_dates | default: 3 %}
 
@@ -16,7 +24,7 @@
                 </p>
             </div>
             <div class="front-page-intro-cards">
-                <h2 id="front-page-start">Start your integration</h2>
+                <h2 id="front-page-start" class="heading-line heading-line-white" >Start your integration</h2>
                 <div class="row mt-4">
                     <div class="{{ card_col_class }}">
                         {% include card.html title='Checkout'
@@ -80,27 +88,37 @@
         </div>
     </div>
         
-        <a href="/demoshop" class="front-page-demoshop">
+        <a href="https://ecom.externalintegration.payex.com/pspdemoshop" class="front-page-demoshop">
             <span class="front-page-demoshop-text">
                 <span class="h2">Try our Demoshop<span>.</span></span>
                 <span class="demoshop-text-description">
-                    Unsure about how it all works? See how our checkout and payment is used
+                    Unsure about how it all works? See how our checkout and payment methods are used
                     in practice!
                 </span>
             </span>
             <span class="front-page-demoshop-link">
                 <span class="h3">Go to the demoshop</span>
                 <i class="material-icons">arrow_forward</i>
-                <img class="demoshop-link-img d-none d-xl-flex" 
-                    src="/assets/img/demoshop.svg"
-                    alt="demoshop"
-                />
+                <span class="demoshop-link-img">
+                    <img class="demoshop-link-img-mobile d-md-none d-lg-flex d-xl-none d-xxl-flex" 
+                        src="/assets/img/demoshop-mobile.svg"
+                        alt="demoshop-mobile"
+                    />
+                    <img class="demoshop-link-img-mobile d-none d-md-none d-lg-flex d-xl-none" 
+                        src="/assets/img/demoshop-mobile2.svg"
+                        alt="demoshop-mobile2"
+                    />
+                    <img class="demoshop-link-img-web d-none d-sm-none d-md-flex d-lg-none d-xl-flex" 
+                        src="/assets/img/demoshop-web.svg"
+                        alt="demoshop-web"
+                    />
+                </span>
             </span>
         </a>
     
     <div class="front-page-container">
         <div class="front-page-cards-sdk">
-            <h2 id="front-page-sdk">Looking for SDKs?</h2>
+            <h2 id="front-page-sdk" class="heading-line heading-line-sdk">Looking for SDKs?</h2>
             <div class="row mt-4">
                 <div class="{{ card_col_class }}">
                     {% include card.html title='Android SDK'
@@ -108,7 +126,7 @@
                         icon_content='img/sdks/logo-android.svg'
                         icon_svg=true
                         type='sdk'
-                        to='/sdk/android'
+                        to=''
                     %}
                 </div>
                 <div class="{{ card_col_class }}">
@@ -117,7 +135,7 @@
                         icon_content='img/sdks/logo-swift.svg'
                         icon_svg=true
                         type='sdk'
-                        to='/sdk/swift'
+                        to=''
                     %}
                 </div>
                 <div class="{{ card_col_class }}">
@@ -126,7 +144,7 @@
                         icon_content='img/sdks/logo-net.svg'
                         icon_svg=true
                         type='sdk'
-                        to='/sdk/net'
+                        to=''
                     %}
                 </div>
                 <div class="{{ card_col_class }}">
@@ -135,53 +153,53 @@
                     icon_content='img/sdks/logo-php.svg'
                     icon_svg=true
                     type='sdk'
-                    to='/sdk/php'
+                    to=''
                     %}
                 </div>
             </div>
         </div>
         
-        <div class="front-page-cards-plugin">
-            <h2 id="front-page-plugins">Or perhaps plugins?</h2>
+        <div class="front-page-cards-module">
+            <h2 id="front-page-module" class="heading-line heading-line-module">Or perhaps modules?</h2>
             <div class="row mt-4">
                 <div class="{{ card_col_class }}">
                     {% include card.html title='Episerver'
-                        text='See how you can integrate the Episerver plugin'
-                        icon_content='img/plugins/logo-episerver.svg'
+                        text='See how you can integrate the Episerver module'
+                        icon_content='img/modules/logo-episerver.svg'
                         icon_svg=true
-                        type='plugin'
-                        to='/plugin/episerver'
+                        type='module'
+                        to=''
                     %}
                 </div>
                 <div class="{{ card_col_class }}">
                     {% include card.html title='Magento 2'
-                        text='See how you can integrate the Magento 2 plugin'
-                        icon_content='img/plugins/logo-magento2.svg'
+                        text='See how you can integrate the Magento 2 module'
+                        icon_content='img/modules/logo-magento2.svg'
                         icon_svg=true
-                        type='plugin'
-                        to='/plugin/magento-2'
+                        type='module'
+                        to=''
                     %}
                 </div>
                 <div class="{{ card_col_class }}">
                     {% include card.html title='WooCommerce'
-                        text='See how you can integrate the WooCommerce plugin'
-                        icon_content='img/plugins/logo-woocommerce.svg'
+                        text='See how you can integrate the WooCommerce module'
+                        icon_content='img/modules/logo-woocommerce.svg'
                         icon_svg=true
-                        type='plugin'
-                        to='/plugin/woocommerce'
+                        type='module'
+                        to=''
                     %}
                 </div>
             </div>
         </div>
         
         <div class="front-page-release-notes">
-            <h2 id="front-page-release-notes">What's new in the documentation</h2>
+            <h2 id="front-page-release-notes" class="heading-line heading-line-green">What's new in the documentation</h2>
             {% include release_notes.html num_dates=num_dates %}
             <a href="/resources/release-notes">See full release notes</a>
         </div>
         
         <div class="front-page-cards-extra">
-            <h2 id="front-page-extra-resources">Extra resources</h2>
+            <h2 id="front-page-extra-resources" class="heading-line">Extra resources</h2>
             <div class="row mt-4">
                 <div class="{{ card_col_class }}">
                     {% include card.html title='OS development guidelines'
@@ -219,7 +237,7 @@
             <div class="front-page-contact-content">
                 <div class="row">
                     <div class="col-xl-7">
-                        <h2 id="front-page-contact">Can't find what you are looking for?</h2>
+                        <h2 id="front-page-contact" class="heading-line heading-line-long">Can't find what you are looking for?</h2>
                         <p>
                             We are always trying to make the developer portal as
                             good as it can be please don’t hesitate to contact us.
