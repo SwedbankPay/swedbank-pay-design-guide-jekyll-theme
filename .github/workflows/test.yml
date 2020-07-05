@@ -16,19 +16,37 @@ jobs:
       - name: Upload site
         uses: actions/upload-artifact@v2
         with:
-          name: site
+          name: build-site
           path: _site
 
   verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: verify
+      - name: Verify build
         run: |
           docker-compose run \
             -e PAGES_REPO_NWO=${{ github.repository }} \
             -e JEKYLL_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
-            jekyll build --verify
+            jekyll build \
+            --env=production \
+            --verify \
+            --ignore-url http://www.wikipedia.org \
+            --ignore-url http://restcookbook.com/Basics/loggingin/ \
+            --ignore-url '%r{/swedbank-pay-design-guide-jekyll-theme/.*}'
+
+      - name: Upload build output artifacts
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: verify-site
+          path: _site
+
+      - name: Verify absolute URL
+        run: grep 'https://swedbankpay.github.io/swedbank-pay-design-guide-jekyll-theme/' $(pwd)/_site/index.html
+
+      - name: Verify base URL
+        run: grep '/swedbank-pay-design-guide-jekyll-theme/assets/' $(pwd)/_site/index.html
 
   remark-lint:
     runs-on: ubuntu-latest
