@@ -49,7 +49,9 @@ jobs:
           docker-compose run \
             -e PAGES_REPO_NWO=${{ github.repository }} \
             -e JEKYLL_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
-            jekyll deploy --dry-run
+            jekyll deploy \
+            --env=production \
+            --dry-run
       - name: Upload deploy
         uses: actions/upload-artifact@v2
         if: always()

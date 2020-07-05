@@ -20,4 +20,5 @@ jobs:
           docker-compose run \
             -e PAGES_REPO_NWO=${{ github.repository }} \
             -e JEKYLL_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
-            jekyll deploy
+            jekyll deploy \
+            --env=production
