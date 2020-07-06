@@ -41,7 +41,7 @@ module Jekyll
           header = {
             id: header['id'],
             title: header.content.strip,
-            hash: "#{child['href']}"
+            hash: (child['href']).to_s
           }
           headers.push(header)
         end
@@ -56,7 +56,7 @@ module Jekyll
         file.xpath('//*[@id="dx-sidebar-main-nav-ul"]').each do |location|
           location.inner_html = sidebar
         end
-        File.open(filename, 'w') { |f| f.write(file.to_xhtml(encoding: 'UTF-8')) }
+        File.open(filename, 'w') { |f| f.write(file.to_html(encoding: 'UTF-8')) }
       end
 
       # File.open('_site/sidebar.html', 'w') { |f| f.write(sidebar) }
@@ -72,12 +72,14 @@ module Jekyll
 
     def generateSubgroup(filename, key, value, all_subgroups, level)
       title = value[:title].split('–').last
-      subsubgroup_list = all_subgroups.select {|subsubgroup_key, _subsubgroup_value| subsubgroup_key.include? key and subsubgroup_key != key and \
-                                                key.split('/').length > level}
-      
+      subsubgroup_list = all_subgroups.select do |subsubgroup_key, _subsubgroup_value|
+        subsubgroup_key.include? key and subsubgroup_key != key and \
+          key.split('/').length > level
+      end
+
       subgroup = ''
       has_subgroups = !all_subgroups.empty?
-      if value[:headers].any? or !subsubgroup_list.empty?
+      if value[:headers].any? || !subsubgroup_list.empty?
         if has_subgroups
           url = value[:url]
           active = active?(filename, url, true)
@@ -87,14 +89,14 @@ module Jekyll
           subgroup << "<div class=\"nav-subgroup-heading\"><i class=\"material-icons\">arrow_right</i><a href=\"#{url}\">#{title}</a></div>"
           subgroup << '<ul class="nav-ul">'
 
-          if subsubgroup_list.empty? 
+          if subsubgroup_list.empty?
             value[:headers].each do |header|
               subgroup << "<li class=\"nav-leaf\"><a href=\"#{value[:url]}#{header[:hash]}\">#{header[:title]}</a></li>"
             end
           else
             subgroup_leaf_class = active ? 'nav-leaf nav-subgroup-leaf active' : 'nav-leaf nav-subgroup-leaf'
             subgroup << "<li class=\"#{subgroup_leaf_class}\"><a href=\"#{value[:url]}\">#{title} overview</a></li>"
-            
+
             subsubgroup_list.each do |subsubgroup_key, subsubgroup_value|
               subgroup << generateSubgroup(filename, subsubgroup_key, subsubgroup_value, subsubgroup_list, 3)
             end
@@ -142,7 +144,7 @@ module Jekyll
         child << subgroup
 
         if subgroups.any?
-          subgroups.select {|subgroup_key, _subgroup_value| subgroup_key.split('/').length <= 3 }.each do |subgroup_key, subgroup_value|
+          subgroups.select { |subgroup_key, _subgroup_value| subgroup_key.split('/').length <= 3 }.each do |subgroup_key, subgroup_value|
             subgroup = generateSubgroup(filename, subgroup_key, subgroup_value, subgroups, 2)
             child << subgroup
           end

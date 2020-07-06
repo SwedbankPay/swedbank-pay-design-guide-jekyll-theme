@@ -8,19 +8,51 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: jekyll build
-        run: docker-compose run jekyll build
+        run: |
+          docker-compose run \
+            -e PAGES_REPO_NWO=${{ github.repository }} \
+            -e JEKYLL_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
+            jekyll build
+      - name: Upload site
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-site
+          path: _site
 
   verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: verify
-        run: docker-compose run jekyll build --verify
+      - name: Verify build
+        run: |
+          docker-compose run \
+            -e PAGES_REPO_NWO=${{ github.repository }} \
+            -e JEKYLL_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
+            jekyll build \
+            --env=production \
+            --verify \
+            --ignore-url http://www.wikipedia.org \
+            --ignore-url http://restcookbook.com/Basics/loggingin/ \
+            --ignore-url '%r{/swedbank-pay-design-guide-jekyll-theme/.*}'
+
+      - name: Upload build output artifacts
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: verify-site
+          path: _site
+
+      - name: Verify absolute URL
+        run: grep 'https://swedbankpay.github.io/swedbank-pay-design-guide-jekyll-theme/' $(pwd)/_site/index.html
+
+      - name: Verify base URL
+        run: grep '/swedbank-pay-design-guide-jekyll-theme/assets/' $(pwd)/_site/index.html
 
   remark-lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: npm install
       - uses: prologic/action-remark-lint@v0.0.5
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -31,9 +63,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: deploy dry-run
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_ACTOR: payex-dev
-          GITHUB_ACTOR_EMAIL: dev@payex.com
-          GITHUB_REPO: https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-        run: docker-compose run jekyll deploy --dry-run
+        run: |
+          docker-compose run \
+            -e PAGES_REPO_NWO=${{ github.repository }} \
+            -e JEKYLL_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
+            jekyll deploy \
+            --env=production \
+            --dry-run
+      - name: Upload deploy
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: deploy
+          path: .
