@@ -220,9 +220,9 @@ img { max-width: 100%; }
 
 .jumbotron p:last-of-type { margin-bottom: 0; }
 
-a[href^='//']:not([href*='']):after, a[href^='http://']:not([href*='']):after, a[href^='https://']:not([href*='']):after { content: url("../img/external-url.svg"); margin-left: .3rem; display: inline-block; width: .8rem; background-repeat: none; color: #257886; }
+a[href^='//']:not([href*='https://swedbankpay.github.io']):after, a[href^='http://']:not([href*='https://swedbankpay.github.io']):after, a[href^='https://']:not([href*='https://swedbankpay.github.io']):after { content: url("../img/external-url.svg"); margin-left: .3rem; display: inline-block; width: .8rem; background-repeat: none; color: #257886; }
 
-a.front-page-demoshop[href^='//']:not([href*='']):after, a.front-page-demoshop[href^='http://']:not([href*='']):after, a.front-page-demoshop[href^='https://']:not([href*='']):after { display: none; }
+a.front-page-demoshop[href^='//']:not([href*='https://swedbankpay.github.io']):after, a.front-page-demoshop[href^='http://']:not([href*='https://swedbankpay.github.io']):after, a.front-page-demoshop[href^='https://']:not([href*='https://swedbankpay.github.io']):after { display: none; }
 
 #designguide .designguide-header .topbar-info a { margin-left: 5px; color: rgba(34, 34, 34, 0.75); fill: rgba(34, 34, 34, 0.75); border: none; }
 
