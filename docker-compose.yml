@@ -3,6 +3,7 @@ version: "3.7"
 services:
   jekyll:
     image: swedbankpay/jekyll-plantuml:2.0.3
+    command: serve
     environment:
       - DEBUG=true
     container_name: jekyll
