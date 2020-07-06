@@ -21,9 +21,17 @@
 // Initialize sidebar navigation scroll activation
 (function () {
     var headings = document.querySelectorAll(".doc-container h2");
-    var tocLinks = document.querySelectorAll("nav.sidebar-nav .nav-subgroup.active .nav-leaf");
+    const activeSubgroup = document.querySelector("nav.sidebar-nav .nav-subgroup.active");
+    var tocLinks = [];
 
-    if (tocLinks.length === 0) {
+    if (activeSubgroup) {
+        if (activeSubgroup.querySelector(".nav-subgroup.active")) {
+            tocLinks = activeSubgroup.querySelector(".nav-subgroup.active").querySelectorAll(".nav-leaf");
+        } else {
+            tocLinks = activeSubgroup.querySelectorAll(".nav-leaf");
+        }
+        
+    } else {
         tocLinks = document.querySelectorAll("nav.sidebar-nav .nav-group.active .nav-leaf");
     }
 
@@ -43,7 +51,7 @@
             const activeLeaf = document.querySelector("nav.sidebar-nav .nav-leaf.active");
             const buffer = document.body.clientHeight * 0.1;
             const currentPos = window.pageYOffset + buffer;
-    
+
             // TODO: Probably a stupid way to compute "how far left can we scroll until
             //       we reach the bottom of the page", but it seems to work.
             const scrollDistanceFromBottom = document.documentElement.scrollHeight
@@ -52,7 +60,7 @@
                 - buffer;
                 
                 
-                activeLeaf && activeLeaf.classList.remove("active");
+            activeLeaf && !activeLeaf.classList.contains("nav-subgroup-leaf") && activeLeaf.classList.remove("active");
                 
                 
             if (scrollDistanceFromBottom > 0) {
