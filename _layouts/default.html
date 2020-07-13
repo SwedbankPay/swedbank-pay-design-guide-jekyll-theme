@@ -41,8 +41,20 @@
         <meta property="og:image" value="{{ image }}" />{% endif %}
         <title>{{ title }}</title>
         <link rel="stylesheet" href="{{ design_guide_url }}/styles/dg-style.css" />
-        <link rel="stylesheet" href="{{ '/assets/css/swedbank-pay-design-guide-theme.css' | absolute_url }}" />
-        <link rel="stylesheet" href="{{ '/assets/css/pygments-autumn.css' | relative_url }}" />
+        {% css_asset_tag theme %}
+        - /_assets/scss/card.scss
+        - /_assets/scss/code-view.scss
+        - /_assets/scss/colors.scss
+        - /_assets/scss/fonts.scss
+        - /_assets/scss/front-page.scss
+        - /_assets/scss/heading.scss
+        - /_assets/scss/paragraph-highlight.scss
+        - /_assets/scss/sidebar.scss
+        - /_assets/scss/swedbank-pay-design-guide-theme.scss
+        - /_assets/scss/title-header.scss
+        - /_assets/scss/variables.scss
+        - /_assets/css/pygments-autumn.css
+        {% endcss_asset_tag %}
         <link rel="shortcut icon" href="{{ design_guide_url }}/icons/favicon.ico">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ design_guide_url }}/icons/favicon-16x16.png">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ design_guide_url }}/icons/favicon-32x32.png">
@@ -86,7 +98,7 @@
                         {% assign description = page.description %}
                         {% assign estimated_read = page.estimated_read %}
                         <div class="title-header">
-                            <div class="title-header-container 
+                            <div class="title-header-container
                                     {% if page.card_overview%} max-width-card-overview
                                     {% else %} max-width
                                     {% endif %}">
