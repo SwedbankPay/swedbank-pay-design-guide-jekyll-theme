@@ -1,0 +1,287 @@
+@import 'colors';
+@import 'fonts';
+@import 'variables';
+
+@import 'card';
+@import 'code-view';
+@import 'front-page';
+@import 'heading';
+@import 'paragraph-highlight';
+@import 'sidebar';
+@import 'title-header';
+
+$bg: #f5f2f0;
+$darkened-bg: darken($bg, 10%);
+
+img {
+    max-width: 100%;
+}
+
+.table {
+    th,
+    td {
+        > .material-icons {
+            float: none;
+        }
+    }
+}
+
+.jumbotron {
+    /* TODO: Make .jumbotron @extend .slab. */
+    font-family: Roboto, sans-serif;
+    font-size: 21px;
+    font-weight: 1;
+    min-height: 1rem;
+    padding: 3rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    background-color: #ebe7e2;
+
+    strong {
+        font-weight: bold;
+    }
+
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+a[href ^= '//']:not([href *= '{{ site.url }}']):after,
+a[href ^= 'http://']:not([href *= '{{ site.url }}']):after,
+a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
+    content: url('../img/external-url.svg');
+    margin-left: .3rem;
+    display: inline-block;
+    width: .8rem;
+    background-repeat: none;
+    color: #257886;
+
+    &.front-page-demoshop {
+        display: none;
+    }
+}
+
+#designguide .designguide-header .topbar-info a {
+    margin-left: 5px;
+    color: rgba(34,34,34,.75);
+    fill: rgba(34,34,34,.75);
+    border: none
+}
+
+#designguide .designguide-header .topbar-info a:after {
+    content: none;
+    display: inline;
+}
+
+#designguide .designguide-header .topbar-info a svg {
+    overflow: visible;
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#designguide .designguide-header .topbar-info a:hover {
+    color: rgba(0,0,0,.75);
+    fill: rgba(0,0,0,.75)
+}
+
+.iterator {
+    margin: 1rem 0;
+}
+
+.iterator a.btn {
+    justify-content: center;
+    width: 49%;
+    min-width: 8rem;
+}
+
+.iterator a.btn[rel='prev']:before {
+    content: '❮';
+    position: absolute;
+    left: 1rem;
+}
+
+.iterator a.btn[rel='next']:after {
+    content: '❯';
+    position: absolute;
+    right: 1rem;
+}
+
+#designguide {
+    .dg-sidebar {
+        border-right: 1px solid $background-gray;
+    
+        .main-nav-ul {
+            border-bottom: 1px solid $background-gray;
+        }
+    }
+}
+
+.documentation {
+    code[data-processed='true'].language-mermaid {
+        background: none;
+        border: none;
+        padding: 0px
+    }
+
+    .highlighter-rouge {
+        margin-bottom: 1rem;
+
+        code {
+            padding: 0;
+            background-color: none;
+            border: none;
+            font-size: 1rem;
+        }
+
+        pre.highlight {
+            background-color: #f5f2f0;
+            margin: 0;
+        }
+
+        .rouge-table {
+            position: relative;
+
+            &, tbody, tr {
+                display: block;
+            }
+
+            pre {
+                font-family: 'Akkurat Mono', monospace;
+            }
+
+            .rouge-gutter {
+                text-align: right;
+                padding: 0 .7rem;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background-color: #f5f2f0;
+                border-right: 1px solid #e1d7d1;
+            }
+
+            .rouge-code {
+                padding-left: 50px;
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    }
+
+    .no-padding {
+        padding: 0;
+        padding-bottom: 5rem;
+    }
+
+    .normal-padding {
+        padding: 3rem 1rem 5rem;
+    }
+
+    .max-width {
+        max-width: $max-width;
+    }
+
+    .max-width-card-overview {
+        max-width: 880px;
+    }
+
+
+    .language-mermaid {
+        $apricot: #fbf2ea;
+        $pink: #efb7b6;
+        $brand-info-light: #e8eff9;
+        $brand-success-light: #f2f7eb;
+        $darker-apricot: darken($apricot, 10%);
+        $black: #222;
+        $brown: #2f2424;
+
+        svg {
+            width: 100% !important;
+            height: 100%;
+        }
+
+        rect.actor {
+            fill: $apricot !important;
+            stroke: $darker-apricot !important;
+        }
+
+        .activation0,
+        .activation1,
+        .activation2 {
+            fill: $brand-success-light !important;
+            stroke: darken($brand-success-light, 10%) !important;
+        }
+
+        text.actor {
+            font-family: Arial, sans-serif !important;
+            font-size: 1rem !important;
+        }
+
+        .actor-line {
+            stroke: $apricot !important;
+            stroke-width: 4 !important;
+        }
+
+        .messageLine0 {
+            stroke-width: 2 !important;
+            stroke-dasharray: "2 2";
+            marker-end: "url(#arrowhead)";
+            stroke: $black !important;
+        }
+
+        .messageLine1 {
+            stroke-width:1.5;
+            stroke-dasharray: "2 2";
+            stroke: $brown !important;
+        }
+
+        #arrowhead {
+            fill: $brown !important;
+        }
+
+        .messageText {
+            fill: $black !important;
+            stroke: none;
+            font-family: Arial, sans-serif !important;
+            font-size: 1rem !important;
+        }
+
+        .labelBox {
+            stroke: $pink !important;
+            fill: $pink !important;
+        }
+
+        .labelText {
+            fill: $black !important;
+            stroke: none;
+            font-family: Arial, sans-serif !important;
+        }
+
+        .loopText {
+            fill: $black !important;
+            stroke: none;
+            font-family: Arial, sans-serif !important;
+            font-size: 1rem !important;
+        }
+
+        .loopLine {
+            stroke-width:2;
+            stroke-dasharray: "2 2";
+            marker-end:"url(#arrowhead)";
+            stroke: $pink !important;
+        }
+
+        .note {
+            stroke: darken($brand-info-light, 20%) !important;
+            fill: $brand-info-light !important;
+        }
+
+        .noteText {
+            fill: $black !important;
+            stroke: none;
+            font-family: Arial, sans-serif !important;
+            font-size: 1rem !important;
+        }
+    }
+}
