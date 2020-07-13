@@ -1,3 +1,4 @@
+@import 'colors.scss';
 
 .heading-line {
     position: relative;
@@ -45,31 +46,31 @@
 }
 
 
-h1 > a.header-anchor,
-h2 > a.header-anchor,
-h3 > a.header-anchor,
-h4 > a.header-anchor,
-h5 > a.header-anchor,
-h6 > a.header-anchor {
+h1>a.header-anchor,
+h2>a.header-anchor,
+h3>a.header-anchor,
+h4>a.header-anchor,
+h5>a.header-anchor,
+h6>a.header-anchor {
     color: #ebf8f2;
     text-decoration: none;
 }
 
-h1:hover > a.header-anchor,
-h2:hover > a.header-anchor,
-h3:hover > a.header-anchor,
-h4:hover > a.header-anchor,
-h5:hover > a.header-anchor,
-h6:hover > a.header-anchor {
+h1:hover>a.header-anchor,
+h2:hover>a.header-anchor,
+h3:hover>a.header-anchor,
+h4:hover>a.header-anchor,
+h5:hover>a.header-anchor,
+h6:hover>a.header-anchor {
     color: #8acdc3;
 }
 
-h1 > a.header-anchor:hover,
-h2 > a.header-anchor:hover,
-h3 > a.header-anchor:hover,
-h4 > a.header-anchor:hover,
-h5 > a.header-anchor:hover,
-h6 > a.header-anchor:hover {
+h1>a.header-anchor:hover,
+h2>a.header-anchor:hover,
+h3>a.header-anchor:hover,
+h4>a.header-anchor:hover,
+h5>a.header-anchor:hover,
+h6>a.header-anchor:hover {
     color: #257886;
 }
 

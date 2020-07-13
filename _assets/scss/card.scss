@@ -1,3 +1,5 @@
+@import 'colors.scss';
+
 .dx-card {
     display: flex;
     flex-grow: 1;
@@ -28,11 +30,11 @@
         }
     }
 
-    > i {
+    >i {
         color: $brown;
         margin-top: auto;
     }
-    
+
 
     .dx-card-icon {
         display: flex;
@@ -70,7 +72,7 @@
         padding-top: 1.5rem;
         margin-top: 2.25rem;
 
-        > i {
+        >i {
             margin-top: initial;
         }
 
@@ -79,7 +81,7 @@
             height: 2rem;
             top: -1rem;
         }
-        
+
         .dx-card-content {
             margin-bottom: 0;
             margin-top: 0.75rem;
@@ -92,15 +94,16 @@
     }
 
     &.dx-card-sdk {
+
         &:hover,
         &:focus {
 
-        &:after {
-            border-bottom: 4px solid $turquoise;
+            &:after {
+                border-bottom: 4px solid $turquoise;
+            }
         }
-    }
 
-        > i {
+        >i {
             color: $turquoise;
         }
 
@@ -115,6 +118,7 @@
     }
 
     &.dx-card-module {
+
         &:hover,
         &:focus {
 
@@ -123,7 +127,7 @@
             }
         }
 
-        > i {
+        >i {
             color: $card-pink;
         }
 
@@ -160,7 +164,7 @@
 .card-list {
     margin-top: 1.5rem;
 
-    > [class*='col-'] {
+    >[class*='col-'] {
         display: flex;
     }
 }
