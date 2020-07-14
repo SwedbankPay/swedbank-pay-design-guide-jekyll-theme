@@ -1,4 +1,4 @@
-
+@import 'colors.scss';
 
 .sidebar {
     .sidebar-nav {
@@ -35,7 +35,7 @@
                 .nav-ul {
                     .nav-subgroup {
                         &.active {
-                            > .nav-subgroup-heading {
+                            >.nav-subgroup-heading {
                                 a {
                                     color: #257886;
                                     font-weight: 700;

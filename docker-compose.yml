@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   jekyll:
-    image: swedbankpay/jekyll-plantuml:2.0.3
+    image: swedbankpay/jekyll-plantuml:2.0.5
     command: serve
     environment:
       - DEBUG=true
@@ -12,4 +12,4 @@ services:
       - 35729:35729
     volumes:
       - .:/srv/jekyll
-      - .bundle:/usr/local/bundle
+      - .bundle:/usr/gem

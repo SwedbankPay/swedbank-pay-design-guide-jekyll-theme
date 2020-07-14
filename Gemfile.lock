@@ -2,7 +2,18 @@ PATH
   remote: .
   specs:
     swedbank-pay-design-guide-jekyll-theme (1.0.0)
+      faraday (>= 1.0.1)
+      html-proofer
       jekyll (>= 3.7, < 5.0)
+      jekyll-assets
+      jekyll-github-metadata
+      jekyll-material-icon-tag
+      jekyll_asset_pipeline
+      jemoji
+      kramdown-plantuml
+      nokogiri (~> 1.10)
+      rake (~> 13.0)
+      sass
 
 GEM
   remote: https://rubygems.org/
@@ -23,13 +34,11 @@ GEM
     ethon (0.12.0)
       ffi (>= 1.3.0)
     eventmachine (1.2.7)
-    eventmachine (1.2.7-x64-mingw32)
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
     fastimage (1.8.1)
       addressable (~> 2.3, >= 2.3.5)
     ffi (1.13.1)
-    ffi (1.13.1-x64-mingw32)
     forwardable-extended (2.6.0)
     gemoji (3.0.1)
     hike (1.2.3)
@@ -78,11 +87,14 @@ GEM
       sassc (> 2.0.1, < 3.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
+    jekyll_asset_pipeline (0.6.2)
+      jekyll (>= 3.5, < 5.0)
+      liquid (~> 4.0)
     jemoji (0.12.0)
       gemoji (~> 3.0)
       html-pipeline (~> 2.2)
       jekyll (>= 3.0, < 5.0)
-    kramdown (2.2.1)
+    kramdown (2.3.0)
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
@@ -93,13 +105,12 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
     mini_magick (4.10.1)
-    mini_portile2 (2.5.0)
+    mini_portile2 (2.4.0)
     minitest (5.14.1)
-    multi_json (1.14.1)
+    multi_json (1.15.0)
     multipart-post (2.1.1)
-    nokogiri (1.11.0.rc2)
-      mini_portile2 (~> 2.5.0)
-    nokogiri (1.11.0.rc2-x64-mingw32)
+    nokogiri (1.10.10)
+      mini_portile2 (~> 2.4.0)
     nokogumbo (2.0.2)
       nokogiri (~> 1.8, >= 1.8.4)
     octokit (4.18.0)
@@ -125,8 +136,6 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.7)
     sassc (2.4.0)
       ffi (~> 1.9)
-    sassc (2.4.0-x64-mingw32)
-      ffi (~> 1.9)
     sawyer (0.8.2)
       addressable (>= 2.3.5)
       faraday (> 0.8, < 2.0)
@@ -150,24 +159,13 @@ GEM
       thread_safe (~> 0.1)
     unicode-display_width (1.7.0)
     yell (2.2.2)
-    zeitwerk (2.3.0)
+    zeitwerk (2.3.1)
 
 PLATFORMS
   ruby
-  x64-mingw32
 
 DEPENDENCIES
   bundler
-  faraday (~> 1.0.1)
-  html-proofer
-  jekyll (~> 4.1)
-  jekyll-assets
-  jekyll-github-metadata
-  jekyll-material-icon-tag
-  jemoji
-  kramdown-plantuml
-  nokogiri (~> 1.10)
-  rake (~> 13.0)
   swedbank-pay-design-guide-jekyll-theme!
 
 BUNDLED WITH

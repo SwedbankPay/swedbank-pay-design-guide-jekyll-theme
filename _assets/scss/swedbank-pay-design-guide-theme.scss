@@ -1,23 +1,14 @@
----
-# This front matter makes Jekyll read the file as a template.
----
+@import 'colors.scss';
+@import 'fonts.scss';
+@import 'variables.scss';
 
-/*
-TODO: Implement a table element style that @extends .table and .table-striped
-      so we don't have to decorate all Markdown tables.
-*/
-
-@import 'colors';
-@import 'fonts';
-@import 'variables';
-
-@import 'card';
-@import 'code-view';
-@import 'front-page';
-@import 'heading';
-@import 'paragraph-highlight';
-@import 'sidebar';
-@import 'title-header';
+@import 'card.scss';
+@import 'code-view.scss';
+@import 'front-page.scss';
+@import 'heading.scss';
+@import 'paragraph-highlight.scss';
+@import 'sidebar.scss';
+@import 'title-header.scss';
 
 $bg: #f5f2f0;
 $darkened-bg: darken($bg, 10%);
@@ -27,9 +18,10 @@ img {
 }
 
 .table {
+
     th,
     td {
-        > .material-icons {
+        >.material-icons {
             float: none;
         }
     }
@@ -55,9 +47,9 @@ img {
     }
 }
 
-a[href ^= '//']:not([href *= '{{ site.url }}']):after,
-a[href ^= 'http://']:not([href *= '{{ site.url }}']):after,
-a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
+a[href ^='//']:not([href *='{{ site.url }}']):after,
+a[href ^='http://']:not([href *='{{ site.url }}']):after,
+a[href ^='https://']:not([href *='{{ site.url }}']):after {
     content: url('../img/external-url.svg');
     margin-left: .3rem;
     display: inline-block;
@@ -72,8 +64,8 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
 
 #designguide .designguide-header .topbar-info a {
     margin-left: 5px;
-    color: rgba(34,34,34,.75);
-    fill: rgba(34,34,34,.75);
+    color: rgba(34, 34, 34, .75);
+    fill: rgba(34, 34, 34, .75);
     border: none
 }
 
@@ -91,8 +83,8 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
 }
 
 #designguide .designguide-header .topbar-info a:hover {
-    color: rgba(0,0,0,.75);
-    fill: rgba(0,0,0,.75)
+    color: rgba(0, 0, 0, .75);
+    fill: rgba(0, 0, 0, .75)
 }
 
 .iterator {
@@ -120,7 +112,7 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
 #designguide {
     .dg-sidebar {
         border-right: 1px solid $background-gray;
-    
+
         .main-nav-ul {
             border-bottom: 1px solid $background-gray;
         }
@@ -152,7 +144,9 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
         .rouge-table {
             position: relative;
 
-            &, tbody, tr {
+            &,
+            tbody,
+            tr {
                 display: block;
             }
 
@@ -240,7 +234,7 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
         }
 
         .messageLine1 {
-            stroke-width:1.5;
+            stroke-width: 1.5;
             stroke-dasharray: "2 2";
             stroke: $brown !important;
         }
@@ -275,9 +269,9 @@ a[href ^= 'https://']:not([href *= '{{ site.url }}']):after {
         }
 
         .loopLine {
-            stroke-width:2;
+            stroke-width: 2;
             stroke-dasharray: "2 2";
-            marker-end:"url(#arrowhead)";
+            marker-end: "url(#arrowhead)";
             stroke: $pink !important;
         }
 

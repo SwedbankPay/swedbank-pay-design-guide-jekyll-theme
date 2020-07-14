@@ -1,18 +1,29 @@
 # frozen_string_literal: true
 
 Gem::Specification.new do |spec|
-  spec.name          = "swedbank-pay-design-guide-jekyll-theme"
-  spec.version       = "1.0.0"
-  spec.authors       = ["Asbjørn Ulsberg"]
-  spec.email         = ["asbjorn@ulsberg.no"]
+  spec.name          = 'swedbank-pay-design-guide-jekyll-theme'
+  spec.version       = '1.5.1-article-no-main0001'
+  spec.authors       = ['Asbjørn Ulsberg']
+  spec.email         = ['asbjorn@ulsberg.no']
 
-  spec.summary       = "Swedbank Pay Design Guide theme for Jekyll"
-  spec.homepage      = "https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme"
-  spec.license       = "Apache 2.0"
+  spec.summary       = 'Swedbank Pay Design Guide theme for Jekyll'
+  spec.homepage      = 'https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme'
+  spec.license       = 'Apache-2.0'
 
-  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_includes|_sass|LICENSE|README)!i) }
+  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(/^(assets|_layouts|_includes|_sass|_plugins|_assets|LICENSE|README)/i) }
 
-  spec.add_runtime_dependency "jekyll", ">= 3.7", "< 5.0"
+  spec.add_runtime_dependency 'jekyll', '>= 3.7', '< 5.0'
+  spec.add_runtime_dependency 'jekyll-assets'
+  spec.add_runtime_dependency 'jekyll-github-metadata'
+  spec.add_runtime_dependency 'jekyll-material-icon-tag'
+  spec.add_runtime_dependency 'jekyll_asset_pipeline'
+  spec.add_runtime_dependency 'jemoji'
+  spec.add_runtime_dependency 'sass'
+  spec.add_runtime_dependency 'faraday', '>= 1.0.1'
+  spec.add_runtime_dependency 'html-proofer'
+  spec.add_runtime_dependency 'kramdown-plantuml'
+  spec.add_runtime_dependency 'rake', '~> 13.0'
+  spec.add_runtime_dependency 'nokogiri', '~> 1.10'
 
-  spec.add_development_dependency "bundler"
+  spec.add_development_dependency 'bundler'
 end

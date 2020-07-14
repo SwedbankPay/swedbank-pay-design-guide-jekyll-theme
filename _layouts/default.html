@@ -7,12 +7,12 @@
 {%- assign design_guide_version = site.design_guide.version | default: '4.7.0' -%}
 {%- assign design_guide_url = design_guide_base_url | append: '/v/' | append: design_guide_version -%}
 {%- if page.sidebar.navigation == nil -%}
-    {%- unless page.name contains "index"  -%}
-        {%- assign dirname = page.dir | split: "/" | last | remove: "/" | capitalize -%}
-        {%- unless dirname == "" -%}
-            {%- assign title = dirname | append: " – " | append: title -%}
-        {%- endunless -%}
-    {%- endunless -%}
+{%- unless page.name contains "index"  -%}
+{%- assign dirname = page.dir | split: "/" | last | remove: "/" | capitalize -%}
+{%- unless dirname == "" -%}
+{%- assign title = dirname | append: " – " | append: title -%}
+{%- endunless -%}
+{%- endunless -%}
 {%- endif -%}
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
@@ -41,8 +41,20 @@
         <meta property="og:image" value="{{ image }}" />{% endif %}
         <title>{{ title }}</title>
         <link rel="stylesheet" href="{{ design_guide_url }}/styles/dg-style.css" />
-        <link rel="stylesheet" href="{{ '/assets/css/swedbank-pay-design-guide-theme.css' | relative_url }}" />
-        <link rel="stylesheet" href="{{ '/assets/css/pygments-autumn.css' | relative_url }}" />
+        {% css_asset_tag theme %}
+        - /_assets/scss/card.scss
+        - /_assets/scss/code-view.scss
+        - /_assets/scss/colors.scss
+        - /_assets/scss/fonts.scss
+        - /_assets/scss/front-page.scss
+        - /_assets/scss/heading.scss
+        - /_assets/scss/paragraph-highlight.scss
+        - /_assets/scss/sidebar.scss
+        - /_assets/scss/swedbank-pay-design-guide-theme.scss
+        - /_assets/scss/title-header.scss
+        - /_assets/scss/variables.scss
+        - /_assets/css/pygments-autumn.css
+        {% endcss_asset_tag %}
         <link rel="shortcut icon" href="{{ design_guide_url }}/icons/favicon.ico">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ design_guide_url }}/icons/favicon-16x16.png">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ design_guide_url }}/icons/favicon-32x32.png">
@@ -56,7 +68,6 @@
         <script src="{{ "/assets/tipuesearch/tipuesearch_set.js" | relative_url }}"></script>
         <script src="{{ "/assets/tipuesearch/tipuesearch.min.js" | relative_url }}"></script>
         {%- endif %}
-        <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
     </head>
 
     <body>
@@ -67,52 +78,53 @@
                         <div class="sidebar dg-sidebar">
                             <nav class="sidebar-nav">
                                 <a href="/" class="sidebar-header">
-                                    <img src="{{ design_guide_url }}/img/swedbankpay-logo-v.svg" alt="Swedbank Pay vertical logo" />
+                                    <img src="{{ design_guide_url }}/img/swedbankpay-logo-v.svg"
+                                        alt="Swedbank Pay vertical logo" />
                                     <div class="sidebar-header-text">
                                         <span>{</span>developer portal<span>}</span>
                                     </div>
                                 </a>
-                          
+
                                 <ul id="dx-sidebar-main-nav-ul" class="main-nav-ul">
                                 </ul>
                             </nav>
-                          </div>
+                        </div>
                     </div>
 
                     <main class="doc-view col-xxl-10 col-lg-9">
                         {% if front_page != true %}
-                            {% assign title_lead = title | split: '–' | first %}
-                            {% assign title_main = title | split: '–' | last %}
-                            {% assign description = page.description %}
-                            {% assign estimated_read = page.estimated_read %}
-                            <div class="title-header">
-                                <div class="title-header-container 
+                        {% assign title_lead = title | split: '–' | first %}
+                        {% assign title_main = title | split: '–' | last %}
+                        {% assign description = page.description %}
+                        {% assign estimated_read = page.estimated_read %}
+                        <div class="title-header">
+                            <div class="title-header-container
                                     {% if page.card_overview%} max-width-card-overview
                                     {% else %} max-width
-                                    {% endif %}"
-                                >
-                                    {% if title_lead != title_main %}
-                                        <h4>{{ title_lead }}</h4>
-                                    {% endif %}
-                                    <h1>{{ title_main }}</h1>
-                                    {% if estimated_read %}
-                                        <div class="title-header-estimated-read">
-                                            <i class="material-icons">schedule</i>
-                                            {{ estimated_read }} min read
-                                        </div>
-                                    {% endif %}
-                                    {% if description %}
-                                        <p>{{ description | markdownify }}</p>
-                                    {% endif %}
+                                    {% endif %}">
+                                {% if title_lead != title_main %}
+                                <h4>{{ title_lead }}</h4>
+                                {% endif %}
+                                <h1>{{ title_main }}</h1>
+                                {% if estimated_read %}
+                                <div class="title-header-estimated-read">
+                                    <i class="material-icons">schedule</i>
+                                    {{ estimated_read }} min read
                                 </div>
+                                {% endif %}
+                                {% if description %}
+                                <p>{{ description | markdownify }}</p>
+                                {% endif %}
                             </div>
+                        </div>
                         {% endif %}
                         <div class="doc-container{% if front_page == true %} no-padding
                             {% elsif page.card_overview%} normal-padding max-width-card-overview
                             {% else %} normal-padding max-width
-                            {% endif %}"
-                        >
-                            {% include anchor_headings.html html=content anchorClass='header-anchor' %}
+                            {% endif %}">
+                            <article>
+                                {% include anchor_headings.html html=content anchorClass='header-anchor' %}
+                            </article>
                         </div>
                     </main>
                 </div>
@@ -126,7 +138,8 @@
         <script src="{{ design_guide_url }}/scripts/dg.js"></script>
         <script src="{{ '/assets/js/swedbank-pay-design-guide-theme.js' | relative_url }}"></script>
         {%- if site.google_analytics.tracking_id %}
-            {% include google_analytics.html %}
+        {% include google_analytics.html %}
         {%- endif %}
     </body>
+
 </html>
