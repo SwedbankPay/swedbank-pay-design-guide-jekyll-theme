@@ -77,7 +77,9 @@ jobs:
       env:
         GEM_VERSION: ${{ steps.gemversion.outputs.version }}
       run: |
-        GEM_BUILD_NAME=$(gem build swedbank-pay-design-guide-jekyll-theme.gemspec | awk '/File/ {print $2}')
+        gem build swedbank-pay-design-guide-jekyll-theme.gemspec
+        mv swedbank-pay-design-guide-jekyll-theme-1.0.0.gem swedbank-pay-design-guide-jekyll-theme.${GEM_VERSION}.gem
+        GEM_BUILD_NAME=swedbank-pay-design-guide-jekyll-theme.${GEM_VERSION}.gem
         echo "Gem filename: '${GEM_BUILD_NAME}'"
         echo "::set-output name=name::${GEM_BUILD_NAME}"
 
