@@ -2,7 +2,18 @@ PATH
   remote: .
   specs:
     swedbank-pay-design-guide-jekyll-theme (1.0.0)
+      faraday (>= 1.0.1)
+      html-proofer
       jekyll (>= 3.7, < 5.0)
+      jekyll-assets
+      jekyll-github-metadata
+      jekyll-material-icon-tag
+      jekyll_asset_pipeline
+      jemoji
+      kramdown-plantuml
+      nokogiri (~> 1.10)
+      rake (~> 13.0)
+      sass
 
 GEM
   remote: https://rubygems.org/
@@ -96,9 +107,9 @@ GEM
     mini_magick (4.10.1)
     mini_portile2 (2.4.0)
     minitest (5.14.1)
-    multi_json (1.14.1)
+    multi_json (1.15.0)
     multipart-post (2.1.1)
-    nokogiri (1.10.9)
+    nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     nokogumbo (2.0.2)
       nokogiri (~> 1.8, >= 1.8.4)
@@ -109,7 +120,7 @@ GEM
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (4.0.5)
-    rack (2.1.4)
+    rack (1.6.13)
     rainbow (3.0.0)
     rake (13.0.1)
     rb-fsevent (0.10.4)
@@ -155,18 +166,6 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
-  faraday (~> 1.0.1)
-  html-proofer
-  jekyll (~> 4.1)
-  jekyll-assets
-  jekyll-github-metadata
-  jekyll-material-icon-tag
-  jekyll_asset_pipeline
-  jemoji
-  kramdown-plantuml
-  nokogiri (~> 1.10)
-  rake (~> 13.0)
-  sass
   swedbank-pay-design-guide-jekyll-theme!
 
 BUNDLED WITH
