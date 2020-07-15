@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = 'swedbank-pay-design-guide-jekyll-theme'
-  spec.version       = '1.5.2-conversion-to-gem-theme010'
+  spec.version       = '1.5.2-conversion-to-gem-theme011'
   spec.authors       = ['Asbjørn Ulsberg']
   spec.email         = ['asbjorn@ulsberg.no']
 
