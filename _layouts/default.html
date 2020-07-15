@@ -41,20 +41,7 @@
         <meta property="og:image" value="{{ image }}" />{% endif %}
         <title>{{ title }}</title>
         <link rel="stylesheet" href="{{ design_guide_url }}/styles/dg-style.css" />
-        {% css_asset_tag theme %}
-        - _sass/card.scss
-        - _sass/code-view.scss
-        - _sass/colors.scss
-        - _sass/fonts.scss
-        - _sass/front-page.scss
-        - _sass/heading.scss
-        - _sass/paragraph-highlight.scss
-        - _sass/sidebar.scss
-        - _sass/swedbank-pay-design-guide-theme.scss
-        - _sass/title-header.scss
-        - _sass/variables.scss
-        - _assets/css/pygments-autumn.css
-        {% endcss_asset_tag %}
+        <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
         <link rel="shortcut icon" href="{{ design_guide_url }}/icons/favicon.ico">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ design_guide_url }}/icons/favicon-16x16.png">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ design_guide_url }}/icons/favicon-32x32.png">
