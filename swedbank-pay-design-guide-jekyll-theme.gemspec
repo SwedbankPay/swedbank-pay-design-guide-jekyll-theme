@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = 'swedbank-pay-design-guide-jekyll-theme'
-  spec.version       = '1.5.2-conversion-to-gem-theme011'
+  spec.version       = '1.5.2-conversion-to-gem-theme012'
   spec.authors       = ['Asbjørn Ulsberg']
   spec.email         = ['asbjorn@ulsberg.no']
 
@@ -10,13 +10,13 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme'
   spec.license       = 'Apache-2.0'
 
-  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(/^(assets|_layouts|_includes|_sass|_plugins|_assets|LICENSE|README)/i) }
+  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(/^(assets|_layouts|_includes|_sass|_plugins|_assets|lib|LICENSE|README)/i) }
+  spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency 'jekyll', '>= 3.7', '< 5.0'
   spec.add_runtime_dependency 'jekyll-assets'
   spec.add_runtime_dependency 'jekyll-github-metadata'
   spec.add_runtime_dependency 'jekyll-material-icon-tag'
-  spec.add_runtime_dependency 'jekyll_asset_pipeline'
   spec.add_runtime_dependency 'jemoji'
   spec.add_runtime_dependency 'sass'
   spec.add_runtime_dependency 'faraday', '>= 1.0.1'
