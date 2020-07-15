@@ -12,8 +12,7 @@ module JekyllAssetPipeline
     end
 
     def convert
-      dir = File.join(__dir__, '..', '_assets', 'scss')
-      Sass::Engine.new(@content, syntax: :scss, load_paths: [dir]).render
+      return Sass::Engine.new(@content, syntax: :scss, load_paths: [@dirname]).render
     end
   end
 end
