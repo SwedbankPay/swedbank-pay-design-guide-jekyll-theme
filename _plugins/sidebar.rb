@@ -4,6 +4,11 @@ require 'jekyll'
 require 'nokogiri'
 require 'json'
 
+###
+# This plugin works only if used as a remote-theme
+# If included as a theme or gem this plugin must be copied over
+###
+
 module Jekyll
   class Sidebar
     attr_accessor :hash_pre_render
