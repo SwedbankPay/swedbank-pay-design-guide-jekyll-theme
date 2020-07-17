@@ -3,8 +3,8 @@
 Gem::Specification.new do |spec|
   spec.name          = 'swedbank-pay-design-guide-jekyll-theme'
   spec.version       = '1.5.2-conversion-to-gem-theme013'
-  spec.authors       = ['Asbjørn Ulsberg']
-  spec.email         = ['asbjorn@ulsberg.no']
+  spec.authors       = ['Swedbank Pay']
+  spec.email         = ['opensource@swedbankpay.com']
 
   spec.summary       = 'Swedbank Pay Design Guide theme for Jekyll'
   spec.homepage      = 'https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme'
