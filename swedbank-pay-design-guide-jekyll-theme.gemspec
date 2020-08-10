@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-gem_version = "undefined"
+gem_version = "gem_version_not_set"
 
 if ENV.has_key?("GEM_VERSION")
   value = ENV["GEM_VERSION"].safe_strip
