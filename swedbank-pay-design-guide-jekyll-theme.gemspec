@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-gem_version = "gem_version_not_set"
+gem_version = "0.0.1.gemversionnotset"
 
 if ENV.has_key?("GEM_VERSION")
-  value = ENV["GEM_VERSION"].safe_strip
-  puts "Environment variable GEM_VERSION used with value: #{value}."
+  gem_version = ENV["GEM_VERSION"].safe_strip
+  puts "Environment variable GEM_VERSION used with value: #{gem_version}."
 else
-  puts "No Environment variable for GEM_VERSION found. Fallback value: #{value}."
+  puts "No Environment variable for GEM_VERSION found. Fallback value: #{gem_version}."
 end
 
 Gem::Specification.new do |spec|
   spec.name          = 'swedbank-pay-design-guide-jekyll-theme'
-  spec.version       = gem_version
+  spec.version       = "#{gem_version}"
   spec.authors       = ['Swedbank Pay']
   spec.email         = ['opensource@swedbankpay.com']
 
