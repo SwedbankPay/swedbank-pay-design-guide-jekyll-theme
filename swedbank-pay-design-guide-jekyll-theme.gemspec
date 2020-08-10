@@ -1,5 +1,14 @@
 # frozen_string_literal: true
 
+gem_version = "undefined"
+
+if ENV.has_key?("GEM_VERSION")
+  value = ENV["GEM_VERSION"].safe_strip
+  puts "Environment variable GEM_VERSION used with value: #{value}."
+else
+  puts "No Environment variable for GEM_VERSION found. Fallback value: #{value}."
+end
+
 Gem::Specification.new do |spec|
   spec.name          = 'swedbank-pay-design-guide-jekyll-theme'
   spec.version       = '1.5.2-conversion-to-gem-theme013'
