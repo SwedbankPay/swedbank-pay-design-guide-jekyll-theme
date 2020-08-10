@@ -1,9 +1,8 @@
-
 {%- comment -%}
 **Parameters
 card_col_class: Grid column class the cards should be wrapped in
 num_dates: Amount of rows (based on dates in release_notes) should be displayed
-    in release-notes
+in release-notes
 {%- endcomment -%}
 
 {% assign card_col_class = include.card_col_class | default: "col-xxl-3 col-xl-6 col-lg-6" %}
@@ -15,7 +14,7 @@ num_dates: Amount of rows (based on dates in release_notes) should be displayed
             <div class="front-page-hero">
                 <h3>Welcome to the Swedbank Pay</h3>
                 <div class="front-page-hero-name">
-                    {<span>developer portal</span>} 
+                    {<span>developer portal</span>}
                 </div>
                 <p>
                     Our developer portal gives you the full tool box for integrating
@@ -24,7 +23,7 @@ num_dates: Amount of rows (based on dates in release_notes) should be displayed
                 </p>
             </div>
             <div class="front-page-intro-cards">
-                <h2 id="front-page-start" class="heading-line heading-line-white" >Start your integration</h2>
+                <h2 id="front-page-start" class="heading-line heading-line-white">Start your integration</h2>
                 <div class="row mt-4">
                     <div class="{{ card_col_class }}">
                         {% include card.html title='Checkout'
@@ -47,19 +46,10 @@ num_dates: Amount of rows (based on dates in release_notes) should be displayed
                             to='/payments'
                         %}
                     </div>
-                    <div class="{{ card_col_class }}">
-                        {% include card.html title='Gift Cards'
-                            title_type="h2"
-                            text='Our Gift Cards API allows your customers to pay with
-                            prepaid gift cards issued by Swedbank Pay in your Checkout.'
-                            icon_content='card_giftcard'
-                            to='/gift-cards'
-                        %}
-                    </div>
                 </div>
             </div>
         </div>
-        
+
         <div class="front-page-merchants">
             <h6>Trusted by</h6>
             <div class="merchants-container justify-content-xxl-between">
@@ -87,35 +77,29 @@ num_dates: Amount of rows (based on dates in release_notes) should be displayed
             </div>
         </div>
     </div>
-        
-        <a href="https://ecom.externalintegration.payex.com/pspdemoshop" class="front-page-demoshop">
-            <span class="front-page-demoshop-text">
-                <span class="h2">Try our Demoshop<span>.</span></span>
-                <span class="demoshop-text-description">
-                    Unsure about how it all works? See how our checkout and payment methods are used
-                    in practice!
-                </span>
+
+    <a href="https://ecom.externalintegration.payex.com/pspdemoshop" class="front-page-demoshop">
+        <span class="front-page-demoshop-text">
+            <span class="h2">Try our Demoshop<span>.</span></span>
+            <span class="demoshop-text-description">
+                Unsure about how it all works? See how our checkout and payment methods are used
+                in practice!
             </span>
-            <span class="front-page-demoshop-link">
-                <span class="h3">Go to the demoshop</span>
-                <i class="material-icons">arrow_forward</i>
-                <span class="demoshop-link-img">
-                    <img class="demoshop-link-img-mobile d-md-none d-lg-flex d-xl-none d-xxl-flex" 
-                        src="/assets/img/demoshop-mobile.svg"
-                        alt="demoshop-mobile"
-                    />
-                    <img class="demoshop-link-img-mobile d-none d-md-none d-lg-flex d-xl-none" 
-                        src="/assets/img/demoshop-mobile2.svg"
-                        alt="demoshop-mobile2"
-                    />
-                    <img class="demoshop-link-img-web d-none d-sm-none d-md-flex d-lg-none d-xl-flex" 
-                        src="/assets/img/demoshop-web.svg"
-                        alt="demoshop-web"
-                    />
-                </span>
+        </span>
+        <span class="front-page-demoshop-link">
+            <span class="h3">Go to the demoshop</span>
+            <i class="material-icons">arrow_forward</i>
+            <span class="demoshop-link-img">
+                <img class="demoshop-link-img-mobile d-md-none d-lg-flex d-xl-none d-xxl-flex"
+                    src="/assets/img/demoshop-mobile.svg" alt="demoshop-mobile" />
+                <img class="demoshop-link-img-mobile d-none d-md-none d-lg-flex d-xl-none"
+                    src="/assets/img/demoshop-mobile2.svg" alt="demoshop-mobile2" />
+                <img class="demoshop-link-img-web d-none d-sm-none d-md-flex d-lg-none d-xl-flex"
+                    src="/assets/img/demoshop-web.svg" alt="demoshop-web" />
             </span>
-        </a>
-    
+        </span>
+    </a>
+
     <div class="front-page-container">
         <div class="front-page-cards-sdk">
             <h2 id="front-page-sdk" class="heading-line heading-line-sdk">Looking for SDKs?</h2>
@@ -158,7 +142,7 @@ num_dates: Amount of rows (based on dates in release_notes) should be displayed
                 </div>
             </div>
         </div>
-        
+
         <div class="front-page-cards-module">
             <h2 id="front-page-module" class="heading-line heading-line-module">Or perhaps modules?</h2>
             <div class="row mt-4">
@@ -191,13 +175,14 @@ num_dates: Amount of rows (based on dates in release_notes) should be displayed
                 </div>
             </div>
         </div>
-        
+
         <div class="front-page-release-notes">
-            <h2 id="front-page-release-notes" class="heading-line heading-line-green">What's new in the documentation</h2>
+            <h2 id="front-page-release-notes" class="heading-line heading-line-green">What's new in the documentation
+            </h2>
             {% include release_notes.html num_dates=num_dates %}
             <a href="/resources/release-notes">See full release notes</a>
         </div>
-        
+
         <div class="front-page-cards-extra">
             <h2 id="front-page-extra-resources" class="heading-line">Extra resources</h2>
             <div class="row mt-4">
@@ -232,12 +217,13 @@ num_dates: Amount of rows (based on dates in release_notes) should be displayed
                 </div>
             </div>
         </div>
-    
+
         <div class="front-page-contact">
             <div class="front-page-contact-content">
                 <div class="row">
                     <div class="col-xl-7">
-                        <h2 id="front-page-contact" class="heading-line heading-line-long">Can't find what you are looking for?</h2>
+                        <h2 id="front-page-contact" class="heading-line heading-line-long">Can't find what you are
+                            looking for?</h2>
                         <p>
                             We are always trying to make the developer portal as
                             good as it can be please don’t hesitate to contact us.
@@ -249,7 +235,6 @@ num_dates: Amount of rows (based on dates in release_notes) should be displayed
                 </div>
             </div>
         </div>
-        
-    </div>  
-</div>
 
+    </div>
+</div>
