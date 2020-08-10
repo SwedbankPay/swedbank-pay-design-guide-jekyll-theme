@@ -11,7 +11,7 @@ end
 
 Gem::Specification.new do |spec|
   spec.name          = 'swedbank-pay-design-guide-jekyll-theme'
-  spec.version       = '1.5.2-conversion-to-gem-theme013'
+  spec.version       = gem_version
   spec.authors       = ['Swedbank Pay']
   spec.email         = ['opensource@swedbankpay.com']
 
