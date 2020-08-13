@@ -11,7 +11,6 @@ require 'json'
 
 module Jekyll
   class Sidebar
-    safe true
     attr_accessor :hash_pre_render
     attr_accessor :filename_with_headers
 
