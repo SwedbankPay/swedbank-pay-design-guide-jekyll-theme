@@ -1,8 +1,14 @@
 # frozen_string_literal: true
 require 'json'
 
-json_data = Json.load(File.open("version.json"))
-gem_version = json_data["version"]
+# Required for bundle install
+gem_version = "0.0.1.gemversionnotset"
+
+version_file = "version.json"
+if File.file? version_file
+  json_data = JSON.load(File.open(version_file))
+  gem_version = json_data["version"]
+end
 
 Gem::Specification.new do |spec|
   spec.name          = 'swedbank-pay-design-guide-jekyll-theme'
