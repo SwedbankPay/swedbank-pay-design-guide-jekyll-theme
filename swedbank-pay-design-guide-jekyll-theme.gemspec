@@ -6,7 +6,7 @@ gem_version = "0.0.1.gemversionnotset"
 
 version_file = "version.json"
 if File.file? version_file
-  json_data = Json.load(File.open(version_file))
+  json_data = JSON.load(File.open(version_file))
   gem_version = json_data["version"]
 end
 
