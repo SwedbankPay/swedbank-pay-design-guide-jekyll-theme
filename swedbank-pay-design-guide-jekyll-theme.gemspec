@@ -1,12 +1,13 @@
 # frozen_string_literal: true
+require 'json'
 
+# Required for bundle install
 gem_version = "0.0.1.gemversionnotset"
 
-if ENV.has_key?("GEM_VERSION")
-  gem_version = ENV["GEM_VERSION"]
-  puts "Environment variable GEM_VERSION used with value: #{gem_version}."
-else
-  puts "No Environment variable for GEM_VERSION found. Fallback value: #{gem_version}."
+version_file = "version.json"
+if File.file? version_file
+  json_data = Json.load(File.open(version_file))
+  gem_version = json_data["version"]
 end
 
 Gem::Specification.new do |spec|
