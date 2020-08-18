@@ -1,13 +1,8 @@
 # frozen_string_literal: true
+require 'json'
 
-gem_version = "0.0.1.gemversionnotset"
-
-if ENV.has_key?("GEM_VERSION")
-  gem_version = ENV["GEM_VERSION"]
-  puts "Environment variable GEM_VERSION used with value: #{gem_version}."
-else
-  puts "No Environment variable for GEM_VERSION found. Fallback value: #{gem_version}."
-end
+json_data = Json.load(File.open("version.json"))
+gem_version = json_data["version"]
 
 Gem::Specification.new do |spec|
   spec.name          = 'swedbank-pay-design-guide-jekyll-theme'
