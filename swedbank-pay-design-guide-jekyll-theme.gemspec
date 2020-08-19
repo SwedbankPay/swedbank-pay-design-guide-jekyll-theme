@@ -10,7 +10,7 @@ def get_gem_version
     json_data = JSON.load(File.open(version_file))
     gem_version = json_data["version"]
   end
-  gem_version
+  return gem_version
 end
 
 
