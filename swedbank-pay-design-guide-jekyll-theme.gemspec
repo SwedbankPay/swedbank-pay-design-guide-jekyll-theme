@@ -15,8 +15,41 @@ module ExtraMethods
   end
 end
 
+module Gem
+  module Specification
+    class Class
+      def get_gem_version
+        # Required for bundle install
+        gem_version = "0.0.1.gemversionnotset"
+      
+        version_file = "version.json"
+        if File.file? version_file
+          json_data = JSON.load(File.open(version_file))
+          gem_version = json_data["version"]
+        end
+        return gem_version
+      end
+    end
+  end
+end
 
-Gem::Specification::Class.class_eval { include ExtraMethods}
+module Gem
+  module Specification
+    def get_gem_version
+      # Required for bundle install
+      gem_version = "0.0.1.gemversionnotset"
+    
+      version_file = "version.json"
+      if File.file? version_file
+        json_data = JSON.load(File.open(version_file))
+        gem_version = json_data["version"]
+      end
+      return gem_version
+    end
+  end
+end
+
+#Gem::Specification::Class.class_eval { include ExtraMethods}
 
 Gem::Specification.new do |spec|
   spec.name          = 'swedbank-pay-design-guide-jekyll-theme'
