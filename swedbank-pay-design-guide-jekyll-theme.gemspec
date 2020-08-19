@@ -16,7 +16,7 @@ module ExtraMethods
 end
 
 
-Gem::Specification.class_eval { include ExtraMethods}
+Gem::Specification::Class.class_eval { include ExtraMethods}
 
 Gem::Specification.new do |spec|
   spec.name          = 'swedbank-pay-design-guide-jekyll-theme'
