@@ -1,17 +1,8 @@
 PATH
   remote: .
   specs:
-    swedbank-pay-design-guide-jekyll-theme (0.0.1.gemversionnotset)
-      faraday (>= 1.0.1)
-      html-proofer
+    swedbank-pay-design-guide-jekyll-theme (1.0.0)
       jekyll (>= 3.7, < 5.0)
-      jekyll-github-metadata
-      jekyll-material-icon-tag
-      jemoji
-      kramdown-plantuml
-      nokogiri (~> 1.10)
-      rake (~> 13.0)
-      sass
 
 GEM
   remote: https://rubygems.org/
@@ -136,6 +127,16 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
+  faraday
+  html-proofer
+  jekyll (>= 3.7, < 5.0)
+  jekyll-github-metadata
+  jekyll-material-icon-tag
+  jemoji
+  kramdown-plantuml
+  nokogiri (~> 1.10)
+  rake (~> 13.0)
+  sass
   swedbank-pay-design-guide-jekyll-theme!
 
 BUNDLED WITH
