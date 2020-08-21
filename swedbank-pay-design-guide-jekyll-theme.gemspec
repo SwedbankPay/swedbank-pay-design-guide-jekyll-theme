@@ -5,7 +5,7 @@ require_relative './lib/gem_version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'swedbank-pay-design-guide-jekyll-theme'
-  spec.version       = Gem::Specification::gem_version
+  spec.version       = Gem::Specification.gem_version
   spec.authors       = ['Swedbank Pay']
   spec.email         = ['opensource@swedbankpay.com']
 
