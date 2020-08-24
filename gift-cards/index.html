@@ -7,20 +7,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="theme-color" content="#000">
-        <meta name="application-name" content="After payment is completed">
+        <meta name="application-name" content="Gift Cards – Introduction">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="apple-mobile-web-app-title" content="After payment is completed">
+        <meta name="apple-mobile-web-app-title" content="Gift Cards – Introduction">
         <meta name="msapplication-TileColor" content="#000">
         <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png">
         <meta property="og:type" value="website">
-        <meta property="og:url" value="https://swedbankpay.github.io/swedbank-pay-design-guide-jekyll-theme/checkout-more/after-payment.html">
-        <meta property="og:title" value="Checkout-more – After payment is completed">
-        <meta name="title" content="Checkout-more – After payment is completed">
+        <meta property="og:url" value="https://swedbankpay.github.io/swedbank-pay-design-guide-jekyll-theme/gift-cards/">
+        <meta property="og:title" value="Gift Cards – Introduction">
+        <meta name="title" content="Gift Cards – Introduction">
         <meta property="og:description" value="Swedbank Pay Design Guide theme for Jekyll">
         <meta name="description" content="Swedbank Pay Design Guide theme for Jekyll">
         <meta property="og:image" value="/image1.png">
-        <title>Checkout-more – After payment is completed</title>
+        <title>Gift Cards – Introduction</title>
         <link rel="stylesheet" href="https://design.swedbankpay.com/v/4.7.0/styles/dg-style.css">
         <link href="/assets/theme-2069cf304c5070dece34386101a6d27d.css" rel="stylesheet" type="text/css">
         <link rel="shortcut icon" href="https://design.swedbankpay.com/v/4.7.0/icons/favicon.ico">
@@ -30,7 +30,7 @@
         <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="After payment is completed">
+<meta name="apple-mobile-web-app-title" content="Gift Cards – Introduction">
 <link rel="apple-touch-icon" sizes="57x57" href="https://design.swedbankpay.com/v/4.7.0/icons/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="https://design.swedbankpay.com/v/4.7.0/icons/apple-touch-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="https://design.swedbankpay.com/v/4.7.0/icons/apple-touch-icon-72x72.png">
@@ -192,12 +192,12 @@
 </li>
 </ul>
 </li>
-<li class="nav-group">
+<li class="nav-group active">
 <div class="nav-group-heading">
 <i class="material-icons">arrow_right</i><span>Gift Cards </span>
 </div>
 <ul class="nav-ul">
-<li class="nav-subgroup">
+<li class="nav-subgroup active">
 <div class="nav-subgroup-heading">
 <i class="material-icons">arrow_right</i><a href="/gift-cards/"> Introduction</a>
 </div>
@@ -254,7 +254,7 @@
 </li>
 </ul>
 </li>
-<li class="nav-group active">
+<li class="nav-group">
 <div class="nav-group-heading">
 <i class="material-icons">arrow_right</i><span>Checkout More</span>
 </div>
@@ -265,7 +265,7 @@
 </div>
 <ul class="nav-ul"><li class="nav-leaf"><a href="/checkout-more/#youd-like-to-checko-out">You’d like to checko out</a></li></ul>
 </li>
-<li class="nav-subgroup active">
+<li class="nav-subgroup">
 <div class="nav-subgroup-heading">
 <i class="material-icons">arrow_right</i><a href="/checkout-more/after-payment">After payment is completed</a>
 </div>
@@ -328,9 +328,9 @@
                                      max-width
                                     ">
                                 
-                                <h4>Checkout-more </h4>
+                                <h4>Gift Cards </h4>
                                 
-                                <h1> After payment is completed</h1>
+                                <h1> Introduction</h1>
                                 
                                 
                             </div>
@@ -339,19 +339,48 @@
                         <div class="doc-container normal-padding max-width
                             ">
                             <article>
-                                <h2 id="after-paaaayment">
+                                <h2 id="overview">
         
         
-          After paaaayment <a href="#after-paaaayment" class="header-anchor"></a>
+          Overview <a href="#overview" class="header-anchor"></a>
         
         
       </h2>
 
-<p>Payment is done? Great, here is what will happen now.
-First we’ll subtract the money from your account, then a wizard will attempt a
-grand spell to carry the money on the back of ants to transfer it to a safe place.
-A secret place.
-A place with a secret.</p>
+<p>The Gift Cards API is a gateway for receiving gift card payments through our
+system. It’s ment to simplify external integration for prepaid gift cards.</p>
+    
+      <h2 id="prerequisites">
+        
+        
+          Prerequisites <a href="#prerequisites" class="header-anchor"></a>
+        
+        
+      </h2>
+
+<ul>
+  <li>An agreement which includes Swedbank Pay Payments.</li>
+  <li>Gift Card Credentials from Swedbank Pay retrieved from the Swedbank Pay
+Admin</li>
+  <li>(VAS CAM).</li>
+</ul>
+    
+      <h2 id="implementation">
+        
+        
+          Implementation <a href="#implementation" class="header-anchor"></a>
+        
+        
+      </h2>
+
+<p>For implementation of the Gift Cards API, please read through the following
+documentation:</p>
+
+<ul>
+  <li><a href="/gift-cards/payment-client">Test Client</a></li>
+  <li><a href="https://stage-evc.payex.com/payment-api/swagger-ui.html">Swagger</a></li>
+  <li><a href="/gift-cards/operations">Operations</a></li>
+</ul>
                             </article>
                         </div>
                     </main>

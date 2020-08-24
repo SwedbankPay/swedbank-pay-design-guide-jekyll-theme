@@ -7,20 +7,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="theme-color" content="#000">
-        <meta name="application-name" content="After payment is completed">
+        <meta name="application-name" content="Test Client">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="apple-mobile-web-app-title" content="After payment is completed">
+        <meta name="apple-mobile-web-app-title" content="Test Client">
         <meta name="msapplication-TileColor" content="#000">
         <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png">
         <meta property="og:type" value="website">
-        <meta property="og:url" value="https://swedbankpay.github.io/swedbank-pay-design-guide-jekyll-theme/checkout-more/after-payment.html">
-        <meta property="og:title" value="Checkout-more – After payment is completed">
-        <meta name="title" content="Checkout-more – After payment is completed">
+        <meta property="og:url" value="https://swedbankpay.github.io/swedbank-pay-design-guide-jekyll-theme/gift-cards/payment-client.html">
+        <meta property="og:title" value="Gift-cards – Test Client">
+        <meta name="title" content="Gift-cards – Test Client">
         <meta property="og:description" value="Swedbank Pay Design Guide theme for Jekyll">
         <meta name="description" content="Swedbank Pay Design Guide theme for Jekyll">
         <meta property="og:image" value="/image1.png">
-        <title>Checkout-more – After payment is completed</title>
+        <title>Gift-cards – Test Client</title>
         <link rel="stylesheet" href="https://design.swedbankpay.com/v/4.7.0/styles/dg-style.css">
         <link href="/assets/theme-2069cf304c5070dece34386101a6d27d.css" rel="stylesheet" type="text/css">
         <link rel="shortcut icon" href="https://design.swedbankpay.com/v/4.7.0/icons/favicon.ico">
@@ -30,7 +30,7 @@
         <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="After payment is completed">
+<meta name="apple-mobile-web-app-title" content="Test Client">
 <link rel="apple-touch-icon" sizes="57x57" href="https://design.swedbankpay.com/v/4.7.0/icons/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="https://design.swedbankpay.com/v/4.7.0/icons/apple-touch-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="https://design.swedbankpay.com/v/4.7.0/icons/apple-touch-icon-72x72.png">
@@ -192,7 +192,7 @@
 </li>
 </ul>
 </li>
-<li class="nav-group">
+<li class="nav-group active">
 <div class="nav-group-heading">
 <i class="material-icons">arrow_right</i><span>Gift Cards </span>
 </div>
@@ -228,7 +228,7 @@
 <li class="nav-leaf"><a href="/gift-cards/other-features#authentication">Authentication</a></li>
 </ul>
 </li>
-<li class="nav-subgroup">
+<li class="nav-subgroup active">
 <div class="nav-subgroup-heading">
 <i class="material-icons">arrow_right</i><a href="/gift-cards/payment-client">Test Client</a>
 </div>
@@ -254,7 +254,7 @@
 </li>
 </ul>
 </li>
-<li class="nav-group active">
+<li class="nav-group">
 <div class="nav-group-heading">
 <i class="material-icons">arrow_right</i><span>Checkout More</span>
 </div>
@@ -265,7 +265,7 @@
 </div>
 <ul class="nav-ul"><li class="nav-leaf"><a href="/checkout-more/#youd-like-to-checko-out">You’d like to checko out</a></li></ul>
 </li>
-<li class="nav-subgroup active">
+<li class="nav-subgroup">
 <div class="nav-subgroup-heading">
 <i class="material-icons">arrow_right</i><a href="/checkout-more/after-payment">After payment is completed</a>
 </div>
@@ -328,9 +328,9 @@
                                      max-width
                                     ">
                                 
-                                <h4>Checkout-more </h4>
+                                <h4>Gift-cards </h4>
                                 
-                                <h1> After payment is completed</h1>
+                                <h1> Test Client</h1>
                                 
                                 
                             </div>
@@ -339,19 +339,151 @@
                         <div class="doc-container normal-padding max-width
                             ">
                             <article>
-                                <h2 id="after-paaaayment">
+                                <hr>
+      <h2 id="prerequisites">
         
         
-          After paaaayment <a href="#after-paaaayment" class="header-anchor"></a>
+          Prerequisites <a href="#prerequisites" class="header-anchor"></a>
         
         
       </h2>
 
-<p>Payment is done? Great, here is what will happen now.
-First we’ll subtract the money from your account, then a wizard will attempt a
-grand spell to carry the money on the back of ants to transfer it to a safe place.
-A secret place.
-A place with a secret.</p>
+<ul>
+  <li>Java 11</li>
+  <li>VueJS</li>
+  <li>Maven</li>
+  <li>Postgres</li>
+</ul>
+    
+      <h2 id="project-setup">
+        
+        
+          Project setup <a href="#project-setup" class="header-anchor"></a>
+        
+        
+      </h2>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="code-view"><code><table class="code-view-table"><tbody><tr>
+<td class="code-view-numbers gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td>
+<td class="code-view-code"><pre>vas-payment-api-client
+├─┬ backend     → backend module with Spring Boot code
+│ ├── src
+│ └── pom.xml
+├─┬ frontend    → frontend module with Vue.js code
+│ ├── src
+│ └── pom.xml
+└── pom.xml     → Maven parent pom managing both modules
+</pre></td>
+</tr></tbody></table></code></pre></div></div>
+    
+      <h2 id="first-app-run">
+        
+        
+          First App run <a href="#first-app-run" class="header-anchor"></a>
+        
+        
+      </h2>
+
+<div class="alert alert-complex alert-informative">
+    <header class="alert-header">
+        
+        <i class="material-icons alert-icon">informative</i>
+      <h3>
+        
+        
+          PostgreSQL
+        
+        
+      </h3></header>
+    
+
+    
+    
+    <div class="alert-body">
+        <p>The application expects a PostgreSQL server to be running on localhost
+with a username <code class="language-html highlighter-rouge">test</code> and password <code class="language-html highlighter-rouge">test</code> to exist.</p>
+    </div>
+    
+    
+</div>
+
+<p>The username and password for PostgreSQL can automatically be configured if
+PostgreSQL server is started in Docker with environment variables
+<code class="language-html highlighter-rouge">POSTGRES_USER=test</code> and <code class="language-html highlighter-rouge">POSTGRES_PASSWORD=test</code> are set (See
+<a href="https://github.com/SwedbankPay/vas-payment-api-client/blob/master/docker-compose.yml">docker-compose.yml</a>).</p>
+
+<p>Clone the <a href="https://github.com/SwedbankPay/vas-payment-api-client">Payment Client repository</a> from Github.</p>
+
+<p>Inside the root directory, do a:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="code-view"><code><table class="code-view-table"><tbody><tr>
+<td class="code-view-numbers gl"><pre class="lineno">1
+</pre></td>
+<td class="code-view-code"><pre>mvn clean <span class="nb">install</span>
+</pre></td>
+</tr></tbody></table></code></pre></div></div>
+
+<p>Run the Spring Boot App:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="code-view"><code><table class="code-view-table"><tbody><tr>
+<td class="code-view-numbers gl"><pre class="lineno">1
+</pre></td>
+<td class="code-view-code"><pre>mvn <span class="nt">--projects</span> backend spring-boot:run
+</pre></td>
+</tr></tbody></table></code></pre></div></div>
+
+<p>Now go to <code class="language-html highlighter-rouge">http://localhost:8080/</code> and have a look at your new client.</p>
+    
+      <h2 id="testing-application">
+        
+        
+          Testing application <a href="#testing-application" class="header-anchor"></a>
+        
+        
+      </h2>
+
+<ol>
+  <li>Add a new Merchant with the details provided by Swedbank Pay.</li>
+  <li>Click on Gift Cards and add a new Gift card.</li>
+</ol>
+    
+      <h2 id="build-docker-image">
+        
+        
+          Build docker image <a href="#build-docker-image" class="header-anchor"></a>
+        
+        
+      </h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="code-view"><code><table class="code-view-table"><tbody><tr>
+<td class="code-view-numbers gl"><pre class="lineno">1
+</pre></td>
+<td class="code-view-code"><pre>mvn <span class="nt">--projects</span> backend clean compile jib:dockerBuild
+</pre></td>
+</tr></tbody></table></code></pre></div></div>
+    
+      <h2 id="deploy-to-local-docker">
+        
+        
+          Deploy to local docker <a href="#deploy-to-local-docker" class="header-anchor"></a>
+        
+        
+      </h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="code-view"><code><table class="code-view-table"><tbody><tr>
+<td class="code-view-numbers gl"><pre class="lineno">1
+</pre></td>
+<td class="code-view-code"><pre>docker-compose up <span class="nt">-d</span>
+</pre></td>
+</tr></tbody></table></code></pre></div></div>
                             </article>
                         </div>
                     </main>
