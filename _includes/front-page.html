@@ -7,6 +7,7 @@ in release-notes
 
 {% assign card_col_class = include.card_col_class | default: "col-xxl-3 col-xl-6 col-lg-6" %}
 {% assign num_dates = include.num_dates | default: 3 %}
+{% assign show_merchants_bar = include.show_merchants_bar | default: false %}
 
 <div class="front-page">
     <div class="front-page-container">
@@ -49,7 +50,7 @@ in release-notes
                 </div>
             </div>
         </div>
-
+        {% if show_merchants_bar == true %}
         <div class="front-page-merchants">
             <h6>Trusted by</h6>
             <div class="merchants-container justify-content-xxl-between">
@@ -77,7 +78,7 @@ in release-notes
             </div>
         </div>
     </div>
-
+    {% endif %}
     <a href="https://ecom.externalintegration.payex.com/pspdemoshop" class="front-page-demoshop">
         <span class="front-page-demoshop-text">
             <span class="h2">Try our Demoshop<span>.</span></span>
