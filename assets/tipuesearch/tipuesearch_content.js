@@ -24,6 +24,11 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/payments/credit.html"
   },{
+    "title": "Checkout More",
+    "text": "You’d like to checko out Great! Just check in first and we’ll get you sorted.",
+    "tags": "",
+    "url": "/swedbank-pay-design-guide-jekyll-theme/checkout-more/"
+  },{
     "title": "Secret payments",
     "text": "How we do secret payments We don’t.",
     "tags": "",
@@ -33,11 +38,6 @@ var tipuesearch = {"pages": [{
     "text": "Woah bby Here we list a few details about payment",
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/payments/"
-  },{
-    "title": "Checkout More",
-    "text": "You’d like to checko out Great! Just check in first and we’ll get you sorted.",
-    "tags": "",
-    "url": "/swedbank-pay-design-guide-jekyll-theme/checkout-more/"
   },{
     "title": "Checkout – Features",
     "text": "All features view_list Payment orders When initiating a payment process arrow_forward autorenew Recurring Payments Initialize payment process containing the order arrow_forward description Description Initialize payment process containing the order arrow_forward settings Operations Initialize payment process containing the order arrow_forward http CompleteURL Initialize payment process containing the order arrow_forward shopping_basket Purchase Payments Initialize payment process containing the order arrow_forward attach_money Prices Initialize payment process containing the order arrow_forward construction Checkin Events Initialize payment process containing the order arrow_forward undo Callback Initialize payment process containing the order arrow_forward",
