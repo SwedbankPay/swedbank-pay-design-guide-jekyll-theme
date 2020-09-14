@@ -1,5 +1,4 @@
 {%- assign title = page.title | default: "PayEx Design Guide theme for Jekyll" -%}
-{%- assign front_page = page.front_page | default: false -%}
 {%- assign description = page.opengraph.description | default: site.opengraph.description -%}
 {%- assign image = page.opengraph.image | default: site.opengraph.image -%}
 {%- assign github_branch = site.github.branch | default : "develop" -%}
@@ -80,14 +79,14 @@
                     </div>
 
                     <main class="doc-view col-xxl-10 col-lg-9">
-                        {% if front_page != true %}
+                        {% if page.layout != 'front-page' %}
                         {% assign title_lead = title | split: '–' | first %}
                         {% assign title_main = title | split: '–' | last %}
                         {% assign description = page.description %}
                         {% assign estimated_read = page.estimated_read %}
                         <div class="title-header">
                             <div class="title-header-container
-                                    {% if page.card_overview%} max-width-card-overview
+                                    {% if page.card_overview %} max-width-card-overview
                                     {% else %} max-width
                                     {% endif %}">
                                 {% if title_lead != title_main %}
@@ -106,8 +105,8 @@
                             </div>
                         </div>
                         {% endif %}
-                        <div class="doc-container{% if front_page == true %} no-padding
-                            {% elsif page.card_overview%} normal-padding max-width-card-overview
+                        <div class="doc-container{% if page.layout == 'front-page' %} no-padding
+                            {% elsif page.card_overview %} normal-padding max-width-card-overview
                             {% else %} normal-padding max-width
                             {% endif %}">
                             <article>
