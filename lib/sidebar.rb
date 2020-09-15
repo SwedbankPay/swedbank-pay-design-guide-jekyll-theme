@@ -5,6 +5,7 @@ require 'nokogiri'
 require 'json'
 require_relative 'active'
 require_relative 'safe_merge'
+require_relative 'sanitized'
 
 module Jekyll
   # A nice sidebar
@@ -48,12 +49,12 @@ module Jekyll
           }
           headers.push(header)
         end
-        sanitized_filename = sanitize_filename(filename)
+        sanitized_filename = filename.sanitized
         @filename_with_headers[sanitized_filename] = { headers: headers }
       end
 
       Dir.glob("#{site.config['destination']}/**/*.html") do |filename|
-        sanitized_filename = sanitize_filename(filename)
+        sanitized_filename = filename.sanitized
         sidebar = render(sanitized_filename)
         file = File.open(filename) { |f| Nokogiri::HTML(f) }
         file.xpath('//*[@id="dx-sidebar-main-nav-ul"]').each do |location|
@@ -66,12 +67,6 @@ module Jekyll
     end
 
     private
-
-    def sanitize_filename(filename)
-      sanitized_filename = filename.match(/(?m)(?<=\b_site).*$/)[0]
-      sanitized_filename = sanitized_filename.gsub('index.html', '')
-      sanitized_filename.gsub('.html', '')
-    end
 
     def generateSubgroup(filename, key, value, all_subgroups, level)
       title = value[:title].split('–').last.strip
