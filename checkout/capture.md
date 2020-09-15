@@ -3,7 +3,7 @@ title: Swedbank Pay Checkout – Capture
 estimated_read: 10
 card_title: Capture the funds
 core: true
-menu-order: 3
+menu_order: 3
 ---
 
 ## Step 5: Capture the funds

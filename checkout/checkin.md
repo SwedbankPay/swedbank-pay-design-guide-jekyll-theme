@@ -9,7 +9,7 @@ description: |
 card_title: Initiate session and display checkin module
 estimated_read: 15
 core: true
-menu-order: 1
+menu_order: 1
 ---
 
 ## Step 1: Initiate session for consumer identification

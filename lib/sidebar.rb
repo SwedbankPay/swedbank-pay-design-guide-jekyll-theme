@@ -15,7 +15,7 @@ module Jekyll
     end
 
     def pre_render(page)
-      menu_order = page['menu-order'].nil? ? 0 : page['menu-order']
+      menu_order = page['menu_order'].nil? ? 0 : page['menu_order']
       hide_from_sidebar = page['hide_from_sidebar'].nil? ? false : page['hide_from_sidebar']
       url = page['url'].gsub('index.html', '').gsub('.html', '')
       @hash_pre_render[url] = {

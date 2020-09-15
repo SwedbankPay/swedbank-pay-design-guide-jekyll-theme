@@ -19,7 +19,7 @@ Original creator: https://sebnitu.com/2016/10/13/dynamic-menus-in-jekyll/
       {% endif %}
 
       <ul class="main-nav-ul">
-          {% assign pages = site.pages | sort: 'menu-order' %}
+          {% assign pages = site.pages | sort: 'menu_order' %}
           {% for node in pages %}
           {% assign node_parts = node.url | split: '/' %}
           {% assign node_depth = node_parts | size %}
@@ -113,4 +113,3 @@ Original creator: https://sebnitu.com/2016/10/13/dynamic-menus-in-jekyll/
       </ul>
   </nav>
 </div>
-
