@@ -19,6 +19,25 @@ jobs:
           name: build-site
           path: _site
 
+  spec:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: ${{ runner.os }}-gems-
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.7'
+      - name: bundle install
+        run: |
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
+      - name: rake spec
+        run: bundle exec rake spec
+
   verify:
     runs-on: ubuntu-latest
     steps:
