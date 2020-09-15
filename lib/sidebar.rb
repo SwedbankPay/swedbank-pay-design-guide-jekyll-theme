@@ -74,8 +74,8 @@ module Jekyll
     end
 
     def generateSubgroup(filename, key, value, all_subgroups, level)
-      title = value[:title].split('–').last
-      
+      title = value[:title].split('–').last.strip
+
       subsubgroup_list = all_subgroups.select do |subsubgroup_key, _subsubgroup_value|
         subsubgroup_key.include? key and subsubgroup_key != key and \
           key.split('/').length > level

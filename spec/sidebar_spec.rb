@@ -29,5 +29,13 @@ describe Jekyll::Sidebar do
     it {
       is_expected.to include('<i class="material-icons">arrow_right</i><span>Home</span>')
     }
+
+    it {
+      is_expected.to include('<ul class="nav-ul"><li class="nav-leaf"><a href="/checkout/capture#step-5-capture-the-funds">Step 5: Capture the funds</a></li></ul>')
+    }
+
+    it {
+      is_expected.to include('<i class="material-icons">arrow_right</i><a href="/checkout/payment-menu">Payment Menu</a>')
+    }
   end
 end
