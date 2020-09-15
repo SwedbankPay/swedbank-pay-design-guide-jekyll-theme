@@ -68,66 +68,72 @@ module Jekyll
 
     private
 
-    def generateSubgroup(filename, key, value, all_subgroups, level)
+    def generate_sub_group(filename, key, value, all_sub_groups, level)
       title = value[:title].split('–').last.strip
+      url = value[:url]
+      headers = value[:headers]
 
-      subsubgroup_list = all_subgroups.select do |subsubgroup_key, _subsubgroup_value|
-        subsubgroup_key.include? key and subsubgroup_key != key and \
+      sub_sub_group_list = all_sub_groups.select do |sub_sub_group_key, _|
+        sub_sub_group_key.include? key and sub_sub_group_key != key and \
           key.split('/').length > level
       end
 
-      subgroup = ''
-      has_subgroups = !all_subgroups.empty?
-      if value[:headers].any? || !subsubgroup_list.empty?
-        if has_subgroups
-          url = value[:url]
+      sub_group = ''
+      has_sub_groups = !all_sub_groups.empty?
+
+      if headers.any? || !sub_sub_group_list.empty?
+        if has_sub_groups
           active = filename.active?(url, true)
           # puts "#{url}, #{filename}, #{key}" if active
-          item_class = active || (url.split('/').length > level && filename.start_with?(url)) ? 'nav-subgroup active' : 'nav-subgroup'
-          subgroup << "<li class=\"#{item_class}\">"
-          subgroup << "<div class=\"nav-subgroup-heading\"><i class=\"material-icons\">arrow_right</i><a href=\"#{url}\">#{title}</a></div>"
-          subgroup << '<ul class="nav-ul">'
+          item_class = active || (url.split('/').length > level && filename.start_with?(url)) ? 'nav-sub_group active' : 'nav-sub_group'
+          sub_group << "<li class=\"#{item_class}\">"
+          sub_group << "<div class=\"nav-sub_group-heading\"><i class=\"material-icons\">arrow_right</i><a href=\"#{url}\">#{title}</a></div>"
+          sub_group << '<ul class="nav-ul">'
 
-          if subsubgroup_list.empty?
-            value[:headers].each do |header|
-              subgroup << "<li class=\"nav-leaf\"><a href=\"#{value[:url]}#{header[:hash]}\">#{header[:title]}</a></li>"
+          if sub_sub_group_list.empty?
+            headers.each do |header|
+              hash = header[:hash]
+              subtitle = header[:title]
+              sub_group << "<li class=\"nav-leaf\"><a href=\"#{url}#{hash}\">#{subtitle}</a></li>"
             end
           else
-            subgroup_leaf_class = active ? 'nav-leaf nav-subgroup-leaf active' : 'nav-leaf nav-subgroup-leaf'
-            subgroup << "<li class=\"#{subgroup_leaf_class}\"><a href=\"#{value[:url]}\">#{title} overview</a></li>"
+            sub_group_leaf_class = active ? 'nav-leaf nav-sub_group-leaf active' : 'nav-leaf nav-sub_group-leaf'
+            sub_group << "<li class=\"#{sub_group_leaf_class}\"><a href=\"#{url}\">#{title} overview</a></li>"
 
-            subsubgroup_list.each do |subsubgroup_key, subsubgroup_value|
-              subgroup << generateSubgroup(filename, subsubgroup_key, subsubgroup_value, subsubgroup_list, 3)
+            sub_sub_group_list.each do |sub_sub_group_key, sub_sub_group_value|
+              sub_group << generate_sub_group(filename, sub_sub_group_key, sub_sub_group_value, sub_sub_group_list, 3)
             end
           end
 
-          subgroup << '</ul>'
-          subgroup << '</li>'
+          sub_group << '</ul>'
+          sub_group << '</li>'
         else
-          value[:headers].each do |header|
-            subgroup << "<li class=\"nav-leaf\"><a href=\"#{value[:url]}#{header[:hash]}\">#{header[:title]}</a></li>"
+          headers.each do |header|
+            hash = header[:hash]
+            subtitle = header[:title]
+            sub_group << "<li class=\"nav-leaf\"><a href=\"#{url}#{hash}\">#{subtitle}</a></li>"
           end
         end
       else
-        subgroup << if has_subgroups
-                      "<li class=\"nav-leaf nav-subgroup-leaf\"><a href=\"#{value[:url]}\">#{title}</a></li>"
+        sub_group << if has_sub_groups
+                      "<li class=\"nav-leaf nav-sub_group-leaf\"><a href=\"#{url}\">#{title}</a></li>"
                     else
-                      "<li class=\"nav-leaf\"><a href=\"#{value[:url]}\">#{title}</a></li>"
+                      "<li class=\"nav-leaf\"><a href=\"#{url}\">#{title}</a></li>"
                     end
       end
 
-      subgroup
+      sub_group
     end
 
     def render(filename)
       sidebar = ''
 
-      merged = @hash_pre_render.safe_merge(@filename_with_headers).sort_by { |_key, value| value[:menu_order] }
-      merged.select { |key, _value| key.split('/').length <= 2 }.each do |key, value|
+      merged = @hash_pre_render.safe_merge(@filename_with_headers).sort_by { |_, value| value[:menu_order] }
+      merged.select { |key, _| key.split('/').length <= 2 }.each do |key, value|
         next if value[:title].nil?
         next if value[:hide_from_sidebar]
 
-        subgroups = merged.select { |subgroup_key, _subgroup_value| subgroup_key.include? key and subgroup_key != key and key != '/' }
+        sub_groups = merged.select { |sub_group_key, _| sub_group_key.include? key and sub_group_key != key and key != '/' }
 
         active = filename.active?(key)
         # puts "#{filename}, #{key}" if active
@@ -138,14 +144,14 @@ module Jekyll
 
         child << '<ul class="nav-ul">'
 
-        subgroup = generateSubgroup(filename, key, value, subgroups, 2)
+        sub_group = generate_sub_group(filename, key, value, sub_groups, 2)
 
-        child << subgroup
+        child << sub_group
 
-        if subgroups.any?
-          subgroups.select { |subgroup_key, _subgroup_value| subgroup_key.split('/').length <= 3 }.each do |subgroup_key, subgroup_value|
-            subgroup = generateSubgroup(filename, subgroup_key, subgroup_value, subgroups, 2)
-            child << subgroup
+        if sub_groups.any?
+          sub_groups.select { |sub_group_key, _sub_group_value| sub_group_key.split('/').length <= 3 }.each do |sub_group_key, sub_group_value|
+            sub_group = generate_sub_group(filename, sub_group_key, sub_group_value, sub_groups, 2)
+            child << sub_group
           end
         end
 
