@@ -5,7 +5,7 @@ description: |
     Swedbank Pay Checkout is a complete reimagination
     of the checkout experience, integrating seamlessly into the merchant website
     through highly customizable and flexible components.
-menu-order: 4
+menu_order: 4
 card_list:
 - card_title: Initiate session for consumer identification
   estimated_read: 15
@@ -34,7 +34,7 @@ card_list in front matter above.
 ## Core implementation overview
 
 {% assign core_card_list = site.pages | where: 'dir', page.dir | where: 'core', true |
-where_exp: 'page', 'page.name != "index.md"' | sort: 'menu-order' %}
+where_exp: 'page', 'page.name != "index.md"' | sort: 'menu_order' %}
 
 {% include card-horizontal-list.html card_list=page.card_list %}
 
@@ -43,7 +43,7 @@ where_exp: 'page', 'page.name != "index.md"' | sort: 'menu-order' %}
 
 {% assign additional_card_list = site.pages |
 where_exp: 'page', 'page.url != "/checkout/" and page.core != true and page.dir contains "/checkout/"' 
-| where: 'additional', true | sort: 'menu-order' 
+| where: 'additional', true | sort: 'menu_order' 
 %}
 
 {% include card-list.html card_list=additional_card_list

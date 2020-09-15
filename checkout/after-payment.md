@@ -5,7 +5,7 @@ description: |
 icon:
     content: add
 additional: true
-menu-order: 4
+menu_order: 4
 ---
 
 {% include jumbotron.html body="When the consumer has **completed** the entire

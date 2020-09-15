@@ -2,7 +2,7 @@
 title:  Recurring payments
 description: |
     See what other features you can implement for your checkout
-menu-order: 2
+menu_order: 2
 ---
 
 ## Recurring Payments

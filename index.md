@@ -6,7 +6,7 @@ description: |
     typesetting industry. Lorem Ipsum has been the industry's standard dummy
     text ever since the 1500s, when an unknown printer took a galley of type and
     scrambled it to make a type specimen book.
-menu-order: 0
+menu_order: 0
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.

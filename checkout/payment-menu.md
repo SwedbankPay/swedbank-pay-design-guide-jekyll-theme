@@ -3,7 +3,7 @@ title: Swedbank Pay Checkout – Payment Menu
 estimated_read: 15
 card_title: Create and display payment menu
 core: true
-menu-order: 2
+menu_order: 2
 ---
 
 {% include jumbotron.html body="**Payment Menu** begins where **Checkin** left

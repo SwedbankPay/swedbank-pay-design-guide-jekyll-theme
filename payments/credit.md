@@ -1,6 +1,6 @@
 ---
 title: Creditting?
-menu-order: 10
+menu_order: 10
 ---
 
 ## Don't read this

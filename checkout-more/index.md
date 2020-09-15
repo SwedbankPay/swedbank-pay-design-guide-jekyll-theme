@@ -1,7 +1,7 @@
 ---
 title: Checkout More
 
-menu-order: 10
+menu_order: 10
 ---
 
 ## You'd like to checko out

@@ -2,7 +2,7 @@
 title:  Payment Orders
 description: |
     See what other features you can implement for your checkout
-menu-order: 1
+menu_order: 1
 ---
 
 ## Payment Orders

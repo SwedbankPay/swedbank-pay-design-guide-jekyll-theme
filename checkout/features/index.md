@@ -7,7 +7,7 @@ description: |
 icon:
   content: remove_red_eye
 additional: true
-menu-order: 5
+menu_order: 5
 card_list: 
 - title: Payment orders
   description: When initiating a payment process
