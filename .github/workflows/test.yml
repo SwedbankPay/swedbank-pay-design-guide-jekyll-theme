@@ -35,9 +35,20 @@ jobs:
         run: |
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
-      - name: rake spec
-        run: bundle exec rake spec
 
+      - name: rspec
+        env:
+          PAGES_REPO_NWO: ${{ github.repository }}
+          JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bundle exec rake
+
+      - name: codecov upload
+        run: bundle exec rake codecov:upload || echo 'Codecov upload failed'
+
+      - name: rubocop
+        run: bundle exec rubocop --fail-level warning --display-only-fail-level-offenses
+
+          
   verify:
     runs-on: ubuntu-latest
     steps:
