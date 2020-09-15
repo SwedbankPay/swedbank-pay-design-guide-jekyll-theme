@@ -5,6 +5,7 @@ require 'nokogiri'
 require 'json'
 
 module Jekyll
+  # A nice sidebar
   class Sidebar
     attr_accessor :hash_pre_render
     attr_accessor :filename_with_headers
@@ -15,7 +16,7 @@ module Jekyll
     end
 
     def pre_render(page)
-      menu_order = page['menu-order'].nil? ? 0 : page['menu-order']
+      menu_order = page['menu_order'].nil? ? 0 : page['menu_order']
       hide_from_sidebar = page['hide_from_sidebar'].nil? ? false : page['hide_from_sidebar']
       url = page['url'].gsub('index.html', '').gsub('.html', '')
       @hash_pre_render[url] = {
@@ -72,6 +73,7 @@ module Jekyll
 
     def generateSubgroup(filename, key, value, all_subgroups, level)
       title = value[:title].split('–').last
+      
       subsubgroup_list = all_subgroups.select do |subsubgroup_key, _subsubgroup_value|
         subsubgroup_key.include? key and subsubgroup_key != key and \
           key.split('/').length > level
