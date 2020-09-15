@@ -3,6 +3,7 @@
 require 'jekyll'
 require 'nokogiri'
 require 'json'
+require_relative 'safe_merge'
 
 module Jekyll
   # A nice sidebar
@@ -125,7 +126,7 @@ module Jekyll
     def render(filename)
       sidebar = ''
 
-      merged = merge(@hash_pre_render, @filename_with_headers).sort_by { |_key, value| value[:menu_order] }
+      merged = @hash_pre_render.safe_merge(@filename_with_headers).sort_by { |_key, value| value[:menu_order] }
       merged.select { |key, _value| key.split('/').length <= 2 }.each do |key, value|
         next if value[:title].nil?
         next if value[:hide_from_sidebar]
@@ -171,31 +172,6 @@ module Jekyll
       end
 
       exact ? filename == url : filename.start_with?(url)
-    end
-
-    def merge(hash1, hash2)
-      all_keys = hash1.keys | hash2.keys
-      result_hash = {}
-
-      all_keys.each do |key|
-        hash_value = {}
-
-        if hash1.key? key
-          value = hash1[key]
-
-          hash_value = value unless value.nil?
-        end
-
-        if hash2.key? key
-          value = hash2[key]
-
-          hash_value = hash_value.merge(value) unless value.nil?
-        end
-
-        result_hash[key] = hash_value
-      end
-
-      result_hash
     end
   end
 end
