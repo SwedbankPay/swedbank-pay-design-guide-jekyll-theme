@@ -3,6 +3,7 @@
 require 'jekyll'
 require 'nokogiri'
 require 'json'
+require_relative 'active'
 require_relative 'safe_merge'
 
 module Jekyll
@@ -85,7 +86,7 @@ module Jekyll
       if value[:headers].any? || !subsubgroup_list.empty?
         if has_subgroups
           url = value[:url]
-          active = active?(filename, url, true)
+          active = filename.active?(url, true)
           # puts "#{url}, #{filename}, #{key}" if active
           item_class = active || (url.split('/').length > level && filename.start_with?(url)) ? 'nav-subgroup active' : 'nav-subgroup'
           subgroup << "<li class=\"#{item_class}\">"
@@ -133,7 +134,7 @@ module Jekyll
 
         subgroups = merged.select { |subgroup_key, _subgroup_value| subgroup_key.include? key and subgroup_key != key and key != '/' }
 
-        active = active?(filename, key)
+        active = filename.active?(key)
         # puts "#{filename}, #{key}" if active
         item_class = active ? 'nav-group active' : 'nav-group'
 
@@ -160,18 +161,6 @@ module Jekyll
 
       File.open('_site/sidebar.html', 'w') { |f| f.write(sidebar) }
       sidebar
-    end
-
-    def active?(filename, url, exact = false)
-      if filename == '/' || url == '/'
-        if filename == '/' && url == '/'
-          return true
-        else
-          return false
-        end
-      end
-
-      exact ? filename == url : filename.start_with?(url)
     end
   end
 end
