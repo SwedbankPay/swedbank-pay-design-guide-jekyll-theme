@@ -105,9 +105,9 @@ module Jekyll
         if has_sub_groups
           active = filename.active?(url, true)
           # puts "#{url}, #{filename}, #{key}" if active
-          item_class = active || (url.split('/').length > level && filename.start_with?(url)) ? 'nav-sub_group active' : 'nav-sub_group'
+          item_class = active || (url.split('/').length > level && filename.start_with?(url)) ? 'nav-subgroup active' : 'nav-subgroup'
           sub_group << "<li class=\"#{item_class}\">"
-          sub_group << "<div class=\"nav-sub_group-heading\"><i class=\"material-icons\">arrow_right</i><a href=\"#{url}\">#{title}</a></div>"
+          sub_group << "<div class=\"nav-subgroup-heading\"><i class=\"material-icons\">arrow_right</i><a href=\"#{url}\">#{title}</a></div>"
           sub_group << '<ul class="nav-ul">'
 
           if sub_sub_group_list.empty?
@@ -117,7 +117,7 @@ module Jekyll
               sub_group << "<li class=\"nav-leaf\"><a href=\"#{url}#{hash}\">#{subtitle}</a></li>"
             end
           else
-            sub_group_leaf_class = active ? 'nav-leaf nav-sub_group-leaf active' : 'nav-leaf nav-sub_group-leaf'
+            sub_group_leaf_class = active ? 'nav-leaf nav-subgroup-leaf active' : 'nav-leaf nav-subgroup-leaf'
             sub_group << "<li class=\"#{sub_group_leaf_class}\"><a href=\"#{url}\">#{title} overview</a></li>"
 
             sub_sub_group_list.each do |sub_sub_group_key, sub_sub_group_value|
@@ -136,7 +136,7 @@ module Jekyll
         end
       else
         sub_group << if has_sub_groups
-                      "<li class=\"nav-leaf nav-sub_group-leaf\"><a href=\"#{url}\">#{title}</a></li>"
+                      "<li class=\"nav-leaf nav-subgroup-leaf\"><a href=\"#{url}\">#{title}</a></li>"
                     else
                       "<li class=\"nav-leaf\"><a href=\"#{url}\">#{title}</a></li>"
                     end
