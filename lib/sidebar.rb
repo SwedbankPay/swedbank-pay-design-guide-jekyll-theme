@@ -32,13 +32,30 @@ module Jekyll
     end
 
     def post_write(site)
+      files = parse_files(site)
+      write_sidebar_to_files(files)
+    end
+
+    private
+
+    def parse_files(site)
       files = []
-      Dir.glob("#{site.config['destination']}/**/*.html") do |filename|
+      destination = site.config['destination']
+      Dir.glob("#{destination}/**/*.html") do |filename|
         doc = File.open(filename) { |f| Nokogiri::HTML(f) }
-        files.push(doc)
+        sanitized_filename = filename.sanitized
+
+        files.push(
+          {
+            filename: filename,
+            sanitized_filename: sanitized_filename,
+            doc: doc
+          }
+        )
 
         headers = []
-        doc.xpath('//h2 ').each do |header|
+
+        doc.xpath('//h2').each do |header|
           next unless header['id']
 
           child = header.last_element_child
@@ -49,24 +66,27 @@ module Jekyll
           }
           headers.push(header)
         end
-        sanitized_filename = filename.sanitized
+
         @filename_with_headers[sanitized_filename] = { headers: headers }
       end
 
-      Dir.glob("#{site.config['destination']}/**/*.html") do |filename|
-        sanitized_filename = filename.sanitized
-        sidebar = render(sanitized_filename)
-        file = File.open(filename) { |f| Nokogiri::HTML(f) }
-        file.xpath('//*[@id="dx-sidebar-main-nav-ul"]').each do |location|
-          location.inner_html = sidebar
-        end
-        File.open(filename, 'w') { |f| f.write(file.to_html(encoding: 'UTF-8')) }
-      end
-
-      # File.open('_site/sidebar.html', 'w') { |f| f.write(sidebar) }
+      files
     end
 
-    private
+    def write_sidebar_to_files(files)
+      files.each do |file|
+        sanitized_filename = file[:sanitized_filename]
+        filename = file[:filename]
+        doc = file[:doc]
+        sidebar = render(sanitized_filename)
+
+        doc.xpath('//*[@id="dx-sidebar-main-nav-ul"]').each do |sidebar_container|
+          sidebar_container.inner_html = sidebar
+        end
+
+        File.open(filename, 'w') { |f| f.write(doc.to_html(encoding: 'UTF-8')) }
+      end
+    end
 
     def generate_sub_group(filename, key, value, all_sub_groups, level)
       title = value[:title].split('–').last.strip
