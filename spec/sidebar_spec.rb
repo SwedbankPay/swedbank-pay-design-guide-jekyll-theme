@@ -38,6 +38,17 @@ describe Jekyll::Sidebar do
       is_expected.to include('<i class="material-icons">arrow_right</i><a href="/checkout/payment-menu">Payment Menu</a>')
     }
 
+    it 'has active home item' do
+      is_expected.to have_tag('ul#dx-sidebar-main-nav-ul', class: 'main-nav-ul') do
+        with_tag('li', class: 'nav-group active') do
+          with_tag('div', class: 'nav-group-heading') do
+            with_tag('i.material-icons', text: 'arrow_right')
+            with_tag('span', text: 'Home')
+          end
+        end
+      end
+    end
+
     it 'has expected nav structure' do
       is_expected.to have_tag('ul', class: 'nav-ul') do
         with_tag('li', class: 'nav-subgroup') do
