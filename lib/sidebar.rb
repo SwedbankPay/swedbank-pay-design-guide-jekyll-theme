@@ -107,24 +107,26 @@ module Jekyll
       url = page[:url]
       headers = page[:headers]
 
-      sub_sub_group_list = all_child_pages.select do |sub_sub_group_path, _|
-        sub_sub_group_path.include? path and sub_sub_group_path != path and \
+      grandchildren = all_child_pages.select do |grandchild_path, _|
+        grandchild_path.include? path and grandchild_path != path and \
           path.split('/').length > level
       end
 
       sub_group_markup = ''
       has_child_pages = !all_child_pages.empty?
 
-      if (!headers.nil? && headers.any?) || !sub_sub_group_list.empty?
+      if (!headers.nil? && headers.any?) || !grandchildren.empty?
         if has_child_pages
-          active = filename.active?(url, true)
-          # puts "#{url}, #{filename}, #{path}" if active
+          active = filename.active?(url, exact: true)
           item_class = active || (url.split('/').length > level && filename.start_with?(url)) ? 'nav-subgroup active' : 'nav-subgroup'
           sub_group_markup << "<li class=\"#{item_class}\">"
-          sub_group_markup << "<div class=\"nav-subgroup-heading\"><i class=\"material-icons\">arrow_right</i><a href=\"#{url}\">#{title}</a></div>"
+          sub_group_markup << '<div class="nav-subgroup-heading">'
+          sub_group_markup << '<i class="material-icons">arrow_right</i>'
+          sub_group_markup << "<a href=\"#{url}\">#{title}</a>"
+          sub_group_markup << '</div>'
           sub_group_markup << '<ul class="nav-ul">'
 
-          if sub_sub_group_list.empty?
+          if grandchildren.empty?
             headers.each do |header|
               hash = header[:hash]
               subtitle = header[:title]
@@ -134,8 +136,8 @@ module Jekyll
             sub_group_leaf_class = active ? 'nav-leaf nav-subgroup-leaf active' : 'nav-leaf nav-subgroup-leaf'
             sub_group_markup << "<li class=\"#{sub_group_leaf_class}\"><a href=\"#{url}\">#{title} overview</a></li>"
 
-            sub_sub_group_list.each do |sub_sub_group_path, sub_sub_group_value|
-              sub_group_markup << generate_sub_group(filename, sub_sub_group_path, sub_sub_group_value, sub_sub_group_list, 3)
+            grandchildren.each do |grandchild_path, grandchild_page|
+              sub_group_markup << generate_sub_group(filename, grandchild_path, grandchild_page, grandchildren, 3)
             end
           end
 
@@ -150,10 +152,10 @@ module Jekyll
         end
       else
         sub_group_markup << if has_child_pages
-                      "<li class=\"nav-leaf nav-subgroup-leaf\"><a href=\"#{url}\">#{title}</a></li>"
-                    else
-                      "<li class=\"nav-leaf\"><a href=\"#{url}\">#{title}</a></li>"
-                    end
+                              "<li class=\"nav-leaf nav-subgroup-leaf\"><a href=\"#{url}\">#{title}</a></li>"
+                            else
+                              "<li class=\"nav-leaf\"><a href=\"#{url}\">#{title}</a></li>"
+                            end
       end
 
       sub_group_markup
@@ -175,7 +177,9 @@ module Jekyll
         item_class = active ? 'nav-group active' : 'nav-group'
 
         child_markup = "<li class=\"#{item_class}\">"
-        child_markup << "<div class=\"nav-group-heading\"><i class=\"material-icons\">arrow_right</i><span>#{title}</span></div>"
+        child_markup << '<div class="nav-group-heading">'
+        child_markup << '<i class="material-icons">arrow_right</i>'
+        child_markup << "<span>#{title}</span></div>"
 
         child_markup << '<ul class="nav-ul">'
 
@@ -198,7 +202,7 @@ module Jekyll
         sidebar_markup << child_markup
       end
 
-      File.open('_site/sidebar_markup.html', 'w') { |f| f.write(sidebar_markup) }
+      File.open('_site/sidebar.html', 'w') { |f| f.write(sidebar_markup) }
       sidebar_markup
     end
   end
