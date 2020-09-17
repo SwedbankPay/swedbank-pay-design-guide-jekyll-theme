@@ -150,10 +150,10 @@ module Jekyll
         end
       else
         sub_group_markup << if has_child_pages
-                      "<li class=\"nav-leaf nav-subgroup-leaf\"><a href=\"#{url}\">#{title}</a></li>"
-                    else
-                      "<li class=\"nav-leaf\"><a href=\"#{url}\">#{title}</a></li>"
-                    end
+                              "<li class=\"nav-leaf nav-subgroup-leaf\"><a href=\"#{url}\">#{title}</a></li>"
+                            else
+                              "<li class=\"nav-leaf\"><a href=\"#{url}\">#{title}</a></li>"
+                            end
       end
 
       sub_group_markup
