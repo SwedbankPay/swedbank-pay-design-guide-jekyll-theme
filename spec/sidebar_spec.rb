@@ -3,23 +3,23 @@
 require 'sidebar'
 
 describe Jekyll::Sidebar do
-  describe 'render' do
-    source_dir = File.join(__dir__, '..')
-    dest_dir = File.join(source_dir, '_site')
+  source_dir = File.join(__dir__, '..')
+  dest_dir = File.join(source_dir, '_site')
 
-    before(:all) do
-      config = Jekyll.configuration(
-        {
-          'config' => File.join(source_dir, '_config.yml'),
-          'source' => source_dir,
-          'destination' => dest_dir
-        }
-      )
-      Jekyll::Commands::Build.process(config)
-    end
+  before(:all) do
+    config = Jekyll.configuration(
+      {
+        'config' => File.join(source_dir, '_config.yml'),
+        'source' => source_dir,
+        'destination' => dest_dir
+      }
+    )
+    Jekyll::Commands::Build.process(config)
+  end
 
-    index_path = File.join(dest_dir, 'index.html')
+  index_path = File.join(dest_dir, 'index.html')
 
+  describe index_path do
     subject { File.read(index_path) }
 
     it {
@@ -59,5 +59,19 @@ describe Jekyll::Sidebar do
         end
       end
     end
+  end
+
+  redirect_path = File.join(dest_dir, 'resources', 'redirect-from.html')
+
+  describe redirect_path do
+    subject { File.read(redirect_path) }
+
+    it {
+      expect(File).to exist(redirect_path)
+    }
+
+    it {
+      is_expected.to_not include('<i class="material-icons">arrow_right</i><span>Home</span>')
+    }
   end
 end
