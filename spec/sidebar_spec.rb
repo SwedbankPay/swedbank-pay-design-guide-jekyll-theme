@@ -61,7 +61,7 @@ describe Jekyll::Sidebar do
     end
   end
 
-  redirect_path = File.join(dest_dir, 'resources', 'redirect-me.html')
+  redirect_path = File.join(dest_dir, 'resources', 'redirect-from.html')
 
   describe redirect_path do
     subject { File.read(redirect_path) }

@@ -10,19 +10,16 @@ require_relative 'sanitized'
 module Jekyll
   # A nice sidebar
   class Sidebar
-    attr_accessor :hash_pre_render
-    attr_accessor :filename_with_headers
-
     def initialize
-      @hash_pre_render = {}
-      @filename_with_headers = {}
+      @pages_pre_render = {}
+      @pages_with_headers = {}
     end
 
     def pre_render(page)
       menu_order = page['menu_order'].nil? ? 0 : page['menu_order']
       hide_from_sidebar = page['hide_from_sidebar'].nil? ? false : page['hide_from_sidebar']
       url = page['url'].gsub('index.html', '').gsub('.html', '')
-      @hash_pre_render[url] = {
+      @pages_pre_render[url] = {
         title: page['title'],
         url: page['url'].gsub('.html', ''),
         name: page['name'],
@@ -58,16 +55,16 @@ module Jekyll
         doc.xpath('//h2').each do |header|
           next unless header['id']
 
-          child = header.last_element_child
+          child_markup = header.last_element_child
           header = {
             id: header['id'],
             title: header.content.strip,
-            hash: (child['href']).to_s
+            hash: (child_markup['href']).to_s
           }
           headers.push(header)
         end
 
-        @filename_with_headers[sanitized_filename] = { headers: headers }
+        @pages_with_headers[sanitized_filename] = { headers: headers }
       end
 
       files
@@ -78,122 +75,143 @@ module Jekyll
         sanitized_filename = file[:sanitized_filename]
         filename = file[:filename]
         doc = file[:doc]
-        sidebar = render(sanitized_filename)
+        sidebar_markup = nil
 
-        doc.xpath('//*[@id="dx-sidebar-main-nav-ul"]').each do |sidebar_container|
-          sidebar_container.inner_html = sidebar
+        begin
+          sidebar_markup = render(sanitized_filename)
+        rescue StandardError => e
+          Jekyll.logger.error("           Sidebar: Unable to render sidebar_markup for '#{filename}'.")
+          Jekyll.logger.debug("           Sidebar: #{e.message}. #{e.backtrace.inspect}")
+          next
         end
 
+        sidebar_containers = doc.xpath('//*[@id="dx-sidebar-main-nav-ul"]')
+
+        unless sidebar_containers.any?
+          Jekyll.logger.debug("           Sidebar: No sidebar container found in #{filename}")
+          next
+        end
+
+        sidebar_containers.each do |sidebar_container|
+          sidebar_container.inner_html = sidebar_markup
+        end
+
+        Jekyll.logger.debug("   Writing Sidebar: #{filename}")
         File.open(filename, 'w') { |f| f.write(doc.to_html(encoding: 'UTF-8')) }
       end
     end
 
-    def generate_sub_group(filename, key, value, all_sub_groups, level)
-      title = value[:title].split('–').last.strip
-      url = value[:url]
-      headers = value[:headers]
+    def generate_sub_group(filename, path, page, all_child_pages, level)
+      title = page[:title].split('–').last.strip
 
-      sub_sub_group_list = all_sub_groups.select do |sub_sub_group_key, _|
-        sub_sub_group_key.include? key and sub_sub_group_key != key and \
-          key.split('/').length > level
+      url = page[:url]
+      headers = page[:headers]
+
+      sub_sub_group_list = all_child_pages.select do |sub_sub_group_path, _|
+        sub_sub_group_path.include? path and sub_sub_group_path != path and \
+          path.split('/').length > level
       end
 
-      sub_group = ''
-      has_sub_groups = !all_sub_groups.empty?
+      sub_group_markup = ''
+      has_child_pages = !all_child_pages.empty?
 
-      if headers.any? || !sub_sub_group_list.empty?
-        if has_sub_groups
+      if (!headers.nil? && headers.any?) || !sub_sub_group_list.empty?
+        if has_child_pages
           active = filename.active?(url, true)
-          # puts "#{url}, #{filename}, #{key}" if active
+          # puts "#{url}, #{filename}, #{path}" if active
           item_class = active || (url.split('/').length > level && filename.start_with?(url)) ? 'nav-subgroup active' : 'nav-subgroup'
-          sub_group << "<li class=\"#{item_class}\">"
-          sub_group << "<div class=\"nav-subgroup-heading\"><i class=\"material-icons\">arrow_right</i><a href=\"#{url}\">#{title}</a></div>"
-          sub_group << '<ul class="nav-ul">'
+          sub_group_markup << "<li class=\"#{item_class}\">"
+          sub_group_markup << "<div class=\"nav-subgroup-heading\"><i class=\"material-icons\">arrow_right</i><a href=\"#{url}\">#{title}</a></div>"
+          sub_group_markup << '<ul class="nav-ul">'
 
           if sub_sub_group_list.empty?
             headers.each do |header|
               hash = header[:hash]
               subtitle = header[:title]
-              sub_group << "<li class=\"nav-leaf\"><a href=\"#{url}#{hash}\">#{subtitle}</a></li>"
+              sub_group_markup << "<li class=\"nav-leaf\"><a href=\"#{url}#{hash}\">#{subtitle}</a></li>"
             end
           else
             sub_group_leaf_class = active ? 'nav-leaf nav-subgroup-leaf active' : 'nav-leaf nav-subgroup-leaf'
-            sub_group << "<li class=\"#{sub_group_leaf_class}\"><a href=\"#{url}\">#{title} overview</a></li>"
+            sub_group_markup << "<li class=\"#{sub_group_leaf_class}\"><a href=\"#{url}\">#{title} overview</a></li>"
 
-            sub_sub_group_list.each do |sub_sub_group_key, sub_sub_group_value|
-              sub_group << generate_sub_group(filename, sub_sub_group_key, sub_sub_group_value, sub_sub_group_list, 3)
+            sub_sub_group_list.each do |sub_sub_group_path, sub_sub_group_value|
+              sub_group_markup << generate_sub_group(filename, sub_sub_group_path, sub_sub_group_value, sub_sub_group_list, 3)
             end
           end
 
-          sub_group << '</ul>'
-          sub_group << '</li>'
+          sub_group_markup << '</ul>'
+          sub_group_markup << '</li>'
         else
           headers.each do |header|
             hash = header[:hash]
             subtitle = header[:title]
-            sub_group << "<li class=\"nav-leaf\"><a href=\"#{url}#{hash}\">#{subtitle}</a></li>"
+            sub_group_markup << "<li class=\"nav-leaf\"><a href=\"#{url}#{hash}\">#{subtitle}</a></li>"
           end
         end
       else
-        sub_group << if has_sub_groups
+        sub_group_markup << if has_child_pages
                       "<li class=\"nav-leaf nav-subgroup-leaf\"><a href=\"#{url}\">#{title}</a></li>"
                     else
                       "<li class=\"nav-leaf\"><a href=\"#{url}\">#{title}</a></li>"
                     end
       end
 
-      sub_group
+      sub_group_markup
     end
 
     def render(filename)
-      sidebar = ''
+      sidebar_markup = ''
+      pages = @pages_pre_render.safe_merge(@pages_with_headers).sort_by { |_, page| page[:menu_order] }
 
-      merged = @hash_pre_render.safe_merge(@filename_with_headers).sort_by { |_, value| value[:menu_order] }
-      merged.select { |key, _| key.split('/').length <= 2 }.each do |key, value|
-        next if value[:title].nil?
-        next if value[:hide_from_sidebar]
+      pages.select { |path, _| path.split('/').length <= 2 }.each do |path, page|
+        next if page[:title].nil?
+        next if page[:hide_from_sidebar]
 
-        sub_groups = merged.select { |sub_group_key, _| sub_group_key.include? key and sub_group_key != key and key != '/' }
+        title = page[:title].split('–').first
+        child_pages = pages.select { |child_path, _| child_path.include?(path) && child_path != path && path != '/' }
 
-        active = filename.active?(key)
-        # puts "#{filename}, #{key}" if active
+        active = filename.active?(path)
+        # puts "#{filename}, #{path}" if active
         item_class = active ? 'nav-group active' : 'nav-group'
 
-        child = "<li class=\"#{item_class}\">"
-        child << "<div class=\"nav-group-heading\"><i class=\"material-icons\">arrow_right</i><span>#{value[:title].split('–').first}</span></div>"
+        child_markup = "<li class=\"#{item_class}\">"
+        child_markup << "<div class=\"nav-group-heading\"><i class=\"material-icons\">arrow_right</i><span>#{title}</span></div>"
 
-        child << '<ul class="nav-ul">'
+        child_markup << '<ul class="nav-ul">'
 
-        sub_group = generate_sub_group(filename, key, value, sub_groups, 2)
+        sub_group_markup = generate_sub_group(filename, path, page, child_pages, 2)
 
-        child << sub_group
+        child_markup << sub_group_markup unless sub_group_markup.nil?
 
-        if sub_groups.any?
-          sub_groups.select { |sub_group_key, _sub_group_value| sub_group_key.split('/').length <= 3 }.each do |sub_group_key, sub_group_value|
-            sub_group = generate_sub_group(filename, sub_group_key, sub_group_value, sub_groups, 2)
-            child << sub_group
+        if child_pages.any?
+          child_pages.select { |child_path, _| child_path.split('/').length <= 3 }.each do |child_path, child_page|
+            next if child_page[:title].nil?
+            next if child_page[:hide_from_sidebar]
+
+            sub_group_markup = generate_sub_group(filename, child_path, child_page, child_pages, 2)
+            child_markup << sub_group_markup unless sub_group_markup.nil?
           end
         end
 
-        child << '</ul>'
-        child << '</li>'
-        sidebar << child
+        child_markup << '</ul>'
+        child_markup << '</li>'
+        sidebar_markup << child_markup
       end
 
-      File.open('_site/sidebar.html', 'w') { |f| f.write(sidebar) }
-      sidebar
+      File.open('_site/sidebar_markup.html', 'w') { |f| f.write(sidebar_markup) }
+      sidebar_markup
     end
   end
 end
 
-sidebar = Jekyll::Sidebar.new
+sidebar_markup = Jekyll::Sidebar.new
 
 Jekyll::Hooks.register :site, :pre_render do |site, _payload|
   site.pages.each do |page|
-    sidebar.pre_render page
+    sidebar_markup.pre_render page
   end
 end
 
 Jekyll::Hooks.register :site, :post_write do |site|
-  sidebar.post_write site
+  sidebar_markup.post_write site
 end
