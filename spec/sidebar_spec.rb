@@ -37,5 +37,16 @@ describe Jekyll::Sidebar do
     it {
       is_expected.to include('<i class="material-icons">arrow_right</i><a href="/checkout/payment-menu">Payment Menu</a>')
     }
+
+    it 'has expected nav structure' do
+      is_expected.to have_tag('ul', class: 'nav-ul') do
+        with_tag('li', class: 'nav-subgroup') do
+          with_tag('div', class: 'nav-subgroup-heading') do
+            with_tag('i.material-icons', text: 'arrow_right')
+            with_tag('a[href="/checkout/"]', text: 'Introduction')
+          end
+        end
+      end
+    end
   end
 end
