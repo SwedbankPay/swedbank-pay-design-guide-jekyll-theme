@@ -26,20 +26,27 @@ module SwedbankPay
     def generate_main_markup(path, page)
       title = page[:title].split('–').first
       child_pages = @pages.select { |child_path, _| child_path.include?(path) && child_path != path && path != '/' }
-      active = @filename.active?(path)
-      item_class = active ? 'nav-group active' : 'nav-group'
+      item_class = item_class(path)
+      child_markup = generate_child_markup(path, page, child_pages, 2)
+      grandchildren_markup = generate_grandchildren_markup(child_pages)
 
-      sidebar_markup = ''
-      sidebar_markup << "<li class=\"#{item_class}\">"
-      sidebar_markup << '<div class="nav-group-heading">'
-      sidebar_markup << '<i class="material-icons">arrow_right</i>'
-      sidebar_markup << "<span>#{title}</span></div>"
-      sidebar_markup << '<ul class="nav-ul">'
-      sidebar_markup << generate_child_markup(path, page, child_pages, 2)
-      sidebar_markup << generate_grand_children_markup(child_pages)
-      sidebar_markup << '</ul>'
-      sidebar_markup << '</li>'
-      sidebar_markup
+      "<li class=\"#{item_class}\">
+        <div class=\"nav-group-heading\">
+          <i class=\"material-icons\">arrow_right</i>
+          <span>#{title}</span>
+        </div>
+        <ul class=\"nav-ul\">
+          #{child_markup}
+          #{grandchildren_markup}
+        </ul>
+      </li>"
+    end
+
+    def item_class(path)
+      active = @filename.active?(path)
+      return 'nav-group active' if active
+
+      'nav-group'
     end
 
     def generate_child_markup(path, page, all_child_pages, level)
@@ -103,7 +110,7 @@ module SwedbankPay
       sub_group_markup
     end
 
-    def generate_grand_children_markup(pages)
+    def generate_grandchildren_markup(pages)
       markup = ''
       return markup unless pages.any?
 
