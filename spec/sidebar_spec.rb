@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
+require 'jekyll'
 require 'sidebar'
 
-describe Jekyll::Sidebar do
+describe SwedbankPay::Sidebar do
   source_dir = File.join(__dir__, '..')
   dest_dir = File.join(source_dir, '_site')
 

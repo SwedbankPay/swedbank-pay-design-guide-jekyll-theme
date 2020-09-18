@@ -7,7 +7,7 @@ require_relative 'active'
 require_relative 'safe_merge'
 require_relative 'sanitized'
 
-module Jekyll
+module SwedbankPay
   # A nice sidebar
   class Sidebar
     def initialize
@@ -153,8 +153,9 @@ module Jekyll
       headers = page[:headers]
 
       grandchildren = all_child_pages.select do |grandchild_path, _|
-        grandchild_path.include? path and grandchild_path != path and \
-          path.split('/').length > level
+        grandchild_path.include?(path) \
+        && grandchild_path != path \
+        && path.split('/').length > level
       end
 
       sub_group_markup = ''
@@ -208,14 +209,14 @@ module Jekyll
   end
 end
 
-sidebar_markup = Jekyll::Sidebar.new
+sidebar = SwedbankPay::Sidebar.new
 
 Jekyll::Hooks.register :site, :pre_render do |site, _payload|
   site.pages.each do |page|
-    sidebar_markup.pre_render page
+    sidebar.pre_render page
   end
 end
 
 Jekyll::Hooks.register :site, :post_write do |site|
-  sidebar_markup.post_write site
+  sidebar.post_write site
 end
