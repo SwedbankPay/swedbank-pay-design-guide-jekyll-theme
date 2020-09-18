@@ -101,6 +101,51 @@ module Jekyll
       end
     end
 
+    def render(filename)
+      sidebar_markup = ''
+      pages = @pages_pre_render.safe_merge(@pages_with_headers).sort_by { |_, page| page[:menu_order] }
+
+      pages.select { |path, _| path.split('/').length <= 2 }.each do |path, page|
+        next if page[:title].nil?
+        next if page[:hide_from_sidebar]
+
+        title = page[:title].split('–').first
+        child_pages = pages.select { |child_path, _| child_path.include?(path) && child_path != path && path != '/' }
+
+        active = filename.active?(path)
+        # puts "#{filename}, #{path}" if active
+        item_class = active ? 'nav-group active' : 'nav-group'
+
+        child_markup = "<li class=\"#{item_class}\">"
+        child_markup << '<div class="nav-group-heading">'
+        child_markup << '<i class="material-icons">arrow_right</i>'
+        child_markup << "<span>#{title}</span></div>"
+
+        child_markup << '<ul class="nav-ul">'
+
+        sub_group_markup = generate_sub_group(filename, path, page, child_pages, 2)
+
+        child_markup << sub_group_markup unless sub_group_markup.nil?
+
+        if child_pages.any?
+          child_pages.select { |child_path, _| child_path.split('/').length <= 3 }.each do |child_path, child_page|
+            next if child_page[:title].nil?
+            next if child_page[:hide_from_sidebar]
+
+            sub_group_markup = generate_sub_group(filename, child_path, child_page, child_pages, 2)
+            child_markup << sub_group_markup unless sub_group_markup.nil?
+          end
+        end
+
+        child_markup << '</ul>'
+        child_markup << '</li>'
+        sidebar_markup << child_markup
+      end
+
+      File.open('_site/sidebar.html', 'w') { |f| f.write(sidebar_markup) }
+      sidebar_markup
+    end
+
     def generate_sub_group(filename, path, page, all_child_pages, level)
       title = page[:title].split('–').last.strip
 
@@ -159,51 +204,6 @@ module Jekyll
       end
 
       sub_group_markup
-    end
-
-    def render(filename)
-      sidebar_markup = ''
-      pages = @pages_pre_render.safe_merge(@pages_with_headers).sort_by { |_, page| page[:menu_order] }
-
-      pages.select { |path, _| path.split('/').length <= 2 }.each do |path, page|
-        next if page[:title].nil?
-        next if page[:hide_from_sidebar]
-
-        title = page[:title].split('–').first
-        child_pages = pages.select { |child_path, _| child_path.include?(path) && child_path != path && path != '/' }
-
-        active = filename.active?(path)
-        # puts "#{filename}, #{path}" if active
-        item_class = active ? 'nav-group active' : 'nav-group'
-
-        child_markup = "<li class=\"#{item_class}\">"
-        child_markup << '<div class="nav-group-heading">'
-        child_markup << '<i class="material-icons">arrow_right</i>'
-        child_markup << "<span>#{title}</span></div>"
-
-        child_markup << '<ul class="nav-ul">'
-
-        sub_group_markup = generate_sub_group(filename, path, page, child_pages, 2)
-
-        child_markup << sub_group_markup unless sub_group_markup.nil?
-
-        if child_pages.any?
-          child_pages.select { |child_path, _| child_path.split('/').length <= 3 }.each do |child_path, child_page|
-            next if child_page[:title].nil?
-            next if child_page[:hide_from_sidebar]
-
-            sub_group_markup = generate_sub_group(filename, child_path, child_page, child_pages, 2)
-            child_markup << sub_group_markup unless sub_group_markup.nil?
-          end
-        end
-
-        child_markup << '</ul>'
-        child_markup << '</li>'
-        sidebar_markup << child_markup
-      end
-
-      File.open('_site/sidebar.html', 'w') { |f| f.write(sidebar_markup) }
-      sidebar_markup
     end
   end
 end
