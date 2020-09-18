@@ -29,6 +29,16 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/checkout-more/"
   },{
+    "title": "Sub-resources",
+    "text": "",
+    "tags": "",
+    "url": "/swedbank-pay-design-guide-jekyll-theme/resources/sub-resources/"
+  },{
+    "title": "Resources",
+    "text": "The page at the end of this link should redirect back here",
+    "tags": "",
+    "url": "/swedbank-pay-design-guide-jekyll-theme/resources/"
+  },{
     "title": "Secret payments",
     "text": "How we do secret payments We don’t.",
     "tags": "",
@@ -98,4 +108,9 @@ var tipuesearch = {"pages": [{
     "text": "Don’t render this Payments have plenty of secrets due to it being secure and mostly encrypted. Only the end user and their bank can really see much data if any. We in between mostly see tokens.",
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/payments/secrets/super-secret.html"
+  },{
+    "title": "",
+    "text": "",
+    "tags": "",
+    "url": "/swedbank-pay-design-guide-jekyll-theme/resources/redirect-from"
   }]};
