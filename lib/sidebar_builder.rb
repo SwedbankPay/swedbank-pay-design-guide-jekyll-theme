@@ -1,3 +1,4 @@
+# frozen_string_literal: false
 
 module SwedbankPay
   # A nice sidebar
@@ -14,38 +15,7 @@ module SwedbankPay
         next if page[:title].nil?
         next if page[:hide_from_sidebar]
 
-        title = page[:title].split('–').first
-        child_pages = @pages.select { |child_path, _| child_path.include?(path) && child_path != path && path != '/' }
-
-        Jekyll.logger.debug("           Sidebar: #{child_pages}")
-
-        active = @filename.active?(path)
-        item_class = active ? 'nav-group active' : 'nav-group'
-
-        child_markup = "<li class=\"#{item_class}\">"
-        child_markup << '<div class="nav-group-heading">'
-        child_markup << '<i class="material-icons">arrow_right</i>'
-        child_markup << "<span>#{title}</span></div>"
-
-        child_markup << '<ul class="nav-ul">'
-
-        sub_group_markup = generate_sub_group(path, page, child_pages, 2)
-
-        child_markup << sub_group_markup unless sub_group_markup.nil?
-
-        if child_pages.any?
-          child_pages.select { |child_path, _| child_path.split('/').length <= 3 }.each do |child_path, child_page|
-            next if child_page[:title].nil?
-            next if child_page[:hide_from_sidebar]
-
-            sub_group_markup = generate_sub_group(child_path, child_page, child_pages, 2)
-            child_markup << sub_group_markup unless sub_group_markup.nil?
-          end
-        end
-
-        child_markup << '</ul>'
-        child_markup << '</li>'
-        sidebar_markup << child_markup
+        sidebar_markup << generate_main_markup(path, page)
       end
 
       sidebar_markup
@@ -53,7 +23,26 @@ module SwedbankPay
 
     private
 
-    def generate_sub_group(path, page, all_child_pages, level)
+    def generate_main_markup(path, page)
+      title = page[:title].split('–').first
+      child_pages = @pages.select { |child_path, _| child_path.include?(path) && child_path != path && path != '/' }
+      active = @filename.active?(path)
+      item_class = active ? 'nav-group active' : 'nav-group'
+
+      sidebar_markup = ''
+      sidebar_markup << "<li class=\"#{item_class}\">"
+      sidebar_markup << '<div class="nav-group-heading">'
+      sidebar_markup << '<i class="material-icons">arrow_right</i>'
+      sidebar_markup << "<span>#{title}</span></div>"
+      sidebar_markup << '<ul class="nav-ul">'
+      sidebar_markup << generate_child_markup(path, page, child_pages, 2)
+      sidebar_markup << generate_grand_children_markup(child_pages)
+      sidebar_markup << '</ul>'
+      sidebar_markup << '</li>'
+      sidebar_markup
+    end
+
+    def generate_child_markup(path, page, all_child_pages, level)
       title = page[:title].split('–').last.strip
 
       url = page[:url]
@@ -90,7 +79,7 @@ module SwedbankPay
             sub_group_markup << "<li class=\"#{sub_group_leaf_class}\"><a href=\"#{url}\">#{title} overview</a></li>"
 
             grandchildren.each do |grandchild_path, grandchild_page|
-              sub_group_markup << generate_sub_group(grandchild_path, grandchild_page, grandchildren, 3)
+              sub_group_markup << generate_child_markup(grandchild_path, grandchild_page, grandchildren, 3)
             end
           end
 
@@ -112,6 +101,20 @@ module SwedbankPay
       end
 
       sub_group_markup
+    end
+
+    def generate_grand_children_markup(pages)
+      markup = ''
+      return markup unless pages.any?
+
+      pages.select { |child_path, _| child_path.split('/').length <= 3 }.each do |child_path, child_page|
+        next if child_page[:title].nil?
+        next if child_page[:hide_from_sidebar]
+
+        markup << generate_child_markup(child_path, child_page, pages, 2)
+      end
+
+      markup
     end
   end
 end

@@ -51,19 +51,7 @@ module SwedbankPay
           }
         )
 
-        headers = []
-
-        doc.xpath('//h2').each do |header|
-          next unless header['id']
-
-          child_markup = header.last_element_child
-          header = {
-            id: header['id'],
-            title: header.content.strip,
-            hash: (child_markup['href']).to_s
-          }
-          headers.push(header)
-        end
+        headers = find_headers(doc)
 
         @pages_with_headers[sanitized_filename] = { headers: headers }
       end
@@ -71,27 +59,36 @@ module SwedbankPay
       files
     end
 
+    def find_headers(doc)
+      headers = []
+
+      doc.xpath('//h2').each do |header|
+        next unless header['id']
+
+        child_markup = header.last_element_child
+        header = {
+          id: header['id'],
+          title: header.content.strip,
+          hash: (child_markup['href']).to_s
+        }
+        headers.push(header)
+      end
+
+      headers
+    end
+
     def write_sidebar_to_files(files)
       files.each do |file|
         sanitized_filename = file[:sanitized_filename]
         filename = file[:filename]
         doc = file[:doc]
-        sidebar_markup = nil
+        sidebar_markup = render(sanitized_filename)
 
-        begin
-          sidebar_markup = render(sanitized_filename)
-        rescue StandardError => e
-          Jekyll.logger.error("           Sidebar: Unable to render sidebar for '#{filename}'.")
-          Jekyll.logger.debug("           Sidebar: #{e.message}. #{e.backtrace.inspect}")
-          next
-        end
+        next if sidebar_markup.nil?
 
-        sidebar_containers = doc.xpath('//*[@id="dx-sidebar-main-nav-ul"]')
+        sidebar_containers = find_containers(doc, filename)
 
-        unless sidebar_containers.any?
-          Jekyll.logger.debug("           Sidebar: No sidebar container found in #{filename}")
-          next
-        end
+        next if sidebar_containers.nil?
 
         sidebar_containers.each do |sidebar_container|
           sidebar_container.inner_html = sidebar_markup
@@ -103,16 +100,36 @@ module SwedbankPay
     end
 
     def render(filename)
-      sidebar_markup = ''
-      pages = @pages_pre_render \
-              .safe_merge(@pages_with_headers) \
-              .sort_by { |_, page| page[:menu_order] }
+      sidebar_markup = nil
 
-      builder = SidebarBuilder.new(filename, pages)
-      sidebar_markup = builder.build
+      begin
+        pages = @pages_pre_render \
+                .safe_merge(@pages_with_headers) \
+                .sort_by { |_, page| page[:menu_order] }
 
-      File.open('_site/sidebar.html', 'w') { |f| f.write(sidebar_markup) }
+        builder = SidebarBuilder.new(filename, pages)
+
+        sidebar_markup = builder.build
+
+        File.open('_site/sidebar.html', 'w') { |f| f.write(sidebar_markup) }
+      rescue StandardError => e
+        Jekyll.logger.error("           Sidebar: Unable to render sidebar for '#{filename}'.")
+        Jekyll.logger.debug("           Sidebar: #{e.message}. #{e.backtrace.inspect}")
+        nil
+      end
+
       sidebar_markup
+    end
+
+    def find_containers(doc, filename)
+      sidebar_containers = doc.xpath('//*[@id="dx-sidebar-main-nav-ul"]')
+
+      unless sidebar_containers.any?
+        Jekyll.logger.debug("           Sidebar: No sidebar container found in #{filename}")
+        nil
+      end
+
+      sidebar_containers
     end
   end
 end
