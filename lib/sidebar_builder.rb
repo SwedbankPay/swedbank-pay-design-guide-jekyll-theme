@@ -74,22 +74,7 @@ module SwedbankPay
           sub_group_markup << "<a href=\"#{url}\">#{title}</a>"
           sub_group_markup << '</div>'
           sub_group_markup << '<ul class="nav-ul">'
-
-          if grandchildren.empty?
-            headers.each do |header|
-              hash = header[:hash]
-              subtitle = header[:title]
-              sub_group_markup << "<li class=\"nav-leaf\"><a href=\"#{url}#{hash}\">#{subtitle}</a></li>"
-            end
-          else
-            sub_group_leaf_class = active ? 'nav-leaf nav-subgroup-leaf active' : 'nav-leaf nav-subgroup-leaf'
-            sub_group_markup << "<li class=\"#{sub_group_leaf_class}\"><a href=\"#{url}\">#{title} overview</a></li>"
-
-            grandchildren.each do |grandchild_path, grandchild_page|
-              sub_group_markup << generate_child_markup(grandchild_path, grandchild_page, grandchildren, 3)
-            end
-          end
-
+          sub_group_markup << generate_grand_grandchildren_markup(grandchildren, headers, title, url, active)
           sub_group_markup << '</ul>'
           sub_group_markup << '</li>'
         else
@@ -119,6 +104,27 @@ module SwedbankPay
         next if child_page[:hide_from_sidebar]
 
         markup << generate_child_markup(child_path, child_page, pages, 2)
+      end
+
+      markup
+    end
+
+    def generate_grand_grandchildren_markup(grandchildren, headers, title, url, active)
+      markup = ''
+
+      if grandchildren.empty?
+        headers.each do |header|
+          hash = header[:hash]
+          subtitle = header[:title]
+          markup << "<li class=\"nav-leaf\"><a href=\"#{url}#{hash}\">#{subtitle}</a></li>"
+        end
+      else
+        sub_group_leaf_class = active ? 'nav-leaf nav-subgroup-leaf active' : 'nav-leaf nav-subgroup-leaf'
+        markup << "<li class=\"#{sub_group_leaf_class}\"><a href=\"#{url}\">#{title} overview</a></li>"
+
+        grandchildren.each do |grandchild_path, grandchild_page|
+          markup << generate_child_markup(grandchild_path, grandchild_page, grandchildren, 3)
+        end
       end
 
       markup
