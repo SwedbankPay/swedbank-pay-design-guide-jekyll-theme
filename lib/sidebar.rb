@@ -3,24 +3,23 @@
 require 'jekyll'
 require 'nokogiri'
 require 'json'
-require_relative 'active'
-require_relative 'safe_merge'
-require_relative 'sanitized'
-require_relative 'sidebar_builder'
 
-module SwedbankPay
+module Jekyll
   # A nice sidebar
   class Sidebar
+    attr_accessor :hash_pre_render
+    attr_accessor :filename_with_headers
+
     def initialize
-      @pages_pre_render = {}
-      @pages_with_headers = {}
+      @hash_pre_render = {}
+      @filename_with_headers = {}
     end
 
     def pre_render(page)
       menu_order = page['menu_order'].nil? ? 0 : page['menu_order']
       hide_from_sidebar = page['hide_from_sidebar'].nil? ? false : page['hide_from_sidebar']
       url = page['url'].gsub('index.html', '').gsub('.html', '')
-      @pages_pre_render[url] = {
+      @hash_pre_render[url] = {
         title: page['title'],
         url: page['url'].gsub('.html', ''),
         name: page['name'],
@@ -30,111 +29,178 @@ module SwedbankPay
     end
 
     def post_write(site)
-      files = parse_files(site)
-      write_sidebar_to_files(files)
+      files = []
+      Dir.glob("#{site.config['destination']}/**/*.html") do |filename|
+        doc = File.open(filename) { |f| Nokogiri::HTML(f) }
+        files.push(doc)
+
+        headers = []
+        doc.xpath('//h2 ').each do |header|
+          next unless header['id']
+
+          child = header.last_element_child
+          header = {
+            id: header['id'],
+            title: header.content.strip,
+            hash: (child['href']).to_s
+          }
+          headers.push(header)
+        end
+        sanitized_filename = sanitize_filename(filename)
+        @filename_with_headers[sanitized_filename] = { headers: headers }
+      end
+
+      Dir.glob("#{site.config['destination']}/**/*.html") do |filename|
+        sanitized_filename = sanitize_filename(filename)
+        sidebar = render(sanitized_filename)
+        file = File.open(filename) { |f| Nokogiri::HTML(f) }
+        file.xpath('//*[@id="dx-sidebar-main-nav-ul"]').each do |location|
+          location.inner_html = sidebar
+        end
+        File.open(filename, 'w') { |f| f.write(file.to_html(encoding: 'UTF-8')) }
+      end
+
+      # File.open('_site/sidebar.html', 'w') { |f| f.write(sidebar) }
     end
 
     private
 
-    def parse_files(site)
-      files = []
-      destination = site.config['destination']
-      Dir.glob("#{destination}/**/*.html") do |filename|
-        doc = File.open(filename) { |f| Nokogiri::HTML(f) }
-        sanitized_filename = filename.sanitized
-
-        files.push(
-          {
-            filename: filename,
-            sanitized_filename: sanitized_filename,
-            doc: doc
-          }
-        )
-
-        headers = find_headers(doc)
-
-        @pages_with_headers[sanitized_filename] = { headers: headers }
-      end
-
-      files
+    def sanitize_filename(filename)
+      sanitized_filename = filename.match(/(?m)(?<=\b_site).*$/)[0]
+      sanitized_filename = sanitized_filename.gsub('index.html', '')
+      sanitized_filename.gsub('.html', '')
     end
 
-    def find_headers(doc)
-      headers = []
-
-      doc.xpath('//h2').each do |header|
-        next unless header['id']
-
-        child_markup = header.last_element_child
-        header = {
-          id: header['id'],
-          title: header.content.strip,
-          hash: (child_markup['href']).to_s
-        }
-        headers.push(header)
+    def generateSubgroup(filename, key, value, all_subgroups, level)
+      title = value[:title].split('–').last
+      
+      subsubgroup_list = all_subgroups.select do |subsubgroup_key, _subsubgroup_value|
+        subsubgroup_key.include? key and subsubgroup_key != key and \
+          key.split('/').length > level
       end
 
-      headers
-    end
+      subgroup = ''
+      has_subgroups = !all_subgroups.empty?
+      if value[:headers].any? || !subsubgroup_list.empty?
+        if has_subgroups
+          url = value[:url]
+          active = active?(filename, url, true)
+          # puts "#{url}, #{filename}, #{key}" if active
+          item_class = active || (url.split('/').length > level && filename.start_with?(url)) ? 'nav-subgroup active' : 'nav-subgroup'
+          subgroup << "<li class=\"#{item_class}\">"
+          subgroup << "<div class=\"nav-subgroup-heading\"><i class=\"material-icons\">arrow_right</i><a href=\"#{url}\">#{title}</a></div>"
+          subgroup << '<ul class="nav-ul">'
 
-    def write_sidebar_to_files(files)
-      files.each do |file|
-        sanitized_filename = file[:sanitized_filename]
-        filename = file[:filename]
-        doc = file[:doc]
-        sidebar_markup = render(sanitized_filename)
+          if subsubgroup_list.empty?
+            value[:headers].each do |header|
+              subgroup << "<li class=\"nav-leaf\"><a href=\"#{value[:url]}#{header[:hash]}\">#{header[:title]}</a></li>"
+            end
+          else
+            subgroup_leaf_class = active ? 'nav-leaf nav-subgroup-leaf active' : 'nav-leaf nav-subgroup-leaf'
+            subgroup << "<li class=\"#{subgroup_leaf_class}\"><a href=\"#{value[:url]}\">#{title} overview</a></li>"
 
-        next if sidebar_markup.nil?
+            subsubgroup_list.each do |subsubgroup_key, subsubgroup_value|
+              subgroup << generateSubgroup(filename, subsubgroup_key, subsubgroup_value, subsubgroup_list, 3)
+            end
+          end
 
-        sidebar_containers = find_containers(doc, filename)
-
-        next if sidebar_containers.nil?
-
-        sidebar_containers.each do |sidebar_container|
-          sidebar_container.inner_html = sidebar_markup
+          subgroup << '</ul>'
+          subgroup << '</li>'
+        else
+          value[:headers].each do |header|
+            subgroup << "<li class=\"nav-leaf\"><a href=\"#{value[:url]}#{header[:hash]}\">#{header[:title]}</a></li>"
+          end
         end
-
-        Jekyll.logger.debug("   Writing Sidebar: #{filename}")
-        File.open(filename, 'w') { |f| f.write(doc.to_html(encoding: 'UTF-8')) }
+      else
+        subgroup << if has_subgroups
+                      "<li class=\"nav-leaf nav-subgroup-leaf\"><a href=\"#{value[:url]}\">#{title}</a></li>"
+                    else
+                      "<li class=\"nav-leaf\"><a href=\"#{value[:url]}\">#{title}</a></li>"
+                    end
       end
+
+      subgroup
     end
 
     def render(filename)
-      sidebar_markup = nil
+      sidebar = ''
 
-      begin
-        pages = @pages_pre_render \
-                .safe_merge(@pages_with_headers) \
-                .sort_by { |_, page| page[:menu_order] }
+      merged = merge(@hash_pre_render, @filename_with_headers).sort_by { |_key, value| value[:menu_order] }
+      merged.select { |key, _value| key.split('/').length <= 2 }.each do |key, value|
+        next if value[:title].nil?
+        next if value[:hide_from_sidebar]
 
-        builder = SidebarBuilder.new(filename, pages)
+        subgroups = merged.select { |subgroup_key, _subgroup_value| subgroup_key.include? key and subgroup_key != key and key != '/' }
 
-        sidebar_markup = builder.build
+        active = active?(filename, key)
+        # puts "#{filename}, #{key}" if active
+        item_class = active ? 'nav-group active' : 'nav-group'
 
-        File.open('_site/sidebar.html', 'w') { |f| f.write(sidebar_markup) }
-      rescue StandardError => e
-        Jekyll.logger.error("           Sidebar: Unable to render sidebar for '#{filename}'.")
-        Jekyll.logger.debug("           Sidebar: #{e.message}. #{e.backtrace.inspect}")
-        nil
+        child = "<li class=\"#{item_class}\">"
+        child << "<div class=\"nav-group-heading\"><i class=\"material-icons\">arrow_right</i><span>#{value[:title].split('–').first}</span></div>"
+
+        child << '<ul class="nav-ul">'
+
+        subgroup = generateSubgroup(filename, key, value, subgroups, 2)
+
+        child << subgroup
+
+        if subgroups.any?
+          subgroups.select { |subgroup_key, _subgroup_value| subgroup_key.split('/').length <= 3 }.each do |subgroup_key, subgroup_value|
+            subgroup = generateSubgroup(filename, subgroup_key, subgroup_value, subgroups, 2)
+            child << subgroup
+          end
+        end
+
+        child << '</ul>'
+        child << '</li>'
+        sidebar << child
       end
 
-      sidebar_markup
+      File.open('_site/sidebar.html', 'w') { |f| f.write(sidebar) }
+      sidebar
     end
 
-    def find_containers(doc, filename)
-      sidebar_containers = doc.xpath('//*[@id="dx-sidebar-main-nav-ul"]')
-
-      unless sidebar_containers.any?
-        Jekyll.logger.debug("           Sidebar: No sidebar container found in #{filename}")
-        nil
+    def active?(filename, url, exact = false)
+      if filename == '/' || url == '/'
+        if filename == '/' && url == '/'
+          return true
+        else
+          return false
+        end
       end
 
-      sidebar_containers
+      exact ? filename == url : filename.start_with?(url)
+    end
+
+    def merge(hash1, hash2)
+      all_keys = hash1.keys | hash2.keys
+      result_hash = {}
+
+      all_keys.each do |key|
+        hash_value = {}
+
+        if hash1.key? key
+          value = hash1[key]
+
+          hash_value = value unless value.nil?
+        end
+
+        if hash2.key? key
+          value = hash2[key]
+
+          hash_value = hash_value.merge(value) unless value.nil?
+        end
+
+        result_hash[key] = hash_value
+      end
+
+      result_hash
     end
   end
 end
 
-sidebar = SwedbankPay::Sidebar.new
+sidebar = Jekyll::Sidebar.new
 
 Jekyll::Hooks.register :site, :pre_render do |site, _payload|
   site.pages.each do |page|
