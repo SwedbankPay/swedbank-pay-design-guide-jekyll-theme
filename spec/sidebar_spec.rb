@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
+require 'its'
 require 'jekyll'
 require 'sidebar'
 
-describe SwedbankPay::Sidebar do
+sidebar = SwedbankPay::Sidebar
+
+describe sidebar do
   source_dir = File.join(__dir__, '..')
   dest_dir = File.join(source_dir, '_site')
 
@@ -16,6 +19,76 @@ describe SwedbankPay::Sidebar do
       }
     )
     Jekyll::Commands::Build.process(config)
+  end
+
+  describe '#pages' do
+    subject { sidebar.pages }
+
+    its(:count) { is_expected.to eq 27 }
+    its(:length) { is_expected.to eq 1 }
+
+    describe '[0]' do
+      subject { sidebar.pages[0] }
+
+      its(:path) { is_expected.to eq '/' }
+      its(:children) { is_expected.to be_an_instance_of Array }
+
+      describe 'title' do
+        subject { sidebar.pages[0].title.to_s }
+        it { is_expected.to eq 'Home' }
+      end
+
+      describe 'children' do
+        subject { sidebar.pages[0].children }
+
+        its(:length) { is_expected.to eq 8 }
+
+        describe '[0]' do
+          describe 'title' do
+            subject { sidebar.pages[0].children[0].title.to_s }
+            it { is_expected.to eq 'Page 1' }
+          end
+        end
+
+        describe '[5]' do
+          subject { sidebar.pages[0].children[5] }
+
+          describe 'title' do
+            subject { sidebar.pages[0].children[5].title.to_s }
+            it { is_expected.to eq 'Resources' }
+          end
+
+          describe 'children' do
+            subject { sidebar.pages[0].children[5].children }
+
+            its(:length) { is_expected.to eq 6 }
+
+            describe '[0]' do
+              subject { sidebar.pages[0].children[5].children[0] }
+
+              describe 'title' do
+                subject { sidebar.pages[0].children[5].children[0].title.to_s }
+                it { is_expected.to eq 'Alpha' }
+              end
+            end
+
+            describe '[1]' do
+              describe 'title' do
+                subject { sidebar.pages[0].children[5].children[1].title.to_s }
+                it { is_expected.to eq 'Beta' }
+              end
+            end
+
+            describe '[1]' do
+              describe 'title' do
+                subject { sidebar.pages[0].children[5].children[2].title.to_s }
+                it { is_expected.to eq 'Gamma' }
+              end
+            end
+          end
+        end
+      end
+    end
   end
 
   index_path = File.join(dest_dir, 'index.html')

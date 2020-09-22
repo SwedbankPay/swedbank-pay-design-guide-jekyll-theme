@@ -1,21 +1,23 @@
 # frozen_string_literal: false
 
+require_relative 'sidebar_page'
+require_relative 'sidebar_pages'
+
 module SwedbankPay
   # A nice sidebar
   class SidebarBuilder
     def initialize(filename, pages)
       @filename = filename
-      @pages = pages
+      @pages = SidebarPages.new(pages)
     end
 
     def build
       markup = ''
 
-      @pages.select { |path, _| path.split('/').length <= 2 }.each do |path, page|
-        next if page[:title].nil?
-        next if page[:hide_from_sidebar]
+      @pages.root_pages.each do |page|
+        next if page.ignore?
 
-        markup << main_markup(path, page)
+        markup << main_markup(page)
       end
 
       markup
@@ -23,12 +25,11 @@ module SwedbankPay
 
     private
 
-    def main_markup(path, page)
-      title = page[:title].split('–').first
-      child_pages = @pages.select { |child_path, _| child_path.include?(path) && child_path != path && path != '/' }
+    def main_markup(page)
+      title = page.title.section
       item_class = item_class(path)
-      child_markup = child_markup(path, page, child_pages, 2)
-      grandchildren_markup = generate_grandchildren_markup(child_pages)
+      child_markup = child_markup(page, 2)
+      grandchildren_markup = generate_grandchildren_markup
 
       "<li class=\"#{item_class}\">
         <div class=\"nav-group-heading\">
@@ -49,25 +50,18 @@ module SwedbankPay
       'nav-group'
     end
 
-    def child_markup(path, page, child_pages, level)
-      title = page[:title].split('–').last.strip
-
-      url = page[:url]
-      headers = page[:headers]
-
-      grandchildren = child_pages.select do |grandchild_path, _|
-        grandchild_path.include?(path) \
-        && grandchild_path != path \
-        && path.split('/').length > level
-      end
-
+    def child_markup(page, child_pages, level)
+      children = SidebarPages.new(child_pages)
+      title = page.title.item
+      url = page.url
+      headers = page.headers
+      grandchildren = children.grandchildren_of(path, level)
       markup = ''
-      has_child_pages = !child_pages.empty?
 
       if (!headers.nil? && headers.any?) || !grandchildren.empty?
         markup << grandchild_markup(grandchildren, child_pages, headers, title, url, level)
       else
-        item_class = has_child_pages ? 'nav-leaf nav-subgroup-leaf' : 'nav-leaf'
+        item_class = !child_pages.empty? ? 'nav-leaf nav-subgroup-leaf' : 'nav-leaf'
         markup << "<li class=\"#{item_class}\"><a href=\"#{url}\">#{title}</a></li>"
       end
 
