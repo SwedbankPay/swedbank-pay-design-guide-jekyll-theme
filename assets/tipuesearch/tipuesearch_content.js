@@ -1,4 +1,9 @@
 var tipuesearch = {"pages": [{
+    "title": "",
+    "text": "Uh oh! Seems like you have taken a wrong turn somewhere This page seems to try to hide from you. Perhaps looking in the searchbar or clicking around in the menus will help?",
+    "tags": "",
+    "url": "/swedbank-pay-design-guide-jekyll-theme/404.html"
+  },{
     "title": "After payment is completed",
     "text": "After paaaayment Payment is done? Great, here is what will happen now. First we’ll subtract the money from your account, then a wizard will attempt a grand spell to carry the money on the back of ants to transfer it to a safe place. A secret place. A place with a secret.",
     "tags": "",
