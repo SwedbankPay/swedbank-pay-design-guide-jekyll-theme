@@ -1,6 +1,6 @@
 var tipuesearch = {"pages": [{
     "title": "",
-    "text": "Uh oh! Seems like you have taken a wrong turn somewhere This page seems to try to hide from you. Perhaps looking in the searchbar or clicking around in the menus will help?",
+    "text": "Uh oh:heavy_exclamation_mark: Seems like you have taken a wrong turn somewhere :construction: This page seems to try to hide from you. :dragon_face: :circus_tent: Perhaps looking in the searchbar or clicking around in the menus will help? :space_invader:",
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/404.html"
   },{
