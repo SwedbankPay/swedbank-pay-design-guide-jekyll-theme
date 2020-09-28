@@ -1,4 +1,9 @@
 var tipuesearch = {"pages": [{
+    "title": "",
+    "text": "Uh oh:heavy_exclamation_mark: Seems like you have taken a wrong turn somewhere :construction: :dragon: This page seems to play hide and seek with you. :dragon_face: :circus_tent: Perhaps attempting a search or clicking around in the menus will help? :space_invader: Or perhaps your :princess: is in another castle? :mushroom:",
+    "tags": "",
+    "url": "/swedbank-pay-design-guide-jekyll-theme/404.html"
+  },{
     "title": "After payment is completed",
     "text": "After paaaayment Payment is done? Great, here is what will happen now. First we’ll subtract the money from your account, then a wizard will attempt a grand spell to carry the money on the back of ants to transfer it to a safe place. A secret place. A place with a secret.",
     "tags": "",
@@ -28,16 +33,6 @@ var tipuesearch = {"pages": [{
     "text": "You’d like to checko out Great! Just check in first and we’ll get you sorted.",
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/checkout-more/"
-  },{
-    "title": "Sub-resources",
-    "text": "",
-    "tags": "",
-    "url": "/swedbank-pay-design-guide-jekyll-theme/resources/sub-resources/"
-  },{
-    "title": "Resources",
-    "text": "The page at the end of this link should redirect back here",
-    "tags": "",
-    "url": "/swedbank-pay-design-guide-jekyll-theme/resources/"
   },{
     "title": "Secret payments",
     "text": "How we do secret payments We don’t.",
@@ -108,9 +103,4 @@ var tipuesearch = {"pages": [{
     "text": "Don’t render this Payments have plenty of secrets due to it being secure and mostly encrypted. Only the end user and their bank can really see much data if any. We in between mostly see tokens.",
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/payments/secrets/super-secret.html"
-  },{
-    "title": "",
-    "text": "",
-    "tags": "",
-    "url": "/swedbank-pay-design-guide-jekyll-theme/resources/redirect-from"
   }]};
