@@ -23,11 +23,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/cache@v2
-        with:
-          path: ${{ github.workspace }}/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: ${{ runner.os }}-gems-
 
       - uses: actions/setup-ruby@v1
         with:
@@ -40,9 +35,7 @@ jobs:
       - uses: kamiazya/setup-graphviz@v1
 
       - name: bundle install
-        run: |
-          bundle config path "${{ github.workspace }}/bundle"
-          bundle install --jobs 4 --retry 3
+        run: bundle install --jobs 4 --retry 3
 
       - name: rspec
         env:
