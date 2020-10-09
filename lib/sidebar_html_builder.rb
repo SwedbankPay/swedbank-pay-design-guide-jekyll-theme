@@ -4,20 +4,19 @@ require_relative 'sidebar_page'
 require_relative 'sidebar_pages'
 
 module SwedbankPay
-  # A nice sidebar
-  class SidebarBuilder
-    def initialize(filename, pages)
-      @filename = filename
-      @pages = SidebarPages.new(pages)
+  # The builder of HTML for the Sidebar
+  class SidebarHTMLBuilder
+    def initialize(tree)
+      @tree = tree
     end
 
-    def build
+    def build(current_page)
       markup = ''
 
-      @pages.root_pages.each do |page|
-        next if page.ignore?
+      @tree.each do |root_page|
+        next if root_page.ignore?
 
-        markup << main_markup(page)
+        markup << root_markup(root_page, current_page)
       end
 
       markup
@@ -25,11 +24,10 @@ module SwedbankPay
 
     private
 
-    def main_markup(page)
-      title = page.title.section
-      item_class = item_class(path)
-      child_markup = child_markup(page, 2)
-      grandchildren_markup = generate_grandchildren_markup
+    def root_markup(root_page, current_page)
+      title = root_page.title.section
+      item_class = item_class(root_page, current_page)
+      item_markup = item_markup(root_page, current_page)
 
       "<li class=\"#{item_class}\">
         <div class=\"nav-group-heading\">
@@ -37,95 +35,74 @@ module SwedbankPay
           <span>#{title}</span>
         </div>
         <ul class=\"nav-ul\">
-          #{child_markup}
-          #{grandchildren_markup}
+          #{item_markup}
         </ul>
       </li>"
     end
 
-    def item_class(path)
-      active = @filename.active?(path)
+    def item_class(root_page, current_page)
+      active = root_page.active?(current_page)
       return 'nav-group active' if active
 
       'nav-group'
     end
 
-    def child_markup(page, child_pages, level)
-      children = SidebarPages.new(child_pages)
-      title = page.title.item
-      url = page.url
-      headers = page.headers
-      grandchildren = children.grandchildren_of(path, level)
-      markup = ''
-
-      if (!headers.nil? && headers.any?) || !grandchildren.empty?
-        markup << grandchild_markup(grandchildren, child_pages, headers, title, url, level)
+    def item_markup(page, current_page)
+      if page.has_children?
+        return child_markup(page, current_page)
+      elsif page.has_headers?
+        return headers_markup(page, current_page)
       else
-        item_class = !child_pages.empty? ? 'nav-leaf nav-subgroup-leaf' : 'nav-leaf'
-        markup << "<li class=\"#{item_class}\"><a href=\"#{url}\">#{title}</a></li>"
+        return leaf_markup(page)
       end
-
-      markup
     end
 
-    def grandchild_markup(grandchildren, child_pages, headers, title, url, level)
-      has_child_pages = !child_pages.empty?
+    def child_markup(page, current_page)
+      item_class = page.active?(current_page, exact: true) ? 'nav-subgroup active' : 'nav-subgroup'
+      grandchildren_markup = generate_grandchildren_markup(page , current_page)
+      return "<li class=\"#{item_class}\">
+        <div class=\"nav-subgroup-heading\">
+          <i class=\"material-icons\">arrow_right</i>
+          <a href=\"#{page.path}\">#{page.title}</a>
+        </div>
+        <ul class=\"nav-ul\">
+          #{grandchildren_markup}
+        </ul>
+      </li>"
+    end
 
-      if has_child_pages
-        active = @filename.active?(url, exact: true)
-        item_class = active || (url.split('/').length > level && @filename.start_with?(url)) ? 'nav-subgroup active' : 'nav-subgroup'
-        grand_grandchildren_markup = generate_grand_grandchildren_markup(grandchildren, headers, title, url, active)
-        "<li class=\"#{item_class}\">
-          <div class=\"nav-subgroup-heading\">
-            <i class=\"material-icons\">arrow_right</i>
-            <a href=\"#{url}\">#{title}</a>
-          </div>
-          <ul class=\"nav-ul\">
-            #{grand_grandchildren_markup}
-          </ul>
-        </li>"
-      else
-        markup = ''
+    def headers_markup(page)
+      markup = ''
 
-        headers.each do |header|
+      page.headers.each do |header|
+        hash = header[:hash]
+        subtitle = header[:title]
+        markup << "<li class=\"nav-leaf\"><a href=\"#{page.path}#{hash}\">#{subtitle}</a></li>"
+      end
+
+      return markup
+    end
+
+    def leaf_markup(page)
+      item_class = pages.parent.nil? ? 'nav-leaf' : 'nav-leaf nav-subgroup-leaf'
+      "<li class=\"#{item_class}\"><a href=\"#{path}\">#{title}</a></li>"
+    end
+
+    def generate_grandchildren_markup(page, current_page)
+      markup = ''
+
+      if page.has_headers?
+        page.headers.each do |header|
           hash = header[:hash]
           subtitle = header[:title]
-          markup << "<li class=\"nav-leaf\"><a href=\"#{url}#{hash}\">#{subtitle}</a></li>"
+          markup << "<li class=\"nav-leaf\"><a href=\"#{page.path}#{hash}\">#{subtitle}</a></li>"
         end
-
-        markup
-      end
-    end
-
-    def generate_grandchildren_markup(pages)
-      markup = ''
-      return markup unless pages.any?
-
-      pages.select { |child_path, _| child_path.split('/').length <= 3 }.each do |child_path, child_page|
-        next if child_page[:title].nil?
-        next if child_page[:hide_from_sidebar]
-
-        markup << child_markup(child_path, child_page, pages, 2)
-      end
-
-      markup
-    end
-
-    def generate_grand_grandchildren_markup(grandchildren, headers, title, url, active)
-      markup = ''
-
-      if grandchildren.empty?
-        headers.each do |header|
-          hash = header[:hash]
-          subtitle = header[:title]
-          markup << "<li class=\"nav-leaf\"><a href=\"#{url}#{hash}\">#{subtitle}</a></li>"
-        end
-      else
+      elsif page.has_children?
         sub_group_leaf_class = active ? 'nav-leaf nav-subgroup-leaf active' : 'nav-leaf nav-subgroup-leaf'
-        markup << "<li class=\"#{sub_group_leaf_class}\"><a href=\"#{url}\">#{title} overview</a></li>"
+        markup << "<li class=\"#{sub_group_leaf_class}\"><a href=\"#{page.path}\">#{page.title} overview</a></li>"
 
-        grandchildren.each do |grandchild_path, grandchild_page|
-          markup << child_markup(grandchild_path, grandchild_page, grandchildren, 3)
+        page.children.each do |child|
+          markup << child_markup(child, current_page)
         end
       end
 

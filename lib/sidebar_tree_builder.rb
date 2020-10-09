@@ -59,7 +59,7 @@ module SwedbankPay
       tree = []
       children_of = {}
 
-      sort(pages).each do |_, page|
+      sort_by_path_reversed(pages).each do |_, page|
         children_of[page.path] = [] if children_of[page.path].nil?
         page.children = children_of[page.path].sort
 
@@ -74,17 +74,8 @@ module SwedbankPay
       tree
     end
 
-    def sort(pages)
+    def sort_by_path_reversed(pages)
       pages.sort_by { |path, _| path }.reverse
-    end
-
-    def order(pages)
-      pages.sort do |a, b|
-        return 1 if a.nil? || a.title.nil?
-        return -1 if b.nil? || b.title.nil?
-
-        a.title.to_s <=> b.title.to_s
-      end.sort_by { |page| page.order }
     end
   end
 end

@@ -10,7 +10,7 @@ module SwedbankPay
     FIXNUM_MAX = (2**(0.size * 8 - 2) - 1)
 
     attr_reader :path, :title, :parent, :level, :order
-    attr_accessor :headers, :children, :doc
+    attr_accessor :headers, :children, :filename, :doc, :sidebar_container
 
     def initialize(page)
       raise ArgumentError, 'Page must be a Jekyll::Page' unless page.is_a? Jekyll::Page
@@ -23,6 +23,22 @@ module SwedbankPay
       @hide_from_sidebar = page['hide_from_sidebar'].nil? ? false : page['hide_from_sidebar']
       @title = page_title(page)
       @order = menu_order(page)
+    end
+
+    def active?(current_page, exact: false)
+      current_path = current_page.path
+
+      if @path == '/' || current_path == '/'
+        return true if @path == '/' && current_path == '/'
+
+        return false
+      end
+
+      if exact
+        return (@path == current_path) || (@path.split('/').length > @level && current_path.start_with?(@path))
+      end
+
+      return @path.start_with?(current_path)
     end
 
     def ignore?
@@ -61,6 +77,23 @@ module SwedbankPay
       end
 
       return @order <=> other.order
+    end
+
+    def save
+      Jekyll.logger.debug("   Writing Sidebar: #{filename}")
+
+      File.open(@filename, 'w') do |file|
+        html = @doc.to_html(encoding: 'UTF-8')
+        file.write(html)
+      end
+    end
+
+    def has_children?
+      !children.nil? && children.any?
+    end
+
+    def has_headers?
+      !headers.nil? && headers.any?
     end
 
     private
