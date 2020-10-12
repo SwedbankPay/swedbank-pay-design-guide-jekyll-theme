@@ -15,20 +15,20 @@ module SwedbankPay
       attr_reader :pages
 
       def init
-        @pages = {}
+        @pages_hash = {}
       end
 
-      def pre_render(page)
-        sidebar_page = SidebarPage.new(page)
-        @pages[sidebar_page.path] = sidebar_page
+      def pre_render(jekyll_page)
+        sidebar_page = SidebarPage.new(jekyll_page)
+        @pages_hash[sidebar_page.path] = sidebar_page
       end
 
       def post_write(site)
         parser = SidebarParser.new(site)
-        pages = parser.parse(@pages)
-        tree = SidebarTreeBuilder.new(pages)
+        pages = parser.parse(@pages_hash)
+        @pages = SidebarTreeBuilder.new(pages)
         renderer = SidebarRenderer.new
-        renderer.render(tree)
+        renderer.render(@pages)
       end
     end
   end

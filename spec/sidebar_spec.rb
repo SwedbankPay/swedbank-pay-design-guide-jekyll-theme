@@ -3,6 +3,7 @@
 require 'its'
 require 'jekyll'
 require 'sidebar'
+require 'sidebar_page_collection'
 
 sidebar = SwedbankPay::Sidebar
 
@@ -24,14 +25,14 @@ describe sidebar do
   describe '#pages' do
     subject { sidebar.pages }
 
-    its(:count) { is_expected.to eq 27 }
+    its(:count) { is_expected.to eq 28 }
     its(:length) { is_expected.to eq 1 }
 
     describe '[0]' do
       subject { sidebar.pages[0] }
 
       its(:path) { is_expected.to eq '/' }
-      its(:children) { is_expected.to be_an_instance_of Array }
+      its(:children) { is_expected.to be_an_instance_of SwedbankPay::SidebarPageCollection }
 
       describe 'title' do
         subject { sidebar.pages[0].title.to_s }
@@ -41,7 +42,7 @@ describe sidebar do
       describe 'children' do
         subject { sidebar.pages[0].children }
 
-        its(:length) { is_expected.to eq 8 }
+        its(:length) { is_expected.to eq 9 }
 
         describe '[0]' do
           describe 'title' do
