@@ -4,13 +4,14 @@ require 'jekyll'
 require_relative 'sidebar_path'
 require_relative 'sidebar_page_title'
 require_relative 'sidebar_page_collection'
+require_relative 'sidebar_text_builder'
 
 module SwedbankPay
   # Represents a page in the Sidebar
   class SidebarPage
     FIXNUM_MAX = (2**(0.size * 8 - 2) - 1)
 
-    attr_reader :path, :title, :parent, :level, :order, :children
+    attr_reader :path, :title, :parent, :level, :order, :children, :name
     attr_accessor :headers, :filename, :doc, :sidebar_container, :number, :parent
 
     def initialize(page)
@@ -55,17 +56,7 @@ module SwedbankPay
     end
 
     def to_s
-      indent = '-' * (@level + 1)
-      s = "#{indent} #{@name} (#{@level}, #{number})\n"
-
-      unless @children.nil? || @children.empty?
-        @children.each do |child|
-          s << child.to_s
-        end
-      end
-
-      # Only strip extraneous whitespace at the root page
-      @level == 0 ? s.strip : s
+      SidebarTextBuilder.new(self).to_s
     end
 
     def inspect
