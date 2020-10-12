@@ -50,7 +50,7 @@ module SwedbankPay
       if page.has_children?
         return child_markup(page, current_page)
       elsif page.has_headers?
-        return headers_markup(page, current_page)
+        return headers_markup(page)
       else
         return leaf_markup(page)
       end

@@ -1,13 +1,14 @@
 # frozen_string_literal: false
 
 require 'forwardable'
+require_relative 'sidebar_page_collection'
 
 module SwedbankPay
   # Arranges Sidebar pages into a tree
   class SidebarTreeBuilder
     include Enumerable
     extend Forwardable
-    def_delegators :@pages, :each, :length, :<<, :[]
+    def_delegators :@pages, :each, :length, :<<, :[], :count
 
     def initialize(pages)
       raise ArgumentError, 'Pages must be a Hash' unless pages.is_a? Hash
@@ -21,10 +22,6 @@ module SwedbankPay
 
     def inspect
       stringify(true)
-    end
-
-    def count
-      count_pages(@pages)
     end
 
     private
@@ -43,35 +40,27 @@ module SwedbankPay
       s
     end
 
-    def count_pages(pages)
-      return 0 if pages.nil? || pages.empty?
-
-      count = pages.length
-
-      pages.each do |page|
-        count += count_pages(page.children)
-      end
-
-      count
-    end
-
     def tree(pages)
       tree = []
       children_of = {}
+      page_number = 0
 
       sort_by_path_reversed(pages).each do |_, page|
         children_of[page.path] = [] if children_of[page.path].nil?
         page.children = children_of[page.path].sort
 
         if page.parent.nil?
+          # Root pages are pushed directly into the root of the tree
+          page.number = page_number
           tree.push(page)
+          page_number += 1
         else
           children_of[page.parent] = [] if children_of[page.parent].nil?
           children_of[page.parent].push(page)
         end
       end
 
-      tree
+      SidebarPageCollection.new(nil, tree)
     end
 
     def sort_by_path_reversed(pages)
