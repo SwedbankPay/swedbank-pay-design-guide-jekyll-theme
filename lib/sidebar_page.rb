@@ -95,10 +95,6 @@ module SwedbankPay
       end
     end
 
-    def has_children?
-      !children.nil? && children.any?
-    end
-
     def has_headers?
       !headers.nil? && headers.any?
     end

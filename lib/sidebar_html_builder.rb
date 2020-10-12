@@ -47,7 +47,7 @@ module SwedbankPay
     end
 
     def item_markup(page, current_page)
-      if page.has_children?
+      if page.children.any?
         return child_markup(page, current_page)
       elsif page.has_headers?
         return headers_markup(page)
@@ -96,7 +96,7 @@ module SwedbankPay
           subtitle = header[:title]
           markup << "<li class=\"nav-leaf\"><a href=\"#{page.path}#{hash}\">#{subtitle}</a></li>"
         end
-      elsif page.has_children?
+      elsif page.children.any?
         sub_group_leaf_class = active ? 'nav-leaf nav-subgroup-leaf active' : 'nav-leaf nav-subgroup-leaf'
         markup << "<li class=\"#{sub_group_leaf_class}\"><a href=\"#{page.path}\">#{page.title} overview</a></li>"
 
