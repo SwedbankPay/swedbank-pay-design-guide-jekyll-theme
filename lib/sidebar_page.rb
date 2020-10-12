@@ -49,16 +49,17 @@ module SwedbankPay
     end
 
     def to_s
-      c = ''
+      indent = '-' * (@level + 1)
+      s = "#{indent} #{@name}\n"
 
       unless @children.nil? || @children.empty?
         @children.each do |child|
-          indent = '-' * @level
-          c << "\n#{indent}#{child}"
+          s << child.to_s
         end
       end
 
-      "- #{@name}#{c}"
+      # Only strip extraneous whitespace at the root page
+      @level == 0 ? s.strip : s
     end
 
     def inspect

@@ -10,7 +10,6 @@ module SwedbankPay
 
     def initialize(path)
       @segments = segment(path)
-      @level = @segments.length
       @path = normalized
       @name = construct_name
       @parent = find_parent
@@ -27,9 +26,14 @@ module SwedbankPay
     private
 
     def segment(path)
-      return [] if path.nil?
+      if path.nil? || path == '/'
+        @level = 0
+        return []
+      end
 
-      path.sanitized.split('/').reject(&:empty?)
+      segments = path.sanitized.split('/').reject(&:empty?)
+      @level = segments.length
+      return segments
     end
 
     def normalized
