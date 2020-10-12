@@ -3,6 +3,7 @@
 require 'jekyll'
 require_relative 'sidebar_path'
 require_relative 'sidebar_page_title'
+require_relative 'sidebar_page_collection'
 
 module SwedbankPay
   # Represents a page in the Sidebar

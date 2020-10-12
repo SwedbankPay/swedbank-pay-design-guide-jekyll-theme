@@ -1,7 +1,6 @@
 # frozen_string_literal: false
 
 require_relative 'sidebar_page'
-require_relative 'sidebar_pages'
 
 module SwedbankPay
   # The builder of HTML for the Sidebar
