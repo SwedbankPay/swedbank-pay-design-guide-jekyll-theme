@@ -60,6 +60,9 @@ module SwedbankPay
         end
       end
 
+      # Sort the root pages
+      tree.sort!
+
       SidebarPageCollection.new(nil, tree)
     end
 

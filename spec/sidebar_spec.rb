@@ -26,7 +26,7 @@ describe sidebar do
     subject { sidebar.pages }
 
     its(:count) { is_expected.to eq 28 }
-    its(:length) { is_expected.to eq 1 }
+    its(:length) { is_expected.to eq 10 }
 
     describe '[0]' do
       subject { sidebar.pages[0] }
@@ -38,54 +38,48 @@ describe sidebar do
         subject { sidebar.pages[0].title.to_s }
         it { is_expected.to eq 'Home' }
       end
+    end
+
+    describe '[1]' do
+      describe 'title' do
+        subject { sidebar.pages[1].title.to_s }
+        it { is_expected.to eq 'Page 1' }
+      end
+    end
+
+    describe '[5]' do
+      subject { sidebar.pages[6] }
+
+      describe 'title' do
+        subject { sidebar.pages[6].title.to_s }
+        it { is_expected.to eq 'Resources' }
+      end
 
       describe 'children' do
-        subject { sidebar.pages[0].children }
+        subject { sidebar.pages[6].children }
 
-        its(:length) { is_expected.to eq 9 }
+        its(:length) { is_expected.to eq 6 }
 
         describe '[0]' do
+          subject { sidebar.pages[6].children[0] }
+
           describe 'title' do
-            subject { sidebar.pages[0].children[0].title.to_s }
-            it { is_expected.to eq 'Page 1' }
+            subject { sidebar.pages[6].children[0].title.to_s }
+            it { is_expected.to eq 'Alpha' }
           end
         end
 
-        describe '[5]' do
-          subject { sidebar.pages[0].children[5] }
-
+        describe '[1]' do
           describe 'title' do
-            subject { sidebar.pages[0].children[5].title.to_s }
-            it { is_expected.to eq 'Resources' }
+            subject { sidebar.pages[6].children[1].title.to_s }
+            it { is_expected.to eq 'Beta' }
           end
+        end
 
-          describe 'children' do
-            subject { sidebar.pages[0].children[5].children }
-
-            its(:length) { is_expected.to eq 6 }
-
-            describe '[0]' do
-              subject { sidebar.pages[0].children[5].children[0] }
-
-              describe 'title' do
-                subject { sidebar.pages[0].children[5].children[0].title.to_s }
-                it { is_expected.to eq 'Alpha' }
-              end
-            end
-
-            describe '[1]' do
-              describe 'title' do
-                subject { sidebar.pages[0].children[5].children[1].title.to_s }
-                it { is_expected.to eq 'Beta' }
-              end
-            end
-
-            describe '[1]' do
-              describe 'title' do
-                subject { sidebar.pages[0].children[5].children[2].title.to_s }
-                it { is_expected.to eq 'Gamma' }
-              end
-            end
+        describe '[1]' do
+          describe 'title' do
+            subject { sidebar.pages[6].children[2].title.to_s }
+            it { is_expected.to eq 'Gamma' }
           end
         end
       end
