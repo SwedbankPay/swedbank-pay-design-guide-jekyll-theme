@@ -8,7 +8,7 @@ module SwedbankPay
   class SidebarTreeBuilder
     include Enumerable
     extend Forwardable
-    def_delegators :@pages, :each, :length, :<<, :[], :count
+    def_delegators :@pages, :each, :length, :empty?, :<<, :[], :count
 
     def initialize(pages)
       raise ArgumentError, 'Pages must be a Hash' unless pages.is_a? Hash

@@ -10,67 +10,66 @@ module SwedbankPay
     end
 
     def build(current_page)
+      build_markup(@tree, current_page)
+    end
+
+    private
+
+    def build_markup(pages, current_page)
+      return '' if pages.empty?
+
       markup = ''
 
-      @tree.each do |root_page|
-        next if root_page.ignore?
+      pages.each do |page|
+        next if page.ignore?
 
-        markup << root_markup(root_page, current_page)
+        markup << item_markup(page, current_page)
       end
 
       markup
     end
 
-    private
-
-    def root_markup(root_page, current_page)
-      title = root_page.title.section
-      item_class = item_class(root_page, current_page)
-      item_markup = item_markup(root_page, current_page)
+    def item_markup(page, current_page)
+      title = page.level == 0 ? page.title.section : page.title.item
+      item_class = item_class(page, current_page)
+      group_class = group_class(page, current_page)
+      sub_items_markup = sub_items_markup(page, current_page)
 
       "<li class=\"#{item_class}\">
-        <div class=\"nav-group-heading\">
+        <div class=\"#{group_class}\">
           <i class=\"material-icons\">arrow_right</i>
           <span>#{title}</span>
         </div>
-        <ul class=\"nav-ul\">
-          #{item_markup}
-        </ul>
+        #{sub_items_markup}
       </li>"
     end
 
-    def item_class(root_page, current_page)
-      active = root_page.active?(current_page)
-      return 'nav-group active' if active
-
-      'nav-group'
+    def item_class(page, current_page)
+      cls = page.level == 0 ? 'nav-group' : 'nav-subgroup'
+      cls += ' active' if page.active?(current_page)
+      cls
     end
 
-    def item_markup(page, current_page)
-      if page.children.any?
-        return child_markup(page, current_page)
-      elsif page.has_headers?
-        return headers_markup(page)
-      else
-        return leaf_markup(page)
-      end
+    def group_class(page, current_page)
+      group = page.level == 0 ? 'group' : 'subgroup'
+      "nav-#{group}-heading"
     end
 
-    def child_markup(page, current_page)
-      item_class = page.active?(current_page, exact: true) ? 'nav-subgroup active' : 'nav-subgroup'
-      grandchildren_markup = generate_grandchildren_markup(page , current_page)
-      return "<li class=\"#{item_class}\">
-        <div class=\"nav-subgroup-heading\">
-          <i class=\"material-icons\">arrow_right</i>
-          <a href=\"#{page.path}\">#{page.title}</a>
-        </div>
-        <ul class=\"nav-ul\">
-          #{grandchildren_markup}
-        </ul>
-      </li>"
+    def sub_items_markup(page, current_page)
+      headers_markup = headers_markup(page)
+      child_markup = build_markup(page.children, current_page)
+
+      return '' if headers_markup.empty? && child_markup.empty?
+
+      "<ul class=\"nav-ul\">
+        #{headers_markup}
+        #{child_markup}
+      </ul>"
     end
 
     def headers_markup(page)
+      return '' if page.headers.nil? || page.headers.empty?
+
       markup = ''
 
       page.headers.each do |header|
@@ -79,33 +78,12 @@ module SwedbankPay
         markup << "<li class=\"nav-leaf\"><a href=\"#{page.path}#{hash}\">#{subtitle}</a></li>"
       end
 
-      return markup
+      markup
     end
 
     def leaf_markup(page)
       item_class = pages.parent.nil? ? 'nav-leaf' : 'nav-leaf nav-subgroup-leaf'
       "<li class=\"#{item_class}\"><a href=\"#{path}\">#{title}</a></li>"
-    end
-
-    def generate_grandchildren_markup(page, current_page)
-      markup = ''
-
-      if page.has_headers?
-        page.headers.each do |header|
-          hash = header[:hash]
-          subtitle = header[:title]
-          markup << "<li class=\"nav-leaf\"><a href=\"#{page.path}#{hash}\">#{subtitle}</a></li>"
-        end
-      elsif page.children.any?
-        sub_group_leaf_class = active ? 'nav-leaf nav-subgroup-leaf active' : 'nav-leaf nav-subgroup-leaf'
-        markup << "<li class=\"#{sub_group_leaf_class}\"><a href=\"#{page.path}\">#{page.title} overview</a></li>"
-
-        page.children.each do |child|
-          markup << child_markup(child, current_page)
-        end
-      end
-
-      markup
     end
   end
 end

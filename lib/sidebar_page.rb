@@ -28,7 +28,7 @@ module SwedbankPay
       @children = SidebarPageCollection.new(self)
     end
 
-    def active?(current_page, exact: false)
+    def active?(current_page)
       current_path = current_page.path
 
       if @path == '/' || current_path == '/'
@@ -37,7 +37,7 @@ module SwedbankPay
         return false
       end
 
-      if exact
+      if @level > 0
         return (@path == current_path) || (@path.split('/').length > @level && current_path.start_with?(@path))
       end
 
