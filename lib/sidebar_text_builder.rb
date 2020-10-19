@@ -12,7 +12,9 @@ module SwedbankPay
     end
 
     def to_s
-      s = "#{indent} #{@page.name} (#{@page.level}, #{@page.number})\n"
+      name = @page.name == '/' ? '/' : "/#{@page.name}"
+      title = @page.title.nil? ? '?' : @page.title.item
+      s = "#{indent} #{name}: #{title} (#{@page.level}, #{@page.number})\n"
 
       unless @page.children.empty?
           @page.children.each do |child|
