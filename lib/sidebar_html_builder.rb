@@ -30,15 +30,15 @@ module SwedbankPay
     end
 
     def item_markup(page, current_page)
-      title = page.level == 0 ? page.title.section : page.title.item
+      title_markup = title_markup(page)
       item_class = item_class(page, current_page)
-      group_class = group_class(page, current_page)
+      group_class = group_class(page)
       sub_items_markup = sub_items_markup(page, current_page)
 
       "<li class=\"#{item_class}\">
         <div class=\"#{group_class}\">
           <i class=\"material-icons\">arrow_right</i>
-          <span>#{title}</span>
+          #{title_markup}
         </div>
         #{sub_items_markup}
       </li>"
@@ -50,9 +50,15 @@ module SwedbankPay
       cls
     end
 
-    def group_class(page, current_page)
+    def group_class(page)
       group = page.level == 0 ? 'group' : 'subgroup'
       "nav-#{group}-heading"
+    end
+
+    def title_markup(page)
+      return "<span>#{page.title.section}</span>" if page.level == 0
+
+      "<a href=\"#{page.path}\">#{page.title.item}</a>"
     end
 
     def sub_items_markup(page, current_page)
