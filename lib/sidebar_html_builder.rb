@@ -74,22 +74,24 @@ module SwedbankPay
     end
 
     def headers_markup(page)
-      return '' if page.headers.nil? || page.headers.empty?
+      # If there's no page headers, only return a leaf item for the page itself
+      return leaf_markup(page.path, page.title.item, page.level) if page.headers.empty?
 
       markup = ''
 
       page.headers.each do |header|
         hash = header[:hash]
         subtitle = header[:title]
-        markup << "<li class=\"nav-leaf\"><a href=\"#{page.path}#{hash}\">#{subtitle}</a></li>"
+        href = "#{page.path}#{hash}"
+        markup << leaf_markup(href, subtitle)
       end
 
       markup
     end
 
-    def leaf_markup(page)
-      item_class = pages.parent.nil? ? 'nav-leaf' : 'nav-leaf nav-subgroup-leaf'
-      "<li class=\"#{item_class}\"><a href=\"#{path}\">#{title}</a></li>"
+    def leaf_markup(href, title, level = 0)
+      leaf_class = level > 0 ? 'nav-leaf nav-subgroup-leaf' : 'nav-leaf'
+      "<li class=\"#{leaf_class}\"><a href=\"#{href}\">#{title}</a></li>"
     end
   end
 end
