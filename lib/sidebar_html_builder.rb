@@ -80,7 +80,7 @@ module SwedbankPay
       markup = ''
 
       if page.children.length > 0
-        markup << 
+        markup <<
         "<li class=\"nav-subgroup\">
           <div class=\"nav-subgroup-heading\">
             <i class=\"material-icons\">arrow_right</i>
@@ -95,7 +95,7 @@ module SwedbankPay
           markup << leaf_markup(href, subtitle)
         end
 
-        markup << 
+        markup <<
           "</ul>
         </li>"
       else 
