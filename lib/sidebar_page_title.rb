@@ -3,8 +3,7 @@
 module SwedbankPay
   # Represents the title of a SidebarPage
   class SidebarPageTitle
-    attr_reader :section
-    attr_reader :item
+    attr_reader :section, :item
 
     def initialize(title)
       @title = title

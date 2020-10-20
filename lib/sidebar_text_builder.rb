@@ -17,26 +17,28 @@ module SwedbankPay
       s = "#{indent} #{name}: #{title} (#{@page.level}, #{@page.number})\n"
 
       unless @page.children.empty?
-          @page.children.each do |child|
+        @page.children.each do |child|
           s << child.to_s
-          end
+        end
       end
 
       # Only strip extraneous whitespace at the root page
-      @page.level == 0 ? s.strip : s
+      @page.level.zero? ? s.strip : s
     end
 
     private
 
     def indent
       # Return a special character for the first root page
-      return '┍╾' if @page.number == 0 && @page.parent.nil?
+      return '┍╾' if @page.number.zero? && @page.parent.nil?
 
       increment = @page.level > 1 ? @page.level + 1 : @page.level
 
-      '┝╾' +  ('─' * increment)
+      "┝╾#{('─' * increment)}"
+    end
 
-      # TODO: Add logic to find the very last page regardless of level and have indent it with '┕╾─'
+    def todo
+      "TODO: Add logic to find the very last page regardless of level and have indent it with '┕╾─'"
     end
   end
 end

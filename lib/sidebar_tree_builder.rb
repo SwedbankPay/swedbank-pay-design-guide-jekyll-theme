@@ -21,15 +21,15 @@ module SwedbankPay
     end
 
     def inspect
-      stringify(true)
+      stringify(inspection: true)
     end
 
     private
 
-    def stringify(inspect = false)
+    def stringify(inspection: false)
       s = "<#{self.class} ##{count}"
 
-      if inspect
+      if inspection
         s << ":\n"
         @pages.each do |page|
           s << "#{page}\n"
