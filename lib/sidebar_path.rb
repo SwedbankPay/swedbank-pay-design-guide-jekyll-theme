@@ -10,7 +10,7 @@ module SwedbankPay
 
     def initialize(path)
       @segments = segment(path)
-      @path = normalized
+      @path = normalized(path)
       @name = construct_name
       @parent = find_parent
     end
@@ -31,11 +31,17 @@ module SwedbankPay
       return segments
     end
 
-    def normalized
+    def normalized(path)
       return '/' if @segments.empty?
 
-      joined = @segments.join('/')
-      "/#{joined}"
+      joined = "/#{@segments.join('/')}"
+
+      # Directory paths should end with '/'.
+      directory?(path) ? "#{joined}/" : joined
+    end
+
+    def directory?(path)
+      path.end_with?('/') || path.end_with?('/index.html')
     end
 
     def construct_name
@@ -49,7 +55,8 @@ module SwedbankPay
       return nil if @segments.empty? || (@segments.length == 1)
 
       # Return the path minus the last segment as the parent path
-      @path.chomp("/#{@segments.last}")
+      last = @path.sub(/(\/#{@segments.last}\/?)$/, '')
+      "#{last}/"
     end
   end
 end
