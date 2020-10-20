@@ -27,8 +27,8 @@ module SwedbankPay
 
     def segment(path)
       segments = path.sanitized.split('/').reject(&:empty?)
-      @level = segments.length == 0 ? 0 : segments.length - 1
-      return segments
+      @level = segments.length.zero? ? 0 : segments.length - 1
+      segments
     end
 
     def normalized(path)
@@ -55,7 +55,7 @@ module SwedbankPay
       return nil if @segments.empty? || (@segments.length == 1)
 
       # Return the path minus the last segment as the parent path
-      last = @path.sub(/(\/#{@segments.last}\/?)$/, '')
+      last = @path.sub(%r{(/#{@segments.last}/?)$}, '')
       "#{last}/"
     end
   end

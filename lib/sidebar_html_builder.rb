@@ -45,18 +45,18 @@ module SwedbankPay
     end
 
     def item_class(page, current_page)
-      cls = page.level == 0 ? 'nav-group' : 'nav-subgroup'
+      cls = page.level.zero? ? 'nav-group' : 'nav-subgroup'
       cls += ' active' if page.active?(current_page)
       cls
     end
 
     def group_class(page)
-      group = page.level == 0 ? 'group' : 'subgroup'
+      group = page.level.zero? ? 'group' : 'subgroup'
       "nav-#{group}-heading"
     end
 
     def title_markup(page)
-      return "<span>#{page.title.section}</span>" if page.level == 0
+      return "<span>#{page.title.section}</span>" if page.level.zero?
 
       "<a href=\"#{page.path}\">#{page.title.item}</a>"
     end
@@ -79,14 +79,14 @@ module SwedbankPay
 
       markup = ''
 
-      if page.children.length > 0
+      if page.children.length.positive?
         markup <<
-        "<li class=\"nav-subgroup\">
-          <div class=\"nav-subgroup-heading\">
-            <i class=\"material-icons\">arrow_right</i>
-            <a href=\"#{page.path}\">#{page.title.item}</a>
-          </div>
-          <ul class=\"nav-ul\">"
+          "<li class=\"nav-subgroup\">
+            <div class=\"nav-subgroup-heading\">
+              <i class=\"material-icons\">arrow_right</i>
+              <a href=\"#{page.path}\">#{page.title.item}</a>
+            </div>
+            <ul class=\"nav-ul\">"
 
         page.headers.each do |header|
           hash = header[:hash]
@@ -98,7 +98,7 @@ module SwedbankPay
         markup <<
           "</ul>
         </li>"
-      else 
+      else
         page.headers.each do |header|
           hash = header[:hash]
           subtitle = header[:title]
@@ -111,7 +111,7 @@ module SwedbankPay
     end
 
     def leaf_markup(href, title, level = 0)
-      leaf_class = level > 0 ? 'nav-leaf nav-subgroup-leaf' : 'nav-leaf'
+      leaf_class = level.positive? ? 'nav-leaf nav-subgroup-leaf' : 'nav-leaf'
       "<li class=\"#{leaf_class}\"><a href=\"#{href}\">#{title}</a></li>"
     end
   end

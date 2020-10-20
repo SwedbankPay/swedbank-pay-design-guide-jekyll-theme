@@ -11,7 +11,7 @@ module SwedbankPay
   class SidebarPage
     FIXNUM_MAX = (2**(0.size * 8 - 2) - 1)
 
-    attr_reader :path, :title, :parent, :level, :order, :children, :name
+    attr_reader :path, :title, :level, :order, :children, :name
     attr_accessor :headers, :filename, :doc, :sidebar_container, :number, :parent
 
     def initialize(page)
@@ -37,11 +37,9 @@ module SwedbankPay
         return false
       end
 
-      if @level > 0
-        return (@path == current_path) || (@path.split('/').length > @level && current_path.start_with?(@path))
-      end
+      return eq?(current_path) || child_of?(current_path) if @level.positive?
 
-      return @path.start_with?(current_path)
+      @path.start_with?(current_path)
     end
 
     def ignore?
@@ -74,7 +72,7 @@ module SwedbankPay
         return @title <=> other.title
       end
 
-      return @order <=> other.order
+      @order <=> other.order
     end
 
     def save
@@ -86,7 +84,7 @@ module SwedbankPay
       end
     end
 
-    def has_headers?
+    def headers?
       !headers.nil? && headers.any?
     end
 
@@ -104,6 +102,14 @@ module SwedbankPay
       return FIXNUM_MAX if order.nil? || order.to_s.empty?
 
       order.to_i
+    end
+
+    def eq?(path)
+      @path == path
+    end
+
+    def child_of?(path)
+      @path.split('/').length > @level && path.start_with?(@path)
     end
   end
 end
