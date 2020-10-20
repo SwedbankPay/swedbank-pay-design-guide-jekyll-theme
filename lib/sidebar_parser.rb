@@ -17,6 +17,8 @@ module SwedbankPay
         path = SidebarPath.new(filename).to_s
         page = pages[path]
 
+        raise ArgumentError, "No page found for '#{path}'." if page.nil?
+
         page.doc = doc
         page.filename = filename
         page.headers = find_headers(doc)
