@@ -8,8 +8,17 @@ module SwedbankPay
     def render(tree)
       raise ArgumentError, 'pages must be an SidebarTreeBuilder' unless tree.is_a? SidebarTreeBuilder
 
-      tree.each do |page|
-        sidebar_html = render_page(tree, page)
+      @tree = tree
+      render_pages(tree)
+    end
+
+    private
+
+    def render_pages(pages)
+      return if pages.empty?
+
+      pages.each do |page|
+        sidebar_html = render_page(page)
 
         next if sidebar_html.nil?
         next if page.sidebar_container.nil?
@@ -17,16 +26,16 @@ module SwedbankPay
         page.sidebar_container.inner_html = sidebar_html
 
         page.save
+
+        render_pages(page.children)
       end
     end
 
-    private
-
-    def render_page(tree, page)
+    def render_page(page)
       sidebar_html = nil
 
       begin
-        builder = SidebarHTMLBuilder.new(tree)
+        builder = SidebarHTMLBuilder.new(@tree)
         sidebar_html = builder.build(page)
 
         File.open('_site/sidebar.html', 'w') { |f| f.write(sidebar_html) }
