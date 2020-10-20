@@ -79,11 +79,32 @@ module SwedbankPay
 
       markup = ''
 
-      page.headers.each do |header|
-        hash = header[:hash]
-        subtitle = header[:title]
-        href = "#{page.path}#{hash}"
-        markup << leaf_markup(href, subtitle)
+      if page.children.length > 0
+        markup <<
+        "<li class=\"nav-subgroup\">
+          <div class=\"nav-subgroup-heading\">
+            <i class=\"material-icons\">arrow_right</i>
+            <a href=\"#{page.path}\">#{page.title.item}</a>
+          </div>
+          <ul class=\"nav-ul\">"
+
+        page.headers.each do |header|
+          hash = header[:hash]
+          subtitle = header[:title]
+          href = "#{page.path}#{hash}"
+          markup << leaf_markup(href, subtitle)
+        end
+
+        markup <<
+          "</ul>
+        </li>"
+      else 
+        page.headers.each do |header|
+          hash = header[:hash]
+          subtitle = header[:title]
+          href = "#{page.path}#{hash}"
+          markup << leaf_markup(href, subtitle)
+        end
       end
 
       markup
