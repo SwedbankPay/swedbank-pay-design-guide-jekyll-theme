@@ -35,6 +35,26 @@ describe sidebar do
       end
     end
 
+    describe '[3]' do
+      subject { sidebar.pages[3] }
+
+      its(:path) { is_expected.to eq '/checkout/' }
+
+      describe '#active?' do
+        it { expect(subject.active?('/checkout/after-payment')).to be true }
+      end
+
+      describe 'children[3]' do
+        subject { sidebar.pages[3].children[3] }
+
+        its(:path) { is_expected.to eq '/checkout/after-payment' }
+
+        describe '#active?' do
+          it { expect(subject.active?('/checkout/after-payment')).to be true }
+        end
+      end
+    end
+
     describe '[5]' do
       subject { sidebar.pages[6] }
 
