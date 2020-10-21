@@ -27,17 +27,17 @@ module SwedbankPay
     private
 
     def stringify(inspection: false)
-      s = "<#{self.class} ##{count}"
+      output = "<#{self.class} ##{count}"
 
       if inspection
-        s << ":\n"
+        output << ":\n"
         @pages.each do |page|
-          s << "#{page}\n"
+          output << "#{page}\n"
         end
       end
 
-      s << '>'
-      s
+      output << '>'
+      output
     end
 
     def tree(pages)

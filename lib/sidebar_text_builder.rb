@@ -38,6 +38,8 @@ module SwedbankPay
     end
 
     def todo
+      # This 'todo' method exists to circumvent the following RuboCop error:
+      # lib/sidebar_text_builder.rb:39:97: C: Style/AsciiComments: Use only ascii symbols in comments.
       "TODO: Add logic to find the very last page regardless of level and have indent it with '┕╾─'"
     end
   end

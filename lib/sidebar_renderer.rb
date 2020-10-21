@@ -42,7 +42,7 @@ module SwedbankPay
       rescue StandardError => e
         Jekyll.logger.error("           Sidebar: Unable to render sidebar for '#{page.filename}'.")
         Jekyll.logger.debug("           Sidebar: #{e.message}. #{e.backtrace.inspect}")
-        nil
+        return nil
       end
 
       sidebar_html
