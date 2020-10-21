@@ -44,16 +44,6 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/resources/gamma.html"
   },{
-    "title": "Sub-resources",
-    "text": "",
-    "tags": "",
-    "url": "/swedbank-pay-design-guide-jekyll-theme/resources/sub-resources/"
-  },{
-    "title": "Resources",
-    "text": "The page at the end of this link should redirect back here",
-    "tags": "",
-    "url": "/swedbank-pay-design-guide-jekyll-theme/resources/"
-  },{
     "title": "Checkout More",
     "text": "You’d like to checko out Great! Just check in first and we’ll get you sorted.",
     "tags": "",
@@ -68,6 +58,16 @@ var tipuesearch = {"pages": [{
     "text": "Core implementation overview 01 Initiate session for consumer identification 15 min read arrow_forward 02 Display Swedbank Pay checkin module 10 min read arrow_forward 03 Create payment order 18 min read arrow_forward 04 Display the Payment Menu 13 min read arrow_forward 05 Capture the funds 10 min read arrow_forward Additional features add After Payment Add After-payment operation to your order system arrow_forward remove_red_eye Features In this section you find various resources for Swedbank Pay’s API Platform. arrow_forward",
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/checkout/"
+  },{
+    "title": "Sub-resources",
+    "text": "",
+    "tags": "",
+    "url": "/swedbank-pay-design-guide-jekyll-theme/resources/sub-resources/"
+  },{
+    "title": "Resources",
+    "text": "The page at the end of this link should redirect back here",
+    "tags": "",
+    "url": "/swedbank-pay-design-guide-jekyll-theme/resources/"
   },{
     "title": "Secret payments",
     "text": "How we do secret payments We don’t.",
