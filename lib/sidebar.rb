@@ -27,6 +27,7 @@ module SwedbankPay
         parser = SidebarParser.new(site)
         pages = parser.parse(@pages_hash)
         @pages = SidebarTreeBuilder.new(pages)
+        Jekyll.logger.debug("           Sidebar: #{@pages.inspect}")
         renderer = SidebarRenderer.new
         renderer.render(@pages)
       end

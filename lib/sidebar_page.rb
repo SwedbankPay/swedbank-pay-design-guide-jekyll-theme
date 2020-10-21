@@ -28,18 +28,14 @@ module SwedbankPay
       @children = SidebarPageCollection.new(self)
     end
 
-    def active?(current_page)
-      current_path = current_page.path
+    def active?(current_path)
+      return true if @path == current_path
 
-      if @path == '/' || current_path == '/'
-        return true if @path == '/' && current_path == '/'
-
-        return false
+      @children.each do |child|
+        return true if child.active?(current_path)
       end
 
-      return eq?(current_path) || child_of?(current_path) if @level.positive?
-
-      @path.start_with?(current_path)
+      return false
     end
 
     def ignore?
@@ -86,6 +82,12 @@ module SwedbankPay
 
     def headers?
       !headers.nil? && headers.any?
+    end
+
+    def coordinate
+      return @number.to_s if @parent.nil?
+
+      "#{@parent.coordinate}.#{@number}"
     end
 
     private

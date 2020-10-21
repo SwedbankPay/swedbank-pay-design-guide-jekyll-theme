@@ -14,7 +14,7 @@ module SwedbankPay
     def to_s
       name = @page.name == '/' ? '/' : "/#{@page.name}"
       title = @page.title.nil? ? '?' : @page.title.item
-      s = "#{indent} #{name}: #{title} (#{@page.level}, #{@page.number})\n"
+      s = "#{indent} #{name}: #{title} (#{@page.coordinate})\n"
 
       unless @page.children.empty?
         @page.children.each do |child|

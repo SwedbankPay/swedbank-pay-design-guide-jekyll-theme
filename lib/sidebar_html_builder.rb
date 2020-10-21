@@ -18,25 +18,40 @@ module SwedbankPay
     def build_markup(pages, current_page)
       return '' if pages.empty?
 
+      current_path = current_path(current_page)
       markup = ''
 
       pages.each do |page|
         next if page.ignore?
 
-        sub_items_markup = sub_items_markup(page, current_page)
-        markup << item_markup(page, current_page, page.level, sub_items_markup)
+        sub_items_markup = sub_items_markup(page, current_path)
+        markup << item_markup(page, current_path, page.level, sub_items_markup)
       end
 
       markup
     end
 
-    def item_markup(page, current_page, level, sub_items_markup)
+    def current_path(current_page)
+      if current_page.nil?
+        Jekyll.logger.warn("           Sidebar: Nil current_page")
+        return ''
+      end
+
+      return current_page if current_page.is_a? String
+      return current_page.path if current_page.respond_to?(:path)
+
+      Jekyll.logger.warn("           Sidebar: #{current_page.class} ('#{current_page}') does not respond to :path.")
+
+      ''
+    end
+
+    def item_markup(page, current_path, level, sub_items_markup)
       title_markup = title_markup(page, level)
-      item_class = item_class(page, current_page, level)
-      group_class = group_class(level)
+      item_class = item_class(page, current_path, level)
+      group_heading_class = group_heading_class(level)
 
       "<li class=\"#{item_class}\">
-        <div class=\"#{group_class}\">
+        <div class=\"#{group_heading_class}\">
           <i class=\"material-icons\">arrow_right</i>
           #{title_markup}
         </div>
@@ -44,15 +59,20 @@ module SwedbankPay
       </li>"
     end
 
-    def item_class(page, current_page, level)
-      cls = level.zero? ? 'nav-group' : 'nav-subgroup'
-      cls += ' active' if page.active?(current_page)
-      cls
+    def item_class(page, current_path, level)
+      active = active?(page, current_path, level)
+      item_class = group_class(level)
+      item_class += ' active' if active
+      item_class
     end
 
     def group_class(level)
-      group = level.zero? ? 'group' : 'subgroup'
-      "nav-#{group}-heading"
+      level.zero? ? 'nav-group' : 'nav-subgroup'
+    end
+
+    def group_heading_class(level)
+      group_class = group_class(level)
+      "#{group_class}-heading"
     end
 
     def title_markup(page, level)
@@ -61,9 +81,9 @@ module SwedbankPay
       "<a href=\"#{page.path}\">#{page.title.item}</a>"
     end
 
-    def sub_items_markup(page, current_page)
-      headers_markup = headers_markup(page, current_page)
-      child_markup = build_markup(page.children, current_page)
+    def sub_items_markup(page, current_path)
+      headers_markup = headers_markup(page, current_path)
+      child_markup = build_markup(page.children, current_path)
 
       return '' if headers_markup.empty? && child_markup.empty?
 
@@ -73,7 +93,7 @@ module SwedbankPay
       </ul>"
     end
 
-    def headers_markup(page, current_page)
+    def headers_markup(page, current_path)
       # If there's no page headers, only return a leaf item for the page itself.
       return leaf_markup(page.path, page.title.item, page.level) if page.headers.empty?
 
@@ -83,7 +103,7 @@ module SwedbankPay
       headers_markup = page.headers.map { |h| header_markup(page, h) }.join('')
       headers_markup = "<ul class=\"nav-ul\">#{headers_markup}</ul>"
 
-      item_markup(page, current_page, page.level + 1, headers_markup)
+      item_markup(page, current_path, page.level + 1, headers_markup)
     end
 
     def header_markup(page, header)
@@ -96,6 +116,10 @@ module SwedbankPay
     def leaf_markup(href, title, level = 0)
       leaf_class = level.positive? ? 'nav-leaf nav-subgroup-leaf' : 'nav-leaf'
       "<li class=\"#{leaf_class}\"><a href=\"#{href}\">#{title}</a></li>"
+    end
+
+    def active?(page, current_path, level)
+      level.zero? ? page.active?(current_path) : page.path == current_path
     end
   end
 end
