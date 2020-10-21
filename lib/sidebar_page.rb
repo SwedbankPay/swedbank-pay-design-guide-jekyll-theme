@@ -88,6 +88,12 @@ module SwedbankPay
       !headers.nil? && headers.any?
     end
 
+    def coordinate
+      return @number.to_s if @parent.nil?
+
+      "#{@parent.coordinate}.#{@number}"
+    end
+
     private
 
     def page_title(page)
