@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'sanitized'
+require_relative 'sanitized_filename'
 require_relative 'sidebar_page_title'
 
 module SwedbankPay
