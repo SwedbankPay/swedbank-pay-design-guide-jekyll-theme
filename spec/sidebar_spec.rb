@@ -1,96 +1,33 @@
 # frozen_string_literal: true
 
-require 'its'
-require 'jekyll'
 require 'sidebar'
-require 'sidebar_page_collection'
 
-sidebar = SwedbankPay::Sidebar
+describe Jekyll::Sidebar do
+  describe 'render' do
+    source_dir = File.join(__dir__, '..')
+    dest_dir = File.join(source_dir, '_site')
 
-describe sidebar do
-  include_context 'shared'
-
-  describe '#pages' do
-    subject { sidebar.pages }
-
-    its(:count) { is_expected.to eq 28 }
-    its(:length) { is_expected.to eq 10 }
-
-    describe '[0]' do
-      subject { sidebar.pages[0] }
-
-      its(:path) { is_expected.to eq '/' }
-      its(:children) { is_expected.to be_an_instance_of SwedbankPay::SidebarPageCollection }
-
-      describe 'title' do
-        subject { sidebar.pages[0].title.to_s }
-        it { is_expected.to eq 'Home' }
-      end
+    before(:all) do
+      config = Jekyll.configuration(
+        {
+          'config' => File.join(source_dir, '_config.yml'),
+          'source' => source_dir,
+          'destination' => dest_dir
+        }
+      )
+      Jekyll::Commands::Build.process(config)
     end
 
-    describe '[1]' do
-      describe 'title' do
-        subject { sidebar.pages[1].title.to_s }
-        it { is_expected.to eq 'Page 1' }
-      end
-    end
+    index_path = File.join(dest_dir, 'index.html')
 
-    describe '[3]' do
-      subject { sidebar.pages[3] }
+    subject { File.read(index_path) }
 
-      its(:path) { is_expected.to eq '/checkout/' }
+    it {
+      expect(File).to exist(index_path)
+    }
 
-      describe '#active?' do
-        it { expect(subject.active?('/checkout/after-payment')).to be true }
-      end
-
-      describe 'children[3]' do
-        subject { sidebar.pages[3].children[3] }
-
-        its(:path) { is_expected.to eq '/checkout/after-payment' }
-
-        describe '#active?' do
-          it { expect(subject.active?('/checkout/after-payment')).to be true }
-        end
-      end
-    end
-
-    describe '[5]' do
-      subject { sidebar.pages[6] }
-
-      describe 'title' do
-        subject { sidebar.pages[6].title.to_s }
-        it { is_expected.to eq 'Resources' }
-      end
-
-      describe 'children' do
-        subject { sidebar.pages[6].children }
-
-        its(:length) { is_expected.to eq 6 }
-
-        describe '[0]' do
-          subject { sidebar.pages[6].children[0] }
-
-          describe 'title' do
-            subject { sidebar.pages[6].children[0].title.to_s }
-            it { is_expected.to eq 'Alpha' }
-          end
-        end
-
-        describe '[1]' do
-          describe 'title' do
-            subject { sidebar.pages[6].children[1].title.to_s }
-            it { is_expected.to eq 'Beta' }
-          end
-        end
-
-        describe '[1]' do
-          describe 'title' do
-            subject { sidebar.pages[6].children[2].title.to_s }
-            it { is_expected.to eq 'Gamma' }
-          end
-        end
-      end
-    end
+    it {
+      is_expected.to include('<i class="material-icons">arrow_right</i><span>Home</span>')
+    }
   end
 end
