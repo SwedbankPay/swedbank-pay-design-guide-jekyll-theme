@@ -17,12 +17,14 @@ Gem::Specification.new do |spec|
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(file_filter) }
   spec.require_paths = ['lib']
 
+  spec.required_ruby_version = '>= 2.4.0'
   spec.add_runtime_dependency 'faraday', '>= 1.0.1'
   spec.add_runtime_dependency 'html-proofer'
   spec.add_runtime_dependency 'jekyll', '>= 3.7', '< 5.0'
   spec.add_runtime_dependency 'jekyll-contentblocks'
   spec.add_runtime_dependency 'jekyll-github-metadata'
   spec.add_runtime_dependency 'jekyll-material-icon-tag'
+  spec.add_runtime_dependency 'jekyll-redirect-from'
   spec.add_runtime_dependency 'jemoji'
   spec.add_runtime_dependency 'kramdown-plantuml'
   spec.add_runtime_dependency 'nokogiri', '~> 1.10'
