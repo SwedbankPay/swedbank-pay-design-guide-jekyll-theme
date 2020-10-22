@@ -36,7 +36,7 @@ module SwedbankPay
 
     def current_path(current_page)
       if current_page.nil?
-        Jekyll.logger.warn("           Sidebar: Nil current_page")
+        Jekyll.logger.warn('           Sidebar: Nil current_page')
         return ''
       end
 
@@ -129,7 +129,7 @@ module SwedbankPay
 
     def section_title(page)
       return page.title.section unless page.title.section.nil?
-      return page.parent.title.to_s unless page.parent.nil? || page.parent.title.nil?
+      return page.parent.title.to_s unless page.parent.nil? || page.parent.title.nil?
 
       ''
     end

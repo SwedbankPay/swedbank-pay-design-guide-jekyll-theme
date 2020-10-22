@@ -35,7 +35,7 @@ module SwedbankPay
         return true if child.active?(current_path)
       end
 
-      return false
+      false
     end
 
     def ignore?
