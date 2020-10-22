@@ -30,7 +30,7 @@ module SwedbankPay
 
     def indent
       # Return a special character for the first root page
-      return '┍╾' if @page.number.zero? && @page.parent.nil?
+      return '┍╾' if (@page.number.nil? || @page.number.zero?) && @page.parent.nil?
 
       increment = @page.level > 1 ? @page.level + 1 : @page.level
 

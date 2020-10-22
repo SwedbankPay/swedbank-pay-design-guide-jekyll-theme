@@ -1,5 +1,5 @@
 ---
-title: Swedbank Pay Checkout – After Payment
+title: After Payment
 description: |
     Add After-payment operation to your order system
 icon:

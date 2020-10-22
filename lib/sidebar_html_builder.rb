@@ -10,6 +10,9 @@ module SwedbankPay
     end
 
     def build(current_page)
+      raise ArgumentError, 'current_page cannot be nil' if current_page.nil?
+      raise ArgumentError, "#{current_page.class} is not a #{SidebarPage}" unless current_page.is_a? SidebarPage
+
       build_markup(@tree, current_page)
     end
 
@@ -33,7 +36,7 @@ module SwedbankPay
 
     def current_path(current_page)
       if current_page.nil?
-        Jekyll.logger.warn("           Sidebar: Nil current_page")
+        Jekyll.logger.warn('           Sidebar: Nil current_page')
         return ''
       end
 
@@ -76,9 +79,11 @@ module SwedbankPay
     end
 
     def title_markup(page, level)
-      return "<span>#{page.title.section}</span>" if level.zero?
+      section_title = section_title(page)
+      return "<span>#{section_title}</span>" if level.zero?
 
-      "<a href=\"#{page.path}\">#{page.title.item}</a>"
+      item_title = item_title(page)
+      "<a href=\"#{page.path}\">#{item_title}</a>"
     end
 
     def sub_items_markup(page, current_path)
@@ -95,7 +100,7 @@ module SwedbankPay
 
     def headers_markup(page, current_path)
       # If there's no page headers, only return a leaf item for the page itself.
-      return leaf_markup(page.path, page.title.item, page.level) if page.headers.empty?
+      return leaf_markup(page.path, page.title.item, page.level) unless page.headers?
 
       # If there's no children, only return the headers as leaf node items.
       return page.headers.map { |h| header_markup(page, h) }.join('') if page.children.empty?
@@ -120,6 +125,17 @@ module SwedbankPay
 
     def active?(page, current_path, level)
       level.zero? ? page.active?(current_path) : page.path == current_path
+    end
+
+    def section_title(page)
+      return page.title.section unless page.title.section.nil?
+      return page.parent.title.to_s unless page.parent.nil? || page.parent.title.nil?
+
+      ''
+    end
+
+    def item_title(page)
+      page.title.item
     end
   end
 end
