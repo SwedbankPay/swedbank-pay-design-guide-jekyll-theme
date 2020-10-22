@@ -9,10 +9,20 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/checkout-more/after-payment.html"
   },{
-    "title": "Swedbank Pay Checkout – After Payment",
+    "title": "After Payment",
     "text": "When the consumer has completed the entire Checkin and Payment Menu, you need to implement the relevant after-payment operations in your order system. Which these operations are and how they are executed is described below. Introduction Below is the final part of the sequence diagram illustrating how a capture operation is performed. sequenceDiagram participant Merchant participant SwedbankPay as Swedbank Pay rect rgba(81,43,43,0.1) activate Merchant note left of Payer: Capture Merchant -&gt;&gt;+ SwedbankPay: rel:create-paymentorder-capture deactivate Merchant SwedbankPay --&gt;&gt;- Merchant: Capture status note right of Merchant: Capture here only if the purchased&lt;br/&gt;goods don't require shipping.&lt;br/&gt;If shipping is required, perform capture&lt;br/&gt;after the goods have shipped.&lt;br&gt;Should only be used for &lt;br&gt;PaymentInstruments that support &lt;br&gt;Authorizations. end Operations Most payment instruments are two-phase payments – in which a successful payment order will result in an authorized transaction – that must be followed up by a capture or cancellation transaction in a later stage. One-phase payments like Swish are settled directly without the option to capture or cancel. For a full list of the available operations, see the. Operation Description create-paymentorder-capture The second part of a two-phase transaction where the authorized amount is sent from the payer to the payee. It is possible to do a part-capture on a subset of the authorized amount. Several captures on the same payment are possible, up to the total authorization amount. create-paymentorder-cancel Used to cancel authorized and not yet captured transactions. If a cancellation is performed after doing a part-capture, it will only affect the not yet captured authorization amount. create-paymentorder-reversal Used to reverse a payment. It is only possible to reverse a payment that has been captured and not yet reversed. To identify the operations that are available we need to do a GET request against the URI of paymentorder.id: Request 1 2 GET /psp/paymentorders/ HTTP/1.1 Authorization: Bearer &lt;AccessToken&gt; The (abbreviated) response containing an updateorder, capture, cancellation, and reversal operation should look similar to the response below: Response 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 HTTP/1.1 200 OK Content-Type: application/json { \"paymentOrder\": { \"id\": \"/psp/paymentorders/\" }, \"operations\": [ { \"method\": \"PATCH\", \"href\": \"/psp/paymentorders/\", \"rel\": \"update-paymentorder-updateorder\", \"contentType\": \"application/json\" }, { \"method\": \"POST\", \"href\": \"/psp/paymentorders//captures\", \"rel\": \"create-paymentorder-capture\", \"contentType\": \"application/json\" }, { \"method\": \"POST\", \"href\": \"/psp/paymentorders//cancellations\", \"rel\": \"create-paymentorder-cancel\", \"contentType\": \"application/json\" }, { \"method\": \"POST\", \"href\": \"/psp/paymentorders//reversals\", \"rel\": \"create-paymentorder-reversal\", \"contentType\": \"application/json\" } ] } Field Type Description paymentorder object The payment order object. └➔ id string   operations array The array of possible operations to perform, given the state of the payment order. info Note that all of the operations Cancel, Capture and Reversal must be implemented. Back: Capture",
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/checkout/after-payment.html"
+  },{
+    "title": "Alpha",
+    "text": "",
+    "tags": "",
+    "url": "/swedbank-pay-design-guide-jekyll-theme/resources/alpha.html"
+  },{
+    "title": "Beta",
+    "text": "",
+    "tags": "",
+    "url": "/swedbank-pay-design-guide-jekyll-theme/resources/beta.html"
   },{
     "title": "Swedbank Pay Checkout – Capture",
     "text": "Step 5: Capture the funds Capture can only be done on a payment with a successful authorized transaction, and if the authorization was not done on a one-phase payment instrument. Examples of one-phase payment instruments are Swish and Vipps, while payment instruments such as Credit Card are two-phase payments, requiring a Capture to be performed. It is possible to do a part-capture where you only capture a smaller amount than the authorized amount. You can later do more captures on the same payment up to the total authorization amount. This is done by requesting the order information from the server, to get the request link to perform the capture. With this, you can request the capture with the sum to capture, and get back the status. sequenceDiagram participant Merchant participant SwedbankPay as Swedbank Pay rect rgba(81,43,43,0.1) activate Merchant note left of Payer: Capture Merchant -&gt;&gt;+ SwedbankPay: rel:create-paymentorder-capture deactivate Merchant SwedbankPay --&gt;&gt;- Merchant: Capture status note right of Merchant: Capture here only if the purchased&lt;br/&gt;goods don't require shipping.&lt;br/&gt;If shipping is required, perform capture&lt;br/&gt;after the goods have shipped.&lt;br&gt;Should only be used for &lt;br&gt;PaymentInstruments that support &lt;br&gt;Authorizations. end To capture the authorized payment, we need to perform create-paymentorder-capture against the accompanying href returned in the operations list. See the abbreviated request and response below: Request 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 POST /psp/paymentorders//captures HTTP/1.1 Host: Authorization: Bearer &lt;AccessToken&gt; Content-Type: application/json { \"transaction\": { \"description\": \"Capturing the authorized payment\", \"amount\": 1500, \"vatAmount\": 375, \"payeeReference\": \"AB832\", \"receiptReference\": \"AB831\", \"orderItems\": [ { \"reference\": \"P1\", \"name\": \"Product1\", \"type\": \"PRODUCT\", \"class\": \"ProductGroup1\", \"itemUrl\": \"https://example.com/products/123\", \"imageUrl\": \"https://example.com/product123.jpg\", \"description\": \"Product 1 description\", \"discountDescription\": \"Volume discount\", \"quantity\": 4, \"quantityUnit\": \"pcs\", \"unitPrice\": 300, \"discountPrice\": 200, \"vatPercent\": 2500, \"amount\": 1000, \"vatAmount\": 250 }, { \"reference\": \"P2\", \"name\": \"Product2\", \"type\": \"PRODUCT\", \"class\": \"ProductGroup1\", \"description\": \"Product 2 description\", \"quantity\": 1, \"quantityUnit\": \"pcs\", \"unitPrice\": 500, \"vatPercent\": 2500, \"amount\": 500, \"vatAmount\": 125 } ] } } Et voilà! Checkout should now be complete, the payment should be secure and everyone should be happy. But, sometimes you also need to implement the cancellation and reversal operations described below. Back: Payment Menu Next: After Payment",
@@ -29,6 +39,11 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/payments/credit.html"
   },{
+    "title": "Gamma",
+    "text": "",
+    "tags": "",
+    "url": "/swedbank-pay-design-guide-jekyll-theme/resources/gamma.html"
+  },{
     "title": "Checkout More",
     "text": "You’d like to checko out Great! Just check in first and we’ll get you sorted.",
     "tags": "",
@@ -43,6 +58,16 @@ var tipuesearch = {"pages": [{
     "text": "Core implementation overview 01 Initiate session for consumer identification 15 min read arrow_forward 02 Display Swedbank Pay checkin module 10 min read arrow_forward 03 Create payment order 18 min read arrow_forward 04 Display the Payment Menu 13 min read arrow_forward 05 Capture the funds 10 min read arrow_forward Additional features add After Payment Add After-payment operation to your order system arrow_forward remove_red_eye Features In this section you find various resources for Swedbank Pay’s API Platform. arrow_forward",
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/checkout/"
+  },{
+    "title": "Sub-resources",
+    "text": "",
+    "tags": "",
+    "url": "/swedbank-pay-design-guide-jekyll-theme/resources/sub-resources/"
+  },{
+    "title": "Resources",
+    "text": "The page at the end of this link should redirect back here",
+    "tags": "",
+    "url": "/swedbank-pay-design-guide-jekyll-theme/resources/"
   },{
     "title": "Secret payments",
     "text": "How we do secret payments We don’t.",
@@ -103,4 +128,9 @@ var tipuesearch = {"pages": [{
     "text": "Don’t render this Payments have plenty of secrets due to it being secure and mostly encrypted. Only the end user and their bank can really see much data if any. We in between mostly see tokens.",
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/payments/secrets/super-secret.html"
+  },{
+    "title": "",
+    "text": "",
+    "tags": "",
+    "url": "/swedbank-pay-design-guide-jekyll-theme/resources/redirect-from"
   }]};
