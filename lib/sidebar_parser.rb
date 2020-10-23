@@ -17,7 +17,10 @@ module SwedbankPay
         path = SidebarPath.new(filename).to_s
         page = pages[path]
 
-        raise ArgumentError, "No page found for '#{path}'." if page.nil?
+        if page.nil?
+          Jekyll.logger.warn("           Sidebar: No page found for <#{path}>.")
+          next
+        end
 
         page.doc = doc
         page.filename = filename
