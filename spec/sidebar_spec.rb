@@ -37,12 +37,29 @@ describe sidebar do
       its(:path) { is_expected.to eq '/checkout/' }
       its(:active?, '/checkout/') { is_expected.to be true }
       its(:active?, '/checkout/after-payment') { is_expected.to be true }
+      its(:active?, '/checkout/features/payment-orders') { is_expected.to be true }
+      its(:active?, '/checkout/features/payment-orders', is_leaf: true) { is_expected.to be false }
 
       describe 'children[3]' do
         subject { sidebar.pages[3].children[3] }
 
         its(:path) { is_expected.to eq '/checkout/after-payment' }
         its(:active?, '/checkout/after-payment') { is_expected.to be true }
+      end
+
+      describe 'children[4]' do
+        subject { sidebar.pages[3].children[4] }
+
+        its(:path) { is_expected.to eq '/checkout/features/' }
+        its(:active?, '/checkout/features/payment-orders') { is_expected.to be true }
+        its(:active?, '/checkout/features/payment-orders', is_leaf: true) { is_expected.to be false }
+
+        describe 'children[0]' do
+          subject { sidebar.pages[3].children[4].children[0] }
+
+          its(:path) { is_expected.to eq '/checkout/features/payment-orders' }
+          its(:active?, '/checkout/features/payment-orders') { is_expected.to be true }
+        end
       end
     end
 

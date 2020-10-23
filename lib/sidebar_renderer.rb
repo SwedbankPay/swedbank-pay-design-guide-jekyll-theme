@@ -40,7 +40,8 @@ module SwedbankPay
 
         File.open('_site/sidebar.html', 'w') { |f| f.write(sidebar_html) }
       rescue StandardError => e
-        Jekyll.logger.error("           Sidebar: Unable to render sidebar for '#{page.filename}'.")
+        name = page.filename || page.name
+        Jekyll.logger.error("           Sidebar: Unable to render sidebar for '#{name}'.")
         Jekyll.logger.debug("           Sidebar: #{e.message}. #{e.backtrace.inspect}")
         return nil
       end

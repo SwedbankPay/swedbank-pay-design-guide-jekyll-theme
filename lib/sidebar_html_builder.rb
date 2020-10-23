@@ -28,7 +28,7 @@ module SwedbankPay
         next if page.ignore?
 
         sub_items_markup = sub_items_markup(page, current_path)
-        markup << item_markup(page, current_path, page.level, sub_items_markup)
+        markup << item_markup(page, current_path, sub_items_markup, false)
       end
 
       markup
@@ -48,9 +48,12 @@ module SwedbankPay
       ''
     end
 
-    def item_markup(page, current_path, level, sub_items_markup)
+    def item_markup(page, current_path, sub_items_markup, is_leaf)
+      # If we're rendering a leaf node, just set the level to a non-zero value
+      # to get the 'nav-subgroup' class and such.
+      level = is_leaf ? -1 : page.level
       title_markup = title_markup(page, level)
-      item_class = item_class(page, current_path, level)
+      item_class = item_class(page, current_path, level, is_leaf)
       group_heading_class = group_heading_class(level)
 
       "<li class=\"#{item_class}\">
@@ -62,8 +65,8 @@ module SwedbankPay
       </li>"
     end
 
-    def item_class(page, current_path, level)
-      active = active?(page, current_path, level)
+    def item_class(page, current_path, level, is_leaf)
+      active = page.active?(current_path, is_leaf: is_leaf)
       item_class = group_class(level)
       item_class += ' active' if active
       item_class
@@ -108,7 +111,7 @@ module SwedbankPay
       headers_markup = page.headers.map { |h| header_markup(page, h) }.join('')
       headers_markup = "<ul class=\"nav-ul\">#{headers_markup}</ul>"
 
-      item_markup(page, current_path, page.level + 1, headers_markup)
+      item_markup(page, current_path, headers_markup, true)
     end
 
     def header_markup(page, header)
@@ -121,10 +124,6 @@ module SwedbankPay
     def leaf_markup(href, title, level = 0)
       leaf_class = level.positive? ? 'nav-leaf nav-subgroup-leaf' : 'nav-leaf'
       "<li class=\"#{leaf_class}\"><a href=\"#{href}\">#{title}</a></li>"
-    end
-
-    def active?(page, current_path, level)
-      level.zero? ? page.active?(current_path) : page.path == current_path
     end
 
     def section_title(page)

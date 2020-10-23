@@ -28,11 +28,18 @@ module SwedbankPay
       @children = SidebarPageCollection.new(self)
     end
 
-    def active?(current_path)
+    def active?(current_path, is_leaf: false)
+      raise ArgumentError, 'current_path cannot be nil' if current_path.nil?
+      raise ArgumentError, 'current_path must be a String' unless current_path.is_a? String
+
       return true if @path == current_path
 
-      @children.each do |child|
-        return true if child.active?(current_path)
+      # If we're on a leaf node item, such as when rendering the first header
+      # item of a sub-group, its children's active state must be disregarded.
+      unless is_leaf
+        @children.each do |child|
+          return true if child.active?(current_path, is_leaf: is_leaf)
+        end
       end
 
       false
