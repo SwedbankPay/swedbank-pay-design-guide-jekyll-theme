@@ -32,5 +32,14 @@ describe SwedbankPay::Sidebar do
         end
       end
     end
+
+    it 'has expected titles' do
+      is_expected.to have_tag('div', class: 'title-header') do
+        with_tag('div', class: 'title-header-container') do
+          with_tag('h4', text: 'Checkout')
+          with_tag('h1', text: 'Payment Orders')
+        end
+      end
+    end
   end
 end

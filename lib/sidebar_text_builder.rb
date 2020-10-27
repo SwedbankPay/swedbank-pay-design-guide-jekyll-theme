@@ -13,7 +13,7 @@ module SwedbankPay
 
     def to_s
       name = @page.name == '/' ? '/' : "/#{@page.name}"
-      title = @page.title.nil? ? '?' : @page.title.item
+      title = @page.title.nil? ? '?' : @page.title.main
       s = "#{indent} #{name}: #{title} (#{@page.coordinate})\n"
 
       unless @page.children.empty?

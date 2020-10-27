@@ -103,7 +103,7 @@ module SwedbankPay
 
     def headers_markup(page, current_path)
       # If there's no page headers, only return a leaf item for the page itself.
-      return leaf_markup(page.path, page.title.item, page.level) unless page.headers?
+      return leaf_markup(page.path, page.title.main, page.level) unless page.headers?
 
       # If there's no children, only return the headers as leaf node items.
       return page.headers.map { |h| header_markup(page, h) }.join('') if page.children.empty?
@@ -127,14 +127,14 @@ module SwedbankPay
     end
 
     def section_title(page)
-      return page.title.section unless page.title.section.nil?
+      return page.title.lead unless page.title.lead.nil?
       return page.parent.title.to_s unless page.parent.nil? || page.parent.title.nil?
 
       ''
     end
 
     def item_title(page)
-      page.title.item
+      page.title.main
     end
   end
 end

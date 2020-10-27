@@ -1,5 +1,6 @@
 ---
-title: Checkout – Introduction
+section: Checkout
+title: Introduction
 estimated_read: 10
 description: |
     Swedbank Pay Checkout is a complete reimagination
@@ -25,7 +26,7 @@ card_list:
 ---
 
 {% comment %}
-Examples on how site.pages can be filtered and used with 
+Examples on how site.pages can be filtered and used with
 card-list/card-horizontal-list. Can also be used with pre-defined lists, such as
 card_list in front matter above.
 {% endcomment %}
@@ -42,8 +43,8 @@ where_exp: 'page', 'page.name != "index.md"' | sort: 'menu_order' %}
 ## Additional features
 
 {% assign additional_card_list = site.pages |
-where_exp: 'page', 'page.url != "/checkout/" and page.core != true and page.dir contains "/checkout/"' 
-| where: 'additional', true | sort: 'menu_order' 
+where_exp: 'page', 'page.url != "/checkout/" and page.core != true and page.dir contains "/checkout/"'
+| where: 'additional', true | sort: 'menu_order'
 %}
 
 {% include card-list.html card_list=additional_card_list
