@@ -1,0 +1,24 @@
+{% assign title_lead = title | split: '–' | first %}
+{% assign title_main = title | split: '–' | last %}
+{% assign description = page.description %}
+{% assign estimated_read = page.estimated_read %}
+<div class="title-header">
+    <div class="title-header-container
+            {% if page.card_overview %} max-width-card-overview
+            {% else %} max-width
+            {% endif %}">
+        {% if title_lead != title_main %}
+        <h4>{{ page.lead_title }}</h4>
+        {% endif %}
+        <h1>{{ title_main }}</h1>
+        {% if estimated_read %}
+        <div class="title-header-estimated-read">
+            <i class="material-icons">schedule</i>
+            {{ estimated_read }} min read
+        </div>
+        {% endif %}
+        {% if description %}
+        <p>{{ description | markdownify }}</p>
+        {% endif %}
+    </div>
+</div>
