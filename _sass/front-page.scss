@@ -1,8 +1,9 @@
 @import 'colors.scss';
 @import 'fonts.scss';
+@import 'breakpoints.scss';
 
 $front-page-padding: 0 4rem;
-$front-page-max-width: 1280px;
+$front-page-max-width: 1312px;
 
 @mixin row-cards {
     >[class*='col-'] {
@@ -49,76 +50,87 @@ $front-page-max-width: 1280px;
 }
 
 .front-page {
+    margin: 3rem 2rem 0;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    .front-page-top {
+        position: relative;
+        padding: 4rem 4rem 2rem;
+        width: 100%;
+        margin-bottom: 3rem;
+        max-width: 1432px;
+        background-color: $dark-brown;
+        z-index: 0;
+        border-radius: 1rem;
+        min-height: 33rem;
 
+        .front-page-hero {
+            position: relative;
+            max-width: 38rem;
+            margin-bottom: 3rem;
+            z-index: 1;
+
+            h3 {
+                color: $yellow;
+                font-family: $headline;
+                margin-bottom: 0;
+            }
+
+            p {
+                color: $white;
+                font-size: 1.125rem;
+            }
+
+            .front-page-hero-name {
+                font-family: $mono;
+                font-weight: bold;
+                font-size: 2rem;
+                color: $yellow;
+                margin-bottom: 1rem;
+
+                span {
+                    color: $white;
+                }
+            }
+
+        }
+
+        .front-page-intro-cards {
+            h2 {
+                color: $white;
+
+                .header-anchor {
+                    display: none;
+                }
+            }
+
+            .row {
+                @include row-cards();
+            }
+        }
+
+        @media screen and (min-width: $breakpoints-xxl) {
+            margin-bottom: 9rem;
+            
+            .front-page-intro-cards {
+                position: absolute;
+                bottom: -7rem;
+                left: 0;
+                width: 100%;
+                padding: 0 4rem;
+            }
+        }
+    }
     .front-page-container {
         max-width: $front-page-max-width;
         margin: $front-page-padding;
+        position: relative;
 
-        .front-page-top {
-            padding-top: 4rem;
-            width: 100%;
-            margin-bottom: 3rem;
-
-            &:before {
-                content: "";
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                background-color: $dark-brown;
-                width: 100%;
-                height: 34rem;
-                z-index: 0;
-            }
-
-            .front-page-hero {
-                position: relative;
-                max-width: 35rem;
-                margin-bottom: 3.5rem;
-                z-index: 1;
-
-                h3 {
-                    color: $yellow;
-                    font-family: $headline;
-                    margin-bottom: 0;
-                }
-
-                p {
-                    color: $white;
-                    font-size: 1.125rem;
-                }
-
-                .front-page-hero-name {
-                    font-family: $mono;
-                    font-weight: bold;
-                    font-size: 2rem;
-                    color: $yellow;
-                    margin-bottom: 1rem;
-
-                    span {
-                        color: $white;
-                    }
-                }
-
-            }
-
-            .front-page-intro-cards {
-                h2 {
-                    color: $white;
-
-                    .header-anchor {
-                        display: none;
-                    }
-                }
-
-                .row {
-                    @include row-cards();
-                }
-            }
+        @media screen and (max-width: $breakpoints-md) {
+            margin: 0;
         }
 
         .front-page-merchants {
@@ -221,6 +233,7 @@ $front-page-max-width: 1280px;
         height: 22.5rem;
         background-color: $dark-brown;
         text-decoration: none;
+        border-radius: 1rem;
 
         &:hover,
         &:focus {
@@ -249,17 +262,29 @@ $front-page-max-width: 1280px;
 
             .h2 {
                 color: $white;
-
-                span {
-                    color: $yellow;
-                }
             }
 
             .demoshop-text-description {
                 color: $white;
-                width: 45%;
-                height: 4.5rem;
+                width: 40%;
+                min-height: 4.5rem;
+                font-size: 1rem;
+
             }
+            
+        }
+
+        @media screen and (max-width: $breakpoints-md) {
+            padding-top: 3rem;
+            height: 18rem;
+
+            .front-page-demoshop-text {
+                .demoshop-text-description {
+                    width: 100%;
+                    min-height: 2.25rem;
+                }
+            }
+
         }
 
         .front-page-demoshop-link {
@@ -297,13 +322,23 @@ $front-page-max-width: 1280px;
                 }
             }
 
-
-
             .h3 {
                 color: $white;
                 padding-right: 1rem;
                 padding-left: 1.5rem;
                 margin: 0;
+            }
+        }
+
+        @media screen and (min-width: $breakpoints-xxl) {
+            .front-page-demoshop-text {
+                margin-bottom: 1rem;
+            }
+
+            .front-page-demoshop-link {
+                .demoshop-link-img {
+                    bottom: -2rem;
+                }
             }
         }
     }
