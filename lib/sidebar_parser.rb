@@ -1,21 +1,15 @@
 # frozen_string_literal: true
 
-require 'jekyll'
 require_relative 'sidebar_path'
 
 module SwedbankPay
   # The Sidebar renderer
   class SidebarParser
     def initialize(site)
-      raise ArgumentError, 'Site cannot be nil' if site.nil?
-      raise ArgumentError, 'Site must be a Jekyll::Site' unless site.is_a? Jekyll::Site
-
       @site = site
     end
 
-    def parse
-      pages = build_pages_hash
-
+    def parse(pages)
       destination = @site.config['destination']
 
       Dir.glob("#{destination}/**/*.html") do |filename|
@@ -23,10 +17,7 @@ module SwedbankPay
         path = SidebarPath.new(filename).to_s
         page = pages[path]
 
-        if page.nil?
-          Jekyll.logger.debug("           Sidebar: No page found for <#{path}>.")
-          next
-        end
+        raise ArgumentError, "No page found for '#{path}'." if page.nil?
 
         page.doc = doc
         page.filename = filename
@@ -38,17 +29,6 @@ module SwedbankPay
     end
 
     private
-
-    def build_pages_hash
-      pages_hash = {}
-
-      @site.pages.each do |jekyll_page|
-        sidebar_page = SidebarPage.new(jekyll_page)
-        pages_hash[sidebar_page.path] = sidebar_page
-      end
-
-      pages_hash
-    end
 
     def find_headers(doc)
       headers = []

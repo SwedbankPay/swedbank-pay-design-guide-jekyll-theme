@@ -54,7 +54,7 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/checkout/features/"
   },{
-    "title": "Introduction",
+    "title": "Checkout – Introduction",
     "text": "Core implementation overview 01 Initiate session for consumer identification 15 min read arrow_forward 02 Display Swedbank Pay checkin module 10 min read arrow_forward 03 Create payment order 18 min read arrow_forward 04 Display the Payment Menu 13 min read arrow_forward 05 Capture the funds 10 min read arrow_forward Additional features add After Payment Add After-payment operation to your order system arrow_forward remove_red_eye Features In this section you find various resources for Swedbank Pay’s API Platform. arrow_forward",
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/checkout/"
