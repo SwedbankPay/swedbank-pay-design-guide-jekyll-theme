@@ -54,22 +54,22 @@ module SwedbankPay
     end
 
     def hidden_for?(other_page)
-        # The current page should be hidden for the other page unless the
-        # other page is also hidden.
-        #
-        # TODO: Make it so that hiddden pages within a section are visible
-        #       for each other, but not for other sections, regardless if
-        #       they are hidden or not.
-        hidden = hidden?
+      # The current page should be hidden for the other page unless the
+      # other page is also hidden.
+      #
+      # TODO: Make it so that hiddden pages within a section are visible
+      #       for each other, but not for other sections, regardless if
+      #       they are hidden or not.
+      hidden = hidden?
 
-        if other_page.nil? || !other_page.is_a?(SidebarPage)
-          Jekyll.logger.debug("           Sidebar: Other page '#{other_page}' is nil or not a SidebarPage")
-          return hidden
-        end
+      if other_page.nil? || !other_page.is_a?(SidebarPage)
+        Jekyll.logger.debug("           Sidebar: Other page '#{other_page}' is nil or not a SidebarPage")
+        return hidden
+      end
 
-        return false if other_page.hidden?
+      return false if other_page.hidden?
 
-        hidden
+      hidden
     end
 
     def children=(children)

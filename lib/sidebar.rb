@@ -23,20 +23,17 @@ module SwedbankPay
         @sidebar_renderer.enrich_jekyll
       end
 
-      def post_write(site)
+      def post_write
         @sidebar_renderer.render
       end
     end
   end
 end
 
-# SwedbankPay::Sidebar.init
-
 Jekyll::Hooks.register :site, :pre_render do |site, _|
   SwedbankPay::Sidebar.pre_render site
 end
 
-
-Jekyll::Hooks.register :site, :post_write do |site|
-  SwedbankPay::Sidebar.post_write site
+Jekyll::Hooks.register :site, :post_write do |_|
+  SwedbankPay::Sidebar.post_write
 end

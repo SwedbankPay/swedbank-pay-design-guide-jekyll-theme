@@ -34,7 +34,7 @@ module SwedbankPay
 
       increment = @page.level > 1 ? @page.level + 1 : @page.level
 
-      "┝╾#{('─' * increment)}"
+      "┝╾#{'─' * increment}"
     end
 
     def todo
