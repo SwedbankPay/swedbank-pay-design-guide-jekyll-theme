@@ -24,7 +24,7 @@ module SwedbankPay
         page = pages[path]
 
         if page.nil?
-          Jekyll.logger.warn("           Sidebar: No page found for <#{path}>.")
+          Jekyll.logger.debug("           Sidebar: No page found for <#{path}>.")
           next
         end
 
