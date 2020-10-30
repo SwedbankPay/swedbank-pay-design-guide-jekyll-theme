@@ -4,7 +4,6 @@ menu_order: 1
 front_page:
   title: design guide theme
   hero: Welcome to the Swedbank Pay
-  ingress: Welcome to the theme of Swedbank Pay Developer Portal.
   show_merchants_bar: false
   start_heading: Begin now!
 hide_from_sidebar: false

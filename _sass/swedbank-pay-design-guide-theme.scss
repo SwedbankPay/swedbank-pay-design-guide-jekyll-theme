@@ -1,6 +1,7 @@
 @import 'colors.scss';
 @import 'fonts.scss';
 @import 'variables.scss';
+@import 'breakpoints.scss';
 
 @import 'card.scss';
 @import 'code-view.scss';
@@ -15,6 +16,10 @@ $darkened-bg: darken($bg, 10%);
 
 img {
     max-width: 100%;
+}
+
+body {
+    font-size: 1.125rem;
 }
 
 .table {
