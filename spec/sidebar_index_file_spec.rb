@@ -68,5 +68,11 @@ describe SwedbankPay::Sidebar do
         end
       end
     end
+
+    # Hidden pages shouldn't be visible for non-hidden pages
+    it 'has no navigation for hidden pages' do
+      is_expected.not_to have_tag('a[href="/payments/secrets/"]')
+      is_expected.not_to have_tag('a[href="/payments/secrets/super-secret"]')
+    end
   end
 end

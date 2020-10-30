@@ -30,9 +30,8 @@ module SwedbankPay
       @children = SidebarPageCollection.new(self)
     end
 
-    def active?(current_path, is_leaf: false)
-      raise ArgumentError, 'current_path cannot be nil' if current_path.nil?
-      raise ArgumentError, 'current_path must be a String' unless current_path.is_a? String
+    def active?(current, is_leaf: false)
+      current_path = find_path(current)
 
       return true if @path == current_path
 
@@ -47,11 +46,30 @@ module SwedbankPay
       false
     end
 
-    def ignore?
+    def hidden?
       return true if @title.nil?
       return true if @hide_from_sidebar
 
       false
+    end
+
+    def hidden_for?(other_page)
+        # The current page should be hidden for the other page unless the
+        # other page is also hidden.
+        #
+        # TODO: Make it so that hiddden pages within a section are visible
+        #       for each other, but not for other sections, regardless if
+        #       they are hidden or not.
+        hidden = hidden?
+
+        if other_page.nil? || !other_page.is_a?(SidebarPage)
+          Jekyll.logger.debug("           Sidebar: Other page '#{other_page}' is nil or not a SidebarPage")
+          return hidden
+        end
+
+        return false if other_page.hidden?
+
+        hidden
     end
 
     def children=(children)
@@ -127,6 +145,20 @@ module SwedbankPay
 
     def child_of?(path)
       @path.split('/').length > @level && path.start_with?(@path)
+    end
+
+    def find_path(current)
+      if current.nil?
+        Jekyll.logger.warn('           Sidebar: Nil current_page')
+        return ''
+      end
+
+      return current if current.is_a? String
+      return current.path if current.respond_to?(:path)
+
+      Jekyll.logger.warn("           Sidebar: #{current.class} ('#{current}') does not respond to :path.")
+
+      ''
     end
   end
 end
