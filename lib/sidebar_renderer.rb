@@ -5,14 +5,32 @@ require_relative 'sidebar_html_builder'
 module SwedbankPay
   # Renders the Sidebar
   class SidebarRenderer
-    def render(tree)
+    def initialize(tree)
+      raise ArgumentError, 'pages cannot be nil' if tree.nil?
       raise ArgumentError, 'pages must be an SidebarTreeBuilder' unless tree.is_a? SidebarTreeBuilder
 
       @tree = tree
-      render_pages(tree)
+    end
+
+    def enrich_jekyll
+      enrich_jekyll_pages(@tree)
+    end
+
+    def render
+      render_pages(@tree)
     end
 
     private
+
+    def enrich_jekyll_pages(pages)
+      return if pages.empty?
+
+      pages.each do |page|
+        page.enrich_jekyll
+
+        enrich_jekyll_pages(page.children)
+      end
+    end
 
     def render_pages(pages)
       return if pages.empty?
@@ -40,7 +58,8 @@ module SwedbankPay
 
         File.open('_site/sidebar.html', 'w') { |f| f.write(sidebar_html) }
       rescue StandardError => e
-        Jekyll.logger.error("           Sidebar: Unable to render sidebar for '#{page.filename}'.")
+        name = page.filename || page.name
+        Jekyll.logger.error("           Sidebar: Unable to render sidebar for '#{name}'.")
         Jekyll.logger.debug("           Sidebar: #{e.message}. #{e.backtrace.inspect}")
         return nil
       end

@@ -14,34 +14,28 @@ module SwedbankPay
     class << self
       attr_reader :pages
 
-      def init
-        @pages_hash = {}
-      end
-
-      def pre_render(jekyll_page)
-        sidebar_page = SidebarPage.new(jekyll_page)
-        @pages_hash[sidebar_page.path] = sidebar_page
+      def pre_render(site)
+        parser = SidebarParser.new(site)
+        pages = parser.parse
+        @pages = SidebarTreeBuilder.new(pages)
+        Jekyll.logger.debug("           Sidebar: #{@pages.inspect}")
+        @sidebar_renderer = SidebarRenderer.new(@pages)
+        @sidebar_renderer.enrich_jekyll
       end
 
       def post_write(site)
-        parser = SidebarParser.new(site)
-        pages = parser.parse(@pages_hash)
-        @pages = SidebarTreeBuilder.new(pages)
-        Jekyll.logger.debug("           Sidebar: #{@pages.inspect}")
-        renderer = SidebarRenderer.new
-        renderer.render(@pages)
+        @sidebar_renderer.render
       end
     end
   end
 end
 
-SwedbankPay::Sidebar.init
+# SwedbankPay::Sidebar.init
 
 Jekyll::Hooks.register :site, :pre_render do |site, _|
-  site.pages.each do |page|
-    SwedbankPay::Sidebar.pre_render page
-  end
+  SwedbankPay::Sidebar.pre_render site
 end
+
 
 Jekyll::Hooks.register :site, :post_write do |site|
   SwedbankPay::Sidebar.post_write site
