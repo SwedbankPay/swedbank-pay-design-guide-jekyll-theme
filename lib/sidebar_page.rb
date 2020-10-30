@@ -7,42 +7,69 @@ require_relative 'sidebar_page_collection'
 require_relative 'sidebar_text_builder'
 
 module SwedbankPay
-  # Represents a page in the Sidebar
+  # Represents a jekyll_page in the Sidebar
   class SidebarPage
     FIXNUM_MAX = (2**(0.size * 8 - 2) - 1)
 
     attr_reader :path, :title, :level, :order, :children, :name
     attr_accessor :headers, :filename, :doc, :sidebar_container, :number, :parent
 
-    def initialize(page)
-      raise ArgumentError, 'Page must be a Jekyll::Page' unless page.is_a? Jekyll::Page
+    def initialize(jekyll_page)
+      raise ArgumentError, 'jekyll_page cannot be nil' if jekyll_page.nil?
+      raise ArgumentError, 'jekyll_page must be a Jekyll::Page' unless jekyll_page.is_a? Jekyll::Page
 
-      sidebar_path = SidebarPath.new(page['url'])
+      @jekyll_page = jekyll_page
+      sidebar_path = SidebarPath.new(jekyll_page['url'])
       @path = sidebar_path.to_s
       @parent = sidebar_path.parent
       @level = sidebar_path.level
       @name = sidebar_path.name
-      @hide_from_sidebar = page['hide_from_sidebar'].nil? ? false : page['hide_from_sidebar']
-      @title = page_title(page)
-      @order = menu_order(page)
+      @hide_from_sidebar = jekyll_page['hide_from_sidebar'].nil? ? false : jekyll_page['hide_from_sidebar']
+      @title = SidebarPageTitle.parse(jekyll_page, self)
+      @order = menu_order(jekyll_page)
       @children = SidebarPageCollection.new(self)
     end
 
-    def active?(current_path)
+    def active?(current, is_leaf: false)
+      current_path = find_path(current)
+
       return true if @path == current_path
 
-      @children.each do |child|
-        return true if child.active?(current_path)
+      # If we're on a leaf node item, such as when rendering the first header
+      # item of a sub-group, its children's active state must be disregarded.
+      unless is_leaf
+        @children.each do |child|
+          return true if child.active?(current_path, is_leaf: is_leaf)
+        end
       end
 
       false
     end
 
-    def ignore?
+    def hidden?
       return true if @title.nil?
       return true if @hide_from_sidebar
 
       false
+    end
+
+    def hidden_for?(other_page)
+      # The current page should be hidden for the other page unless the
+      # other page is also hidden.
+      #
+      # TODO: Make it so that hiddden pages within a section are visible
+      #       for each other, but not for other sections, regardless if
+      #       they are hidden or not.
+      hidden = hidden?
+
+      if other_page.nil? || !other_page.is_a?(SidebarPage)
+        Jekyll.logger.debug("           Sidebar: Other page '#{other_page}' is nil or not a SidebarPage")
+        return hidden
+      end
+
+      return false if other_page.hidden?
+
+      hidden
     end
 
     def children=(children)
@@ -71,6 +98,19 @@ module SwedbankPay
       @order <=> other.order
     end
 
+    def enrich_jekyll
+      if @title.nil?
+        Jekyll.logger.debug("           Sidebar: No title for #{@name}")
+        return
+      end
+
+      Jekyll.logger.debug("           Sidebar: #{@name}.lead_title '#{@title.lead}'")
+      Jekyll.logger.debug("           Sidebar: #{@name}.main_title '#{@title.main}'")
+
+      @jekyll_page.data['lead_title'] = @title.lead
+      @jekyll_page.data['main_title'] = @title.main
+    end
+
     def save
       Jekyll.logger.debug("   Writing Sidebar: #{filename}")
 
@@ -92,15 +132,8 @@ module SwedbankPay
 
     private
 
-    def page_title(page)
-      title = page['title']
-      return nil if title.nil?
-
-      SidebarPageTitle.new(title)
-    end
-
-    def menu_order(page)
-      order = page['menu_order']
+    def menu_order(jekyll_page)
+      order = jekyll_page['menu_order']
       return FIXNUM_MAX if order.nil? || order.to_s.empty?
 
       order.to_i
@@ -112,6 +145,20 @@ module SwedbankPay
 
     def child_of?(path)
       @path.split('/').length > @level && path.start_with?(@path)
+    end
+
+    def find_path(current)
+      if current.nil?
+        Jekyll.logger.warn('           Sidebar: Nil current_page')
+        return ''
+      end
+
+      return current if current.is_a? String
+      return current.path if current.respond_to?(:path)
+
+      Jekyll.logger.warn("           Sidebar: #{current.class} ('#{current}') does not respond to :path.")
+
+      ''
     end
   end
 end
