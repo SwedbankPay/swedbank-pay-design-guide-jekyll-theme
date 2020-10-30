@@ -14,11 +14,11 @@ describe SwedbankPay::Sidebar do
     }
 
     it 'has active item' do
-      is_expected.to have_tag('ul', class: 'nav-ul') do
+      is_expected.to have_tag('ul.main-nav-ul') do
         with_tag('li.nav-group.active') do
-          with_tag('ul', class: 'nav-ul') do
+          with_tag('ul.nav-ul') do
             with_tag('li.nav-subgroup.active') do
-              with_tag('div', class: 'nav-subgroup-heading') do
+              with_tag('div.nav-subgroup-heading') do
                 with_tag('i.material-icons', text: 'arrow_right')
                 with_tag('a[href="/checkout/after-payment"]', text: 'After Payment')
               end
