@@ -112,7 +112,7 @@ $front-page-max-width: 1312px;
             }
         }
 
-        @media screen and (min-width: $breakpoints-xxl) {
+        @media screen and (min-width: $breakpoint-xxl) {
             margin-bottom: 9rem;
             
             .front-page-intro-cards {
@@ -129,7 +129,7 @@ $front-page-max-width: 1312px;
         margin: $front-page-padding;
         position: relative;
 
-        @media screen and (max-width: $breakpoints-md) {
+        @media screen and (max-width: $breakpoint-md) {
             margin: 0;
         }
 
@@ -274,7 +274,7 @@ $front-page-max-width: 1312px;
             
         }
 
-        @media screen and (max-width: $breakpoints-md) {
+        @media screen and (max-width: $breakpoint-md) {
             padding-top: 3rem;
             height: 18rem;
 
@@ -330,7 +330,7 @@ $front-page-max-width: 1312px;
             }
         }
 
-        @media screen and (min-width: $breakpoints-xxl) {
+        @media screen and (min-width: $breakpoint-xxl) {
             .front-page-demoshop-text {
                 margin-bottom: 1rem;
             }
