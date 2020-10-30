@@ -1,5 +1,6 @@
 ---
 title: Secrets in payments
+hide_from_sidebar: true
 ---
 
 ## Don't render this
