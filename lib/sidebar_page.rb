@@ -48,7 +48,7 @@ module SwedbankPay
 
     def hidden?
       return true if @title.nil?
-      return true if @hide_from_sidebar
+      return true if @hide_from_sidebar === true
 
       false
     end
@@ -67,6 +67,8 @@ module SwedbankPay
         return hidden
       end
 
+      # If the other page is hidden, the current page should not be hidden
+      # from it.
       return false if other_page.hidden?
 
       hidden
@@ -104,8 +106,8 @@ module SwedbankPay
         return
       end
 
-      Jekyll.logger.debug("           Sidebar: #{@name}.lead_title '#{@title.lead}'")
-      Jekyll.logger.debug("           Sidebar: #{@name}.main_title '#{@title.main}'")
+      Jekyll.logger.debug("           Sidebar: #{@name}.lead_title = '#{@title.lead}'")
+      Jekyll.logger.debug("           Sidebar: #{@name}.main_title = '#{@title.main}'")
 
       @jekyll_page.data['lead_title'] = @title.lead
       @jekyll_page.data['main_title'] = @title.main
@@ -130,6 +132,7 @@ module SwedbankPay
 
     def coordinate
       return @number.to_s if @parent.nil?
+      return @number.to_s unless @parent.respond_to? :coordinate
 
       "#{@parent.coordinate}.#{@number}"
     end

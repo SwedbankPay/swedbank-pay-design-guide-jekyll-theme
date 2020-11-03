@@ -16,6 +16,7 @@ module SwedbankPay
 
       title = jekyll_page['title']
       section = jekyll_page['section']
+
       return nil if title.nil?
 
       SidebarPageTitle.new(title, section, sidebar_page)
@@ -60,12 +61,25 @@ module SwedbankPay
 
     def find_section(page)
       # Return the 'section' front matter if it can be found on the current page.
-      return page.title.section unless page.nil? || page.title.nil? || page.title.section.nil? || page.title.section.empty?
+      section = section_from_front_matter(page)
+      return section unless section.nil?
 
       # Recurse upwards to the root (until there is no parent).
       return find_section(page.parent) unless page.nil? || page.parent.nil?
 
       nil
+    end
+
+    def section_from_front_matter(page)
+      return nil if page.nil? || page.title.nil? || page.title.section.nil? || page.title.section.empty?
+
+      page.title.section
+    end
+
+    def section_from_parent(page)
+      return nil if page.nil? || page.parent.nil?
+
+      find_section(page.parent, level) unless page.nil? || page.parent.nil?
     end
   end
 end

@@ -1,5 +1,5 @@
 ---
-title: Swedbank Pay Checkout – Checkin
+title: Checkin
 description: |
     In the sections that follow you'll find
     examples of the HTTP requests, responses and HTML code you will need to

@@ -1,6 +1,6 @@
 ---
+section: Checkout More
 title: Checkout More
-
 menu_order: 10
 ---
 
