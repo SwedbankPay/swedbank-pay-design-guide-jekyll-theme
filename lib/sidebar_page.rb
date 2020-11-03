@@ -120,6 +120,10 @@ module SwedbankPay
       end
     end
 
+    def children?
+      !children.nil? && children.any?
+    end
+
     def headers?
       !headers.nil? && headers.any?
     end

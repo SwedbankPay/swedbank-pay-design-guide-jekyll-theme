@@ -16,7 +16,7 @@ module SwedbankPay
       title = @page.title.nil? ? '?' : @page.title.main
       s = "#{indent} #{name}: #{title} (#{@page.coordinate})\n"
 
-      unless @page.children.empty?
+      if @page.children?
         @page.children.each do |child|
           s << child.to_s
         end
