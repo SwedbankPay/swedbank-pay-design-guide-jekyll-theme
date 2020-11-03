@@ -34,6 +34,6 @@ Jekyll::Hooks.register :site, :pre_render do |site, _|
   SwedbankPay::Sidebar.pre_render site
 end
 
-Jekyll::Hooks.register :site, :post_write do |_|
+Jekyll::Hooks.register :site, :post_write do
   SwedbankPay::Sidebar.post_write
 end

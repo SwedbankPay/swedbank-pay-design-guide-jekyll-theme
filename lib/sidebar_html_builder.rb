@@ -96,7 +96,7 @@ module SwedbankPay
       return leaf_markup(page.path, main_title, page.level) unless page.headers?
 
       # If there's no children, only return the headers as leaf node items.
-      return page.headers.map { |h| header_markup(page, h) }.join('') if page.children.empty?
+      return page.headers.map { |h| header_markup(page, h) }.join('') unless page.children?
 
       headers_markup = page.headers.map { |h| header_markup(page, h) }.join('')
       headers_markup = "<ul class=\"nav-ul\">#{headers_markup}</ul>"
