@@ -13,7 +13,7 @@ describe sidebar do
   describe '#pages' do
     subject { sidebar.pages }
 
-    its(:count) { is_expected.to eq 28 }
+    its(:count) { is_expected.to eq 27 }
     its(:length) { is_expected.to eq 10 }
 
     describe '[0]' do
@@ -115,7 +115,7 @@ describe sidebar do
       describe 'children' do
         subject { sidebar.pages[6].children }
 
-        its(:length) { is_expected.to eq 6 }
+        its(:length) { is_expected.to eq 5 }
 
         describe '[0].title' do
           it { expect(subject[0].title.to_s).to eq 'Alpha' }

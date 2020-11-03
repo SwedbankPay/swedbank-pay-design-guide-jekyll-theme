@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'jekyll'
+require 'jekyll-redirect-from'
 require_relative 'sidebar_path'
 
 module SwedbankPay
@@ -43,6 +44,11 @@ module SwedbankPay
       pages_hash = {}
 
       @site.pages.each do |jekyll_page|
+        if jekyll_page.is_a? JekyllRedirectFrom::RedirectPage
+          Jekyll.logger.debug("           Sidebar: Skipping redirect page <#{jekyll_page['url']}>")
+          next
+        end
+
         sidebar_page = SidebarPage.new(jekyll_page)
         pages_hash[sidebar_page.path] = sidebar_page
       end
