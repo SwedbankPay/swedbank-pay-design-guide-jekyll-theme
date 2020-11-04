@@ -60,12 +60,15 @@ module SwedbankPay
     end
 
     def find_section(page)
+      raise ArgumentError, 'page cannot be nil' if page.nil?
+      raise ArgumentError, 'page must be a SidebarPage' unless page.is_a? SidebarPage
+
       # Return the 'section' front matter if it can be found on the current page.
       section = section_from_front_matter(page)
       return section unless section.nil?
 
       # Recurse upwards to the root (until there is no parent).
-      return find_section(page.parent) unless page.nil? || page.parent.nil?
+      return find_section(page.parent) unless page.nil? || page.parent.nil? || !page.parent.is_a?(SidebarPage)
 
       nil
     end

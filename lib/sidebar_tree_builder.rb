@@ -1,5 +1,6 @@
 # frozen_string_literal: false
 
+require 'jekyll'
 require 'forwardable'
 require_relative 'sidebar_page_collection'
 
@@ -8,12 +9,14 @@ module SwedbankPay
   class SidebarTreeBuilder
     include Enumerable
     extend Forwardable
-    def_delegators :@pages, :each, :length, :empty?, :<<, :[], :count
+    def_delegators :@tree, :each, :length, :empty?, :<<, :[], :count
 
     def initialize(pages)
-      raise ArgumentError, 'Pages must be a Hash' unless pages.is_a? Hash
+      raise ArgumentError, 'pages cannot be nil' if pages.nil?
+      raise ArgumentError, 'pages must be a Hash' unless pages.is_a? Hash
 
-      @pages = tree(pages)
+      @tree = tree(pages)
+      enrich_jekyll_pages(@tree)
     end
 
     def to_s
@@ -31,7 +34,7 @@ module SwedbankPay
 
       if inspection
         output << ":\n"
-        @pages.each do |page|
+        @tree.each do |page|
           output << "#{page}\n"
         end
       end
@@ -68,6 +71,16 @@ module SwedbankPay
 
     def sort_by_path_reversed(pages)
       pages.sort_by { |path, _| path }.reverse
+    end
+
+    def enrich_jekyll_pages(pages)
+      return if pages.empty?
+
+      pages.each do |page|
+        page.enrich_jekyll
+
+        enrich_jekyll_pages(page.children)
+      end
     end
   end
 end
