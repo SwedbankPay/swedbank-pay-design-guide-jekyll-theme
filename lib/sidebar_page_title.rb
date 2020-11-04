@@ -76,7 +76,7 @@ module SwedbankPay
       return section unless section.nil?
 
       # Recurse upwards to the root (until there is no parent).
-      return section_from_parent(page)
+      section_from_parent(page)
     end
 
     def section_from_front_matter(page)

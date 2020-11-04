@@ -137,9 +137,7 @@ module SwedbankPay
         # node item, use the lead title as the main title. This causes 'section: Card'
         # to be used as title for the Card item, but allows the nav-subgroup-heading
         # 'Introduction' item to use the main title 'Introduction'.
-        unless lead_title == parent_lead_title || is_leaf
-          main_title = lead_title
-        end
+        main_title = lead_title unless lead_title == parent_lead_title || is_leaf
 
         return main_title || page.title.to_s
       end
