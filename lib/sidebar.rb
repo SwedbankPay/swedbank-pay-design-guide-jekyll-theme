@@ -15,16 +15,16 @@ module SwedbankPay
       attr_reader :pages
 
       def pre_render(site)
-        Jekyll.logger.debug("           Sidebar: pre_render")
+        Jekyll.logger.debug('           Sidebar: pre_render')
         @parser = SidebarParser.new(site)
         @pages = SidebarTreeBuilder.new(@parser.pages)
         Jekyll.logger.debug("           Sidebar: #{@pages.inspect}")
       end
 
-      def post_write(site)
+      def post_write
         @sidebar_renderer = SidebarRenderer.new(@pages)
         @parser.parse(@pages)
-        Jekyll.logger.debug("           Sidebar: post_write")
+        Jekyll.logger.debug('           Sidebar: post_write')
         @sidebar_renderer.render
       end
     end
@@ -35,6 +35,6 @@ Jekyll::Hooks.register :site, :pre_render do |site, _|
   SwedbankPay::Sidebar.pre_render site
 end
 
-Jekyll::Hooks.register :site, :post_write do |site, _|
-  SwedbankPay::Sidebar.post_write site
+Jekyll::Hooks.register :site, :post_write do
+  SwedbankPay::Sidebar.post_write
 end

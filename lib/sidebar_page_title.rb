@@ -52,6 +52,7 @@ module SwedbankPay
 
       if title.nil?
         raise ArgumentError, 'section must be a String' unless section.is_a? String
+
         title = section
       elsif section.nil?
         raise ArgumentError, 'title must be a String' unless title.is_a? String
