@@ -10,6 +10,7 @@ module SwedbankPay
       raise ArgumentError, 'pages must be an SidebarTreeBuilder' unless tree.is_a? SidebarTreeBuilder
 
       @tree = tree
+      @html_builder = SidebarHTMLBuilder.new(@tree)
     end
 
     def enrich_jekyll
@@ -22,24 +23,22 @@ module SwedbankPay
 
     private
 
-    def enrich_jekyll_pages(pages)
-      return if pages.empty?
-
-      pages.each do |page|
-        page.enrich_jekyll
-
-        enrich_jekyll_pages(page.children)
-      end
-    end
-
     def render_pages(pages)
       return if pages.empty?
 
       pages.each do |page|
-        sidebar_html = render_page(page)
+        sidebar_html = render_sidebar(page)
+        name = page.filename || page.name || page.to_s
 
-        next if sidebar_html.nil?
-        next if page.sidebar_container.nil?
+        if sidebar_html.nil?
+          Jekyll.logger.warn("           Sidebar: No HTML rendered for #{name}.")
+          next
+        end
+
+        if page.sidebar_container.nil?
+          Jekyll.logger.warn("           Sidebar: No sidebar container found in '#{name}'. #{page.filename}")
+          next
+        end
 
         page.sidebar_container.inner_html = sidebar_html
 
@@ -49,19 +48,17 @@ module SwedbankPay
       end
     end
 
-    def render_page(page)
+    def render_sidebar(page)
       sidebar_html = nil
 
       begin
-        builder = SidebarHTMLBuilder.new(@tree)
-        sidebar_html = builder.build(page)
+        sidebar_html = @html_builder.build(page)
 
         File.open('_site/sidebar.html', 'w') { |f| f.write(sidebar_html) }
       rescue StandardError => e
-        name = page.filename || page.name
+        name = page.filename || page.name || page.to_s
         Jekyll.logger.error("           Sidebar: Unable to render sidebar for '#{name}'.")
         Jekyll.logger.debug("           Sidebar: #{e.message}. #{e.backtrace.inspect}")
-        return nil
       end
 
       sidebar_html

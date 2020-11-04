@@ -16,7 +16,8 @@ module SwedbankPay
 
       title = jekyll_page['title']
       section = jekyll_page['section']
-      return nil if title.nil?
+
+      return nil if title.nil? && section.nil?
 
       SidebarPageTitle.new(title, section, sidebar_page)
     end
@@ -45,10 +46,17 @@ module SwedbankPay
     private
 
     def initialize(title, section, page)
-      raise ArgumentError, 'title cannot be nil' if title.nil?
-      raise ArgumentError, 'title must be a String' unless title.is_a? String
+      raise ArgumentError, 'Both title and section cannot be nil' if title.nil? && section.nil?
       raise ArgumentError, 'page cannot be nil' if page.nil?
       raise ArgumentError, 'page must be a SidebarPage' unless page.is_a? SidebarPage
+
+      if title.nil?
+        raise ArgumentError, 'section must be a String' unless section.is_a? String
+
+        title = section
+      elsif section.nil?
+        raise ArgumentError, 'title must be a String' unless title.is_a? String
+      end
 
       @page = page
       @title = title
@@ -59,13 +67,29 @@ module SwedbankPay
     end
 
     def find_section(page)
+      raise ArgumentError, 'page cannot be nil' if page.nil?
+      raise ArgumentError, 'page must be a SidebarPage' unless page.is_a? SidebarPage
+
       # Return the 'section' front matter if it can be found on the current page.
-      return page.title.section unless page.nil? || page.title.nil? || page.title.section.nil? || page.title.section.empty?
+      section = section_from_front_matter(page)
+      return section unless section.nil?
 
       # Recurse upwards to the root (until there is no parent).
-      return find_section(page.parent) unless page.nil? || page.parent.nil?
+      return find_section(page.parent) unless page.nil? || page.parent.nil? || !page.parent.is_a?(SidebarPage)
 
       nil
+    end
+
+    def section_from_front_matter(page)
+      return nil if page.nil? || page.title.nil? || page.title.section.nil? || page.title.section.empty?
+
+      page.title.section
+    end
+
+    def section_from_parent(page)
+      return nil if page.nil? || page.parent.nil?
+
+      find_section(page.parent, level) unless page.nil? || page.parent.nil?
     end
   end
 end

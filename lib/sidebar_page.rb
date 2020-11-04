@@ -1,6 +1,7 @@
 # frozen_string_literal: false
 
 require 'jekyll'
+require 'nokogiri'
 require_relative 'sidebar_path'
 require_relative 'sidebar_page_title'
 require_relative 'sidebar_page_collection'
@@ -11,13 +12,14 @@ module SwedbankPay
   class SidebarPage
     FIXNUM_MAX = (2**(0.size * 8 - 2) - 1)
 
-    attr_reader :path, :title, :level, :order, :children, :name
-    attr_accessor :headers, :filename, :doc, :sidebar_container, :number, :parent
+    attr_reader :path, :title, :level, :order, :children, :name, :filename, :doc
+    attr_accessor :headers, :sidebar_container, :number, :parent
 
     def initialize(jekyll_page)
       raise ArgumentError, 'jekyll_page cannot be nil' if jekyll_page.nil?
       raise ArgumentError, 'jekyll_page must be a Jekyll::Page' unless jekyll_page.is_a? Jekyll::Page
 
+      @filename = jekyll_page.destination('')
       @jekyll_page = jekyll_page
       sidebar_path = SidebarPath.new(jekyll_page['url'])
       @path = sidebar_path.to_s
@@ -56,10 +58,6 @@ module SwedbankPay
     def hidden_for?(other_page)
       # The current page should be hidden for the other page unless the
       # other page is also hidden.
-      #
-      # TODO: Make it so that hiddden pages within a section are visible
-      #       for each other, but not for other sections, regardless if
-      #       they are hidden or not.
       hidden = hidden?
 
       if other_page.nil? || !other_page.is_a?(SidebarPage)
@@ -67,7 +65,9 @@ module SwedbankPay
         return hidden
       end
 
-      return false if other_page.hidden?
+      # If the other page is hidden, the current page should not be hidden
+      # from it.
+      return false if other_page.hidden? && in_same_section_as?(other_page)
 
       hidden
     end
@@ -104,8 +104,7 @@ module SwedbankPay
         return
       end
 
-      Jekyll.logger.debug("           Sidebar: #{@name}.lead_title '#{@title.lead}'")
-      Jekyll.logger.debug("           Sidebar: #{@name}.main_title '#{@title.main}'")
+      Jekyll.logger.debug("           Sidebar: <#{@path}>.lead_title('#{@title.lead}').main_title('#{@title.main}')")
 
       @jekyll_page.data['lead_title'] = @title.lead
       @jekyll_page.data['main_title'] = @title.main
@@ -120,14 +119,24 @@ module SwedbankPay
       end
     end
 
+    def children?
+      !children.nil? && children.any?
+    end
+
     def headers?
       !headers.nil? && headers.any?
     end
 
     def coordinate
       return @number.to_s if @parent.nil?
+      return @number.to_s unless @parent.respond_to? :coordinate
 
       "#{@parent.coordinate}.#{@number}"
+    end
+
+    def load
+      @doc = File.open(@filename) { |f| Nokogiri::HTML(f) }
+      @doc
     end
 
     private
@@ -159,6 +168,14 @@ module SwedbankPay
       Jekyll.logger.warn("           Sidebar: #{current.class} ('#{current}') does not respond to :path.")
 
       ''
+    end
+
+    def in_same_section_as?(other_page)
+      # If this or the other page is the root index page, just ignore the
+      # hidden state completely
+      return false if other_page.path == '/' || @path == '/'
+
+      other_page.path.start_with?(@path) || @path.start_with?(other_page.path)
     end
   end
 end

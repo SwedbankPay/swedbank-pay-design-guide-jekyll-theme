@@ -17,7 +17,6 @@ module SwedbankPay
       pages.each_with_index do |page, index|
         page.number = index
         page.parent = parent
-        page.freeze
         @pages.push(page)
       end
     end

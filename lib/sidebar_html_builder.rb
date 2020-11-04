@@ -24,10 +24,13 @@ module SwedbankPay
       markup = ''
 
       pages.each do |page|
+        current_page_name = current_page.respond_to?(:name) ? current_page.name : current_page.to_s
+
         if page.hidden_for?(current_page)
-          name = current_page.respond_to?(:name) ? current_page.name : current_page.to_s
-          Jekyll.logger.debug("           Sidebar: #{page.name} is hidden for #{name}")
+          Jekyll.logger.debug("           Sidebar: #{page.name} is hidden for #{current_page_name}")
           next
+        elsif page.hidden?
+          Jekyll.logger.debug("           Sidebar: Hidden page #{page.name} is not hidden for #{current_page_name}")
         end
 
         sub_items_markup = sub_items_markup(page, current_page)
@@ -96,7 +99,7 @@ module SwedbankPay
       return leaf_markup(page.path, main_title, page.level) unless page.headers?
 
       # If there's no children, only return the headers as leaf node items.
-      return page.headers.map { |h| header_markup(page, h) }.join('') if page.children.empty?
+      return page.headers.map { |h| header_markup(page, h) }.join('') unless page.children?
 
       headers_markup = page.headers.map { |h| header_markup(page, h) }.join('')
       headers_markup = "<ul class=\"nav-ul\">#{headers_markup}</ul>"
