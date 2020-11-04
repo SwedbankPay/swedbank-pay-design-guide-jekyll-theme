@@ -13,8 +13,8 @@ describe sidebar do
   describe '#pages' do
     subject { sidebar.pages }
 
-    its(:count) { is_expected.to eq 27 }
-    its(:length) { is_expected.to eq 10 }
+    its(:count) { is_expected.to eq 26 }
+    its(:length) { is_expected.to eq 9 }
 
     describe '[0]' do
       subject { sidebar.pages[0] }

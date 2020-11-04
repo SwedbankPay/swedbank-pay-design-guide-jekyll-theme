@@ -7,45 +7,30 @@ require_relative 'sidebar_path'
 module SwedbankPay
   # The Sidebar renderer
   class SidebarParser
+    attr_reader :pages
+
     def initialize(site)
       raise ArgumentError, 'Site cannot be nil' if site.nil?
       raise ArgumentError, 'Site must be a Jekyll::Site' unless site.is_a? Jekyll::Site
 
-      @site = site
+      @pages = convert(site.pages)
     end
 
-    def parse
-      pages = build_pages_hash
+    def parse(tree)
+      raise ArgumentError, 'tree cannot be nil' if tree.nil?
+      raise ArgumentError, 'tree must be a SidebarTreeBuilder' unless tree.is_a? SidebarTreeBuilder
 
-      destination = @site.config['destination']
-
-      Dir.glob("#{destination}/**/*.html") do |filename|
-        doc = File.open(filename) { |f| Nokogiri::HTML(f) }
-        path = SidebarPath.new(filename).to_s
-        page = pages[path]
-
-        if page.nil?
-          Jekyll.logger.debug("           Sidebar: No page found for <#{path}>.")
-          next
-        end
-
-        page.doc = doc
-        page.filename = filename
-        page.headers = find_headers(doc)
-        page.sidebar_container = find_sidebar_container(filename, doc)
-      end
-
-      pages
+      parse_html(tree)
     end
 
     private
 
-    def build_pages_hash
+    def convert(pages)
       pages_hash = {}
 
-      @site.pages.each do |jekyll_page|
-        if jekyll_page.is_a? JekyllRedirectFrom::RedirectPage
-          Jekyll.logger.debug("           Sidebar: Skipping redirect page <#{jekyll_page['url']}>")
+      pages.each do |jekyll_page|
+        if skippable? jekyll_page
+          Jekyll.logger.debug("           Sidebar: Skipping <#{jekyll_page['url']}>")
           next
         end
 
@@ -56,10 +41,25 @@ module SwedbankPay
       pages_hash
     end
 
-    def find_headers(doc)
+    def parse_html(pages)
+      return if pages.nil? || pages.empty?
+
+      pages.each do |page|
+        page.load
+        page.headers = find_headers(page)
+        page.sidebar_container = find_sidebar_container(page)
+        page.freeze
+
+        parse_html(page.children)
+      end
+
+      pages
+    end
+
+    def find_headers(page)
       headers = []
 
-      doc.xpath('//h2').each do |header|
+      page.doc.xpath('//h2').each do |header|
         next unless header['id']
 
         child_markup = header.last_element_child
@@ -74,15 +74,22 @@ module SwedbankPay
       headers
     end
 
-    def find_sidebar_container(filename, doc)
-      sidebar_containers = doc.xpath('//*[@id="dx-sidebar-main-nav-ul"]')
+    def find_sidebar_container(page)
+      sidebar_containers = page.doc.xpath('//*[@id="dx-sidebar-main-nav-ul"]')
 
-      unless sidebar_containers.any?
-        Jekyll.logger.debug("           Sidebar: No sidebar container found in #{filename}")
+      if sidebar_containers.empty?
+        Jekyll.logger.error("           Sidebar: No sidebar container found in <#{page.filename}>!")
         return nil
       end
 
       sidebar_containers.first
+    end
+
+    def skippable?(jekyll_page)
+      return true if jekyll_page.is_a? JekyllRedirectFrom::RedirectPage
+      return true if jekyll_page.is_a? JekyllRedirectFrom::PageWithoutAFile
+
+      false
     end
   end
 end
