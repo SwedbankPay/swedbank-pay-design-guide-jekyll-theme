@@ -104,6 +104,8 @@ module SwedbankPay
         return
       end
 
+      Jekyll.logger.debug("           Sidebar: <#{@path}>.lead_title('#{@title.lead}').main_title('#{@title.main}')")
+
       @jekyll_page.data['lead_title'] = @title.lead
       @jekyll_page.data['main_title'] = @title.main
     end

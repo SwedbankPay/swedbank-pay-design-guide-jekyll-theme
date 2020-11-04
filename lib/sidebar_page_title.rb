@@ -17,7 +17,7 @@ module SwedbankPay
       title = jekyll_page['title']
       section = jekyll_page['section']
 
-      return nil if title.nil?
+      return nil if title.nil? && section.nil?
 
       SidebarPageTitle.new(title, section, sidebar_page)
     end
@@ -46,10 +46,16 @@ module SwedbankPay
     private
 
     def initialize(title, section, page)
-      raise ArgumentError, 'title cannot be nil' if title.nil?
-      raise ArgumentError, 'title must be a String' unless title.is_a? String
+      raise ArgumentError, 'Both title and section cannot be nil' if title.nil? && section.nil?
       raise ArgumentError, 'page cannot be nil' if page.nil?
       raise ArgumentError, 'page must be a SidebarPage' unless page.is_a? SidebarPage
+
+      if title.nil?
+        raise ArgumentError, 'section must be a String' unless section.is_a? String
+        title = section
+      elsif section.nil?
+        raise ArgumentError, 'title must be a String' unless title.is_a? String
+      end
 
       @page = page
       @title = title
