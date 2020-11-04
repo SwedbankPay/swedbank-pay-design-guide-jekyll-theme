@@ -1,5 +1,6 @@
 ---
-title: Checkout – Features
+section: Checkout Features
+title: Introduction
 estimated_read: 10
 card_overview: true
 description: |
@@ -8,7 +9,7 @@ icon:
   content: remove_red_eye
 additional: true
 menu_order: 5
-card_list: 
+card_list:
 - title: Payment orders
   description: When initiating a payment process
   url: /checkout/features/payment-orders

@@ -13,8 +13,9 @@ module SwedbankPay
 
     def to_s
       name = @page.name == '/' ? '/' : "/#{@page.name}"
-      title = @page.title.nil? ? '?' : @page.title.main
-      s = "#{indent} #{@page.coordinate}. #{name}: #{title}\n"
+      lead_title = @page.title.nil? ? '?' : @page.title.lead
+      main_title = @page.title.nil? ? '?' : @page.title.main
+      s = "#{indent} #{@page.coordinate}. #{name}: #{lead_title} – #{main_title}\n"
 
       if @page.children?
         @page.children.each do |child|
