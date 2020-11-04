@@ -44,7 +44,7 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/resources/gamma.html"
   },{
-    "title": "Checkout More",
+    "title": "",
     "text": "You’d like to checko out Great! Just check in first and we’ll get you sorted.",
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/checkout-more/"
