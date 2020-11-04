@@ -50,7 +50,7 @@ module SwedbankPay
 
     def hidden?
       return true if @title.nil?
-      return true if @hide_from_sidebar === true
+      return true if @hide_from_sidebar
 
       false
     end
@@ -58,10 +58,6 @@ module SwedbankPay
     def hidden_for?(other_page)
       # The current page should be hidden for the other page unless the
       # other page is also hidden.
-      #
-      # TODO: Make it so that hiddden pages within a section are visible
-      #       for each other, but not for other sections, regardless if
-      #       they are hidden or not.
       hidden = hidden?
 
       if other_page.nil? || !other_page.is_a?(SidebarPage)
@@ -71,7 +67,7 @@ module SwedbankPay
 
       # If the other page is hidden, the current page should not be hidden
       # from it.
-      return false if other_page.hidden?
+      return false if other_page.hidden? && in_same_section_as?(other_page)
 
       hidden
     end
@@ -170,6 +166,14 @@ module SwedbankPay
       Jekyll.logger.warn("           Sidebar: #{current.class} ('#{current}') does not respond to :path.")
 
       ''
+    end
+
+    def in_same_section_as?(other_page)
+      # If this or the other page is the root index page, just ignore the
+      # hidden state completely
+      return false if other_page.path == '/' || @path == '/'
+
+      other_page.path.start_with?(@path) || @path.start_with?(other_page.path)
     end
   end
 end
