@@ -72,12 +72,11 @@ module SwedbankPay
 
       # Return the 'section' front matter if it can be found on the current page.
       section = section_from_front_matter(page)
+
       return section unless section.nil?
 
       # Recurse upwards to the root (until there is no parent).
-      return find_section(page.parent) unless page.nil? || page.parent.nil? || !page.parent.is_a?(SidebarPage)
-
-      nil
+      return section_from_parent(page)
     end
 
     def section_from_front_matter(page)
@@ -89,7 +88,7 @@ module SwedbankPay
     def section_from_parent(page)
       return nil if page.nil? || page.parent.nil?
 
-      find_section(page.parent, level) unless page.nil? || page.parent.nil?
+      find_section(page.parent) unless page.nil? || page.parent.nil?
     end
   end
 end

@@ -44,7 +44,7 @@ module SwedbankPay
       # If we're rendering a leaf node, just set the level to a non-zero value
       # to get the 'nav-subgroup' class and such.
       level = is_leaf ? -1 : page.level
-      title_markup = title_markup(page, level)
+      title_markup = title_markup(page, level, is_leaf)
       item_class = item_class(page, current_page, level, is_leaf)
       group_heading_class = group_heading_class(level)
 
@@ -73,11 +73,12 @@ module SwedbankPay
       "#{group_class}-heading"
     end
 
-    def title_markup(page, level)
+    def title_markup(page, level, is_leaf)
       lead_title = lead_title(page)
       return "<span>#{lead_title}</span>" if level.zero?
 
-      main_title = main_title(page)
+      main_title = main_title(page, is_leaf)
+
       "<a href=\"#{page.path}\">#{main_title}</a>"
     end
 
@@ -126,14 +127,30 @@ module SwedbankPay
       ''
     end
 
-    def main_title(page)
+    def main_title(page, is_leaf)
       unless page.nil? || page.title.nil?
-        main = page.title.main
+        lead_title = lead_title(page)
+        parent_lead_title = parent_lead_title(page)
+        main_title = page.title.main
 
-        return main || page.title.to_s
+        # If the lead title is different to the parent's or we're not on a leaf
+        # node item, use the lead title as the main title. This causes 'section: Card'
+        # to be used as title for the Card item, but allows the nav-subgroup-heading
+        # 'Introduction' item to use the main title 'Introduction'.
+        unless lead_title == parent_lead_title || is_leaf
+          main_title = lead_title
+        end
+
+        return main_title || page.title.to_s
       end
 
       ''
+    end
+
+    def parent_lead_title(page)
+      return page.parent.title.lead unless page.parent.nil? || page.parent.title.nil?
+
+      nil
     end
   end
 end

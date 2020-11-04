@@ -49,13 +49,13 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/checkout-more/"
   },{
-    "title": "Checkout – Features",
+    "title": "Introduction",
     "text": "All features view_list Payment orders When initiating a payment process arrow_forward autorenew Recurring Payments Initialize payment process containing the order arrow_forward description Description Initialize payment process containing the order arrow_forward settings Operations Initialize payment process containing the order arrow_forward http CompleteURL Initialize payment process containing the order arrow_forward shopping_basket Purchase Payments Initialize payment process containing the order arrow_forward attach_money Prices Initialize payment process containing the order arrow_forward construction Checkin Events Initialize payment process containing the order arrow_forward undo Callback Initialize payment process containing the order arrow_forward",
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/checkout/features/"
   },{
     "title": "Introduction",
-    "text": "Core implementation overview 01 Initiate session for consumer identification 15 min read arrow_forward 02 Display Swedbank Pay checkin module 10 min read arrow_forward 03 Create payment order 18 min read arrow_forward 04 Display the Payment Menu 13 min read arrow_forward 05 Capture the funds 10 min read arrow_forward Additional features add After Payment Add After-payment operation to your order system arrow_forward remove_red_eye Features In this section you find various resources for Swedbank Pay’s API Platform. arrow_forward",
+    "text": "Core implementation overview 01 Initiate session for consumer identification 15 min read arrow_forward 02 Display Swedbank Pay checkin module 10 min read arrow_forward 03 Create payment order 18 min read arrow_forward 04 Display the Payment Menu 13 min read arrow_forward 05 Capture the funds 10 min read arrow_forward Additional features add After Payment Add After-payment operation to your order system arrow_forward remove_red_eye Introduction In this section you find various resources for Swedbank Pay’s API Platform. arrow_forward",
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/checkout/"
   },{
