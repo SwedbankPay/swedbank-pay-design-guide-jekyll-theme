@@ -6,6 +6,7 @@ plugins:
   - jekyll-redirect-from
   - jemoji
   - kramdown-plantuml
+  - swedbank-pay-design-guide-jekyll-theme
 # To include node_modules and other folders that are excluded by default:
 # exclude: []
 kramdown:

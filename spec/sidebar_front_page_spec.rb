@@ -36,9 +36,13 @@ describe SwedbankPay::Sidebar do
     it 'has release notes' do
       is_expected.to have_tag('div.front-page-release-notes') do
         with_tag('div.release-notes-container') do
-          with_tag('div.release-notes-date', text: /28 May 2020/)
+          with_tag('div.release-notes-date') do
+            with_tag('a[href="/resources/release-notes#28-may-2020"]', text: '28 May 2020')
+          end
           with_tag('div') do
-            with_tag('p.h4', text: 'Version 1.11.0')
+            with_tag('p.h4') do
+              with_tag('a[href="/resources/release-notes#version-1110"]', text: 'Version 1.11.0')
+            end
             with_tag('ul') do
               with_tag('li', text: 'Added a new Trustly Payments section.')
             end

@@ -1,24 +1,25 @@
 {% assign num_dates = include.num_dates %}
-{% assign pages = site.pages  %}
-{% for node in pages %}
-{% if node.url contains '/resources/release-notes' %}
+{% for page in site.pages %}
+{% assign release_notes_url = '/resources/release-notes' %}
+{% if page.url contains release_notes_url %}
 <div class="release-notes-container">
-    {% assign dates = node.content | markdownify | split: '<h2' | | slice: 1, num_dates %}
-    {% assign variable = value %}
+    {% assign dates = page.content | markdownify | split: '<h2' | slice: 1, num_dates %}
 
     {% for date in dates %}
         <div class="row">
             {% assign versions = date | split: '<h3' %}
+            {% assign date_id = date | regex_capture: 'id="([^"]+)"' | first %}
             <div class="col-md-2 release-notes-date">
-                {% assign date_value = versions[0] | remove: '</h2>' | | split: '>' %}
-                {{ date_value[1] }}
+                {% assign date_value = versions[0] | remove: '</h2>' | split: '>' %}
+                <a href="{{ release_notes_url }}#{{ date_id }}">{{ date_value[1] | strip }}</a>
             </div>
             {% assign version_list = versions | shift %}
             <div class="col-md-10">
                 {% for version in version_list %}
-                    {% assign version_parts = version | | split: '</h3>' %}
+                    {% assign version_parts = version | split: '</h3>' %}
                     {% assign version_value = version_parts[0] | split: '>' %}
-                    <p class="h4">{{ version_value[1] }}</p>
+                    {% assign version_id = version | regex_capture: 'id="([^"]+)"' | first %}
+                    <p class="h4"><a href="{{ release_notes_url }}#{{ version_id }}">{{ version_value[1] }}</a></p>
                     {{ version_parts[1] }}
                 {% endfor %}
             </div>
