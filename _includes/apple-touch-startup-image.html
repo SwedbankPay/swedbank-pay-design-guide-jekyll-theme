@@ -10,7 +10,7 @@
 {%- capture device_height_string -%}
 (device-height: {{ device_height }})
 {%- endcapture -%}
-{%- if device_orientation != nil && device_orientation != empty -%}
+{%- if device_orientation != nil and device_orientation != empty -%}
     {%- capture device_orientation_string -%}
     (orientation: {{ device_orientation }}) and
     {%- endcapture -%}
