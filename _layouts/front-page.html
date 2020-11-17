@@ -52,7 +52,7 @@ layout: default
         </div>
     </div>
     {% endif %}
-    <a href="https://ecom.externalintegration.payex.com/pspdemoshop" class="front-page-demoshop">
+    <div class="front-page-demoshop">
         <span class="front-page-demoshop-text">
             <span class="h2">Try our Demoshop</span>
             <span class="demoshop-text-description">
@@ -61,8 +61,11 @@ layout: default
             </span>
         </span>
         <span class="front-page-demoshop-link">
-            <span class="h3">Go to the demoshop</span>
-            <i class="material-icons">arrow_forward</i>
+            <a href="https://ecom.externalintegration.payex.com/pspdemoshop" class="text-decoration-none">
+                <span class="h3 mr-2">Go to the demoshop
+                    <i class="material-icons ml-2">arrow_forward</i>
+                </span>
+            </a>
             <span class="demoshop-link-img">
                 <img class="demoshop-link-img-mobile d-none d-md-flex"
                     src="/assets/img/demoshop-mobile.svg" alt="demoshop-mobile" />
@@ -72,7 +75,7 @@ layout: default
                     src="/assets/img/demoshop-web.svg" alt="demoshop-web" />
             </span>
         </span>
-    </a>
+    </div>
 
     <div class="front-page-container">
         <div class="front-page-cards-sdk">

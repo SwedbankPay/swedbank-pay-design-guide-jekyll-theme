@@ -5,13 +5,13 @@
 
 <nav class="iterator d-flex">
     {% if prev_href != blank and prev_href != empty and prev_href != nil %}
-    <a class="mr-auto btn btn-guiding" role="button" rel="prev" href="{{ prev_href }}">
+    <a class="mr-auto btn btn-primary" role="button" rel="prev" href="{{ prev_href }}">
         {{ prev_title }}
     </a>
     {% endif %}
 
     {% if next_href != blank and next_href != empty and next_href != nil %}
-    <a class="ml-auto btn btn-executive" role="button" rel="next" href="{{ next_href }}">
+    <a class="ml-auto btn btn-primary" role="button" rel="next" href="{{ next_href }}">
         {{ next_title }}
     </a>
     {% endif %}

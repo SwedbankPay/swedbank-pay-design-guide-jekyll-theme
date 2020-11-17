@@ -3,7 +3,7 @@
 {%- assign image = page.opengraph.image | default: site.opengraph.image -%}
 {%- assign github_branch = site.github.branch | default : "develop" -%}
 {%- assign design_guide_base_url = site.design_guide.base_url | default: 'https://design.swedbankpay.com' -%}
-{%- assign design_guide_version = site.design_guide.version | default: '4.7.0' -%}
+{%- assign design_guide_version = site.design_guide.version | default: '4.8.1' -%}
 {%- assign design_guide_url = design_guide_base_url | append: '/v/' | append: design_guide_version -%}
 {%- if page.sidebar.navigation == nil -%}
 {%- unless page.name contains "index"  -%}
@@ -66,7 +66,7 @@
                             <nav class="sidebar-nav">
                                 <a href="/" class="sidebar-header">
                                     <img src="{{ design_guide_url }}/img/swedbankpay-logo-v.svg"
-                                        alt="Swedbank Pay vertical logo" />
+                                        alt="Swedbank Pay vertical logo" class="logotype-vertical logotype-lg"/>
                                     <div class="sidebar-header-text">
                                         <span>{</span>developer portal<span>}</span>
                                     </div>
@@ -93,12 +93,7 @@
                     </main>
                 </div>
             </div>
-
-            <footer class="page-footer">
-                <p class="page-footer-rights">© Swedbank Pay</p>
-            </footer>
         </div>
-
         <script src="{{ design_guide_url }}/scripts/dg.js"></script>
         <script src="{{ '/assets/js/swedbank-pay-design-guide-theme.js' | relative_url }}"></script>
         {%- if site.google_analytics.tracking_id %}

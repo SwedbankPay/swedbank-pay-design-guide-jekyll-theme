@@ -27,7 +27,7 @@ layout: front-page
       </div>
       <div class="{{ card_col_class }}">
         {% include card.html
-            title='Payments'
+            title='Payments instruments'
             title_type="h2"
             text='Payments gives you a one-by-one integration with more
             customization for each payment method to build your own
@@ -40,7 +40,8 @@ layout: front-page
 {% endcontentfor %}
 
 {% contentfor sdks %}
-  <h2 id="front-page-sdk" class="heading-line heading-line-sdk">Looking for SDKs?</h2>
+  
+  <h2 id="front-page-sdk" class="heading-line heading-line-sdk">Loooooking for SDKs?</h2>
   <div class="row mt-4">
     <div class="{{ card_col_class }}">
       {% include card.html
