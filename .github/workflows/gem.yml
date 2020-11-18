@@ -21,7 +21,7 @@ jobs:
       uses: gittools/actions/gitversion/setup@v0.9.6
       if: startsWith(github.ref, 'refs/tags/') != true # Only use GitVersion for unstable builds
       with:
-        versionSpec: '5.2.x'
+        versionSpec: '5.x.x'
 
     - name: Execute GitVersion
       id: gitversion
