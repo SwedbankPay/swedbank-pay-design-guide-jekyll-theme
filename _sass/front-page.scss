@@ -113,11 +113,10 @@ $front-page-max-width: 1312px;
         }
 
         @media screen and (min-width: $breakpoint-xxl) {
-            margin-bottom: 9rem;
+            margin-bottom: 10rem;
             
             .front-page-intro-cards {
                 position: absolute;
-                bottom: -7rem;
                 left: 0;
                 width: 100%;
                 padding: 0 4rem;
@@ -235,19 +234,6 @@ $front-page-max-width: 1312px;
         text-decoration: none;
         border-radius: 1rem;
 
-        &:hover,
-        &:focus {
-            .front-page-demoshop-link {
-                background-color: $white;
-                color: $brown;
-
-                .h3 {
-                    color: $brown;
-                }
-
-            }
-        }
-
         &:after {
             display: none;
             content: none;
@@ -299,6 +285,21 @@ $front-page-max-width: 1312px;
             box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.15);
             max-width: $front-page-max-width;
             width: 100%;
+            cursor: pointer;
+
+            a::after{
+                content: '';
+            }
+            
+            &:hover,
+            &:focus {
+                background-color: $white;
+                color: $brown;
+            
+                .h3 {
+                    color: $brown;
+                }
+            }
 
             .demoshop-link-img {
                 display: flex;
@@ -306,6 +307,7 @@ $front-page-max-width: 1312px;
                 position: absolute;
                 bottom: -1rem;
                 right: 3%;
+                pointer-events: none;
 
                 .demoshop-link-img-web {
                     width: 26.5rem;

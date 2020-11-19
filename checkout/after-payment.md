@@ -110,8 +110,6 @@ Content-Type: application/json
 | └➔&nbsp;`id`   | `string` |                      |
 | `operations`   | `array`  | The array of possible operations to perform, given the state of the payment order. |
 
-
-
 {% include alert.html type="informative" icon="info" body=" Note that all of the
 operations `Cancel`, `Capture` and `Reversal` must be implemented." %}
 
