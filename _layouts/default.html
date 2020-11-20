@@ -71,7 +71,16 @@
                                         <span>{</span>developer portal<span>}</span>
                                     </div>
                                 </a>
-
+                                <div class="search-container mx-2 my-4 px-3 py-2 d-flex ">
+                                    <input type="text" id="search-input" class="search-input w-100 " 
+                                        placeholder="Search in documentation"
+                                        onfocus="this.placeholder=''"
+                                        onblur="this.placeholder='Search in documentation'">
+                                    
+                                    <label for="search-input" class="mb-0">
+                                        <i class="material-icons m-0" aria-hidden="true">search</i>
+                                    </label>
+                                </div>
                                 <ul id="dx-sidebar-main-nav-ul" class="main-nav-ul">
                                 </ul>
                             </nav>
