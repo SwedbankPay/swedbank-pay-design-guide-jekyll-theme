@@ -7,6 +7,7 @@
 @import 'code-view.scss';
 @import 'front-page.scss';
 @import 'heading.scss';
+@import 'accordion-table.scss';
 @import 'paragraph-highlight.scss';
 @import 'sidebar.scss';
 @import 'title-header.scss';
@@ -23,7 +24,6 @@ body {
 }
 
 .table {
-
     th,
     td {
         >.material-icons {
