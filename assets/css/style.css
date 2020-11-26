@@ -181,6 +181,44 @@ h1 > a.header-anchor:hover, h2 > a.header-anchor:hover, h3 > a.header-anchor:hov
 
 a.header-anchor::before { content: '#'; }
 
+.accordion { align-items: center; }
+
+.accordion.accordion-table { border: none; }
+
+.accordion.accordion-table .show { display: block; }
+
+.accordion.accordion-table .hide { display: none; }
+
+.accordion.accordion-table.accordion-open { border: none; }
+
+.accordion.accordion-table.accordion-open .show { display: none; }
+
+.accordion.accordion-table.accordion-open .hide { display: block; }
+
+.accordion.accordion-table .accordion-header:before { bottom: 1rem; margin: auto; transition: .3s; color: #512b2b; }
+
+.accordion.accordion-table .accordion-header span { font-weight: normal; }
+
+.accordion.accordion-table .accordion-header:hover span { font-weight: bold; }
+
+@media (min-width: 1250px) { .accordion.accordion-table .accordion-body { width: 70vw; max-width: 80rem; } }
+
+.accordion.accordion-table table { border: 1px solid rgba(153, 153, 153, 0.5); border-radius: 0.25rem; }
+
+.accordion.accordion-table table th { font-size: 0.875rem; }
+
+.accordion.accordion-table table tbody { font-size: 0.875rem; }
+
+.accordion.accordion-table table tbody tr:nth-child(odd) { background-color: #F9F8F6; }
+
+.accordion.accordion-table table tbody tr td:not(:last-child) { font-family: "Akkurat Mono", monospace; }
+
+.accordion.accordion-table table tbody tr td:not(:last-child) code { border: none; background-color: transparent; padding: 0; }
+
+.accordion.accordion-table table tbody tr td:not(:last-child):not(:nth-last-child(2)) code { font-weight: 700; }
+
+.accordion.accordion-table table tbody tr:hover { background-color: #fbf2ea; transition: .5s; }
+
 .paragraph-highlight { margin: 2rem 0; padding: 0.25rem 0; padding-left: 1.5rem; border-left: 2px solid #fdc129; }
 
 .sidebar .sidebar-nav .sidebar-header { display: flex; flex-direction: column; align-items: center; margin-top: 2rem; text-decoration: none; color: #512b2b; }
