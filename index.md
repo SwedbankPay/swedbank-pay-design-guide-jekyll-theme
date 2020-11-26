@@ -11,12 +11,12 @@ menu_order: 0
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-* [External absolute full link](https://www.wikipedia.org)
-* [External protocol relative link](//www.wikipedia.org)
-* Internal absolute full link
-* Internal explicit relative link
-* Internal implicit relative link
-* Internal absolute link
+*   [External absolute full link](https://www.wikipedia.org)
+*   [External protocol relative link](//www.wikipedia.org)
+*   Internal absolute full link
+*   Internal explicit relative link
+*   Internal implicit relative link
+*   Internal absolute link
 
 There should be whitespace between paragraphs.
 
@@ -135,15 +135,15 @@ their language.
 
 #### Header 4
 
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-* This is an unordered list following a header.
+*   This is an unordered list following a header.
+*   This is an unordered list following a header.
+*   This is an unordered list following a header.
 
 ##### Header 5
 
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
+1.  This is an ordered list following a header.
+2.  This is an ordered list following a header.
+3.  This is an ordered list following a header.
 
 ###### Header 6
 
@@ -192,7 +192,7 @@ body='This is a successful alert.' %}
 body='This is an **informational**   alert *with*   `<markdown/>`{:.language-html}.'
 %}
 
-{% include alert.html type='warning' icon='warning'
+{% include alert.html type='warning' icon='warning' 
 header='`{ "warning": "alert" }`{:.language-js}'
 body='This is a **warning**   alert with `<markdown/>`{:.language-html}.' %}
 
@@ -255,7 +255,7 @@ and try out PayEx Checkout for yourself!' %}
 
 ## And an ordered list
 
-1.   Item one
+1.  Item one
 2.  Item two
 3.  Item three
 4.  Item four
