@@ -1,0 +1,96 @@
+@import 'colors.scss';
+
+.accordion {
+    align-items: center;
+
+    &.accordion-table {
+        border: none;
+
+        .show {
+            display: block;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        &.accordion-open {
+            border: none;
+
+            .show {
+                display: none;
+            }
+
+            .hide {
+                display: block;
+            }
+        }
+
+        .accordion-header {
+            &:before {
+                bottom: 1rem;
+                margin: auto;
+                transition: .3s;
+                color: $brown;
+            }
+
+            span {
+                font-weight: normal;
+            }
+            &:hover {
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .accordion-body {
+            @media (min-width: 1250px) {
+                width: 70vw;
+                max-width: 80rem;
+            }
+        }
+
+        table {
+            border: 1px solid rgba(153, 153, 153, 0.5);
+            border-radius: 0.25rem;
+
+            th {
+                font-size: 0.875rem;
+            }
+
+            tbody {
+                font-size: 0.875rem;
+            
+                tr:nth-child(odd) {
+                    background-color: #F9F8F6;
+                }
+            
+                tr {
+                    td:not(:last-child) {
+                        font-family: $mono;
+                    
+                        code {
+                            border: none;
+                            background-color: transparent;
+                            padding: 0;
+                        }
+                    }
+                
+                    td:not(:last-child):not(:nth-last-child(2)) {
+                        code {
+                            font-weight: 700;
+                        }
+                    }
+                }
+            
+                tr {
+                    &:hover {
+                        background-color: $apricot;
+                        transition: .5s;
+                    }
+                }
+            }
+        }
+    }
+}

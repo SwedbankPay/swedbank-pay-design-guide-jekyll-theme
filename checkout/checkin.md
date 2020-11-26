@@ -43,13 +43,17 @@ Content-Type: application/json
 }
 ```
 
-{:.table .table-plain}
+{% capture request_table %}
+{:.table .table-striped}
 |     Required     | Field                                     | Type     | Description                                                                                                                            |
 | :--------------: | :---------------------------------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------- |
 | {% icon check %} | `operation`                               | `string` | `initiate-consumer-session`, the operation to perform.                                                                                 |
 | {% icon check %} | `language`                                | `string` | Selected language to be used in Checkin. Supported values are  |
 | {% icon check %} | `shippingAddressRestrictedToCountryCodes` | `string` | List of supported shipping countries for merchant. Using ISO-3166 standard.                                                            |
+{% endcapture %}
 
+{% include accordion-table.html content = request_table
+%}
 When the request has been sent, a response containing an array of operations that can be acted upon will be returned:
 
 {:.code-view-header}
@@ -78,7 +82,8 @@ Content-Type: application/json
 }
 ```
 
-{:.table .table-plain .mb-5}
+{% capture response_table%}
+{:.table .table-striped .mb-5}
 | Field                 | Type     | Description                                                                                                                                       |
 | :-------------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `token`               | `string` | A session token used to initiate Checkout UI.                                                                                                     |
@@ -87,6 +92,9 @@ Content-Type: application/json
 | └➔&nbsp;`method`      | `string` | The HTTP method to use when performing the operation.                                                                                             |
 | └➔&nbsp;`contentType` | `string` | The HTTP content type of the target URI. Indicates what sort of resource is to be found at the URI, how it is expected to be used and behave.     |
 | └➔&nbsp;`href`        | `string` | The target URI of the operation.                                                                                                                  |
+{% endcapture %}
+{% include accordion-table.html content = response_table
+%}
 
 ## Step 2: Display Swedbank Pay Checkin module
 
@@ -195,7 +203,6 @@ access them with our script." %}
 With the scripts loading in after the entire page is loaded, we can access the
 `<div>` container that the Checkin will be hosted in.
 After that has all loaded, you should see something like this:
-
 
 As you can see, the payer's information is pre-filled as provided by the
 initial `POST`. With a `consumerProfileRef` safely tucked into our pocket,
