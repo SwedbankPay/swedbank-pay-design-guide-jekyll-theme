@@ -1,31 +1,31 @@
-{%- assign title = page.title | default: "PayEx Design Guide theme for Jekyll" -%}
+{%- assign lead_title = page.lead_title -%}
+{%- if lead_title == nil and page.sidebar.navigation == nil -%}
+    {%- unless page.name contains "index" -%}
+        {%- assign dirname = page.dir | split: "/" | last | remove: "/" | capitalize -%}
+        {%- unless dirname == "" -%}
+            {%- assign lead_title = dirname -%}
+        {%- endunless -%}
+    {%- endunless -%}
+{%- endif -%}
+{%- assign main_title = page.main_title | default: page.title | default: "PayEx Design Guide theme for Jekyll" -%}
+{%- capture title -%}{%- if lead_title != nil -%}{{ lead_title }} – {% endif %}{{ main_title }}{%- endcapture -%}
 {%- assign description = page.opengraph.description | default: site.opengraph.description -%}
 {%- assign image = page.opengraph.image | default: site.opengraph.image -%}
 {%- assign github_branch = site.github.branch | default : "develop" -%}
 {%- assign design_guide_base_url = site.design_guide.base_url | default: 'https://design.swedbankpay.com' -%}
 {%- assign design_guide_version = site.design_guide.version | default: '4.8.1' -%}
 {%- assign design_guide_url = design_guide_base_url | append: '/v/' | append: design_guide_version -%}
-{%- if page.sidebar.navigation == nil -%}
-{%- unless page.name contains "index"  -%}
-{%- assign dirname = page.dir | split: "/" | last | remove: "/" | capitalize -%}
-{%- unless dirname == "" -%}
-{%- assign title = dirname | append: " – " | append: title -%}
-{%- endunless -%}
-{%- endunless -%}
-{%- endif -%}
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
-
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="theme-color" content="#000">
-        <meta name="application-name" content="{{ page.title }}">
+        <meta name="application-name" content="{{ title }}">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="apple-mobile-web-app-title"
-            content="{{ page.title | default: 'PayEx Design Guide theme for Jekyll' }}">
+        <meta name="apple-mobile-web-app-title" content="{{ title }}">
         <meta name="msapplication-TileColor" content="#000">
         <meta name="msapplication-TileImage" content="{{ design_guide_version_url }}/icons/mstile-144x144.png">
         <meta property="og:type" value="website" />
@@ -72,11 +72,11 @@
                                     </div>
                                 </a>
                                 <div class="search-container mx-2 my-4 px-3 py-2 d-flex ">
-                                    <input type="text" id="search-input" class="search-input w-100 " 
+                                    <input type="text" id="search-input" class="search-input w-100 "
                                         placeholder="Search in documentation"
                                         onfocus="this.placeholder=''"
                                         onblur="this.placeholder='Search in documentation'">
-                                    
+
                                     <label for="search-input" class="mb-0">
                                         <i class="material-icons m-0" aria-hidden="true">search</i>
                                     </label>
