@@ -292,4 +292,20 @@ a[href ^='https://']:not([href *='{{ site.url }}']):after {
             font-size: 1rem !important;
         }
     }
+
+    .github {
+        opacity: .5;
+        position: absolute;
+        right: 4rem;
+        top: 4rem;
+        transition: opacity .3s;
+    }
+
+    a.github:after {
+        display: none;
+    }
+
+    a.github:hover {
+        opacity: 1;
+    }
 }

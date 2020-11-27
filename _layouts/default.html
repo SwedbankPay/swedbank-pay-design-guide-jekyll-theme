@@ -11,7 +11,6 @@
 {%- capture title -%}{%- if lead_title != nil -%}{{ lead_title }} – {% endif %}{{ main_title }}{%- endcapture -%}
 {%- assign description = page.opengraph.description | default: site.opengraph.description -%}
 {%- assign image = page.opengraph.image | default: site.opengraph.image -%}
-{%- assign github_branch = site.github.branch | default : "develop" -%}
 {%- assign design_guide_base_url = site.design_guide.base_url | default: 'https://design.swedbankpay.com' -%}
 {%- assign design_guide_version = site.design_guide.version | default: '4.8.1' -%}
 {%- assign design_guide_url = design_guide_base_url | append: '/v/' | append: design_guide_version -%}
