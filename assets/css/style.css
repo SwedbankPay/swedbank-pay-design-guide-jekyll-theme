@@ -359,4 +359,10 @@ a.front-page-demoshop[href^='//']:not([href*='{{ site.url }}']):after, a.front-p
 
 .documentation .language-mermaid .noteText { fill: #222 !important; stroke: none; font-family: Arial, sans-serif !important; font-size: 1rem !important; }
 
+.documentation .github { opacity: .5; position: absolute; right: 4rem; top: 4rem; transition: opacity .3s; }
+
+.documentation a.github:after { display: none; }
+
+.documentation a.github:hover { opacity: 1; }
+
 /*# sourceMappingURL=style.css.map */
