@@ -56,6 +56,11 @@ module SwedbankPay
     end
 
     def hidden_for?(other_page)
+      if @jekyll_page.data['layout'] == 'search'
+        # Never show the search result page in the menu.
+        return true
+      end
+
       # The current page should be hidden for the other page unless the
       # other page is also hidden.
       hidden = hidden?
