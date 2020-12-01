@@ -27,9 +27,5 @@ describe SwedbankPay::Sidebar do
         end
       end
     end
-
-    it 'has expected page title' do
-      is_expected.to have_tag('title', text: 'Checkout – After Payment')
-    end
   end
 end
