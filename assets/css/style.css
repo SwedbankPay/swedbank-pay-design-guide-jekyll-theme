@@ -269,8 +269,6 @@ a.header-anchor::before { content: '#'; }
 
 .title-header .title-header-container a { color: #43d0dd; }
 
-.title-header .title-header-container a ::after { content: url(../img/external-url-dark-bg.svg); }
-
 img { max-width: 100%; }
 
 body { font-size: 1.125rem; }
