@@ -34,6 +34,10 @@
         }
         a {
             color: #43d0dd;
+
+            ::after {
+                content: url(../img/external-url-dark-bg.svg);
+            }
         }
     }
 
