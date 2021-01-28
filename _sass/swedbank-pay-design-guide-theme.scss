@@ -125,6 +125,9 @@ a[href ^='https://']:not([href *='{{ site.url }}']):after {
 }
 
 .documentation {
+    .doc-container {
+        max-width: 100%;
+    }
     code[data-processed='true'].language-mermaid {
         background: none;
         border: none;
