@@ -125,6 +125,12 @@ a[href ^='https://']:not([href *='{{ site.url }}']):after {
 }
 
 .documentation {
+    > div {
+        &.row {
+            margin-right: 0;   
+        }
+    }
+
     .doc-container {
         max-width: 100%;
     }
