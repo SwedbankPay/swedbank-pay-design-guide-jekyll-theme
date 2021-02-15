@@ -1,25 +1,29 @@
-const size = 5
+const size = 5;
 
 async function fetchData(page){
-    const response = await fetch(`https://elk-node-search-proxy-stage.azurewebsites.net/search${window.location.search}&size=${size}&page=${page}`)
-    const results = await response.json()
+    const response = await fetch(`https://elk-node-search-proxy-stage.azurewebsites.net/search${window.location.search}&size=${size}&page=${page}`);
+    const results = await response.json();
     
-    return results
+    return results;
+}
+
+function replaceTags(string) {
+    return string.replace(/<em class="hlt1">/g, "<b>").replace(/<\/em>/g, "</b>");
 }
 
 async function renderResults(page) {
-    const query = window.location.search.substring(3).replace("+", " ")
-    $(".title").html(`Results for "${query}"`)
-    $(".search_results").html("Searching...")
-    $(".search_pagination").last().html("")
+    const query = window.location.search.substring(3).replace("+", " ");
+    $(".title").html(`Results for "${query}"`);
+    $(".search_results").html("Searching...");
+    $(".search_pagination").last().html("");
 
-    const results = await fetchData(page)
+    const results = await fetchData(page);
 
     if(results.total != 0){
-        pagination(results.total, page)
+        pagination(results.total, page);
 
-        $(".total_results").html(`${results.total} results found`)
-        $(".search_results").html("")
+        $(".total_results").html(`${results.total} results found`);
+        $(".search_results").html("");
 
         results.hits.map(hit => {
             $(`<a href="${hit.url}" class="cards cards-primary">
@@ -29,42 +33,38 @@ async function renderResults(page) {
                     <p class="m-0">${replaceTags(hit.highlight.text[0])}...</p>
                 </div>
                 <i class="material-icons">arrow_forward</i>
-            </a>`).appendTo(".search_results")
-        })
+            </a>`).appendTo(".search_results");
+        });
     }else{
-        $(".search_results").html("No results")
+        $(".search_results").html("No results");
     }
 }
 
 function pagination(totalResults, currentPage) {
-    const totalPages = Math.ceil(totalResults/size)
+    const totalPages = Math.ceil(totalResults/size);
 
-    const previousPage = currentPage + 1 === 1 ? currentPage : currentPage - 1
-    const disablePrevious = previousPage === currentPage ? "disabled" : ""
+    const previousPage = currentPage + 1 === 1 ? currentPage : currentPage - 1;
+    const disablePrevious = previousPage === currentPage ? "disabled" : "";
     
-    const nextPage = currentPage + 1 === totalPages ? currentPage : currentPage + 1
-    const disableNext = nextPage === currentPage ? "disabled" : ""
+    const nextPage = currentPage + 1 === totalPages ? currentPage : currentPage + 1;
+    const disableNext = nextPage === currentPage ? "disabled" : "";
 
-    $(".search_pagination").html("")
+    $(".search_pagination").html("");
     
     $(".search_pagination").append(`
             <button onclick="renderResults(${previousPage}) ${disablePrevious}" type="button"
                     class="btn btn-primary btn-sm m-1"> < </button>
-        `)
+        `);
 
     for(let i = 0; i < totalPages; i++){
         $(`<button onclick="renderResults(${i})" type="button" 
-                class="btn btn-primary btn-sm m-1 ${currentPage == i ? "current-page" : "" }">
+                class="btn btn-primary btn-sm m-1 ${currentPage == i ? "current-page" : ""}">
                     ${i+1}
-            </button>`).appendTo(".search_pagination")
+            </button>`).appendTo(".search_pagination");
     }
 
     $(`<button onclick="renderResults(${nextPage}) ${disableNext}" type="button" 
-            class="btn btn-primary btn-sm m-1"> > </button>`).appendTo(".search_pagination")
+            class="btn btn-primary btn-sm m-1"> > </button>`).appendTo(".search_pagination");
 }
 
-function replaceTags(string) {
-    return string.replace(/<em class="hlt1">/g, "<b>").replace(/<\/em>/g, "</b>")
-}
-
-renderResults(0)
+renderResults(0);
