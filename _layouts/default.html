@@ -78,6 +78,7 @@
                                         placeholder="Search in documentation"
                                         onfocus="this.placeholder=''"
                                         onblur="this.placeholder='Search in documentation'"
+                                        required
                                         pattern=".{3,}"
                                         title="At least 3 characters">
                                     <button class="mb-0">
@@ -92,7 +93,7 @@
                     </div>
 
                     <main class="doc-view col-xxl-10 col-lg-9">
-                        {% if page.layout != 'front-page' %}
+                        {% if page.layout != 'front-page' and page.layout != 'search'%}
                             {% include title-header.html %}
                         {% endif %}
                         <div class="doc-container{% if page.layout == 'front-page' %} no-padding

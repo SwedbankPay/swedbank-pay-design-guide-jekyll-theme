@@ -1,0 +1,50 @@
+.search {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $dark-brown;
+    
+    .search_top {
+        color: #ffffff;
+        max-width: 55rem;
+        padding: 1rem;
+
+        .title {
+            color: #ffffff;
+            font-family: $headline !important;
+        }
+
+        .total_results {
+            color: $yellow;
+        }
+    }
+}
+
+
+#search_content {
+    margin-top: 12rem;
+    #elastic_search_results {
+        .cards-content {
+            p {
+                color: $medium-brown;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+.search_pagination {
+    .btn-primary {
+        min-width: 2.5rem;
+        font-size: 1.25rem;
+        box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+        justify-content: center;
+        
+        &.current-page {
+            background-color: $medium-brown;
+            color: #ffffff;
+        }
+
+    }
+}
