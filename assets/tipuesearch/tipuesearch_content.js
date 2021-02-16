@@ -119,7 +119,7 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/resources/release-notes.html"
   },{
-    "title": "",
+    "title": "Search",
     "text": "",
     "tags": "",
     "url": "/swedbank-pay-design-guide-jekyll-theme/search.html"

@@ -273,22 +273,6 @@ a.header-anchor::before { content: '#'; }
 
 .title-header .title-header-container a ::after { content: url(../img/external-url-dark-bg.svg); }
 
-.search { width: 100%; position: absolute; top: 0; left: 0; background-color: #493c3b; }
-
-.search .search_top { color: #ffffff; max-width: 55rem; padding: 1rem; }
-
-.search .search_top .title { color: #ffffff; font-family: "Swedbank Headline", "Arial", sans-serif !important; }
-
-.search .search_top .total_results { color: #fdc129; }
-
-#search_content { margin-top: 12rem; }
-
-#search_content #elastic_search_results .cards-content p { color: #72605e; font-size: 1rem; }
-
-.search_pagination .btn-primary { min-width: 2.5rem; font-size: 1.25rem; box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1); justify-content: center; }
-
-.search_pagination .btn-primary.current-page { background-color: #72605e; color: #ffffff; }
-
 img { max-width: 100%; }
 
 body { font-size: 1.125rem; }
