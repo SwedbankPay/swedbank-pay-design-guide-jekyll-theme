@@ -88,21 +88,21 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-check
 
-  deploy-dry-run:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: deploy dry-run
-        run: |
-          docker-compose run \
-            -e PAGES_REPO_NWO=${{ github.repository }} \
-            -e JEKYLL_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
-            jekyll deploy \
-            --env=production \
-            --dry-run
-      - name: Upload deploy
-        uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: deploy
-          path: .
+  # deploy-dry-run:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: deploy dry-run
+  #       run: |
+  #         docker-compose run \
+  #           -e PAGES_REPO_NWO=${{ github.repository }} \
+  #           -e JEKYLL_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
+  #           jekyll deploy \
+  #           --env=production \
+  #           --dry-run
+  #     - name: Upload deploy
+  #       uses: actions/upload-artifact@v2
+  #       if: always()
+  #       with:
+  #         name: deploy
+  #         path: .
