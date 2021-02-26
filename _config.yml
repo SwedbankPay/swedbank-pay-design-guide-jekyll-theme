@@ -46,3 +46,4 @@ defaults:
       layout: default
 github:
   branch: master
+  repository_url: https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme
