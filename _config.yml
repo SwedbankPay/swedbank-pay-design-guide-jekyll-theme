@@ -1,7 +1,6 @@
 repository: SwedbankPay/swedbank-pay-design-guide-jekyll-theme
 plugins:
   - jekyll-contentblocks
-  - jekyll-github-metadata
   - jekyll-material-icon-tag
   - jekyll-redirect-from
   - jemoji
@@ -47,3 +46,4 @@ defaults:
       layout: default
 github:
   branch: master
+  repository_url: https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme
