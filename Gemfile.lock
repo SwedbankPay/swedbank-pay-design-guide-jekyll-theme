@@ -6,7 +6,6 @@ PATH
       html-proofer
       jekyll (>= 3.7, < 5.0)
       jekyll-contentblocks
-      jekyll-github-metadata
       jekyll-material-icon-tag
       jekyll-redirect-from
       jemoji
@@ -80,9 +79,6 @@ GEM
       terminal-table (~> 2.0)
     jekyll-contentblocks (1.2.0)
       jekyll
-    jekyll-github-metadata (2.13.0)
-      jekyll (>= 3.4, < 5.0)
-      octokit (~> 4.0, != 4.4.0)
     jekyll-material-icon-tag (1.1.1)
     jekyll-redirect-from (0.16.0)
       jekyll (>= 3.3, < 5.0)
@@ -113,9 +109,6 @@ GEM
       mini_portile2 (~> 2.4.0)
     nokogumbo (2.0.4)
       nokogiri (~> 1.8, >= 1.8.4)
-    octokit (4.18.0)
-      faraday (>= 0.9)
-      sawyer (~> 0.8.0, >= 0.5.3)
     open3 (0.1.0)
     parallel (1.20.1)
     parser (3.0.0.0)
@@ -171,9 +164,6 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.7)
     sassc (2.4.0)
       ffi (~> 1.9)
-    sawyer (0.8.2)
-      addressable (>= 2.3.5)
-      faraday (> 0.8, < 2.0)
     simplecov (0.18.5)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
