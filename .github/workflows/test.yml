@@ -56,14 +56,12 @@ jobs:
       - name: Verify build
         run: |
           docker-compose run \
-            -e PAGES_REPO_NWO=${{ github.repository }} \
-            -e JEKYLL_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
             jekyll build \
             --env=production \
             --verify \
+            --site-url=https://swedbankpay.github.io/swedbank-pay-design-guide-jekyll-theme \
             --ignore-url http://www.wikipedia.org \
-            --ignore-url http://restcookbook.com/Basics/loggingin/ \
-            --ignore-url '%r{/swedbank-pay-design-guide-jekyll-theme/.*}'
+            --ignore-url http://restcookbook.com/Basics/loggingin/
 
       - name: Upload build output artifacts
         uses: actions/upload-artifact@v2
