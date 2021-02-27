@@ -59,7 +59,7 @@ jobs:
             jekyll build \
             --env=production \
             --verify \
-            --site-url=https://swedbankpay.github.io/swedbank-pay-design-guide-jekyll-theme \
+            --site-url=https://theme.example.com/ \
             --ignore-url http://www.wikipedia.org \
             --ignore-url http://restcookbook.com/Basics/loggingin/
 
@@ -71,10 +71,10 @@ jobs:
           path: _site
 
       - name: Verify absolute URL
-        run: grep 'https://swedbankpay.github.io/swedbank-pay-design-guide-jekyll-theme/' $(pwd)/_site/index.html
+        run: grep 'https://theme.example.com/' $(pwd)/_site/index.html
 
       - name: Verify base URL
-        run: grep '/swedbank-pay-design-guide-jekyll-theme/assets/' $(pwd)/_site/index.html
+        run: grep '"/assets/css/style.css"' $(pwd)/_site/index.html
 
   remark-lint:
     runs-on: ubuntu-latest
