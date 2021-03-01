@@ -2,8 +2,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics.tracking_id }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag(){ dataLayer.push(arguments); }
   gtag('js', new Date());
-
-  gtag('config', '{{ site.google_analytics.tracking_id }}');
+  gtag('config', '{{ site.google_analytics.tracking_id }}', { 'anonymize_ip': true });
 </script>
