@@ -1,0 +1,8 @@
+<div class="doc-container{% if page.layout == 'front-page' %} no-padding
+    {% elsif page.card_overview %} normal-padding max-width-card-overview
+    {% else %} normal-padding max-width
+    {% endif %}">
+    <article>
+        {% include anchor_headings.html html=content anchorClass='header-anchor' %}
+    </article>
+</div>
