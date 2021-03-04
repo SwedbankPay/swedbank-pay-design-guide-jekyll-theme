@@ -60,15 +60,15 @@ module SwedbankPay
       headers = []
 
       page.doc.xpath('//h2').each do |header|
-        next unless header['id']
+        id = header['id']
+
+        next unless id
 
         child_markup = header.last_element_child
-        header = {
-          id: header['id'],
-          title: header.content.strip,
-          hash: (child_markup['href']).to_s
-        }
-        headers.push(header)
+        hash = child_markup['href'].to_s if child_markup.respond_to? :[]
+        title = header.content.strip
+
+        headers.push({ id: id, title: title, hash: hash })
       end
 
       headers
