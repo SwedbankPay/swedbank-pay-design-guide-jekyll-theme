@@ -59,6 +59,9 @@ module SwedbankPay
     def find_headers(page)
       headers = []
 
+      # Don't include headers in the sidebar if we're on a card overview page.
+      return headers if page.card_overview?
+
       page.doc.xpath('//h2').each do |header|
         id = header['id']
 

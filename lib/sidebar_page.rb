@@ -30,6 +30,7 @@ module SwedbankPay
       @title = SidebarPageTitle.parse(jekyll_page, self)
       @order = menu_order(jekyll_page)
       @children = SidebarPageCollection.new(self)
+      @card_overview = jekyll_page['card_overview'].nil? ? false : jekyll_page['card_overview']
     end
 
     def active?(current, is_leaf: false)
@@ -113,6 +114,7 @@ module SwedbankPay
 
       @jekyll_page.data['lead_title'] = @title.lead
       @jekyll_page.data['main_title'] = @title.main
+      @jekyll_page.data['children'] = @children
     end
 
     def save
@@ -142,6 +144,14 @@ module SwedbankPay
     def load
       @doc = File.open(@filename) { |f| Nokogiri::HTML(f) }
       @doc
+    end
+
+    def to_liquid
+      @jekyll_page.to_liquid
+    end
+
+    def card_overview?
+      @card_overview
     end
 
     private

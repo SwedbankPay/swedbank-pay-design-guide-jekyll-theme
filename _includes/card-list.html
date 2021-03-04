@@ -7,21 +7,24 @@ type: sdk | module - Empty type result in default card styling
 col_class(required): Describes what grid column class(es) each card should be wrapped in
 {%- endcomment -%}
 
-{% assign card_list = include.card_list %}
-{% assign type = include.type %}
-{% assign col_class = include.col_class %}
-
 <div class="row card-list">
-    {% for card in card_list %}
+    {% for card in include.card_list %}
         {% assign title = card.title | split: '–' | last %}
-        <div class="{{ col_class }}">
-            {% include card.html title=title
+        {% assign link_to = card.extensionless_path | default: card.url %}
+        {% assign card_type = card.card_type | default: include.type %}
+        {% assign icon_content = card.card.icon.content | default: card.icon.content %}
+        {% assign icon_outlined = card.card.icon.outlined | default: card.icon.outlined %}
+        {% assign icon_svg = card.card.icon.svg | default: card.icon.svg %}
+
+        <div class="{{ include.col_class }}">
+            {% include card.html
+                title=title
                 text=card.description
-                icon_content=card.icon.content
-                icon_outlined=card.icon.outlined
-                icon_svg=card.icon.svg
-                to=card.url
-                type=type
+                icon_content=icon_content
+                icon_outlined=icon_outlined
+                icon_svg=icon_svg
+                to=link_to
+                type=card_type
             %}
         </div>
     {% endfor %}
