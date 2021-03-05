@@ -2,7 +2,6 @@
 section: Checkout Features
 title: Introduction
 estimated_read: 10
-card_overview: true
 description: |
     In this section you find various resources for Swedbank Pay’s API Platform.
 icon:
