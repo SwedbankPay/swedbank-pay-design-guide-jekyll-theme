@@ -13,11 +13,13 @@ describe sidebar do
   describe '#pages' do
     subject { sidebar.pages }
 
-    its(:count) { is_expected.to eq 26 }
-    its(:length) { is_expected.to eq 9 }
+    its(:count) { is_expected.to eq 39 }
+    its(:length) { is_expected.to eq 10 }
 
     describe '[0]' do
-      subject { sidebar.pages[0] }
+      let(:index) { |x| parse_index(x) }
+
+      subject { sidebar.pages[index[0]] }
 
       its(:path) { is_expected.to eq '/' }
       its(:children) { is_expected.to be_an_instance_of SwedbankPay::SidebarPageCollection }
@@ -28,12 +30,15 @@ describe sidebar do
       end
     end
 
-    describe '[1].title' do
-      it { expect(sidebar.pages[1].title.to_s).to eq 'Page 1' }
+    describe '[2].title' do
+      let(:index) { |x| parse_index(x) }
+      it { expect(sidebar.pages[index[0]].title.to_s).to eq 'Page 1' }
     end
 
-    describe '[3]' do
-      subject { sidebar.pages[3] }
+    describe '[4]' do
+      let(:index) { |x| parse_index(x) }
+
+      subject { sidebar.pages[index[0]] }
 
       its(:path) { is_expected.to eq '/checkout/' }
       its(:active?, '/checkout/') { is_expected.to be true }
@@ -43,21 +48,21 @@ describe sidebar do
       its(:hidden?) { is_expected.to be false }
 
       describe 'children[3]' do
-        subject { sidebar.pages[3].children[3] }
+        subject { sidebar.pages[index[0]].children[index[1]] }
 
         its(:path) { is_expected.to eq '/checkout/after-payment' }
         its(:active?, '/checkout/after-payment') { is_expected.to be true }
       end
 
       describe 'children[4]' do
-        subject { sidebar.pages[3].children[4] }
+        subject { sidebar.pages[index[0]].children[index[1]] }
 
         its(:path) { is_expected.to eq '/checkout/features/' }
         its(:active?, '/checkout/features/payment-orders') { is_expected.to be true }
         its(:active?, '/checkout/features/payment-orders', is_leaf: true) { is_expected.to be false }
 
         describe 'children[0]' do
-          subject { sidebar.pages[3].children[4].children[0] }
+          subject { sidebar.pages[index[0]].children[index[1]].children[index[2]] }
 
           its(:path) { is_expected.to eq '/checkout/features/payment-orders' }
           its(:active?, '/checkout/features/payment-orders') { is_expected.to be true }
@@ -65,20 +70,21 @@ describe sidebar do
       end
     end
 
-    describe '[5]' do
-      subject { sidebar.pages[5] }
+    describe '[6]' do
+      let(:index) { |x| parse_index(x) }
+      subject { sidebar.pages[index[0]] }
 
       describe 'title' do
         it { expect(subject.title.to_s).to eq 'Payments' }
       end
 
       describe 'children' do
-        subject { sidebar.pages[5].children }
+        subject { sidebar.pages[index[0]].children }
 
         its(:length) { is_expected.to eq 3 }
 
         describe '[2]' do
-          subject { sidebar.pages[5].children[2] }
+          subject { sidebar.pages[index[0]].children[index[1]] }
 
           its(:hidden?) { is_expected.to be true }
 
@@ -87,12 +93,12 @@ describe sidebar do
           end
 
           describe 'children' do
-            subject { sidebar.pages[5].children[2].children }
+            subject { sidebar.pages[index[0]].children[index[1]].children }
 
             its(:length) { is_expected.to eq 1 }
 
             describe '[0]' do
-              subject { sidebar.pages[5].children[2].children[0] }
+              subject { sidebar.pages[index[0]].children[index[1]].children[index[2]] }
 
               its(:hidden?) { is_expected.to be true }
 
@@ -105,15 +111,16 @@ describe sidebar do
       end
     end
 
-    describe '[6]' do
-      subject { sidebar.pages[6] }
+    describe '[7]' do
+      let(:index) { |x| parse_index(x) }
+      subject { sidebar.pages[index[0]] }
 
       describe 'title' do
         it { expect(subject.title.to_s).to eq 'Resources' }
       end
 
       describe 'children' do
-        subject { sidebar.pages[6].children }
+        subject { sidebar.pages[index[0]].children }
 
         its(:length) { is_expected.to eq 5 }
 
