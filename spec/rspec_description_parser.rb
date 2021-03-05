@@ -1,19 +1,19 @@
+# frozen_string_literal: true
+
+# Parses the description in `RSpec.describe` blocks and returns whatever integer
+# it finds inside square brackets `[…]`.
 module RSpecDescriptionParser
     def parse_index(example)
-        indices = {}
+        indices = find_indices(example.metadata[:example_group])
 
-        group = example.metadata[:example_group]
-
-        indices(group).each_with_index do |value, index|
-            indices[index] = value
-        end
-
-        indices
+        # Convert the indices to a Hash that has the position as the hash key
+        # and the index value as the hash value.
+        indices.size.times.zip(indices).to_h
     end
 
     private
 
-    def indices(group)
+    def find_indices(group)
         indices = []
 
         recurse(group, indices)
