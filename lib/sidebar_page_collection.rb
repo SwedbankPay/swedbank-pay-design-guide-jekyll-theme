@@ -32,5 +32,9 @@ module SwedbankPay
 
       count
     end
+
+    def to_liquid
+      @pages
+    end
   end
 end
