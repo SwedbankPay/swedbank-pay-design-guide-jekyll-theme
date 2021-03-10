@@ -1,0 +1,19 @@
+{% capture max_width_class %}
+    {% if page.layout == 'front-page' %}
+        no-padding
+    {% elsif page.card_overview %}
+        normal-padding max-width-card-overview
+    {% else %}
+        normal-padding max-width
+    {% endif %}
+{% endcapture %}
+
+<div class="doc-container {{ max_width_class | strip }}">
+    <article>
+        {% if page.card_overview %}
+            {% include card-overview.html %}
+        {% else %}
+            {% include anchor_headings.html html=content anchorClass='header-anchor' %}
+        {% endif %}
+    </article>
+</div>

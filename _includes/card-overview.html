@@ -1,0 +1,12 @@
+{% for child in page.children %}
+    {% if child.children && child.children.size > 0 %}
+        {% capture header %}
+{:.heading-line}
+## {{ child.title }}
+        {% endcapture %}
+        {% assign header =  header | markdownify %}
+        {% include anchor_headings.html html=header anchorClass='header-anchor' %}
+        {% assign col_class = child.card.col_class | default: 'col-lg-4' %}
+        {% include card-list.html card_list=child.children col_class=col_class %}
+    {% endif %}
+{% endfor %}

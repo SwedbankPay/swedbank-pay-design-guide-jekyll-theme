@@ -2,6 +2,7 @@
 
 require 'jekyll'
 require 'rspec-html-matchers'
+require_relative 'rspec_description_parser'
 
 # Variables that should be shared across all specs in the suite.
 shared_context 'shared' do
@@ -26,6 +27,7 @@ end
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   config.include RSpecHtmlMatchers
+  config.include RSpecDescriptionParser
 
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
