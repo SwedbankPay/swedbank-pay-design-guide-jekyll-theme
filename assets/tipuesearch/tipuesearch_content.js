@@ -4,15 +4,15 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/404.html"
   },{
-    "title": "After Payment",
-    "text": "{% include jumbotron.html body=\"When the consumer has **completed** the entire [Checkin](checkin) and [Payment Menu](payment-menu), you need to implement the relevant **after-payment operations** in your order system. Which these operations are and how they are executed is described below.\" %} ## Introduction Below is the final part of the sequence diagram illustrating how a capture operation is performed. ```mermaid sequenceDiagram participant Merchant participant SwedbankPay as Swedbank Pay rect rgba(81,43,43,0.1) activate Merchant note left of Payer: Capture Merchant ->>+ SwedbankPay: rel:create-paymentorder-capture deactivate Merchant SwedbankPay -->>- Merchant: Capture status note right of Merchant: Capture here only if the purchasedgoods don't require shipping.If shipping is required, perform captureafter the goods have shipped.Should only be used for PaymentInstruments that support Authorizations. end ``` ## Operations Most payment instruments are two-phase payments – in which a successful payment order will result in an authorized transaction – that must be followed up by a capture or cancellation transaction in a later stage. One-phase payments like Swish are settled directly without the option to capture or cancel. For a full list of the available operations, see the. {:.table .table-striped} | Operation | Description | | :----------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | | `create-paymentorder-capture` | The second part of a two-phase transaction where the authorized amount is sent from the payer to the payee. It is possible to do a part-capture on a subset of the authorized amount. Several captures on the same payment are possible, up to the total authorization amount. | | `create-paymentorder-cancel` | Used to cancel authorized and not yet captured transactions. If a cancellation is performed after doing a part-capture, it will only affect the not yet captured authorization amount. | | `create-paymentorder-reversal` | Used to reverse a payment. It is only possible to reverse a payment that has been captured and not yet reversed. | To identify the operations that are available we need to do a `GET` request against the URI of `paymentorder.id`: {:.code-view-header} **Request** ```http GET /psp/paymentorders/{{ page.payment_order_id }} HTTP/1.1 Authorization: Bearer ``` The (abbreviated) response containing an `updateorder`, `capture`, `cancellation`, and `reversal` operation should look similar to the response below: {:.code-view-header} **Response** ```http HTTP/1.1 200 OK Content-Type: application/json { \"paymentOrder\": { \"id\": \"/psp/paymentorders/{{ page.payment_order_id }}\" }, \"operations\": [ { \"method\": \"PATCH\", \"href\": \"{{ page.api_url }}/psp/paymentorders/{{ page.payment_order_id }}\", \"rel\": \"update-paymentorder-updateorder\", \"contentType\": \"application/json\" }, { \"method\": \"POST\", \"href\": \"{{ page.api_url }}/psp/paymentorders/{{ page.payment_order_id }}/captures\", \"rel\": \"create-paymentorder-capture\", \"contentType\": \"application/json\" }, { \"method\": \"POST\", \"href\": \"{{ page.api_url }}/psp/paymentorders/{{ page.payment_order_id }}/cancellations\", \"rel\": \"create-paymentorder-cancel\", \"contentType\": \"application/json\" }, { \"method\": \"POST\", \"href\": \"{{ page.api_url }}/psp/paymentorders/{{ page.payment_order_id }}/reversals\", \"rel\": \"create-paymentorder-reversal\", \"contentType\": \"application/json\" } ] } ``` {:.table .table-striped} | Field | Type | Description | | :------------- | :------- | :--------------------------------------------------------------------------------- | | `paymentorder` | `object` | The payment order object. | | └➔&nbsp;`id` | `string` | | | `operations` | `array` | The array of possible operations to perform, given the state of the payment order. | {% include alert.html type=\"informative\" icon=\"info\" body=\" Note that all of the operations `Cancel`, `Capture` and `Reversal` must be implemented.\" %} {% include iterator.html prev_href=\"capture\" prev_title=\"Back: Capture\" next_href=\"\" next_title=\"Next: Other Features\" %} [https]: /home/technical-information#connection-and-protocol [msisdn]: https://en.wikipedia.org/wiki/MSISDN [payee-reference]: /checkout/other-features#payee-reference [payment-order-operations]: /checkout/other-features#operations [payment-menu-back-end]: /payment#payment-menu-back-end [payment-menu-front-end]: /payment#payment-menu-front-end",
-    "tags": "",
-    "url": "/checkout/after-payment.html"
-  },{
     "title": "After payment is completed",
     "text": "## After paaaayment Payment is done? Great, here is what will happen now. First we'll subtract the money from your account, then a wizard will attempt a grand spell to carry the money on the back of ants to transfer it to a safe place. A secret place. A place with a secret.",
     "tags": "",
     "url": "/checkout-more/after-payment.html"
+  },{
+    "title": "After Payment",
+    "text": "{% include jumbotron.html body=\"When the consumer has **completed** the entire [Checkin](checkin) and [Payment Menu](payment-menu), you need to implement the relevant **after-payment operations** in your order system. Which these operations are and how they are executed is described below.\" %} ## Introduction Below is the final part of the sequence diagram illustrating how a capture operation is performed. ```mermaid sequenceDiagram participant Merchant participant SwedbankPay as Swedbank Pay rect rgba(81,43,43,0.1) activate Merchant note left of Payer: Capture Merchant ->>+ SwedbankPay: rel:create-paymentorder-capture deactivate Merchant SwedbankPay -->>- Merchant: Capture status note right of Merchant: Capture here only if the purchasedgoods don't require shipping.If shipping is required, perform captureafter the goods have shipped.Should only be used for PaymentInstruments that support Authorizations. end ``` ## Operations Most payment instruments are two-phase payments – in which a successful payment order will result in an authorized transaction – that must be followed up by a capture or cancellation transaction in a later stage. One-phase payments like Swish are settled directly without the option to capture or cancel. For a full list of the available operations, see the. {:.table .table-striped} | Operation | Description | | :----------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | | `create-paymentorder-capture` | The second part of a two-phase transaction where the authorized amount is sent from the payer to the payee. It is possible to do a part-capture on a subset of the authorized amount. Several captures on the same payment are possible, up to the total authorization amount. | | `create-paymentorder-cancel` | Used to cancel authorized and not yet captured transactions. If a cancellation is performed after doing a part-capture, it will only affect the not yet captured authorization amount. | | `create-paymentorder-reversal` | Used to reverse a payment. It is only possible to reverse a payment that has been captured and not yet reversed. | To identify the operations that are available we need to do a `GET` request against the URI of `paymentorder.id`: {:.code-view-header} **Request** ```http GET /psp/paymentorders/{{ page.payment_order_id }} HTTP/1.1 Authorization: Bearer ``` The (abbreviated) response containing an `updateorder`, `capture`, `cancellation`, and `reversal` operation should look similar to the response below: {:.code-view-header} **Response** ```http HTTP/1.1 200 OK Content-Type: application/json { \"paymentOrder\": { \"id\": \"/psp/paymentorders/{{ page.payment_order_id }}\" }, \"operations\": [ { \"method\": \"PATCH\", \"href\": \"{{ page.api_url }}/psp/paymentorders/{{ page.payment_order_id }}\", \"rel\": \"update-paymentorder-updateorder\", \"contentType\": \"application/json\" }, { \"method\": \"POST\", \"href\": \"{{ page.api_url }}/psp/paymentorders/{{ page.payment_order_id }}/captures\", \"rel\": \"create-paymentorder-capture\", \"contentType\": \"application/json\" }, { \"method\": \"POST\", \"href\": \"{{ page.api_url }}/psp/paymentorders/{{ page.payment_order_id }}/cancellations\", \"rel\": \"create-paymentorder-cancel\", \"contentType\": \"application/json\" }, { \"method\": \"POST\", \"href\": \"{{ page.api_url }}/psp/paymentorders/{{ page.payment_order_id }}/reversals\", \"rel\": \"create-paymentorder-reversal\", \"contentType\": \"application/json\" } ] } ``` {:.table .table-striped} | Field | Type | Description | | :------------- | :------- | :--------------------------------------------------------------------------------- | | `paymentorder` | `object` | The payment order object. | | └➔&nbsp;`id` | `string` | | | `operations` | `array` | The array of possible operations to perform, given the state of the payment order. | {% include alert.html type=\"informative\" icon=\"info\" body=\" Note that all of the operations `Cancel`, `Capture` and `Reversal` must be implemented.\" %} {% include iterator.html prev_href=\"capture\" prev_title=\"Back: Capture\" next_href=\"\" next_title=\"Next: Other Features\" %} [https]: /home/technical-information#connection-and-protocol [msisdn]: https://en.wikipedia.org/wiki/MSISDN [payee-reference]: /checkout/other-features#payee-reference [payment-order-operations]: /checkout/other-features#operations [payment-menu-back-end]: /payment#payment-menu-back-end [payment-menu-front-end]: /payment#payment-menu-front-end",
+    "tags": "",
+    "url": "/checkout/after-payment.html"
   },{
     "title": "Alpha",
     "text": "",
@@ -29,45 +29,45 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/checkout/capture.html"
   },{
-    "title": "Deck 2 Card 1",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck2/card1.html"
-  },{
     "title": "Deck 3 Card 1",
     "text": "",
     "tags": "",
     "url": "/cards/deck3/card1.html"
+  },{
+    "title": "Deck 2 Card 1",
+    "text": "",
+    "tags": "",
+    "url": "/cards/deck2/card1.html"
   },{
     "title": "Deck 1 Card 1",
     "text": "",
     "tags": "",
     "url": "/cards/deck1/card1.html"
   },{
-    "title": "Deck 2 Card 2",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck2/card2.html"
-  },{
     "title": "Deck 3 Card 2",
     "text": "",
     "tags": "",
     "url": "/cards/deck3/card2.html"
+  },{
+    "title": "Deck 2 Card 2",
+    "text": "",
+    "tags": "",
+    "url": "/cards/deck2/card2.html"
   },{
     "title": "Deck 1 Card 2",
     "text": "",
     "tags": "",
     "url": "/cards/deck1/card2.html"
   },{
-    "title": "Deck 2 Card 3",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck2/card3.html"
-  },{
     "title": "Deck 3 Card 3",
     "text": "",
     "tags": "",
     "url": "/cards/deck3/card3.html"
+  },{
+    "title": "Deck 2 Card 3",
+    "text": "",
+    "tags": "",
+    "url": "/cards/deck2/card3.html"
   },{
     "title": "Deck 1 Card 3",
     "text": "",
@@ -89,6 +89,41 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/resources/gamma.html"
   },{
+    "title": "Secret payments",
+    "text": "## How we do secret payments We don't.",
+    "tags": "",
+    "url": "/payments/secrets/"
+  },{
+    "title": "Payments",
+    "text": "## Woah bby Here we list a few details about payment",
+    "tags": "",
+    "url": "/payments/"
+  },{
+    "title": "",
+    "text": "## You'd like to checko out Great! Just check in first and we'll get you sorted.",
+    "tags": "",
+    "url": "/checkout-more/"
+  },{
+    "title": "Deck 3",
+    "text": "",
+    "tags": "",
+    "url": "/cards/deck3/"
+  },{
+    "title": "Deck 2",
+    "text": "",
+    "tags": "",
+    "url": "/cards/deck2/"
+  },{
+    "title": "Deck 1",
+    "text": "",
+    "tags": "",
+    "url": "/cards/deck1/"
+  },{
+    "title": "Cards",
+    "text": "# Deck 1 # Deck 2 # Deck 3 {% include card.html title='Default' text='This is a default card' icon_content='credit_card' to='deck1/card1' %} {% include card.html title='SDK' text='This is a .dx-card-sdk card' icon_content='settings' type='sdk' to='deck1/card1' %} {% include card.html title='module' text='This is a .dx-card-module card. This also has outlined icon' icon_content='build' icon_outlined=true type='module' to='/#cards' %} {% include card.html title='Horizontal' title_type='h3' text='This is a dx-card-horizontal card. Icons used with this card are just numbers' icon_content='01' horizontal=true to='/#cards' %}",
+    "tags": "",
+    "url": "/cards/"
+  },{
     "title": "Introduction",
     "text": "{:.heading-line} ## All features {% include card-list.html card_list=page.card_list col_class=\"col-lg-4\" %}",
     "tags": "",
@@ -108,41 +143,6 @@ var tipuesearch = {"pages": [{
     "text": "[The page at the end of this link should redirect back here](/resources/redirect-from)",
     "tags": "",
     "url": "/resources/"
-  },{
-    "title": "Deck 2",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck2/"
-  },{
-    "title": "Deck 3",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck3/"
-  },{
-    "title": "Deck 1",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck1/"
-  },{
-    "title": "Cards",
-    "text": "# Deck 1 # Deck 2 # Deck 3 {% include card.html title='Default' text='This is a default card' icon_content='credit_card' to='deck1/card1' %} {% include card.html title='SDK' text='This is a .dx-card-sdk card' icon_content='settings' type='sdk' to='deck1/card1' %} {% include card.html title='module' text='This is a .dx-card-module card. This also has outlined icon' icon_content='build' icon_outlined=true type='module' to='/#cards' %} {% include card.html title='Horizontal' title_type='h3' text='This is a dx-card-horizontal card. Icons used with this card are just numbers' icon_content='01' horizontal=true to='/#cards' %}",
-    "tags": "",
-    "url": "/cards/"
-  },{
-    "title": "Secret payments",
-    "text": "## How we do secret payments We don't.",
-    "tags": "",
-    "url": "/payments/secrets/"
-  },{
-    "title": "Payments",
-    "text": "## Woah bby Here we list a few details about payment",
-    "tags": "",
-    "url": "/payments/"
-  },{
-    "title": "",
-    "text": "## You'd like to checko out Great! Just check in first and we'll get you sorted.",
-    "tags": "",
-    "url": "/checkout-more/"
   },{
     "title": "Home",
     "text": "Text can be **bold**, _italic_, or ~~strikethrough~~. * [External absolute full link](https://www.wikipedia.org) * [External protocol relative link](//www.wikipedia.org) * Internal absolute full link * Internal explicit relative link * Internal implicit relative link * Internal absolute link There should be whitespace between paragraphs. There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project. ## Header 2 This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere. > This is a blockquote following a header. > > When something is important enough, you do it even if the odds are not in > your favor. ### Header 3 {:.code-view-header} JavaScript code with syntax highlighting. ```js var fun = function lang(l) { dateformat.i18n = require('./lang/' + l) return true; } ``` {:.code-view-header} HTTP request ```http POST /psp/consumers HTTP/1.1 Host: api.externalintegration.payex.com Authorization: Bearer Content-Type: application/json { \"operation\": \"initiate-consumer-session\", \"msisdn\": \"+4798765432\", \"email\": \"olivia.nyhuus@example.com\", \"consumerCountryCode\": \"NO\", \"nationalIdentifier\": { \"socialSecurityNumber\": \"26026708248\", \"countryCode\": \"NO\" } } ``` {:.code-view-header} Response ```http HTTP/1.1 200 OK Content-Type: application/json { \"payment\": \"/psp/creditcard/payments/{{ page.payment_id }}\", \"authorization\": { \"direct\": true, \"cardBrand\": \"Visa\", \"cardType\": \"Credit\", \"issuingBank\": \"Utl. Visa\", \"paymentToken\": \"{{ page.payment_token }}\", \"maskedPan\": \"454778******3329\", \"expiryDate\": \"12/2020\", \"panToken\": \"cca2d98d-8bb3-4bd6-9cf3-365acbbaff96\", \"panEnrolled\": true, \"acquirerTransactionTime\": \"0001-01-01T00:00:00Z\", \"id\": \"/psp/creditcard/payments/7e6cdfc3-1276-44e9-9992-7cf4419750e1/authorizations/ec2a9b09-601a-42ae-8e33-a5737e1cf177\", \"transaction\": { \"id\": \"/psp/creditcard/payments/7e6cdfc3-1276-44e9-9992-7cf4419750e1/transactions/ec2a9b09-601a-42ae-8e33-a5737e1cf177\", \"created\": \"2020-03-10T13:15:01.9586254Z\", \"updated\": \"2020-03-10T13:15:02.0493818Z\", \"type\": \"Authorization\", \"state\": \"AwaitingActivity\", \"number\": 70100366758, \"amount\": 4201, \"vatAmount\": 0, \"description\": \"Test transaction\", \"payeeReference\": \"1583846100\", \"isOperational\": true, \"operations\": [ { \"method\": \"GET\", \"href\": \"https://api.stage.payex.com/psp/creditcard/confined/payments/authorizations/authenticate/ec2a9b09-601a-42ae-8e33-a5737e1cf177\", \"rel\": \"redirect-authentication\" } ] } } } ``` {:.code-view-header} JSON ```json { \"operation\": \"initiate-consumer-session\", \"msisdn\": \"+4798765432\", \"email\": \"olivia.nyhuus@example.com\", \"consumerCountryCode\": \"NO\", \"nationalIdentifier\": { \"socialSecurityNumber\": \"26026708248\", \"countryCode\": \"NO\" } } ``` Here's some ``{:.language-html .highlight} `{ \"code\": true }`{:.language-js .highlight} that should `.be { highlighted: according; }`{:.language-css .highlight} to their language. #### Header 4 * This is an unordered list following a header. * This is an unordered list following a header. * This is an unordered list following a header. ##### Header 5 1. This is an ordered list following a header. 2. This is an ordered list following a header. 3. This is an ordered list following a header. ###### Header 6 Here's a nice, striped table. {:.table .table-striped} | head1 | head two | three | | :----------- | :---------------- | :---- | | ok | good swedish fish | nice | | out of stock | good and plenty | nice | | ok | good `oreos` | hmm | | ok | good `zoute` drop | yumm | ## Mermaid ```mermaid sequenceDiagram participant Merchant participant SwedbankPay activate SwedbankPay SwedbankPay->>Merchant: POST activate Merchant note right of SwedbankPay: Callback POST by SwedbankPay Merchant->>SwedbankPay: Callback response deactivate Merchant deactivate SwedbankPay activate Merchant Merchant->>SwedbankPay: GET payment note left of Merchant: First API request activate SwedbankPay SwedbankPay-->>Merchant: payment resource deactivate SwedbankPay deactivate Merchant ``` ## Alerts {% include alert.html body='This is a standard alert.' %} {% include alert.html type='success' icon='check_circle' body='This is a successful alert.' %} {% include alert.html icon='info_outline' header='**Informational** *alert*' body='This is an **informational** alert *with* ``{:.language-html}.' %} {% include alert.html type='warning' icon='warning' header='`{ \"warning\": \"alert\" }`{:.language-js}' body='This is a **warning** alert with ``{:.language-html}.' %} ## Jumbotron {% include jumbotron.html body='**PayEx Checkout** is a complete reimagination of the checkout experience, integrating seamlessly into the merchant website through highly customizable and flexible components. Visit our [demoshop](https://ecom.externalintegration.payex.com/pspdemoshop) and try out PayEx Checkout for yourself!' %} ## Iterator {% include iterator.html next_href=\"page2\" %} {% include iterator.html prev_href=\"page1\" %} {% include iterator.html prev_href=\"page1\" prev_title=\"Go back\" next_href=\"page2\" next_title=\"Go forward\" %} ## There's a horizontal rule below this --- ## Here is an unordered list * Item foo * Item bar * Item baz * Item zip ## And an ordered list 1. Item one 2. Item two 3. Item three 4. Item four ## And a nested list * level 1 item * level 2 item * level 2 item * level 3 item * level 3 item * level 1 item * level 2 item * level 2 item * level 2 item * level 1 item * level 2 item * level 2 item * level 1 item ## Small image ![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png) ## Large image ![Branching](https://guides.github.com/activities/hello-world/branching.png) ## Definition lists can be used with HTML syntax Name Godzilla Born 1952 Birthplace Japan Color Green ```plain Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this. ``` ```plain The final element. ``` ## Emoji support :+1: :heavy_check_mark: :fire: 💡 :unicorn: ## Material design icons {% icon check %} {% icon line_weight %} {% icon gavel %} {% icon visibility %} {% icon work %} {% icon alarm_on outlined %} ## PlantUML ```plantuml @startuml actor client node app database db db -> app app -> client @enduml ``` More complex example: ```plantuml @startuml actor Payer participant Merchant participant SwedbankPay participant 3rdParty box note left of Payer: Checkin Payer --> Merchant: Start Checkin Merchant --> SwedbankPay: POST /psp/consumers deactivate Merchant SwedbankPay --> Merchant: rel:view-consumer-identification ① deactivate SwedbankPay Merchant --> Payer: Show Checkin on Merchant Page Payer -> Payer: Initiate Consumer Hosted View (open iframe) ② Payer -> SwedbankPay: Show Consumer UI page in iframe ③ deactivate Payer SwedbankPay -> Payer: Consumer identification process activate Payer Payer -> SwedbankPay: Consumer identification process deactivate Payer SwedbankPay --> Payer: show consumer completed iframe activate Payer Payer ->> Payer: EVENT: onConsumerIdentified (consumerProfileRef) ④ deactivate Payer end box box note left of Payer: Payment Menu Payer -> Merchant: Initiate Purchase deactivate Payer Merchant -> SwedbankPay: POST /psp/paymentorders (paymentUrl, consumerProfileRef) deactivate Merchant SwedbankPay --> Merchant: rel:view-paymentorder deactivate SwedbankPay Merchant --> Payer: Display Payment Menu on Merchant Page activate Payer Payer ->> Payer: Initiate Payment Menu Hosted View (open iframe) Payer --> SwedbankPay: Show Payment UI page in iframe deactivate Payer SwedbankPay -> Payer: Do payment logic deactivate SwedbankPay Payer ->> SwedbankPay: Do payment logic deactivate Payer opt Consumer perform payment out of iFrame Payer ->> Payer: Redirect to 3rd party Payer -> 3rdParty: Redirect to 3rdPartyUrl URL deactivate Payer 3rdParty --> Payer: Redirect back to paymentUrl (merchant) deactivate 3rdParty Payer ->> Payer: Initiate Payment Menu Hosted View (open iframe) Payer -> SwedbankPay: Show Payment UI page in iframe deactivate Payer end SwedbankPay -->> Payer: Payment status alt If payment is completed activate Payer Payer ->> Payer: Event: onPaymentCompleted Payer -> Merchant: Check payment status deactivate Payer Merchant -> SwedbankPay: GET deactivate Merchant SwedbankPay -> Merchant: rel: paid-paymentorder deactivate SwedbankPay opt Get PaymentOrder Details (if paid-paymentorder operation exist) activate Payer deactivate Payer Merchant -> SwedbankPay: GET rel: paid-paymentorder deactivate Merchant SwedbankPay -->> Merchant: Payment Details deactivate SwedbankPay end end box opt If payment is failed activate Payer Payer ->> Payer: Event: OnPaymentFailed Payer -> Merchant: Check payment status deactivate Payer Merchant -> SwedbankPay: GET {paymentorder.id} deactivate Merchant SwedbankPay --> Merchant: rel: failed-paymentorder deactivate SwedbankPay opt Get PaymentOrder Details (if failed-paymentorder operation exist) activate Payer deactivate Payer Merchant -> SwedbankPay: GET rel: failed-paymentorder deactivate Merchant SwedbankPay -->> Merchant: Payment Details deactivate SwedbankPay end end activate Merchant Merchant --> Payer: Show Purchase complete opt PaymentOrder Callback (if callbackUrls is set) activate Payer deactivate Payer SwedbankPay ->> Merchant: POST Payment Callback end box activate Merchant note left of Payer: Capture Merchant -> SwedbankPay: rel:create-paymentorder-capture deactivate Merchant SwedbankPay --> Merchant: Capture status note right of Merchant: Capture here only if the purchasedgoods don't require shipping.If shipping is required, perform captureafter the goods have shipped.Should only be used for PaymentInstruments that support Authorizations. end box @enduml ``` [internal-absolute-full-link]: {{ site.url }} [explicit-relative-link]: ./page1 [implicit-relative-link]: page1 [internal-absolute-link]: /page1",
