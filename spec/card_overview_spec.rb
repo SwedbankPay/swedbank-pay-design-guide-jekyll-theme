@@ -38,6 +38,7 @@ describe "Card Overview" do
         with_tag('h2#deck-2', :with => { :class => 'heading-line' }) do
           with_tag('a.header-anchor', :with => { :href => '#deck-2' })
         end
+
         with_tag('.row.card-list') do
           with_tag('.col-lg-12') do
             with_tag('a.dx-card', :with => { :href => '/cards/deck2/card1.html' }) do
@@ -47,6 +48,22 @@ describe "Card Overview" do
               with_tag('.dx-card-content') do
                 with_tag('.h4', :text => 'Deck 2 Card 1')
                 with_tag('span', :text => 'Deck Two Card One')
+              end
+              with_tag('i.material-icons', :text => /arrow_forward/)
+            end
+          end
+        end
+      end
+    end
+
+    it 'has horizontal card' do
+      is_expected.to have_tag('article') do
+        with_tag('.row.card-list') do
+          with_tag('.dx-card-horizontal') do
+            with_tag('a.dx-card', :with => { :href => '/cards/deck2/card3.html' }) do
+              with_tag('.dx-card-content') do
+                with_tag('.h4', :text => 'Deck 2 Card 3')
+                with_tag('span', :text => 'Deck Two Card Three')
               end
               with_tag('i.material-icons', :text => /arrow_forward/)
             end
