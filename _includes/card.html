@@ -21,14 +21,21 @@ type: sdk | module - Empty type result in default card styling
 {% assign text = include.text %}
 {% assign horizontal = include.horizontal | default: false %}
 {% assign to = include.to %}
+
 {% if include.type %}
-{% assign type = include.type %}
-{% assign type_class = 'dx-card-' | append: type %}
+    {% assign type = include.type %}
+    {% assign type_class = 'dx-card-' | append: type %}
 {% else %}
-{% assign type_class = '' %}
+    {% assign type_class = '' %}
 {% endif %}
 
-{% comment %} 
+{% unless icon_svg %}
+    {% if icon_content contains '/' or icon_content contains '.svg' %}
+        {% assign icon_svg = true %}
+    {% endif %}
+{% endunless %}
+
+{% comment %}
 card.html is structured this way due to issues with rendering
 when Liquid is mixed in between and the cards are not wrapped in a div
 {% endcomment %}
