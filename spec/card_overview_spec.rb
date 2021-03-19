@@ -33,6 +33,25 @@ describe "Card Overview" do
       end
     end
 
+    it 'has card with no icon' do
+      is_expected.to have_tag('article') do
+        with_tag('.row.card-list') do
+          with_tag('.col-lg-6') do
+            with_tag('a.dx-card', :with => { :href => '/cards/deck1/card2.html' }) do
+              with_tag('.dx-card-icon.d-none') do
+                with_tag('i.material-icons', :text => /^\s*$/)
+              end
+              with_tag('.dx-card-content') do
+                with_tag('.h4', :text => 'Deck 1 Card 2')
+                with_tag('span', :text => 'Deck One Card Two')
+              end
+              with_tag('i.material-icons', :text => /arrow_forward/)
+            end
+          end
+        end
+      end
+    end
+
     it 'has expected second card deck' do
       is_expected.to have_tag('article') do
         with_tag('h2#deck-2', :with => { :class => 'heading-line' }) do
@@ -56,7 +75,7 @@ describe "Card Overview" do
       end
     end
 
-    it 'has svg icon' do
+    it 'has card with svg icon' do
       is_expected.to have_tag('article') do
         with_tag('.row.card-list') do
           with_tag('.col-lg-12') do
