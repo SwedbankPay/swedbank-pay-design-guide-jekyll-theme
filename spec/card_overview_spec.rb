@@ -56,6 +56,25 @@ describe "Card Overview" do
       end
     end
 
+    it 'has svg icon' do
+      is_expected.to have_tag('article') do
+        with_tag('.row.card-list') do
+          with_tag('.col-lg-12') do
+            with_tag('a.dx-card', :with => { :href => '/cards/deck2/card2.html' }) do
+              with_tag('.dx-card-icon') do
+                with_tag('svg')
+              end
+              with_tag('.dx-card-content') do
+                with_tag('.h4', :text => 'Deck 2 Card 2')
+                with_tag('span', :text => 'Deck Two Card Two')
+              end
+              with_tag('i.material-icons', :text => /arrow_forward/)
+            end
+          end
+        end
+      end
+    end
+
     it 'has horizontal card' do
       is_expected.to have_tag('article') do
         with_tag('.row.card-list') do
