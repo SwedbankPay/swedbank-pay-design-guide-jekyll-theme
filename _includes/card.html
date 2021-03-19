@@ -35,46 +35,24 @@ type: sdk | module - Empty type result in default card styling
     {% endif %}
 {% endunless %}
 
-{% comment %}
-card.html is structured this way due to issues with rendering
-when Liquid is mixed in between and the cards are not wrapped in a div
-{% endcomment %}
-
+{% assign card_class = 'dx-card ' | append: type_class | strip %}
 {% if horizontal %}
-<a href="{{ to }}" class="dx-card dx-card-horizontal {{type_class}}">
-    <span class="dx-card-icon{% if no_icon %} d-none{% endif %}">
-        {{ icon_content }}
-    </span>
-    <span class="dx-card-content">
-        <span class="{{ title_type }}">{{ title }}</span>
-        <span>{{ text }}</span>
-    </span>
-    <i class="material-icons">arrow_forward</i>
-</a>
-{% else %}
-{% if icon_svg %}
-<a href="{{ to }}" class="dx-card {{type_class}}">
-    <span class="dx-card-icon">
-        {% include {{ icon_content }} %}
-    </span>
-    <span class="dx-card-content">
-        <span class="{{ title_type }}">{{ title }}</span>
-        <span>{{ text }}</span>
-    </span>
-    <i class="material-icons">arrow_forward</i>
-</a>
-{% else %}
-<a href="{{ to }}" class="dx-card {{type_class}}">
-    <span class="dx-card-icon{% if no_icon %} d-none{% endif %}">
-        <i class="material-icons{% if icon_outlined %}-outlined{% endif %}">
-            {{ icon_content }}
-        </i>
-    </span>
-    <span class="dx-card-content">
-        <span class="{{ title_type }}">{{ title }}</span>
-        <span>{{ text }}</span>
-    </span>
-    <i class="material-icons">arrow_forward</i>
-</a>
+    {% assign card_class = card_class | append: ' dx-card-horizontal' | strip %}
 {% endif %}
-{% endif %}
+
+<a href="{{ to }}" class="{{ card_class }}">
+    <span class="dx-card-icon{% if no_icon %} d-none{% endif %}">
+        {% if icon_svg %}
+            {% include {{ icon_content }} %}
+        {% else %}
+            <i class="material-icons{% if icon_outlined %}-outlined{% endif %}">
+                {{ icon_content }}
+            </i>
+        {% endif %}
+    </span>
+    <span class="dx-card-content">
+        <span class="{{ title_type }}">{{ title }}</span>
+        <span>{{ text }}</span>
+    </span>
+    <i class="material-icons">arrow_forward</i>
+</a>
