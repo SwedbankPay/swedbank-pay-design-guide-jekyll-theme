@@ -109,5 +109,18 @@ describe "Card Overview" do
         end
       end
     end
+
+    it 'has disabled card' do
+      is_expected.to have_tag('article') do
+        with_tag('.row.card-list') do
+          with_tag('span.dx-card.dx-card-disabled') do
+            with_tag('.dx-card-content') do
+              with_tag('.h4', :text => 'Deck 3 Card 3')
+              with_tag('span', :text => 'Deck Three Card Three (Disabled)')
+            end
+          end
+        end
+      end
+    end
   end
 end

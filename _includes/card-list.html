@@ -17,6 +17,7 @@ col_class(required): Describes what grid column class(es) each card should be wr
         {% assign icon_svg = card.card.icon.svg | default: card.icon.svg %}
         {% assign no_icon = card.card.icon.no_icon | default: card.icon.no_icon %}
         {% assign horizontal = card.card.horizontal | default: false %}
+        {% assign disabled = card.card.disabled | default: false %}
 
         <div class="{{ include.col_class }}">
             {% include card.html
@@ -29,6 +30,7 @@ col_class(required): Describes what grid column class(es) each card should be wr
                 to=link_to
                 type=card_type
                 horizontal=horizontal
+                disabled=disabled
             %}
         </div>
     {% endfor %}
