@@ -34,21 +34,15 @@ describe "Card Overview" do
     end
 
     it 'has card with no icon' do
-      is_expected.to have_tag('article') do
-        with_tag('.row.card-list') do
-          with_tag('.col-lg-6') do
-            with_tag('a.dx-card', :with => { :href => '/cards/deck1/card2.html' }) do
-              with_tag('.dx-card-icon.d-none') do
-                with_tag('i.material-icons', :text => /^\s*$/)
-              end
-              with_tag('.dx-card-content') do
-                with_tag('.h4', :text => 'Deck 1 Card 2')
-                with_tag('span', :text => 'Deck One Card Two')
-              end
-              with_tag('i.material-icons', :text => /arrow_forward/)
-            end
-          end
+      is_expected.to have_tag('a.dx-card', :with => { :href => '/cards/deck1/card2.html' }) do
+        with_tag('.dx-card-icon.d-none') do
+          with_tag('i.material-icons', :text => /^\s*$/)
         end
+        with_tag('.dx-card-content') do
+          with_tag('.h4', :text => 'Deck 1 Card 2')
+          with_tag('span', :text => 'Deck One Card Two')
+        end
+        with_tag('i.material-icons', :text => /arrow_forward/)
       end
     end
 
@@ -76,50 +70,39 @@ describe "Card Overview" do
     end
 
     it 'has card with svg icon' do
-      is_expected.to have_tag('article') do
-        with_tag('.row.card-list') do
-          with_tag('.col-lg-12') do
-            with_tag('a.dx-card', :with => { :href => '/cards/deck2/card2.html' }) do
-              with_tag('.dx-card-icon') do
-                with_tag('svg')
-              end
-              with_tag('.dx-card-content') do
-                with_tag('.h4', :text => 'Deck 2 Card 2')
-                with_tag('span', :text => 'Deck Two Card Two')
-              end
-              with_tag('i.material-icons', :text => /arrow_forward/)
-            end
+      is_expected.to have_tag('.col-lg-12') do
+        with_tag('a.dx-card', :with => { :href => '/cards/deck2/card2.html' }) do
+          with_tag('.dx-card-icon') do
+            with_tag('svg')
           end
+          with_tag('.dx-card-content') do
+            with_tag('.h4', :text => 'Deck 2 Card 2')
+            with_tag('span', :text => 'Deck Two Card Two')
+          end
+          with_tag('i.material-icons', :text => /arrow_forward/)
         end
       end
     end
 
     it 'has horizontal card' do
-      is_expected.to have_tag('article') do
-        with_tag('.row.card-list') do
-          with_tag('.dx-card-horizontal') do
-            with_tag('a.dx-card', :with => { :href => '/cards/deck2/card3.html' }) do
-              with_tag('.dx-card-content') do
-                with_tag('.h4', :text => 'Deck 2 Card 3')
-                with_tag('span', :text => 'Deck Two Card Three')
-              end
-              with_tag('i.material-icons', :text => /arrow_forward/)
-            end
+      is_expected.to have_tag('.dx-card-horizontal') do
+        with_tag('a.dx-card', :with => { :href => '/cards/deck2/card3.html' }) do
+          with_tag('.dx-card-content') do
+            with_tag('.h4', :text => 'Deck 2 Card 3')
+            with_tag('span', :text => 'Deck Two Card Three')
           end
+          with_tag('i.material-icons', :text => /arrow_forward/)
         end
       end
     end
 
     it 'has disabled card' do
-      is_expected.to have_tag('article') do
-        with_tag('.row.card-list') do
-          with_tag('span.dx-card.dx-card-disabled') do
-            with_tag('.dx-card-content') do
-              with_tag('.h4', :text => 'Deck 3 Card 3')
-              with_tag('span', :text => 'Deck Three Card Three (Disabled)')
-            end
-          end
+      is_expected.to have_tag('span.dx-card.dx-card-disabled') do
+        with_tag('.dx-card-content') do
+          with_tag('.h4', :text => 'Deck 3 Card 3')
+          with_tag('span', :text => 'Deck Three Card Three (Disabled)')
         end
+        without_tag('i.material-icons', :text => /arrow_forward/)
       end
     end
   end
