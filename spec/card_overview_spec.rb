@@ -18,7 +18,7 @@ describe "Card Overview" do
         end
         with_tag('.row.card-list') do
           with_tag('.col-lg-6') do
-            with_tag('a.dx-card', :with => { :href => '/cards/deck1/card1.html' }) do
+            with_tag('a.dx-card.dx-card-module', :with => { :href => '/cards/deck1/card1.html' }) do
               with_tag('.dx-card-icon') do
                 with_tag('i.material-icons-outlined', :text => /attach_money/)
               end
@@ -96,11 +96,31 @@ describe "Card Overview" do
       end
     end
 
-    it 'has disabled card' do
+    it 'has disabled default card' do
       is_expected.to have_tag('span.dx-card.dx-card-disabled') do
         with_tag('.dx-card-content') do
           with_tag('.h4', :text => 'Deck 3 Card 3')
           with_tag('span', :text => 'Deck Three Card Three (Disabled)')
+        end
+        without_tag('i.material-icons', :text => /arrow_forward/)
+      end
+    end
+
+    it 'has disabled sdk card' do
+      is_expected.to have_tag('span.dx-card-sdk.dx-card-disabled') do
+        with_tag('.dx-card-content') do
+          with_tag('.h4', :text => 'Deck 3 Card 1')
+          with_tag('span', :text => 'Deck Three Card One (Disabled)')
+        end
+        without_tag('i.material-icons', :text => /arrow_forward/)
+      end
+    end
+
+    it 'has disabled module card' do
+      is_expected.to have_tag('span.dx-card-module.dx-card-disabled') do
+        with_tag('.dx-card-content') do
+          with_tag('.h4', :text => 'Deck 3 Card 2')
+          with_tag('span', :text => 'Deck Three Card Two (Disabled)')
         end
         without_tag('i.material-icons', :text => /arrow_forward/)
       end
