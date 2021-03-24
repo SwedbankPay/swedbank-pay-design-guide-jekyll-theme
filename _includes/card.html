@@ -12,7 +12,6 @@ to(required): Url to the page to be directed to on click
 type: sdk | module - Empty type result in default card styling
 {%- endcomment -%}
 
-{% assign title = include.title %}
 {% assign title_type = include.title_type | default: 'h4', %}
 {% assign icon_content = include.icon_content %}
 {% assign icon_outlined = include.icon_outlined | default: false %}
@@ -21,53 +20,49 @@ type: sdk | module - Empty type result in default card styling
 {% assign text = include.text %}
 {% assign horizontal = include.horizontal | default: false %}
 {% assign to = include.to %}
+{% assign disabled = include.disabled %}
+
 {% if include.type %}
-{% assign type = include.type %}
-{% assign type_class = 'dx-card-' | append: type %}
+    {% assign type = include.type %}
+    {% assign type_class = 'dx-card-' | append: type %}
 {% else %}
-{% assign type_class = '' %}
+    {% assign type_class = '' %}
 {% endif %}
 
-{% comment %} 
-card.html is structured this way due to issues with rendering
-when Liquid is mixed in between and the cards are not wrapped in a div
-{% endcomment %}
+{% unless icon_svg %}
+    {% if icon_content contains '/' or icon_content contains '.svg' %}
+        {% assign icon_svg = true %}
+    {% endif %}
+{% endunless %}
 
+{% assign card_class = 'dx-card ' | append: type_class | strip %}
 {% if horizontal %}
-<a href="{{ to }}" class="dx-card dx-card-horizontal {{type_class}}">
-    <span class="dx-card-icon{% if no_icon %} d-none{% endif %}">
-        {{ icon_content }}
-    </span>
-    <span class="dx-card-content">
-        <span class="{{ title_type }}">{{ title }}</span>
-        <span>{{ text }}</span>
-    </span>
-    <i class="material-icons">arrow_forward</i>
-</a>
-{% else %}
-{% if icon_svg %}
-<a href="{{ to }}" class="dx-card {{type_class}}">
-    <span class="dx-card-icon">
-        {% include {{ icon_content }} %}
-    </span>
-    <span class="dx-card-content">
-        <span class="{{ title_type }}">{{ title }}</span>
-        <span>{{ text }}</span>
-    </span>
-    <i class="material-icons">arrow_forward</i>
-</a>
-{% else %}
-<a href="{{ to }}" class="dx-card {{type_class}}">
-    <span class="dx-card-icon{% if no_icon %} d-none{% endif %}">
-        <i class="material-icons{% if icon_outlined %}-outlined{% endif %}">
-            {{ icon_content }}
-        </i>
-    </span>
-    <span class="dx-card-content">
-        <span class="{{ title_type }}">{{ title }}</span>
-        <span>{{ text }}</span>
-    </span>
-    <i class="material-icons">arrow_forward</i>
-</a>
+    {% assign card_class = card_class | append: ' dx-card-horizontal' | strip %}
 {% endif %}
+
+{% if disabled %}
+    {% assign card_class = card_class | append: ' dx-card-disabled' | strip %}
+    {% assign card_tag = 'span' %}
+{% else %}
+    {% assign card_tag = 'a' %}
+    {% capture card_attributes %}href="{{ to }}"{% endcapture %}
 {% endif %}
+
+<{{ card_tag }} {{ card_attributes }} class="{{ card_class }}">
+    <span class="dx-card-icon{% if no_icon %} d-none{% endif %}">
+        {% if icon_svg %}
+            {% include {{ icon_content }} %}
+        {% else %}
+            <i class="material-icons{% if icon_outlined %}-outlined{% endif %}">
+                {{ icon_content }}
+            </i>
+        {% endif %}
+    </span>
+    <span class="dx-card-content">
+        <span class="{{ title_type }}">{{ include.title }}</span>
+        <span>{{ text }}</span>
+    </span>
+    {% unless disabled %}
+        <i class="material-icons">arrow_forward</i>
+    {% endunless %}
+</{{ card_tag }}>

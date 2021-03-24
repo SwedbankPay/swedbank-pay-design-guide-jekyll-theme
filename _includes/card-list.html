@@ -11,10 +11,13 @@ col_class(required): Describes what grid column class(es) each card should be wr
     {% for card in include.card_list %}
         {% assign title = card.title | split: '–' | last %}
         {% assign link_to = card.extensionless_path | default: card.url %}
-        {% assign card_type = card.card_type | default: include.type %}
+        {% assign card_type = card.card.type | default: card.card_type | default: include.type %}
         {% assign icon_content = card.card.icon.content | default: card.icon.content %}
         {% assign icon_outlined = card.card.icon.outlined | default: card.icon.outlined %}
         {% assign icon_svg = card.card.icon.svg | default: card.icon.svg %}
+        {% assign no_icon = card.card.icon.no_icon | default: card.icon.no_icon %}
+        {% assign horizontal = card.card.horizontal | default: false %}
+        {% assign disabled = card.card.disabled | default: false %}
 
         <div class="{{ include.col_class }}">
             {% include card.html
@@ -23,8 +26,11 @@ col_class(required): Describes what grid column class(es) each card should be wr
                 icon_content=icon_content
                 icon_outlined=icon_outlined
                 icon_svg=icon_svg
+                no_icon=no_icon
                 to=link_to
                 type=card_type
+                horizontal=horizontal
+                disabled=disabled
             %}
         </div>
     {% endfor %}
