@@ -29,6 +29,11 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/checkout/capture.html"
   },{
+    "title": "Deck 1 Card 1",
+    "text": "",
+    "tags": "",
+    "url": "/cards/deck1/card1.html"
+  },{
     "title": "Deck 3 Card 1",
     "text": "",
     "tags": "",
@@ -39,10 +44,10 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/cards/deck2/card1.html"
   },{
-    "title": "Deck 1 Card 1",
+    "title": "Deck 1 Card 2",
     "text": "",
     "tags": "",
-    "url": "/cards/deck1/card1.html"
+    "url": "/cards/deck1/card2.html"
   },{
     "title": "Deck 3 Card 2",
     "text": "",
@@ -54,10 +59,10 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/cards/deck2/card2.html"
   },{
-    "title": "Deck 1 Card 2",
+    "title": "Deck 1 Card 3",
     "text": "",
     "tags": "",
-    "url": "/cards/deck1/card2.html"
+    "url": "/cards/deck1/card3.html"
   },{
     "title": "Deck 3 Card 3",
     "text": "",
@@ -68,11 +73,6 @@ var tipuesearch = {"pages": [{
     "text": "",
     "tags": "",
     "url": "/cards/deck2/card3.html"
-  },{
-    "title": "Deck 1 Card 3",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck1/card3.html"
   },{
     "title": "Checkin",
     "text": "## Step 1: Initiate session for consumer identification The payer will be identified with the `consumers` resource and will be persisted to streamline future Payment Menu processes. Payer identification is done through the `initiate-consumer-session` operation. {% include paragraph-highlight.html title=\"Optional integration\" body=\"The response from the POST of consumer information contains a few operations. The combination of rel, method and contentType should give you a clue how the operation should be performed. The view-consumer-identification operation and its application/javascript content type gives us a clue that the operation is meant to be embedded in a \\ ``` {% include alert.html type=\"informative\" icon=\"info\" body=\"The Checkin and Payment Menu components (the two `` elements) must be separate (one must not replace the other).\" %} In the HTML, you only need to add two `` elements to place the check-in and payment menu inside of. The JavaScript will handle the rest when it comes to handling the check-in and payment menu. {:.code-view-header} **JavaScript** ```js var request = new XMLHttpRequest(); request.addEventListener('load', function () { // We will assume that our own backend returns the // exact same as what SwedbankPay returns. var response = JSON.parse(this.responseText); var script = document.createElement('script'); // This assumes that the operations from the response of the POST from the // payment order is returned verbatim from the server to the Ajax: var operation = response.operations.find(function (o) { return o.rel === 'view-consumer-identification'; }); script.setAttribute('src', operation.href); script.onload = function () { payex.hostedView.consumer({ // The container specifies which id the script will look for // to host the checkin component container: 'checkin', onConsumerIdentified: function onConsumerIdentified(consumerIdentifiedEvent) { // consumerIdentifiedEvent.consumerProfileRef contains the reference // to the identified consumer which we need to pass on to the // Payment Order to initialize a personalized Payment Menu. console.log(consumerIdentifiedEvent); }, onShippingDetailsAvailable: function onShippingDetailsAvailable(shippingDetailsAvailableEvent) { console.log(shippingDetailsAvailableEvent); } }).open(); }; // Appending the script to the head var head = document.getElementsByTagName('head')[0]; head.appendChild(script); }); // Place in your own API endpoint here. request.open('POST', '', true); request.setRequestHeader('Content-Type', 'application/json; charset=utf-8'); // In this example we'll send in all of the information mentioned before, // in the request to the endpoint. request.send(JSON.stringify({ operation: 'initiate-consumer-session', language: 'sv-SE', shippingAddressRestrictedToCountryCodes: ['NO', 'SE'] })); ``` {% include alert.html type=\"informative\" icon=\"info\" body=\" Note that we add the script at the end of the body. This ensures that every element (like the container `` elements) has loaded in before we try to access them with our script.\" %} With the scripts loading in after the entire page is loaded, we can access the `` container that the Checkin will be hosted in. After that has all loaded, you should see something like this: As you can see, the payer's information is pre-filled as provided by the initial `POST`. With a `consumerProfileRef` safely tucked into our pocket, the Checkin is complete and we can move on to [Payment Menu][payment-menu]. A complete overview of how the process of identifying the payer through Checkin is illustrated in the sequence diagram below. ```mermaid sequenceDiagram participant Payer participant Merchant participant SwedbankPay as Swedbank Pay rect rgba(238, 112, 35, 0.05) note left of Payer: Checkin Payer ->>+ Merchant: Start Checkin Merchant ->>+ SwedbankPay: POST /psp/consumers deactivate Merchant SwedbankPay -->>+ Merchant: rel:view-consumer-identification ① deactivate SwedbankPay Merchant -->>- Payer: Show Checkin on Merchant Page Payer ->>+ Payer: Initiate Consumer Hosted View (open iframe) ② Payer ->>+ SwedbankPay: Show Consumer UI page in iframe ③ deactivate Payer SwedbankPay ->>- Payer: Consumer identification process activate Payer Payer ->>+ SwedbankPay: Consumer identification process deactivate Payer SwedbankPay -->>- Payer: show consumer completed iframe activate Payer Payer ->> Payer: EVENT: onConsumerIdentified (consumerProfileRef) ④ deactivate Payer end ``` If a browser refresh is performed after the payer has checked in, the payment menu must be shown even though `onConsumerIdentified` is not invoked. Additional events during Checkin can also be implemented in the `configuration` object, such as `onConsumerIdentified`, `onShippingDetailsAvailable`and `onBillingDetailsAvailable`. Read more about these in the section. ### Note on consumer data During this stage some consumer data is stored. Read more about our for details on which information we store and its duration. {% include iterator.html prev_href=\"./\" prev_title=\"Back: Introduction\" next_href=\"payment-menu\" next_title=\"Next: Payment Menu\" %} [capture-operation]: /checkout/after-payment#capture [checkin-image]: /assets/img/checkout/your-information.png [checkin-events]: /checkout/other-features#checkin-events [consumer-reference]: /checkout/other-features#payee-reference [data-protection]: /resources/data-protection#paymentorder-consumer-data [initiate-consumer-session]: /checkout/checkin#checkin-back-end [msisdn]: https://en.wikipedia.org/wiki/MSISDN [operations]: /checkout/other-features#operations [order-items]: #order-items [payee-reference]: /checkout/other-features#payee-reference [payment-menu-image]: /assets/img/checkout/payment-methods.png [payment-menu]: #payment-menu [payment-menu]: payment-menu [payment-order-capture]: /checkout/after-payment#capture [payment-order-operations]: /checkout/after-payment#operations [payment-order]: #payment-orders [paymentorder-items]: #items [technical-reference-onconsumer-identified]: /checkout/payment-menu-front-end [urls]: /checkout/other-features#urls-resource [user-agent]: https://en.wikipedia.org/wiki/User_agent",
@@ -89,20 +89,25 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/resources/gamma.html"
   },{
-    "title": "Secret payments",
-    "text": "## How we do secret payments We don't.",
-    "tags": "",
-    "url": "/payments/secrets/"
-  },{
-    "title": "Payments",
-    "text": "## Woah bby Here we list a few details about payment",
-    "tags": "",
-    "url": "/payments/"
-  },{
     "title": "",
     "text": "## You'd like to checko out Great! Just check in first and we'll get you sorted.",
     "tags": "",
     "url": "/checkout-more/"
+  },{
+    "title": "Sub-resources",
+    "text": "",
+    "tags": "",
+    "url": "/resources/sub-resources/"
+  },{
+    "title": "Resources",
+    "text": "[The page at the end of this link should redirect back here](/resources/redirect-from)",
+    "tags": "",
+    "url": "/resources/"
+  },{
+    "title": "Deck 1",
+    "text": "",
+    "tags": "",
+    "url": "/cards/deck1/"
   },{
     "title": "Deck 3",
     "text": "",
@@ -114,15 +119,20 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/cards/deck2/"
   },{
-    "title": "Deck 1",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck1/"
-  },{
     "title": "Cards",
     "text": "# Deck 1 # Deck 2 # Deck 3 {% include card.html title='Default' text='This is a default card' icon_content='credit_card' to='deck1/card1' %} {% include card.html title='SDK' text='This is a .dx-card-sdk card' icon_content='settings' type='sdk' to='deck1/card1' %} {% include card.html title='module' text='This is a .dx-card-module card. This also has outlined icon' icon_content='build' icon_outlined=true type='module' to='/#cards' %} {% include card.html title='Horizontal' title_type='h3' text='This is a dx-card-horizontal card. Icons used with this card are just numbers' icon_content='01' horizontal=true to='/#cards' %}",
     "tags": "",
     "url": "/cards/"
+  },{
+    "title": "Secret payments",
+    "text": "## How we do secret payments We don't.",
+    "tags": "",
+    "url": "/payments/secrets/"
+  },{
+    "title": "Payments",
+    "text": "## Woah bby Here we list a few details about payment",
+    "tags": "",
+    "url": "/payments/"
   },{
     "title": "Introduction",
     "text": "{:.heading-line} ## All features {% include card-list.html card_list=page.card_list col_class=\"col-lg-4\" %}",
@@ -133,16 +143,6 @@ var tipuesearch = {"pages": [{
     "text": "{% comment %} Examples on how site.pages can be filtered and used with card-list/card-horizontal-list. Can also be used with pre-defined lists, such as card_list in front matter above. {% endcomment %} {:.heading-line} ## Core implementation overview {% assign core_card_list = site.pages | where: 'dir', page.dir | where: 'core', true | where_exp: 'page', 'page.name != \"index.md\"' | sort: 'menu_order' %} {% include card-horizontal-list.html card_list=page.card_list %} {:.heading-line} ## Additional features {% assign additional_card_list = site.pages | where_exp: 'page', 'page.url != \"/checkout/\" and page.core != true and page.dir contains \"/checkout/\"' | where: 'additional', true | sort: 'menu_order' %} {% include card-list.html card_list=additional_card_list col_class=\"col-lg-6 col-md-6 col-sm-6\" %}",
     "tags": "",
     "url": "/checkout/"
-  },{
-    "title": "Sub-resources",
-    "text": "",
-    "tags": "",
-    "url": "/resources/sub-resources/"
-  },{
-    "title": "Resources",
-    "text": "[The page at the end of this link should redirect back here](/resources/redirect-from)",
-    "tags": "",
-    "url": "/resources/"
   },{
     "title": "Home",
     "text": "Text can be **bold**, _italic_, or ~~strikethrough~~. * [External absolute full link](https://www.wikipedia.org) * [External protocol relative link](//www.wikipedia.org) * Internal absolute full link * Internal explicit relative link * Internal implicit relative link * Internal absolute link There should be whitespace between paragraphs. There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project. ## Header 2 This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere. > This is a blockquote following a header. > > When something is important enough, you do it even if the odds are not in > your favor. ### Header 3 {:.code-view-header} JavaScript code with syntax highlighting. ```js var fun = function lang(l) { dateformat.i18n = require('./lang/' + l) return true; } ``` {:.code-view-header} HTTP request ```http POST /psp/consumers HTTP/1.1 Host: api.externalintegration.payex.com Authorization: Bearer Content-Type: application/json { \"operation\": \"initiate-consumer-session\", \"msisdn\": \"+4798765432\", \"email\": \"olivia.nyhuus@example.com\", \"consumerCountryCode\": \"NO\", \"nationalIdentifier\": { \"socialSecurityNumber\": \"26026708248\", \"countryCode\": \"NO\" } } ``` {:.code-view-header} Response ```http HTTP/1.1 200 OK Content-Type: application/json { \"payment\": \"/psp/creditcard/payments/{{ page.payment_id }}\", \"authorization\": { \"direct\": true, \"cardBrand\": \"Visa\", \"cardType\": \"Credit\", \"issuingBank\": \"Utl. Visa\", \"paymentToken\": \"{{ page.payment_token }}\", \"maskedPan\": \"454778******3329\", \"expiryDate\": \"12/2020\", \"panToken\": \"cca2d98d-8bb3-4bd6-9cf3-365acbbaff96\", \"panEnrolled\": true, \"acquirerTransactionTime\": \"0001-01-01T00:00:00Z\", \"id\": \"/psp/creditcard/payments/7e6cdfc3-1276-44e9-9992-7cf4419750e1/authorizations/ec2a9b09-601a-42ae-8e33-a5737e1cf177\", \"transaction\": { \"id\": \"/psp/creditcard/payments/7e6cdfc3-1276-44e9-9992-7cf4419750e1/transactions/ec2a9b09-601a-42ae-8e33-a5737e1cf177\", \"created\": \"2020-03-10T13:15:01.9586254Z\", \"updated\": \"2020-03-10T13:15:02.0493818Z\", \"type\": \"Authorization\", \"state\": \"AwaitingActivity\", \"number\": 70100366758, \"amount\": 4201, \"vatAmount\": 0, \"description\": \"Test transaction\", \"payeeReference\": \"1583846100\", \"isOperational\": true, \"operations\": [ { \"method\": \"GET\", \"href\": \"https://api.stage.payex.com/psp/creditcard/confined/payments/authorizations/authenticate/ec2a9b09-601a-42ae-8e33-a5737e1cf177\", \"rel\": \"redirect-authentication\" } ] } } } ``` {:.code-view-header} JSON ```json { \"operation\": \"initiate-consumer-session\", \"msisdn\": \"+4798765432\", \"email\": \"olivia.nyhuus@example.com\", \"consumerCountryCode\": \"NO\", \"nationalIdentifier\": { \"socialSecurityNumber\": \"26026708248\", \"countryCode\": \"NO\" } } ``` Here's some ``{:.language-html .highlight} `{ \"code\": true }`{:.language-js .highlight} that should `.be { highlighted: according; }`{:.language-css .highlight} to their language. #### Header 4 * This is an unordered list following a header. * This is an unordered list following a header. * This is an unordered list following a header. ##### Header 5 1. This is an ordered list following a header. 2. This is an ordered list following a header. 3. This is an ordered list following a header. ###### Header 6 Here's a nice, striped table. {:.table .table-striped} | head1 | head two | three | | :----------- | :---------------- | :---- | | ok | good swedish fish | nice | | out of stock | good and plenty | nice | | ok | good `oreos` | hmm | | ok | good `zoute` drop | yumm | ## Mermaid ```mermaid sequenceDiagram participant Merchant participant SwedbankPay activate SwedbankPay SwedbankPay->>Merchant: POST activate Merchant note right of SwedbankPay: Callback POST by SwedbankPay Merchant->>SwedbankPay: Callback response deactivate Merchant deactivate SwedbankPay activate Merchant Merchant->>SwedbankPay: GET payment note left of Merchant: First API request activate SwedbankPay SwedbankPay-->>Merchant: payment resource deactivate SwedbankPay deactivate Merchant ``` ## Alerts {% include alert.html body='This is a standard alert.' %} {% include alert.html type='success' icon='check_circle' body='This is a successful alert.' %} {% include alert.html icon='info_outline' header='**Informational** *alert*' body='This is an **informational** alert *with* ``{:.language-html}.' %} {% include alert.html type='warning' icon='warning' header='`{ \"warning\": \"alert\" }`{:.language-js}' body='This is a **warning** alert with ``{:.language-html}.' %} ## Jumbotron {% include jumbotron.html body='**PayEx Checkout** is a complete reimagination of the checkout experience, integrating seamlessly into the merchant website through highly customizable and flexible components. Visit our [demoshop](https://ecom.externalintegration.payex.com/pspdemoshop) and try out PayEx Checkout for yourself!' %} ## Iterator {% include iterator.html next_href=\"page2\" %} {% include iterator.html prev_href=\"page1\" %} {% include iterator.html prev_href=\"page1\" prev_title=\"Go back\" next_href=\"page2\" next_title=\"Go forward\" %} ## There's a horizontal rule below this --- ## Here is an unordered list * Item foo * Item bar * Item baz * Item zip ## And an ordered list 1. Item one 2. Item two 3. Item three 4. Item four ## And a nested list * level 1 item * level 2 item * level 2 item * level 3 item * level 3 item * level 1 item * level 2 item * level 2 item * level 2 item * level 1 item * level 2 item * level 2 item * level 1 item ## Small image ![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png) ## Large image ![Branching](https://guides.github.com/activities/hello-world/branching.png) ## Definition lists can be used with HTML syntax Name Godzilla Born 1952 Birthplace Japan Color Green ```plain Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this. ``` ```plain The final element. ``` ## Emoji support :+1: :heavy_check_mark: :fire: 💡 :unicorn: ## Material design icons {% icon check %} {% icon line_weight %} {% icon gavel %} {% icon visibility %} {% icon work %} {% icon alarm_on outlined %} ## PlantUML ```plantuml @startuml actor client node app database db db -> app app -> client @enduml ``` More complex example: ```plantuml @startuml actor Payer participant Merchant participant SwedbankPay participant 3rdParty box note left of Payer: Checkin Payer --> Merchant: Start Checkin Merchant --> SwedbankPay: POST /psp/consumers deactivate Merchant SwedbankPay --> Merchant: rel:view-consumer-identification ① deactivate SwedbankPay Merchant --> Payer: Show Checkin on Merchant Page Payer -> Payer: Initiate Consumer Hosted View (open iframe) ② Payer -> SwedbankPay: Show Consumer UI page in iframe ③ deactivate Payer SwedbankPay -> Payer: Consumer identification process activate Payer Payer -> SwedbankPay: Consumer identification process deactivate Payer SwedbankPay --> Payer: show consumer completed iframe activate Payer Payer ->> Payer: EVENT: onConsumerIdentified (consumerProfileRef) ④ deactivate Payer end box box note left of Payer: Payment Menu Payer -> Merchant: Initiate Purchase deactivate Payer Merchant -> SwedbankPay: POST /psp/paymentorders (paymentUrl, consumerProfileRef) deactivate Merchant SwedbankPay --> Merchant: rel:view-paymentorder deactivate SwedbankPay Merchant --> Payer: Display Payment Menu on Merchant Page activate Payer Payer ->> Payer: Initiate Payment Menu Hosted View (open iframe) Payer --> SwedbankPay: Show Payment UI page in iframe deactivate Payer SwedbankPay -> Payer: Do payment logic deactivate SwedbankPay Payer ->> SwedbankPay: Do payment logic deactivate Payer opt Consumer perform payment out of iFrame Payer ->> Payer: Redirect to 3rd party Payer -> 3rdParty: Redirect to 3rdPartyUrl URL deactivate Payer 3rdParty --> Payer: Redirect back to paymentUrl (merchant) deactivate 3rdParty Payer ->> Payer: Initiate Payment Menu Hosted View (open iframe) Payer -> SwedbankPay: Show Payment UI page in iframe deactivate Payer end SwedbankPay -->> Payer: Payment status alt If payment is completed activate Payer Payer ->> Payer: Event: onPaymentCompleted Payer -> Merchant: Check payment status deactivate Payer Merchant -> SwedbankPay: GET deactivate Merchant SwedbankPay -> Merchant: rel: paid-paymentorder deactivate SwedbankPay opt Get PaymentOrder Details (if paid-paymentorder operation exist) activate Payer deactivate Payer Merchant -> SwedbankPay: GET rel: paid-paymentorder deactivate Merchant SwedbankPay -->> Merchant: Payment Details deactivate SwedbankPay end end box opt If payment is failed activate Payer Payer ->> Payer: Event: OnPaymentFailed Payer -> Merchant: Check payment status deactivate Payer Merchant -> SwedbankPay: GET {paymentorder.id} deactivate Merchant SwedbankPay --> Merchant: rel: failed-paymentorder deactivate SwedbankPay opt Get PaymentOrder Details (if failed-paymentorder operation exist) activate Payer deactivate Payer Merchant -> SwedbankPay: GET rel: failed-paymentorder deactivate Merchant SwedbankPay -->> Merchant: Payment Details deactivate SwedbankPay end end activate Merchant Merchant --> Payer: Show Purchase complete opt PaymentOrder Callback (if callbackUrls is set) activate Payer deactivate Payer SwedbankPay ->> Merchant: POST Payment Callback end box activate Merchant note left of Payer: Capture Merchant -> SwedbankPay: rel:create-paymentorder-capture deactivate Merchant SwedbankPay --> Merchant: Capture status note right of Merchant: Capture here only if the purchasedgoods don't require shipping.If shipping is required, perform captureafter the goods have shipped.Should only be used for PaymentInstruments that support Authorizations. end box @enduml ``` [internal-absolute-full-link]: {{ site.url }} [explicit-relative-link]: ./page1 [implicit-relative-link]: page1 [internal-absolute-link]: /page1",
