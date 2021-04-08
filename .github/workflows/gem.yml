@@ -17,6 +17,12 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: Set up Ruby 2.7
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7
+        bundler-cache: true
+
     - name: Install GitVersion
       uses: gittools/actions/gitversion/setup@v0.9.6
       if: startsWith(github.ref, 'refs/tags/') != true # Only use GitVersion for unstable builds
@@ -50,24 +56,6 @@ jobs:
 
     - name: Version stamp
       run: sed -i -e 's/0.0.1.dev/${{ steps.gemversion.outputs.version }}/g' ./lib/gem_version.rb
-
-    - name: Set up Ruby 2.7
-      uses: actions/setup-ruby@v1
-      with:
-        ruby-version: 2.7.x
-
-    - name: Cache dependencies
-      uses: actions/cache@v1
-      with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: ${{ runner.os }}-gems-
-
-    - name: Bundle install
-      run: |
-        gem install bundler
-        bundle config path vendor/bundle
-        bundle install --jobs 4 --retry 3
 
     - name: Build gem
       id: gem
