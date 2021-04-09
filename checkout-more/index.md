@@ -1,6 +1,6 @@
 ---
 section: Checkout More
-menu_order: 10
+menu_order: 200
 ---
 
 ## You'd like to checko out

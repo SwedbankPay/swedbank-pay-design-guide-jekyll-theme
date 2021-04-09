@@ -4,6 +4,9 @@ require 'jekyll'
 require 'rspec-html-matchers'
 require_relative 'rspec_description_parser'
 
+# Require matchers
+Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each {|f| require f}
+
 # Variables that should be shared across all specs in the suite.
 shared_context 'shared' do
   @source_dir = File.join(__dir__, '..')

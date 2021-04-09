@@ -16,7 +16,7 @@ describe SwedbankPay::Sidebar do
     it 'has nav leaf' do
       is_expected.to have_tag('ul.nav-ul') do
         with_tag('li.nav-leaf') do
-          with_tag('a[href="/checkout/capture#step-5-capture-the-funds"]', text: 'Step 5: Capture the funds')
+          with_tag('a[href="/checkout/v2/capture"]', text: 'Capture')
         end
       end
     end
@@ -25,7 +25,7 @@ describe SwedbankPay::Sidebar do
       is_expected.to have_tag('li.nav-subgroup') do
         with_tag('div.nav-subgroup-heading') do
           with_tag('i.material-icons', text: 'arrow_right')
-          with_tag('a[href="/checkout/payment-menu"]', text: 'Payment Menu')
+          with_tag('a[href="/checkout/v2/payment-menu"]', text: 'Payment Menu')
         end
       end
     end
@@ -45,14 +45,14 @@ describe SwedbankPay::Sidebar do
       is_expected.to have_tag('li.nav-subgroup') do
         with_tag('div.nav-subgroup-heading') do
           with_tag('i.material-icons', text: 'arrow_right')
-          with_tag('a[href="/checkout/checkin"]', text: 'Checkin')
+          with_tag('a[href="/checkout/v2/checkin"]', text: 'Checkin')
         end
         with_tag('ul.nav-ul') do
           with_tag('li.nav-leaf') do
-            with_tag('a[href="/checkout/checkin#step-1-initiate-session-for-consumer-identification"]', text: 'Step 1: Initiate session for consumer identification')
+            with_tag('a[href="/checkout/v2/checkin#step-1-initiate-session-for-consumer-identification"]', text: 'Step 1: Initiate session for consumer identification')
           end
           with_tag('li.nav-leaf') do
-            with_tag('a[href="/checkout/checkin#step-2-display-swedbank-pay-checkin-module"]', text: 'Step 2: Display Swedbank Pay Checkin module')
+            with_tag('a[href="/checkout/v2/checkin#step-2-display-swedbank-pay-checkin-module"]', text: 'Step 2: Display Swedbank Pay Checkin module')
           end
         end
       end
@@ -63,7 +63,7 @@ describe SwedbankPay::Sidebar do
         with_tag('li.nav-subgroup') do
           with_tag('div.nav-subgroup-heading') do
             with_tag('i.material-icons', text: 'arrow_right')
-            with_tag('a[href="/checkout/"]', text: 'Introduction')
+            with_tag('a[href="/checkout/v2/"]', text: 'Checkout v2')
           end
         end
       end

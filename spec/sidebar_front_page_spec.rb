@@ -20,11 +20,11 @@ describe SwedbankPay::Sidebar do
             with_tag('li.nav-subgroup') do
               with_tag('div.nav-subgroup-heading') do
                 with_tag('i.material-icons', text: 'arrow_right')
-                with_tag('a[href="/checkout/features/payment-orders"]', text: 'Payment Orders')
+                with_tag('a[href="/checkout/v2/features/core/payment-order"]', text: 'Payment Order')
               end
               with_tag('ul.nav-ul') do
                 with_tag('li.nav-leaf') do
-                  with_tag('a[href="/checkout/features/payment-orders#payment-orders"]', text: 'Payment Orders')
+                  with_tag('a[href="/checkout/v2/features/core/payment-order"]', text: 'Payment Order')
                 end
               end
             end
