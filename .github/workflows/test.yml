@@ -22,9 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: jekyll build
-        run: |
-          docker-compose run \
-            jekyll build
+        run: docker-compose run jekyll build
       - name: Upload site
         uses: actions/upload-artifact@v2
         with:
@@ -36,9 +34,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions/setup-ruby@v1
+      - name: Set up Ruby 2.7
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.7'
+          ruby-version: 2.7
+          bundler-cache: true
 
       - uses: actions/setup-java@v1
         with:
@@ -46,13 +46,7 @@ jobs:
 
       - uses: kamiazya/setup-graphviz@v1
 
-      - name: bundle install
-        run: bundle install --jobs 4 --retry 3
-
       - name: rspec
-        env:
-          PAGES_REPO_NWO: ${{ github.repository }}
-          JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: bundle exec rake
 
       - name: codecov upload
@@ -108,8 +102,6 @@ jobs:
   #     - name: deploy dry-run
   #       run: |
   #         docker-compose run \
-  #           -e PAGES_REPO_NWO=${{ github.repository }} \
-  #           -e JEKYLL_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
   #           jekyll deploy \
   #           --env=production \
   #           --dry-run
