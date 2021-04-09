@@ -26,16 +26,47 @@ Payment Menu.
 
 Remember to read up on our [URL resource][urls].
 
-{% include alert-risk-indicator.md %}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl
+vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros
+turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a
+pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat
+elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id
+arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel
+leo orci.
 
-{% include alert-gdpr-disclaimer.md %}
+Pellentesque a maximus leo. Pellentesque tincidunt tristique turpis a tincidunt.
+Fusce a risus facilisis, interdum est sed, auctor erat. Pellentesque eu dolor
+vitae urna posuere sagittis. Cras viverra tempor massa. Aliquam nec est est.
+Suspendisse dictum risus dui, sed efficitur urna tempus vitae. Etiam vehicula
+fringilla diam, eu elementum enim maximus vitae. Proin leo sem, luctus vel
+auctor sit amet, suscipit eget ex. Integer id libero purus. Etiam est eros,
+volutpat aliquet nibh eget, semper volutpat sapien. Vivamus laoreet eros a risus
+vulputate vehicula. Curabitur blandit lorem in facilisis tempor. Donec porttitor
+placerat tincidunt. Morbi vestibulum, neque quis maximus posuere, quam dolor
+pharetra purus, non bibendum orci leo vel arcu. Vivamus vel accumsan neque.
 
-{% include payment-url.md when="selecting the payment instrument Vipps or in the
-3-D Secure verification for Credit Card Payments" %}
+Suspendisse potenti. Proin quis pharetra turpis. Nam gravida bibendum mi at
+porttitor. Curabitur condimentum erat quis lorem congue, ac ultrices massa
+rutrum. Donec semper nisi metus, et dapibus nisl malesuada at. Aenean quis porta
+metus. Vestibulum gravida vulputate gravida. Integer sed rutrum diam. Phasellus
+tempus at dolor eget aliquet. Fusce et sodales augue. Nunc malesuada lorem
+purus, et aliquam sapien gravida non. Proin ac gravida mi. Sed et commodo
+ligula, ut eleifend orci.
 
 ### Request
 
-{% include payment-order-purchase.md %}
+Nunc tincidunt eros eget tempus interdum. Fusce lobortis, urna a rutrum
+molestie, tortor sapien vestibulum tortor, hendrerit viverra enim erat vel
+magna. Phasellus gravida vel felis at tincidunt. Integer a dui ac arcu varius
+malesuada at in lectus. Aenean viverra pulvinar orci in lacinia. Praesent vel
+massa ut sapien tincidunt rutrum. Maecenas sit amet lectus facilisis lacus
+ultricies mattis et vitae nulla. Ut maximus sed augue vitae sagittis. Duis
+cursus velit non turpis vestibulum consequat. In mauris orci, efficitur at nulla
+at, dictum luctus lorem. Praesent eget accumsan enim. Nulla facilisis, massa
+elementum venenatis fringilla, dui nulla mollis tellus, a interdum orci diam sed
+magna. Aenean nec elementum nisi. Sed nunc magna, scelerisque at orci at, dictum
+lacinia eros. Morbi tempus faucibus risus, a auctor purus semper a. Praesent
+eget feugiat libero.
 
 ### Response
 
@@ -67,7 +98,7 @@ Content-Type: application/json
 | Field          | Type     | Description                                                                        |
 | :------------- | :------- | :--------------------------------------------------------------------------------- |
 | `paymentorder` | `object` | The payment order object.                                                          |
-| └➔&nbsp;`id`   | `string` | {% include field-description-id.md resource="paymentorder" %}                     |
+| └➔&nbsp;`id`   | `string` | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl.    |
 | `operations`   | `array`  | The array of possible operations to perform, given the state of the payment order. |
 
 The `paymentorder` object is abbreviated since it's just the `id` and
