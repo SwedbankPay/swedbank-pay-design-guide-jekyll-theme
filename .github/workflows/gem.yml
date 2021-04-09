@@ -36,7 +36,7 @@ jobs:
 
     - name: Create gem version number
       id: gemversion
-      uses: actions/github-script@0.9.0
+      uses: actions/github-script@v3.1.1
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
