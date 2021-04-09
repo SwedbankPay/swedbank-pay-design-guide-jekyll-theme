@@ -42,6 +42,7 @@ jobs:
 
       - uses: actions/setup-java@v2
         with:
+          distribution: adopt
           java-version: '1.8'
 
       - uses: kamiazya/setup-graphviz@v1
