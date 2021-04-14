@@ -1,52 +1,35 @@
 ---
 section: Checkout
-title: Introduction
-estimated_read: 10
+title: Checkout
 description: |
-    Swedbank Pay Checkout is a complete reimagination
-    of the checkout experience, integrating seamlessly into the merchant website
-    through highly customizable and flexible components.
-menu_order: 4
+  **Swedbank Pay Checkout** is a complete reimagination
+  of the checkout experience, integrating seamlessly into the merchant website
+  through highly customizable and flexible components.
+  Visit our [demoshop](https://ecom.externalintegration.payex.com/pspdemoshop)
+  and try out Swedbank Pay Checkout for yourself!
+icon:
+  content: remove_red_eye
+additional: true
+menu_order: 100
 card_list:
-- card_title: Initiate session for consumer identification
-  estimated_read: 15
-  url: /checkout/checkin
-- card_title: Display Swedbank Pay checkin module
-  estimated_read: 10
-  url: /checkout/checkin#step-2-display-swedbank-pay-checkin-module
-- card_title: Create payment order
-  estimated_read: 18
-  url:
-- card_title: Display the Payment Menu
-  estimated_read: 13
-  url:
-- card_title: Capture the funds
-  estimated_read: 10
-  url:
+- title: Checkout v2
+  description: |
+    Checkout v2 was the generally available version of Checkout between 2018
+    and 2021. Choose this if you have an **existing Checkout v2
+    integration**.
+  url:  /checkout/v2
+  icon:
+    content: shopping_cart
+    outlined: true
+- title: Checkout v3
+  description: Coming soon…
+  url: /checkout/v3
+  disabled: true
+  icon:
+    content: shopping_cart
+    outlined: true
 ---
 
-{% comment %}
-Examples on how site.pages can be filtered and used with
-card-list/card-horizontal-list. Can also be used with pre-defined lists, such as
-card_list in front matter above.
-{% endcomment %}
-
 {:.heading-line}
-## Core implementation overview
 
-{% assign core_card_list = site.pages | where: 'dir', page.dir | where: 'core', true |
-where_exp: 'page', 'page.name != "index.md"' | sort: 'menu_order' %}
-
-{% include card-horizontal-list.html card_list=page.card_list %}
-
-{:.heading-line}
-## Additional features
-
-{% assign additional_card_list = site.pages |
-where_exp: 'page', 'page.url != "/checkout/" and page.core != true and page.dir contains "/checkout/"'
-| where: 'additional', true | sort: 'menu_order'
-%}
-
-{% include card-list.html card_list=additional_card_list
-    col_class="col-lg-6 col-md-6 col-sm-6"
-%}
+{% include card-list.html card_list=page.card_list col_class="col-lg-4" %}

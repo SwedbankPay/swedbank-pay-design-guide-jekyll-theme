@@ -7,7 +7,16 @@ plugins:
   - kramdown-plantuml
   - swedbank-pay-design-guide-jekyll-theme
 # To include node_modules and other folders that are excluded by default:
-# exclude: []
+exclude:
+  - spec
+  - lib
+  - LICENSE
+  - Rakefile
+  - README.md
+  - CODE_OF_CONDUCT.md
+  - "*.json"
+  - "*.gemspec"
+  - "*.yml"
 kramdown:
   input: GFM
   syntax_highlighter: rouge

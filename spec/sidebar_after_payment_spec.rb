@@ -4,7 +4,7 @@ require 'sidebar'
 
 describe SwedbankPay::Sidebar do
   include_context 'shared'
-  after_payment_path = File.join(@dest_dir, 'checkout', 'after-payment.html')
+  after_payment_path = File.join(@dest_dir, 'checkout', 'v2', 'after-payment.html')
 
   describe after_payment_path do
     subject { File.read(after_payment_path) }
@@ -20,7 +20,7 @@ describe SwedbankPay::Sidebar do
             with_tag('li.nav-subgroup.active') do
               with_tag('div.nav-subgroup-heading') do
                 with_tag('i.material-icons', text: 'arrow_right')
-                with_tag('a[href="/checkout/after-payment"]', text: 'After Payment')
+                with_tag('a[href="/checkout/v2/after-payment"]', text: 'After Payment')
               end
             end
           end
@@ -29,7 +29,7 @@ describe SwedbankPay::Sidebar do
     end
 
     it 'has expected page title' do
-      is_expected.to have_tag('title', text: 'Checkout – After Payment')
+      is_expected.to have_tag('title', text: 'Checkout v2 – After Payment')
     end
   end
 end
