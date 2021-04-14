@@ -1,3 +1,4 @@
+
 name: Deploy
 
 on:
@@ -34,5 +35,5 @@ jobs:
         run: |
           docker-compose run \
             -e GITHUB_REPOSITORY_URL=${{ needs.variables.outputs.repository_url }} \
-            portal deploy \
+            jekyll deploy \
             --env=production
