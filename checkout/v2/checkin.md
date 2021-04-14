@@ -190,9 +190,6 @@ With the scripts loading in after the entire page is loaded, we can access the
 `<div>` container that the Checkin will be hosted in.
 After that has all loaded, you should see something like this:
 
-{:.text-center}
-![Consumer UI Start Page][checkin-start]{:width="425" height="275"}
-
 As you can see, the payer's information is pre-filled as provided by the
 initial `POST`.
 
@@ -205,20 +202,11 @@ If Swedbank Pay detects that the consumer hasn't registered any personal
 details, two options are provided: Store details for future purchases or proceed
 without storing details.
 
-{:.text-center}
-![Consumer UI New Consumer Options][checkin-options]{:width="425" height="475"}
-
 If he or she chooses to store details, the next step is to enter their SSN.
-
-{:.text-center}
-![Consumer UI SSN][checkin-ssn]{:width="425" height="250"}
 
 Once a valid SSN has been provided, a page for address details appears. When the
 consumer has entered their address, the profile box shown above will be
 displayed.
-
-{:.text-center}
-![Consumer UI Address][checkin-address]{:width="425" height="675"}
 
 If the consumer opts out of storing their details, they will be sent directly to
 the page for address details to enter their shipping address. This info is not
@@ -280,10 +268,6 @@ and its duration.
                          next_href="payment-menu"
                          next_title="Payment Menu" %}
 
-[checkin-address]: /assets/img/checkout/checkin-address.png
-[checkin-start]: /assets/img/checkout/checkin-email-msisdn.png
-[checkin-options]: /assets/img/checkout/checkin-options.png
-[checkin-ssn]: /assets/img/checkout/checkin-ssn.png
 [checkin-events]: /checkout/v2/features/technical-reference/checkin-events
 [data-protection]: /resources/data-protection#paymentorder-consumer-data
 [payment-menu]: payment-menu

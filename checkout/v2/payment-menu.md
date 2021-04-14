@@ -208,18 +208,6 @@ this, depending on whether the payer is logged in (top two) or a guest user
 (bottom two). Payments done in SEK will have radio buttons for choosing debit
 or credit card.
 
-{:.text-center}
-![Payment Menu with payer logged in and card payment opened][login-payment-menu-image]{:width="475" height="760"}
-
-{:.text-center}
-![Payment Menu with swedish payer logged in and card payment opened][swedish-login-payment-menu-image]{:width="475" height="800"}
-
-{:.text-center}
-![Payment Menu with guest payer and card payment opened][guest-payment-menu-image]{:width="475" height="710"}
-
-{:.text-center}
-![Payment Menu with swedish guest payer and card payment opened][swedish-guest-payment-menu-image]{:width="475" height="965"}
-
 When the the payment is completed, the Payment Menu script will be signaled and
 a full redirect to the `completeUrl` sent in with the Payment Order will be
 performed. When the `completeUrl` on your server is hit, you can inspect the
@@ -333,10 +321,6 @@ finalizing the payment in the [After Payment section][after-payment].
                          next_title="Capture" %}
 
 [after-payment]: after-payment
-[guest-payment-menu-image]: /assets/img/checkout/guest-payment-menu.png
-[login-payment-menu-image]: /assets/img/checkout/loggedin-payment-menu.png
-[swedish-guest-payment-menu-image]: /assets/img/checkout/swedish-guest-payment-menu.png
-[swedish-login-payment-menu-image]: /assets/img/checkout/swedish-logged-in-payment-menu.png
 [operations]: /checkout/v2/features/technical-reference/operations
 [technical-reference-onconsumer-identified]: /checkout/v2/checkin#step-2-display-swedbank-pay-checkin-module
 [urls]: /checkout/v2/features/technical-reference/urls#urls-resource

@@ -50,12 +50,6 @@ card_list:
   icon:
     content: description
     outlined: true
-- title: Update Payment Order
-  description: Updating the payment order
-  url:  /checkout/v2/features/core/update-payment-order
-  icon:
-    content: cached
-    outlined: true
 ---
 
 {:.heading-line}
