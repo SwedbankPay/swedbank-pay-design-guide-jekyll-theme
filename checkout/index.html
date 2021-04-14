@@ -6,20 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="theme-color" content="#000">
-        <meta name="application-name" content="Checkout – Introduction">
+        <meta name="application-name" content="Checkout – Checkout">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="apple-mobile-web-app-title" content="Checkout – Introduction">
+        <meta name="apple-mobile-web-app-title" content="Checkout – Checkout">
         <meta name="msapplication-TileColor" content="#000">
         <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png">
         <meta property="og:type" value="website">
         <meta property="og:url" value="/checkout/">
-        <meta property="og:title" value="Checkout – Introduction">
-        <meta name="title" content="Checkout – Introduction">
+        <meta property="og:title" value="Checkout – Checkout">
+        <meta name="title" content="Checkout – Checkout">
         <meta property="og:description" value="Swedbank Pay Design Guide theme for Jekyll">
         <meta name="description" content="Swedbank Pay Design Guide theme for Jekyll">
         <meta property="og:image" value="/image1.png">
-        <title>Checkout – Introduction</title>
+        <title>Checkout – Checkout</title>
         <link rel="stylesheet" href="https://design.swedbankpay.com/v/5.0.1/styles/dg-style.css">
         <link rel="stylesheet" href="/assets/css/style.css">
         <link rel="stylesheet" href="/assets/css/pygments-autumn.css">
@@ -30,7 +30,7 @@
         <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Introduction">
+<meta name="apple-mobile-web-app-title" content="Checkout">
 <link rel="apple-touch-icon" sizes="57x57" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-72x72.png">
@@ -263,93 +263,447 @@
           <span>Checkout</span>
         </div>
         <ul class="nav-ul">
-        <li class="nav-subgroup active">
+        <li class="nav-leaf"><a href="/checkout/">Checkout</a></li>
+        <li class="nav-subgroup">
         <div class="nav-subgroup-heading">
           <i class="material-icons">arrow_right</i>
-          <a href="/checkout/">Introduction</a>
+          <a href="/checkout/v2/">Checkout v2</a>
         </div>
         <ul class="nav-ul">
-<li class="nav-leaf"><a href="/checkout/#core-implementation-overview">Core implementation overview</a></li>
-<li class="nav-leaf"><a href="/checkout/#additional-features">Additional features</a></li>
+        <li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/">Checkout v2</a>
+        </div>
+        <ul class="nav-ul">
+<li class="nav-leaf"><a href="/checkout/v2/#prerequisites">Prerequisites</a></li>
+<li class="nav-leaf"><a href="/checkout/v2/#introduction">Introduction</a></li>
 </ul>
       </li>
         <li class="nav-subgroup">
         <div class="nav-subgroup-heading">
           <i class="material-icons">arrow_right</i>
-          <a href="/checkout/checkin">Checkin</a>
+          <a href="/checkout/v2/checkin">Checkin</a>
         </div>
         <ul class="nav-ul">
-        <li class="nav-leaf"><a href="/checkout/checkin#step-1-initiate-session-for-consumer-identification">Step 1: Initiate session for consumer identification</a></li>
-<li class="nav-leaf"><a href="/checkout/checkin#step-2-display-swedbank-pay-checkin-module">Step 2: Display Swedbank Pay Checkin module</a></li>
+        <li class="nav-leaf"><a href="/checkout/v2/checkin#step-1-initiate-session-for-consumer-identification">Step 1: Initiate session for consumer identification</a></li>
+<li class="nav-leaf"><a href="/checkout/v2/checkin#step-2-display-swedbank-pay-checkin-module">Step 2: Display Swedbank Pay Checkin module</a></li>
         
       </ul>
       </li>
 <li class="nav-subgroup">
         <div class="nav-subgroup-heading">
           <i class="material-icons">arrow_right</i>
-          <a href="/checkout/payment-menu">Payment Menu</a>
+          <a href="/checkout/v2/payment-menu">Payment Menu</a>
         </div>
         <ul class="nav-ul">
-        <li class="nav-leaf"><a href="/checkout/payment-menu#step-3-create-payment-order">Step 3: Create Payment Order</a></li>
-<li class="nav-leaf"><a href="/checkout/payment-menu#step-4-display-the-payment-menu">Step 4: Display the Payment Menu</a></li>
+        <li class="nav-leaf"><a href="/checkout/v2/payment-menu#step-3-create-payment-order">Step 3: Create Payment Order</a></li>
+<li class="nav-leaf"><a href="/checkout/v2/payment-menu#step-4-display-the-payment-menu">Step 4: Display the Payment Menu</a></li>
         
       </ul>
       </li>
 <li class="nav-subgroup">
         <div class="nav-subgroup-heading">
           <i class="material-icons">arrow_right</i>
-          <a href="/checkout/capture">Capture</a>
+          <a href="/checkout/v2/capture">Capture</a>
         </div>
         <ul class="nav-ul">
-        <li class="nav-leaf"><a href="/checkout/capture#step-5-capture-the-funds">Step 5: Capture the funds</a></li>
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/capture">Capture</a></li>
         
       </ul>
       </li>
 <li class="nav-subgroup">
         <div class="nav-subgroup-heading">
           <i class="material-icons">arrow_right</i>
-          <a href="/checkout/after-payment">After Payment</a>
+          <a href="/checkout/v2/after-payment">After Payment</a>
         </div>
         <ul class="nav-ul">
-        <li class="nav-leaf"><a href="/checkout/after-payment#introduction">Introduction</a></li>
-<li class="nav-leaf"><a href="/checkout/after-payment#operations">Operations</a></li>
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/after-payment">After Payment</a></li>
         
       </ul>
       </li>
 <li class="nav-subgroup">
         <div class="nav-subgroup-heading">
           <i class="material-icons">arrow_right</i>
-          <a href="/checkout/features/">Checkout Features</a>
+          <a href="/checkout/v2/features/">Features</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/">Features</a></li>
+        <li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/core/">Core Features</a>
         </div>
         <ul class="nav-ul">
         <li class="nav-subgroup">
         <div class="nav-subgroup-heading">
           <i class="material-icons">arrow_right</i>
-          <a href="/checkout/features/">Introduction</a>
+          <a href="/checkout/v2/features/core/">Core Features</a>
         </div>
-        <ul class="nav-ul"><li class="nav-leaf"><a href="/checkout/features/#all-features">All features</a></li></ul>
+        <ul class="nav-ul"><li class="nav-leaf"><a href="/checkout/v2/features/core/#core-features">Core Features</a></li></ul>
       </li>
         <li class="nav-subgroup">
         <div class="nav-subgroup-heading">
           <i class="material-icons">arrow_right</i>
-          <a href="/checkout/features/payment-orders">Payment Orders</a>
+          <a href="/checkout/v2/features/core/3d-secure-2">3-D Secure 2</a>
         </div>
         <ul class="nav-ul">
-        <li class="nav-leaf"><a href="/checkout/features/payment-orders#payment-orders">Payment Orders</a></li>
-<li class="nav-leaf"><a href="/checkout/features/payment-orders#payment-orders-2">Payment Orders 2</a></li>
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/core/3d-secure-2">3-D Secure 2</a></li>
         
       </ul>
       </li>
 <li class="nav-subgroup">
         <div class="nav-subgroup-heading">
           <i class="material-icons">arrow_right</i>
-          <a href="/checkout/features/recurring-payments">Recurring payments</a>
+          <a href="/checkout/v2/features/core/payment-order-abort">Abort</a>
         </div>
         <ul class="nav-ul">
-        <li class="nav-leaf"><a href="/checkout/features/recurring-payments#recurring-payments">Recurring Payments</a></li>
-<li class="nav-leaf"><a href="/checkout/features/recurring-payments#recurring-payments-2">Recurring Payments 2</a></li>
-<li class="nav-leaf"><a href="/checkout/features/recurring-payments#recurring-payments-3">Recurring Payments 3</a></li>
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/core/payment-order-abort">Abort</a></li>
         
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/core/cancel">Cancel</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/core/cancel">Cancel</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/core/payment-order-capture">Capture</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/core/payment-order-capture">Capture</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/core/payment-order">Payment Order</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/core/payment-order">Payment Order</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/core/reversal">Reversal</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/core/reversal">Reversal</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/core/settlement-reconciliation">Settlement &amp; Reconciliation</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/core/settlement-reconciliation">Settlement &amp; Reconciliation</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/core/payment-order-update">Update Payment Order</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/core/payment-order-update">Update Payment Order</a></li>
+        
+      </ul>
+      </li>
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/optional/">Optional Features</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/optional/">Optional Features</a>
+        </div>
+        <ul class="nav-ul"><li class="nav-leaf"><a href="/checkout/v2/features/optional/#optional-features">Optional Features</a></li></ul>
+      </li>
+        <li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/optional/custom-logo">Custom Logo</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/optional/custom-logo">Custom Logo</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/optional/dsca">Delegated Strong Consumer Authentication</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/optional/dsca">Delegated Strong Consumer Authentication</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/optional/recur">Recur</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/optional/recur">Recur</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/optional/tra">TRA Exemption</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/optional/tra">TRA Exemption</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/optional/verify">Verify</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/optional/verify">Verify</a></li>
+        
+      </ul>
+      </li>
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/">Technical Reference</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/">Technical Reference</a>
+        </div>
+        <ul class="nav-ul"><li class="nav-leaf"><a href="/checkout/v2/features/technical-reference/#technical-reference">Technical Reference</a></li></ul>
+      </li>
+        <li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/callback">Callback</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/technical-reference/callback">Callback</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/checkin-events">Checkin Events</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/technical-reference/checkin-events">Checkin Events</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/complete-url">CompleteUrl</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/technical-reference/complete-url">CompleteUrl</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/delete-token">Delete Token</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/technical-reference/delete-token">Delete Token</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/description">Description</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/technical-reference/description">Description</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/items">Items</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/technical-reference/items">Items</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/metadata">Metadata</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/technical-reference/metadata">Metadata</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/operations">Operations</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/technical-reference/operations">Operations</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/order-items">Order Items</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/technical-reference/order-items">Order Items</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/payee-info">PayeeInfo</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/technical-reference/payee-info">PayeeInfo</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/payee-reference">PayeeReference</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/technical-reference/payee-reference">PayeeReference</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/payment-menu-events">Payment Menu Events</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/technical-reference/payment-menu-events">Payment Menu Events</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/payment-state">Payment State</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/technical-reference/payment-state">Payment State</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/payment-url">PaymentUrl</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/technical-reference/payment-url">PaymentUrl</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/prices">Prices</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/technical-reference/prices">Prices</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/problems">Problems</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/technical-reference/problems">Problems</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/purchase">Purchase</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/technical-reference/purchase">Purchase</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/seamless-view-events">Seamless View Events</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/technical-reference/seamless-view-events">Seamless View Events</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/transactions">Transactions</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/technical-reference/transactions">Transactions</a></li>
+        
+      </ul>
+      </li>
+<li class="nav-subgroup">
+        <div class="nav-subgroup-heading">
+          <i class="material-icons">arrow_right</i>
+          <a href="/checkout/v2/features/technical-reference/urls">Urls</a>
+        </div>
+        <ul class="nav-ul">
+        <li class="nav-leaf nav-subgroup-leaf"><a href="/checkout/v2/features/technical-reference/urls">Urls</a></li>
+        
+      </ul>
+      </li>
+      </ul>
+      </li>
       </ul>
       </li>
       </ul>
@@ -498,29 +852,26 @@
             <h4>Checkout</h4>
         
 
-        <h1>Introduction</h1>
+        <h1>Checkout</h1>
 
-        
-            <div class="title-header-estimated-read">
-                <i class="material-icons">schedule</i>
-                10 min read
-            </div>
         
 
         
             <p></p>
-<p>Swedbank Pay Checkout is a complete reimagination
+<p><strong>Swedbank Pay Checkout</strong> is a complete reimagination
 of the checkout experience, integrating seamlessly into the merchant website
-through highly customizable and flexible components.</p>
+through highly customizable and flexible components.
+Visit our <a href="https://ecom.externalintegration.payex.com/pspdemoshop">demoshop</a>
+and try out Swedbank Pay Checkout for yourself!</p>
 
         
     </div>
 
     
 
-<a href="https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/tree/master/checkout/index.md" class="github" target="_blank" rel="noopener noreferrer" title="Edit 'Introduction' on GitHub">
+<a href="https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/tree/master/checkout/index.md" class="github" target="_blank" rel="noopener noreferrer" title="Edit 'Checkout' on GitHub">
     <svg aria-labelledby="simpleicons-github-icon" role="img" width="40" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <title id="simpleicons-github-icon">Edit "Introduction" on GitHub</title>
+        <title id="simpleicons-github-icon">Edit "Checkout" on GitHub</title>
         <path fill="#fff" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
     </svg>
 </a>
@@ -533,227 +884,7 @@ through highly customizable and flexible components.</p>
 <div class="doc-container normal-padding max-width">
     <article>
         
-            <h2 class="heading-line" id="core-implementation-overview">
-        
-        
-          Core implementation overview <a href="#core-implementation-overview" class="header-anchor"></a>
-        
-        
-      </h2>
-
-<div class="card-horizontal-list">
-    
-        
-        
-        
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<a href="/checkout/checkin" class="dx-card dx-card-horizontal">
-    <span class="dx-card-icon">
-        
-            <i class="material-icons">
-                01
-            </i>
-        
-    </span>
-    <span class="dx-card-content">
-        <span class="h3">Initiate session for consumer identification</span>
-        <span>15 min read</span>
-    </span>
-    
-        <i class="material-icons">arrow_forward</i>
-    
-</a>
-
-    
-        
-        
-        
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<a href="/checkout/checkin#step-2-display-swedbank-pay-checkin-module" class="dx-card dx-card-horizontal">
-    <span class="dx-card-icon">
-        
-            <i class="material-icons">
-                02
-            </i>
-        
-    </span>
-    <span class="dx-card-content">
-        <span class="h3">Display Swedbank Pay checkin module</span>
-        <span>10 min read</span>
-    </span>
-    
-        <i class="material-icons">arrow_forward</i>
-    
-</a>
-
-    
-        
-        
-        
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<a href="" class="dx-card dx-card-horizontal">
-    <span class="dx-card-icon">
-        
-            <i class="material-icons">
-                03
-            </i>
-        
-    </span>
-    <span class="dx-card-content">
-        <span class="h3">Create payment order</span>
-        <span>18 min read</span>
-    </span>
-    
-        <i class="material-icons">arrow_forward</i>
-    
-</a>
-
-    
-        
-        
-        
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<a href="" class="dx-card dx-card-horizontal">
-    <span class="dx-card-icon">
-        
-            <i class="material-icons">
-                04
-            </i>
-        
-    </span>
-    <span class="dx-card-content">
-        <span class="h3">Display the Payment Menu</span>
-        <span>13 min read</span>
-    </span>
-    
-        <i class="material-icons">arrow_forward</i>
-    
-</a>
-
-    
-        
-        
-        
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<a href="" class="dx-card dx-card-horizontal">
-    <span class="dx-card-icon">
-        
-            <i class="material-icons">
-                05
-            </i>
-        
-    </span>
-    <span class="dx-card-content">
-        <span class="h3">Capture the funds</span>
-        <span>10 min read</span>
-    </span>
-    
-        <i class="material-icons">arrow_forward</i>
-    
-</a>
-
-    
-</div>
-    
-      <h2 class="heading-line" id="additional-features">
-        
-        
-          Additional features <a href="#additional-features" class="header-anchor"></a>
-        
-        
-      </h2>
-
-<div class="row card-list">
+            <div class="row card-list">
     
         
         
@@ -765,7 +896,7 @@ through highly customizable and flexible components.</p>
         
         
 
-        <div class="col-lg-6 col-md-6 col-sm-6">
+        <div class="col-lg-4">
             
 
 
@@ -785,17 +916,19 @@ through highly customizable and flexible components.</p>
 
 
 
-<a href="/checkout/after-payment.html" class="dx-card">
+<a href="/checkout/v2" class="dx-card">
     <span class="dx-card-icon">
         
-            <i class="material-icons">
-                add
+            <i class="material-icons-outlined">
+                shopping_cart
             </i>
         
     </span>
     <span class="dx-card-content">
-        <span class="h4">After Payment</span>
-        <span>Add After-payment operation to your order system
+        <span class="h4">Checkout v2</span>
+        <span><p>Checkout v2 was the generally available version of Checkout between 2018
+and 2021. Choose this if you have an <strong>existing Checkout v2
+integration</strong>.</p>
 </span>
     </span>
     
@@ -815,7 +948,7 @@ through highly customizable and flexible components.</p>
         
         
 
-        <div class="col-lg-6 col-md-6 col-sm-6">
+        <div class="col-lg-4">
             
 
 
@@ -835,23 +968,21 @@ through highly customizable and flexible components.</p>
 
 
 
-<a href="/checkout/features/" class="dx-card">
+<span href="/checkout/v2" class="dx-card dx-card-disabled">
     <span class="dx-card-icon">
         
-            <i class="material-icons">
-                remove_red_eye
+            <i class="material-icons-outlined">
+                shopping_cart
             </i>
         
     </span>
     <span class="dx-card-content">
-        <span class="h4">Introduction</span>
-        <span>In this section you find various resources for Swedbank Pay’s API Platform.
+        <span class="h4">Checkout v3</span>
+        <span><p>Coming soon…</p>
 </span>
     </span>
     
-        <i class="material-icons">arrow_forward</i>
-    
-</a>
+</span>
 
         </div>
     
