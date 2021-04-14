@@ -1,8 +1,9 @@
 {% for child in page.children %}
     {% if child.children && child.children.size > 0 %}
+        {% assign title = child.title | default: child.section %}
         {% capture header %}
 {:.heading-line}
-## {{ child.title }}
+## {{ title }}
         {% endcapture %}
         {% assign header =  header | markdownify %}
         {% include anchor_headings.html html=header anchorClass='header-anchor' %}

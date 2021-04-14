@@ -60,7 +60,7 @@ type: sdk | module - Empty type result in default card styling
     </span>
     <span class="dx-card-content">
         <span class="{{ title_type }}">{{ include.title }}</span>
-        <span>{{ text }}</span>
+        <span>{{ text | markdownify }}</span>
     </span>
     {% unless disabled %}
         <i class="material-icons">arrow_forward</i>
