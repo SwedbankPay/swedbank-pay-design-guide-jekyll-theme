@@ -18,7 +18,7 @@ describe 'Card Overview' do
         end
         with_tag('.row.card-list') do
           with_tag('.col-lg-6') do
-            with_tag('a.dx-card.dx-card-module', :with => { :href => '/cards/deck1/card1.html' }) do
+            with_tag('a.dx-card.dx-card-module', :with => { :href => '/cards/deck1/card1' }) do
               with_tag('.dx-card-icon') do
                 with_tag('i.material-icons-outlined', :text => /attach_money/)
               end
@@ -34,7 +34,7 @@ describe 'Card Overview' do
     end
 
     it 'has card with no icon' do
-      is_expected.to have_tag('a.dx-card', :with => { :href => '/cards/deck1/card2.html' }) do
+      is_expected.to have_tag('a.dx-card', :with => { :href => '/cards/deck1/card2' }) do
         with_tag('.dx-card-icon.d-none') do
           with_tag('i.material-icons', :text => /^\s*$/)
         end
@@ -54,7 +54,7 @@ describe 'Card Overview' do
 
         with_tag('.row.card-list') do
           with_tag('.col-lg-12') do
-            with_tag('a.dx-card', :with => { :href => '/cards/deck2/card1.html' }) do
+            with_tag('a.dx-card', :with => { :href => '/cards/deck2/card1' }) do
               with_tag('.dx-card-icon') do
                 with_tag('i.material-icons', :text => /api/)
               end
@@ -71,7 +71,7 @@ describe 'Card Overview' do
 
     it 'has card with svg icon' do
       is_expected.to have_tag('.col-lg-12') do
-        with_tag('a.dx-card', :with => { :href => '/cards/deck2/card2.html' }) do
+        with_tag('a.dx-card', :with => { :href => '/cards/deck2/card2' }) do
           with_tag('.dx-card-icon') do
             with_tag('svg')
           end
@@ -86,7 +86,7 @@ describe 'Card Overview' do
 
     it 'has horizontal card' do
       is_expected.to have_tag('.dx-card-horizontal') do
-        with_tag('a.dx-card', :with => { :href => '/cards/deck2/card3.html' }) do
+        with_tag('a.dx-card', :with => { :href => '/cards/deck2/card3' }) do
           with_tag('.dx-card-content') do
             with_tag('.h4', :text => 'Deck 2 Card 3')
             with_tag('span', :text => 'Deck Two Card Three')

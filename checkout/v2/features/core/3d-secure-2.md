@@ -1,8 +1,11 @@
 ---
 title: 3-D Secure 2
 estimated_read: 5
-description: Authenticating the cardholder.
+description: Authenticating the cardholder
 menu_order: 1200
+card:
+  icon:
+    content: 3d_rotation
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl

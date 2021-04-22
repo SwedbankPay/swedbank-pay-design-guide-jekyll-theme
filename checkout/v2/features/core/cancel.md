@@ -1,9 +1,12 @@
 ---
 title: Cancel
 estimated_read: 3
-description: |
-  Cancelling the authorization and releasing the funds.
+description: Cancelling the authorization and releasing the funds
 menu_order: 1400
+card:
+  icon:
+    content: pan_tool
+    outlined: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl

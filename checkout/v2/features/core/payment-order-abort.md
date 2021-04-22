@@ -1,9 +1,12 @@
 ---
 title: Abort
 estimated_read: 3
-description: |
-  Aborting a created payment.
+description: Aborting a created payment
 menu_order: 1300
+card:
+  icon:
+    content: pan_tool
+    outlined: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl
