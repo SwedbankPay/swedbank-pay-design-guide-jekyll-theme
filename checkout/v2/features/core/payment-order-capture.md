@@ -1,9 +1,12 @@
 ---
 title: Capture
 estimated_read: 5
-description: |
-  Capturing the authorized funds.
+description: Capturing the authorized funds
 menu_order: 1500
+card:
+  icon:
+    content: compare_arrows
+    outlined: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl

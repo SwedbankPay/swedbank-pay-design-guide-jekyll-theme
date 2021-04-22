@@ -1,9 +1,12 @@
 ---
 title: Payment Order
 estimated_read: 5
-description: |
-  Creating the payment order
+description: Creating the payment order
 menu_order: 1600
+card:
+  icon:
+    content: credit_card
+    outlined: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl

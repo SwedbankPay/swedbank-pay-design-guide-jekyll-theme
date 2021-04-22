@@ -1,9 +1,12 @@
 ---
 title: Settlement & Reconciliation
 estimated_read: 16
-description: |
-  Balancing the books.
+description: Balancing the books
 menu_order: 1800
+card:
+  icon:
+    content: description
+    outlined: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl

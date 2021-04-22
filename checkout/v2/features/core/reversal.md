@@ -1,9 +1,12 @@
 ---
 title: Reversal
 estimated_read: 4
-description: |
-  How to reverse a payment.
+description: How to reverse a payment
 menu_order: 1700
+card:
+  icon:
+    content: keyboard_return
+    outlined: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl

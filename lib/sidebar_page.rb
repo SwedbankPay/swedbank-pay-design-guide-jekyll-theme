@@ -115,6 +115,7 @@ module SwedbankPay
       @jekyll_page.data['lead_title'] = @title.lead
       @jekyll_page.data['main_title'] = @title.main
       @jekyll_page.data['children'] = @children
+      @jekyll_page.data['absolute_path'] = @path
     end
 
     def save
