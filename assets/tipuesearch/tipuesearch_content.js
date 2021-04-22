@@ -490,7 +490,7 @@ var tipuesearch = {"pages": [{
     "url": "/checkout/v3/"
   },{
     "title": "Core Features",
-    "text": "{:.heading-line} ## Core Features {% include card-list.html card_list=page.card_list col_class=\"col-lg-4\" %}",
+    "text": "{:.heading-line} ## {{ page.title }} {% include card-list.html %}",
     "tags": "",
     "url": "/checkout/v2/features/core/"
   },{
