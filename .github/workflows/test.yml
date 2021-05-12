@@ -10,7 +10,7 @@ jobs:
       repository_url: ${{ steps.variables.outputs.repository_url }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
       - name: Generate variables
         id: variables
         env:
@@ -20,7 +20,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
       - name: jekyll build
         run: docker-compose run jekyll build
       - name: Upload site
@@ -32,7 +32,7 @@ jobs:
   spec:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
 
       - name: Set up Ruby 2.7
         uses: ruby/setup-ruby@v1
@@ -60,7 +60,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: variables
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
       - name: Verify build
         run: |
           docker-compose run \
@@ -89,7 +89,7 @@ jobs:
   remark-lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
       - run: npm install
       - uses: prologic/action-remark-lint@v2
         with:
@@ -99,7 +99,7 @@ jobs:
   # deploy-dry-run:
   #   runs-on: ubuntu-latest
   #   steps:
-  #     - uses: actions/checkout@v2
+  #     - uses: actions/checkout@v2.3.4
   #     - name: deploy dry-run
   #       run: |
   #         docker-compose run \
