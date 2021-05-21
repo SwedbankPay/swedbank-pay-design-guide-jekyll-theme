@@ -31,6 +31,7 @@ module SwedbankPay
       @order = menu_order(jekyll_page)
       @children = SidebarPageCollection.new(self)
       @card_overview = jekyll_page['card_overview'].nil? ? false : jekyll_page['card_overview']
+      @anchor_headings = jekyll_page['anchor_headings'].nil? ? true : jekyll_page['anchor_headings']
     end
 
     def active?(current, is_leaf: false)
@@ -153,6 +154,10 @@ module SwedbankPay
 
     def card_overview?
       @card_overview
+    end
+
+    def anchor_headings?
+      @anchor_headings
     end
 
     private
