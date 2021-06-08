@@ -30,7 +30,7 @@
         } else {
             tocLinks = activeSubgroup.querySelectorAll(".nav-leaf");
         }
-        
+
     } else {
         tocLinks = document.querySelectorAll("nav.sidebar-nav .nav-group.active .nav-leaf");
     }
@@ -39,10 +39,10 @@
         if (el) {
             var parentRect = parent.getBoundingClientRect();
             var elemRect = el.getBoundingClientRect();
-            
+
             return elemRect.top - parentRect.top;
         }
-        
+
         return null;
     };
 
@@ -58,11 +58,11 @@
                 - document.documentElement.scrollTop
                 - document.body.clientHeight
                 - buffer;
-                
-                
+
+
             activeLeaf && !activeLeaf.classList.contains("nav-subgroup-leaf") && activeLeaf.classList.remove("active");
-                
-                
+
+
             if (scrollDistanceFromBottom > 0) {
                 const scrollNumber = [...headings].filter((heading) => getPosition(document.body, heading) <= currentPos).length - 1;
 
@@ -75,7 +75,7 @@
     };
 
     _handleLeafScrollListener();
-    
+
     window.addEventListener("scroll", _handleLeafScrollListener);
 
     // Makes sidebar scroll so that the active element is in view
@@ -91,7 +91,7 @@
     if (activeLeaf) {
         sidebarNav.scrollTop = activeLeaf.offsetTop + activeLeaf.clientHeight - sidebarNav.clientHeight / 2;
     };
-    
+
 })();
 
 // Simple sidebar functionality while dg.js is being loaded
@@ -125,12 +125,5 @@ function _handleSimpleSidebar (e) {
         const sidebar = document.querySelector(".sidebar");
 
         sidebar.removeEventListener("click", _handleSimpleSidebar);
-    });
-})();
-
-// Initialize Tipue search
-(function() {
-    $(document).ready(function () {
-        $("#tipue_search_input").tipuesearch();
     });
 })();

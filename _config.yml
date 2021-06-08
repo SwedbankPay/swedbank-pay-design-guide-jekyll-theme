@@ -30,9 +30,6 @@ kramdown:
     block:
       line_numbers: true
       start_line: 1
-tipue_search:
-  include:
-    pages: true
 opengraph:
   description: Swedbank Pay Design Guide theme for Jekyll
   image: /image1.png

@@ -13,10 +13,10 @@ describe sidebar do
   describe '#pages' do
     subject { sidebar.pages }
 
-    its(:count) { is_expected.to eq 209 }
-    its(:length) { is_expected.to eq 10 }
+    its(:count) { is_expected.to eq 208 }
+    its(:length) { is_expected.to eq 9 }
 
-    describe '[0]' do
+    describe '[1]' do
       let(:index) { |x| parse_index(x) }
 
       subject { sidebar.pages[index[0]] }
