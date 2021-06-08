@@ -41,7 +41,9 @@ design_guide:
   version: 5.0.2
 search:
   enabled: true
-  url: /search
+  url:
+    default: https://search.developer.stage.swedbankpay.com
+    production: https://search.developer.swedbankpay.com
 topbar:
   navigation:
     - url: /page1
