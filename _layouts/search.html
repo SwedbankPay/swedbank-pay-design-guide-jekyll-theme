@@ -1,5 +1,15 @@
 ---
 layout: default
 ---
-
-<div id="tipue_search_content"></div>
+<div class="search">
+    <div class="search_top mx-auto my-4">
+        <p class="my-0">Search</p>
+        <h1 class="title my-2"></h1>
+        <small class="total_results"></small>
+    </div>
+</div>
+<section id="search_content">
+    <div class="search_results">Searching...</div>
+    <div class="search_pagination mt-5" class="d-flex"></div>
+</section>
+<script src="{{"/assets/js/elasticSearch.js"}}"></script>
