@@ -1,0 +1,19 @@
+{% assign search_url = site.search.url[site.env] | default: site.search.url.default | default: site.search.url %}
+{% assign parts = search_url | split: 'https://' %}
+{% if parts[0] != blank %}
+    {% assign search_url = search_url | relative_url %}
+{% endif %}
+<form class="search-container mx-2 my-4 px-3 py-2 d-flex" method="get" action="{{ search_url }}">
+    <input type="text"
+           name="q"
+           class="search-input w-100"
+           placeholder="Search in documentation"
+           onfocus="this.placeholder=''"
+           onblur="this.placeholder='Search in documentation'"
+           required="required"
+           pattern=".{3,}"
+           title="At least 3 characters">
+    <button class="submit-form-btn mb-0">
+        <i class="material-icons m-0" aria-hidden="true">search</i>
+    </button>
+</form>

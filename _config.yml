@@ -30,18 +30,17 @@ kramdown:
     block:
       line_numbers: true
       start_line: 1
-tipue_search:
-  include:
-    pages: true
 opengraph:
   description: Swedbank Pay Design Guide theme for Jekyll
   image: /image1.png
 design_guide:
   base_url: https://design.swedbankpay.com
-  version: 5.0.1
+  version: 5.0.2
 search:
   enabled: true
-  url: /search
+  url:
+    default: https://search.developer.stage.swedbankpay.com
+    production: https://search.developer.swedbankpay.com
 topbar:
   navigation:
     - url: /page1

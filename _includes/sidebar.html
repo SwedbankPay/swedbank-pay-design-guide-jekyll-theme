@@ -11,11 +11,7 @@ Original creator: https://sebnitu.com/2016/10/13/dynamic-menus-in-jekyll/
           </div>
       </a>
       {% if site.search.enabled == true %}
-      <form class="doc-search" action="{{ site.search.url | relative_url }}">
-          <input type="text" class="form-control" name="q" id="tipue_search_input"
-              placeholder="Search..." autocomplete="off" pattern=".{3,}"
-              title="At least 3 characters">
-      </form>
+        {% include search-form.html %}
       {% endif %}
 
       <ul class="main-nav-ul">
@@ -64,7 +60,7 @@ Original creator: https://sebnitu.com/2016/10/13/dynamic-menus-in-jekyll/
                   <i class="material-icons">arrow_right</i>
                   <a href="{{ node.url }}">{{ node_title_last}}</a>
                 </div>
-                
+
                 {% assign node_content = node.content | markdownify %}
 
                 {% include toc.html html=node_content baseurl=node.url h_max=2 item_class='nav-leaf' class='nav-ul' %}
@@ -92,7 +88,7 @@ Original creator: https://sebnitu.com/2016/10/13/dynamic-menus-in-jekyll/
                 {% assign has_children = true %}
                 {% endif %}
                 {% endfor %}
-                
+
                 {% assign subnode_content = subnode.content | markdownify %}
 
                 {% include toc.html html=subnode_content baseurl=subnode.url h_max=2 item_class='nav-leaf' class='nav-ul' %}
