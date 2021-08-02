@@ -1,136 +1,135 @@
 ''
-'' superhero theme based off of the bootstrap theme of the same name
-'' https://bootswatch.com/minty/
+'' swedbankpay theme based off of https://design.swedbankpay.com
 ''
-'' Author = "Brett Schwarz
-'' Copyright (c) 2020 by Brett Schwarz
+'' Author = "Asbjørn Ulsberg"
+'' Copyright (c) 2021 Swedbank Pay
 
-!$THEME = "minty"
+!$THEME = "swedbankpay"
 
-!if %not(%variable_exists("$BGCOLOR"))
-!$BGCOLOR = "transparent"
-!endif
-
-skinparam backgroundColor $BGCOLOR
+skinparam backgroundColor "transparent"
 skinparam useBetaStyle false
 
-''
-'' Colors taken from the css file of the BS theme
-''
-!$BLUE = "#007bff"
-!$INDIGO = "#6610f2"
-!$PURPLE = "#6f42c1"
-!$PINK = "#e83e8c"
-!$RED = "#ff7851"
-!$ORANGE = "#fd7e14"
-!$YELLOW = "#ffce67"
-!$GREEN = "#56cc9d"
-!$TEAL = "#20c997"
-!$CYAN = "#6cc3d5"
-!$WHITE = "#fff"
-!$GRAY = "#888"
-!$GRAYDARK = "#343a40"
-!$PRIMARY = "#78c2ad"
-!$SECONDARY = "#f3969a"
-!$SUCCESS = "#56cc9d"
-!$INFO = "#6cc3d5"
-!$WARNING = "#ffce67"
-!$DANGER = "#ff7851"
-!$LIGHT = "#f8f9fa"
-!$DARK = "#343a40"
+!$black = "#222222"
+!$text_gray = "#767676"
+!$list_gray = "#999999"
+!$light_gray = "#f9f8f6"
+!$white = "#ffffff"
+!$solid_brown = "#2f2424"
+!$dark_brown = "#493c3b"
+!$medium_brown = "#72605e"
+!$soft_brown = "#a38b80"
+!$light_brown = "#d4c4bc"
 
-'' *_DARK = tint (lighter) of the main color of 80%
-''          where TINT is calculated by clr + (255-clr) * tint_factor
-'' *_LIGHT = shade (darker) of the main color of 80%
-''          and SHADE is calculated by clr * (1 - shade_factor)
-''
-!$FGCOLOR = $WHITE
-!$PRIMARY_DARK = "#6caf9c"
-!$PRIMARY_LIGHT = "#86c8b5"
-!$PRIMARY_TEXT = $WHITE
-!$SECONDARY_DARK = "#db878b"
-!$SECONDARY_LIGHT = "#f4a1a4"
-!$SECONDARY_TEXT = $WHITE
-!$INFO_DARK = "#61b0c0"
-!$INFO_LIGHT = "#7bc9d9"
-!$INFO_TEXT = $WHITE
-!$SUCCESS_DARK = "#4db88d"
-!$SUCCESS_LIGHT = "#67d1a7"
-!$SUCCESS_TEXT = $WHITE
-!$WARNING_DARK = "#e6b95d"
-!$WARNING_LIGHT = "#ffd376"
-!$WARNING_TEXT = $WHITE
-!$DANGER_DARK = "#e66c49"
-!$DANGER_LIGHT = "#ff8662"
-!$DANGER_TEXT = $WHITE
-!$DARK_DARK = "#2f343a"
-!$DARK_LIGHT = "#484e53"
-!$LIGHT_DARK = "#dfe0e1"
-!$LIGHT_LIGHT = "#f9fafb"
+!$brand_primary = "#fdc129"
+!$brand_primary_light = "#ffcc00"
+!$brand_primary_light_2 = "#ffdf88"
+!$brand_primary_light_3 = "#fff3d5"
+!$brand_primary_faded = "fade(@brand_primary, 60%)"
+!$brand_secondary_dark_1 = $dark_brown
+!$brand_secondary_dark_2 = $solid_brown
+!$brand_secondary = "#512b2b"
+!$brand_secondary_light_1 = $medium_brown
+!$brand_secondary_light_2 = $soft_brown
+!$brand_secondary_light_3 = $light_brown
+!$brand_secondary_light_4 = "#d4b8a3"
+!$brand_secondary_info_1 = "#8acdc3"
+!$brand_secondary_info_2 = "#efb7b6"
+!$brand_tertiary = "#ee7023"
+!$brand_accent = "#31a3ae"
+!$brand_accent_links = "#257886"
+!$brand_accent_disabled = "#98d0d6"
+
+' Background Colors
+!$brand_bg_1 = "#fbf2ea"
+!$brand_bg_2 = "#ebf8f2"
+!$brand_bg_3 = "#fbedf4"
+!$brand_bg_4 = "#e9f7fb"
+!$brand_bg_gray = "#ebe7e2"
+!$brand_bg_white = "#ffffff"
+
+' State colors
+!$brand_success = "#437e15"
+!$brand_success_light = "#f2f7eb"
+!$brand_success_light_2 = "#99cc66"
+!$brand_warning = "#f9ce22"
+!$brand_warning_light = "#fff3d5"
+!$brand_warning_2 = $brand_tertiary
+!$brand_error_border = "#f1bbb9"
+!$brand_error = "#c5131c"
+!$brand_error_light = "#f9ded3"
+!$brand_info = "#3e6ab6"
+!$brand_info_light = "#e8eff9"
+
+!$primary_text = $text_gray
+!$secondary_text = $black
+!$info_text = $black
+!$success_text = $white
+!$warning_text = $white
+!$danger_text = $white
 
 !procedure $success($msg)
-  <font color=$SUCCESS><b>$msg
+  <font color=$brand_success><b>$msg
 !endprocedure
 
 !procedure $failure($msg)
-  <font color=$DANGER><b>$msg
+  <font color=$brand_error><b>$msg
 !endprocedure
 
 !procedure $warning($msg)
-  <font color=$WARNING><b>$msg
+  <font color=$brand_warning><b>$msg
 !endprocedure
 
 !procedure $primary_scheme()
-	FontColor $PRIMARY_TEXT
-	BorderColor $PRIMARY
-	BackgroundColor $PRIMARY_LIGHT
+	FontColor $primary_text
+	BorderColor $brand_primary
+	BackgroundColor $brand_primary_light
 !endprocedure
 
 ''
 '' Global Default Values
 ''
-skinparam defaultFontName       "Verdana"
+skinparam defaultFontName       "Arial"
 skinparam defaultFontSize       12
 skinparam dpi                   100
 skinparam shadowing             false
-skinparam roundcorner           8
+skinparam roundcorner           10
 skinparam ParticipantPadding    40
 skinparam BoxPadding            40
 skinparam Padding               5
-skinparam ArrowColor            $DARK
+skinparam ArrowColor            $brand_tertiary
 skinparam stereotype {
-    CBackgroundColor $SECONDARY_LIGHT
-    CBorderColor $SECONDARY_DARK
-    ABackgroundColor $SUCCESS_LIGHT
-    ABorderColor $SUCCESS_DARK
-    IBackgroundColor $DANGER_LIGHT
-    IBorderColor $DANGER_DARK
-    EBackgroundColor $WARNING_LIGHT
-    EBorderColor $WARNING_DARK
-    NBackgroundColor $INFO_LIGHT
-    NBorderColor $INFO_DARK
+    CBackgroundColor $brand_secondary_light_1
+    CBorderColor $brand_secondary_dark_1
+    ABackgroundColor $brand_success_light
+    ABorderColor $brand_success
+    IBackgroundColor $brand_error_light
+    IBorderColor $brand_error
+    EBackgroundColor $brand_warning_light
+    EBorderColor $brand_warning
+    NBackgroundColor $brand_info_light
+    NBorderColor $brand_info
 }
 skinparam title {
-	FontColor	                 $PRIMARY_DARK
-	BorderColor	                 $SECONDARY_DARK
+	FontColor	                 $brand_secondary_dark_1
+	BorderColor	                 $brand_secondary_dark_1
 	FontSize	    	         20
 	BorderRoundCorner            8
 	BorderThickness 	         1
-	BackgroundColor              $SECONDARY_LIGHT-$SECONDARY
+	BackgroundColor              $brand_secondary
 }
 
 skinparam legend {
-	BackgroundColor $SECONDARY
-	BorderColor $SECONDARY_DARK
-	FontColor $LIGHT
+	BackgroundColor $brand_secondary
+	BorderColor $brand_secondary_dark_1
+	FontColor $brand_primary_light
 }
 
 !startsub swimlane
 skinparam swimlane {
-	BorderColor $INFO
+	BorderColor $brand_info
 	BorderThickness 2
-	TitleBackgroundColor  $SECONDARY_LIGHT-$SECONDARY
-	TitleFontColor $PRIMARY
+	TitleBackgroundColor $brand_secondary
+	TitleFontColor $brand_primary
 }
 !endsub
 
@@ -138,13 +137,13 @@ skinparam swimlane {
 
 skinparam activity {
 	$primary_scheme()
-	BarColor $SUCCESS
-	StartColor $INFO
-	EndColor $INFO
+	BarColor $brand_success
+	StartColor $brand_info
+	EndColor $brand_info
 	''
-	DiamondBackgroundColor $SECONDARY_LIGHT
-  	DiamondBorderColor $SECONDARY_DARK
-  	DiamondFontColor $SECONDARY_TEXT
+	DiamondBackgroundColor $brand_secondary_light_1
+  	DiamondBorderColor $brand_secondary_dark_1
+  	DiamondFontColor $secondary_text
 }
 !endsub
 
@@ -167,54 +166,59 @@ skinparam actor {
 
 skinparam arrow {
 	Thickness 3
-	Color $PRIMARY
-	FontColor $FGCOLOR
+	Color $brand_primary
+	FontColor $primary_text
 }
 !endsub
 
 !startsub sequence
 
 skinparam sequence {
-	BorderColor $PRIMARY
+	BorderColor $brand_primary
 	' For some reason sequence title font color does not pick up from global
-	TitleFontColor $PRIMARY
-	BackgroundColor $BGCOLOR
-	StartColor $PRIMARY
-	EndColor $PRIMARY
+	TitleFontColor $brand_primary
+	BackgroundColor $brand_primary_light_2
+	StartColor $brand_primary
+	EndColor $brand_primary
 	''
-	BoxBackgroundColor $BGCOLOR
-	BoxBorderColor $DARK
-	BoxFontColor $DARk
+	BoxBackgroundColor $brand_primary_light_2
+	BoxBorderColor $brand_secondary_dark_1
+	BoxFontColor $brand_secondary_dark_1
 	''
-	LifeLineBorderColor $SECONDARY
+	DelayFontColor $brand_secondary_dark_1
+	''
+	LifeLineBorderColor $brand_primary_light_2
 	LifeLineBorderThickness 2
-	LifeLineBackgroundColor $SECONDARY_DARK
+	LifeLineBackgroundColor $brand_primary_light
 	''
-	GroupBorderColor $DARK
-	GroupFontColor $DARK
-	GroupHeaderFontColor $INFO
-	GroupBackgroundColor $SECONDARY
-	GroupHeaderBackgroundColor $BGCOLOR
+	GroupBorderColor $brand_secondary_dark_1
+	GroupFontColor $brand_secondary_dark_1
+	GroupHeaderFontColor $brand_info
+	GroupBackgroundColor $brand_primary_light
+	GroupBodyBackgroundColor $brand_primary_light_2
+	GroupHeaderBackgroundColor $brand_primary_light_2
 	''
-	DividerBackgroundColor $DARK
-    DividerBorderColor $DARK
+	DividerBackgroundColor $brand_secondary_dark_1
+    DividerBorderColor $brand_secondary_dark_1
     DividerBorderThickness 2
-    DividerFontColor $LIGHT
+    DividerFontColor $brand_primary_light
 	''
-	ReferenceBackgroundColor $BGCOLOR
-	ReferenceBorderColor $DARK
-	ReferenceFontColor $DARK
-	ReferenceHeaderFontColor $INFO
-	ReferenceHeaderBackgroundColor $SECONDARY
+	ReferenceBackgroundColor $brand_primary_light_2
+	ReferenceBorderColor $brand_secondary_dark_1
+	ReferenceFontColor $brand_secondary_dark_1
+	ReferenceHeaderFontColor $brand_info
+	ReferenceHeaderBackgroundColor $brand_secondary
+	''
+	StereotypeFontColor $primary_text
 }
 !endsub
 
 !startsub partition
 
 skinparam partition {
-	BorderColor $PRIMARY
-	FontColor $PRIMARY
-	BackgroundColor $BGCOLOR
+	BorderColor $brand_primary
+	FontColor $brand_primary
+	BackgroundColor $brand_primary_light_2
 }
 !endsub
 
@@ -249,9 +253,9 @@ skinparam boundary {
 !startsub agent
 
 skinparam agent {
-	BackgroundColor $WARNING
-	BorderColor $WARNING_LIGHT
-	FontColor $DARK
+	BackgroundColor $brand_warning
+	BorderColor $brand_warning_light
+	FontColor $brand_secondary_dark_1
 }
 !endsub
 
@@ -259,8 +263,8 @@ skinparam agent {
 
 skinparam note {
 	BorderThickness 1
-	BackgroundColor $INFO
-	BorderColor $INFO_DARK
+	BackgroundColor $brand_info
+	BorderColor $brand_info
 	FontColor $WHITE
 }
 !endsub
@@ -268,9 +272,9 @@ skinparam note {
 !startsub artifact
 
 skinparam artifact {
-	BackgroundColor $DARK
-	BorderColor $DARK_DARK
-	FontColor $LIGHT
+	BackgroundColor $brand_secondary_dark_1
+	BorderColor $brand_secondary_dark_2
+	FontColor $brand_primary_light
 }
 !endsub
 
@@ -284,36 +288,36 @@ skinparam component {
 !startsub interface
 
 skinparam interface {
-	BackgroundColor  $DANGER_DARK
-	BorderColor  $DANGER
-	FontColor $DARK
+	BackgroundColor  $brand_error
+	BorderColor  $brand_error
+	FontColor $brand_secondary_dark_1
 }
 !endsub
 
 !startsub storage
 
 skinparam storage {
-	BackgroundColor $WARNING
-  	BorderColor $WARNING_DARK
-	FontColor $WARNING_TEXT
+	BackgroundColor $brand_warning
+  	BorderColor $brand_warning
+	FontColor $warning_text
 }
 !endsub
 
 !startsub node
 
 skinparam node {
-	BackgroundColor  $SECONDARY
-	BorderColor $LIGHT
-	FontColor $LIGHT
+	BackgroundColor  $brand_secondary
+	BorderColor $brand_primary_light
+	FontColor $brand_primary_light
 }
 !endsub
 
 !startsub cloud
 
 skinparam cloud {
-	BackgroundColor #F2FCFE-#eeeeee
+	BackgroundColor transparent
 	BorderColor #F2FCFE
-	FontColor $DARK
+	FontColor $brand_secondary_dark_1
 }
 !endsub
 
@@ -328,10 +332,10 @@ skinparam database {
 
 skinparam class {
 	$primary_scheme()
-	HeaderBackgroundColor $PRIMARY_LIGHT
-	StereotypeFontColor $DARK
+	HeaderBackgroundColor $brand_primary_light
+	StereotypeFontColor $brand_secondary_dark_1
 	BorderThickness 1
-	AttributeFontColor $DARK
+	AttributeFontColor $brand_secondary_dark_1
 	AttributeFontSize 11
 }
 !endsub
@@ -340,9 +344,9 @@ skinparam class {
 
 skinparam object {
 	$primary_scheme()
-	StereotypeFontColor $DARK
+	StereotypeFontColor $brand_secondary_dark_1
 	BorderThickness 1
-	AttributeFontColor $SECONDARY_TEXT
+	AttributeFontColor $secondary_text
 	AttributeFontSize 11
 }
 !endsub
@@ -352,7 +356,7 @@ skinparam object {
 skinparam usecase {
 	$primary_scheme()
 	BorderThickness 2
-	StereotypeFontColor $PRIMARY
+	StereotypeFontColor $brand_primary
 }
 !endsub
 
@@ -360,18 +364,18 @@ skinparam usecase {
 
 skinparam rectangle {
 	$primary_scheme()
-	BackgroundColor $SECONDARY_LIGHT
+	BackgroundColor $brand_secondary_light_1
 	BorderThickness 2
-	StereotypeFontColor $PRIMARY
+	StereotypeFontColor $brand_primary
 }
 !endsub
 
 !startsub package
 
 skinparam package {
-	BackgroundColor $SECONDARY
-  	BorderColor $PRIMARY
-	FontColor $PRIMARY
+	BackgroundColor $brand_secondary
+  	BorderColor $brand_primary
+	FontColor $brand_primary
 	BorderThickness 2
 }
 !endsub
@@ -379,9 +383,9 @@ skinparam package {
 !startsub folder
 
 skinparam folder {
-	BackgroundColor $SECONDARY_LIGHT
-  	BorderColor $WARNING
-	FontColor $WARNING
+	BackgroundColor $brand_secondary_light_1
+  	BorderColor $brand_warning
+	FontColor $brand_warning
 	BorderThickness 2
 }
 !endsub
@@ -389,9 +393,9 @@ skinparam folder {
 !startsub frame
 
 skinparam frame {
-	BackgroundColor $SECONDARY_LIGHT
-  	BorderColor $INFO
-	FontColor $INFO
+	BackgroundColor $brand_secondary_light_1
+  	BorderColor $brand_info
+	FontColor $brand_info
 	BorderThickness 2
 }
 !endsub
@@ -400,9 +404,9 @@ skinparam frame {
 
 skinparam state {
 	$primary_scheme()
-	StartColor $INFO
-	EndColor $INFO
-	AttributeFontColor $SECONDARY_TEXT
+	StartColor $brand_info
+	EndColor $brand_info
+	AttributeFontColor $secondary_text
 	AttributeFontSize 11
 }
 !endsub
@@ -417,18 +421,18 @@ skinparam queue {
 !startsub card
 
 skinparam card {
-	BackgroundColor $INFO
-	BorderColor $INFO_DARK
-	FontColor $INFO_TEXT
+	BackgroundColor $brand_info
+	BorderColor $brand_info
+	FontColor $info_text
 }
 !endsub
 
 !startsub file
 
 skinparam file {
-	BackgroundColor $SECONDARY_DARK
-	BorderColor $LIGHT
-	FontColor $LIGHT
+	BackgroundColor $brand_secondary_dark_1
+	BorderColor $brand_primary_light
+	FontColor $brand_primary_light
 }
 !endsub
 

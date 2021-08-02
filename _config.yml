@@ -30,6 +30,10 @@ kramdown:
     block:
       line_numbers: true
       start_line: 1
+  plantuml:
+    theme:
+      name: swedbankpay
+      directory: assets
 tipue_search:
   include:
     pages: true
