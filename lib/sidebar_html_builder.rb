@@ -1,5 +1,6 @@
 # frozen_string_literal: false
 
+require_relative 'sidebar_logger'
 require_relative 'sidebar_page'
 
 module SwedbankPay
@@ -27,10 +28,10 @@ module SwedbankPay
         current_page_name = current_page.respond_to?(:name) ? current_page.name : current_page.to_s
 
         if page.hidden_for?(current_page)
-          Jekyll.logger.debug("           Sidebar: #{page.name} is hidden for #{current_page_name}")
+          SidebarLogger.debug("#{page.name} is hidden for #{current_page_name}")
           next
         elsif page.hidden?
-          Jekyll.logger.debug("           Sidebar: Hidden page #{page.name} is not hidden for #{current_page_name}")
+          SidebarLogger.debug("Hidden page #{page.name} is not hidden for #{current_page_name}")
         end
 
         sub_items_markup = sub_items_markup(page, current_page)

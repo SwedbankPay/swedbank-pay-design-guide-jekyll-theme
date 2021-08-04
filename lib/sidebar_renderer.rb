@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative 'sidebar_logger'
 require_relative 'sidebar_html_builder'
 
 module SwedbankPay
@@ -31,12 +32,12 @@ module SwedbankPay
         name = page.filename || page.name || page.to_s
 
         if sidebar_html.nil?
-          Jekyll.logger.warn("           Sidebar: No HTML rendered for #{name}.")
+          SidebarLogger.warn("No HTML rendered for #{name}.")
           next
         end
 
         if page.sidebar_container.nil?
-          Jekyll.logger.warn("           Sidebar: No sidebar container found in '#{name}'. #{page.filename}")
+          SidebarLogger.warn("No sidebar container found in '#{name}'. #{page.filename}")
           next
         end
 
@@ -57,8 +58,8 @@ module SwedbankPay
         File.open('_site/sidebar.html', 'w') { |f| f.write(sidebar_html) }
       rescue StandardError => e
         name = page.filename || page.name || page.to_s
-        Jekyll.logger.error("           Sidebar: Unable to render sidebar for '#{name}'.")
-        Jekyll.logger.debug("           Sidebar: #{e.message}. #{e.backtrace.inspect}")
+        SidebarLogger.error("Unable to render sidebar for '#{name}'.")
+        SidebarLogger.debug("#{e.message}. #{e.backtrace.inspect}")
       end
 
       sidebar_html

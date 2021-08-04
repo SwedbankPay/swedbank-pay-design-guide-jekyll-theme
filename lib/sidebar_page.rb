@@ -2,6 +2,7 @@
 
 require 'jekyll'
 require 'nokogiri'
+require_relative 'sidebar_logger'
 require_relative 'sidebar_path'
 require_relative 'sidebar_page_title'
 require_relative 'sidebar_page_collection'
@@ -68,7 +69,7 @@ module SwedbankPay
       hidden = hidden?
 
       if other_page.nil? || !other_page.is_a?(SidebarPage)
-        Jekyll.logger.debug("           Sidebar: Other page '#{other_page}' is nil or not a SidebarPage")
+        SidebarLogger.debug("Other page '#{other_page}' is nil or not a SidebarPage")
         return hidden
       end
 
@@ -107,11 +108,11 @@ module SwedbankPay
 
     def enrich_jekyll
       if @title.nil?
-        Jekyll.logger.debug("           Sidebar: No title for #{@name}")
+        SidebarLogger.debug("No title for #{@name}")
         return
       end
 
-      Jekyll.logger.debug("           Sidebar: <#{@path}>.lead_title('#{@title.lead}').main_title('#{@title.main}')")
+      SidebarLogger.debug("<#{@path}>.lead_title('#{@title.lead}').main_title('#{@title.main}')")
 
       @jekyll_page.data['lead_title'] = @title.lead
       @jekyll_page.data['main_title'] = @title.main
@@ -120,7 +121,7 @@ module SwedbankPay
     end
 
     def save
-      Jekyll.logger.debug("   Writing Sidebar: #{filename}")
+      SidebarLogger.debug("   Writing Sidebar: #{filename}")
 
       File.open(@filename, 'w') do |file|
         html = @doc.to_html(encoding: 'UTF-8')
@@ -179,14 +180,14 @@ module SwedbankPay
 
     def find_path(current)
       if current.nil?
-        Jekyll.logger.warn('           Sidebar: Nil current_page')
+        SidebarLogger.warn('Nil current_page')
         return ''
       end
 
       return current if current.is_a? String
       return current.path if current.respond_to?(:path)
 
-      Jekyll.logger.warn("           Sidebar: #{current.class} ('#{current}') does not respond to :path.")
+      SidebarLogger.warn("#{current.class} ('#{current}') does not respond to :path.")
 
       ''
     end
