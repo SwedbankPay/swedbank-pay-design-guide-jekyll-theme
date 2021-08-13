@@ -66,7 +66,7 @@
     "remark-lint-table-cell-padding": "^3.0.0",
     "remark-lint-table-pipe-alignment": "^2.0.0",
     "remark-lint-table-pipes": "^3.0.0",
-    "remark-lint-unordered-list-marker-style": "^2.0.0",
+    "remark-lint-unordered-list-marker-style": "^3.0.0",
     "remark-lint-write-good": "^1.2.0",
     "remark-preset-lint-consistent": "^5.0.0",
     "remark-preset-lint-markdown-style-guide": "^5.0.0",
