@@ -18,14 +18,14 @@ app -> client
 ## Sequence Diagrams
 
 ```plantuml
-@startuml
+@startuml "Sequence"
     actor Payer
     participant Merchant
     participant SwedbankPay as "Swedbank Pay"
     participant 3rdParty as "3rd Party"
 
-    box "Checkin" #LightBlue
-        Payer --> Merchant: Start Checkin!
+    group Checkin
+        Payer --> Merchant: Start Checkin
         activate Payer
             activate Merchant
                 Merchant --> SwedbankPay: POST /psp/consumers
@@ -43,9 +43,9 @@ app -> client
         deactivate SwedbankPay
         activate Merchant
         deactivate Merchant
-    end box
+    end group
 
-    box "Payment Menu" #LightBlue
+    group Payment Menu
         Payer -> Merchant: Initiate Purchase
         deactivate Payer
         Merchant -> SwedbankPay: POST /psp/paymentorders (paymentUrl, consumerProfileRef)
@@ -92,8 +92,7 @@ app -> client
             SwedbankPay -->> Merchant: Payment Details
             deactivate SwedbankPay
         end
-
-    end box
+    end group
 
     opt If payment is failed
         activate Payer
@@ -123,13 +122,17 @@ app -> client
             SwedbankPay ->> Merchant: POST Payment Callback
     end
 
-    box
+    group Capture
+        note right of Payer: Capture here only if the purchased goods don't require shipping. If shipping is required, perform capture\nafter the goods have shipped. Should only be used for PaymentInstruments that support Authorizations.
+        Merchant -> Merchant: Capture
         activate Merchant
-        note left of Payer: Capture
-        Merchant -> SwedbankPay: rel:create-paymentorder-capture
+            Merchant -> SwedbankPay: GET {paymentorder.id}
+            activate SwedbankPay
+                SwedbankPay --> Merchant: paymentorder
+                Merchant -> SwedbankPay: rel:create-paymentorder-capture
+                SwedbankPay --> Merchant: Capture status
+            deactivate SwedbankPay
         deactivate Merchant
-        SwedbankPay --> Merchant: Capture status
-        note right of Merchant: Capture here only if the purchased\ngoods don't require shipping.\nIf shipping is required, perform capture\nafter the goods have shipped.\nShould only be used for \nPaymentInstruments that support \nAuthorizations.
-    end box
+    end group
 @enduml
 ```

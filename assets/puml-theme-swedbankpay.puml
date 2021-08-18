@@ -1,10 +1,10 @@
 ''
-'' swedbankpay theme based off of https://design.swedbankpay.com
+'' swedbankpay theme based on https://design.swedbankpay.com
 ''
 '' Author = "Asbjørn Ulsberg"
 '' Copyright (c) 2021 Swedbank Pay
 
-!$THEME = "swedbankpay"
+!$theme = "swedbankpay"
 
 skinparam backgroundColor "transparent"
 skinparam useBetaStyle false
@@ -19,6 +19,10 @@ skinparam useBetaStyle false
 !$medium_brown = "#72605e"
 !$soft_brown = "#a38b80"
 !$light_brown = "#d4c4bc"
+!$orange = "#f35b1c"
+!$peach = "#fbf2ea"
+!$cyan = "#257886"
+!$light_cyan = "#ebf8f2"
 
 !$brand_primary = "#fdc129"
 !$brand_primary_light = "#ffcc00"
@@ -36,12 +40,12 @@ skinparam useBetaStyle false
 !$brand_secondary_info_2 = "#efb7b6"
 !$brand_tertiary = "#ee7023"
 !$brand_accent = "#31a3ae"
-!$brand_accent_links = "#257886"
+!$brand_accent_links = $cyan
 !$brand_accent_disabled = "#98d0d6"
 
 ' Background Colors
-!$brand_bg_1 = "#fbf2ea"
-!$brand_bg_2 = "#ebf8f2"
+!$brand_bg_1 = $peach
+!$brand_bg_2 = $light_cyan
 !$brand_bg_3 = "#fbedf4"
 !$brand_bg_4 = "#e9f7fb"
 !$brand_bg_gray = "#ebe7e2"
@@ -60,7 +64,7 @@ skinparam useBetaStyle false
 !$brand_info = "#3e6ab6"
 !$brand_info_light = "#e8eff9"
 
-!$primary_text = $text_gray
+!$primary_text = $solid_brown
 !$secondary_text = $black
 !$info_text = $black
 !$success_text = $white
@@ -92,14 +96,14 @@ skinparam defaultFontName       "Arial"
 skinparam defaultFontSize       12
 skinparam dpi                   100
 skinparam shadowing             false
-skinparam roundcorner           10
+skinparam roundcorner           20
 skinparam ParticipantPadding    40
 skinparam BoxPadding            40
 skinparam Padding               5
-skinparam ArrowColor            $brand_tertiary
+skinparam ArrowColor            $orange
 skinparam stereotype {
     CBackgroundColor $brand_secondary_light_1
-    CBorderColor $brand_secondary_dark_1
+    CBorderColor $orange
     ABackgroundColor $brand_success_light
     ABorderColor $brand_success
     IBackgroundColor $brand_error_light
@@ -121,7 +125,7 @@ skinparam title {
 skinparam legend {
 	BackgroundColor $brand_secondary
 	BorderColor $brand_secondary_dark_1
-	FontColor $brand_primary_light
+	FontColor $primary_text
 }
 
 !startsub swimlane
@@ -129,7 +133,7 @@ skinparam swimlane {
 	BorderColor $brand_info
 	BorderThickness 2
 	TitleBackgroundColor $brand_secondary
-	TitleFontColor $brand_primary
+	TitleFontColor $primary_text
 }
 !endsub
 
@@ -143,97 +147,97 @@ skinparam activity {
 	''
 	DiamondBackgroundColor $brand_secondary_light_1
   	DiamondBorderColor $brand_secondary_dark_1
-  	DiamondFontColor $secondary_text
+  	DiamondFontColor $primary_text
 }
 !endsub
 
 !startsub participant
+    skinparam participant {
+        $primary_scheme()
+        BorderThickness 1
+        BorderColor $orange
+        BackgroundColor $white
 
-skinparam participant {
-	$primary_scheme()
-	ParticipantBorderThickness 2
-}
+        ParticipantBorderThickness 2
+    }
 !endsub
 
 !startsub actor
-
-skinparam actor {
-	$primary_scheme()
-}
+    skinparam actor {
+        $primary_scheme()
+    }
 !endsub
 
 !startsub arrow
-
-skinparam arrow {
-	Thickness 3
-	Color $brand_primary
-	FontColor $primary_text
-}
+    skinparam arrow {
+        Thickness 1
+        Color $orange
+        FontColor $primary_text
+    }
 !endsub
 
 !startsub sequence
-
-skinparam sequence {
-	BorderColor $brand_primary
-	' For some reason sequence title font color does not pick up from global
-	TitleFontColor $brand_primary
-	BackgroundColor $brand_primary_light_2
-	StartColor $brand_primary
-	EndColor $brand_primary
-	''
-	BoxBackgroundColor $brand_primary_light_2
-	BoxBorderColor $brand_secondary_dark_1
-	BoxFontColor $brand_secondary_dark_1
-	''
-	DelayFontColor $brand_secondary_dark_1
-	''
-	LifeLineBorderColor $brand_primary_light_2
-	LifeLineBorderThickness 2
-	LifeLineBackgroundColor $brand_primary_light
-	''
-	GroupBorderColor $brand_secondary_dark_1
-	GroupFontColor $brand_secondary_dark_1
-	GroupHeaderFontColor $brand_info
-	GroupBackgroundColor $brand_primary_light
-	GroupBodyBackgroundColor $brand_primary_light_2
-	GroupHeaderBackgroundColor $brand_primary_light_2
-	''
-	DividerBackgroundColor $brand_secondary_dark_1
-    DividerBorderColor $brand_secondary_dark_1
-    DividerBorderThickness 2
-    DividerFontColor $brand_primary_light
-	''
-	ReferenceBackgroundColor $brand_primary_light_2
-	ReferenceBorderColor $brand_secondary_dark_1
-	ReferenceFontColor $brand_secondary_dark_1
-	ReferenceHeaderFontColor $brand_info
-	ReferenceHeaderBackgroundColor $brand_secondary
-	''
-	StereotypeFontColor $primary_text
-}
+    skinparam sequence {
+        BorderColor $orange
+        ' For some reason sequence title font color does not pick up from global
+        TitleFontColor $primary_text
+        BackgroundColor $brand_bg_1
+        StartColor $orange
+        EndColor $orange
+        ''
+        BoxBackgroundColor $brand_bg_1
+        BoxBorderColor $brand_secondary_dark_1
+        BoxFontColor $primary_text
+        ''
+        DelayFontColor $primary_text
+        ''
+        LifeLineBorderColor $orange
+        LifeLineBorderThickness 1
+        LifeLineBorderRoundCorner 20
+        LifeLineBackgroundColor $white
+        ''
+        GroupBorderThickness 1
+        GroupBorderColor $orange
+        GroupFontColor $primary_text
+        GroupHeaderFontColor $primary_text
+        GroupBackgroundColor $white
+        GroupBodyBackgroundColor $peach
+        GroupHeaderBackgroundColor $brand_primary_light_2
+        ''
+        DividerBackgroundColor $brand_secondary_dark_1
+        DividerBorderColor $brand_secondary_dark_1
+        DividerBorderThickness 2
+        DividerFontColor $primary_text
+        ''
+        ReferenceBackgroundColor $brand_primary_light_2
+        ReferenceBorderColor $brand_secondary_dark_1
+        ReferenceFontColor $primary_text
+        ReferenceHeaderFontColor $primary_text
+        ReferenceHeaderBackgroundColor $brand_secondary
+        ''
+        StereotypeFontColor $primary_text
+    }
 !endsub
 
 !startsub partition
 
 skinparam partition {
 	BorderColor $brand_primary
-	FontColor $brand_primary
+	FontColor $primary_text
 	BackgroundColor $brand_primary_light_2
 }
 !endsub
 
 !startsub collections
-
-skinparam collections {
-	$primary_scheme()
-}
+    skinparam collections {
+        $primary_scheme()
+    }
 !endsub
 
 !startsub control
-
-skinparam control {
-	$primary_scheme()
-}
+    skinparam control {
+        $primary_scheme()
+    }
 !endsub
 
 !startsub entity
@@ -244,29 +248,25 @@ skinparam entity {
 !endsub
 
 !startsub boundary
-
-skinparam boundary {
-	$primary_scheme()
-}
+    skinparam boundary {
+        $primary_scheme()
+    }
 !endsub
 
 !startsub agent
-
-skinparam agent {
-	BackgroundColor $brand_warning
-	BorderColor $brand_warning_light
-	FontColor $brand_secondary_dark_1
-}
+    skinparam agent {
+        BackgroundColor $brand_warning
+        BorderColor $brand_warning_light
+        FontColor $primary_text
+    }
 !endsub
 
 !startsub note
-
-skinparam note {
-	BorderThickness 1
-	BackgroundColor $brand_info
-	BorderColor $brand_info
-	FontColor $WHITE
-}
+    skinparam note {
+        BorderThickness 1
+        BackgroundColor $brand_bg_2
+        BorderColor $cyan
+    }
 !endsub
 
 !startsub artifact
@@ -274,51 +274,46 @@ skinparam note {
 skinparam artifact {
 	BackgroundColor $brand_secondary_dark_1
 	BorderColor $brand_secondary_dark_2
-	FontColor $brand_primary_light
+	FontColor $primary_text
 }
 !endsub
 
 !startsub component
-
-skinparam component {
-	$primary_scheme()
-}
+    skinparam component {
+        $primary_scheme()
+    }
 !endsub
 
 !startsub interface
-
-skinparam interface {
-	BackgroundColor  $brand_error
-	BorderColor  $brand_error
-	FontColor $brand_secondary_dark_1
-}
+    skinparam interface {
+        BackgroundColor  $brand_error
+        BorderColor  $brand_error
+        FontColor $primary_text
+    }
 !endsub
 
 !startsub storage
-
-skinparam storage {
-	BackgroundColor $brand_warning
-  	BorderColor $brand_warning
-	FontColor $warning_text
-}
+    skinparam storage {
+        BackgroundColor $brand_warning
+        BorderColor $brand_warning
+        FontColor $primary_text
+    }
 !endsub
 
 !startsub node
-
-skinparam node {
-	BackgroundColor  $brand_secondary
-	BorderColor $brand_primary_light
-	FontColor $brand_primary_light
-}
+    skinparam node {
+        BackgroundColor  $brand_secondary
+        BorderColor $brand_primary_light
+        FontColor $primary_text
+    }
 !endsub
 
 !startsub cloud
-
-skinparam cloud {
-	BackgroundColor transparent
-	BorderColor #F2FCFE
-	FontColor $brand_secondary_dark_1
-}
+    skinparam cloud {
+        BackgroundColor transparent
+        BorderColor #F2FCFE
+        FontColor $primary_text
+    }
 !endsub
 
 !startsub database
@@ -329,35 +324,32 @@ skinparam database {
 !endsub
 
 !startsub class
-
-skinparam class {
-	$primary_scheme()
-	HeaderBackgroundColor $brand_primary_light
-	StereotypeFontColor $brand_secondary_dark_1
-	BorderThickness 1
-	AttributeFontColor $brand_secondary_dark_1
-	AttributeFontSize 11
-}
+    skinparam class {
+        $primary_scheme()
+        HeaderBackgroundColor $brand_primary_light
+        StereotypeFontColor $primary_text
+        BorderThickness 1
+        AttributeFontColor $primary_text
+        AttributeFontSize 11
+    }
 !endsub
 
 !startsub object
-
-skinparam object {
-	$primary_scheme()
-	StereotypeFontColor $brand_secondary_dark_1
-	BorderThickness 1
-	AttributeFontColor $secondary_text
-	AttributeFontSize 11
-}
+    skinparam object {
+        $primary_scheme()
+        StereotypeFontColor $primary_text
+        BorderThickness 1
+        AttributeFontColor $primary_text
+        AttributeFontSize 11
+    }
 !endsub
 
 !startsub usecase
-
-skinparam usecase {
-	$primary_scheme()
-	BorderThickness 2
-	StereotypeFontColor $brand_primary
-}
+    skinparam usecase {
+        $primary_scheme()
+        BorderThickness 2
+        StereotypeFontColor $primary_text
+    }
 !endsub
 
 !startsub rectangle
@@ -366,74 +358,67 @@ skinparam rectangle {
 	$primary_scheme()
 	BackgroundColor $brand_secondary_light_1
 	BorderThickness 2
-	StereotypeFontColor $brand_primary
+	StereotypeFontColor $primary_text
 }
 !endsub
 
 !startsub package
-
-skinparam package {
-	BackgroundColor $brand_secondary
-  	BorderColor $brand_primary
-	FontColor $brand_primary
-	BorderThickness 2
-}
+    skinparam package {
+        BackgroundColor $brand_secondary
+        BorderColor $brand_primary
+        FontColor $primary_text
+        BorderThickness 2
+    }
 !endsub
 
 !startsub folder
-
-skinparam folder {
-	BackgroundColor $brand_secondary_light_1
-  	BorderColor $brand_warning
-	FontColor $brand_warning
-	BorderThickness 2
-}
+    skinparam folder {
+        BackgroundColor $brand_secondary_light_1
+        BorderColor $brand_warning
+        FontColor $primary_text
+        BorderThickness 2
+    }
 !endsub
 
 !startsub frame
-
-skinparam frame {
-	BackgroundColor $brand_secondary_light_1
-  	BorderColor $brand_info
-	FontColor $brand_info
-	BorderThickness 2
-}
+    skinparam frame {
+        BackgroundColor $brand_secondary_light_1
+        BorderColor $brand_info
+        FontColor $primary_text
+        BorderThickness 2
+    }
 !endsub
 
 !startsub state
-
-skinparam state {
-	$primary_scheme()
-	StartColor $brand_info
-	EndColor $brand_info
-	AttributeFontColor $secondary_text
-	AttributeFontSize 11
-}
+    skinparam state {
+        $primary_scheme()
+        StartColor $brand_info
+        EndColor $brand_info
+        AttributeFontColor $primary_text
+        AttributeFontSize 11
+    }
 !endsub
 
 !startsub queue
-
-skinparam queue {
-	$primary_scheme()
-}
+    skinparam queue {
+        $primary_scheme()
+    }
 !endsub
 
 !startsub card
-
-skinparam card {
-	BackgroundColor $brand_info
-	BorderColor $brand_info
-	FontColor $info_text
-}
+    skinparam card {
+        BackgroundColor $brand_info
+        BorderColor $brand_info
+        FontColor $primary_text
+    }
 !endsub
 
 !startsub file
-
-skinparam file {
-	BackgroundColor $brand_secondary_dark_1
-	BorderColor $brand_primary_light
-	FontColor $brand_primary_light
-}
+    skinparam file {
+        BackgroundColor $brand_secondary_dark_1
+        BorderColor $brand_primary_light
+        FontColor $primary_text
+    }
 !endsub
 
 !startsub stack
