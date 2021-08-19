@@ -20,6 +20,7 @@ skinparam useBetaStyle false
 !$soft_brown = "#a38b80"
 !$light_brown = "#d4c4bc"
 !$orange = "#f35b1c"
+!$light_orange = "#f5b895"
 !$peach = "#fbf2ea"
 !$cyan = "#257886"
 !$light_cyan = "#ebf8f2"
@@ -83,23 +84,59 @@ skinparam useBetaStyle false
   <font color=$brand_warning><b>$msg
 !endprocedure
 
+!procedure $code($msg)
+  <font:monospaced>$msg</font>
+!endprocedure
+
+!procedure $participant($sprite, $title)
+    participant "<$$sprite,color=$light_orange>\n\n$title"
+!endprocedure
+
 !procedure $primary_scheme()
 	FontColor $primary_text
 	BorderColor $brand_primary
 	BackgroundColor $brand_primary_light
 !endprocedure
 
+sprite $payer [75x79/4z] {
+xT85bWCn30JHxjBzpxmCyeGC2gV2CF-PT9uC4NpT0Y82088WVmpu_Zc8tp-3cbXAAJyW5NT2lQWNzQ9U5FT0EGVO1d17BRM5-NsrJjPUV126GSfiO4zJj1Ha
+TOW2-m2bCSeWaygNqrL2YoXm4MNGbj8S1LgcudTwErHCKSOg6XMeW299BUKbIakKazHUeq7AIbHkGraIM2Vgf0mw5UwYGCDKxAN07HIxdurRog0PoZBA0MY2
+4eWTokh8UCVQfQIfONcNKb-xez-XB4qEIxYCaYOfGnMbGied_Wkg6fO7B4uDgtArAADycyE2ilFW6pscLdTmYvJW5YdZAafGHXbNKO92obMKu1OfuofAK40L
+z0u
+}
+
+sprite $merchant [75x62/4z] {
+xPG7TiCm3CM8h_kVEJkXPPggdjZT8c-PYE4j-nZG6eHI64u1aaAfS3MxRLk6SieHoVNLKrAx_feYxKegf9XoSEP4cY8J2YBEgQLQc2-auXuj4yobbCwdK_4A
+MKYrOq5oYFaB98pZ3jycnLIAGqCzrRB_Es8k9GvJuaLkK9QgyqpXzVugPbLoLjWBJQjq74HG117dcEJZNj6fuzFjPZmCKgOKLJXVjcKwPMFbI8Xj6dnZh48A
+M-KdfHXz5ueCKqWHxYdsBAIqbD8efPw_aVfF_QTQCSKLUu0LKcQ0EQmlCcQIXYcGD7LM7J657fHJ21uH6p6HyeAki9wIUzrPJ-6b1-KKUa8r9USRfEujU3k5
+Y9DD2abrdcdgN3jd
+}
+
+sprite $server [75x98/4z] {
+xPS5hkH050FjyltFl3JGcWo_UALF9GXNcgsMH0D9CXqiWHg0X5K16xLKud2IELoe4kOa5ohs4A-sSjZ7AXMqLNAkZYDLJcqcwNJjdcfQmVZgE53rUj2zSQLz
+gelHxlm3ai3X40wd0AUhq_MwI18lrJ_PdF-oo5WDZ0HsmuGaEXoC3LJb8qOg7pHIrOzKCeMF6gdghgAF8pNZIFMfekluGIBrIlaIkOfKiccY37BmeqMgsf6g
+F0Bo4FLpiAcY6AbOtWlTI2s5gkhuPvVwgaeLl5JE56zKP7VlgR45uA1IGPLhrLQOiSgR8r86gglyMyUHwbgPcOeGheu3LQq7QOmheztnx8k9Op85QwaAT5NT
+LHJi3nQfBm6em1TI_QX-L3yg3lHCqAgTmGNJfBsuYH_j4uggUWLVTvLCgsPgkQmEhtb-0m
+}
+
+sprite $3rdparty [75x67/4z] {
+xPO7biCW34JvtF_EszS3cIU7bqbFj7LawGSBKTg20RHpMF-pcCOlHgo8n8PCISEBajLf4j6WcC0aA1jZ-7xdHt7MKPslLYJDW86ZRj3_wLgsnWzO0686hCrQ
+RfndkyhBv3rnVwYJQzuNBIV9LcOBPlj9T1yh-uhZAG8pb9mdT6Cld1nV8-xqj2xdwlL0pedkJg-9LU77LpZhSGsxd3cdD3fwMABeZ17IuakBwU_trmnJ5dyl
+Ve3gXif7TVvQvJDu_hxAk_tyQ_3yEyFvzwlz3TETyc6V6vXDU61MZ79sBDgIwn8YhUPUaZuRXjeZ4w7Q6nMKFM-66YMDzQH9p_ORiFJmV5-oDJxyA8q9HHUI
+PjdqhW9Cvm9-JEYlIJQV7WgfF_AxLBI4KXKiSfCSuZR9XDBdADZaZ690SNHKCueQjL0h5cjrnXayNr-ThzkbxLHSbih-1
+}
+
 ''
 '' Global Default Values
 ''
 skinparam defaultFontName       "Arial"
-skinparam defaultFontSize       12
+skinparam defaultFontSize       14
 skinparam dpi                   100
 skinparam shadowing             false
 skinparam roundcorner           20
 skinparam ParticipantPadding    40
 skinparam BoxPadding            40
-skinparam Padding               5
+skinparam Padding               8
 skinparam ArrowColor            $orange
 skinparam stereotype {
     CBackgroundColor $brand_secondary_light_1
@@ -114,12 +151,12 @@ skinparam stereotype {
     NBorderColor $brand_info
 }
 skinparam title {
-	FontColor	                 $brand_secondary_dark_1
-	BorderColor	                 $brand_secondary_dark_1
+	FontColor	                 $primary_text
+	BorderColor	                 $orange
 	FontSize	    	         20
 	BorderRoundCorner            8
 	BorderThickness 	         1
-	BackgroundColor              $brand_secondary
+	BackgroundColor              $peach
 }
 
 skinparam legend {
@@ -154,8 +191,7 @@ skinparam activity {
 !startsub participant
     skinparam participant {
         $primary_scheme()
-        BorderThickness 1
-        BorderColor $orange
+        BorderThickness 0
         BackgroundColor $white
 
         ParticipantBorderThickness 2
@@ -165,6 +201,8 @@ skinparam activity {
 !startsub actor
     skinparam actor {
         $primary_scheme()
+        BackgroundColor $peach
+        BorderColor $orange
     }
 !endsub
 
@@ -181,7 +219,7 @@ skinparam activity {
         BorderColor $orange
         ' For some reason sequence title font color does not pick up from global
         TitleFontColor $primary_text
-        BackgroundColor $brand_bg_1
+        BackgroundColor $peach
         StartColor $orange
         EndColor $orange
         ''
@@ -200,6 +238,7 @@ skinparam activity {
         GroupBorderColor $orange
         GroupFontColor $primary_text
         GroupHeaderFontColor $primary_text
+        GroupHeaderFontWeight 1
         GroupBackgroundColor $white
         GroupBodyBackgroundColor $peach
         GroupHeaderBackgroundColor $brand_primary_light_2

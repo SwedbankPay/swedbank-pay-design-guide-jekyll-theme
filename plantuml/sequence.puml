@@ -1,17 +1,19 @@
 @startuml "Sequence"
     !theme swedbankpay from ../assets/
-    actor Payer
-    participant Merchant
-    participant SwedbankPay as "Swedbank Pay"
-    participant 3rdParty as "3rd Party"
+
+    title "Checkout Sequence"
+    $participant("payer", "Payer") as Payer
+    $participant("merchant", "Merchant") as Merchant
+    $participant("server", "Swedbank Pay") as SwedbankPay
+    $participant("3rdparty", "3rd Party") as 3rdParty
 
     group Checkin
         Payer --> Merchant: Start Checkin
         activate Payer
             activate Merchant
-                Merchant --> SwedbankPay: POST /psp/consumers
+                Merchant --> SwedbankPay: $code("POST /psp/consumers")
                 activate SwedbankPay
-                    SwedbankPay --> Merchant: rel:view-consumer-identification ①
+                    SwedbankPay --> Merchant: $code("rel:view-consumer-identification") ①
                 deactivate SwedbankPay
                 Merchant --> Payer: Show Checkin on Merchant Page
             deactivate Merchant
@@ -20,7 +22,7 @@
         deactivate Payer
 
         activate SwedbankPay
-            SwedbankPay ->> Merchant: EVENT: onConsumerIdentified (consumerProfileRef) ④
+            SwedbankPay ->> Merchant: $code("onConsumerIdentified(consumerProfileRef)") ④
         deactivate SwedbankPay
         activate Merchant
         deactivate Merchant
