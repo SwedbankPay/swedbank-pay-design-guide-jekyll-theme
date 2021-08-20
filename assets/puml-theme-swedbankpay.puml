@@ -6,9 +6,6 @@
 
 !$theme = "swedbankpay"
 
-skinparam backgroundColor "transparent"
-skinparam useBetaStyle false
-
 !$black = "#222222"
 !$text_gray = "#767676"
 !$list_gray = "#999999"
@@ -29,7 +26,6 @@ skinparam useBetaStyle false
 !$brand_primary_light = "#ffcc00"
 !$brand_primary_light_2 = "#ffdf88"
 !$brand_primary_light_3 = "#fff3d5"
-!$brand_primary_faded = "fade(@brand_primary, 60%)"
 !$brand_secondary_dark_1 = $dark_brown
 !$brand_secondary_dark_2 = $solid_brown
 !$brand_secondary = "#512b2b"
@@ -72,20 +68,8 @@ skinparam useBetaStyle false
 !$warning_text = $white
 !$danger_text = $white
 
-!procedure $success($msg)
-  <font color=$brand_success><b>$msg
-!endprocedure
-
-!procedure $failure($msg)
-  <font color=$brand_error><b>$msg
-!endprocedure
-
-!procedure $warning($msg)
-  <font color=$brand_warning><b>$msg
-!endprocedure
-
 !procedure $code($msg)
-  <font:monospaced>$msg</font>
+  <font:Consolas>$msg</font>
 !endprocedure
 
 !procedure $participant($sprite, $title)
@@ -129,34 +113,38 @@ PjdqhW9Cvm9-JEYlIJQV7WgfF_AxLBI4KXKiSfCSuZR9XDBdADZaZ690SNHKCueQjL0h5cjrnXayNr-T
 ''
 '' Global Default Values
 ''
-skinparam defaultFontName       "Arial"
-skinparam defaultFontSize       14
-skinparam dpi                   100
-skinparam shadowing             false
-skinparam roundcorner           20
-skinparam ParticipantPadding    40
-skinparam BoxPadding            40
-skinparam Padding               8
-skinparam ArrowColor            $orange
+skinparam backgroundColor           "transparent"
+skinparam useBetaStyle              false
+skinparam creoleMonospacedFont      "Consolas"
+skinparam defaultMonospacedFontName "Consolas"
+skinparam defaultFontName           "Arial"
+skinparam defaultFontSize           16
+skinparam dpi                       100
+skinparam shadowing                 false
+skinparam roundcorner               20
+skinparam ParticipantPadding        40
+skinparam BoxPadding                40
+skinparam Padding                   8
+skinparam ArrowColor                $orange
 skinparam stereotype {
-    CBackgroundColor $brand_secondary_light_1
-    CBorderColor $orange
-    ABackgroundColor $brand_success_light
-    ABorderColor $brand_success
-    IBackgroundColor $brand_error_light
-    IBorderColor $brand_error
-    EBackgroundColor $brand_warning_light
-    EBorderColor $brand_warning
-    NBackgroundColor $brand_info_light
-    NBorderColor $brand_info
+    CBackgroundColor                $brand_secondary_light_1
+    CBorderColor                    $orange
+    ABackgroundColor                $brand_success_light
+    ABorderColor                    $brand_success
+    IBackgroundColor                $brand_error_light
+    IBorderColor                    $brand_error
+    EBackgroundColor                $brand_warning_light
+    EBorderColor                    $brand_warning
+    NBackgroundColor                $brand_info_light
+    NBorderColor                    $brand_info
 }
 skinparam title {
-	FontColor	                 $primary_text
-	BorderColor	                 $orange
-	FontSize	    	         20
-	BorderRoundCorner            8
-	BorderThickness 	         1
-	BackgroundColor              $peach
+	FontColor	                    $primary_text
+	BorderColor	                    $orange
+	FontSize	    	            20
+	BorderRoundCorner               8
+	BorderThickness 	            1
+	BackgroundColor                 $peach
 }
 
 skinparam legend {

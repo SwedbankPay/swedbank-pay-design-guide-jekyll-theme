@@ -28,12 +28,12 @@
         deactivate Merchant
     end group
 
-    group Payment Menu
+    group#fff #ebf8f2 Payment Menu
         Payer -> Merchant: Initiate Purchase
         deactivate Payer
-        Merchant -> SwedbankPay: POST /psp/paymentorders (paymentUrl, consumerProfileRef)
+        Merchant -> SwedbankPay: $code("POST /psp/paymentorders { paymentUrl, consumerProfileRef }")
         deactivate Merchant
-        SwedbankPay --> Merchant: rel:view-paymentorder
+        SwedbankPay --> Merchant: $code("rel:view-paymentorder")
         deactivate SwedbankPay
         Merchant --> Payer: Display Payment Menu on Merchant Page
         activate Payer
@@ -67,13 +67,14 @@
             deactivate Merchant
             SwedbankPay -> Merchant: rel: paid-paymentorder
             deactivate SwedbankPay
-            opt Get PaymentOrder Details (if paid-paymentorder operation exist)
-            activate Payer
-            deactivate Payer
-            Merchant -> SwedbankPay: GET rel: paid-paymentorder
-            deactivate Merchant
-            SwedbankPay -->> Merchant: Payment Details
-            deactivate SwedbankPay
+            opt#fff $brand_primary_light_2 Get PaymentOrder Details (if $code("paid-paymentorder") operation exist)
+                activate Merchant
+                    Merchant -> SwedbankPay: $code("GET rel:paid-paymentorder.href")
+                    activate SwedbankPay
+                        SwedbankPay -->> Merchant: Payment Details
+                    deactivate SwedbankPay
+                deactivate Merchant
+            end
         end
     end group
 
@@ -106,7 +107,13 @@
     end
 
     group Capture
-        note right of Payer: Capture here only if the purchased goods don't require shipping. If shipping is required, perform capture\nafter the goods have shipped. Should only be used for PaymentInstruments that support Authorizations.
+        note left of Merchant
+            Capture here only if the purchased goods don't require shipping.
+            If shipping is required, perform capture after the goods have
+            shipped. Should only be used for PaymentInstruments that support
+            Authorizations.
+        end note
+
         Merchant -> Merchant: Capture
         activate Merchant
             Merchant -> SwedbankPay: GET {paymentorder.id}
