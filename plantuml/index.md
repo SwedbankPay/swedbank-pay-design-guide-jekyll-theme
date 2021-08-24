@@ -6,12 +6,24 @@ description: PlantUML Diagrams
 ## Network Diagram
 
 ```plantuml
-@startuml
-actor client
-node app
-database db
-db -> app
-app -> client
+@startuml "Network"
+    actor client
+    node app
+    database db
+    queue queue
+    cloud cloud
+    usecase usecase
+    rectangle rectangle
+    package package
+    folder folder
+    frame frame
+    card card
+    file file
+
+    db -> app
+    app -> queue
+    queue -> cloud
+    cloud <- client
 @enduml
 ```
 

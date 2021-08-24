@@ -285,6 +285,7 @@ The final element.
 
 {% icon check %} {% icon line_weight %} {% icon gavel %} {% icon visibility %}
 {% icon work %} {% icon alarm_on outlined %}
+{% icon touch_app %}
 
 [internal-absolute-full-link]: {{ site.url }}
 [explicit-relative-link]: ./page1

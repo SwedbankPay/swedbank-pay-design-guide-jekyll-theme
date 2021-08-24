@@ -78,8 +78,8 @@
 
 !procedure $primary_scheme()
 	FontColor $primary_text
-	BorderColor $brand_primary
-	BackgroundColor $brand_primary_light
+	BorderColor $light_orange
+	BackgroundColor $peach
 !endprocedure
 
 sprite $payer [75x79/4z] {
@@ -321,33 +321,26 @@ skinparam artifact {
 
 !startsub storage
     skinparam storage {
-        BackgroundColor $brand_warning
-        BorderColor $brand_warning
-        FontColor $primary_text
+        $primary_scheme()
     }
 !endsub
 
 !startsub node
     skinparam node {
-        BackgroundColor  $brand_secondary
-        BorderColor $brand_primary_light
-        FontColor $primary_text
+        $primary_scheme()
     }
 !endsub
 
 !startsub cloud
     skinparam cloud {
-        BackgroundColor transparent
-        BorderColor #F2FCFE
-        FontColor $primary_text
+        $primary_scheme()
     }
 !endsub
 
 !startsub database
-
-skinparam database {
-	$primary_scheme()
-}
+    skinparam database {
+        $primary_scheme()
+    }
 !endsub
 
 !startsub class
@@ -380,39 +373,27 @@ skinparam database {
 !endsub
 
 !startsub rectangle
-
-skinparam rectangle {
-	$primary_scheme()
-	BackgroundColor $brand_secondary_light_1
-	BorderThickness 2
-	StereotypeFontColor $primary_text
-}
+    skinparam rectangle {
+        $primary_scheme()
+        StereotypeFontColor $primary_text
+    }
 !endsub
 
 !startsub package
     skinparam package {
-        BackgroundColor $brand_secondary
-        BorderColor $brand_primary
-        FontColor $primary_text
-        BorderThickness 2
+        $primary_scheme()
     }
 !endsub
 
 !startsub folder
     skinparam folder {
-        BackgroundColor $brand_secondary_light_1
-        BorderColor $brand_warning
-        FontColor $primary_text
-        BorderThickness 2
+        $primary_scheme()
     }
 !endsub
 
 !startsub frame
     skinparam frame {
-        BackgroundColor $brand_secondary_light_1
-        BorderColor $brand_info
-        FontColor $primary_text
-        BorderThickness 2
+        $primary_scheme()
     }
 !endsub
 
@@ -434,17 +415,13 @@ skinparam rectangle {
 
 !startsub card
     skinparam card {
-        BackgroundColor $brand_info
-        BorderColor $brand_info
-        FontColor $primary_text
+        $primary_scheme()
     }
 !endsub
 
 !startsub file
     skinparam file {
-        BackgroundColor $brand_secondary_dark_1
-        BorderColor $brand_primary_light
-        FontColor $primary_text
+        $primary_scheme()
     }
 !endsub
 
