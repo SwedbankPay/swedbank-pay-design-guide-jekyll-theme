@@ -400,8 +400,8 @@ skinparam artifact {
 !startsub state
     skinparam state {
         $primary_scheme()
-        StartColor $brand_info
-        EndColor $brand_info
+        StartColor $orange
+        EndColor $brand_secondary
         AttributeFontColor $primary_text
         AttributeFontSize 11
     }
