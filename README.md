@@ -5,7 +5,7 @@
 ![Test status][test-badge]
 ![Deploy status][deploy-badge]
 [![License][license-badge]][license]
-[![Dependabot Status][dependabot-badge]][dependabot]
+[![Codacy][codacy-badge]][codacy]
 [![CLA assistant][cla-badge]][cla]
 [![Contributor Covenant][coc-badge]][coc]
 
@@ -84,8 +84,8 @@ agreement][cla].
 [clone]:                <https://help.github.com/articles/cloning-a-repository/>
 [coc-badge]:            <https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg>
 [coc]:                  <./CODE_OF_CONDUCT.md>
-[dependabot-badge]:     <https://api.dependabot.com/badges/status?host=github&repo=SwedbankPay/swedbank-pay-design-guide-jekyll-theme>
-[dependabot]:           <https://dependabot.com>
+[codacy-badge]:         <https://app.codacy.com/project/badge/Grade/30ebfb7d531a488484e87dd428034af7>
+[codacy]:               <https://www.codacy.com/gh/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SwedbankPay/swedbank-pay-design-guide-jekyll-theme&amp;utm_campaign=Badge_Grade>
 [deploy-badge]:         <https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/workflows/Deploy/badge.svg>
 [design-guide]:         <https://design.swedbankpay.com/>
 [developer-portal]:     <https://developer.swedbankpay.com/>
@@ -96,7 +96,6 @@ agreement][cla].
 [license]:              <https://opensource.org/licenses/MIT>
 [liquid]:               <https://jekyllrb.com/docs/liquid/>
 [opengraph-image]:      <https://repository-images.githubusercontent.com/209270355/36818080-53ee-11ea-896c-082addb851a6>
-[repo]:                 <https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/>
 [ruby]:                 <https://www.ruby-lang.org/en/>
 [swedbankpay]:          <https://swedbankpay.github.io/swedbank-pay-design-guide-jekyll-theme/>
 [test-badge]:           <https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/workflows/Test/badge.svg>

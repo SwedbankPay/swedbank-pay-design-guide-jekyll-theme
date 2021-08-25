@@ -2,6 +2,7 @@
 
 require 'jekyll'
 require 'jekyll-redirect-from'
+require_relative 'sidebar_logger'
 require_relative 'sidebar_path'
 
 module SwedbankPay
@@ -30,7 +31,7 @@ module SwedbankPay
 
       pages.each do |jekyll_page|
         if skippable? jekyll_page
-          Jekyll.logger.debug("           Sidebar: Skipping <#{jekyll_page['url']}>")
+          SidebarLogger.debug("Skipping <#{jekyll_page['url']}>")
           next
         end
 
@@ -81,7 +82,7 @@ module SwedbankPay
       sidebar_containers = page.doc.xpath('//*[@id="dx-sidebar-main-nav-ul"]')
 
       if sidebar_containers.empty?
-        Jekyll.logger.error("           Sidebar: No sidebar container found in <#{page.filename}>!")
+        SidebarLogger.error("No sidebar container found in <#{page.filename}>!")
         return nil
       end
 
