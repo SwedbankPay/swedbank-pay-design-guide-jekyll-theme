@@ -74,7 +74,7 @@
     "remark-retext": "^5.0.0",
     "remark-textr": "^5.0.0",
     "remark-validate-links": "^11.0.1",
-    "retext-english": "^4.0.0",
+    "retext-english": "^4.1.0",
     "retext-repeated-words": "^4.0.0",
     "retext-sentence-spacing": "^5.0.0",
     "retext-spell": "^5.1.0",
