@@ -34,7 +34,7 @@ parse_args() {
     done
 
     if [[ -z "${version}" ]]; then
-        echo "Missing required argument: --version <version>."
+        echo "Missing required argument: --version <version>." >&2
         echo "${help_message}"
         return 1
     fi

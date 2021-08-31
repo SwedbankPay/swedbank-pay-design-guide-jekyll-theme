@@ -44,7 +44,7 @@ jobs:
 
     - name: Build gem
       id: gem
-      run: .github/scripts/build_gem.sh --version "${{ needs.variables.outputs.version }}" --verbose
+      run: .github/scripts/build_gem.sh --version "${{ needs.variables.outputs.version }}"
 
     - name: Upload artifact
       uses: actions/upload-artifact@v2-preview
@@ -53,10 +53,12 @@ jobs:
         path: ${{ steps.gem.outputs.name }}
 
   publish:
-    needs: [gem, variables]
+    needs: gem
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v2
+
     - uses: actions/download-artifact@v2
       with:
         name: ${{ needs.gem.outputs.name }}
@@ -64,25 +66,10 @@ jobs:
     - name: Publish to GPR
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        OWNER: SwedbankPay
-      run: |
-        mkdir -p $HOME/.gem
-        touch $HOME/.gem/credentials
-        chmod 0600 $HOME/.gem/credentials
-        printf -- "---\n:github: Bearer ${GITHUB_TOKEN}\n" > $HOME/.gem/credentials
-        set -e
-        gem push --KEY github \
-                 --host https://rubygems.pkg.github.com/${OWNER} \
-                 ${{ needs.gem.outputs.name }} \
-          || echo "push failed ($?) probably due to version '${{ needs.variables.outputs.version }}' already existing in GPR."
+      run: .github/scripts/publish_gem.sh --gem ${{ needs.gem.outputs.name }} --token $GITHUB_TOKEN --verbose
 
     - name: Publish to RubyGems
       if: startsWith(github.ref, 'refs/tags/') # Only publish tagged commits
       env:
         RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
-      run: |
-        mkdir -p $HOME/.gem
-        touch $HOME/.gem/credentials
-        chmod 0600 $HOME/.gem/credentials
-        printf -- "---\n:rubygems_api_key: ${RUBYGEMS_API_KEY}\n" > $HOME/.gem/credentials
-        gem push ${{ needs.gem.outputs.name }}
+      run: .github/scripts/publish_gem.sh --gem ${{ needs.gem.outputs.name }} --key $RUBYGEMS_API_KEY --verbose
