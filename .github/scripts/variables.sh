@@ -9,13 +9,21 @@ Generates variables based on the provided environment variable GITHUB_CONTEXT
 and <version> argument.
 
 GITHUB_CONTEXT: An environment variable containing a JSON string of the GitHub
-                context object. Typically generated with \${{ toJson(github) }}."
+                context object. Typically generated with \${{ toJson(github) }}.
+     <version>: The version number corresponding to the current Git commit."
 
 initialize() {
-    github_context_json="$GITHUB_CONTEXT"
+    local github_context_json="$GITHUB_CONTEXT"
+    version="$1"
 
     if [[ -z "$github_context_json" ]]; then
         echo "Missing or empty GITHUB_CONTEXT environment variable." >&2
+        echo "$help_message"
+        exit 1
+    fi
+
+    if [[ -z "$version" ]]; then
+        echo "Missing required argument: <version>." >&2
         echo "$help_message"
         exit 1
     fi
@@ -38,13 +46,7 @@ initialize() {
     fi
 
     if [[ -z "$repository_url" ]]; then
-        echo "No 'repository.html_url' found in the GitHub context." >&2
-        echo "$help_message"
-        exit 1
-    fi
-
-    if [[ -z "$ref" ]]; then
-        echo "No 'ref' found in the GitHub context." >&2
+        echo "No 'event.repository.html_url' found in the GitHub context." >&2
         echo "$help_message"
         exit 1
     fi
@@ -55,9 +57,22 @@ generate_variables() {
     branch="${ref#refs/tags/}"
     branch="${branch#refs/heads/}"
 
+    if [[ "$ref" == refs/tags/* ]]; then
+        # If a tag ref is being built, just use the tag verbatim
+        version="${ref#refs/tags/}"
+    else
+        # Replace '+'' in the version number with '.'.
+        version="${version//+/.}"
+        # Replace '-' in the version number with '.'.
+        version="${version//-/.}"
+    fi
+
+
     echo "Branch:     $branch"
+    echo "Version:    $version"
     echo "Repository: $repository_url"
     echo "::set-output name=branch::$branch"
+    echo "::set-output name=version::$version"
     echo "::set-output name=repository_url::$repository_url"
 }
 

@@ -7,15 +7,26 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       branch: ${{ steps.variables.outputs.branch }}
+      version: ${{ steps.variables.outputs.version }}
       repository_url: ${{ steps.variables.outputs.repository_url }}
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: gittools/actions/gitversion/setup@v0.9.10
+        with:
+          versionSpec: '5.x.x'
+
+      - id: gitversion
+        uses: gittools/actions/gitversion/execute@v0.9.10
+
       - name: Generate variables
         id: variables
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: .github/scripts/variables.sh
+        run: .github/scripts/variables.sh ${{ steps.gitversion.outputs.legacySemVerPadded }}
 
   build:
     runs-on: ubuntu-latest
