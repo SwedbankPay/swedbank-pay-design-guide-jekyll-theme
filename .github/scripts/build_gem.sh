@@ -55,10 +55,21 @@ build_gem() {
     echo "::set-output name=name::${gem_build_name}"
 }
 
+verify_gem() {
+    local grep_args=()
+
+    if [[ "${verbose}" != true ]]; then
+        grep_args+=(--silent)
+    fi
+
+    tar --to-stdout -xf "${gem_build_name}" data.tar.gz | tar -zt | grep "${grep_args[@]}" 'puml-theme-swedbankpay.puml'
+}
+
 main() {
     parse_args "$@"
     enable_expanded_output
     build_gem
+    verify_gem
 }
 
 main "$@"

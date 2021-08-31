@@ -11,7 +11,7 @@ require_relative 'sidebar_text_builder'
 module SwedbankPay
   # Represents a jekyll_page in the Sidebar
   class SidebarPage
-    FIXNUM_MAX = (2**(0.size * 8 - 2) - 1)
+    FIXNUM_MAX = ((2**((0.size * 8) - 2)) - 1)
 
     attr_reader :path, :title, :level, :order, :children, :name, :filename, :doc
     attr_accessor :headers, :sidebar_container, :number, :parent
