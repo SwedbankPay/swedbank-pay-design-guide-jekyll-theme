@@ -64,6 +64,17 @@ jobs:
       - name: codecov upload
         run: bundle exec rake codecov:upload || echo 'Codecov upload failed'
 
+  rubocop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Ruby 2.7
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          bundler-cache: true
+
       - name: rubocop
         run: bundle exec rubocop --fail-level warning --display-only-fail-level-offenses
 
