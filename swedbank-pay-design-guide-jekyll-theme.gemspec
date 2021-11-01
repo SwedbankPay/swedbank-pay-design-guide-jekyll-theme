@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'jekyll-material-icon-tag'
   spec.add_runtime_dependency 'jekyll-redirect-from'
   spec.add_runtime_dependency 'jemoji'
-  spec.add_runtime_dependency 'kramdown-plantuml'
+  spec.add_runtime_dependency 'kramdown-plantuml', '>= 1.1.8'
   spec.add_runtime_dependency 'nokogiri', '~> 1.11'
   spec.add_runtime_dependency 'rake', '~> 13.0'
   spec.add_runtime_dependency 'sass'
