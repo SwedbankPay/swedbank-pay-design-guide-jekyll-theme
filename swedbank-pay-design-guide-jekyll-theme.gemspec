@@ -22,13 +22,13 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'html-proofer', '~> 3', '>= 3.19'
   spec.add_runtime_dependency 'jekyll', '>= 3.7', '< 5.0'
   spec.add_runtime_dependency 'jekyll-contentblocks', '~> 1', '>= 1.2'
-  spec.add_runtime_dependency 'jekyll-material-icon-tag', '~> 1', '>= 1.1.1'
+  spec.add_runtime_dependency 'jekyll-material-icon-tag', '~> 1', '>= 1.1'
   spec.add_runtime_dependency 'jekyll-redirect-from', '~> 0.16'
   spec.add_runtime_dependency 'jemoji', '~> 0.12'
   spec.add_runtime_dependency 'kramdown-plantuml', '~> 1', '>= 1.1.9'
   spec.add_runtime_dependency 'nokogiri', '~> 1.11'
   spec.add_runtime_dependency 'rake', '~> 13.0'
-  spec.add_runtime_dependency 'sass', '~> 3', '>= 3.7.4'
+  spec.add_runtime_dependency 'sass', '~> 3', '>= 3.7'
 
-  spec.add_development_dependency 'bundler', '~> 2', '>= 2.2.28'
+  spec.add_development_dependency 'bundler', '~> 2', '>= 2.2'
 end
