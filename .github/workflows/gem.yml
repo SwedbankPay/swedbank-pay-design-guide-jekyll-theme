@@ -52,6 +52,13 @@ jobs:
         name: ${{ steps.gem.outputs.name }}
         path: ${{ steps.gem.outputs.name }}
 
+    - uses: actions/setup-java@v2
+      with:
+        distribution: adopt
+        java-version: 14
+
+    - uses: kamiazya/setup-graphviz@v1
+
     - name: Test gem
       run: .github/scripts/test_gem.sh --workdir "${{ github.workspace }}/spec/fixture" --verbose
 
