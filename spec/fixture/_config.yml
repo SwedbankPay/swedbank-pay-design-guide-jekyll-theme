@@ -1,0 +1,8 @@
+theme: swedbank-pay-design-guide-jekyll-theme
+plugins:
+- swedbank-pay-design-guide-jekyll-theme
+kramdown:
+  plantuml:
+    theme:
+      name: swedbankpay
+      directory: assets
