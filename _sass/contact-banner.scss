@@ -1,0 +1,83 @@
+@import 'colors.scss';
+@import 'fonts.scss';
+@import 'breakpoints.scss';
+
+.banner-card{
+
+    .front-page-contact {
+        // display: none; // Not currently in use
+        // // display: flex;
+        
+        .front-page-contact-content {
+            background-color: $dark-brown;
+            width: 100%;
+            min-height: 13.5rem;
+            padding: 3.5rem 4rem;
+            border-radius: 1rem;
+
+            
+            h2 {
+                color: $white;
+                margin-bottom: 1.5rem;
+                
+                
+                .header-anchor {
+                    display: none;
+                }
+            }
+
+            p {
+                color: $white;
+            }
+            &:after{
+                // position: absolute;
+                width: 1px;
+                height: 113px;
+                
+                /* Brown/Light */
+
+                border: 1px solid #D4C4BC;
+                // transform: rotate(90deg);
+            }
+            
+            .btn {
+                width: 18rem;
+                justify-content: center;
+                margin: 1rem 0;
+                
+                &:focus,
+                &:focus,
+                &:hover {
+                    color: $medium-brown;
+                }
+            }
+
+            .contact-us-info {
+                color: $white;
+                width: 40%;
+                min-height: 4.5rem;
+                font-size: 1rem;
+                
+            }
+            .contact-form{
+                color: #43D0DD;
+                font-size: 1rem;
+                
+            }
+        }
+        
+    }
+}
+
+
+// display: flex;
+// flex-direction: column;
+// align-items: center;
+// padding: 0 4rem;
+// padding-top: 4rem;
+// margin-bottom: 4rem;
+// width: 100%;
+// height: 22.5rem;
+// background-color: #493c3b;
+// text-decoration: none;
+// border-radius: 1rem;
