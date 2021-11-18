@@ -127,7 +127,7 @@ a[href ^='https://']:not([href *='{{ site.url }}']):after {
 .documentation {
     > div {
         &.row {
-            margin-right: 0;   
+            margin-right: 0;
         }
     }
 
@@ -202,7 +202,6 @@ a[href ^='https://']:not([href *='{{ site.url }}']):after {
     .max-width-card-overview {
         max-width: 880px;
     }
-
 
     .language-mermaid {
         $apricot: #fbf2ea;
@@ -300,6 +299,10 @@ a[href ^='https://']:not([href *='{{ site.url }}']):after {
             font-family: Arial, sans-serif !important;
             font-size: 1rem !important;
         }
+    }
+
+    .plantuml {
+        text-align: center;
     }
 
     .github {

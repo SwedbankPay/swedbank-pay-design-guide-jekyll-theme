@@ -43,130 +43,135 @@ State2 --> [*]
 
 ## Sequence Diagrams
 
+### Checkin
+
 ```plantuml
-@startuml "Sequence"
-    title "Checkout Sequence"
+@startuml "Checkin"
     $participant("payer", "Payer") as Payer
     $participant("merchant", "Merchant") as Merchant
     $participant("server", "Swedbank Pay") as SwedbankPay
-    $participant("3rdparty", "3rd Party") as 3rdParty
 
-    group Checkin
-        Payer --> Merchant: Start Checkin
-        activate Payer
-            activate Merchant
-                Merchant --> SwedbankPay: $code("POST /psp/consumers")
-                activate SwedbankPay
-                    SwedbankPay --> Merchant: $code("rel:view-consumer-identification") ①
-                deactivate SwedbankPay
-                Merchant --> Payer: Show Checkin on Merchant Page
-            deactivate Merchant
-
-            SwedbankPay <-> Payer: Consumer identification process
-        deactivate Payer
-
+    Payer -> Merchant: Start Checkin
+    activate Payer
         activate SwedbankPay
-            SwedbankPay ->> Merchant: $code("onConsumerIdentified(consumerProfileRef)") ④
-        deactivate SwedbankPay
-        activate Merchant
-        deactivate Merchant
-    end group
-
-    group#fff #ebf8f2 Payment Menu
-        Payer -> Merchant: Initiate Purchase
-        deactivate Payer
-        Merchant -> SwedbankPay: $code("POST /psp/paymentorders { paymentUrl, consumerProfileRef }")
-        deactivate Merchant
-        SwedbankPay --> Merchant: $code("rel:view-paymentorder")
-        deactivate SwedbankPay
-        Merchant --> Payer: Display Payment Menu on Merchant Page
-        activate Payer
-        Payer ->> Payer: Initiate Payment Menu Hosted View (open iframe)
-        Payer --> SwedbankPay: Show Payment UI page in iframe
-        deactivate Payer
-        SwedbankPay -> Payer: Do payment logic
-        deactivate SwedbankPay
-        Payer ->> SwedbankPay: Do payment logic
-        deactivate Payer
-
-        opt Consumer perform payment out of iFrame
-            Payer ->> Payer: Redirect to 3rd party
-            Payer -> 3rdParty: Redirect to 3rdPartyUrl URL
-            deactivate Payer
-            3rdParty --> Payer: Redirect back to paymentUrl (merchant)
-            deactivate 3rdParty
-            Payer ->> Payer: Initiate Payment Menu Hosted View (open iframe)
-            Payer -> SwedbankPay: Show Payment UI page in iframe
-            deactivate Payer
-        end
-
-        SwedbankPay -->> Payer: Payment status
-
-        alt If payment is completed
-            activate Payer
-            Payer ->> Payer: Event: onPaymentCompleted
-            Payer -> Merchant: Check payment status
-            deactivate Payer
-            Merchant -> SwedbankPay: GET <paymentorder.id>
+            Merchant -> SwedbankPay: $code("POST /psp/consumers")
+            activate Merchant
+                SwedbankPay --> Merchant: $code("rel:view-consumer-identification") <b>①</b>
+                Merchant --> Payer: $code("rel:view-consumer-identification") <b>②</b>
             deactivate Merchant
-            SwedbankPay -> Merchant: rel: paid-paymentorder
-            deactivate SwedbankPay
-            opt#fff $brand_primary_light_2 Get PaymentOrder Details (if $code("paid-paymentorder") operation exist)
-                activate Merchant
-                    Merchant -> SwedbankPay: $code("GET rel:paid-paymentorder.href")
-                    activate SwedbankPay
-                        SwedbankPay -->> Merchant: Payment Details
-                    deactivate SwedbankPay
-                deactivate Merchant
-            end
-        end
-    end group
-
-    opt If payment is failed
-        activate Payer
-        Payer ->> Payer: Event: OnPaymentFailed
-        Payer -> Merchant: Check payment status
-        deactivate Payer
-        Merchant -> SwedbankPay: GET {paymentorder.id}
-        deactivate Merchant
-        SwedbankPay --> Merchant: rel: failed-paymentorder
-
+            Payer <-> SwedbankPay: $code("<script src=rel:view-consumer-identification.href />")
         deactivate SwedbankPay
-        opt Get PaymentOrder Details (if failed-paymentorder operation exist)
-            activate Payer
-            deactivate Payer
-            Merchant -> SwedbankPay: GET rel: failed-paymentorder
-            deactivate Merchant
-            SwedbankPay -->> Merchant: Payment Details
-            deactivate SwedbankPay
-        end
-    end
+    deactivate Payer
+
+    Payer -> Payer: $code("payex.hostedView.consumer()")
+
+    activate Payer
+        Payer -> SwedbankPay: Consumer identification <b>③</b>
+        activate SwedbankPay
+            SwedbankPay --> Payer: $code("onConsumerIdentified(consumerProfileRef)") <b>④</b>
+        deactivate SwedbankPay
+
+        Payer -> Merchant: $code("POST { consumerProfileRef }") <b>⑤</b>
+    deactivate Payer
 
     activate Merchant
-    Merchant --> Payer: Show Purchase complete
-    opt PaymentOrder Callback (if callbackUrls is set)
-        activate Payer
-        deactivate Payer
-            SwedbankPay ->> Merchant: POST Payment Callback
-    end
+        Merchant -> Merchant: Store $code("consumerProfileRef")
+    deactivate Merchant
+@enduml
+```
 
-    group Capture
-        note left of Merchant
-            Capture here only if the purchased goods don't require shipping.
-            If shipping is required, perform capture after the goods have
-            shipped. Should only be used for PaymentInstruments that support
-            Authorizations.
-        end note
+### Payment Menu
 
-        Merchant -> Merchant: Capture
+```plantuml
+@startuml "Payment Menu"
+    $participant("payer", "Payer") as Payer
+    $participant("merchant", "Merchant") as Merchant
+    $participant("server", "Swedbank Pay") as SwedbankPay
+
+    Payer -> Merchant: Pay
+    activate Payer
         activate Merchant
-            Merchant -> SwedbankPay: GET {paymentorder.id}
+            Merchant -> SwedbankPay: $code("POST /psp/paymentorders { consumerProfileRef }") <b>①</b>
             activate SwedbankPay
-                SwedbankPay --> Merchant: paymentorder
-                Merchant -> SwedbankPay: rel:create-paymentorder-capture
-                SwedbankPay --> Merchant: Capture status
+                SwedbankPay --> Merchant: $code("rel:view-paymentorder")
             deactivate SwedbankPay
+            Merchant --> Payer: $code("rel:view-paymentorder")
         deactivate Merchant
-    end group
+
+        Payer <-> SwedbankPay: $code("<script src=rel:view-paymentorder.href />")
+
+        activate SwedbankPay
+            Payer -> Payer: $code("payex.hostedView.paymentMenu()")
+            SwedbankPay <-> Payer: Perform payment
+        deactivate SwedbankPay
+    deactivate Payer
+
+    alt#fff #ebf8f2 completed payment
+        SwedbankPay -> Payer: $code("onPaymentCompleted(paymentorder)")
+        activate SwedbankPay
+            activate Payer
+                Payer -> Merchant: Check payment status
+                activate Merchant
+                    Merchant -> SwedbankPay: $code("GET paymentorder.id")
+                    SwedbankPay --> Merchant: $code("rel:paid-paymentorder")
+                    Merchant -> SwedbankPay: $code("GET rel:paid-paymentorder.href")
+                    SwedbankPay --> Merchant: Completed Payment Order
+                    Merchant --> Payer: Show receipt
+                deactivate Merchant
+            deactivate Payer
+        deactivate SwedbankPay
+    else failed payment
+        SwedbankPay -> Payer: $code("onPaymentFailed(paymentorder)")
+        activate SwedbankPay
+            activate Payer
+                Payer -> Merchant: Check payment status
+                activate Merchant
+                    Merchant -> SwedbankPay: $code("GET paymentorder.id")
+                    SwedbankPay --> Merchant: $code("rel:failed-paymentorder")
+                    Merchant -> SwedbankPay: $code("GET rel:failed-paymentorder.href")
+                    SwedbankPay --> Merchant: Failed Payment Order
+                    Merchant --> Payer: Show failure page
+                deactivate Merchant
+            deactivate Payer
+        deactivate SwedbankPay
+    end
+@enduml
+```
+
+### Callback
+
+```plantuml
+@startuml "Callback"
+    $participant("merchant", "Merchant") as Merchant
+    $participant("server", "Swedbank Pay") as SwedbankPay
+
+    SwedbankPay -> Merchant: $code("POST { payment activity }")
+    activate Merchant
+        activate SwedbankPay
+            Merchant -> SwedbankPay: $code("GET paymentorder.id")
+            SwedbankPay --> Merchant: Payment Order
+        deactivate SwedbankPay
+
+        Merchant -> Merchant: Update status
+    deactivate Merchant
+@enduml
+```
+
+### Capture
+
+```plantuml
+@startuml "Capture"
+    $participant("merchant", "Merchant") as Merchant
+    $participant("server", "Swedbank Pay") as SwedbankPay
+
+    Merchant -> Merchant: Capture
+    activate Merchant
+        Merchant -> SwedbankPay: $code("GET paymentorder.id")
+        activate SwedbankPay
+            SwedbankPay --> Merchant: $code("rel:create-paymentorder-capture")
+            Merchant -> SwedbankPay: $code("POST rel:create-paymentorder-capture.href")
+            SwedbankPay --> Merchant: Capture status
+        deactivate SwedbankPay
+    deactivate Merchant
 @enduml
 ```
