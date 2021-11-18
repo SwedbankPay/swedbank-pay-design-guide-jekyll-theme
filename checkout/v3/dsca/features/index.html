@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="#000">
+        <meta name="application-name" content="Checkout Delegated SCA – Features">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="Checkout Delegated SCA – Features">
+        <meta name="msapplication-TileColor" content="#000">
+        <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png">
+        <meta property="og:type" value="website" />
+        <meta property="og:url" value="/checkout/v3/dsca/features/" />
+        <meta property="og:title" value="Checkout Delegated SCA – Features" />
+        <meta name="title" content="Checkout Delegated SCA – Features" />
+        <meta property="og:description" value="Swedbank Pay Design Guide theme for Jekyll" />
+        <meta name="description" content="Swedbank Pay Design Guide theme for Jekyll" />
+        <meta property="og:image" value="/image1.png" />
+        <title>Checkout Delegated SCA – Features</title>
+        <link rel="stylesheet" href="https://design.swedbankpay.com/v/5.0.1/styles/dg-style.css" />
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="/assets/css/pygments-autumn.css">
+        <link rel="shortcut icon" href="https://design.swedbankpay.com/v/5.0.1/icons/favicon.ico">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://design.swedbankpay.com/v/5.0.1/icons/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://design.swedbankpay.com/v/5.0.1/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="228x228" href="https://design.swedbankpay.com/v/5.0.1/icons/coast-228x228.png">
+        <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Features">
+<link rel="apple-touch-icon" sizes="57x57" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="167x167" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-167x167.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-180x180.png">
+<link rel="apple-touch-icon" sizes="1024x1024" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-1024x1024.png">
+<link rel="apple-touch-startup-image"
+    media="(device-width: 320px) and (device-height: 480px) and  (-webkit-device-pixel-ratio: 1)"
+    href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-startup-image-320x460.png">
+<link rel="apple-touch-startup-image"
+    media="(device-width: 320px) and (device-height: 480px) and  (-webkit-device-pixel-ratio: 2)"
+    href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-startup-image-640x920.png">
+<link rel="apple-touch-startup-image"
+    media="(device-width: 320px) and (device-height: 568px) and  (-webkit-device-pixel-ratio: 2)"
+    href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-startup-image-640x1096.png">
+<link rel="apple-touch-startup-image"
+    media="(device-width: 375px) and (device-height: 667px) and  (-webkit-device-pixel-ratio: 2)"
+    href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-startup-image-750x1294.png">
+<link rel="apple-touch-startup-image"
+    media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)"
+    href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-startup-image-1182x2208.png">
+<link rel="apple-touch-startup-image"
+    media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)"
+    href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-startup-image-1242x2148.png">
+<link rel="apple-touch-startup-image"
+    media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)"
+    href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-startup-image-748x1024.png">
+<link rel="apple-touch-startup-image"
+    media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)"
+    href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-startup-image-768x1004.png">
+<link rel="apple-touch-startup-image"
+    media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"
+    href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-startup-image-1496x2048.png">
+<link rel="apple-touch-startup-image"
+    media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"
+    href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-startup-image-1536x2008.png">
+<script src="/assets/js/mermaid.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="/assets/tipuesearch/tipuesearch_content.js"></script>
+        <script src="/assets/tipuesearch/tipuesearch_set.js"></script>
+        <script src="/assets/tipuesearch/tipuesearch.min.js"></script>
+    </head>
+
+    <body>
+        <div id="designguide">
+            <div class="documentation">
+                <div class="row">
+                    <div class="col-xxl-2 col-lg-3 pr-0">
+                        <div class="sidebar dg-sidebar">
+                            <nav class="sidebar-nav">
+                                <a href="/" class="sidebar-header">
+                                    <img src="https://design.swedbankpay.com/v/5.0.1/img/swedbankpay-logo-v.svg"
+                                        alt="Swedbank Pay vertical logo" class="logotype-vertical logotype-lg"/>
+                                    <div class="sidebar-header-text">
+                                        <span>{</span>developer portal<span>}</span>
+                                    </div>
+                                </a>
+                                
+                                <form class="search-container mx-2 my-4 px-3 py-2 d-flex"
+                                    method="get" action="/search">
+                                    <input name="q" type="text" id="tipue_search_input"
+                                        class="search-input w-100 "
+                                        placeholder="Search in documentation"
+                                        onfocus="this.placeholder=''"
+                                        onblur="this.placeholder='Search in documentation'"
+                                        pattern=".{3,}"
+                                        title="At least 3 characters">
+                                    <button class="mb-0">
+                                        <i class="material-icons m-0" aria-hidden="true">search</i>
+                                    </button>
+                                </form>
+                                
+                                <ul id="dx-sidebar-main-nav-ul" class="main-nav-ul">
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <main class="doc-view col-xxl-10 col-lg-9">
+                        
+                            
+
+
+
+
+
+<div class="title-header">
+    <div class="title-header-container max-width-card-overview">
+        
+            <h4>Checkout Delegated SCA</h4>
+        
+
+        <h1>Features</h1>
+
+        
+
+        
+            <p><p>In this section you can read more about the different features of
+Swedbank Pay Checkout.</p>
+</p>
+        
+    </div>
+
+    
+
+<a href="https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/tree/main/checkout/v3/dsca/features/index.md"
+    class="github" target="_blank"
+    rel="noopener noreferrer" title="Edit 'Features' on GitHub">
+    <svg aria-labelledby="simpleicons-github-icon" role="img" width="40" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <title id="simpleicons-github-icon">Edit "Features" on GitHub</title>
+        <path fill="#fff" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+    </svg>
+</a>
+
+</div>
+
+                        
+                        
+
+<div class="doc-container normal-padding max-width-card-overview">
+    <article>
+        
+            
+    
+        
+        
+        
+        <h2 class="heading-line" id="core-features">
+        
+        
+          Core Features <a href="#core-features" class="header-anchor"></a>
+        
+        
+      </h2>
+        
+        
+        
+
+
+<div class="row card-list">
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/core/3d-secure-2" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">3-D Secure 2</span>
+        <span><p>Authenticating the cardholder.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/core/cancel" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">Cancel</span>
+        <span><p>Cancelling the authorization and releasing the funds.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/core/payment-order-capture" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">PaymentOrders Capture</span>
+        <span><p>Capturing the authorized funds.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/core/reversal" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">Reversal</span>
+        <span><p>How to reverse a payment.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/core/settlement-reconciliation" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">Settlement & Reconciliation</span>
+        <span><p>Balancing the books.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+</div>
+
+    
+
+    
+        
+        
+        
+        <h2 class="heading-line" id="optional-features">
+        
+        
+          Optional Features <a href="#optional-features" class="header-anchor"></a>
+        
+        
+      </h2>
+        
+        
+        
+
+
+<div class="row card-list">
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/optional/custom-logo" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">Custom Logo</span>
+        <span><p>How to add your own logo.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/optional/dsca" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">Delegated Strong Consumer Authentication</span>
+        <span><p>The Checkin alternative.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/optional/recur" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">Recur</span>
+        <span><p>Setting up subscriptions and recurring payments.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/optional/verify" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">Verify</span>
+        <span><p>Validating the payer’s payment details.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+</div>
+
+    
+
+    
+        
+        
+        
+        <h2 class="heading-line" id="technical-reference">
+        
+        
+          Technical Reference <a href="#technical-reference" class="header-anchor"></a>
+        
+        
+      </h2>
+        
+        
+        
+
+
+<div class="row card-list">
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/technical-reference/callback" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">Callback</span>
+        <span><p>Receive asynchronous, server-to-server updates from Swedbank Pay when
+transactions are performed on a payment.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/technical-reference/checkin-events" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">Checkin Events</span>
+        <span><p>Possible events during Checkin.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/technical-reference/complete-url" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">CompleteUrl</span>
+        <span><p>Where you go when the payment is completed.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/technical-reference/delete-token" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">Delete Token</span>
+        <span><p>How to delete tokens.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/technical-reference/description" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">Description</span>
+        <span><p>The purchase summed up in a few words.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/technical-reference/metadata" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">Metadata</span>
+        <span><p>Store payment associated data for later use.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/technical-reference/payee-info" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">PayeeInfo</span>
+        <span><p>Payment specific merchant information.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/technical-reference/payee-reference" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">PayeeReference</span>
+        <span><p>The merchant’s reference for a specific payment.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/technical-reference/payment-menu-events" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">Payment Menu Events</span>
+        <span><p>Possible events during Payment Menu payments.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/technical-reference/operations" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">Operations</span>
+        <span><p>Possible operations for a payment order.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/technical-reference/payment-state" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">Payment State</span>
+        <span><p>Different states in the payment process.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/technical-reference/payment-url" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">PaymentUrl</span>
+        <span><p>Redirecting the payer back to your site.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/technical-reference/prices" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">Prices</span>
+        <span><p>The payment’s prices resource.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/technical-reference/problems" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">Problems</span>
+        <span><p>Information when something goes wrong.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/technical-reference/seamless-view-events" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">Seamless View Events</span>
+        <span><p>Possible events during Seamless View payments.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="col-lg-4">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/checkout/v3/dsca/features/technical-reference/purchase" class="dx-card">
+    <span class="dx-card-icon">
+        
+            <i class="material-icons">
+                
+            </i>
+        
+    </span>
+    <span class="dx-card-content">
+        <span class="h4">Purchase</span>
+        <span><p>The bread and butter of the payments.</p>
+</span>
+    </span>
+    
+        <i class="material-icons">arrow_forward</i>
+    
+</a>
+
+        </div>
+    
+</div>
+
+    
+
+
+        
+    </article>
+</div>
+
+                    </main>
+                </div>
+            </div>
+        </div>
+        <script src="https://design.swedbankpay.com/v/5.0.1/scripts/dg.js"></script>
+        <script src="/assets/js/swedbank-pay-design-guide-theme.js"></script>
+    </body>
+
+</html>
