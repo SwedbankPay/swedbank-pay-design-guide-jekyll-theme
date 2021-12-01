@@ -12,7 +12,7 @@
         <meta name="msapplication-TileColor" content="#000">
         <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png">
         <meta property="og:type" value="website" />
-        <meta property="og:url" value="https://swedbankpay.github.io/swedbank-pay-design-guide-jekyll-theme/checkout-more/after-payment.html" />
+        <meta property="og:url" value="/checkout-more/after-payment.html" />
         <meta property="og:title" value="Checkout More – After payment is completed" />
         <meta name="title" content="Checkout More – After payment is completed" />
         <meta property="og:description" value="Swedbank Pay Design Guide theme for Jekyll" />
@@ -20,8 +20,8 @@
         <meta property="og:image" value="/image1.png" />
         <title>Checkout More – After payment is completed</title>
         <link rel="stylesheet" href="https://design.swedbankpay.com/v/5.0.1/styles/dg-style.css" />
-        <link rel="stylesheet" href="/swedbank-pay-design-guide-jekyll-theme/assets/css/style.css">
-        <link rel="stylesheet" href="/swedbank-pay-design-guide-jekyll-theme/assets/css/pygments-autumn.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="/assets/css/pygments-autumn.css">
         <link rel="shortcut icon" href="https://design.swedbankpay.com/v/5.0.1/icons/favicon.ico">
         <link rel="icon" type="image/png" sizes="16x16" href="https://design.swedbankpay.com/v/5.0.1/icons/favicon-16x16.png">
         <link rel="icon" type="image/png" sizes="32x32" href="https://design.swedbankpay.com/v/5.0.1/icons/favicon-32x32.png">
@@ -71,26 +71,30 @@
 <link rel="apple-touch-startup-image"
     media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"
     href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-startup-image-1536x2008.png">
-<script src="/swedbank-pay-design-guide-jekyll-theme/assets/js/mermaid.min.js"></script>
+<script src="/assets/js/mermaid.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="/swedbank-pay-design-guide-jekyll-theme/assets/tipuesearch/tipuesearch_content.js"></script>
-        <script src="/swedbank-pay-design-guide-jekyll-theme/assets/tipuesearch/tipuesearch_set.js"></script>
-        <script src="/swedbank-pay-design-guide-jekyll-theme/assets/tipuesearch/tipuesearch.min.js"></script>
+        <script src="/assets/tipuesearch/tipuesearch_content.js"></script>
+        <script src="/assets/tipuesearch/tipuesearch_set.js"></script>
+        <script src="/assets/tipuesearch/tipuesearch.min.js"></script>
     </head>
 
     <body>
         <div id="designguide">
             <div class="documentation">
-                <div class="d-md-flex">
-                    <div class="d-none d-lg-block">
-                        <div id="dg-sidebar2" class="sidebar-2 has-secondary-nav" >
-                            <nav class="sidebar-main-nav">
-                                <div class="sidebar-logo">
-                                    <a href="/"><img src="https://design.swedbankpay.com/v/5.0.1/img/swedbankpay-logo-v.svg" alt="Swedbank Pay vertical logo" class="logotype-vertical logotype-md">
-                                    </a></div>
+                <div class="row">
+                    <div class="col-xxl-2 col-lg-3 pr-0">
+                        <div class="sidebar dg-sidebar">
+                            <nav class="sidebar-nav">
+                                <a href="/" class="sidebar-header">
+                                    <img src="https://design.swedbankpay.com/v/5.0.1/img/swedbankpay-logo-v.svg"
+                                        alt="Swedbank Pay vertical logo" class="logotype-vertical logotype-lg"/>
+                                    <div class="sidebar-header-text">
+                                        <span>{</span>developer portal<span>}</span>
+                                    </div>
+                                </a>
                                 
-                                <!-- <form class="search-container mx-2 my-4 px-3 py-2 d-flex"
-                                    method="get" action="/swedbank-pay-design-guide-jekyll-theme/search">
+                                <form class="search-container mx-2 my-4 px-3 py-2 d-flex"
+                                    method="get" action="/search">
                                     <input name="q" type="text" id="tipue_search_input"
                                         class="search-input w-100 "
                                         placeholder="Search in documentation"
@@ -101,15 +105,15 @@
                                     <button class="mb-0">
                                         <i class="material-icons m-0" aria-hidden="true">search</i>
                                     </button>
-                                </form> -->
+                                </form>
                                 
-                                <ul class="main-nav-ul" id="dx-sidebar-main-nav-ul">
+                                <ul id="dx-sidebar-main-nav-ul" class="main-nav-ul">
                                 </ul>
                             </nav>
                         </div>
                     </div>
 
-                    <main class="doc-view">
+                    <main class="doc-view col-xxl-10 col-lg-9">
                         
                             
 
@@ -132,7 +136,7 @@
 
     
 
-<a href="https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/tree/master/checkout-more/after-payment.md"
+<a href="https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/tree/main/checkout-more/after-payment.md"
     class="github" target="_blank"
     rel="noopener noreferrer" title="Edit 'After payment is completed' on GitHub">
     <svg aria-labelledby="simpleicons-github-icon" role="img" width="40" viewBox="0 0 24 24"
@@ -145,10 +149,12 @@
 </div>
 
                         
-                        <div class="doc-container normal-padding max-width
-                            ">
-                            <article>
-                                <h2 id="after-paaaayment">
+                        
+
+<div class="doc-container normal-padding max-width">
+    <article>
+        
+            <h2 id="after-paaaayment">
         
         
           After paaaayment <a href="#after-paaaayment" class="header-anchor"></a>
@@ -161,14 +167,16 @@ First we’ll subtract the money from your account, then a wizard will attempt a
 grand spell to carry the money on the back of ants to transfer it to a safe place.
 A secret place.
 A place with a secret.</p>
-                            </article>
-                        </div>
+        
+    </article>
+</div>
+
                     </main>
                 </div>
             </div>
         </div>
         <script src="https://design.swedbankpay.com/v/5.0.1/scripts/dg.js"></script>
-        <script src="/swedbank-pay-design-guide-jekyll-theme/assets/js/swedbank-pay-design-guide-theme.js"></script>
+        <script src="/assets/js/swedbank-pay-design-guide-theme.js"></script>
     </body>
 
 </html>

@@ -1,0 +1,2568 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="#000">
+        <meta name="application-name" content="PlantUML – PlantUML">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="PlantUML – PlantUML">
+        <meta name="msapplication-TileColor" content="#000">
+        <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png">
+        <meta property="og:type" value="website" />
+        <meta property="og:url" value="/plantuml/" />
+        <meta property="og:title" value="PlantUML – PlantUML" />
+        <meta name="title" content="PlantUML – PlantUML" />
+        <meta property="og:description" value="Swedbank Pay Design Guide theme for Jekyll" />
+        <meta name="description" content="Swedbank Pay Design Guide theme for Jekyll" />
+        <meta property="og:image" value="/image1.png" />
+        <title>PlantUML – PlantUML</title>
+        <link rel="stylesheet" href="https://design.swedbankpay.com/v/5.0.1/styles/dg-style.css" />
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="/assets/css/pygments-autumn.css">
+        <link rel="shortcut icon" href="https://design.swedbankpay.com/v/5.0.1/icons/favicon.ico">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://design.swedbankpay.com/v/5.0.1/icons/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://design.swedbankpay.com/v/5.0.1/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="228x228" href="https://design.swedbankpay.com/v/5.0.1/icons/coast-228x228.png">
+        <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="PlantUML">
+<link rel="apple-touch-icon" sizes="57x57" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="167x167" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-167x167.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-180x180.png">
+<link rel="apple-touch-icon" sizes="1024x1024" href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-icon-1024x1024.png">
+<link rel="apple-touch-startup-image"
+    media="(device-width: 320px) and (device-height: 480px) and  (-webkit-device-pixel-ratio: 1)"
+    href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-startup-image-320x460.png">
+<link rel="apple-touch-startup-image"
+    media="(device-width: 320px) and (device-height: 480px) and  (-webkit-device-pixel-ratio: 2)"
+    href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-startup-image-640x920.png">
+<link rel="apple-touch-startup-image"
+    media="(device-width: 320px) and (device-height: 568px) and  (-webkit-device-pixel-ratio: 2)"
+    href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-startup-image-640x1096.png">
+<link rel="apple-touch-startup-image"
+    media="(device-width: 375px) and (device-height: 667px) and  (-webkit-device-pixel-ratio: 2)"
+    href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-startup-image-750x1294.png">
+<link rel="apple-touch-startup-image"
+    media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)"
+    href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-startup-image-1182x2208.png">
+<link rel="apple-touch-startup-image"
+    media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)"
+    href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-startup-image-1242x2148.png">
+<link rel="apple-touch-startup-image"
+    media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)"
+    href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-startup-image-748x1024.png">
+<link rel="apple-touch-startup-image"
+    media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)"
+    href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-startup-image-768x1004.png">
+<link rel="apple-touch-startup-image"
+    media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"
+    href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-startup-image-1496x2048.png">
+<link rel="apple-touch-startup-image"
+    media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"
+    href="https://design.swedbankpay.com/v/5.0.1/icons/apple-touch-startup-image-1536x2008.png">
+<script src="/assets/js/mermaid.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="/assets/tipuesearch/tipuesearch_content.js"></script>
+        <script src="/assets/tipuesearch/tipuesearch_set.js"></script>
+        <script src="/assets/tipuesearch/tipuesearch.min.js"></script>
+    </head>
+
+    <body>
+        <div id="designguide">
+            <div class="documentation">
+                <div class="row">
+                    <div class="col-xxl-2 col-lg-3 pr-0">
+                        <div class="sidebar dg-sidebar">
+                            <nav class="sidebar-nav">
+                                <a href="/" class="sidebar-header">
+                                    <img src="https://design.swedbankpay.com/v/5.0.1/img/swedbankpay-logo-v.svg"
+                                        alt="Swedbank Pay vertical logo" class="logotype-vertical logotype-lg"/>
+                                    <div class="sidebar-header-text">
+                                        <span>{</span>developer portal<span>}</span>
+                                    </div>
+                                </a>
+                                
+                                <form class="search-container mx-2 my-4 px-3 py-2 d-flex"
+                                    method="get" action="/search">
+                                    <input name="q" type="text" id="tipue_search_input"
+                                        class="search-input w-100 "
+                                        placeholder="Search in documentation"
+                                        onfocus="this.placeholder=''"
+                                        onblur="this.placeholder='Search in documentation'"
+                                        pattern=".{3,}"
+                                        title="At least 3 characters">
+                                    <button class="mb-0">
+                                        <i class="material-icons m-0" aria-hidden="true">search</i>
+                                    </button>
+                                </form>
+                                
+                                <ul id="dx-sidebar-main-nav-ul" class="main-nav-ul">
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <main class="doc-view col-xxl-10 col-lg-9">
+                        
+                            
+
+
+
+
+
+<div class="title-header">
+    <div class="title-header-container max-width">
+        
+            <h4>PlantUML</h4>
+        
+
+        <h1>PlantUML</h1>
+
+        
+
+        
+            <p><p>PlantUML Diagrams</p>
+</p>
+        
+    </div>
+
+    
+
+<a href="https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/tree/main/plantuml/index.md"
+    class="github" target="_blank"
+    rel="noopener noreferrer" title="Edit 'PlantUML' on GitHub">
+    <svg aria-labelledby="simpleicons-github-icon" role="img" width="40" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <title id="simpleicons-github-icon">Edit "PlantUML" on GitHub</title>
+        <path fill="#fff" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+    </svg>
+</a>
+
+</div>
+
+                        
+                        
+
+<div class="doc-container normal-padding max-width">
+    <article>
+        
+            <h2 id="network-diagram">
+        
+        
+          Network Diagram <a href="#network-diagram" class="header-anchor"></a>
+        
+        
+      </h2>
+
+<div class="plantuml theme-swedbankpay"><svg contentScriptType='application/ecmascript' contentStyleType='text/css' height='394.7917px' preserveAspectRatio='none' style='width:1050px;height:394px;background:#FFFFFF;' version='1.1' viewBox='0 0 1050 394' width='1050px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' zoomAndPan='magnify'><defs/><g><!--MD5=[4a65e84059005d12693a083370a06717]
+entity client--><ellipse cx='508.3333' cy='14.5833' fill='#FBF2EA' rx='8.3333' ry='8.3333' style='stroke:#F35B1C;stroke-width:1.5625;'/><path d='M508.3333,22.9167 L508.3333,51.0417 M494.7917,31.25 L521.875,31.25 M508.3333,51.0417 L494.7917,66.6667 M508.3333,51.0417 L521.875,66.6667 ' fill='none' style='stroke:#F35B1C;stroke-width:1.5625;'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='41.6667' x='487.5' y='93.0745'>client</text><!--MD5=[4541fb81c80c07473fe4b07432ef0971]
+entity app--><polygon fill='#FBF2EA' points='101.5625,31.7708,111.9792,21.3542,190.1042,21.3542,190.1042,78.2552,179.6875,88.6719,101.5625,88.6719,101.5625,31.7708' style='stroke:#F5B895;stroke-width:1.5625;'/><line style='stroke:#F5B895;stroke-width:1.5625;' x1='179.6875' x2='190.1042' y1='31.7708' y2='21.3542'/><line style='stroke:#F5B895;stroke-width:1.5625;' x1='101.5625' x2='179.6875' y1='31.7708' y2='31.7708'/><line style='stroke:#F5B895;stroke-width:1.5625;' x1='179.6875' x2='179.6875' y1='31.7708' y2='88.6719'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='30.2083' x='125.5208' y='65.9912'>app</text><!--MD5=[7468467f3b6b392f1d176d828c753b77]
+entity db--><path d='M6.25,32.2917 C6.25,21.875 35.4167,21.875 35.4167,21.875 C35.4167,21.875 64.5833,21.875 64.5833,32.2917 L64.5833,77.7344 C64.5833,88.151 35.4167,88.151 35.4167,88.151 C35.4167,88.151 6.25,88.151 6.25,77.7344 L6.25,32.2917 ' fill='#FBF2EA' style='stroke:#F5B895;stroke-width:1.5625;'/><path d='M6.25,32.2917 C6.25,42.7083 35.4167,42.7083 35.4167,42.7083 C35.4167,42.7083 64.5833,42.7083 64.5833,32.2917 ' fill='none' style='stroke:#F5B895;stroke-width:1.5625;'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='20.8333' x='25' y='70.6787'>db</text><!--MD5=[799e9543975076390d2a6ceafec8df6c]
+entity queue--><path d='M232.2917,31.7708 L309.375,31.7708 C314.5833,31.7708 314.5833,55.013 314.5833,55.013 C314.5833,55.013 314.5833,78.2552 309.375,78.2552 L232.2917,78.2552 C227.0833,78.2552 227.0833,55.013 227.0833,55.013 C227.0833,55.013 227.0833,31.7708 232.2917,31.7708 ' fill='#FBF2EA' style='stroke:#F5B895;stroke-width:1.5625;'/><path d='M309.375,31.7708 C304.1667,31.7708 304.1667,55.013 304.1667,55.013 C304.1667,78.2552 309.375,78.2552 309.375,78.2552 ' fill='none' style='stroke:#F5B895;stroke-width:1.5625;'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='50' x='240.625' y='60.7829'>queue</text><!--MD5=[3a4d72efb1b53e1acbdd1189cccbc328]
+entity cloud--><path d='M360.7887,30.9398 C363.2826,23.1374 367.7897,23.1112 373.5098,27.6008 C376.6474,21.746 381.3221,20.2653 386.0648,25.8372 C388.3126,19.7951 393.9492,17.157 398.8071,23.0509 C404.0205,17.5206 408.5864,19.691 410.6056,26.1851 C414.7052,21.1655 420.5161,21.4776 422.5425,28.2786 C428.187,21.4194 433.5437,24.1917 436.6282,30.9304 C444.2329,33.7535 444.6318,40.0544 438.1078,44.4265 C444.7072,45.6082 445.6327,49.935 442.3262,55.0502 C449.1412,60.6291 447.937,66.7679 439.9275,69.9623 C443.8815,74.8029 442.0135,79.5805 436.0714,80.9471 C432.9353,87.6764 428.8268,88.0945 423.6159,83.1634 C419.8708,88.9266 414.0914,88.1467 410.6134,82.8494 C408.0973,89.5926 403.5762,90.133 398.9165,84.9522 C393.616,91.342 388.359,90.0671 384.8688,83.0546 C380.7334,88.606 376.9641,86.9335 373.7502,82.0708 C367.9708,89.0834 363.7336,87.5527 359.459,80.5378 C353.7114,76.7794 353.8313,72.7684 359.2536,68.8143 C353.5706,65.0126 352.2593,61.2045 357.7716,56.098 C352.5724,51.4752 352.4414,46.9243 359.322,43.8277 C353.9975,39.1982 354.4354,34.2403 360.7887,30.9398 ' fill='#FBF2EA' style='stroke:#F5B895;stroke-width:1.5625;'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='43.75' x='375' y='60.7829'>cloud</text><ellipse cx='644.8477' cy='55.1912' fill='#FBF2EA' rx='70.8894' ry='28.6287' style='stroke:#F5B895;stroke-width:2.0833333333333335;'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='66.6667' x='611.5144' y='58.8777'>usecase</text><!--MD5=[7267aa9592867b0c03d3cbda6e92e719]
+entity rectangle--><rect fill='#FBF2EA' height='56.901' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:1.5625;' width='112.5' x='752.0833' y='26.5625'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='75' x='770.8333' y='60.7829'>rectangle</text><!--MD5=[18b4c220f17afa2fa1b7909f1259f27e]
+entity package--><path d='M911.4583,25 L1003.125,25 A15.625,15.625 0 0 1 1013.5417,35.4167 L1020.8333,67.3177 L1028.125,67.3177 A10.4167,10.4167 0 0 1 1038.5417,77.7344 L1038.5417,74.6094 A10.4167,10.4167 0 0 1 1028.125,85.026 L911.4583,85.026 A10.4167,10.4167 0 0 1 901.0417,74.6094 L901.0417,35.4167 A10.4167,10.4167 0 0 1 911.4583,25 ' fill='#FBF2EA' style='stroke:#F5B895;stroke-width:1.5625;'/><line style='stroke:#F5B895;stroke-width:1.5625;' x1='901.0417' x2='1020.8333' y1='67.3177' y2='67.3177'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' font-weight='bold' lengthAdjust='spacing' textLength='77.0833' x='919.7917' y='51.9287'>package</text><!--MD5=[18b72bf5d1838316b3d85261d2b42cce]
+entity folder--><path d='M601.5625,168.2292 L628.6458,168.2292 A15.625,15.625 0 0 1 639.0625,178.6458 L646.3542,190.1042 L688.0208,190.1042 A10.4167,10.4167 0 0 1 698.4375,200.5208 L698.4375,253.9063 A10.4167,10.4167 0 0 1 688.0208,264.3229 L601.5625,264.3229 A10.4167,10.4167 0 0 1 591.1458,253.9063 L591.1458,178.6458 A10.4167,10.4167 0 0 1 601.5625,168.2292 ' fill='#FBF2EA' style='stroke:#F5B895;stroke-width:1.5625;'/><line style='stroke:#F5B895;stroke-width:1.5625;' x1='591.1458' x2='646.3542' y1='190.1042' y2='190.1042'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='46.875' x='609.8958' y='221.1995'>folder</text><!--MD5=[7a641773cfca2682e51daa01eb969ffa]
+entity frame--><rect fill='#FBF2EA' height='67.3177' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:1.5625;' width='106.25' x='735.4167' y='182.2917'/><path d='M770.8333,182.2917 L770.8333,187.5 L763.5417,194.7917 L735.4167,194.7917 ' fill='none' style='stroke:#F5B895;stroke-width:1.5625;'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='47.9167' x='759.375' y='226.9287'>frame</text><!--MD5=[0568ea600d1c2ace8679ac75c80dfc89]
+entity card--><rect fill='#FBF2EA' height='42.3177' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:1.5625;' width='73.9583' x='878.6458' y='194.7917'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='36.4583' x='897.3958' y='221.7204'>card</text><!--MD5=[7edcefaa406c65155265f04249a95b70]
+entity file--><path d='M615.1042,336.9792 L615.1042,373.0469 A10.4167,10.4167 0 0 0 625.5208,383.4635 L664.0625,383.4635 A10.4167,10.4167 0 0 0 674.4792,373.0469 L674.4792,336.9792 L664.0625,326.5625 L625.5208,326.5625 A10.4167,10.4167 0 0 0 615.1042,336.9792 ' fill='#FBF2EA' style='stroke:#F5B895;stroke-width:1.5625;'/><path d='M664.0625,326.5625 L664.0625,326.5625 A10.4167,10.4167 0 0 0 674.4792,336.9792 L674.4792,336.9792 ' fill='#FBF2EA' style='stroke:#F5B895;stroke-width:1.5625;'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='21.875' x='633.8542' y='360.7829'>file</text><!--MD5=[73d7329ecfd8ecf321883f71d8e37ce5]
+link db to app--><path d='M64.7461,55.2083 C75.1756,55.2083 85.6052,55.2083 96.0348,55.2083 ' fill='none' id='db-to-app' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><polygon fill='#F35B1C' points='101.4888,55.2083,92.1138,51.0417,96.2804,55.2083,92.1138,59.375,101.4888,55.2083' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><!--MD5=[938509633bb77834d204daf2f600394e]
+link app to queue--><path d='M190.267,55.2083 C200.6295,55.2083 210.9921,55.2083 221.3546,55.2083 ' fill='none' id='app-to-queue' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><polygon fill='#F35B1C' points='226.7735,55.2083,217.3985,51.0417,221.5652,55.2083,217.3985,59.375,226.7735,55.2083' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><!--MD5=[d975ff7cbcd6e7d258a441aca4990002]
+link queue to cloud--><path d='M314.6525,55.2083 C324.9546,55.2083 335.2567,55.2083 345.5588,55.2083 ' fill='none' id='queue-to-cloud' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><polygon fill='#F35B1C' points='350.946,55.2083,341.571,51.0417,345.7377,55.2083,341.571,59.375,350.946,55.2083' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><!--MD5=[a08e41292f391e6b0cfa34c302003f00]
+reverse link cloud to client--><path d='M448.3272,55.2083 C458.4651,55.2083 468.6029,55.2083 478.7408,55.2083 ' fill='none' id='cloud-backto-client' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><polygon fill='#F35B1C' points='443.0257,55.2083,452.4007,59.375,448.2341,55.2083,452.4007,51.0417,443.0257,55.2083' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><!--MD5=[af896c34d9780f4e97c1e0b50997a3a0]
+link usecase to rectangle--><!--MD5=[9732170db95f1169437c85e7834737ed]
+link rectangle to package--><!--MD5=[8b8051488353af37215169a2202fb3e9]
+link usecase to folder--><!--MD5=[0c6dffb2cca7298a41ee3788a177ce7f]
+link folder to frame--><!--MD5=[98fc2129d7d3086f84206dbe6287f817]
+link frame to card--><!--MD5=[bdcd4f64f7b0b9f74932bb458264b844]
+link folder to file--><!--MD5=[0b7bbf004b62a12761e121d7b381c977]
+@startuml "Network"
+!theme swedbankpay from /srv/jekyll/_site/assets
+    actor client
+    node app
+    database db
+    queue queue
+    cloud cloud
+    usecase usecase
+    rectangle rectangle
+    package package
+    folder folder
+    frame frame
+    card card
+    file file
+
+    db -> app
+    app -> queue
+    queue -> cloud
+    cloud <- client
+@enduml
+
+@startuml "Network"
+
+
+
+
+
+
+
+
+
+
+sprite $payer [75x79/4z] {
+xT85bWCn30JHxjBzpxmCyeGC2gV2CF-PT9uC4NpT0Y82088WVmpu_Zc8tp-3cbXAAJyW5NT2lQWNzQ9U5FT0EGVO1d17BRM5-NsrJjPUV126GSfiO4zJj1Ha
+TOW2-m2bCSeWaygNqrL2YoXm4MNGbj8S1LgcudTwErHCKSOg6XMeW299BUKbIakKazHUeq7AIbHkGraIM2Vgf0mw5UwYGCDKxAN07HIxdurRog0PoZBA0MY2
+4eWTokh8UCVQfQIfONcNKb-xez-XB4qEIxYCaYOfGnMbGied_Wkg6fO7B4uDgtArAADycyE2ilFW6pscLdTmYvJW5YdZAafGHXbNKO92obMKu1OfuofAK40L
+z0u
+}
+
+sprite $merchant [75x62/4z] {
+xPG7TiCm3CM8h_kVEJkXPPggdjZT8c-PYE4j-nZG6eHI64u1aaAfS3MxRLk6SieHoVNLKrAx_feYxKegf9XoSEP4cY8J2YBEgQLQc2-auXuj4yobbCwdK_4A
+MKYrOq5oYFaB98pZ3jycnLIAGqCzrRB_Es8k9GvJuaLkK9QgyqpXzVugPbLoLjWBJQjq74HG117dcEJZNj6fuzFjPZmCKgOKLJXVjcKwPMFbI8Xj6dnZh48A
+M-KdfHXz5ueCKqWHxYdsBAIqbD8efPw_aVfF_QTQCSKLUu0LKcQ0EQmlCcQIXYcGD7LM7J657fHJ21uH6p6HyeAki9wIUzrPJ-6b1-KKUa8r9USRfEujU3k5
+Y9DD2abrdcdgN3jd
+}
+
+sprite $server [75x98/4z] {
+xPS5hkH050FjyltFl3JGcWo_UALF9GXNcgsMH0D9CXqiWHg0X5K16xLKud2IELoe4kOa5ohs4A-sSjZ7AXMqLNAkZYDLJcqcwNJjdcfQmVZgE53rUj2zSQLz
+gelHxlm3ai3X40wd0AUhq_MwI18lrJ_PdF-oo5WDZ0HsmuGaEXoC3LJb8qOg7pHIrOzKCeMF6gdghgAF8pNZIFMfekluGIBrIlaIkOfKiccY37BmeqMgsf6g
+F0Bo4FLpiAcY6AbOtWlTI2s5gkhuPvVwgaeLl5JE56zKP7VlgR45uA1IGPLhrLQOiSgR8r86gglyMyUHwbgPcOeGheu3LQq7QOmheztnx8k9Op85QwaAT5NT
+LHJi3nQfBm6em1TI_QX-L3yg3lHCqAgTmGNJfBsuYH_j4uggUWLVTvLCgsPgkQmEhtb-0m
+}
+
+sprite $3rdparty [75x67/4z] {
+xPO7biCW34JvtF_EszS3cIU7bqbFj7LawGSBKTg20RHpMF-pcCOlHgo8n8PCISEBajLf4j6WcC0aA1jZ-7xdHt7MKPslLYJDW86ZRj3_wLgsnWzO0686hCrQ
+RfndkyhBv3rnVwYJQzuNBIV9LcOBPlj9T1yh-uhZAG8pb9mdT6Cld1nV8-xqj2xdwlL0pedkJg-9LU77LpZhSGsxd3cdD3fwMABeZ17IuakBwU_trmnJ5dyl
+Ve3gXif7TVvQvJDu_hxAk_tyQ_3yEyFvzwlz3TETyc6V6vXDU61MZ79sBDgIwn8YhUPUaZuRXjeZ4w7Q6nMKFM-66YMDzQH9p_ORiFJmV5-oDJxyA8q9HHUI
+PjdqhW9Cvm9-JEYlIJQV7WgfF_AxLBI4KXKiSfCSuZR9XDBdADZaZ690SNHKCueQjL0h5cjrnXayNr-ThzkbxLHSbih-1
+}
+
+skinparam backgroundColor           "transparent"
+skinparam useBetaStyle              false
+skinparam creoleMonospacedFont      "Consolas"
+skinparam defaultMonospacedFontName "Consolas"
+skinparam defaultFontName           "Arial"
+skinparam defaultFontSize           16
+skinparam dpi                       100
+skinparam shadowing                 false
+skinparam roundcorner               20
+skinparam ParticipantPadding        40
+skinparam BoxPadding                40
+skinparam Padding                   8
+skinparam ArrowColor                #f35b1c
+skinparam stereotype {
+    CBackgroundColor                #72605e
+    CBorderColor                    #f35b1c
+    ABackgroundColor                #f2f7eb
+    ABorderColor                    #437e15
+    IBackgroundColor                #f9ded3
+    IBorderColor                    #c5131c
+    EBackgroundColor                #fff3d5
+    EBorderColor                    #f9ce22
+    NBackgroundColor                #e8eff9
+    NBorderColor                    #3e6ab6
+}
+skinparam title {
+	FontColor	                    #2f2424
+	BorderColor	                    #f35b1c
+	FontSize	    	            20
+	BorderRoundCorner               8
+	BorderThickness 	            1
+	BackgroundColor                 #fbf2ea
+}
+
+skinparam legend {
+	BackgroundColor #512b2b
+	BorderColor #493c3b
+	FontColor #2f2424
+}
+
+skinparam swimlane {
+	BorderColor #3e6ab6
+	BorderThickness 2
+	TitleBackgroundColor #512b2b
+	TitleFontColor #2f2424
+}
+
+
+skinparam activity {
+		FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+	BarColor #437e15
+	StartColor #3e6ab6
+	EndColor #3e6ab6
+	DiamondBackgroundColor #72605e
+  	DiamondBorderColor #493c3b
+  	DiamondFontColor #2f2424
+}
+
+    skinparam participant {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        BorderThickness 0
+        BackgroundColor #ffffff
+
+        ParticipantBorderThickness 2
+    }
+
+    skinparam actor {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        BackgroundColor #fbf2ea
+        BorderColor #f35b1c
+    }
+
+    skinparam arrow {
+        Thickness 1
+        Color #f35b1c
+        FontColor #2f2424
+    }
+
+    skinparam sequence {
+        BorderColor #f35b1c
+        TitleFontColor #2f2424
+        BackgroundColor #fbf2ea
+        StartColor #f35b1c
+        EndColor #f35b1c
+        BoxBackgroundColor #fbf2ea
+        BoxBorderColor #493c3b
+        BoxFontColor #2f2424
+        DelayFontColor #2f2424
+        LifeLineBorderColor #f35b1c
+        LifeLineBorderThickness 1
+        LifeLineBorderRoundCorner 20
+        LifeLineBackgroundColor #ffffff
+        GroupBorderThickness 1
+        GroupBorderColor #f35b1c
+        GroupFontColor #2f2424
+        GroupHeaderFontColor #2f2424
+        GroupHeaderFontWeight 1
+        GroupBackgroundColor #ffffff
+        GroupBodyBackgroundColor #fbf2ea
+        GroupHeaderBackgroundColor #ffdf88
+        DividerBackgroundColor #493c3b
+        DividerBorderColor #493c3b
+        DividerBorderThickness 2
+        DividerFontColor #2f2424
+        ReferenceBackgroundColor #ffdf88
+        ReferenceBorderColor #493c3b
+        ReferenceFontColor #2f2424
+        ReferenceHeaderFontColor #2f2424
+        ReferenceHeaderBackgroundColor #512b2b
+        StereotypeFontColor #2f2424
+    }
+
+
+skinparam partition {
+	BorderColor #fdc129
+	FontColor #2f2424
+	BackgroundColor #ffdf88
+}
+
+    skinparam collections {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam control {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+
+skinparam entity {
+		FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+}
+
+    skinparam boundary {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam agent {
+        BackgroundColor #f9ce22
+        BorderColor #fff3d5
+        FontColor #2f2424
+    }
+
+    skinparam note {
+        BorderThickness 1
+        BackgroundColor #ebf8f2
+        BorderColor #257886
+    }
+
+
+skinparam artifact {
+	BackgroundColor #493c3b
+	BorderColor #2f2424
+	FontColor #2f2424
+}
+
+    skinparam component {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam interface {
+        BackgroundColor  #c5131c
+        BorderColor  #c5131c
+        FontColor #2f2424
+    }
+
+    skinparam storage {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam node {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam cloud {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam database {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam class {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        HeaderBackgroundColor #ffcc00
+        StereotypeFontColor #2f2424
+        BorderThickness 1
+        AttributeFontColor #2f2424
+        AttributeFontSize 11
+    }
+
+    skinparam object {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        StereotypeFontColor #2f2424
+        BorderThickness 1
+        AttributeFontColor #2f2424
+        AttributeFontSize 11
+    }
+
+    skinparam usecase {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        BorderThickness 2
+        StereotypeFontColor #2f2424
+    }
+
+    skinparam rectangle {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        StereotypeFontColor #2f2424
+    }
+
+    skinparam package {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam folder {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam frame {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam state {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        StartColor #f35b1c
+        EndColor #512b2b
+        AttributeFontColor #2f2424
+        AttributeFontSize 11
+    }
+
+    skinparam queue {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam card {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam file {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+
+    actor client
+    node app
+    database db
+    queue queue
+    cloud cloud
+    usecase usecase
+    rectangle rectangle
+    package package
+    folder folder
+    frame frame
+    card card
+    file file
+
+    db -> app
+    app -> queue
+    queue -> cloud
+    cloud <- client
+@enduml
+
+PlantUML version 1.2021.12(Tue Oct 05 18:01:58 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg></div>
+    
+      <h2 id="state-diagram">
+        
+        
+          State Diagram <a href="#state-diagram" class="header-anchor"></a>
+        
+        
+      </h2>
+
+<div class="plantuml theme-swedbankpay"><svg contentScriptType='application/ecmascript' contentStyleType='text/css' height='279.1667px' preserveAspectRatio='none' style='width:303px;height:279px;background:#FFFFFF;' version='1.1' viewBox='0 0 303 279' width='303.125px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' zoomAndPan='magnify'><defs/><g><ellipse cx='88.5417' cy='16.6667' fill='#F35B1C' rx='10.4167' ry='10.4167' style='stroke:none;stroke-width:1.0416666666666667;'/><g id='State1'><rect fill='#FBF2EA' height='100.2441' rx='13.0208' ry='13.0208' style='stroke:#F5B895;stroke-width:1.5625;' width='162.5' x='7.2917' y='89.5833'/><line style='stroke:#F5B895;stroke-width:1.5625;' x1='7.2917' x2='169.7917' y1='136.0677' y2='136.0677'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='52.0833' x='62.5' y='118.5954'>State1</text><text fill='#2F2424' font-family='Arial' font-size='11.4583' lengthAdjust='spacing' textLength='86.4583' x='20.8333' y='160.2453'>this is a string</text><text fill='#2F2424' font-family='Arial' font-size='11.4583' lengthAdjust='spacing' textLength='125' x='20.8333' y='173.5835'>this is another string</text></g><ellipse cx='169.7917' cy='262.5' rx='10.4167' ry='10.4167' style='stroke:#512B2B;stroke-width:1.0416666666666667;fill:none;'/><ellipse cx='170.3125' cy='263.0208' fill='#512B2B' rx='6.25' ry='6.25' style='stroke:none;stroke-width:1.0416666666666667;'/><g id='State2'><rect fill='#FBF2EA' height='73.5677' rx='13.0208' ry='13.0208' style='stroke:#F5B895;stroke-width:1.5625;' width='89.5833' x='206.25' y='102.6042'/><line style='stroke:#F5B895;stroke-width:1.5625;' x1='206.25' x2='295.8333' y1='149.0885' y2='149.0885'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='52.0833' x='225' y='131.6162'>State2</text></g><!--MD5=[60533a5dc91355c93bf187ba4549d745]
+link *start to State1--><path d='M88.5417,27.1465 C88.5417,39.8844 88.5417,62.3526 88.5417,83.8726 ' fill='none' id='*start-to-State1' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><polygon fill='#F35B1C' points='88.5417,89.3169,92.7083,79.9419,88.5417,84.1085,84.375,79.9419,88.5417,89.3169' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><!--MD5=[ca1046a354e184ac9d197a073cc82934]
+link State1 to *end--><path d='M121.8235,189.9329 C135.9981,211.3765 151.4065,234.6865 160.8332,248.9474 ' fill='none' id='State1-to-*end' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><polygon fill='#F35B1C' points='163.7903,253.4211,162.0964,243.3027,160.9182,249.0763,155.1446,247.8981,163.7903,253.4211' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><!--MD5=[dc702cd49c4e27e6abb2620dc4bb28d8]
+link State1 to State2--><path d='M170.1091,139.5833 C180.3393,139.5833 190.5695,139.5833 200.7996,139.5833 ' fill='none' id='State1-to-State2' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><polygon fill='#F35B1C' points='206.1494,139.5833,196.7744,135.4167,200.941,139.5833,196.7744,143.75,206.1494,139.5833' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><!--MD5=[37ebb224bae70bf8df0e6bab9d19d55b]
+link State2 to *end--><path d='M226.4435,176.7959 C210.2201,201.3391 189.9357,232.0257 178.5669,249.2247 ' fill='none' id='State2-to-*end' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><polygon fill='#F35B1C' points='175.6075,253.7018,184.2531,248.1787,178.4796,249.3569,177.3013,243.5833,175.6075,253.7018' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><!--MD5=[f891664cb83989a0f41e1abc2e75456b]
+@startuml "State"
+!theme swedbankpay from /srv/jekyll/_site/assets
+[*] - -> State1
+State1 - -> [*]
+State1 : this is a string
+State1 : this is another string
+
+State1 -> State2
+State2 - -> [*]
+@enduml
+
+@startuml "State"
+
+
+
+
+
+
+
+
+
+
+sprite $payer [75x79/4z] {
+xT85bWCn30JHxjBzpxmCyeGC2gV2CF-PT9uC4NpT0Y82088WVmpu_Zc8tp-3cbXAAJyW5NT2lQWNzQ9U5FT0EGVO1d17BRM5-NsrJjPUV126GSfiO4zJj1Ha
+TOW2-m2bCSeWaygNqrL2YoXm4MNGbj8S1LgcudTwErHCKSOg6XMeW299BUKbIakKazHUeq7AIbHkGraIM2Vgf0mw5UwYGCDKxAN07HIxdurRog0PoZBA0MY2
+4eWTokh8UCVQfQIfONcNKb-xez-XB4qEIxYCaYOfGnMbGied_Wkg6fO7B4uDgtArAADycyE2ilFW6pscLdTmYvJW5YdZAafGHXbNKO92obMKu1OfuofAK40L
+z0u
+}
+
+sprite $merchant [75x62/4z] {
+xPG7TiCm3CM8h_kVEJkXPPggdjZT8c-PYE4j-nZG6eHI64u1aaAfS3MxRLk6SieHoVNLKrAx_feYxKegf9XoSEP4cY8J2YBEgQLQc2-auXuj4yobbCwdK_4A
+MKYrOq5oYFaB98pZ3jycnLIAGqCzrRB_Es8k9GvJuaLkK9QgyqpXzVugPbLoLjWBJQjq74HG117dcEJZNj6fuzFjPZmCKgOKLJXVjcKwPMFbI8Xj6dnZh48A
+M-KdfHXz5ueCKqWHxYdsBAIqbD8efPw_aVfF_QTQCSKLUu0LKcQ0EQmlCcQIXYcGD7LM7J657fHJ21uH6p6HyeAki9wIUzrPJ-6b1-KKUa8r9USRfEujU3k5
+Y9DD2abrdcdgN3jd
+}
+
+sprite $server [75x98/4z] {
+xPS5hkH050FjyltFl3JGcWo_UALF9GXNcgsMH0D9CXqiWHg0X5K16xLKud2IELoe4kOa5ohs4A-sSjZ7AXMqLNAkZYDLJcqcwNJjdcfQmVZgE53rUj2zSQLz
+gelHxlm3ai3X40wd0AUhq_MwI18lrJ_PdF-oo5WDZ0HsmuGaEXoC3LJb8qOg7pHIrOzKCeMF6gdghgAF8pNZIFMfekluGIBrIlaIkOfKiccY37BmeqMgsf6g
+F0Bo4FLpiAcY6AbOtWlTI2s5gkhuPvVwgaeLl5JE56zKP7VlgR45uA1IGPLhrLQOiSgR8r86gglyMyUHwbgPcOeGheu3LQq7QOmheztnx8k9Op85QwaAT5NT
+LHJi3nQfBm6em1TI_QX-L3yg3lHCqAgTmGNJfBsuYH_j4uggUWLVTvLCgsPgkQmEhtb-0m
+}
+
+sprite $3rdparty [75x67/4z] {
+xPO7biCW34JvtF_EszS3cIU7bqbFj7LawGSBKTg20RHpMF-pcCOlHgo8n8PCISEBajLf4j6WcC0aA1jZ-7xdHt7MKPslLYJDW86ZRj3_wLgsnWzO0686hCrQ
+RfndkyhBv3rnVwYJQzuNBIV9LcOBPlj9T1yh-uhZAG8pb9mdT6Cld1nV8-xqj2xdwlL0pedkJg-9LU77LpZhSGsxd3cdD3fwMABeZ17IuakBwU_trmnJ5dyl
+Ve3gXif7TVvQvJDu_hxAk_tyQ_3yEyFvzwlz3TETyc6V6vXDU61MZ79sBDgIwn8YhUPUaZuRXjeZ4w7Q6nMKFM-66YMDzQH9p_ORiFJmV5-oDJxyA8q9HHUI
+PjdqhW9Cvm9-JEYlIJQV7WgfF_AxLBI4KXKiSfCSuZR9XDBdADZaZ690SNHKCueQjL0h5cjrnXayNr-ThzkbxLHSbih-1
+}
+
+skinparam backgroundColor           "transparent"
+skinparam useBetaStyle              false
+skinparam creoleMonospacedFont      "Consolas"
+skinparam defaultMonospacedFontName "Consolas"
+skinparam defaultFontName           "Arial"
+skinparam defaultFontSize           16
+skinparam dpi                       100
+skinparam shadowing                 false
+skinparam roundcorner               20
+skinparam ParticipantPadding        40
+skinparam BoxPadding                40
+skinparam Padding                   8
+skinparam ArrowColor                #f35b1c
+skinparam stereotype {
+    CBackgroundColor                #72605e
+    CBorderColor                    #f35b1c
+    ABackgroundColor                #f2f7eb
+    ABorderColor                    #437e15
+    IBackgroundColor                #f9ded3
+    IBorderColor                    #c5131c
+    EBackgroundColor                #fff3d5
+    EBorderColor                    #f9ce22
+    NBackgroundColor                #e8eff9
+    NBorderColor                    #3e6ab6
+}
+skinparam title {
+	FontColor	                    #2f2424
+	BorderColor	                    #f35b1c
+	FontSize	    	            20
+	BorderRoundCorner               8
+	BorderThickness 	            1
+	BackgroundColor                 #fbf2ea
+}
+
+skinparam legend {
+	BackgroundColor #512b2b
+	BorderColor #493c3b
+	FontColor #2f2424
+}
+
+skinparam swimlane {
+	BorderColor #3e6ab6
+	BorderThickness 2
+	TitleBackgroundColor #512b2b
+	TitleFontColor #2f2424
+}
+
+
+skinparam activity {
+		FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+	BarColor #437e15
+	StartColor #3e6ab6
+	EndColor #3e6ab6
+	DiamondBackgroundColor #72605e
+  	DiamondBorderColor #493c3b
+  	DiamondFontColor #2f2424
+}
+
+    skinparam participant {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        BorderThickness 0
+        BackgroundColor #ffffff
+
+        ParticipantBorderThickness 2
+    }
+
+    skinparam actor {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        BackgroundColor #fbf2ea
+        BorderColor #f35b1c
+    }
+
+    skinparam arrow {
+        Thickness 1
+        Color #f35b1c
+        FontColor #2f2424
+    }
+
+    skinparam sequence {
+        BorderColor #f35b1c
+        TitleFontColor #2f2424
+        BackgroundColor #fbf2ea
+        StartColor #f35b1c
+        EndColor #f35b1c
+        BoxBackgroundColor #fbf2ea
+        BoxBorderColor #493c3b
+        BoxFontColor #2f2424
+        DelayFontColor #2f2424
+        LifeLineBorderColor #f35b1c
+        LifeLineBorderThickness 1
+        LifeLineBorderRoundCorner 20
+        LifeLineBackgroundColor #ffffff
+        GroupBorderThickness 1
+        GroupBorderColor #f35b1c
+        GroupFontColor #2f2424
+        GroupHeaderFontColor #2f2424
+        GroupHeaderFontWeight 1
+        GroupBackgroundColor #ffffff
+        GroupBodyBackgroundColor #fbf2ea
+        GroupHeaderBackgroundColor #ffdf88
+        DividerBackgroundColor #493c3b
+        DividerBorderColor #493c3b
+        DividerBorderThickness 2
+        DividerFontColor #2f2424
+        ReferenceBackgroundColor #ffdf88
+        ReferenceBorderColor #493c3b
+        ReferenceFontColor #2f2424
+        ReferenceHeaderFontColor #2f2424
+        ReferenceHeaderBackgroundColor #512b2b
+        StereotypeFontColor #2f2424
+    }
+
+
+skinparam partition {
+	BorderColor #fdc129
+	FontColor #2f2424
+	BackgroundColor #ffdf88
+}
+
+    skinparam collections {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam control {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+
+skinparam entity {
+		FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+}
+
+    skinparam boundary {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam agent {
+        BackgroundColor #f9ce22
+        BorderColor #fff3d5
+        FontColor #2f2424
+    }
+
+    skinparam note {
+        BorderThickness 1
+        BackgroundColor #ebf8f2
+        BorderColor #257886
+    }
+
+
+skinparam artifact {
+	BackgroundColor #493c3b
+	BorderColor #2f2424
+	FontColor #2f2424
+}
+
+    skinparam component {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam interface {
+        BackgroundColor  #c5131c
+        BorderColor  #c5131c
+        FontColor #2f2424
+    }
+
+    skinparam storage {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam node {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam cloud {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam database {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam class {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        HeaderBackgroundColor #ffcc00
+        StereotypeFontColor #2f2424
+        BorderThickness 1
+        AttributeFontColor #2f2424
+        AttributeFontSize 11
+    }
+
+    skinparam object {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        StereotypeFontColor #2f2424
+        BorderThickness 1
+        AttributeFontColor #2f2424
+        AttributeFontSize 11
+    }
+
+    skinparam usecase {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        BorderThickness 2
+        StereotypeFontColor #2f2424
+    }
+
+    skinparam rectangle {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        StereotypeFontColor #2f2424
+    }
+
+    skinparam package {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam folder {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam frame {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam state {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        StartColor #f35b1c
+        EndColor #512b2b
+        AttributeFontColor #2f2424
+        AttributeFontSize 11
+    }
+
+    skinparam queue {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam card {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam file {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+
+[*] - -> State1
+State1 - -> [*]
+State1 : this is a string
+State1 : this is another string
+
+State1 -> State2
+State2 - -> [*]
+@enduml
+
+PlantUML version 1.2021.12(Tue Oct 05 18:01:58 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg></div>
+    
+      <h2 id="sequence-diagrams">
+        
+        
+          Sequence Diagrams <a href="#sequence-diagrams" class="header-anchor"></a>
+        
+        
+      </h2>
+    
+      <h3 id="checkin">
+        
+        
+          Checkin <a href="#checkin" class="header-anchor"></a>
+        
+        
+      </h3>
+
+<div class="plantuml theme-swedbankpay"><svg contentScriptType='application/ecmascript' contentStyleType='text/css' height='909.375px' preserveAspectRatio='none' style='width:838px;height:909px;background:#FFFFFF;' version='1.1' viewBox='0 0 838 909' width='838.5417px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' zoomAndPan='magnify'><defs/><g><rect fill='#FFFFFF' height='202.6042' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='96.3542' y='231.1198'/><rect fill='#FFFFFF' height='157.1615' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='96.3542' y='492.7083'/><rect fill='#FFFFFF' height='101.3021' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='424.4792' y='281.7708'/><rect fill='#FFFFFF' height='56.901' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='424.4792' y='649.8698'/><rect fill='#FFFFFF' height='202.6042' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='752.6042' y='231.1198'/><rect fill='#FFFFFF' height='50.651' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='752.6042' y='548.5677'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;' x1='101.0417' x2='101.0417' y1='178.3854' y2='732.8125'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;' x1='429.1667' x2='429.1667' y1='178.3854' y2='732.8125'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;' x1='757.2917' x2='757.2917' y1='178.3854' y2='732.8125'/><rect fill='#FFFFFF' height='152.3438' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:0.0;' width='109.375' x='46.875' y='25'/><image height='82.2917' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABPCAIAAAAsva+rAAACcElEQVR4Xu2XXU7DMAyAd/937gK34AAcgAvwUAnJdHg1rp0mTmqvacknC/Uncf3VycZucHVu8kKK78+P6f1tjq/XlznwgP/FAzqmUx58imUwzynGUyqeU6fC4k2G4vEnCrAYUgPPGDAM75zXcN6WMAzvDMN+YxguDMN+YxguDMN+YxguDMN+YxguDMN+4/qG0+V/AU/D8AEazn8tQan1FXsSl6gwpKFFeN7k9flA3IrDarhVdJL8yPxdd0yGpGepDAdnumTM44XJkPQslRWHFV+BL2VDHEG7Vt5WFA3hd0wvhnz78bWaj2L1ekp0wJYh3YZLGuI9Kvdqhnx9iivFYGnS6CnRAdqQbhDnNUz8tsAbYrEZDTFdHj0rNKQhmui9ZDSc+u8hXv0rZ+G8hhPfh3SuMRrq5mv0rOgAiyHYKuvQEEu6G+K5LGeNni9CTkihZ8UFvXGrYQb7dP5gPBVXIjjMkLb3eog/D8M9L9JeKH+QfdZOWgzFl7u9VnoQTql6aDMtq5SPx8VmrBVHPm19Iu2GaIXlyhEb4MTax+2kxRDYlKq5pGfsuQt3w6qVRjQ0pHa8C6b/aZLQdrJPrBrsxcqwuY3yxgYNj9hP+bdFnqqiqwZ7sdewioMNn/A1dbAhxLfxeMO2rw070W8wycoQgot4wkbQpA2j2xiXXyMNIbiNEJ9fcIBh9G4XJAwhXjI6P+e/GkYvpOj8nLQhxL/m4w2jX3Nocs6mIQS3cRi6kTOESMlh6EbBMO7zJiitpmAIYW3syDCojRE5k5QNIaaNPRr6FuSecAuTIQS0cRi6YTV0/7zxzZbBagjebezR8KT8ANRE1OnNW5mUAAAAAElFTkSuQmCC' width='78.125' x='62.5' y='40.625'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='104.1667' y='138.387'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='45.8333' x='78.6458' y='157.7881'>Payer</text><rect fill='#FFFFFF' height='152.3438' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:0.0;' width='109.375' x='46.875' y='731.7708'/><image height='82.2917' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABPCAIAAAAsva+rAAACcElEQVR4Xu2XXU7DMAyAd/937gK34AAcgAvwUAnJdHg1rp0mTmqvacknC/Uncf3VycZucHVu8kKK78+P6f1tjq/XlznwgP/FAzqmUx58imUwzynGUyqeU6fC4k2G4vEnCrAYUgPPGDAM75zXcN6WMAzvDMN+YxguDMN+YxguDMN+YxguDMN+YxguDMN+4/qG0+V/AU/D8AEazn8tQan1FXsSl6gwpKFFeN7k9flA3IrDarhVdJL8yPxdd0yGpGepDAdnumTM44XJkPQslRWHFV+BL2VDHEG7Vt5WFA3hd0wvhnz78bWaj2L1ekp0wJYh3YZLGuI9Kvdqhnx9iivFYGnS6CnRAdqQbhDnNUz8tsAbYrEZDTFdHj0rNKQhmui9ZDSc+u8hXv0rZ+G8hhPfh3SuMRrq5mv0rOgAiyHYKuvQEEu6G+K5LGeNni9CTkihZ8UFvXGrYQb7dP5gPBVXIjjMkLb3eog/D8M9L9JeKH+QfdZOWgzFl7u9VnoQTql6aDMtq5SPx8VmrBVHPm19Iu2GaIXlyhEb4MTax+2kxRDYlKq5pGfsuQt3w6qVRjQ0pHa8C6b/aZLQdrJPrBrsxcqwuY3yxgYNj9hP+bdFnqqiqwZ7sdewioMNn/A1dbAhxLfxeMO2rw070W8wycoQgot4wkbQpA2j2xiXXyMNIbiNEJ9fcIBh9G4XJAwhXjI6P+e/GkYvpOj8nLQhxL/m4w2jX3Nocs6mIQS3cRi6kTOESMlh6EbBMO7zJiitpmAIYW3syDCojRE5k5QNIaaNPRr6FuSecAuTIQS0cRi6YTV0/7zxzZbBagjebezR8KT8ANRE1OnNW5mUAAAAAElFTkSuQmCC' width='78.125' x='62.5' y='747.3958'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='104.1667' y='845.1579'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='45.8333' x='78.6458' y='864.5589'>Payer</text><rect fill='#FFFFFF' height='134.6354' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:0.0;' width='109.375' x='375' y='42.7083'/><image height='64.5833' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA+CAIAAADsw3HPAAAClklEQVR4Xu2aUY7bMAxE9/7/vUt7ix6gB+gF+iEggJqGwSyXI9KUrCBKqsFgYcjkWE+WlZ/9qO+uDzvQ0uX3r/Lzx/q+ztNOPUMY96+g68T0OzB3DwibPcsKnHowIpQGO7q2eM7vRlhv+05/UBEhv/GXUDeh+M/3b/qvXIxZ2rW5JmkvZ4QwtpxmgbnFM/eORYFiAuEl8SvCXZ5tJ4lbmka9S5hfrQUJrzsW9S4ht3lekLCoWbmE+QPgkDC/Hco8QkS5hNzg2XaSnkKIjdomnDunuWn5zSX1Zwn1N+0pn1YShNziWT6fNiFXB7bNJG4JbJtJ3OJ5E+Z8eJDWnrSSIOzd8w3CroiVCeWMaBByaWDb3FK5LQT3Nm2bSfmocnvuWUJJCcz1sTnhTOBlCuHidgnj1cJd20xC5VMCJ7zDy9FJwy2x5wbW5klT+1MCcf2hbYRS/N7Y1SPMBMliI4ilN14yMN6r+i63s2WGbcJ6FIG9pL8K3c5z5ZCuQFTySNNodwmrv/Dm2dV5GJd5gaasTg2MCOvXc5UfYISyuFIKHhQ4Qhinr6ZNSPofCbHXpxixfCtpNbXPHD0ySHiSk48EGey1TkCOGXwOIYzYshrhLCO29K/aJrxrE27Ck0Zs2YTsTXjXJtyEJ43YsgnF5l9KdAJyzOBahMbqsV8kt16PEPkxHvRYwpOcaEcsrlGDW54GCWX9zGxMgb570ojV10l1EwZTV/VR2YARq6+T6iPE3vPemB58hAYe0UfIN7Sw5GKzClMUPN1TByGPGhnCw/oBDQT2EQavhdkeATmQNocwPle8rgHxXA81h5CpjG3DqAaiNuFdnycN/07EW5SzhiUP8lbZU7OLZ/WPMEPyWraEInlp72EFWP8CeeozeLCFJQsAAAAASUVORK5CYII=' width='78.125' x='390.625' y='58.3333'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='432.2917' y='138.387'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='76.0417' x='391.6667' y='157.7881'>Merchant</text><rect fill='#FFFFFF' height='134.6354' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:0.0;' width='109.375' x='375' y='731.7708'/><image height='64.5833' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA+CAIAAADsw3HPAAAClklEQVR4Xu2aUY7bMAxE9/7/vUt7ix6gB+gF+iEggJqGwSyXI9KUrCBKqsFgYcjkWE+WlZ/9qO+uDzvQ0uX3r/Lzx/q+ztNOPUMY96+g68T0OzB3DwibPcsKnHowIpQGO7q2eM7vRlhv+05/UBEhv/GXUDeh+M/3b/qvXIxZ2rW5JmkvZ4QwtpxmgbnFM/eORYFiAuEl8SvCXZ5tJ4lbmka9S5hfrQUJrzsW9S4ht3lekLCoWbmE+QPgkDC/Hco8QkS5hNzg2XaSnkKIjdomnDunuWn5zSX1Zwn1N+0pn1YShNziWT6fNiFXB7bNJG4JbJtJ3OJ5E+Z8eJDWnrSSIOzd8w3CroiVCeWMaBByaWDb3FK5LQT3Nm2bSfmocnvuWUJJCcz1sTnhTOBlCuHidgnj1cJd20xC5VMCJ7zDy9FJwy2x5wbW5klT+1MCcf2hbYRS/N7Y1SPMBMliI4ilN14yMN6r+i63s2WGbcJ6FIG9pL8K3c5z5ZCuQFTySNNodwmrv/Dm2dV5GJd5gaasTg2MCOvXc5UfYISyuFIKHhQ4Qhinr6ZNSPofCbHXpxixfCtpNbXPHD0ySHiSk48EGey1TkCOGXwOIYzYshrhLCO29K/aJrxrE27Ck0Zs2YTsTXjXJtyEJ43YsgnF5l9KdAJyzOBahMbqsV8kt16PEPkxHvRYwpOcaEcsrlGDW54GCWX9zGxMgb570ojV10l1EwZTV/VR2YARq6+T6iPE3vPemB58hAYe0UfIN7Sw5GKzClMUPN1TByGPGhnCw/oBDQT2EQavhdkeATmQNocwPle8rgHxXA81h5CpjG3DqAaiNuFdnycN/07EW5SzhiUP8lbZU7OLZ/WPMEPyWraEInlp72EFWP8CeeozeLCFJQsAAAAASUVORK5CYII=' width='78.125' x='390.625' y='747.3958'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='432.2917' y='827.4495'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='76.0417' x='391.6667' y='846.8506'>Merchant</text><rect fill='#FFFFFF' height='172.1354' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:0.0;' width='148.9583' x='683.3333' y='5.2083'/><image height='102.0833' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABiCAIAAACXj7lDAAAC8UlEQVR4Xu2aXY7rIAyFu//3u5eZXdwF3AXMBvIQKRI3kumJYwNJUyC1h6MzVWMg4YuB/HQe4an577cng+ux/i0//3QNB165IiFtA9qHABUJCdeZiOtBQ1QWulAkpG+6bPr6Y8tJijQhGtgydZuDzAVC3d6E157zBWVOzsN10y4hWRLSNx617iuEIZPbV+N9zFmOCfncFT1ONuH1afz3N+9YW0Kxq27mHTgmnJ8L1Pvxbj4mvGv+1PIB4Y0rxPs+dT0Mar4ZMl8FQi6H4ZlGYeyCb+og/+QV9GayZrJ+MoIgjj7tExgKhKS1zJYlQGGUutEuh8lzYFrI3PYWI5driyK8jTCkLvQOTGiRkLg9GVwboVdthDrLpr0jXG69UW7qSIgNT5KEfGq6EXFl79ocqERIKeY3tR/u5ETLEvI2hkzd5iBzgVC3N+FThIu/Z3xBqJtd8L3n6GVCnBXd71fjfUxHDycJ+cgWPU424fXvulXiHbtOmIsXdtXHvGPzGUJqg08dz7lc2tQHhKbXUrJnwunM1SKoeWXIfBKGAmF43rhVN/rRyIIiEtKaLsp8qJRDH9oR+oPE2NwIiZjKrBtEkZBDejKhRUJInw+L5kSS0J82wuWmR4FG3hE6Y4NpuLq9WgAqEorZ6UCSUJbbF029UCBcUv+R8bHWY/CAcL71If2yOcJGiG+QRTYYFKUc2iWc1Ju+cJJQR8p+tX4tXyTEJD4Zx950vLWvEPI2oseIi8Pk4h1ckzAX57uykUNqhs934h18kdCQzxLqloYMitIVfzH72hvLO1HMuRyieFK3fx9rgQeEkCN0oN9H6A8SUBshDWUfBlEk5JCeTGiRsI/EsftoEFbVIGyiQVhVg7CJBmFVDcImGoRVNQibaBBWEti4ZaU26kGo2XpCdiVEBI/hi/rttrqaE2q8cry6ThGKoXXBOlf8bcpli30mNQjfVq43uXh1NScMKRgdaacehIUBKas2UA/CkILUM7OROhFC3cCg/2yXwe7ySxbPAAAAAElFTkSuQmCC' width='78.125' x='718.75' y='20.8333'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='760.4167' y='138.387'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='117.7083' x='698.9583' y='157.7881'>Swedbank Pay</text><rect fill='#FFFFFF' height='172.1354' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:0.0;' width='148.9583' x='683.3333' y='731.7708'/><image height='102.0833' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABiCAIAAACXj7lDAAAC8UlEQVR4Xu2aXY7rIAyFu//3u5eZXdwF3AXMBvIQKRI3kumJYwNJUyC1h6MzVWMg4YuB/HQe4an577cng+ux/i0//3QNB165IiFtA9qHABUJCdeZiOtBQ1QWulAkpG+6bPr6Y8tJijQhGtgydZuDzAVC3d6E157zBWVOzsN10y4hWRLSNx617iuEIZPbV+N9zFmOCfncFT1ONuH1afz3N+9YW0Kxq27mHTgmnJ8L1Pvxbj4mvGv+1PIB4Y0rxPs+dT0Mar4ZMl8FQi6H4ZlGYeyCb+og/+QV9GayZrJ+MoIgjj7tExgKhKS1zJYlQGGUutEuh8lzYFrI3PYWI5driyK8jTCkLvQOTGiRkLg9GVwboVdthDrLpr0jXG69UW7qSIgNT5KEfGq6EXFl79ocqERIKeY3tR/u5ETLEvI2hkzd5iBzgVC3N+FThIu/Z3xBqJtd8L3n6GVCnBXd71fjfUxHDycJ+cgWPU424fXvulXiHbtOmIsXdtXHvGPzGUJqg08dz7lc2tQHhKbXUrJnwunM1SKoeWXIfBKGAmF43rhVN/rRyIIiEtKaLsp8qJRDH9oR+oPE2NwIiZjKrBtEkZBDejKhRUJInw+L5kSS0J82wuWmR4FG3hE6Y4NpuLq9WgAqEorZ6UCSUJbbF029UCBcUv+R8bHWY/CAcL71If2yOcJGiG+QRTYYFKUc2iWc1Ju+cJJQR8p+tX4tXyTEJD4Zx950vLWvEPI2oseIi8Pk4h1ckzAX57uykUNqhs934h18kdCQzxLqloYMitIVfzH72hvLO1HMuRyieFK3fx9rgQeEkCN0oN9H6A8SUBshDWUfBlEk5JCeTGiRsI/EsftoEFbVIGyiQVhVg7CJBmFVDcImGoRVNQibaBBWEti4ZaU26kGo2XpCdiVEBI/hi/rttrqaE2q8cry6ThGKoXXBOlf8bcpli30mNQjfVq43uXh1NScMKRgdaacehIUBKas2UA/CkILUM7OROhFC3cCg/2yXwe7ySxbPAAAAAElFTkSuQmCC' width='78.125' x='718.75' y='747.3958'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='760.4167' y='864.9495'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='117.7083' x='698.9583' y='884.3506'>Swedbank Pay</text><rect fill='#FFFFFF' height='202.6042' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='96.3542' y='231.1198'/><rect fill='#FFFFFF' height='157.1615' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='96.3542' y='492.7083'/><rect fill='#FFFFFF' height='101.3021' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='424.4792' y='281.7708'/><rect fill='#FFFFFF' height='56.901' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='424.4792' y='649.8698'/><rect fill='#FFFFFF' height='202.6042' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='752.6042' y='231.1198'/><rect fill='#FFFFFF' height='50.651' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='752.6042' y='548.5677'/><polygon fill='#F35B1C' points='417.1875,226.9531,427.6042,231.1198,417.1875,235.2865,421.3542,231.1198' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='106.7708' x2='423.4375' y1='231.1198' y2='231.1198'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='108.3333' x='122.3958' y='216.7725'>Start Checkin</text><polygon fill='#F35B1C' points='740.1042,277.6042,750.5208,281.7708,740.1042,285.9375,744.2708,281.7708' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='434.8958' x2='746.3542' y1='281.7708' y2='281.7708'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='181.25' x='450.5208' y='267.4235'>POST /psp/consumers</text><polygon fill='#F35B1C' points='446.3542,328.2552,435.9375,332.4219,446.3542,336.5885,442.1875,332.4219' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:2.0,2.0;' x1='440.1042' x2='751.5625' y1='332.4219' y2='332.4219'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='256.25' x='460.9375' y='318.0745'>rel:view-consumer-identification</text><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='722.3958' y='318.0745'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' font-weight='bold' lengthAdjust='spacing' textLength='14.5833' x='722.3958' y='318.0745'>①</text><polygon fill='#F35B1C' points='118.2292,378.9063,107.8125,383.0729,118.2292,387.2396,114.0625,383.0729' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:2.0,2.0;' x1='111.9792' x2='428.6458' y1='383.0729' y2='383.0729'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='256.25' x='132.8125' y='368.7256'>rel:view-consumer-identification</text><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='394.2708' y='368.7256'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' font-weight='bold' lengthAdjust='spacing' textLength='14.5833' x='394.2708' y='368.7256'>②</text><polygon fill='#F35B1C' points='113.0208,429.5573,102.6042,433.724,113.0208,437.8906,108.8542,433.724' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><polygon fill='#F35B1C' points='745.3125,429.5573,755.7292,433.724,745.3125,437.8906,749.4792,433.724' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='106.7708' x2='751.5625' y1='433.724' y2='433.724'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='422.9167' x='127.6042' y='419.3766'>&lt;script src=rel:view-consumer-identification.href /&gt;</text><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='101.5625' x2='150.5208' y1='479.1667' y2='479.1667'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='150.5208' x2='150.5208' y1='479.1667' y2='492.7083'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='107.8125' x2='150.5208' y1='492.7083' y2='492.7083'/><polygon fill='#F35B1C' points='118.2292,488.5417,107.8125,492.7083,118.2292,496.875,114.0625,492.7083' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='247.9167' x='122.3958' y='464.8193'>payex.hostedView.consumer()</text><polygon fill='#F35B1C' points='740.1042,544.401,750.5208,548.5677,740.1042,552.7344,744.2708,548.5677' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='106.7708' x2='746.3542' y1='548.5677' y2='548.5677'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='190.625' x='122.3958' y='534.2204'>Consumer identification</text><text fill='#2F2424' font-family='Arial' font-size='16.6667' font-weight='bold' lengthAdjust='spacing' textLength='14.5833' x='318.2292' y='534.2204'>③</text><polygon fill='#F35B1C' points='118.2292,595.0521,107.8125,599.2188,118.2292,603.3854,114.0625,599.2188' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:2.0,2.0;' x1='111.9792' x2='756.7708' y1='599.2188' y2='599.2188'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='351.0417' x='132.8125' y='584.8714'>onConsumerIdentified(consumerProfileRef)</text><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='489.0625' y='584.8714'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' font-weight='bold' lengthAdjust='spacing' textLength='14.5833' x='489.0625' y='584.8714'>④</text><polygon fill='#F35B1C' points='411.9792,645.7031,422.3958,649.8698,411.9792,654.0365,416.1458,649.8698' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='101.5625' x2='418.2292' y1='649.8698' y2='649.8698'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='239.5833' x='117.1875' y='635.5225'>POST { consumerProfileRef }</text><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='361.9792' y='635.5225'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' font-weight='bold' lengthAdjust='spacing' textLength='14.5833' x='361.9792' y='635.5225'>⑤</text><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='434.8958' x2='478.6458' y1='705.7292' y2='705.7292'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='478.6458' x2='478.6458' y1='705.7292' y2='719.2708'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='429.6875' x2='478.6458' y1='719.2708' y2='719.2708'/><polygon fill='#F35B1C' points='440.1042,715.1042,429.6875,719.2708,440.1042,723.4375,435.9375,719.2708' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='43.75' x='450.5208' y='691.3818'>Store</text><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='159.375' x='509.8958' y='691.3818'>consumerProfileRef</text><!--MD5=[a8f3c500877aaf78dceddd4d9db14098]
+@startuml "Checkin"
+!theme swedbankpay from /srv/jekyll/_site/assets
+    $participant("payer", "Payer") as Payer
+    $participant("merchant", "Merchant") as Merchant
+    $participant("server", "Swedbank Pay") as SwedbankPay
+
+    Payer -> Merchant: Start Checkin
+    activate Payer
+        activate SwedbankPay
+            Merchant -> SwedbankPay: $code("POST /psp/consumers")
+            activate Merchant
+                SwedbankPay - -> Merchant: $code("rel:view-consumer-identification") <b>①</b>
+                Merchant - -> Payer: $code("rel:view-consumer-identification") <b>②</b>
+            deactivate Merchant
+            Payer <-> SwedbankPay: $code("<script src=rel:view-consumer-identification.href />")
+        deactivate SwedbankPay
+    deactivate Payer
+
+    Payer -> Payer: $code("payex.hostedView.consumer()")
+
+    activate Payer
+        Payer -> SwedbankPay: Consumer identification <b>③</b>
+        activate SwedbankPay
+            SwedbankPay - -> Payer: $code("onConsumerIdentified(consumerProfileRef)") <b>④</b>
+        deactivate SwedbankPay
+
+        Payer -> Merchant: $code("POST { consumerProfileRef }") <b>⑤</b>
+    deactivate Payer
+
+    activate Merchant
+        Merchant -> Merchant: Store $code("consumerProfileRef")
+    deactivate Merchant
+@enduml
+
+@startuml "Checkin"
+
+
+
+
+
+
+
+
+
+
+sprite $payer [75x79/4z] {
+xT85bWCn30JHxjBzpxmCyeGC2gV2CF-PT9uC4NpT0Y82088WVmpu_Zc8tp-3cbXAAJyW5NT2lQWNzQ9U5FT0EGVO1d17BRM5-NsrJjPUV126GSfiO4zJj1Ha
+TOW2-m2bCSeWaygNqrL2YoXm4MNGbj8S1LgcudTwErHCKSOg6XMeW299BUKbIakKazHUeq7AIbHkGraIM2Vgf0mw5UwYGCDKxAN07HIxdurRog0PoZBA0MY2
+4eWTokh8UCVQfQIfONcNKb-xez-XB4qEIxYCaYOfGnMbGied_Wkg6fO7B4uDgtArAADycyE2ilFW6pscLdTmYvJW5YdZAafGHXbNKO92obMKu1OfuofAK40L
+z0u
+}
+
+sprite $merchant [75x62/4z] {
+xPG7TiCm3CM8h_kVEJkXPPggdjZT8c-PYE4j-nZG6eHI64u1aaAfS3MxRLk6SieHoVNLKrAx_feYxKegf9XoSEP4cY8J2YBEgQLQc2-auXuj4yobbCwdK_4A
+MKYrOq5oYFaB98pZ3jycnLIAGqCzrRB_Es8k9GvJuaLkK9QgyqpXzVugPbLoLjWBJQjq74HG117dcEJZNj6fuzFjPZmCKgOKLJXVjcKwPMFbI8Xj6dnZh48A
+M-KdfHXz5ueCKqWHxYdsBAIqbD8efPw_aVfF_QTQCSKLUu0LKcQ0EQmlCcQIXYcGD7LM7J657fHJ21uH6p6HyeAki9wIUzrPJ-6b1-KKUa8r9USRfEujU3k5
+Y9DD2abrdcdgN3jd
+}
+
+sprite $server [75x98/4z] {
+xPS5hkH050FjyltFl3JGcWo_UALF9GXNcgsMH0D9CXqiWHg0X5K16xLKud2IELoe4kOa5ohs4A-sSjZ7AXMqLNAkZYDLJcqcwNJjdcfQmVZgE53rUj2zSQLz
+gelHxlm3ai3X40wd0AUhq_MwI18lrJ_PdF-oo5WDZ0HsmuGaEXoC3LJb8qOg7pHIrOzKCeMF6gdghgAF8pNZIFMfekluGIBrIlaIkOfKiccY37BmeqMgsf6g
+F0Bo4FLpiAcY6AbOtWlTI2s5gkhuPvVwgaeLl5JE56zKP7VlgR45uA1IGPLhrLQOiSgR8r86gglyMyUHwbgPcOeGheu3LQq7QOmheztnx8k9Op85QwaAT5NT
+LHJi3nQfBm6em1TI_QX-L3yg3lHCqAgTmGNJfBsuYH_j4uggUWLVTvLCgsPgkQmEhtb-0m
+}
+
+sprite $3rdparty [75x67/4z] {
+xPO7biCW34JvtF_EszS3cIU7bqbFj7LawGSBKTg20RHpMF-pcCOlHgo8n8PCISEBajLf4j6WcC0aA1jZ-7xdHt7MKPslLYJDW86ZRj3_wLgsnWzO0686hCrQ
+RfndkyhBv3rnVwYJQzuNBIV9LcOBPlj9T1yh-uhZAG8pb9mdT6Cld1nV8-xqj2xdwlL0pedkJg-9LU77LpZhSGsxd3cdD3fwMABeZ17IuakBwU_trmnJ5dyl
+Ve3gXif7TVvQvJDu_hxAk_tyQ_3yEyFvzwlz3TETyc6V6vXDU61MZ79sBDgIwn8YhUPUaZuRXjeZ4w7Q6nMKFM-66YMDzQH9p_ORiFJmV5-oDJxyA8q9HHUI
+PjdqhW9Cvm9-JEYlIJQV7WgfF_AxLBI4KXKiSfCSuZR9XDBdADZaZ690SNHKCueQjL0h5cjrnXayNr-ThzkbxLHSbih-1
+}
+
+skinparam backgroundColor           "transparent"
+skinparam useBetaStyle              false
+skinparam creoleMonospacedFont      "Consolas"
+skinparam defaultMonospacedFontName "Consolas"
+skinparam defaultFontName           "Arial"
+skinparam defaultFontSize           16
+skinparam dpi                       100
+skinparam shadowing                 false
+skinparam roundcorner               20
+skinparam ParticipantPadding        40
+skinparam BoxPadding                40
+skinparam Padding                   8
+skinparam ArrowColor                #f35b1c
+skinparam stereotype {
+    CBackgroundColor                #72605e
+    CBorderColor                    #f35b1c
+    ABackgroundColor                #f2f7eb
+    ABorderColor                    #437e15
+    IBackgroundColor                #f9ded3
+    IBorderColor                    #c5131c
+    EBackgroundColor                #fff3d5
+    EBorderColor                    #f9ce22
+    NBackgroundColor                #e8eff9
+    NBorderColor                    #3e6ab6
+}
+skinparam title {
+	FontColor	                    #2f2424
+	BorderColor	                    #f35b1c
+	FontSize	    	            20
+	BorderRoundCorner               8
+	BorderThickness 	            1
+	BackgroundColor                 #fbf2ea
+}
+
+skinparam legend {
+	BackgroundColor #512b2b
+	BorderColor #493c3b
+	FontColor #2f2424
+}
+
+skinparam swimlane {
+	BorderColor #3e6ab6
+	BorderThickness 2
+	TitleBackgroundColor #512b2b
+	TitleFontColor #2f2424
+}
+
+
+skinparam activity {
+		FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+	BarColor #437e15
+	StartColor #3e6ab6
+	EndColor #3e6ab6
+	DiamondBackgroundColor #72605e
+  	DiamondBorderColor #493c3b
+  	DiamondFontColor #2f2424
+}
+
+    skinparam participant {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        BorderThickness 0
+        BackgroundColor #ffffff
+
+        ParticipantBorderThickness 2
+    }
+
+    skinparam actor {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        BackgroundColor #fbf2ea
+        BorderColor #f35b1c
+    }
+
+    skinparam arrow {
+        Thickness 1
+        Color #f35b1c
+        FontColor #2f2424
+    }
+
+    skinparam sequence {
+        BorderColor #f35b1c
+        TitleFontColor #2f2424
+        BackgroundColor #fbf2ea
+        StartColor #f35b1c
+        EndColor #f35b1c
+        BoxBackgroundColor #fbf2ea
+        BoxBorderColor #493c3b
+        BoxFontColor #2f2424
+        DelayFontColor #2f2424
+        LifeLineBorderColor #f35b1c
+        LifeLineBorderThickness 1
+        LifeLineBorderRoundCorner 20
+        LifeLineBackgroundColor #ffffff
+        GroupBorderThickness 1
+        GroupBorderColor #f35b1c
+        GroupFontColor #2f2424
+        GroupHeaderFontColor #2f2424
+        GroupHeaderFontWeight 1
+        GroupBackgroundColor #ffffff
+        GroupBodyBackgroundColor #fbf2ea
+        GroupHeaderBackgroundColor #ffdf88
+        DividerBackgroundColor #493c3b
+        DividerBorderColor #493c3b
+        DividerBorderThickness 2
+        DividerFontColor #2f2424
+        ReferenceBackgroundColor #ffdf88
+        ReferenceBorderColor #493c3b
+        ReferenceFontColor #2f2424
+        ReferenceHeaderFontColor #2f2424
+        ReferenceHeaderBackgroundColor #512b2b
+        StereotypeFontColor #2f2424
+    }
+
+
+skinparam partition {
+	BorderColor #fdc129
+	FontColor #2f2424
+	BackgroundColor #ffdf88
+}
+
+    skinparam collections {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam control {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+
+skinparam entity {
+		FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+}
+
+    skinparam boundary {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam agent {
+        BackgroundColor #f9ce22
+        BorderColor #fff3d5
+        FontColor #2f2424
+    }
+
+    skinparam note {
+        BorderThickness 1
+        BackgroundColor #ebf8f2
+        BorderColor #257886
+    }
+
+
+skinparam artifact {
+	BackgroundColor #493c3b
+	BorderColor #2f2424
+	FontColor #2f2424
+}
+
+    skinparam component {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam interface {
+        BackgroundColor  #c5131c
+        BorderColor  #c5131c
+        FontColor #2f2424
+    }
+
+    skinparam storage {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam node {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam cloud {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam database {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam class {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        HeaderBackgroundColor #ffcc00
+        StereotypeFontColor #2f2424
+        BorderThickness 1
+        AttributeFontColor #2f2424
+        AttributeFontSize 11
+    }
+
+    skinparam object {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        StereotypeFontColor #2f2424
+        BorderThickness 1
+        AttributeFontColor #2f2424
+        AttributeFontSize 11
+    }
+
+    skinparam usecase {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        BorderThickness 2
+        StereotypeFontColor #2f2424
+    }
+
+    skinparam rectangle {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        StereotypeFontColor #2f2424
+    }
+
+    skinparam package {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam folder {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam frame {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam state {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        StartColor #f35b1c
+        EndColor #512b2b
+        AttributeFontColor #2f2424
+        AttributeFontSize 11
+    }
+
+    skinparam queue {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam card {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam file {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+
+        participant "<$payer,color=#f5b895>\n\nPayer" as Payer
+        participant "<$merchant,color=#f5b895>\n\nMerchant" as Merchant
+        participant "<$server,color=#f5b895>\n\nSwedbank Pay" as SwedbankPay
+
+    Payer -> Merchant: Start Checkin
+    activate Payer
+        activate SwedbankPay
+            Merchant -> SwedbankPay:   <font:Consolas>POST /psp/consumers</font>
+            activate Merchant
+                SwedbankPay - -> Merchant:   <font:Consolas>rel:view-consumer-identification</font> <b>①</b>
+                Merchant - -> Payer:   <font:Consolas>rel:view-consumer-identification</font> <b>②</b>
+            deactivate Merchant
+            Payer <-> SwedbankPay:   <font:Consolas><script src=rel:view-consumer-identification.href /></font>
+        deactivate SwedbankPay
+    deactivate Payer
+
+    Payer -> Payer:   <font:Consolas>payex.hostedView.consumer()</font>
+
+    activate Payer
+        Payer -> SwedbankPay: Consumer identification <b>③</b>
+        activate SwedbankPay
+            SwedbankPay - -> Payer:   <font:Consolas>onConsumerIdentified(consumerProfileRef)</font> <b>④</b>
+        deactivate SwedbankPay
+
+        Payer -> Merchant:   <font:Consolas>POST { consumerProfileRef }</font> <b>⑤</b>
+    deactivate Payer
+
+    activate Merchant
+        Merchant -> Merchant: Store   <font:Consolas>consumerProfileRef</font>
+    deactivate Merchant
+@enduml
+
+PlantUML version 1.2021.12(Tue Oct 05 18:01:58 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg></div>
+    
+      <h3 id="payment-menu">
+        
+        
+          Payment Menu <a href="#payment-menu" class="header-anchor"></a>
+        
+        
+      </h3>
+
+<div class="plantuml theme-swedbankpay"><svg contentScriptType='application/ecmascript' contentStyleType='text/css' height='1564.5833px' preserveAspectRatio='none' style='width:1050px;height:1564px;background:#FFFFFF;' version='1.1' viewBox='0 0 1050 1564' width='1050px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' zoomAndPan='magnify'><defs/><g><rect fill='#FFFFFF' height='317.4479' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='111.9792' y='231.1198'/><rect fill='#FFFFFF' height='303.9063' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='111.9792' y='665.1042'/><rect fill='#FFFFFF' height='303.9063' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='111.9792' y='1057.8125'/><rect fill='#FFFFFF' height='151.9531' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='433.8542' y='231.1198'/><rect fill='#FFFFFF' height='253.2552' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='433.8542' y='715.7552'/><rect fill='#FFFFFF' height='253.2552' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='433.8542' y='1108.4635'/><rect fill='#FFFFFF' height='50.651' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='910.9375' y='281.7708'/><rect fill='#FFFFFF' height='114.8438' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='910.9375' y='433.724'/><rect fill='#FFFFFF' height='303.9063' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='910.9375' y='665.1042'/><rect fill='#FFFFFF' height='303.9063' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='910.9375' y='1057.8125'/><rect fill='#EBF8F2' height='805.8594' rx='10.4167' ry='10.4167' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='1032.2917' x='10.4167' y='564.1927'/><path d='M10.4167,977.3438 L1042.7083,977.3438 L1042.7083,1359.6354 A10.4167,10.4167 0 0 1 1032.2917,1370.0521 L20.8333,1370.0521 A10.4167,10.4167 0 0 1 10.4167,1359.6354 L10.4167,977.3438 ' fill='#FBF2EA' style='stroke:none;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;' x1='116.6667' x2='116.6667' y1='178.3854' y2='1387.7604'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;' x1='438.5417' x2='438.5417' y1='178.3854' y2='1387.7604'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;' x1='915.625' x2='915.625' y1='178.3854' y2='1387.7604'/><rect fill='#FFFFFF' height='152.3438' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:0.0;' width='109.375' x='62.5' y='25'/><image height='82.2917' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABPCAIAAAAsva+rAAACcElEQVR4Xu2XXU7DMAyAd/937gK34AAcgAvwUAnJdHg1rp0mTmqvacknC/Uncf3VycZucHVu8kKK78+P6f1tjq/XlznwgP/FAzqmUx58imUwzynGUyqeU6fC4k2G4vEnCrAYUgPPGDAM75zXcN6WMAzvDMN+YxguDMN+YxguDMN+YxguDMN+YxguDMN+4/qG0+V/AU/D8AEazn8tQan1FXsSl6gwpKFFeN7k9flA3IrDarhVdJL8yPxdd0yGpGepDAdnumTM44XJkPQslRWHFV+BL2VDHEG7Vt5WFA3hd0wvhnz78bWaj2L1ekp0wJYh3YZLGuI9Kvdqhnx9iivFYGnS6CnRAdqQbhDnNUz8tsAbYrEZDTFdHj0rNKQhmui9ZDSc+u8hXv0rZ+G8hhPfh3SuMRrq5mv0rOgAiyHYKuvQEEu6G+K5LGeNni9CTkihZ8UFvXGrYQb7dP5gPBVXIjjMkLb3eog/D8M9L9JeKH+QfdZOWgzFl7u9VnoQTql6aDMtq5SPx8VmrBVHPm19Iu2GaIXlyhEb4MTax+2kxRDYlKq5pGfsuQt3w6qVRjQ0pHa8C6b/aZLQdrJPrBrsxcqwuY3yxgYNj9hP+bdFnqqiqwZ7sdewioMNn/A1dbAhxLfxeMO2rw070W8wycoQgot4wkbQpA2j2xiXXyMNIbiNEJ9fcIBh9G4XJAwhXjI6P+e/GkYvpOj8nLQhxL/m4w2jX3Nocs6mIQS3cRi6kTOESMlh6EbBMO7zJiitpmAIYW3syDCojRE5k5QNIaaNPRr6FuSecAuTIQS0cRi6YTV0/7zxzZbBagjebezR8KT8ANRE1OnNW5mUAAAAAElFTkSuQmCC' width='78.125' x='78.125' y='40.625'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='119.7917' y='138.387'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='45.8333' x='94.2708' y='157.7881'>Payer</text><rect fill='#FFFFFF' height='152.3438' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:0.0;' width='109.375' x='62.5' y='1386.7188'/><image height='82.2917' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABPCAIAAAAsva+rAAACcElEQVR4Xu2XXU7DMAyAd/937gK34AAcgAvwUAnJdHg1rp0mTmqvacknC/Uncf3VycZucHVu8kKK78+P6f1tjq/XlznwgP/FAzqmUx58imUwzynGUyqeU6fC4k2G4vEnCrAYUgPPGDAM75zXcN6WMAzvDMN+YxguDMN+YxguDMN+YxguDMN+YxguDMN+4/qG0+V/AU/D8AEazn8tQan1FXsSl6gwpKFFeN7k9flA3IrDarhVdJL8yPxdd0yGpGepDAdnumTM44XJkPQslRWHFV+BL2VDHEG7Vt5WFA3hd0wvhnz78bWaj2L1ekp0wJYh3YZLGuI9Kvdqhnx9iivFYGnS6CnRAdqQbhDnNUz8tsAbYrEZDTFdHj0rNKQhmui9ZDSc+u8hXv0rZ+G8hhPfh3SuMRrq5mv0rOgAiyHYKuvQEEu6G+K5LGeNni9CTkihZ8UFvXGrYQb7dP5gPBVXIjjMkLb3eog/D8M9L9JeKH+QfdZOWgzFl7u9VnoQTql6aDMtq5SPx8VmrBVHPm19Iu2GaIXlyhEb4MTax+2kxRDYlKq5pGfsuQt3w6qVRjQ0pHa8C6b/aZLQdrJPrBrsxcqwuY3yxgYNj9hP+bdFnqqiqwZ7sdewioMNn/A1dbAhxLfxeMO2rw070W8wycoQgot4wkbQpA2j2xiXXyMNIbiNEJ9fcIBh9G4XJAwhXjI6P+e/GkYvpOj8nLQhxL/m4w2jX3Nocs6mIQS3cRi6kTOESMlh6EbBMO7zJiitpmAIYW3syDCojRE5k5QNIaaNPRr6FuSecAuTIQS0cRi6YTV0/7zxzZbBagjebezR8KT8ANRE1OnNW5mUAAAAAElFTkSuQmCC' width='78.125' x='78.125' y='1402.3438'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='119.7917' y='1500.1058'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='45.8333' x='94.2708' y='1519.5068'>Payer</text><rect fill='#FFFFFF' height='134.6354' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:0.0;' width='109.375' x='384.375' y='42.7083'/><image height='64.5833' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA+CAIAAADsw3HPAAAClklEQVR4Xu2aUY7bMAxE9/7/vUt7ix6gB+gF+iEggJqGwSyXI9KUrCBKqsFgYcjkWE+WlZ/9qO+uDzvQ0uX3r/Lzx/q+ztNOPUMY96+g68T0OzB3DwibPcsKnHowIpQGO7q2eM7vRlhv+05/UBEhv/GXUDeh+M/3b/qvXIxZ2rW5JmkvZ4QwtpxmgbnFM/eORYFiAuEl8SvCXZ5tJ4lbmka9S5hfrQUJrzsW9S4ht3lekLCoWbmE+QPgkDC/Hco8QkS5hNzg2XaSnkKIjdomnDunuWn5zSX1Zwn1N+0pn1YShNziWT6fNiFXB7bNJG4JbJtJ3OJ5E+Z8eJDWnrSSIOzd8w3CroiVCeWMaBByaWDb3FK5LQT3Nm2bSfmocnvuWUJJCcz1sTnhTOBlCuHidgnj1cJd20xC5VMCJ7zDy9FJwy2x5wbW5klT+1MCcf2hbYRS/N7Y1SPMBMliI4ilN14yMN6r+i63s2WGbcJ6FIG9pL8K3c5z5ZCuQFTySNNodwmrv/Dm2dV5GJd5gaasTg2MCOvXc5UfYISyuFIKHhQ4Qhinr6ZNSPofCbHXpxixfCtpNbXPHD0ySHiSk48EGey1TkCOGXwOIYzYshrhLCO29K/aJrxrE27Ck0Zs2YTsTXjXJtyEJ43YsgnF5l9KdAJyzOBahMbqsV8kt16PEPkxHvRYwpOcaEcsrlGDW54GCWX9zGxMgb570ojV10l1EwZTV/VR2YARq6+T6iPE3vPemB58hAYe0UfIN7Sw5GKzClMUPN1TByGPGhnCw/oBDQT2EQavhdkeATmQNocwPle8rgHxXA81h5CpjG3DqAaiNuFdnycN/07EW5SzhiUP8lbZU7OLZ/WPMEPyWraEInlp72EFWP8CeeozeLCFJQsAAAAASUVORK5CYII=' width='78.125' x='400' y='58.3333'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='441.6667' y='138.387'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='76.0417' x='401.0417' y='157.7881'>Merchant</text><rect fill='#FFFFFF' height='134.6354' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:0.0;' width='109.375' x='384.375' y='1386.7188'/><image height='64.5833' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA+CAIAAADsw3HPAAAClklEQVR4Xu2aUY7bMAxE9/7/vUt7ix6gB+gF+iEggJqGwSyXI9KUrCBKqsFgYcjkWE+WlZ/9qO+uDzvQ0uX3r/Lzx/q+ztNOPUMY96+g68T0OzB3DwibPcsKnHowIpQGO7q2eM7vRlhv+05/UBEhv/GXUDeh+M/3b/qvXIxZ2rW5JmkvZ4QwtpxmgbnFM/eORYFiAuEl8SvCXZ5tJ4lbmka9S5hfrQUJrzsW9S4ht3lekLCoWbmE+QPgkDC/Hco8QkS5hNzg2XaSnkKIjdomnDunuWn5zSX1Zwn1N+0pn1YShNziWT6fNiFXB7bNJG4JbJtJ3OJ5E+Z8eJDWnrSSIOzd8w3CroiVCeWMaBByaWDb3FK5LQT3Nm2bSfmocnvuWUJJCcz1sTnhTOBlCuHidgnj1cJd20xC5VMCJ7zDy9FJwy2x5wbW5klT+1MCcf2hbYRS/N7Y1SPMBMliI4ilN14yMN6r+i63s2WGbcJ6FIG9pL8K3c5z5ZCuQFTySNNodwmrv/Dm2dV5GJd5gaasTg2MCOvXc5UfYISyuFIKHhQ4Qhinr6ZNSPofCbHXpxixfCtpNbXPHD0ySHiSk48EGey1TkCOGXwOIYzYshrhLCO29K/aJrxrE27Ck0Zs2YTsTXjXJtyEJ43YsgnF5l9KdAJyzOBahMbqsV8kt16PEPkxHvRYwpOcaEcsrlGDW54GCWX9zGxMgb570ojV10l1EwZTV/VR2YARq6+T6iPE3vPemB58hAYe0UfIN7Sw5GKzClMUPN1TByGPGhnCw/oBDQT2EQavhdkeATmQNocwPle8rgHxXA81h5CpjG3DqAaiNuFdnycN/07EW5SzhiUP8lbZU7OLZ/WPMEPyWraEInlp72EFWP8CeeozeLCFJQsAAAAASUVORK5CYII=' width='78.125' x='400' y='1402.3438'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='441.6667' y='1482.3975'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='76.0417' x='401.0417' y='1501.7985'>Merchant</text><rect fill='#FFFFFF' height='172.1354' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:0.0;' width='148.9583' x='841.6667' y='5.2083'/><image height='102.0833' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABiCAIAAACXj7lDAAAC8UlEQVR4Xu2aXY7rIAyFu//3u5eZXdwF3AXMBvIQKRI3kumJYwNJUyC1h6MzVWMg4YuB/HQe4an577cng+ux/i0//3QNB165IiFtA9qHABUJCdeZiOtBQ1QWulAkpG+6bPr6Y8tJijQhGtgydZuDzAVC3d6E157zBWVOzsN10y4hWRLSNx617iuEIZPbV+N9zFmOCfncFT1ONuH1afz3N+9YW0Kxq27mHTgmnJ8L1Pvxbj4mvGv+1PIB4Y0rxPs+dT0Mar4ZMl8FQi6H4ZlGYeyCb+og/+QV9GayZrJ+MoIgjj7tExgKhKS1zJYlQGGUutEuh8lzYFrI3PYWI5driyK8jTCkLvQOTGiRkLg9GVwboVdthDrLpr0jXG69UW7qSIgNT5KEfGq6EXFl79ocqERIKeY3tR/u5ETLEvI2hkzd5iBzgVC3N+FThIu/Z3xBqJtd8L3n6GVCnBXd71fjfUxHDycJ+cgWPU424fXvulXiHbtOmIsXdtXHvGPzGUJqg08dz7lc2tQHhKbXUrJnwunM1SKoeWXIfBKGAmF43rhVN/rRyIIiEtKaLsp8qJRDH9oR+oPE2NwIiZjKrBtEkZBDejKhRUJInw+L5kSS0J82wuWmR4FG3hE6Y4NpuLq9WgAqEorZ6UCSUJbbF029UCBcUv+R8bHWY/CAcL71If2yOcJGiG+QRTYYFKUc2iWc1Ju+cJJQR8p+tX4tXyTEJD4Zx950vLWvEPI2oseIi8Pk4h1ckzAX57uykUNqhs934h18kdCQzxLqloYMitIVfzH72hvLO1HMuRyieFK3fx9rgQeEkCN0oN9H6A8SUBshDWUfBlEk5JCeTGiRsI/EsftoEFbVIGyiQVhVg7CJBmFVDcImGoRVNQibaBBWEti4ZaU26kGo2XpCdiVEBI/hi/rttrqaE2q8cry6ThGKoXXBOlf8bcpli30mNQjfVq43uXh1NScMKRgdaacehIUBKas2UA/CkILUM7OROhFC3cCg/2yXwe7ySxbPAAAAAElFTkSuQmCC' width='78.125' x='877.0833' y='20.8333'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='918.75' y='138.387'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='117.7083' x='857.2917' y='157.7881'>Swedbank Pay</text><rect fill='#FFFFFF' height='172.1354' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:0.0;' width='148.9583' x='841.6667' y='1386.7188'/><image height='102.0833' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABiCAIAAACXj7lDAAAC8UlEQVR4Xu2aXY7rIAyFu//3u5eZXdwF3AXMBvIQKRI3kumJYwNJUyC1h6MzVWMg4YuB/HQe4an577cng+ux/i0//3QNB165IiFtA9qHABUJCdeZiOtBQ1QWulAkpG+6bPr6Y8tJijQhGtgydZuDzAVC3d6E157zBWVOzsN10y4hWRLSNx617iuEIZPbV+N9zFmOCfncFT1ONuH1afz3N+9YW0Kxq27mHTgmnJ8L1Pvxbj4mvGv+1PIB4Y0rxPs+dT0Mar4ZMl8FQi6H4ZlGYeyCb+og/+QV9GayZrJ+MoIgjj7tExgKhKS1zJYlQGGUutEuh8lzYFrI3PYWI5driyK8jTCkLvQOTGiRkLg9GVwboVdthDrLpr0jXG69UW7qSIgNT5KEfGq6EXFl79ocqERIKeY3tR/u5ETLEvI2hkzd5iBzgVC3N+FThIu/Z3xBqJtd8L3n6GVCnBXd71fjfUxHDycJ+cgWPU424fXvulXiHbtOmIsXdtXHvGPzGUJqg08dz7lc2tQHhKbXUrJnwunM1SKoeWXIfBKGAmF43rhVN/rRyIIiEtKaLsp8qJRDH9oR+oPE2NwIiZjKrBtEkZBDejKhRUJInw+L5kSS0J82wuWmR4FG3hE6Y4NpuLq9WgAqEorZ6UCSUJbbF029UCBcUv+R8bHWY/CAcL71If2yOcJGiG+QRTYYFKUc2iWc1Ju+cJJQR8p+tX4tXyTEJD4Zx950vLWvEPI2oseIi8Pk4h1ckzAX57uykUNqhs934h18kdCQzxLqloYMitIVfzH72hvLO1HMuRyieFK3fx9rgQeEkCN0oN9H6A8SUBshDWUfBlEk5JCeTGiRsI/EsftoEFbVIGyiQVhVg7CJBmFVDcImGoRVNQibaBBWEti4ZaU26kGo2XpCdiVEBI/hi/rttrqaE2q8cry6ThGKoXXBOlf8bcpli30mNQjfVq43uXh1NScMKRgdaacehIUBKas2UA/CkILUM7OROhFC3cCg/2yXwe7ySxbPAAAAAElFTkSuQmCC' width='78.125' x='877.0833' y='1402.3438'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='918.75' y='1519.8975'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='117.7083' x='857.2917' y='1539.2985'>Swedbank Pay</text><rect fill='#FFFFFF' height='317.4479' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='111.9792' y='231.1198'/><rect fill='#FFFFFF' height='303.9063' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='111.9792' y='665.1042'/><rect fill='#FFFFFF' height='303.9063' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='111.9792' y='1057.8125'/><rect fill='#FFFFFF' height='151.9531' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='433.8542' y='231.1198'/><rect fill='#FFFFFF' height='253.2552' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='433.8542' y='715.7552'/><rect fill='#FFFFFF' height='253.2552' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='433.8542' y='1108.4635'/><rect fill='#FFFFFF' height='50.651' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='910.9375' y='281.7708'/><rect fill='#FFFFFF' height='114.8438' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='910.9375' y='433.724'/><rect fill='#FFFFFF' height='303.9063' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='910.9375' y='665.1042'/><rect fill='#FFFFFF' height='303.9063' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='910.9375' y='1057.8125'/><polygon fill='#F35B1C' points='421.3542,226.9531,431.7708,231.1198,421.3542,235.2865,425.5208,231.1198' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='122.3958' x2='427.6042' y1='231.1198' y2='231.1198'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='29.1667' x='138.0208' y='216.7725'>Pay</text><polygon fill='#F35B1C' points='898.4375,277.6042,908.8542,281.7708,898.4375,285.9375,902.6042,281.7708' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='444.2708' x2='904.6875' y1='281.7708' y2='281.7708'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='410.4167' x='459.8958' y='267.4235'>POST /psp/paymentorders { consumerProfileRef }</text><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='875.5208' y='267.4235'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' font-weight='bold' lengthAdjust='spacing' textLength='14.5833' x='875.5208' y='267.4235'>①</text><polygon fill='#F35B1C' points='455.7292,328.2552,445.3125,332.4219,455.7292,336.5885,451.5625,332.4219' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:2.0,2.0;' x1='449.4792' x2='915.1042' y1='332.4219' y2='332.4219'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='182.2917' x='470.3125' y='318.0745'>rel:view-paymentorder</text><polygon fill='#F35B1C' points='133.8542,378.9063,123.4375,383.0729,133.8542,387.2396,129.6875,383.0729' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:2.0,2.0;' x1='127.6042' x2='438.0208' y1='383.0729' y2='383.0729'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='182.2917' x='148.4375' y='368.7256'>rel:view-paymentorder</text><polygon fill='#F35B1C' points='133.8542,429.5573,123.4375,433.724,133.8542,437.8906,129.6875,433.724' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><polygon fill='#F35B1C' points='898.4375,429.5573,908.8542,433.724,898.4375,437.8906,902.6042,433.724' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='127.6042' x2='904.6875' y1='433.724' y2='433.724'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='348.9583' x='148.4375' y='419.3766'>&lt;script src=rel:view-paymentorder.href /&gt;</text><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='122.3958' x2='166.1458' y1='484.375' y2='484.375'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='166.1458' x2='166.1458' y1='484.375' y2='497.9167'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='123.4375' x2='166.1458' y1='497.9167' y2='497.9167'/><polygon fill='#F35B1C' points='133.8542,493.75,123.4375,497.9167,133.8542,502.0833,129.6875,497.9167' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='280.2083' x='138.0208' y='470.0277'>payex.hostedView.paymentMenu()</text><polygon fill='#F35B1C' points='128.6458,544.401,118.2292,548.5677,128.6458,552.7344,124.4792,548.5677' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><polygon fill='#F35B1C' points='903.6458,544.401,914.0625,548.5677,903.6458,552.7344,907.8125,548.5677' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='122.3958' x2='909.8958' y1='548.5677' y2='548.5677'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='142.7083' x='143.2292' y='534.2204'>Perform payment</text><path d='M20.8333,564.1927 L96.875,564.1927 L96.875,591.276 L86.4583,601.6927 L10.4167,601.6927 L10.4167,574.6094 A10.4167,10.4167 0 0 1 20.8333,564.1927 ' fill='#FFFFFF' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><rect fill='none' height='805.8594' rx='10.4167' ry='10.4167' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='1032.2917' x='10.4167' y='564.1927'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' font-weight='bold' lengthAdjust='spacing' textLength='22.9167' x='34.375' y='589.0381'>alt</text><text fill='#2F2424' font-family='Arial' font-size='16.6667' font-weight='bold' lengthAdjust='spacing' textLength='197.9167' x='120.8333' y='590.0798'>[completed payment]</text><polygon fill='#F35B1C' points='133.8542,660.9375,123.4375,665.1042,133.8542,669.2708,129.6875,665.1042' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='127.6042' x2='909.8958' y1='665.1042' y2='665.1042'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='306.25' x='148.4375' y='650.7568'>onPaymentCompleted(paymentorder)</text><polygon fill='#F35B1C' points='421.3542,711.5885,431.7708,715.7552,421.3542,719.9219,425.5208,715.7552' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='122.3958' x2='427.6042' y1='715.7552' y2='715.7552'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='182.2917' x='138.0208' y='701.4079'>Check payment status</text><polygon fill='#F35B1C' points='898.4375,762.2396,908.8542,766.4063,898.4375,770.5729,902.6042,766.4063' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='444.2708' x2='904.6875' y1='766.4063' y2='766.4063'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='171.875' x='459.8958' y='752.0589'>GET paymentorder.id</text><polygon fill='#F35B1C' points='455.7292,812.8906,445.3125,817.0573,455.7292,821.224,451.5625,817.0573' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:2.0,2.0;' x1='449.4792' x2='909.8958' y1='817.0573' y2='817.0573'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='180.2083' x='470.3125' y='802.71'>rel:paid-paymentorder</text><polygon fill='#F35B1C' points='898.4375,863.5417,908.8542,867.7083,898.4375,871.875,902.6042,867.7083' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='444.2708' x2='904.6875' y1='867.7083' y2='867.7083'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='256.25' x='459.8958' y='853.361'>GET rel:paid-paymentorder.href</text><polygon fill='#F35B1C' points='455.7292,914.1927,445.3125,918.3594,455.7292,922.526,451.5625,918.3594' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:2.0,2.0;' x1='449.4792' x2='909.8958' y1='918.3594' y2='918.3594'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='215.625' x='470.3125' y='904.012'>Completed Payment Order</text><polygon fill='#F35B1C' points='128.6458,964.8438,118.2292,969.0104,128.6458,973.1771,124.4792,969.0104' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:2.0,2.0;' x1='122.3958' x2='438.0208' y1='969.0104' y2='969.0104'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='105.2083' x='143.2292' y='954.6631'>Show receipt</text><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:2.0,2.0;' x1='10.4167' x2='1042.7083' y1='978.3854' y2='978.3854'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' font-weight='bold' lengthAdjust='spacing' textLength='150' x='23.9583' y='1002.1891'>[failed payment]</text><polygon fill='#F35B1C' points='133.8542,1053.6458,123.4375,1057.8125,133.8542,1061.9792,129.6875,1057.8125' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='127.6042' x2='909.8958' y1='1057.8125' y2='1057.8125'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='264.5833' x='148.4375' y='1043.4652'>onPaymentFailed(paymentorder)</text><polygon fill='#F35B1C' points='421.3542,1104.2969,431.7708,1108.4635,421.3542,1112.6302,425.5208,1108.4635' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='122.3958' x2='427.6042' y1='1108.4635' y2='1108.4635'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='182.2917' x='138.0208' y='1094.1162'>Check payment status</text><polygon fill='#F35B1C' points='898.4375,1154.9479,908.8542,1159.1146,898.4375,1163.2813,902.6042,1159.1146' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='444.2708' x2='904.6875' y1='1159.1146' y2='1159.1146'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='171.875' x='459.8958' y='1144.7673'>GET paymentorder.id</text><polygon fill='#F35B1C' points='455.7292,1205.599,445.3125,1209.7656,455.7292,1213.9323,451.5625,1209.7656' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:2.0,2.0;' x1='449.4792' x2='909.8958' y1='1209.7656' y2='1209.7656'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='188.5417' x='470.3125' y='1195.4183'>rel:failed-paymentorder</text><polygon fill='#F35B1C' points='898.4375,1256.25,908.8542,1260.4167,898.4375,1264.5833,902.6042,1260.4167' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='444.2708' x2='904.6875' y1='1260.4167' y2='1260.4167'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='264.5833' x='459.8958' y='1246.0693'>GET rel:failed-paymentorder.href</text><polygon fill='#F35B1C' points='455.7292,1306.901,445.3125,1311.0677,455.7292,1315.2344,451.5625,1311.0677' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:2.0,2.0;' x1='449.4792' x2='909.8958' y1='1311.0677' y2='1311.0677'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='173.9583' x='470.3125' y='1296.7204'>Failed Payment Order</text><polygon fill='#F35B1C' points='128.6458,1357.5521,118.2292,1361.7188,128.6458,1365.8854,124.4792,1361.7188' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:2.0,2.0;' x1='122.3958' x2='438.0208' y1='1361.7188' y2='1361.7188'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='143.75' x='143.2292' y='1347.3714'>Show failure page</text><!--MD5=[8dca35523ed00f1b94de3cb2bc4a05b5]
+@startuml "Payment Menu"
+!theme swedbankpay from /srv/jekyll/_site/assets
+    $participant("payer", "Payer") as Payer
+    $participant("merchant", "Merchant") as Merchant
+    $participant("server", "Swedbank Pay") as SwedbankPay
+
+    Payer -> Merchant: Pay
+    activate Payer
+        activate Merchant
+            Merchant -> SwedbankPay: $code("POST /psp/paymentorders { consumerProfileRef }") <b>①</b>
+            activate SwedbankPay
+                SwedbankPay - -> Merchant: $code("rel:view-paymentorder")
+            deactivate SwedbankPay
+            Merchant - -> Payer: $code("rel:view-paymentorder")
+        deactivate Merchant
+
+        Payer <-> SwedbankPay: $code("<script src=rel:view-paymentorder.href />")
+
+        activate SwedbankPay
+            Payer -> Payer: $code("payex.hostedView.paymentMenu()")
+            SwedbankPay <-> Payer: Perform payment
+        deactivate SwedbankPay
+    deactivate Payer
+
+    alt#fff #ebf8f2 completed payment
+        SwedbankPay -> Payer: $code("onPaymentCompleted(paymentorder)")
+        activate SwedbankPay
+            activate Payer
+                Payer -> Merchant: Check payment status
+                activate Merchant
+                    Merchant -> SwedbankPay: $code("GET paymentorder.id")
+                    SwedbankPay - -> Merchant: $code("rel:paid-paymentorder")
+                    Merchant -> SwedbankPay: $code("GET rel:paid-paymentorder.href")
+                    SwedbankPay - -> Merchant: Completed Payment Order
+                    Merchant - -> Payer: Show receipt
+                deactivate Merchant
+            deactivate Payer
+        deactivate SwedbankPay
+    else failed payment
+        SwedbankPay -> Payer: $code("onPaymentFailed(paymentorder)")
+        activate SwedbankPay
+            activate Payer
+                Payer -> Merchant: Check payment status
+                activate Merchant
+                    Merchant -> SwedbankPay: $code("GET paymentorder.id")
+                    SwedbankPay - -> Merchant: $code("rel:failed-paymentorder")
+                    Merchant -> SwedbankPay: $code("GET rel:failed-paymentorder.href")
+                    SwedbankPay - -> Merchant: Failed Payment Order
+                    Merchant - -> Payer: Show failure page
+                deactivate Merchant
+            deactivate Payer
+        deactivate SwedbankPay
+    end
+@enduml
+
+@startuml "Payment Menu"
+
+
+
+
+
+
+
+
+
+
+sprite $payer [75x79/4z] {
+xT85bWCn30JHxjBzpxmCyeGC2gV2CF-PT9uC4NpT0Y82088WVmpu_Zc8tp-3cbXAAJyW5NT2lQWNzQ9U5FT0EGVO1d17BRM5-NsrJjPUV126GSfiO4zJj1Ha
+TOW2-m2bCSeWaygNqrL2YoXm4MNGbj8S1LgcudTwErHCKSOg6XMeW299BUKbIakKazHUeq7AIbHkGraIM2Vgf0mw5UwYGCDKxAN07HIxdurRog0PoZBA0MY2
+4eWTokh8UCVQfQIfONcNKb-xez-XB4qEIxYCaYOfGnMbGied_Wkg6fO7B4uDgtArAADycyE2ilFW6pscLdTmYvJW5YdZAafGHXbNKO92obMKu1OfuofAK40L
+z0u
+}
+
+sprite $merchant [75x62/4z] {
+xPG7TiCm3CM8h_kVEJkXPPggdjZT8c-PYE4j-nZG6eHI64u1aaAfS3MxRLk6SieHoVNLKrAx_feYxKegf9XoSEP4cY8J2YBEgQLQc2-auXuj4yobbCwdK_4A
+MKYrOq5oYFaB98pZ3jycnLIAGqCzrRB_Es8k9GvJuaLkK9QgyqpXzVugPbLoLjWBJQjq74HG117dcEJZNj6fuzFjPZmCKgOKLJXVjcKwPMFbI8Xj6dnZh48A
+M-KdfHXz5ueCKqWHxYdsBAIqbD8efPw_aVfF_QTQCSKLUu0LKcQ0EQmlCcQIXYcGD7LM7J657fHJ21uH6p6HyeAki9wIUzrPJ-6b1-KKUa8r9USRfEujU3k5
+Y9DD2abrdcdgN3jd
+}
+
+sprite $server [75x98/4z] {
+xPS5hkH050FjyltFl3JGcWo_UALF9GXNcgsMH0D9CXqiWHg0X5K16xLKud2IELoe4kOa5ohs4A-sSjZ7AXMqLNAkZYDLJcqcwNJjdcfQmVZgE53rUj2zSQLz
+gelHxlm3ai3X40wd0AUhq_MwI18lrJ_PdF-oo5WDZ0HsmuGaEXoC3LJb8qOg7pHIrOzKCeMF6gdghgAF8pNZIFMfekluGIBrIlaIkOfKiccY37BmeqMgsf6g
+F0Bo4FLpiAcY6AbOtWlTI2s5gkhuPvVwgaeLl5JE56zKP7VlgR45uA1IGPLhrLQOiSgR8r86gglyMyUHwbgPcOeGheu3LQq7QOmheztnx8k9Op85QwaAT5NT
+LHJi3nQfBm6em1TI_QX-L3yg3lHCqAgTmGNJfBsuYH_j4uggUWLVTvLCgsPgkQmEhtb-0m
+}
+
+sprite $3rdparty [75x67/4z] {
+xPO7biCW34JvtF_EszS3cIU7bqbFj7LawGSBKTg20RHpMF-pcCOlHgo8n8PCISEBajLf4j6WcC0aA1jZ-7xdHt7MKPslLYJDW86ZRj3_wLgsnWzO0686hCrQ
+RfndkyhBv3rnVwYJQzuNBIV9LcOBPlj9T1yh-uhZAG8pb9mdT6Cld1nV8-xqj2xdwlL0pedkJg-9LU77LpZhSGsxd3cdD3fwMABeZ17IuakBwU_trmnJ5dyl
+Ve3gXif7TVvQvJDu_hxAk_tyQ_3yEyFvzwlz3TETyc6V6vXDU61MZ79sBDgIwn8YhUPUaZuRXjeZ4w7Q6nMKFM-66YMDzQH9p_ORiFJmV5-oDJxyA8q9HHUI
+PjdqhW9Cvm9-JEYlIJQV7WgfF_AxLBI4KXKiSfCSuZR9XDBdADZaZ690SNHKCueQjL0h5cjrnXayNr-ThzkbxLHSbih-1
+}
+
+skinparam backgroundColor           "transparent"
+skinparam useBetaStyle              false
+skinparam creoleMonospacedFont      "Consolas"
+skinparam defaultMonospacedFontName "Consolas"
+skinparam defaultFontName           "Arial"
+skinparam defaultFontSize           16
+skinparam dpi                       100
+skinparam shadowing                 false
+skinparam roundcorner               20
+skinparam ParticipantPadding        40
+skinparam BoxPadding                40
+skinparam Padding                   8
+skinparam ArrowColor                #f35b1c
+skinparam stereotype {
+    CBackgroundColor                #72605e
+    CBorderColor                    #f35b1c
+    ABackgroundColor                #f2f7eb
+    ABorderColor                    #437e15
+    IBackgroundColor                #f9ded3
+    IBorderColor                    #c5131c
+    EBackgroundColor                #fff3d5
+    EBorderColor                    #f9ce22
+    NBackgroundColor                #e8eff9
+    NBorderColor                    #3e6ab6
+}
+skinparam title {
+	FontColor	                    #2f2424
+	BorderColor	                    #f35b1c
+	FontSize	    	            20
+	BorderRoundCorner               8
+	BorderThickness 	            1
+	BackgroundColor                 #fbf2ea
+}
+
+skinparam legend {
+	BackgroundColor #512b2b
+	BorderColor #493c3b
+	FontColor #2f2424
+}
+
+skinparam swimlane {
+	BorderColor #3e6ab6
+	BorderThickness 2
+	TitleBackgroundColor #512b2b
+	TitleFontColor #2f2424
+}
+
+
+skinparam activity {
+		FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+	BarColor #437e15
+	StartColor #3e6ab6
+	EndColor #3e6ab6
+	DiamondBackgroundColor #72605e
+  	DiamondBorderColor #493c3b
+  	DiamondFontColor #2f2424
+}
+
+    skinparam participant {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        BorderThickness 0
+        BackgroundColor #ffffff
+
+        ParticipantBorderThickness 2
+    }
+
+    skinparam actor {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        BackgroundColor #fbf2ea
+        BorderColor #f35b1c
+    }
+
+    skinparam arrow {
+        Thickness 1
+        Color #f35b1c
+        FontColor #2f2424
+    }
+
+    skinparam sequence {
+        BorderColor #f35b1c
+        TitleFontColor #2f2424
+        BackgroundColor #fbf2ea
+        StartColor #f35b1c
+        EndColor #f35b1c
+        BoxBackgroundColor #fbf2ea
+        BoxBorderColor #493c3b
+        BoxFontColor #2f2424
+        DelayFontColor #2f2424
+        LifeLineBorderColor #f35b1c
+        LifeLineBorderThickness 1
+        LifeLineBorderRoundCorner 20
+        LifeLineBackgroundColor #ffffff
+        GroupBorderThickness 1
+        GroupBorderColor #f35b1c
+        GroupFontColor #2f2424
+        GroupHeaderFontColor #2f2424
+        GroupHeaderFontWeight 1
+        GroupBackgroundColor #ffffff
+        GroupBodyBackgroundColor #fbf2ea
+        GroupHeaderBackgroundColor #ffdf88
+        DividerBackgroundColor #493c3b
+        DividerBorderColor #493c3b
+        DividerBorderThickness 2
+        DividerFontColor #2f2424
+        ReferenceBackgroundColor #ffdf88
+        ReferenceBorderColor #493c3b
+        ReferenceFontColor #2f2424
+        ReferenceHeaderFontColor #2f2424
+        ReferenceHeaderBackgroundColor #512b2b
+        StereotypeFontColor #2f2424
+    }
+
+
+skinparam partition {
+	BorderColor #fdc129
+	FontColor #2f2424
+	BackgroundColor #ffdf88
+}
+
+    skinparam collections {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam control {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+
+skinparam entity {
+		FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+}
+
+    skinparam boundary {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam agent {
+        BackgroundColor #f9ce22
+        BorderColor #fff3d5
+        FontColor #2f2424
+    }
+
+    skinparam note {
+        BorderThickness 1
+        BackgroundColor #ebf8f2
+        BorderColor #257886
+    }
+
+
+skinparam artifact {
+	BackgroundColor #493c3b
+	BorderColor #2f2424
+	FontColor #2f2424
+}
+
+    skinparam component {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam interface {
+        BackgroundColor  #c5131c
+        BorderColor  #c5131c
+        FontColor #2f2424
+    }
+
+    skinparam storage {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam node {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam cloud {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam database {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam class {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        HeaderBackgroundColor #ffcc00
+        StereotypeFontColor #2f2424
+        BorderThickness 1
+        AttributeFontColor #2f2424
+        AttributeFontSize 11
+    }
+
+    skinparam object {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        StereotypeFontColor #2f2424
+        BorderThickness 1
+        AttributeFontColor #2f2424
+        AttributeFontSize 11
+    }
+
+    skinparam usecase {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        BorderThickness 2
+        StereotypeFontColor #2f2424
+    }
+
+    skinparam rectangle {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        StereotypeFontColor #2f2424
+    }
+
+    skinparam package {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam folder {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam frame {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam state {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        StartColor #f35b1c
+        EndColor #512b2b
+        AttributeFontColor #2f2424
+        AttributeFontSize 11
+    }
+
+    skinparam queue {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam card {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam file {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+
+        participant "<$payer,color=#f5b895>\n\nPayer" as Payer
+        participant "<$merchant,color=#f5b895>\n\nMerchant" as Merchant
+        participant "<$server,color=#f5b895>\n\nSwedbank Pay" as SwedbankPay
+
+    Payer -> Merchant: Pay
+    activate Payer
+        activate Merchant
+            Merchant -> SwedbankPay:   <font:Consolas>POST /psp/paymentorders { consumerProfileRef }</font> <b>①</b>
+            activate SwedbankPay
+                SwedbankPay - -> Merchant:   <font:Consolas>rel:view-paymentorder</font>
+            deactivate SwedbankPay
+            Merchant - -> Payer:   <font:Consolas>rel:view-paymentorder</font>
+        deactivate Merchant
+
+        Payer <-> SwedbankPay:   <font:Consolas><script src=rel:view-paymentorder.href /></font>
+
+        activate SwedbankPay
+            Payer -> Payer:   <font:Consolas>payex.hostedView.paymentMenu()</font>
+            SwedbankPay <-> Payer: Perform payment
+        deactivate SwedbankPay
+    deactivate Payer
+
+    alt#fff #ebf8f2 completed payment
+        SwedbankPay -> Payer:   <font:Consolas>onPaymentCompleted(paymentorder)</font>
+        activate SwedbankPay
+            activate Payer
+                Payer -> Merchant: Check payment status
+                activate Merchant
+                    Merchant -> SwedbankPay:   <font:Consolas>GET paymentorder.id</font>
+                    SwedbankPay - -> Merchant:   <font:Consolas>rel:paid-paymentorder</font>
+                    Merchant -> SwedbankPay:   <font:Consolas>GET rel:paid-paymentorder.href</font>
+                    SwedbankPay - -> Merchant: Completed Payment Order
+                    Merchant - -> Payer: Show receipt
+                deactivate Merchant
+            deactivate Payer
+        deactivate SwedbankPay
+    else failed payment
+        SwedbankPay -> Payer:   <font:Consolas>onPaymentFailed(paymentorder)</font>
+        activate SwedbankPay
+            activate Payer
+                Payer -> Merchant: Check payment status
+                activate Merchant
+                    Merchant -> SwedbankPay:   <font:Consolas>GET paymentorder.id</font>
+                    SwedbankPay - -> Merchant:   <font:Consolas>rel:failed-paymentorder</font>
+                    Merchant -> SwedbankPay:   <font:Consolas>GET rel:failed-paymentorder.href</font>
+                    SwedbankPay - -> Merchant: Failed Payment Order
+                    Merchant - -> Payer: Show failure page
+                deactivate Merchant
+            deactivate Payer
+        deactivate SwedbankPay
+    end
+@enduml
+
+PlantUML version 1.2021.12(Tue Oct 05 18:01:58 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg></div>
+    
+      <h3 id="callback">
+        
+        
+          Callback <a href="#callback" class="header-anchor"></a>
+        
+        
+      </h3>
+
+<div class="plantuml theme-swedbankpay"><svg contentScriptType='application/ecmascript' contentStyleType='text/css' height='592.7083px' preserveAspectRatio='none' style='width:436px;height:592px;background:#FFFFFF;' version='1.1' viewBox='0 0 436 592' width='436.4583px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' zoomAndPan='magnify'><defs/><g><rect fill='#FFFFFF' height='158.2031' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='96.3542' y='231.1198'/><rect fill='#FFFFFF' height='101.3021' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='350.5208' y='231.1198'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;' x1='101.0417' x2='101.0417' y1='178.3854' y2='415.3646'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;' x1='355.2083' x2='355.2083' y1='178.3854' y2='415.3646'/><rect fill='#FFFFFF' height='134.6354' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:0.0;' width='109.375' x='46.875' y='42.7083'/><image height='64.5833' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA+CAIAAADsw3HPAAAClklEQVR4Xu2aUY7bMAxE9/7/vUt7ix6gB+gF+iEggJqGwSyXI9KUrCBKqsFgYcjkWE+WlZ/9qO+uDzvQ0uX3r/Lzx/q+ztNOPUMY96+g68T0OzB3DwibPcsKnHowIpQGO7q2eM7vRlhv+05/UBEhv/GXUDeh+M/3b/qvXIxZ2rW5JmkvZ4QwtpxmgbnFM/eORYFiAuEl8SvCXZ5tJ4lbmka9S5hfrQUJrzsW9S4ht3lekLCoWbmE+QPgkDC/Hco8QkS5hNzg2XaSnkKIjdomnDunuWn5zSX1Zwn1N+0pn1YShNziWT6fNiFXB7bNJG4JbJtJ3OJ5E+Z8eJDWnrSSIOzd8w3CroiVCeWMaBByaWDb3FK5LQT3Nm2bSfmocnvuWUJJCcz1sTnhTOBlCuHidgnj1cJd20xC5VMCJ7zDy9FJwy2x5wbW5klT+1MCcf2hbYRS/N7Y1SPMBMliI4ilN14yMN6r+i63s2WGbcJ6FIG9pL8K3c5z5ZCuQFTySNNodwmrv/Dm2dV5GJd5gaasTg2MCOvXc5UfYISyuFIKHhQ4Qhinr6ZNSPofCbHXpxixfCtpNbXPHD0ySHiSk48EGey1TkCOGXwOIYzYshrhLCO29K/aJrxrE27Ck0Zs2YTsTXjXJtyEJ43YsgnF5l9KdAJyzOBahMbqsV8kt16PEPkxHvRYwpOcaEcsrlGDW54GCWX9zGxMgb570ojV10l1EwZTV/VR2YARq6+T6iPE3vPemB58hAYe0UfIN7Sw5GKzClMUPN1TByGPGhnCw/oBDQT2EQavhdkeATmQNocwPle8rgHxXA81h5CpjG3DqAaiNuFdnycN/07EW5SzhiUP8lbZU7OLZ/WPMEPyWraEInlp72EFWP8CeeozeLCFJQsAAAAASUVORK5CYII=' width='78.125' x='62.5' y='58.3333'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='104.1667' y='138.387'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='76.0417' x='63.5417' y='157.7881'>Merchant</text><rect fill='#FFFFFF' height='134.6354' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:0.0;' width='109.375' x='46.875' y='414.3229'/><image height='64.5833' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA+CAIAAADsw3HPAAAClklEQVR4Xu2aUY7bMAxE9/7/vUt7ix6gB+gF+iEggJqGwSyXI9KUrCBKqsFgYcjkWE+WlZ/9qO+uDzvQ0uX3r/Lzx/q+ztNOPUMY96+g68T0OzB3DwibPcsKnHowIpQGO7q2eM7vRlhv+05/UBEhv/GXUDeh+M/3b/qvXIxZ2rW5JmkvZ4QwtpxmgbnFM/eORYFiAuEl8SvCXZ5tJ4lbmka9S5hfrQUJrzsW9S4ht3lekLCoWbmE+QPgkDC/Hco8QkS5hNzg2XaSnkKIjdomnDunuWn5zSX1Zwn1N+0pn1YShNziWT6fNiFXB7bNJG4JbJtJ3OJ5E+Z8eJDWnrSSIOzd8w3CroiVCeWMaBByaWDb3FK5LQT3Nm2bSfmocnvuWUJJCcz1sTnhTOBlCuHidgnj1cJd20xC5VMCJ7zDy9FJwy2x5wbW5klT+1MCcf2hbYRS/N7Y1SPMBMliI4ilN14yMN6r+i63s2WGbcJ6FIG9pL8K3c5z5ZCuQFTySNNodwmrv/Dm2dV5GJd5gaasTg2MCOvXc5UfYISyuFIKHhQ4Qhinr6ZNSPofCbHXpxixfCtpNbXPHD0ySHiSk48EGey1TkCOGXwOIYzYshrhLCO29K/aJrxrE27Ck0Zs2YTsTXjXJtyEJ43YsgnF5l9KdAJyzOBahMbqsV8kt16PEPkxHvRYwpOcaEcsrlGDW54GCWX9zGxMgb570ojV10l1EwZTV/VR2YARq6+T6iPE3vPemB58hAYe0UfIN7Sw5GKzClMUPN1TByGPGhnCw/oBDQT2EQavhdkeATmQNocwPle8rgHxXA81h5CpjG3DqAaiNuFdnycN/07EW5SzhiUP8lbZU7OLZ/WPMEPyWraEInlp72EFWP8CeeozeLCFJQsAAAAASUVORK5CYII=' width='78.125' x='62.5' y='429.9479'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='104.1667' y='510.0016'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='76.0417' x='63.5417' y='529.4027'>Merchant</text><rect fill='#FFFFFF' height='172.1354' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:0.0;' width='148.9583' x='281.25' y='5.2083'/><image height='102.0833' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABiCAIAAACXj7lDAAAC8UlEQVR4Xu2aXY7rIAyFu//3u5eZXdwF3AXMBvIQKRI3kumJYwNJUyC1h6MzVWMg4YuB/HQe4an577cng+ux/i0//3QNB165IiFtA9qHABUJCdeZiOtBQ1QWulAkpG+6bPr6Y8tJijQhGtgydZuDzAVC3d6E157zBWVOzsN10y4hWRLSNx617iuEIZPbV+N9zFmOCfncFT1ONuH1afz3N+9YW0Kxq27mHTgmnJ8L1Pvxbj4mvGv+1PIB4Y0rxPs+dT0Mar4ZMl8FQi6H4ZlGYeyCb+og/+QV9GayZrJ+MoIgjj7tExgKhKS1zJYlQGGUutEuh8lzYFrI3PYWI5driyK8jTCkLvQOTGiRkLg9GVwboVdthDrLpr0jXG69UW7qSIgNT5KEfGq6EXFl79ocqERIKeY3tR/u5ETLEvI2hkzd5iBzgVC3N+FThIu/Z3xBqJtd8L3n6GVCnBXd71fjfUxHDycJ+cgWPU424fXvulXiHbtOmIsXdtXHvGPzGUJqg08dz7lc2tQHhKbXUrJnwunM1SKoeWXIfBKGAmF43rhVN/rRyIIiEtKaLsp8qJRDH9oR+oPE2NwIiZjKrBtEkZBDejKhRUJInw+L5kSS0J82wuWmR4FG3hE6Y4NpuLq9WgAqEorZ6UCSUJbbF029UCBcUv+R8bHWY/CAcL71If2yOcJGiG+QRTYYFKUc2iWc1Ju+cJJQR8p+tX4tXyTEJD4Zx950vLWvEPI2oseIi8Pk4h1ckzAX57uykUNqhs934h18kdCQzxLqloYMitIVfzH72hvLO1HMuRyieFK3fx9rgQeEkCN0oN9H6A8SUBshDWUfBlEk5JCeTGiRsI/EsftoEFbVIGyiQVhVg7CJBmFVDcImGoRVNQibaBBWEti4ZaU26kGo2XpCdiVEBI/hi/rttrqaE2q8cry6ThGKoXXBOlf8bcpli30mNQjfVq43uXh1NScMKRgdaacehIUBKas2UA/CkILUM7OROhFC3cCg/2yXwe7ySxbPAAAAAElFTkSuQmCC' width='78.125' x='316.6667' y='20.8333'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='358.3333' y='138.387'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='117.7083' x='296.875' y='157.7881'>Swedbank Pay</text><rect fill='#FFFFFF' height='172.1354' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:0.0;' width='148.9583' x='281.25' y='414.3229'/><image height='102.0833' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABiCAIAAACXj7lDAAAC8UlEQVR4Xu2aXY7rIAyFu//3u5eZXdwF3AXMBvIQKRI3kumJYwNJUyC1h6MzVWMg4YuB/HQe4an577cng+ux/i0//3QNB165IiFtA9qHABUJCdeZiOtBQ1QWulAkpG+6bPr6Y8tJijQhGtgydZuDzAVC3d6E157zBWVOzsN10y4hWRLSNx617iuEIZPbV+N9zFmOCfncFT1ONuH1afz3N+9YW0Kxq27mHTgmnJ8L1Pvxbj4mvGv+1PIB4Y0rxPs+dT0Mar4ZMl8FQi6H4ZlGYeyCb+og/+QV9GayZrJ+MoIgjj7tExgKhKS1zJYlQGGUutEuh8lzYFrI3PYWI5driyK8jTCkLvQOTGiRkLg9GVwboVdthDrLpr0jXG69UW7qSIgNT5KEfGq6EXFl79ocqERIKeY3tR/u5ETLEvI2hkzd5iBzgVC3N+FThIu/Z3xBqJtd8L3n6GVCnBXd71fjfUxHDycJ+cgWPU424fXvulXiHbtOmIsXdtXHvGPzGUJqg08dz7lc2tQHhKbXUrJnwunM1SKoeWXIfBKGAmF43rhVN/rRyIIiEtKaLsp8qJRDH9oR+oPE2NwIiZjKrBtEkZBDejKhRUJInw+L5kSS0J82wuWmR4FG3hE6Y4NpuLq9WgAqEorZ6UCSUJbbF029UCBcUv+R8bHWY/CAcL71If2yOcJGiG+QRTYYFKUc2iWc1Ju+cJJQR8p+tX4tXyTEJD4Zx950vLWvEPI2oseIi8Pk4h1ckzAX57uykUNqhs934h18kdCQzxLqloYMitIVfzH72hvLO1HMuRyieFK3fx9rgQeEkCN0oN9H6A8SUBshDWUfBlEk5JCeTGiRsI/EsftoEFbVIGyiQVhVg7CJBmFVDcImGoRVNQibaBBWEti4ZaU26kGo2XpCdiVEBI/hi/rttrqaE2q8cry6ThGKoXXBOlf8bcpli30mNQjfVq43uXh1NScMKRgdaacehIUBKas2UA/CkILUM7OROhFC3cCg/2yXwe7ySxbPAAAAAElFTkSuQmCC' width='78.125' x='316.6667' y='429.9479'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='358.3333' y='547.5016'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='117.7083' x='296.875' y='566.9027'>Swedbank Pay</text><rect fill='#FFFFFF' height='158.2031' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='96.3542' y='231.1198'/><rect fill='#FFFFFF' height='101.3021' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='350.5208' y='231.1198'/><polygon fill='#F35B1C' points='118.2292,226.9531,107.8125,231.1198,118.2292,235.2865,114.0625,231.1198' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='111.9792' x2='349.4792' y1='231.1198' y2='231.1198'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='212.5' x='132.8125' y='216.7725'>POST { payment activity }</text><polygon fill='#F35B1C' points='338.0208,277.6042,348.4375,281.7708,338.0208,285.9375,342.1875,281.7708' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='106.7708' x2='344.2708' y1='281.7708' y2='281.7708'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='171.875' x='122.3958' y='267.4235'>GET paymentorder.id</text><polygon fill='#F35B1C' points='118.2292,328.2552,107.8125,332.4219,118.2292,336.5885,114.0625,332.4219' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:2.0,2.0;' x1='111.9792' x2='354.6875' y1='332.4219' y2='332.4219'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='123.9583' x='132.8125' y='318.0745'>Payment Order</text><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='106.7708' x2='150.5208' y1='388.2813' y2='388.2813'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='150.5208' x2='150.5208' y1='388.2813' y2='401.8229'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='101.5625' x2='150.5208' y1='401.8229' y2='401.8229'/><polygon fill='#F35B1C' points='111.9792,397.6563,101.5625,401.8229,111.9792,405.9896,107.8125,401.8229' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='114.5833' x='122.3958' y='373.9339'>Update status</text><!--MD5=[79640378fd888a8300479f8924b2cf96]
+@startuml "Callback"
+!theme swedbankpay from /srv/jekyll/_site/assets
+    $participant("merchant", "Merchant") as Merchant
+    $participant("server", "Swedbank Pay") as SwedbankPay
+
+    SwedbankPay -> Merchant: $code("POST { payment activity }")
+    activate Merchant
+        activate SwedbankPay
+            Merchant -> SwedbankPay: $code("GET paymentorder.id")
+            SwedbankPay - -> Merchant: Payment Order
+        deactivate SwedbankPay
+
+        Merchant -> Merchant: Update status
+    deactivate Merchant
+@enduml
+
+@startuml "Callback"
+
+
+
+
+
+
+
+
+
+
+sprite $payer [75x79/4z] {
+xT85bWCn30JHxjBzpxmCyeGC2gV2CF-PT9uC4NpT0Y82088WVmpu_Zc8tp-3cbXAAJyW5NT2lQWNzQ9U5FT0EGVO1d17BRM5-NsrJjPUV126GSfiO4zJj1Ha
+TOW2-m2bCSeWaygNqrL2YoXm4MNGbj8S1LgcudTwErHCKSOg6XMeW299BUKbIakKazHUeq7AIbHkGraIM2Vgf0mw5UwYGCDKxAN07HIxdurRog0PoZBA0MY2
+4eWTokh8UCVQfQIfONcNKb-xez-XB4qEIxYCaYOfGnMbGied_Wkg6fO7B4uDgtArAADycyE2ilFW6pscLdTmYvJW5YdZAafGHXbNKO92obMKu1OfuofAK40L
+z0u
+}
+
+sprite $merchant [75x62/4z] {
+xPG7TiCm3CM8h_kVEJkXPPggdjZT8c-PYE4j-nZG6eHI64u1aaAfS3MxRLk6SieHoVNLKrAx_feYxKegf9XoSEP4cY8J2YBEgQLQc2-auXuj4yobbCwdK_4A
+MKYrOq5oYFaB98pZ3jycnLIAGqCzrRB_Es8k9GvJuaLkK9QgyqpXzVugPbLoLjWBJQjq74HG117dcEJZNj6fuzFjPZmCKgOKLJXVjcKwPMFbI8Xj6dnZh48A
+M-KdfHXz5ueCKqWHxYdsBAIqbD8efPw_aVfF_QTQCSKLUu0LKcQ0EQmlCcQIXYcGD7LM7J657fHJ21uH6p6HyeAki9wIUzrPJ-6b1-KKUa8r9USRfEujU3k5
+Y9DD2abrdcdgN3jd
+}
+
+sprite $server [75x98/4z] {
+xPS5hkH050FjyltFl3JGcWo_UALF9GXNcgsMH0D9CXqiWHg0X5K16xLKud2IELoe4kOa5ohs4A-sSjZ7AXMqLNAkZYDLJcqcwNJjdcfQmVZgE53rUj2zSQLz
+gelHxlm3ai3X40wd0AUhq_MwI18lrJ_PdF-oo5WDZ0HsmuGaEXoC3LJb8qOg7pHIrOzKCeMF6gdghgAF8pNZIFMfekluGIBrIlaIkOfKiccY37BmeqMgsf6g
+F0Bo4FLpiAcY6AbOtWlTI2s5gkhuPvVwgaeLl5JE56zKP7VlgR45uA1IGPLhrLQOiSgR8r86gglyMyUHwbgPcOeGheu3LQq7QOmheztnx8k9Op85QwaAT5NT
+LHJi3nQfBm6em1TI_QX-L3yg3lHCqAgTmGNJfBsuYH_j4uggUWLVTvLCgsPgkQmEhtb-0m
+}
+
+sprite $3rdparty [75x67/4z] {
+xPO7biCW34JvtF_EszS3cIU7bqbFj7LawGSBKTg20RHpMF-pcCOlHgo8n8PCISEBajLf4j6WcC0aA1jZ-7xdHt7MKPslLYJDW86ZRj3_wLgsnWzO0686hCrQ
+RfndkyhBv3rnVwYJQzuNBIV9LcOBPlj9T1yh-uhZAG8pb9mdT6Cld1nV8-xqj2xdwlL0pedkJg-9LU77LpZhSGsxd3cdD3fwMABeZ17IuakBwU_trmnJ5dyl
+Ve3gXif7TVvQvJDu_hxAk_tyQ_3yEyFvzwlz3TETyc6V6vXDU61MZ79sBDgIwn8YhUPUaZuRXjeZ4w7Q6nMKFM-66YMDzQH9p_ORiFJmV5-oDJxyA8q9HHUI
+PjdqhW9Cvm9-JEYlIJQV7WgfF_AxLBI4KXKiSfCSuZR9XDBdADZaZ690SNHKCueQjL0h5cjrnXayNr-ThzkbxLHSbih-1
+}
+
+skinparam backgroundColor           "transparent"
+skinparam useBetaStyle              false
+skinparam creoleMonospacedFont      "Consolas"
+skinparam defaultMonospacedFontName "Consolas"
+skinparam defaultFontName           "Arial"
+skinparam defaultFontSize           16
+skinparam dpi                       100
+skinparam shadowing                 false
+skinparam roundcorner               20
+skinparam ParticipantPadding        40
+skinparam BoxPadding                40
+skinparam Padding                   8
+skinparam ArrowColor                #f35b1c
+skinparam stereotype {
+    CBackgroundColor                #72605e
+    CBorderColor                    #f35b1c
+    ABackgroundColor                #f2f7eb
+    ABorderColor                    #437e15
+    IBackgroundColor                #f9ded3
+    IBorderColor                    #c5131c
+    EBackgroundColor                #fff3d5
+    EBorderColor                    #f9ce22
+    NBackgroundColor                #e8eff9
+    NBorderColor                    #3e6ab6
+}
+skinparam title {
+	FontColor	                    #2f2424
+	BorderColor	                    #f35b1c
+	FontSize	    	            20
+	BorderRoundCorner               8
+	BorderThickness 	            1
+	BackgroundColor                 #fbf2ea
+}
+
+skinparam legend {
+	BackgroundColor #512b2b
+	BorderColor #493c3b
+	FontColor #2f2424
+}
+
+skinparam swimlane {
+	BorderColor #3e6ab6
+	BorderThickness 2
+	TitleBackgroundColor #512b2b
+	TitleFontColor #2f2424
+}
+
+
+skinparam activity {
+		FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+	BarColor #437e15
+	StartColor #3e6ab6
+	EndColor #3e6ab6
+	DiamondBackgroundColor #72605e
+  	DiamondBorderColor #493c3b
+  	DiamondFontColor #2f2424
+}
+
+    skinparam participant {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        BorderThickness 0
+        BackgroundColor #ffffff
+
+        ParticipantBorderThickness 2
+    }
+
+    skinparam actor {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        BackgroundColor #fbf2ea
+        BorderColor #f35b1c
+    }
+
+    skinparam arrow {
+        Thickness 1
+        Color #f35b1c
+        FontColor #2f2424
+    }
+
+    skinparam sequence {
+        BorderColor #f35b1c
+        TitleFontColor #2f2424
+        BackgroundColor #fbf2ea
+        StartColor #f35b1c
+        EndColor #f35b1c
+        BoxBackgroundColor #fbf2ea
+        BoxBorderColor #493c3b
+        BoxFontColor #2f2424
+        DelayFontColor #2f2424
+        LifeLineBorderColor #f35b1c
+        LifeLineBorderThickness 1
+        LifeLineBorderRoundCorner 20
+        LifeLineBackgroundColor #ffffff
+        GroupBorderThickness 1
+        GroupBorderColor #f35b1c
+        GroupFontColor #2f2424
+        GroupHeaderFontColor #2f2424
+        GroupHeaderFontWeight 1
+        GroupBackgroundColor #ffffff
+        GroupBodyBackgroundColor #fbf2ea
+        GroupHeaderBackgroundColor #ffdf88
+        DividerBackgroundColor #493c3b
+        DividerBorderColor #493c3b
+        DividerBorderThickness 2
+        DividerFontColor #2f2424
+        ReferenceBackgroundColor #ffdf88
+        ReferenceBorderColor #493c3b
+        ReferenceFontColor #2f2424
+        ReferenceHeaderFontColor #2f2424
+        ReferenceHeaderBackgroundColor #512b2b
+        StereotypeFontColor #2f2424
+    }
+
+
+skinparam partition {
+	BorderColor #fdc129
+	FontColor #2f2424
+	BackgroundColor #ffdf88
+}
+
+    skinparam collections {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam control {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+
+skinparam entity {
+		FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+}
+
+    skinparam boundary {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam agent {
+        BackgroundColor #f9ce22
+        BorderColor #fff3d5
+        FontColor #2f2424
+    }
+
+    skinparam note {
+        BorderThickness 1
+        BackgroundColor #ebf8f2
+        BorderColor #257886
+    }
+
+
+skinparam artifact {
+	BackgroundColor #493c3b
+	BorderColor #2f2424
+	FontColor #2f2424
+}
+
+    skinparam component {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam interface {
+        BackgroundColor  #c5131c
+        BorderColor  #c5131c
+        FontColor #2f2424
+    }
+
+    skinparam storage {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam node {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam cloud {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam database {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam class {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        HeaderBackgroundColor #ffcc00
+        StereotypeFontColor #2f2424
+        BorderThickness 1
+        AttributeFontColor #2f2424
+        AttributeFontSize 11
+    }
+
+    skinparam object {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        StereotypeFontColor #2f2424
+        BorderThickness 1
+        AttributeFontColor #2f2424
+        AttributeFontSize 11
+    }
+
+    skinparam usecase {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        BorderThickness 2
+        StereotypeFontColor #2f2424
+    }
+
+    skinparam rectangle {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        StereotypeFontColor #2f2424
+    }
+
+    skinparam package {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam folder {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam frame {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam state {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        StartColor #f35b1c
+        EndColor #512b2b
+        AttributeFontColor #2f2424
+        AttributeFontSize 11
+    }
+
+    skinparam queue {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam card {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam file {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+
+        participant "<$merchant,color=#f5b895>\n\nMerchant" as Merchant
+        participant "<$server,color=#f5b895>\n\nSwedbank Pay" as SwedbankPay
+
+    SwedbankPay -> Merchant:   <font:Consolas>POST { payment activity }</font>
+    activate Merchant
+        activate SwedbankPay
+            Merchant -> SwedbankPay:   <font:Consolas>GET paymentorder.id</font>
+            SwedbankPay - -> Merchant: Payment Order
+        deactivate SwedbankPay
+
+        Merchant -> Merchant: Update status
+    deactivate Merchant
+@enduml
+
+PlantUML version 1.2021.12(Tue Oct 05 18:01:58 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg></div>
+    
+      <h3 id="capture">
+        
+        
+          Capture <a href="#capture" class="header-anchor"></a>
+        
+        
+      </h3>
+
+<div class="plantuml theme-swedbankpay"><svg contentScriptType='application/ecmascript' contentStyleType='text/css' height='642.7083px' preserveAspectRatio='none' style='width:588px;height:642px;background:#FFFFFF;' version='1.1' viewBox='0 0 588 642' width='588.5417px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' zoomAndPan='magnify'><defs/><g><rect fill='#FFFFFF' height='207.8125' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='96.3542' y='239.4531'/><rect fill='#FFFFFF' height='151.9531' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='502.6042' y='295.3125'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;' x1='101.0417' x2='101.0417' y1='178.3854' y2='466.0156'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;' x1='507.2917' x2='507.2917' y1='178.3854' y2='466.0156'/><rect fill='#FFFFFF' height='134.6354' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:0.0;' width='109.375' x='46.875' y='42.7083'/><image height='64.5833' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA+CAIAAADsw3HPAAAClklEQVR4Xu2aUY7bMAxE9/7/vUt7ix6gB+gF+iEggJqGwSyXI9KUrCBKqsFgYcjkWE+WlZ/9qO+uDzvQ0uX3r/Lzx/q+ztNOPUMY96+g68T0OzB3DwibPcsKnHowIpQGO7q2eM7vRlhv+05/UBEhv/GXUDeh+M/3b/qvXIxZ2rW5JmkvZ4QwtpxmgbnFM/eORYFiAuEl8SvCXZ5tJ4lbmka9S5hfrQUJrzsW9S4ht3lekLCoWbmE+QPgkDC/Hco8QkS5hNzg2XaSnkKIjdomnDunuWn5zSX1Zwn1N+0pn1YShNziWT6fNiFXB7bNJG4JbJtJ3OJ5E+Z8eJDWnrSSIOzd8w3CroiVCeWMaBByaWDb3FK5LQT3Nm2bSfmocnvuWUJJCcz1sTnhTOBlCuHidgnj1cJd20xC5VMCJ7zDy9FJwy2x5wbW5klT+1MCcf2hbYRS/N7Y1SPMBMliI4ilN14yMN6r+i63s2WGbcJ6FIG9pL8K3c5z5ZCuQFTySNNodwmrv/Dm2dV5GJd5gaasTg2MCOvXc5UfYISyuFIKHhQ4Qhinr6ZNSPofCbHXpxixfCtpNbXPHD0ySHiSk48EGey1TkCOGXwOIYzYshrhLCO29K/aJrxrE27Ck0Zs2YTsTXjXJtyEJ43YsgnF5l9KdAJyzOBahMbqsV8kt16PEPkxHvRYwpOcaEcsrlGDW54GCWX9zGxMgb570ojV10l1EwZTV/VR2YARq6+T6iPE3vPemB58hAYe0UfIN7Sw5GKzClMUPN1TByGPGhnCw/oBDQT2EQavhdkeATmQNocwPle8rgHxXA81h5CpjG3DqAaiNuFdnycN/07EW5SzhiUP8lbZU7OLZ/WPMEPyWraEInlp72EFWP8CeeozeLCFJQsAAAAASUVORK5CYII=' width='78.125' x='62.5' y='58.3333'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='104.1667' y='138.387'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='76.0417' x='63.5417' y='157.7881'>Merchant</text><rect fill='#FFFFFF' height='134.6354' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:0.0;' width='109.375' x='46.875' y='464.974'/><image height='64.5833' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA+CAIAAADsw3HPAAAClklEQVR4Xu2aUY7bMAxE9/7/vUt7ix6gB+gF+iEggJqGwSyXI9KUrCBKqsFgYcjkWE+WlZ/9qO+uDzvQ0uX3r/Lzx/q+ztNOPUMY96+g68T0OzB3DwibPcsKnHowIpQGO7q2eM7vRlhv+05/UBEhv/GXUDeh+M/3b/qvXIxZ2rW5JmkvZ4QwtpxmgbnFM/eORYFiAuEl8SvCXZ5tJ4lbmka9S5hfrQUJrzsW9S4ht3lekLCoWbmE+QPgkDC/Hco8QkS5hNzg2XaSnkKIjdomnDunuWn5zSX1Zwn1N+0pn1YShNziWT6fNiFXB7bNJG4JbJtJ3OJ5E+Z8eJDWnrSSIOzd8w3CroiVCeWMaBByaWDb3FK5LQT3Nm2bSfmocnvuWUJJCcz1sTnhTOBlCuHidgnj1cJd20xC5VMCJ7zDy9FJwy2x5wbW5klT+1MCcf2hbYRS/N7Y1SPMBMliI4ilN14yMN6r+i63s2WGbcJ6FIG9pL8K3c5z5ZCuQFTySNNodwmrv/Dm2dV5GJd5gaasTg2MCOvXc5UfYISyuFIKHhQ4Qhinr6ZNSPofCbHXpxixfCtpNbXPHD0ySHiSk48EGey1TkCOGXwOIYzYshrhLCO29K/aJrxrE27Ck0Zs2YTsTXjXJtyEJ43YsgnF5l9KdAJyzOBahMbqsV8kt16PEPkxHvRYwpOcaEcsrlGDW54GCWX9zGxMgb570ojV10l1EwZTV/VR2YARq6+T6iPE3vPemB58hAYe0UfIN7Sw5GKzClMUPN1TByGPGhnCw/oBDQT2EQavhdkeATmQNocwPle8rgHxXA81h5CpjG3DqAaiNuFdnycN/07EW5SzhiUP8lbZU7OLZ/WPMEPyWraEInlp72EFWP8CeeozeLCFJQsAAAAASUVORK5CYII=' width='78.125' x='62.5' y='480.599'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='104.1667' y='560.6527'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='76.0417' x='63.5417' y='580.0537'>Merchant</text><rect fill='#FFFFFF' height='172.1354' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:0.0;' width='148.9583' x='433.3333' y='5.2083'/><image height='102.0833' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABiCAIAAACXj7lDAAAC8UlEQVR4Xu2aXY7rIAyFu//3u5eZXdwF3AXMBvIQKRI3kumJYwNJUyC1h6MzVWMg4YuB/HQe4an577cng+ux/i0//3QNB165IiFtA9qHABUJCdeZiOtBQ1QWulAkpG+6bPr6Y8tJijQhGtgydZuDzAVC3d6E157zBWVOzsN10y4hWRLSNx617iuEIZPbV+N9zFmOCfncFT1ONuH1afz3N+9YW0Kxq27mHTgmnJ8L1Pvxbj4mvGv+1PIB4Y0rxPs+dT0Mar4ZMl8FQi6H4ZlGYeyCb+og/+QV9GayZrJ+MoIgjj7tExgKhKS1zJYlQGGUutEuh8lzYFrI3PYWI5driyK8jTCkLvQOTGiRkLg9GVwboVdthDrLpr0jXG69UW7qSIgNT5KEfGq6EXFl79ocqERIKeY3tR/u5ETLEvI2hkzd5iBzgVC3N+FThIu/Z3xBqJtd8L3n6GVCnBXd71fjfUxHDycJ+cgWPU424fXvulXiHbtOmIsXdtXHvGPzGUJqg08dz7lc2tQHhKbXUrJnwunM1SKoeWXIfBKGAmF43rhVN/rRyIIiEtKaLsp8qJRDH9oR+oPE2NwIiZjKrBtEkZBDejKhRUJInw+L5kSS0J82wuWmR4FG3hE6Y4NpuLq9WgAqEorZ6UCSUJbbF029UCBcUv+R8bHWY/CAcL71If2yOcJGiG+QRTYYFKUc2iWc1Ju+cJJQR8p+tX4tXyTEJD4Zx950vLWvEPI2oseIi8Pk4h1ckzAX57uykUNqhs934h18kdCQzxLqloYMitIVfzH72hvLO1HMuRyieFK3fx9rgQeEkCN0oN9H6A8SUBshDWUfBlEk5JCeTGiRsI/EsftoEFbVIGyiQVhVg7CJBmFVDcImGoRVNQibaBBWEti4ZaU26kGo2XpCdiVEBI/hi/rttrqaE2q8cry6ThGKoXXBOlf8bcpli30mNQjfVq43uXh1NScMKRgdaacehIUBKas2UA/CkILUM7OROhFC3cCg/2yXwe7ySxbPAAAAAElFTkSuQmCC' width='78.125' x='468.75' y='20.8333'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='510.4167' y='138.387'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='117.7083' x='448.9583' y='157.7881'>Swedbank Pay</text><rect fill='#FFFFFF' height='172.1354' rx='10.4167' ry='10.4167' style='stroke:#F5B895;stroke-width:0.0;' width='148.9583' x='433.3333' y='464.974'/><image height='102.0833' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABiCAIAAACXj7lDAAAC8UlEQVR4Xu2aXY7rIAyFu//3u5eZXdwF3AXMBvIQKRI3kumJYwNJUyC1h6MzVWMg4YuB/HQe4an577cng+ux/i0//3QNB165IiFtA9qHABUJCdeZiOtBQ1QWulAkpG+6bPr6Y8tJijQhGtgydZuDzAVC3d6E157zBWVOzsN10y4hWRLSNx617iuEIZPbV+N9zFmOCfncFT1ONuH1afz3N+9YW0Kxq27mHTgmnJ8L1Pvxbj4mvGv+1PIB4Y0rxPs+dT0Mar4ZMl8FQi6H4ZlGYeyCb+og/+QV9GayZrJ+MoIgjj7tExgKhKS1zJYlQGGUutEuh8lzYFrI3PYWI5driyK8jTCkLvQOTGiRkLg9GVwboVdthDrLpr0jXG69UW7qSIgNT5KEfGq6EXFl79ocqERIKeY3tR/u5ETLEvI2hkzd5iBzgVC3N+FThIu/Z3xBqJtd8L3n6GVCnBXd71fjfUxHDycJ+cgWPU424fXvulXiHbtOmIsXdtXHvGPzGUJqg08dz7lc2tQHhKbXUrJnwunM1SKoeWXIfBKGAmF43rhVN/rRyIIiEtKaLsp8qJRDH9oR+oPE2NwIiZjKrBtEkZBDejKhRUJInw+L5kSS0J82wuWmR4FG3hE6Y4NpuLq9WgAqEorZ6UCSUJbbF029UCBcUv+R8bHWY/CAcL71If2yOcJGiG+QRTYYFKUc2iWc1Ju+cJJQR8p+tX4tXyTEJD4Zx950vLWvEPI2oseIi8Pk4h1ckzAX57uykUNqhs934h18kdCQzxLqloYMitIVfzH72hvLO1HMuRyieFK3fx9rgQeEkCN0oN9H6A8SUBshDWUfBlEk5JCeTGiRsI/EsftoEFbVIGyiQVhVg7CJBmFVDcImGoRVNQibaBBWEti4ZaU26kGo2XpCdiVEBI/hi/rttrqaE2q8cry6ThGKoXXBOlf8bcpli30mNQjfVq43uXh1NScMKRgdaacehIUBKas2UA/CkILUM7OROhFC3cCg/2yXwe7ySxbPAAAAAElFTkSuQmCC' width='78.125' x='468.75' y='480.599'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='0' x='510.4167' y='598.1527'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='117.7083' x='448.9583' y='617.5537'>Swedbank Pay</text><rect fill='#FFFFFF' height='207.8125' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='96.3542' y='239.4531'/><rect fill='#FFFFFF' height='151.9531' style='stroke:#F35B1C;stroke-width:1.0416666666666667;' width='10.4167' x='502.6042' y='295.3125'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='101.5625' x2='150.5208' y1='225.9115' y2='225.9115'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='150.5208' x2='150.5208' y1='225.9115' y2='239.4531'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='107.8125' x2='150.5208' y1='239.4531' y2='239.4531'/><polygon fill='#F35B1C' points='118.2292,235.2865,107.8125,239.4531,118.2292,243.6198,114.0625,239.4531' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='64.5833' x='122.3958' y='211.5641'>Capture</text><polygon fill='#F35B1C' points='490.1042,291.1458,500.5208,295.3125,490.1042,299.4792,494.2708,295.3125' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='106.7708' x2='496.3542' y1='295.3125' y2='295.3125'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='171.875' x='122.3958' y='280.9652'>GET paymentorder.id</text><polygon fill='#F35B1C' points='118.2292,341.7969,107.8125,345.9635,118.2292,350.1302,114.0625,345.9635' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:2.0,2.0;' x1='111.9792' x2='501.5625' y1='345.9635' y2='345.9635'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='266.6667' x='132.8125' y='331.6162'>rel:create-paymentorder-capture</text><polygon fill='#F35B1C' points='490.1042,392.4479,500.5208,396.6146,490.1042,400.7813,494.2708,396.6146' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;' x1='106.7708' x2='496.3542' y1='396.6146' y2='396.6146'/><text fill='#2F2424' font-family='Consolas' font-size='16.6667' lengthAdjust='spacing' textLength='354.1667' x='122.3958' y='382.2673'>POST rel:create-paymentorder-capture.href</text><polygon fill='#F35B1C' points='113.0208,443.099,102.6042,447.2656,113.0208,451.4323,108.8542,447.2656' style='stroke:#F35B1C;stroke-width:1.0416666666666667;'/><line style='stroke:#F35B1C;stroke-width:1.0416666666666667;stroke-dasharray:2.0,2.0;' x1='106.7708' x2='506.7708' y1='447.2656' y2='447.2656'/><text fill='#2F2424' font-family='Arial' font-size='16.6667' lengthAdjust='spacing' textLength='120.8333' x='127.6042' y='432.9183'>Capture status</text><!--MD5=[e32aa24b51ef9da6a06db37aa8c17102]
+@startuml "Capture"
+!theme swedbankpay from /srv/jekyll/_site/assets
+    $participant("merchant", "Merchant") as Merchant
+    $participant("server", "Swedbank Pay") as SwedbankPay
+
+    Merchant -> Merchant: Capture
+    activate Merchant
+        Merchant -> SwedbankPay: $code("GET paymentorder.id")
+        activate SwedbankPay
+            SwedbankPay - -> Merchant: $code("rel:create-paymentorder-capture")
+            Merchant -> SwedbankPay: $code("POST rel:create-paymentorder-capture.href")
+            SwedbankPay - -> Merchant: Capture status
+        deactivate SwedbankPay
+    deactivate Merchant
+@enduml
+
+@startuml "Capture"
+
+
+
+
+
+
+
+
+
+
+sprite $payer [75x79/4z] {
+xT85bWCn30JHxjBzpxmCyeGC2gV2CF-PT9uC4NpT0Y82088WVmpu_Zc8tp-3cbXAAJyW5NT2lQWNzQ9U5FT0EGVO1d17BRM5-NsrJjPUV126GSfiO4zJj1Ha
+TOW2-m2bCSeWaygNqrL2YoXm4MNGbj8S1LgcudTwErHCKSOg6XMeW299BUKbIakKazHUeq7AIbHkGraIM2Vgf0mw5UwYGCDKxAN07HIxdurRog0PoZBA0MY2
+4eWTokh8UCVQfQIfONcNKb-xez-XB4qEIxYCaYOfGnMbGied_Wkg6fO7B4uDgtArAADycyE2ilFW6pscLdTmYvJW5YdZAafGHXbNKO92obMKu1OfuofAK40L
+z0u
+}
+
+sprite $merchant [75x62/4z] {
+xPG7TiCm3CM8h_kVEJkXPPggdjZT8c-PYE4j-nZG6eHI64u1aaAfS3MxRLk6SieHoVNLKrAx_feYxKegf9XoSEP4cY8J2YBEgQLQc2-auXuj4yobbCwdK_4A
+MKYrOq5oYFaB98pZ3jycnLIAGqCzrRB_Es8k9GvJuaLkK9QgyqpXzVugPbLoLjWBJQjq74HG117dcEJZNj6fuzFjPZmCKgOKLJXVjcKwPMFbI8Xj6dnZh48A
+M-KdfHXz5ueCKqWHxYdsBAIqbD8efPw_aVfF_QTQCSKLUu0LKcQ0EQmlCcQIXYcGD7LM7J657fHJ21uH6p6HyeAki9wIUzrPJ-6b1-KKUa8r9USRfEujU3k5
+Y9DD2abrdcdgN3jd
+}
+
+sprite $server [75x98/4z] {
+xPS5hkH050FjyltFl3JGcWo_UALF9GXNcgsMH0D9CXqiWHg0X5K16xLKud2IELoe4kOa5ohs4A-sSjZ7AXMqLNAkZYDLJcqcwNJjdcfQmVZgE53rUj2zSQLz
+gelHxlm3ai3X40wd0AUhq_MwI18lrJ_PdF-oo5WDZ0HsmuGaEXoC3LJb8qOg7pHIrOzKCeMF6gdghgAF8pNZIFMfekluGIBrIlaIkOfKiccY37BmeqMgsf6g
+F0Bo4FLpiAcY6AbOtWlTI2s5gkhuPvVwgaeLl5JE56zKP7VlgR45uA1IGPLhrLQOiSgR8r86gglyMyUHwbgPcOeGheu3LQq7QOmheztnx8k9Op85QwaAT5NT
+LHJi3nQfBm6em1TI_QX-L3yg3lHCqAgTmGNJfBsuYH_j4uggUWLVTvLCgsPgkQmEhtb-0m
+}
+
+sprite $3rdparty [75x67/4z] {
+xPO7biCW34JvtF_EszS3cIU7bqbFj7LawGSBKTg20RHpMF-pcCOlHgo8n8PCISEBajLf4j6WcC0aA1jZ-7xdHt7MKPslLYJDW86ZRj3_wLgsnWzO0686hCrQ
+RfndkyhBv3rnVwYJQzuNBIV9LcOBPlj9T1yh-uhZAG8pb9mdT6Cld1nV8-xqj2xdwlL0pedkJg-9LU77LpZhSGsxd3cdD3fwMABeZ17IuakBwU_trmnJ5dyl
+Ve3gXif7TVvQvJDu_hxAk_tyQ_3yEyFvzwlz3TETyc6V6vXDU61MZ79sBDgIwn8YhUPUaZuRXjeZ4w7Q6nMKFM-66YMDzQH9p_ORiFJmV5-oDJxyA8q9HHUI
+PjdqhW9Cvm9-JEYlIJQV7WgfF_AxLBI4KXKiSfCSuZR9XDBdADZaZ690SNHKCueQjL0h5cjrnXayNr-ThzkbxLHSbih-1
+}
+
+skinparam backgroundColor           "transparent"
+skinparam useBetaStyle              false
+skinparam creoleMonospacedFont      "Consolas"
+skinparam defaultMonospacedFontName "Consolas"
+skinparam defaultFontName           "Arial"
+skinparam defaultFontSize           16
+skinparam dpi                       100
+skinparam shadowing                 false
+skinparam roundcorner               20
+skinparam ParticipantPadding        40
+skinparam BoxPadding                40
+skinparam Padding                   8
+skinparam ArrowColor                #f35b1c
+skinparam stereotype {
+    CBackgroundColor                #72605e
+    CBorderColor                    #f35b1c
+    ABackgroundColor                #f2f7eb
+    ABorderColor                    #437e15
+    IBackgroundColor                #f9ded3
+    IBorderColor                    #c5131c
+    EBackgroundColor                #fff3d5
+    EBorderColor                    #f9ce22
+    NBackgroundColor                #e8eff9
+    NBorderColor                    #3e6ab6
+}
+skinparam title {
+	FontColor	                    #2f2424
+	BorderColor	                    #f35b1c
+	FontSize	    	            20
+	BorderRoundCorner               8
+	BorderThickness 	            1
+	BackgroundColor                 #fbf2ea
+}
+
+skinparam legend {
+	BackgroundColor #512b2b
+	BorderColor #493c3b
+	FontColor #2f2424
+}
+
+skinparam swimlane {
+	BorderColor #3e6ab6
+	BorderThickness 2
+	TitleBackgroundColor #512b2b
+	TitleFontColor #2f2424
+}
+
+
+skinparam activity {
+		FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+	BarColor #437e15
+	StartColor #3e6ab6
+	EndColor #3e6ab6
+	DiamondBackgroundColor #72605e
+  	DiamondBorderColor #493c3b
+  	DiamondFontColor #2f2424
+}
+
+    skinparam participant {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        BorderThickness 0
+        BackgroundColor #ffffff
+
+        ParticipantBorderThickness 2
+    }
+
+    skinparam actor {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        BackgroundColor #fbf2ea
+        BorderColor #f35b1c
+    }
+
+    skinparam arrow {
+        Thickness 1
+        Color #f35b1c
+        FontColor #2f2424
+    }
+
+    skinparam sequence {
+        BorderColor #f35b1c
+        TitleFontColor #2f2424
+        BackgroundColor #fbf2ea
+        StartColor #f35b1c
+        EndColor #f35b1c
+        BoxBackgroundColor #fbf2ea
+        BoxBorderColor #493c3b
+        BoxFontColor #2f2424
+        DelayFontColor #2f2424
+        LifeLineBorderColor #f35b1c
+        LifeLineBorderThickness 1
+        LifeLineBorderRoundCorner 20
+        LifeLineBackgroundColor #ffffff
+        GroupBorderThickness 1
+        GroupBorderColor #f35b1c
+        GroupFontColor #2f2424
+        GroupHeaderFontColor #2f2424
+        GroupHeaderFontWeight 1
+        GroupBackgroundColor #ffffff
+        GroupBodyBackgroundColor #fbf2ea
+        GroupHeaderBackgroundColor #ffdf88
+        DividerBackgroundColor #493c3b
+        DividerBorderColor #493c3b
+        DividerBorderThickness 2
+        DividerFontColor #2f2424
+        ReferenceBackgroundColor #ffdf88
+        ReferenceBorderColor #493c3b
+        ReferenceFontColor #2f2424
+        ReferenceHeaderFontColor #2f2424
+        ReferenceHeaderBackgroundColor #512b2b
+        StereotypeFontColor #2f2424
+    }
+
+
+skinparam partition {
+	BorderColor #fdc129
+	FontColor #2f2424
+	BackgroundColor #ffdf88
+}
+
+    skinparam collections {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam control {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+
+skinparam entity {
+		FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+}
+
+    skinparam boundary {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam agent {
+        BackgroundColor #f9ce22
+        BorderColor #fff3d5
+        FontColor #2f2424
+    }
+
+    skinparam note {
+        BorderThickness 1
+        BackgroundColor #ebf8f2
+        BorderColor #257886
+    }
+
+
+skinparam artifact {
+	BackgroundColor #493c3b
+	BorderColor #2f2424
+	FontColor #2f2424
+}
+
+    skinparam component {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam interface {
+        BackgroundColor  #c5131c
+        BorderColor  #c5131c
+        FontColor #2f2424
+    }
+
+    skinparam storage {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam node {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam cloud {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam database {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam class {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        HeaderBackgroundColor #ffcc00
+        StereotypeFontColor #2f2424
+        BorderThickness 1
+        AttributeFontColor #2f2424
+        AttributeFontSize 11
+    }
+
+    skinparam object {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        StereotypeFontColor #2f2424
+        BorderThickness 1
+        AttributeFontColor #2f2424
+        AttributeFontSize 11
+    }
+
+    skinparam usecase {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        BorderThickness 2
+        StereotypeFontColor #2f2424
+    }
+
+    skinparam rectangle {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        StereotypeFontColor #2f2424
+    }
+
+    skinparam package {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam folder {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam frame {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam state {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+        StartColor #f35b1c
+        EndColor #512b2b
+        AttributeFontColor #2f2424
+        AttributeFontSize 11
+    }
+
+    skinparam queue {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam card {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+    skinparam file {
+        	FontColor #2f2424
+	BorderColor #f5b895
+	BackgroundColor #fbf2ea
+    }
+
+
+        participant "<$merchant,color=#f5b895>\n\nMerchant" as Merchant
+        participant "<$server,color=#f5b895>\n\nSwedbank Pay" as SwedbankPay
+
+    Merchant -> Merchant: Capture
+    activate Merchant
+        Merchant -> SwedbankPay:   <font:Consolas>GET paymentorder.id</font>
+        activate SwedbankPay
+            SwedbankPay - -> Merchant:   <font:Consolas>rel:create-paymentorder-capture</font>
+            Merchant -> SwedbankPay:   <font:Consolas>POST rel:create-paymentorder-capture.href</font>
+            SwedbankPay - -> Merchant: Capture status
+        deactivate SwedbankPay
+    deactivate Merchant
+@enduml
+
+PlantUML version 1.2021.12(Tue Oct 05 18:01:58 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg></div>
+        
+    </article>
+</div>
+
+                    </main>
+                </div>
+            </div>
+        </div>
+        <script src="https://design.swedbankpay.com/v/5.0.1/scripts/dg.js"></script>
+        <script src="/assets/js/swedbank-pay-design-guide-theme.js"></script>
+    </body>
+
+</html>
