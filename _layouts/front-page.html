@@ -4,17 +4,17 @@ layout: default
 
 {% assign show_merchants_bar = page.front_page.show_merchants_bar | default: false %}
 {% assign front_page_title = page.front_page.title | default: 'developer portal' %}
-{% assign front_page_hero = page.front_page.hero | default: "Welcome to the Swedbank Pay" %}
+{% assign front_page_hero1 = page.front_page.hero1 | default: "Welcome to the" %}
+{% assign front_page_hero2 = page.front_page.hero2 | default: "Swedbank Pay" %}
 {% assign front_page_ingress = page.front_page.ingress | default: "Our developer portal gives you the full tool box for integrating our payment instruments and getting started with easy, flexible and safe payments on your e-commerce website." %}
 {% assign front_page_start_heading = page.front_page.start_heading | default: "Start your integration" %}
 
 <div class="front-page">
     <div class="front-page-top">
         <div class="front-page-hero">
-            <h3>{{ front_page_hero }}</h3>
-            <div class="front-page-hero-name">
-                {<span>{{ front_page_title }}</span>}
-            </div>
+            <h3>{{ front_page_hero1 }}</h3>
+            <h3>{{ front_page_hero2 }}<span class="front-page-hero-name">{</span><span class="front-page-hero-name">{{ front_page_title }}</span><span class="front-page-hero-name">}</span>
+            </h3>
             <p>{{ front_page_ingress }}</p>
         </div>
         <div class="front-page-intro-cards">

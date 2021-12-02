@@ -40,9 +40,12 @@ type: sdk | module - Empty type result in default card styling
                 {% endif %}
         </span>
 {% endif %}
-    <span class="cards-content">
-        <span class="{{ title_type }}">{{ include.title }}</span>
-        <span>{{ text | markdownify }}</span>
+    {% if include.card_demoshop %}
+    <div>
+    {% endif %}
+        <span class="cards-content">
+            <span class="{{ title_type }}">{{ include.title }}</span>
+            <span>{{ text | markdownify }}</span>
             <table class="table table-plain">
                 <thead>
                     <tr>
@@ -59,7 +62,7 @@ type: sdk | module - Empty type result in default card styling
                 <tbody>
                     {% for table_content in include.table_content %}
                     <tr>
-
+                        
                         <th scope="row">
                             <i class="material-icons{% if icon_outlined %}-outlined{% endif %}">
                                 {{table_content.icon}}
@@ -81,11 +84,17 @@ type: sdk | module - Empty type result in default card styling
                         </th>
                     </tr>
                     {% endfor %}
-                    </tbody>
-        </table>
-    </span>
-    {% unless disabled %}
-    <a class="btn btn-{{include.button_type}} align-self-end" href="{{to}}" type="button">{{ include.button_content }}<i class="material-icons ml-2"> arrow_forward</i></a>
-    {% endunless %}
+                </tbody>
+            </table>
+        </span>
+        {% unless disabled %}
+        <a class="btn btn-{{include.button_type}} {{include.button_alignment}}" href="{{to}}" type="button">{{ include.button_content }}<i class="material-icons ml-2"> arrow_forward</i></a>
+        {% endunless %}
+    {% if include.card_demoshop %}
+    </div>
+        <div style="float:right">
+            <img src='/assets/img/demoshop-image.svg'>
+        </div>
+    {% endif %}
 </div>
 

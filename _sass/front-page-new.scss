@@ -49,7 +49,7 @@ $front-page-max-width: 1312px;
     }
 }
 
-.front-page {
+.front-page-new {
     margin: 3rem 2rem 0;
     position: relative;
     display: flex;
@@ -62,26 +62,25 @@ $front-page-max-width: 1312px;
         width: 100%;
         margin-bottom: 3rem;
         max-width: 1432px;
-        background-color: none;
+        background-color: $dark-brown;
         z-index: 0;
         border-radius: 1rem;
         min-height: 33rem;
 
         .front-page-hero {
             position: relative;
-            max-width: 41rem;
+            max-width: 38rem;
             margin-bottom: 3rem;
             z-index: 1;
 
             h3 {
-                color: $black;
+                color: $yellow;
                 font-family: $headline;
-                margin-bottom: 2rem;
-                font-size: 2.5rem;
+                margin-bottom: 0;
             }
 
             p {
-                color: $black;
+                color: $white;
                 font-size: 1.125rem;
             }
             
@@ -95,7 +94,6 @@ $front-page-max-width: 1312px;
                 font-size: 2rem;
                 color: $yellow;
                 margin-bottom: 1rem;
-
 
                 span {
                     color: $white;
@@ -192,13 +190,13 @@ $front-page-max-width: 1312px;
             // display: flex;
 
             .front-page-contact-content {
-                background-color: $dark-brown;
+                background-color: none;
                 width: 100%;
                 min-height: 13.5rem;
                 padding: 3.5rem 4rem;
 
                 h2 {
-                    color: $white;
+                    color: $black;
                     margin-bottom: 1.5rem;
 
 
