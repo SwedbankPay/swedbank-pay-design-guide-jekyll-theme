@@ -1,7 +1,6 @@
 ---
 section: Checkout v2
 estimated_read: 3
-checkout_v3: true
 description: |
   **Swedbank Pay Checkout** is a complete reimagination
   of the checkout experience, integrating seamlessly into the merchant website
