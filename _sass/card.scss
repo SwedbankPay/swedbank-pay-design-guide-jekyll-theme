@@ -1,5 +1,27 @@
 @import 'colors.scss';
 
+.cards{
+    .table{
+        &.table-plain{
+            thead{
+
+            }
+
+            tbody{
+                tr{
+                    td{
+                        justify-content: center;
+                        border:none
+                    }
+                    th{
+                        border: none
+                    }
+                }
+            }
+        }
+    }
+}
+
 .dx-card {
     display: flex;
     flex-grow: 1;
