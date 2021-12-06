@@ -12,7 +12,7 @@
 {%- assign description = page.opengraph.description | default: site.opengraph.description -%}
 {%- assign image = page.opengraph.image | default: site.opengraph.image -%}
 {%- assign design_guide_base_url = site.design_guide.base_url | default: 'https://design.swedbankpay.com' -%}
-{%- assign design_guide_version = site.design_guide.version | default: '5.0.1' -%}
+{%- assign design_guide_version = site.design_guide.version | default: '7.1.0' -%}
 {%- assign design_guide_url = design_guide_base_url | append: '/v/' | append: design_guide_version -%}
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
@@ -38,13 +38,13 @@
         {%- if image != nil %}
         <meta property="og:image" value="{{ image }}" />{% endif %}
         <title>{{ title }}</title>
-        <link rel="stylesheet" href="{{ design_guide_url }}/styles/dg-style.css" />
+        <link rel="stylesheet" href="{{ design_guide_url }}/styles/swedbankpay.css" />
+        <link rel="stylesheet" href="{{ design_guide_url }}/styles/documentation-swedbankpay.css" />
         <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
         <link rel="stylesheet" href="{{ "/assets/css/pygments-autumn.css" | relative_url }}">
         <link rel="shortcut icon" href="{{ design_guide_url }}/icons/favicon.ico">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ design_guide_url }}/icons/favicon-16x16.png">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ design_guide_url }}/icons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="228x228" href="{{ design_guide_url }}/icons/coast-228x228.png">
         <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
         {%- include apple-mobile-headers.html design_guide_url=design_guide_url -%}
         <script src="{{ '/assets/js/mermaid.min.js' | relative_url }}"></script>
@@ -64,7 +64,7 @@
                         <div class="sidebar dg-sidebar">
                             <nav class="sidebar-nav">
                                 <a href="/" class="sidebar-header">
-                                    <img src="{{ design_guide_url }}/img/swedbankpay-logo-v.svg"
+                                    <img src="{{ design_guide_url }}/designguide/assets/swedbankpay-logo-v.svg"
                                         alt="Swedbank Pay vertical logo" class="logotype-vertical logotype-lg"/>
                                     <div class="sidebar-header-text">
                                         <span>{</span>developer portal<span>}</span>
