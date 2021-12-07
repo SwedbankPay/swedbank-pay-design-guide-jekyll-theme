@@ -63,10 +63,13 @@ generate_variables() {
     else
         # Replace '+'' in the version number with '.'.
         version="${version//+/.}"
+        # Disable SC2001: See if you can use ${variable//search/replace} instead.
+        # shellcheck disable=SC2001
+        # Replace consecutive '-' in the version number with a single '-'.
+        version=$(echo "$version" | sed 's/\(\-\)\+/./g')
         # Replace '-' in the version number with '.'.
         version="${version//-/.}"
     fi
-
 
     echo "Branch:     $branch"
     echo "Version:    $version"
