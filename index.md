@@ -8,68 +8,9 @@ description: |
     scrambled it to make a type specimen book.
 menu_order: 0
 
-
-header:
-  - table_header: Data Ownership
-  - table_header: SwedbankPay
-    badge_type: default
-  - table_header: Merchant Side
-    badge_type: inactive
-table_content:
-  - icon: lock
-    label: Authentication
-    swedbankPay: true
-    merchantSide: true 
-  - icon: local_shipping
-    label: Delivery Info
-    swedbankPay: true
-    merchantSide: true 
-  - icon: assignment_ind
-    label: Consumer Info
-    swedbankPay: true
-    merchantSide: true 
-  - icon: monetization_on
-    label: PSP
-    swedbankPay: true
-    merchantSide: true 
-
 ---
 
-{% include card-extended.html
-  title='Want to try it yourself?'
-  no_icon=true
-  button_content='Visit our Demoshop'
-  text='Experience what it would be like to pay as a costumer of yours in our demoshop.'
-  button_type='primary'
-  button_alignment='align-self-start'
-  card_demoshop=true
-  %}
-
-{%- capture table-content -%}
-{%- endcapture -%}
-{% include card-extended.html
-  title='Standard'
-  icon_content='shopping_cart'
-  icon_outlined=true
-  button_content='Proceed'
-  text='We collect and verify the identity of your consumer. We also collect the billing and shipping address and we store the consumer information. With our PSP you are always able to choose one ore more payment methods.'
-  table_content=page.table_content
-  header=page.header
-  button_type='secondary'
-  button_alignment='align-self-end'
-  to='/checkout'
-  %}
-
 {% include card-list.html card_list=page.card_list col_class="col-lg-4" %}
-
-{% include card-extended.html
-  title='Get to know Checkout v3'
-  no_icon=true
-  button_content='Get started'
-  text='All businesses have their own unique needs. Which is why we have made it possible for you to adapt to a variety of those needs, using only one integration. To help you get started we have made five implementation options to choose among. In that way you can utilize your checkin in just a few configurations, or switch into any other of our stand alone payment methods - if that suits you better. Intrigued yet? Let’s find out more!'
-  button_type='primary'
-  button_alignment='align-self-end'
-  %}
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 

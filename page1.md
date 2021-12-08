@@ -8,6 +8,7 @@ front_page:
   start_heading: Begin now!
 hide_from_sidebar: false
 layout: front-page
+
 ---
 
 {% assign card_col_class="col-xxl-3 col-xl-6 col-lg-6" %}
