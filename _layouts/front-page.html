@@ -13,7 +13,7 @@ layout: default
     <div class="front-page-top">
         <div class="front-page-hero">
             <h3>{{ front_page_hero1 }}</h3>
-            <h3>{{ front_page_hero2 }}<span class="front-page-hero-name">{</span><span class="front-page-hero-name">{{ front_page_title }}</span><span class="front-page-hero-name">}</span>
+            <h3>{{ front_page_hero2 }}<span class="front-page-hero-name"> {</span><span class="front-page-hero">{{ front_page_title }}</span><span class="front-page-hero-name">}</span>
             </h3>
             <p>{{ front_page_ingress }}</p>
         </div>
@@ -56,7 +56,8 @@ layout: default
         </div>
     </div>
     {% endif %}
-
+    
+    <div class="front-page-container">
     {% include card-extended.html
         title='Get to know Checkout v3'
         no_icon=true
@@ -79,7 +80,6 @@ layout: default
         to='https://ecom.externalintegration.payex.com/pspdemoshop'
         %}
 
-    <div class="front-page-container">
         <div class="front-page-cards-sdk">
             {% contentblock sdks %}
         </div>
