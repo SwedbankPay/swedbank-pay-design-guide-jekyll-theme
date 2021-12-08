@@ -65,5 +65,5 @@ This is because tokens are created with their current account settings in mind.
 {% include alert.html type="warning" icon="warning" body="Please note that the
 production and staging environment need seperate tokens." %}
 
-{% include iterator.html next_href="/checkout/v3/standard/setup"
+{% include iterator.html next_href="/checkout/v3/"
                          next_title="Start Integrate" %}
