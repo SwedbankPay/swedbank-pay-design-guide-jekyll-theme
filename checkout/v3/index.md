@@ -3,9 +3,10 @@ section: Checkout v3
 title: Get Started
 estimated_read: 5
 description: |
-  Before moving on we would like to give you a brief introduction to what you need
-  to consider before composing your checkout page, along with some prerequisites.
+  **Before moving on we would like to give you a brief introduction to what you need
+  to consider before composing your checkout page, along with some prerequisites.**
 menu_order: 300
+checkout_v3: true
 
 header:
   - table_header: Data Ownership
