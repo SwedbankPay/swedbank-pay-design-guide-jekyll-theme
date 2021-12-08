@@ -95,16 +95,16 @@ be able to decide which payment options are available for the consumer. Hence
 you can show all available payment options for that specific market, or just one
 or two if that makes more sense for your business.
 
-- **Consumer Info:**  The consumer's personal data e.g. name, address, phone
-  number etc.
+- **Consumer Info:** The consumer's personal data e.g. name, address, phone
+      number etc.
 
 - **Authentication:** The process for verifying the consumer's identity via
-  Strong Consumer Authentication (e.g. BankID).
+    Strong Consumer Authentication (e.g. BankID).
 
 - **Delivery Info:** Information about where the goods should be delivered.
 
 - **PSP:** The service of providing payment methods in the checkout or payment
-  menu.
+    menu.
 
 ## What Are You Looking For?
 
