@@ -14,12 +14,12 @@ menu_order: 0
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-* [External absolute full link](https://www.wikipedia.org)
-* [External protocol relative link](//www.wikipedia.org)
-* Internal absolute full link
-* Internal explicit relative link
-* Internal implicit relative link
-* Internal absolute link
+*   [External absolute full link](https://www.wikipedia.org)
+*   [External protocol relative link](//www.wikipedia.org)
+*   Internal absolute full link
+*   Internal explicit relative link
+*   Internal implicit relative link
+*   Internal absolute link
 
 There should be whitespace between paragraphs.
 
@@ -138,9 +138,9 @@ their language.
 
 #### Header 4
 
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-* This is an unordered list following a header.
+*   This is an unordered list following a header.
+*   This is an unordered list following a header.
+*   This is an unordered list following a header.
 
 ##### Header 5
 
@@ -223,10 +223,10 @@ and try out PayEx Checkout for yourself!' %}
 
 ## Here is an unordered list
 
-* Item foo
-* Item bar
-* Item baz
-* Item zip
+*   Item foo
+*   Item bar
+*   Item baz
+*   Item zip
 
 ## And an ordered list
 
@@ -237,19 +237,19 @@ and try out PayEx Checkout for yourself!' %}
 
 ## And a nested list
 
-* level 1 item
-  * level 2 item
-  * level 2 item
-  * level 3 item
-  * level 3 item
-* level 1 item
-  * level 2 item
-  * level 2 item
-  * level 2 item
-* level 1 item
-  * level 2 item
-  * level 2 item
-* level 1 item
+*   level 1 item
+  *   level 2 item
+  *   level 2 item
+  *   level 3 item
+  *   level 3 item
+*   level 1 item
+  *   level 2 item
+  *   level 2 item
+  *   level 2 item
+*   level 1 item
+  *   level 2 item
+  *   level 2 item
+*   level 1 item
 
 ## Small image
 

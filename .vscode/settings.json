@@ -5,5 +5,11 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.markdownlint": true
     },
-    "html.format.indentInnerHtml": true
+    "html.format.indentInnerHtml": true,
+
+    "markdownlint.config": {
+        "MD005": false,
+        "MD007": false,
+        "MD030": { "ul_single": 3, "ul_multi": 3 },
+    }
 }
