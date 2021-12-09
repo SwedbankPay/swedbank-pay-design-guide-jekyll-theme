@@ -1,26 +1,22 @@
 @import 'colors.scss';
 
-.cards{
-    .table{
-        &.table-plain{
-            thead{
-
-            }
-
-            tbody{
-                tr{
-                    td{
+.cards {
+    .table {
+        &.table-plain {
+            tbody {
+                tr {
+                    td {
                         justify-content: center;
-                        border:none
+                        border: none;
                     }
-                    th{
-                        border: none
+                    th {
+                        border: none;
                     }
                 }
             }
         }
     }
-    .container-right{
+    .container-right {
         float: right;
     }
 }
@@ -228,6 +224,3 @@
         display: flex;
     }
 }
-
-
-
