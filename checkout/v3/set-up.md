@@ -14,9 +14,9 @@ checkout_v3: true
 A test account allows you to access our unified dashboard for managing your
 accounts across different platforms. We call this dashboard the Ecom admin.
 
-Your test account request should be sent to: testaccount@swedbankpay.com in
-order to create an account for you we will need some specific information from
-your side:
+Your test account request should be sent to:
+[testaccount@swedbankpay.com](mailto:testaccount@swedbankpay.com) in order to
+create an account for you we will need some specific information from your side:
 
 - **Company name:** Your company name
 - **Services you prefer:** Full Chceckout (Standard/Authenticated/MAC) or
