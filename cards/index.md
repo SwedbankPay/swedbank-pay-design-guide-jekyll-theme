@@ -6,12 +6,6 @@ menu_order: 0
 card_overview: true
 ---
 
-# Deck 1
-
-# Deck 2
-
-# Deck 3
-
 {% include card.html title='Default'
     text='This is a default card'
     icon_content='credit_card'

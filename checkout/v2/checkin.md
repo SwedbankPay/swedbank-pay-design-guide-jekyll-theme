@@ -44,7 +44,7 @@ Content-Type: application/json
 | :--------------: | :---------------------------------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------- |
 | {% icon check %} | `operation`                               | `string` | `initiate-consumer-session`, the operation to perform.                                                                                 |
 | {% icon check %} | `language`                                | `string` | Selected language to be used in Checkin.|
-|                  | `shippingAddressRestrictedToCountryCodes` | `string` | List of supported shipping countries for merchant. Using [ISO-3166] standard. This is required unless `requireShippingAddress` is set to false.                                                           |
+|                  | `shippingAddressRestrictedToCountryCodes` | `string` | List of supported shipping countries for merchant. Using [iso-3166][ISO-3166] standard. This is required unless `requireShippingAddress` is set to false.                                                           |
 |                  | `requireShippingAddress` | `bool` | Defaults to true. If set to false we will not collect a shipping address from the consumer.                                                            |
 
 When the request has been sent, a response containing an array of operations that can be acted upon will be returned:

@@ -124,7 +124,6 @@ card_list_2:
     outlined: true
 ---
 
-
 {:.heading-line}
 
 ## Technical Reference

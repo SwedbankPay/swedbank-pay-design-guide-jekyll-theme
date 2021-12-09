@@ -144,9 +144,9 @@ their language.
 
 ##### Header 5
 
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
+1.  This is an ordered list following a header.
+2.  This is an ordered list following a header.
+3.  This is an ordered list following a header.
 
 ###### Header 6
 
@@ -230,10 +230,10 @@ and try out PayEx Checkout for yourself!' %}
 
 ## And an ordered list
 
-1. Item one
-2. Item two
-3. Item three
-4. Item four
+1.  Item one
+2.  Item two
+3.  Item three
+4.  Item four
 
 ## And a nested list
 
@@ -291,8 +291,3 @@ The final element.
 {% icon check %} {% icon line_weight %} {% icon gavel %} {% icon visibility %}
 {% icon work %} {% icon alarm_on outlined %}
 {% icon touch_app %}
-
-[internal-absolute-full-link]: {{ site.url }}
-[explicit-relative-link]: ./page1
-[implicit-relative-link]: page1
-[internal-absolute-link]: /page1
