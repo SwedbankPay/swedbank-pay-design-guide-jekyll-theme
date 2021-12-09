@@ -60,27 +60,26 @@ $front-page-max-width: 1312px;
         position: relative;
         padding: 4rem 4rem 2rem;
         width: 100%;
-        margin-bottom: 3rem;
         max-width: 1432px;
-        background-color: $dark-brown;
+        background-color: none;
         z-index: 0;
         border-radius: 1rem;
-        min-height: 33rem;
 
         .front-page-hero {
             position: relative;
-            max-width: 38rem;
+            max-width: 41rem;
             margin-bottom: 3rem;
             z-index: 1;
 
             h3 {
-                color: $yellow;
+                color: $black;
                 font-family: $headline;
-                margin-bottom: 0;
+                margin-bottom: 2rem;
+                font-size: 2.5rem;
             }
 
             p {
-                color: $white;
+                color: $black;
                 font-size: 1.125rem;
             }
             
@@ -95,6 +94,7 @@ $front-page-max-width: 1312px;
                 color: $yellow;
                 margin-bottom: 1rem;
 
+
                 span {
                     color: $white;
                 }
@@ -104,7 +104,7 @@ $front-page-max-width: 1312px;
 
         .front-page-intro-cards {
             h2 {
-                color: $white;
+                color: $black;
 
                 .header-anchor {
                     display: none;

@@ -1,3 +1,4 @@
+<!-- lint disable no-undefined-references -->
 {%- assign design_guide_url = include.design_guide_url -%}
 {%- capture startup_image_configs -%}
 640,1136,1,640x1136

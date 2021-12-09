@@ -7,7 +7,10 @@ description: |
     text ever since the 1500s, when an unknown printer took a galley of type and
     scrambled it to make a type specimen book.
 menu_order: 0
+
 ---
+
+{% include card-list.html card_list=page.card_list col_class="col-lg-4" %}
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
@@ -239,10 +242,12 @@ and try out PayEx Checkout for yourself!' %}
     *   level 2 item
     *   level 3 item
     *   level 3 item
+
 *   level 1 item
     *   level 2 item
     *   level 2 item
     *   level 2 item
+
 *   level 1 item
     *   level 2 item
     *   level 2 item
@@ -286,8 +291,3 @@ The final element.
 {% icon check %} {% icon line_weight %} {% icon gavel %} {% icon visibility %}
 {% icon work %} {% icon alarm_on outlined %}
 {% icon touch_app %}
-
-[internal-absolute-full-link]: {{ site.url }}
-[explicit-relative-link]: ./page1
-[implicit-relative-link]: page1
-[internal-absolute-link]: /page1

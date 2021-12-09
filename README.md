@@ -22,38 +22,38 @@ The Docker installation is the one we recommend to use for its simplicity.
 
 ### Docker
 
-1. Install [Docker][docker], using Linux containers.
+1.  Install [Docker][docker], using Linux containers.
     Make sure virtualization is enabled on your machine.
-2. Open a console window at the root of the repository and run
+2.  Open a console window at the root of the repository and run
     `docker-compose up`
 
 ### Manual install
 
-1. [Clone this repository][clone].
-2. Jekyll is written in [Ruby][ruby], so you'll need to download and install
+1.  [Clone this repository][clone].
+2.  Jekyll is written in [Ruby][ruby], so you'll need to download and install
     that. If you're installing on Windows, choose setup with DevKit.
-3. To install the [Ruby Gems][gems] this web site requires, you first need to
+3.  To install the [Ruby Gems][gems] this web site requires, you first need to
     install [Bundler][bundler].
-4. Install [Graphviz][graphviz], this will require Java.
-5. Once Ruby ,Bundler, and Graphviz, is in place, type `bundle install` inside the root
+4.  Install [Graphviz][graphviz], this will require Java.
+5.  Once Ruby ,Bundler, and Graphviz, is in place, type `bundle install` inside the root
     folder of this repository.
-6. Run `bundle exec jekyll serve` to start the website.
-7. Open `http://localhost:4000` in a browser.
+6.  Run `bundle exec jekyll serve` to start the website.
+7.  Open `http://localhost:4000` in a browser.
 
 ### Required Visual Studio Code plugins
 
-* `shd101wyy.markdown-preview-enhanced`, to render Markdown to HTML in a
+*   `shd101wyy.markdown-preview-enhanced`, to render Markdown to HTML in a
   preview window.
-* `bpruitt-goddard.mermaid-markdown-syntax-highlighting`, to give syntax
+*   `bpruitt-goddard.mermaid-markdown-syntax-highlighting`, to give syntax
   highlighting to Mermaid diagrams in Markdown files.
-* `yzhang.markdown-all-in-one`, to enable a plethora of Markdown features,
+*   `yzhang.markdown-all-in-one`, to enable a plethora of Markdown features,
   most importantly formatting of Markdown tables with VS Code's built-in
   format functionality.
-* `stkb.rewrap`, to make line-breaking text at 80 characters easier.
-* `supperchong.pretty-json` to format selected JSON snippets in code
+*   `stkb.rewrap`, to make line-breaking text at 80 characters easier.
+*   `supperchong.pretty-json` to format selected JSON snippets in code
   examples.
-* `sissel.shopify-liquid` for syntax highlighting of [Liquid][liquid].
-* [Set up a ruler at 80 characters][vsc-ruler] by
+*   `sissel.shopify-liquid` for syntax highlighting of [Liquid][liquid].
+*   [Set up a ruler at 80 characters][vsc-ruler] by
   adding `"editor.rulers": [80]` to its configuration.
 
 Jekyll should now be fired up with this theme. You can now add pages, documents,
@@ -91,6 +91,7 @@ agreement][cla].
 [developer-portal]:     <https://developer.swedbankpay.com/>
 [docker]:               <https://www.docker.com/>
 [gems]:                 <https://rubygems.org/>
+[github]:               <https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme>
 [graphviz]:             <https://graphviz.org/download/>
 [license-badge]:        https://img.shields.io/github/license/SwedbankPay/swedbank-pay-design-guide-jekyll-theme
 [license]:              <https://opensource.org/licenses/MIT>

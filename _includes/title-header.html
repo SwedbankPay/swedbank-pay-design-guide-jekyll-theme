@@ -2,6 +2,7 @@
 {% assign main_title = page.main_title | default: page.title %}
 {% assign description = page.description %}
 {% assign estimated_read = page.estimated_read %}
+{% assign checkout_v3 = page.checkout_v3 %}
 {% capture max_width_class %}
     {% if page.card_overview %}
         max-width-card-overview
@@ -10,25 +11,29 @@
     {% endif %}
 {% endcapture %}
 
-<div class="title-header">
-    <div class="title-header-container {{ max_width_class | strip }}">
-        {% if lead_title != nil %}
-            <h4>{{ lead_title }}</h4>
-        {% endif %}
+{% if checkout_v3 %}
+    <div class="title-header-checkout-v3">
+{% else %}
+    <div class="title-header">
+{% endif %}
+        <div class="title-header-container {{ max_width_class | strip }}">
+            {% if lead_title != nil %}
+                <h4>{{ lead_title }}</h4>
+            {% endif %}
 
-        <h1>{{ main_title }}</h1>
+            <h1>{{ main_title }}</h1>
 
-        {% if estimated_read %}
-            <div class="title-header-estimated-read">
-                <i class="material-icons">schedule</i>
-                {{ estimated_read }} min read
-            </div>
-        {% endif %}
+            {% if estimated_read %}
+                <div class="title-header-estimated-read">
+                    <i class="material-icons">schedule</i>
+                    {{ estimated_read }} min read
+                </div>
+            {% endif %}
 
-        {% if description %}
-            <p>{{ description | markdownify }}</p>
-        {% endif %}
+            {% if description %}
+                <p>{{ description | markdownify }}</p>
+            {% endif %}
+        </div>
+
+        {% include github.html %}
     </div>
-
-    {% include github.html %}
-</div>

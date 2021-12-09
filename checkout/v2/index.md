@@ -23,6 +23,7 @@ To start integrating Swedbank Pay Checkout, you need the following:
 *   Obtained credentials (merchant Access Token) from Swedbank Pay through
     Swedbank Pay Admin. Please observe that Swedbank Pay Checkout encompass
     both the **`consumer`** and **`paymentmenu`** scope.
+*   fdfd
 
 ## Introduction
 

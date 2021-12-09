@@ -52,20 +52,20 @@ body {
     }
 }
 
-a[href ^='//']:not([href *='{{ site.url }}']):after,
-a[href ^='http://']:not([href *='{{ site.url }}']):after,
-a[href ^='https://']:not([href *='{{ site.url }}']):after {
-    content: url('../img/external-url.svg');
-    margin-left: .3rem;
-    display: inline-block;
-    width: .8rem;
-    background-repeat: none;
-    color: #257886;
+// a[href ^='//']:not([href *='{{ site.url }}']):after,
+// a[href ^='http://']:not([href *='{{ site.url }}']):after,
+// a[href ^='https://']:not([href *='{{ site.url }}']):after {
+//     content: url('../img/external-url.svg');
+//     margin-left: .3rem;
+//     display: inline-block;
+//     width: .8rem;
+//     background-repeat: none;
+//     color: #257886;
 
-    &.front-page-demoshop {
-        display: none;
-    }
-}
+//     &.front-page-demoshop {
+//         display: none;
+//     }
+// }
 
 #designguide .designguide-header .topbar-info a {
     margin-left: 5px;

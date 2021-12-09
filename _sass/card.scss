@@ -1,5 +1,28 @@
 @import 'colors.scss';
 
+.cards {
+    .table {
+        &.table-plain {
+            tbody {
+                tr {
+                    td {
+                        justify-content: center;
+                        border: none;
+                    }
+
+                    th {
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .container-right {
+        float: right;
+    }
+}
+
 .dx-card {
     display: flex;
     flex-grow: 1;
