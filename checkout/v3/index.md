@@ -111,6 +111,8 @@ or two if that makes more sense for your business.
 **Full Checkout**
 **Payments Only**
 
+{% capture full_checkout %}
+
 ## Full Checkout
 
 By using the Full Checkout, we help you collect and safely store consumer data.
@@ -161,6 +163,9 @@ and the full payment offering.
   button_alignment='align-self-end'
   to='/checkout'
 %}
+{% endcapture %}
+
+{% capture payments_only %}
 
 ## Payments Only
 
@@ -183,3 +188,9 @@ payment options and the full payment offering.
   button_alignment='align-self-end'
   to='/checkout'
 %}
+{% endcapture %}
+
+{% include tabs.html
+  full_checkout=full_checkout
+  payments_only=payments_only
+  %}
