@@ -238,19 +238,19 @@ and try out PayEx Checkout for yourself!' %}
 ## And a nested list
 
 *   level 1 item
-  *   level 2 item
-  *   level 2 item
-  *   level 3 item
-  *   level 3 item
+    *   level 2 item
+    *   level 2 item
+    *   level 3 item
+    *   level 3 item
 
 *   level 1 item
-  *   level 2 item
-  *   level 2 item
-  *   level 2 item
+    *   level 2 item
+    *   level 2 item
+    *   level 2 item
 
 *   level 1 item
-  *   level 2 item
-  *   level 2 item
+    *   level 2 item
+    *   level 2 item
 *   level 1 item
 
 ## Small image

@@ -10,6 +10,6 @@
     "markdownlint.config": {
         "MD005": false,
         "MD007": false,
-        "MD030": { "ul_single": 3, "ul_multi": 3 },
+        "MD030": { "ul_single": 3, "ul_multi": 3 }
     }
 }
