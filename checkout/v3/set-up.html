@@ -5,20 +5,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="theme-color" content="#000">
-        <meta name="application-name" content="Checkout Standard – Delete Token">
+        <meta name="application-name" content="Checkout v3 – Set Up">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="apple-mobile-web-app-title" content="Checkout Standard – Delete Token">
+        <meta name="apple-mobile-web-app-title" content="Checkout v3 – Set Up">
         <meta name="msapplication-TileColor" content="#000">
         <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png">
         <meta property="og:type" value="website" />
-        <meta property="og:url" value="/checkout/v3/standard/features/technical-reference/delete-token.html" />
-        <meta property="og:title" value="Checkout Standard – Delete Token" />
-        <meta name="title" content="Checkout Standard – Delete Token" />
+        <meta property="og:url" value="/checkout/v3/set-up.html" />
+        <meta property="og:title" value="Checkout v3 – Set Up" />
+        <meta name="title" content="Checkout v3 – Set Up" />
         <meta property="og:description" value="Swedbank Pay Design Guide theme for Jekyll" />
         <meta name="description" content="Swedbank Pay Design Guide theme for Jekyll" />
         <meta property="og:image" value="/image1.png" />
-        <title>Checkout Standard – Delete Token</title>
+        <title>Checkout v3 – Set Up</title>
         <link rel="stylesheet" href="https://design.swedbankpay.com/v/7.1.0/styles/swedbankpay.css" />
         <link rel="stylesheet" href="https://design.swedbankpay.com/v/7.1.0/styles/documentation-swedbankpay.css" />
         <link rel="stylesheet" href="/assets/css/style.css">
@@ -29,7 +29,7 @@
         <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Delete Token">
+<meta name="apple-mobile-web-app-title" content="Set Up">
 <link rel="apple-touch-icon" sizes="57x57" href="https://design.swedbankpay.com/v/7.1.0/icons/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="https://design.swedbankpay.com/v/7.1.0/icons/apple-touch-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="https://design.swedbankpay.com/v/7.1.0/icons/apple-touch-icon-72x72.png">
@@ -159,36 +159,38 @@
 
 
 
-    <div class="title-header">
+    <div class="title-header-checkout-v3">
 
         <div class="title-header-container max-width">
             
-                <h4>Checkout Standard</h4>
+                <h4>Checkout v3</h4>
             
 
-            <h1>Delete Token</h1>
+            <h1>Set Up</h1>
 
             
                 <div class="title-header-estimated-read">
                     <i class="material-icons">schedule</i>
-                    1 min read
+                    5 min read
                 </div>
             
 
             
-                <p><p>How to delete tokens.</p>
+                <p><p><strong>In this section we are going to guide you through setting up your test account
+and how to make an API request for your first test payment.
+After these steps, you’re ready to build your integration!</strong></p>
 </p>
             
         </div>
 
         
 
-<a href="https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/tree/main/checkout/v3/standard/features/technical-reference/delete-token.md"
+<a href="https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/tree/main/checkout/v3/set-up.md"
     class="github" target="_blank"
-    rel="noopener noreferrer" title="Edit 'Delete Token' on GitHub">
+    rel="noopener noreferrer" title="Edit 'Set Up' on GitHub">
     <svg aria-labelledby="simpleicons-github-icon" role="img" width="40" viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg">
-        <title id="simpleicons-github-icon">Edit "Delete Token" on GitHub</title>
+        <title id="simpleicons-github-icon">Edit "Set Up" on GitHub</title>
         <path fill="#fff" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
     </svg>
 </a>
@@ -201,13 +203,121 @@
 <div class="doc-container normal-padding max-width">
     <article>
         
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl
-vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros
-turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a
-pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat
-elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id
-arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel
-leo orci.</p>
+            <h2 id="step-1-sign-up-for-a-test-account">
+        
+        
+          Step 1: Sign up for a test account <a href="#step-1-sign-up-for-a-test-account" class="header-anchor"></a>
+        
+        
+      </h2>
+
+<p>A test account allows you to access our unified dashboard for managing your
+accounts across different platforms. We call this dashboard the Ecom admin.</p>
+
+<p>Your test account request should be sent to:
+<a href="mailto:testaccount@swedbankpay.com">testaccount@swedbankpay.com</a> in order to
+create an account for you we will need some specific information from your side:</p>
+
+<ul>
+  <li><strong>Company name:</strong> Your company name</li>
+  <li><strong>Services you prefer:</strong> Full Chceckout (Standard/Authenticated/MAC) or
+  Payments Only</li>
+  <li><strong>Email address:</strong> To developer/CTO</li>
+</ul>
+    
+      <h2 id="step-2-wait-for-response">
+        
+        
+          Step 2: Wait for response <a href="#step-2-wait-for-response" class="header-anchor"></a>
+        
+        
+      </h2>
+
+<p>Within 8 working hours we have created your account and sent you an email
+containing the following information:</p>
+
+<ul>
+  <li><strong>Merchant Name:</strong> This represents your core business entity with us.</li>
+  <li><strong>Merchant ID:</strong> This is how we identify you.</li>
+  <li><strong>Services:</strong> These are the services that are activated and ready to test.</li>
+  <li><strong>Login Credentials:</strong> You will receive a temporary password in a seperate
+  e-mail.</li>
+</ul>
+
+<div class="alert  alert-warning">
+    
+    
+    <i class="material-icons alert-icon">warning</i>
+    
+    
+
+    
+    
+    <p>Please check your spam
+folder if you have not received this email.</p>
+    
+    
+</div>
+    
+      <h2 id="step-3-get-your-access-tokens">
+        
+        
+          Step 3: Get your access tokens <a href="#step-3-get-your-access-tokens" class="header-anchor"></a>
+        
+        
+      </h2>
+
+<p>To submit payments to us, you’ll be making API requests that are authenticated
+with an Access Token.</p>
+
+<p>To generate your Access Token:</p>
+
+<ul>
+  <li><strong>Log in to:</strong> <a href="https://admin.externalintegration.payex.com/psp/beta/login/">https://admin.externalintegration.payex.com/psp/beta/login/</a>
+  for testing environment.</li>
+  <li><strong>Merchant details:</strong> Here you will find information about your account.</li>
+</ul>
+
+<p>An Access Token is neccessary, since it will be used together with Payee ID to
+validate transactions. The Payee ID will serve as the door and your token is the
+key.</p>
+
+<ul>
+  <li>Navigate to “Access Tokens” at the top of the page.</li>
+  <li>Choose “Add” and name the Token. Suggestion is to name it according to what
+  environment it is created in.</li>
+  <li>Your Token will only be fully visable upon creation. For security purposes, we
+  will mask it like shown in the example above. If you need to keep track of it,
+  please save it externally in a safe place as it will remain encrypted.</li>
+</ul>
+
+<p>If you were to add more payments methods later, a new token needs to be created.
+This is because tokens are created with their current account settings in mind.</p>
+
+<div class="alert  alert-warning">
+    
+    
+    <i class="material-icons alert-icon">warning</i>
+    
+    
+
+    
+    
+    <p>Please note that the
+production and staging environment need seperate tokens.</p>
+    
+    
+</div>
+
+<nav class="iterator d-flex">
+    
+
+    
+    <a class="ml-auto btn btn-secondary" role="button" rel="next" href="/checkout/v3/">
+        Start Integrate
+    </a>
+    
+</nav>
         
     </article>
 </div>
