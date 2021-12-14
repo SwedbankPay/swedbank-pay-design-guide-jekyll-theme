@@ -12,6 +12,29 @@ layout: front-page
 
 ---
 
+{% contentfor intro_cards %}
+{% include card-extended.html
+        title='Get to know Checkout v3'
+        no_icon=true
+        button_content='Get started'
+        text='All businesses have their own unique needs. Which is why we have made it possible for you to adapt to a variety of those needs, using only one integration. To help you get started we have made five implementation options to choose among. In that way you can utilize your checkin in just a few configurations, or switch into any other of our stand alone payment methods - if that suits you better. Intrigued yet? Let’s find out more!'
+        button_type='primary'
+        button_alignment='align-self-end'
+        %}
+
+    {% include card-extended.html
+        title='Want to try it yourself?'
+        no_icon=true
+        button_content='Visit our Demoshop'
+        text='Experience what it would be like to pay as a costumer of yours in our demoshop.'
+        button_type='primary'
+        button_alignment='align-self-start'
+        card_container=true
+        container_content='![demoshop](/assets/img/demoshop-image.svg)'
+        to='https://ecom.externalintegration.payex.com/pspdemoshop'
+        %}
+{% endcontentfor %}
+
 {%- capture table-content -%}
 {%- endcapture -%}
 {% include card-extended.html
@@ -39,6 +62,8 @@ layout: front-page
   button_alignment='align-self-end'
   to='/checkout'
 %}
+
+{% assign card_col_class="col-xxl-3 col-xl-6 col-lg-6" %}
 
 {% contentfor release_notes %}
   <h2 id="front-page-release-notes" class="heading-line heading-line-green">What's new in the documentation</h2>
