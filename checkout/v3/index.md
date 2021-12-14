@@ -18,18 +18,15 @@ table_content:
   - icon: lock
     label: Authentication
     swedbankPay: true
-    merchantSide: true 
   - icon: local_shipping
     label: Delivery Info
     swedbankPay: true
-    merchantSide: true 
   - icon: assignment_ind
     label: Consumer Info
     swedbankPay: true
   - icon: monetization_on
     label: PSP
     swedbankPay: true
-    merchantSide: true 
 
 table_content_authenticated:
   - icon: lock
