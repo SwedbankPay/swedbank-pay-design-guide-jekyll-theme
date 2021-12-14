@@ -2024,6 +2024,20 @@ menu.</p>
 
 <p><strong>Full Checkout</strong>
 <strong>Payments Only</strong></p>
+
+<div class="tabs" id="tabs-showcase-example">
+    <ul>
+        <li class="full-checkout">
+            <a id="full-checkout">Full Checkout</a>
+        </li>
+        <li class="payments-only">
+            <a id="payments-only">Payments Only</a>
+        </li>
+    </ul>
+</div>
+
+<section>
+    <div id="tab1">
     
       <h2 id="full-checkout">
         
@@ -2092,10 +2106,6 @@ and the full payment offering.</p>
                             </td>
                             <td>
                                 
-                                <i class="material-icons-outlined">
-                                    check_circle_outline
-                                </i>
-                                
                             </td>
                         
                     </tr>
@@ -2115,10 +2125,6 @@ and the full payment offering.</p>
                                 
                             </td>
                             <td>
-                                
-                                <i class="material-icons-outlined">
-                                    check_circle_outline
-                                </i>
                                 
                             </td>
                         
@@ -2159,10 +2165,6 @@ and the full payment offering.</p>
                                 
                             </td>
                             <td>
-                                
-                                <i class="material-icons-outlined">
-                                    check_circle_outline
-                                </i>
                                 
                             </td>
                         
@@ -2435,6 +2437,10 @@ and the full payment offering.</p>
         
     
 </div>
+
+
+    </div>
+    <div id="tab2" class="d-none">
     
       <h2 id="payments-only">
         
@@ -2577,6 +2583,26 @@ payment options and the full payment offering.</p>
         
     
 </div>
+
+
+    </div>
+</section>
+
+<script>
+$( "#full-checkout" ).click(function() {
+$( "#tab2" ).addClass( "d-none" )
+$( "#tab1" ).removeClass( "d-none" )
+$( ".full-checkout" ).addClass( "active" )
+$( ".payments-only" ).removeClass( "active" )
+
+  });
+$( "#payments-only" ).click(function() {
+$( "#tab2" ).removeClass( "d-none" )
+$( "#tab1" ).addClass( "d-none" )
+$( ".full-checkout" ).removeClass( "active" )
+$( ".payments-only" ).addClass( "active" )
+  });  
+  </script>
         
     </article>
 </div>
