@@ -1,18 +1,35 @@
-
-
-
-
-<div id="tabs-showcase-example" class="tabs">
+<div class="tabs" id="tabs-showcase-example">
     <ul>
-        <li class="active">
-            <a href="#">Selected</a>
+        <li class="full-checkout">
+            <a id="full-checkout">Full Checkout</a>
         </li>
-        <li>
-            <a href="#">Unselected</a>
-        </li>
-        <li>
-            <a href="#">Unselected</a>
+        <li class="payments-only">
+            <a id="payments-only">Payments Only</a>
         </li>
     </ul>
 </div>
-<p>Content of the selected tabs</p>
+
+<section>
+    <div id="tab1">
+        {{ include.full_checkout | markdownify}}
+    </div>
+    <div id="tab2" class="d-none">
+        {{ include.payments_only | markdownify}}
+    </div>
+</section>
+
+<script>
+$( "#full-checkout" ).click(function() {
+$( "#tab2" ).addClass( "d-none" )
+$( "#tab1" ).removeClass( "d-none" )
+$( ".full-checkout" ).addClass( "active" )
+$( ".payments-only" ).removeClass( "active" )
+
+  });
+$( "#payments-only" ).click(function() {
+$( "#tab2" ).removeClass( "d-none" )
+$( "#tab1" ).addClass( "d-none" )
+$( ".full-checkout" ).removeClass( "active" )
+$( ".payments-only" ).addClass( "active" )
+  });  
+  </script>

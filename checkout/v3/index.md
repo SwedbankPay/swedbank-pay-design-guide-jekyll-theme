@@ -18,18 +18,15 @@ table_content:
   - icon: lock
     label: Authentication
     swedbankPay: true
-    merchantSide: true 
   - icon: local_shipping
     label: Delivery Info
     swedbankPay: true
-    merchantSide: true 
   - icon: assignment_ind
     label: Consumer Info
     swedbankPay: true
   - icon: monetization_on
     label: PSP
     swedbankPay: true
-    merchantSide: true 
 
 table_content_authenticated:
   - icon: lock
@@ -111,6 +108,8 @@ or two if that makes more sense for your business.
 **Full Checkout**
 **Payments Only**
 
+{% capture full_checkout %}
+
 ## Full Checkout
 
 By using the Full Checkout, we help you collect and safely store consumer data.
@@ -161,6 +160,9 @@ and the full payment offering.
   button_alignment='align-self-end'
   to='/checkout'
 %}
+{% endcapture %}
+
+{% capture payments_only %}
 
 ## Payments Only
 
@@ -183,3 +185,9 @@ payment options and the full payment offering.
   button_alignment='align-self-end'
   to='/checkout'
 %}
+{% endcapture %}
+
+{% include tabs.html
+  full_checkout=full_checkout
+  payments_only=payments_only
+  %}
