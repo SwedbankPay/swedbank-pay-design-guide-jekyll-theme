@@ -620,7 +620,7 @@ var tipuesearch = {"pages": [{
     "url": "/page1.html"
   },{
     "title": "Page 2",
-    "text": "shopping_cart Standard We collect and verify the identity of your consumer. We also collect the billing and shipping address and we store the consumer information. With our PSP you are always able to choose one ore more payment methods. Proceed arrow_forward shopping_cart Authenticated We collect and verify the identity of your consumer. We also collect the billing and shipping address and we store the consumer information. With our PSP you are always able to choose one ore more payment methods. Proceed arrow_forward",
+    "text": "",
     "tags": "",
     "url": "/page2.html"
   },{
