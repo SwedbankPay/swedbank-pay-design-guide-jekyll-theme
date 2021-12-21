@@ -11,7 +11,7 @@ to(required): Url to the page to be directed to on click
 type: sdk | module - Empty type result in default card styling
 {%- endcomment -%}
 
-{% assign title_type = include.title_type | default: 'h4', %}
+{% assign title_type = include.title_type | default: 'h2', %}
 {% assign icon_content = include.icon_content %}
 {% assign icon_outlined = include.icon_outlined | default: false %}
 {% assign icon_svg = include.icon_svg | default: false %}
