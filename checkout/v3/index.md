@@ -172,7 +172,7 @@ payment options and the full payment offering.
 
 {% include card-extended.html
   title='Payments'
-  icon_content='shopping_cart'
+  icon_content='attach_money'
   icon_outlined=true
   button_content='Proceed'
   text="In order to implement this solution, you need to be able to both collect and
