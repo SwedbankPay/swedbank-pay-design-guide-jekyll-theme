@@ -76,6 +76,10 @@ $front-page-max-width: 1312px;
                 font-family: $headline;
                 margin-bottom: 2rem;
                 font-size: 2.5rem;
+                
+                .jumbo {
+                    font-size: 3.5rem;
+                }
             }
 
             p {
@@ -90,7 +94,7 @@ $front-page-max-width: 1312px;
             .front-page-hero-name {
                 font-family: $mono;
                 font-weight: bold;
-                font-size: 2rem;
+                font-size: 2.5rem;
                 color: $yellow;
                 margin-bottom: 1rem;
 
