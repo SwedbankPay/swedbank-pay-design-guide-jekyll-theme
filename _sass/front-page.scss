@@ -77,9 +77,7 @@ $front-page-max-width: 1312px;
                 margin-bottom: 2rem;
                 font-size: 2.5rem;
                 
-                .jumbo {
-                    font-size: 3.5rem;
-                }
+
             }
 
             p {
@@ -101,6 +99,15 @@ $front-page-max-width: 1312px;
 
                 span {
                     color: $white;
+                }
+            }
+
+            .front-page-hero-jumbo {
+                h3 {
+                    color: $brown;
+                    font-family: $headline;
+                    margin-bottom: 2rem;
+                    font-size: 3.5rem;
                 }
             }
 
