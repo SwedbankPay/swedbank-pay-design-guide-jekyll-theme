@@ -57,7 +57,11 @@
         h1,
         h4,
         p {
-            color: $black;
+            color: $brown;
+
+            strong {
+                font-size: 1.25rem;
+            }
         }
 
         h1 {
