@@ -133,6 +133,10 @@ body {
 
     .doc-container {
         max-width: 100%;
+
+        h2 {
+            font-size: 1.75rem
+        }
     }
     code[data-processed='true'].language-mermaid {
         background: none;
