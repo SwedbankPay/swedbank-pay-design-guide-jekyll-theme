@@ -104,9 +104,6 @@ or two if that makes more sense for your business.
 
 ## What Are You Looking For?
 
-**Full Checkout**
-**Payments Only**
-
 {% capture full_checkout %}
 
 ## Full Checkout
