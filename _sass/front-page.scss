@@ -67,7 +67,6 @@ $front-page-max-width: 1312px;
 
         .front-page-hero {
             position: relative;
-            max-width: 41rem;
             margin-bottom: 3rem;
             z-index: 1;
 
@@ -76,6 +75,7 @@ $front-page-max-width: 1312px;
                 font-family: $headline;
                 margin-bottom: 2rem;
                 font-size: 2.5rem;
+                line-height: 3.5rem;
                 
 
             }
@@ -103,13 +103,16 @@ $front-page-max-width: 1312px;
             }
 
             .front-page-hero-jumbo {
-                h3 {
                     color: $brown;
                     font-family: $headline;
                     margin-bottom: 2rem;
                     font-size: 3.5rem;
                 }
+            
+            .front-page-hero-lean {
+                font-family: $mono;
             }
+            
 
         }
 
