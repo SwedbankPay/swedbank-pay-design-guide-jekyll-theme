@@ -1,6 +1,9 @@
 @import 'colors.scss';
 
 .cards {
+    &.cards-wide {
+        margin-top: 4rem;
+    }
     .table {
         &.table-plain {
             thead {
