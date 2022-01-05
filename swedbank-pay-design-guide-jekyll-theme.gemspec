@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.required_ruby_version = '>= 2.5.0'
-  spec.add_runtime_dependency 'faraday', '~> 1', '>= 1.0.1'
+  spec.add_runtime_dependency 'faraday', '>= 1.0.1', '< 3'
   spec.add_runtime_dependency 'html-proofer', '~> 3', '>= 3.19'
   spec.add_runtime_dependency 'jekyll', '>= 3.7', '< 5.0'
   spec.add_runtime_dependency 'jekyll-contentblocks', '~> 1', '>= 1.2'
