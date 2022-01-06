@@ -21,6 +21,15 @@
 
                     th:not(:first-child) {
                         text-align: center;
+                        .badge {
+                            &.badge-default {
+                                background-color: #FBDD91;
+                            }
+                            &.badge-inactive {
+                                background-color: #D4C4BC;
+                                color: $brown;
+                            }
+                        }
                     }
                 }
             }
