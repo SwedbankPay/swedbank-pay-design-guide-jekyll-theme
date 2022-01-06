@@ -1,8 +1,15 @@
 @import 'colors.scss';
 
 .cards {
+    .text-box {
+        margin-right: 4.875rem;
+    }
     &.cards-wide {
         margin-top: 4rem;
+
+        .btn {
+            margin-bottom: 2rem;
+        }
     }
     .table {
         &.table-plain {
@@ -248,3 +255,4 @@
         display: flex;
     }
 }
+
