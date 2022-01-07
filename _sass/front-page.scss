@@ -3,7 +3,7 @@
 @import 'breakpoints.scss';
 
 $front-page-padding: 0 4rem;
-$front-page-max-width: 1312px;
+$front-page-max-width: $breakpoint-lg;
 
 @mixin row-cards {
     >[class*='col-'] {
@@ -60,7 +60,7 @@ $front-page-max-width: 1312px;
         position: relative;
         padding: 4rem 4rem 2rem;
         width: 100%;
-        max-width: 1432px;
+        max-width: $front-page-max-width;
         background-color: none;
         z-index: 0;
         border-radius: 1rem;
