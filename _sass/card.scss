@@ -4,6 +4,7 @@
     .text-box {
         margin-right: 4.875rem;
     }
+    
     &.cards-wide {
         margin-top: 4rem;
 
@@ -12,6 +13,7 @@
         }
     }
     .table {
+        
         &.table-plain {
             thead {
                 tr {
@@ -21,12 +23,15 @@
 
                     th:not(:first-child) {
                         text-align: center;
+
                         .badge {
+
                             &.badge-default {
-                                background-color: #FBDD91;
+                                background-color: #fbdd91;
                             }
+
                             &.badge-inactive {
-                                background-color: #D4C4BC;
+                                background-color: #d4c4bc;
                                 color: $brown;
                             }
                         }
