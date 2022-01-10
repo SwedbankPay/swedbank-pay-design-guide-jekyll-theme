@@ -104,7 +104,7 @@ or two if that makes more sense for your business.
 
 ## What Are You Looking For?
 
-{% capture full_checkout %}
+{% capture tab1_intro %}
 
 ## Full Checkout
 
@@ -113,6 +113,9 @@ We can also prefill consumer info in the checkout if they have agreed to let us
 store their info. All of our implementations support both single payment options
 and the full payment offering.
 {:.heading-line}
+{% endcapture %}
+
+{% capture tab1_content %}
 
 {% include card-extended.html
   title='Standard'
@@ -159,7 +162,7 @@ and the full payment offering.
 %}
 {% endcapture %}
 
-{% capture payments_only %}
+{% capture tab2_intro %}
 
 ## Payments Only
 
@@ -168,6 +171,9 @@ build your own checkout flow. You collect the consumer data and own the entire
 checkout process. The **Payments Only** implementation supports both single
 payment options and the full payment offering.
 {:.heading-line}
+{% endcapture %}
+
+{% capture tab2_content %}
 
 {% include card-extended.html
   title='Payments'
@@ -186,6 +192,8 @@ payment options and the full payment offering.
 {% endcapture %}
 
 {% include tabs.html
-  full_checkout=full_checkout
-  payments_only=payments_only
+  tab1_intro=tab1_intro
+  tab1_content=tab1_content
+  tab2_intro=tab2_intro
+  tab2_content=tab2_content
   %}
