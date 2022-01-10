@@ -58,8 +58,7 @@ $front-page-max-width: $breakpoint-lg;
     
     .front-page-top {
         position: relative;
-        padding: 4rem 4rem 2rem;
-        width: 100%;
+        margin: 0 4rem;
         max-width: $front-page-max-width;
         background-color: none;
         z-index: 0;
@@ -67,8 +66,9 @@ $front-page-max-width: $breakpoint-lg;
 
         .front-page-hero {
             position: relative;
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
             z-index: 1;
+            padding: 1.5rem;
 
             h3 {
                 color: $brown;
@@ -119,6 +119,7 @@ $front-page-max-width: $breakpoint-lg;
         .front-page-intro-cards {
             h2 {
                 color: $black;
+                padding: 1.5rem;
 
                 .header-anchor {
                     display: none;
@@ -137,7 +138,8 @@ $front-page-max-width: $breakpoint-lg;
                 position: absolute;
                 left: 0;
                 width: 100%;
-                padding: 0 4rem;
+                padding: 1.5rem;
+
             }
         }
     }
