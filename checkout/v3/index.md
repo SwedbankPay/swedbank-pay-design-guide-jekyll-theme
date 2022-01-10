@@ -112,6 +112,7 @@ By using the Full Checkout, we help you collect and safely store consumer data.
 We can also prefill consumer info in the checkout if they have agreed to let us
 store their info. All of our implementations support both single payment options
 and the full payment offering.
+{:.heading-line}
 
 {% include card-extended.html
   title='Standard'
@@ -166,6 +167,7 @@ If you are looking for our payments package, you will have the flexibility to
 build your own checkout flow. You collect the consumer data and own the entire
 checkout process. The **Payments Only** implementation supports both single
 payment options and the full payment offering.
+{:.heading-line}
 
 {% include card-extended.html
   title='Payments'
