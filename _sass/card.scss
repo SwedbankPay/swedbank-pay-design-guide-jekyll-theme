@@ -25,6 +25,7 @@
 
                     th:not(:first-child) {
                         text-align: center;
+                        padding: 0 0.5rem;
 
                         .badge {
                             &.badge-default {
