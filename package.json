@@ -78,14 +78,18 @@
     "retext-repeated-words": "^4.2.0",
     "retext-sentence-spacing": "^5.2.0",
     "retext-spell": "^5.1.0",
-    "retext-syntax-urls": "^3.1.0",
+    "retext-syntax-urls": "^3.1.2",
     "retext-usage": "^0.5.0",
     "typographic-em-dashes": "^1.0.2",
     "typographic-en-dashes": "^1.0.1",
     "typographic-single-spaces": "^1.0.2",
     "unified": "^10.1.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.4.0"
+  },
   "scripts": {
     "remark": "remark . --quiet"
   },
