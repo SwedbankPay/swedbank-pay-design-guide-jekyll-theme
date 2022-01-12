@@ -3,7 +3,7 @@
 @import 'breakpoints.scss';
 
 $front-page-padding: 0 4rem;
-$front-page-max-width: 1312px;
+$front-page-max-width: $breakpoint-lg;
 
 @mixin row-cards {
     >[class*='col-'] {
@@ -58,24 +58,26 @@ $front-page-max-width: 1312px;
     
     .front-page-top {
         position: relative;
-        padding: 4rem 4rem 2rem;
-        width: 100%;
-        max-width: 1432px;
+        margin: 0 4rem;
+        max-width: $front-page-max-width;
         background-color: none;
         z-index: 0;
         border-radius: 1rem;
 
         .front-page-hero {
             position: relative;
-            max-width: 41rem;
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
             z-index: 1;
+            padding: 1.5rem;
 
             h3 {
-                color: $black;
+                color: $brown;
                 font-family: $headline;
                 margin-bottom: 2rem;
                 font-size: 2.5rem;
+                line-height: 3.5rem;
+                
+
             }
 
             p {
@@ -90,7 +92,7 @@ $front-page-max-width: 1312px;
             .front-page-hero-name {
                 font-family: $mono;
                 font-weight: bold;
-                font-size: 2rem;
+                font-size: 2.5rem;
                 color: $yellow;
                 margin-bottom: 1rem;
 
@@ -100,11 +102,24 @@ $front-page-max-width: 1312px;
                 }
             }
 
+            .front-page-hero-jumbo {
+                    color: $brown;
+                    font-family: $headline;
+                    margin-bottom: 2rem;
+                    font-size: 3.5rem;
+                }
+            
+            .front-page-hero-lean {
+                font-family: $mono;
+            }
+            
+
         }
 
         .front-page-intro-cards {
             h2 {
                 color: $black;
+                padding: 1.5rem;
 
                 .header-anchor {
                     display: none;
@@ -117,13 +132,12 @@ $front-page-max-width: 1312px;
         }
 
         @media screen and (min-width: $breakpoint-xxl) {
-            margin-bottom: 10rem;
+            margin-bottom: 8rem;
             
             .front-page-intro-cards {
                 position: absolute;
                 left: 0;
                 width: 100%;
-                padding: 0 4rem;
             }
         }
     }

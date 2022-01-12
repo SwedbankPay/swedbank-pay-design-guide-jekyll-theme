@@ -1,6 +1,5 @@
 ---
 title: Set Up
-estimated_read: 5
 description: |
   **In this section we are going to guide you through setting up your test account
   and how to make an API request for your first test payment.

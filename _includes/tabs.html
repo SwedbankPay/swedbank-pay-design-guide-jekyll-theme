@@ -11,10 +11,20 @@
 
 <section>
     <div id="tab1">
-        {{ include.full_checkout | markdownify}}
+        <div class="tab-intro">
+            {{ include.tab1_intro | markdownify}}
+        </div>
+        <div class="tab1-content">
+            {{ include.tab1_content | markdownify}}
+        </div>
     </div>
     <div id="tab2" class="d-none">
-        {{ include.payments_only | markdownify}}
+        <div class="tab-intro">
+            {{ include.tab2_intro | markdownify}}
+        </div>
+        <div>
+            {{ include.tab2_content | markdownify}}
+        </div>
     </div>
 </section>
 

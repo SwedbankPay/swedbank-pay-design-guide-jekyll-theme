@@ -1,7 +1,6 @@
 ---
 section: Checkout v3
 title: Get Started
-estimated_read: 5
 description: |
   **Before moving on we would like to give you a brief introduction to what you need
   to consider before composing your checkout page, along with some prerequisites.**
@@ -31,10 +30,10 @@ table_content:
 table_content_authenticated:
   - icon: lock
     label: Authentication
-    merchantSide: true 
+    swedbankPay: true
   - icon: local_shipping
     label: Delivery Info
-    swedbankPay: true
+    merchantSide: true 
   - icon: assignment_ind
     label: Consumer Info
     swedbankPay: true
@@ -105,10 +104,7 @@ or two if that makes more sense for your business.
 
 ## What Are You Looking For?
 
-**Full Checkout**
-**Payments Only**
-
-{% capture full_checkout %}
+{% capture tab1_intro %}
 
 ## Full Checkout
 
@@ -116,6 +112,10 @@ By using the Full Checkout, we help you collect and safely store consumer data.
 We can also prefill consumer info in the checkout if they have agreed to let us
 store their info. All of our implementations support both single payment options
 and the full payment offering.
+{:.heading-line}
+{% endcapture %}
+
+{% capture tab1_content %}
 
 {% include card-extended.html
   title='Standard'
@@ -162,7 +162,7 @@ and the full payment offering.
 %}
 {% endcapture %}
 
-{% capture payments_only %}
+{% capture tab2_intro %}
 
 ## Payments Only
 
@@ -170,10 +170,14 @@ If you are looking for our payments package, you will have the flexibility to
 build your own checkout flow. You collect the consumer data and own the entire
 checkout process. The **Payments Only** implementation supports both single
 payment options and the full payment offering.
+{:.heading-line}
+{% endcapture %}
+
+{% capture tab2_content %}
 
 {% include card-extended.html
   title='Payments'
-  icon_content='shopping_cart'
+  icon_content='attach_money'
   icon_outlined=true
   button_content='Proceed'
   text="In order to implement this solution, you need to be able to both collect and
@@ -188,6 +192,8 @@ payment options and the full payment offering.
 {% endcapture %}
 
 {% include tabs.html
-  full_checkout=full_checkout
-  payments_only=payments_only
+  tab1_intro=tab1_intro
+  tab1_content=tab1_content
+  tab2_intro=tab2_intro
+  tab2_content=tab2_content
   %}

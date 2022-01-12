@@ -52,15 +52,25 @@
     .title-header-container {
         width: 100%;
         padding: 3rem 1rem;
+        padding-bottom: 0;
 
         h1,
         h4,
         p {
-            color: $black;
+            color: $brown;
+
+            strong {
+                font-size: 1.25rem;
+            }
         }
 
         h1 {
             margin-top: 0;
+            color: $brown;
+        }
+
+        h4 {
+            margin-bottom: 1rem;
         }
 
         p {

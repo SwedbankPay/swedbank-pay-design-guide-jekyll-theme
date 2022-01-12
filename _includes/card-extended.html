@@ -11,7 +11,7 @@ to(required): Url to the page to be directed to on click
 type: sdk | module - Empty type result in default card styling
 {%- endcomment -%}
 
-{% assign title_type = include.title_type | default: 'h4', %}
+{% assign title_type = include.title_type | default: 'h2', %}
 {% assign icon_content = include.icon_content %}
 {% assign icon_outlined = include.icon_outlined | default: false %}
 {% assign icon_svg = include.icon_svg | default: false %}
@@ -19,6 +19,8 @@ type: sdk | module - Empty type result in default card styling
 {% assign text = include.text %}
 {% assign to = include.to %}
 {% assign disabled = include.disabled %}
+{% assign margin_right = include.margin_right | default false %}
+
 
 {% unless icon_svg %}
     {% if icon_content contains '/' or icon_content contains '.svg' %}
@@ -45,7 +47,11 @@ type: sdk | module - Empty type result in default card styling
     {% endif %}
         <span class="cards-content">
             <span class="{{ title_type }}">{{ include.title }}</span>
-            <span>{{ text | markdownify }}</span>
+                {% if margin_right %}
+                <span class="text-box">{{ text | markdownify }}</span>
+                {% else %}
+                <span>{{ text | markdownify }}</span>
+                {% endif %}
             <table class="table table-plain">
                 <thead>
                     <tr>

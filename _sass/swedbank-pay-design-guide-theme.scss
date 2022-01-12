@@ -11,6 +11,7 @@
 @import 'paragraph-highlight.scss';
 @import 'sidebar.scss';
 @import 'title-header.scss';
+@import 'tabs.scss';
 
 $bg: #f5f2f0;
 $darkened-bg: darken($bg, 10%);
@@ -93,7 +94,7 @@ body {
 }
 
 .iterator {
-    margin: 1rem 0;
+    margin: 2rem 0;
 }
 
 .iterator a.btn {
@@ -133,6 +134,10 @@ body {
 
     .doc-container {
         max-width: 100%;
+
+        h2 {
+            font-size: 1.75rem
+        }
     }
     code[data-processed='true'].language-mermaid {
         background: none;
@@ -192,7 +197,7 @@ body {
     }
 
     .normal-padding {
-        padding: 3rem 1rem 5rem;
+        padding: 1rem 1rem 5rem;
     }
 
     .max-width {

@@ -1,7 +1,19 @@
 @import 'colors.scss';
 
 .cards {
+    .text-box {
+        margin-right: 4.875rem;
+    }
+
+    &.cards-wide {
+        margin-top: 4rem;
+
+        .btn {
+            margin-bottom: 2rem;
+        }
+    }
     .table {
+
         &.table-plain {
             thead {
                 tr {
@@ -11,6 +23,17 @@
 
                     th:not(:first-child) {
                         text-align: center;
+
+                        .badge {
+                            &.badge-default {
+                                background-color: #fbdd91;
+                            }
+
+                            &.badge-inactive {
+                                background-color: #d4c4bc;
+                                color: $brown;
+                            }
+                        }
                     }
                 }
             }
@@ -245,3 +268,4 @@
         display: flex;
     }
 }
+

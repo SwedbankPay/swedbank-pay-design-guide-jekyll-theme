@@ -7,18 +7,23 @@ layout: default
 {% assign front_page_hero1 = page.front_page.hero1 | default: "Welcome to the" %}
 {% assign front_page_hero2 = page.front_page.hero2 | default: "Swedbank Pay" %}
 {% assign front_page_ingress = page.front_page.ingress | default: "Our developer portal gives you the full tool box for integrating our payment instruments and getting started with easy, flexible and safe payments on your e-commerce website." %}
-{% assign front_page_start_heading = page.front_page.start_heading | default: "Start your integration" %}
+{% assign front_page_start_heading = page.front_page.start_heading | default: "Let's get you started with easy, flexible and safe payments on you e-commerce website!" %}
 
 <div class="front-page">
     <div class="front-page-top">
         <div class="front-page-hero">
-            <h3>{{ front_page_hero1 }}</h3>
-            <h3>{{ front_page_hero2 }}<span class="front-page-hero-name"> {</span><span class="front-page-hero">{{ front_page_title }}</span><span class="front-page-hero-name">}</span>
+            <h3>{{ front_page_hero1 }}
+                <span class="d-block">
+                    <span class="front-page-hero-jumbo">{{ front_page_hero2 }}</span>
+                    <span class="front-page-hero-name"> {</span>
+                    <span class="front-page-hero-lean">{{ front_page_title }}</span>
+                    <span class="front-page-hero-name">}</span>
+                </span>
             </h3>
             <p>{{ front_page_ingress }}</p>
         </div>
         <div class="front-page-intro-cards">
-            <h2 id="front-page-start" class="heading-line">{{ front_page_start_heading }}</h2>
+            <h2 id="front-page-start" class="heading-line heading-line-indent">{{ front_page_start_heading }}</h2>
             {% contentblock start %}
         </div>
 
