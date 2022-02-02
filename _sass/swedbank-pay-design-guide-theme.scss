@@ -310,7 +310,7 @@ body {
         text-align: center;
     }
 
-    .github {
+    #github {
         opacity: .5;
         position: absolute;
         right: 4rem;
@@ -318,11 +318,11 @@ body {
         transition: opacity .3s;
     }
 
-    a.github:after {
+    a#github:after {
         display: none;
     }
 
-    a.github:hover {
+    a#github:hover {
         opacity: 1;
     }
 }
