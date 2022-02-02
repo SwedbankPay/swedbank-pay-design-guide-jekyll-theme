@@ -1,4 +1,6 @@
 @charset "UTF-8";
+.cards { cursor: default; }
+
 .cards .text-box { margin-right: 4.875rem; }
 
 .cards.cards-wide { margin-top: 4rem; }
@@ -93,13 +95,17 @@
 
 .front-page { margin: 3rem 2rem 0; position: relative; display: flex; flex-direction: column; align-items: center; }
 
+.front-page #github { top: 2.5rem; }
+
+.front-page #github path { fill: #222; }
+
 .front-page .front-page-top { position: relative; margin: 0 4rem; max-width: 992px; background-color: none; z-index: 0; border-radius: 1rem; }
 
 .front-page .front-page-top .front-page-hero { position: relative; margin-bottom: 1.5rem; z-index: 1; padding: 1.5rem; }
 
 .front-page .front-page-top .front-page-hero h3 { color: #512b2b; font-family: "Swedbank Headline", "Arial", sans-serif; margin-bottom: 2rem; font-size: 2.5rem; line-height: 3.5rem; }
 
-.front-page .front-page-top .front-page-hero p { color: #222; font-size: 1.125rem; }
+.front-page .front-page-top .front-page-hero p { color: #512b2b; font-size: 1.125rem; }
 
 .front-page .front-page-top .front-page-hero a { color: #43d0dd; }
 
@@ -111,7 +117,7 @@
 
 .front-page .front-page-top .front-page-hero .front-page-hero-lean { font-family: "Akkurat Mono", monospace; }
 
-.front-page .front-page-top .front-page-intro-cards h2 { color: #222; padding: 1.5rem; }
+.front-page .front-page-top .front-page-intro-cards h2 { color: #512b2b; padding: 1.5rem; padding-bottom: 0; }
 
 .front-page .front-page-top .front-page-intro-cards h2 .header-anchor { display: none; }
 
@@ -321,6 +327,8 @@ a.header-anchor::before { content: '#'; }
 
 .title-header-checkout-v3 { display: flex; justify-content: center; }
 
+.title-header-checkout-v3 #github path { fill: #222; }
+
 .title-header-checkout-v3 .title-header-container { width: 100%; padding: 3rem 1rem; padding-bottom: 0; }
 
 .title-header-checkout-v3 .title-header-container h1, .title-header-checkout-v3 .title-header-container h4, .title-header-checkout-v3 .title-header-container p { color: #512b2b; }
@@ -443,10 +451,10 @@ body { font-size: 1.125rem; }
 
 .documentation .plantuml { text-align: center; }
 
-.documentation .github { opacity: .5; position: absolute; right: 4rem; top: 4rem; transition: opacity .3s; }
+.documentation #github { opacity: .5; position: absolute; right: 4rem; top: 4rem; transition: opacity .3s; }
 
-.documentation a.github:after { display: none; }
+.documentation a#github:after { display: none; }
 
-.documentation a.github:hover { opacity: 1; }
+.documentation a#github:hover { opacity: 1; }
 
 /*# sourceMappingURL=style.css.map */
