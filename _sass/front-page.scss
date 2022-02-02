@@ -55,6 +55,13 @@ $front-page-max-width: $breakpoint-lg;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    #github {
+        top: 2.5rem;
+        path {
+            fill: $black;
+        }
+    }
     
     .front-page-top {
         position: relative;
@@ -81,7 +88,7 @@ $front-page-max-width: $breakpoint-lg;
             }
 
             p {
-                color: $black;
+                color: $brown;
                 font-size: 1.125rem;
             }
             
@@ -118,8 +125,9 @@ $front-page-max-width: $breakpoint-lg;
 
         .front-page-intro-cards {
             h2 {
-                color: $black;
+                color: $brown;
                 padding: 1.5rem;
+                padding-bottom: 0;
 
                 .header-anchor {
                     display: none;

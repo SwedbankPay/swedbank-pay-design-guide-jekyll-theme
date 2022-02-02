@@ -10,6 +10,7 @@ layout: default
 {% assign front_page_start_heading = page.front_page.start_heading | default: "Let's get you started with easy, flexible and safe payments on you e-commerce website!" %}
 
 <div class="front-page">
+    {% include github.html %}
     <div class="front-page-top">
         <div class="front-page-hero">
             <h3>{{ front_page_hero1 }}
@@ -27,7 +28,6 @@ layout: default
             {% contentblock start %}
         </div>
 
-        {% include github.html %}
     </div>
 
 
