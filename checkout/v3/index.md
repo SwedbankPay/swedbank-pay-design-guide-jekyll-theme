@@ -117,7 +117,7 @@ and the full payment offering.
 
 {% capture tab1_content %}
 
-{% include card-extended.html
+{% include card-table.html
   title='Standard'
   icon_content='shopping_cart'
   icon_outlined=true
@@ -130,7 +130,7 @@ and the full payment offering.
   to='/checkout'
   %}
 
-{% include card-extended.html
+{% include card-table.html
   title='Authenticated'
   icon_content='shopping_cart'
   icon_outlined=true
@@ -146,7 +146,7 @@ and the full payment offering.
   to='/checkout'
 %}
 
-{% include card-extended.html
+{% include card-table.html
   title='Merchant Authenticated Consumer'
   icon_content='shopping_cart'
   icon_outlined=true
@@ -175,7 +175,7 @@ payment options and the full payment offering.
 
 {% capture tab2_content %}
 
-{% include card-extended.html
+{% include card-table.html
   title='Payments'
   icon_content='attach_money'
   icon_outlined=true
