@@ -31,7 +31,7 @@ type: sdk | module - Empty type result in default card styling
 {% assign card_class = 'cards cards-wide' | strip %}
 
 <div class="{{ card_class }}">
-    {% if no_icon==false %} 
+    {% unless no_icon %} 
         <span class="cards-icon">
             {% if icon_svg %}
                 {% include {{ icon_content }} %}
@@ -41,7 +41,7 @@ type: sdk | module - Empty type result in default card styling
                 </i>
             {% endif %}
         </span>
-    {% endif %}
+    {% endunless %}
     {% if include.container_content %}
     <div>
     {% endif %}
