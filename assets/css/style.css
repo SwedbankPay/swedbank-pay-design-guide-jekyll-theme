@@ -1,15 +1,15 @@
 @charset "UTF-8";
 .cards { cursor: default; }
 
-.cards .text-box { margin-right: 4.875rem; }
-
 .cards.cards-wide { margin-top: 4rem; }
 
-.cards.cards-wide .btn { margin-bottom: 2rem; }
+.cards.cards-wide .btn { margin-bottom: 2rem; margin-top: 5rem; }
+
+.cards.cards-wide .text-box-extended { margin-right: 4.875rem; }
 
 .cards .table.table-plain thead tr th:first-child { padding-left: 0; }
 
-.cards .table.table-plain thead tr th:not(:first-child) { text-align: center; }
+.cards .table.table-plain thead tr th:not(:first-child) { text-align: center; padding: 0 0.5rem; }
 
 .cards .table.table-plain thead tr th:not(:first-child) .badge.badge-default { background-color: #fbdd91; }
 
