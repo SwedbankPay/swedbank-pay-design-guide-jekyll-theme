@@ -134,3 +134,15 @@ function _handleSimpleSidebar (e) {
         $("#tipue_search_input").tipuesearch();
     });
 })();
+
+
+// Make test data easyer to copy paste - trims everything that is copied 
+const elm = document.querySelector(".doc-container");
+
+elm.addEventListener('copy', (event) => {
+    let selection = document.getSelection();
+    console.log(selection.baseNode.data.trim());
+    event.clipboardData.setData('text/plain', selection.baseNode.data.trim());
+    event.preventDefault();
+});
+
