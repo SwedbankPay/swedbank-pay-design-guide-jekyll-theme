@@ -136,13 +136,14 @@ function _handleSimpleSidebar (e) {
 })();
 
 
-// Make test data easyer to copy paste - trims everything that is copied 
-const elm = document.querySelector(".doc-container");
-
-elm.addEventListener('copy', (event) => {
+// Makes copy/paste easier by trimming content copied
+const elm = document.querySelector(".doc-container")
+    elm.addEventListener('copy', (event) => {
     let selection = document.getSelection();
-    console.log(selection.baseNode.data.trim());
-    event.clipboardData.setData('text/plain', selection.baseNode.data.trim());
-    event.preventDefault();
-});
-
+        if(!!selection.focusNode.data){
+        event.clipboardData.setData('text/plain', selection.focusNode.data.trim());
+        } else if(!!selection.focusNode.innerText){
+    event.clipboardData.setData('text/plain', selection.focusNode.innerText.trim());
+  }
+  event.preventDefault();
+}); 
