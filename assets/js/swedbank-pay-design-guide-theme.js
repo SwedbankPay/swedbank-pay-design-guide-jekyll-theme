@@ -140,9 +140,9 @@ function _handleSimpleSidebar (e) {
 const elm = document.querySelector(".doc-container")
     elm.addEventListener("copy", (event) => {
     let selection = document.getSelection();
-        if(!selection.focusNode.data){
+        if(!!selection.focusNode.data){
         event.clipboardData.setData("text/plain", selection.focusNode.data.trim());
-        } else if(!selection.focusNode.innerText){
+        } else if(!!selection.focusNode.innerText){
     event.clipboardData.setData("text/plain", selection.focusNode.innerText.trim());
   }
   event.preventDefault();
