@@ -60,17 +60,19 @@
         <div id="designguide">
             <div class="documentation">
                 <div class="row">
-                    <div class="col-xxl-2 col-lg-3 pr-0">
-                        <div class="sidebar dg-sidebar">
-                            <nav class="sidebar-nav">
-                                <a href="/" class="sidebar-header">
-                                    <img src="{{ design_guide_url }}/designguide/assets/swedbankpay-logo-v.svg"
+                    <div class="">
+                        <div id="dg-sidebar" class="sidebar dg-sidebar">
+                            <nav class="sidebar-main-nav">
+                                <div class="sidebar-logo">
+                                    <a href="/" class="sidebar-header">
+                                        <img src="{{ design_guide_url }}/designguide/assets/swedbankpay-logo-v.svg"
                                         alt="Swedbank Pay vertical logo" class="logotype-vertical logotype-lg"/>
-                                    <div class="sidebar-header-text">
-                                        <span>{</span>developer portal<span>}</span>
-                                    </div>
-                                </a>
-                                {% if site.search.enabled == true %}
+                                        <div class="sidebar-header-text">
+                                            <span>{</span>developer portal<span>}</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- {% if site.search.enabled == true %}
                                 <form class="search-container mx-2 my-4 px-3 py-2 d-flex"
                                     method="get" action="{{ site.search.url | relative_url }}">
                                     <input name="q" type="text" id="tipue_search_input"
@@ -84,14 +86,14 @@
                                         <i class="material-icons m-0" aria-hidden="true">search</i>
                                     </button>
                                 </form>
-                                {% endif %}
+                                {% endif %} -->
                                 <ul id="dx-sidebar-main-nav-ul" class="main-nav-ul">
                                 </ul>
                             </nav>
                         </div>
                     </div>
 
-                    <main class="doc-view col-xxl-10 col-lg-9">
+                    <main class="doc-view">
                         {% if page.layout != 'front-page' %}
                             {% include title-header.html %}
                         {% endif %}

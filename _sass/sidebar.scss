@@ -1,102 +1,104 @@
 @import 'colors.scss';
 
 .sidebar {
-    .sidebar-nav {
-        .sidebar-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 2rem;
-            text-decoration: none;
-            color: #512b2b;
-
-            img {
-                margin-top: 1.5rem;
-                margin-bottom: 1.25rem;
+    &.dg-sidebar {
+        .sidebar-nav {
+            .sidebar-header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 2rem;
+                text-decoration: none;
+                color: #512b2b;
+    
+                img {
+                    margin-top: 1.5rem;
+                    margin-bottom: 1.25rem;
+                }
+    
+                span {
+                    color: #fdc129;
+                }
+    
+                .sidebar-header-text {
+                    margin-top: -0.5rem;
+                    font-size: 1.125rem;
+                    line-height: 1.5rem;
+                    color: $black;
+                    font-family: "Akkurat Mono", monospace;
+                    white-space: nowrap;
+                }
             }
-
-            span {
-                color: #fdc129;
-            }
-
-            .sidebar-header-text {
-                margin-top: -0.5rem;
-                font-size: 1.125rem;
-                line-height: 1.5rem;
-                color: $black;
-                font-family: "Akkurat Mono", monospace;
-                white-space: nowrap;
-            }
-        }
-
-        .search-container {
-            box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.15);
-            border-radius: 0.125rem;
-
-            &:focus-within {
-                outline: -webkit-focus-ring-color auto 0.5px;
-            }
-
-            .search-input {
-                color: $medium-brown;
-                font-size: 0.875rem;
-                border: none;
-                padding: 0.375rem;
-                
-                &:focus {
+    
+            .search-container {
+                box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.15);
+                border-radius: 0.125rem;
+    
+                &:focus-within {
+                    outline: -webkit-focus-ring-color auto 0.5px;
+                }
+    
+                .search-input {
+                    color: $medium-brown;
+                    font-size: 0.875rem;
+                    border: none;
+                    padding: 0.375rem;
+                    
+                    &:focus {
+                        color: $brown;
+                        outline: none
+                    }
+                }
+    
+                i {
+                    display: block;
                     color: $brown;
-                    outline: none
+    
+                    &:hover {
+                        color: $turquoise-link;
+                    }
                 }
-            }
-
-            i {
-                display: block;
-                color: $brown;
-
-                &:hover {
-                    color: $turquoise-link;
+    
+                button {
+                    background-color: $white;
+                    border: none;
+                    cursor: pointer;
                 }
+    
             }
-
-            button {
-                background-color: $white;
-                border: none;
-                cursor: pointer;
-            }
-
-        }
-
-        .main-nav-ul {
-            .nav-group {
-                .nav-ul {
-                    .nav-subgroup {
-                        &.active {
-                            >.nav-subgroup-heading {
-                                a {
-                                    color: #257886;
-                                    font-weight: 700;
+    
+            .main-nav-ul {
+                .nav-group {
+                    .nav-ul {
+                        .nav-subgroup {
+                            &.active {
+                                >.nav-subgroup-heading {
+                                    a {
+                                        color: #257886;
+                                        font-weight: 700;
+                                    }
                                 }
                             }
-                        }
-
-                        .nav-subgroup-heading {
-                            padding: 0;
-
-                            i {
-                                padding: 0.5rem 0;
-                            }
-
-                            a {
-                                color: #512b2b;
-                                padding: .5rem;
-                                font-size: 1rem;
-                                line-height: 1.5rem;
-                                text-decoration: none;
-                                width: 100%;
-
-                                &:hover,
-                                &:focus {
-                                    color: #257886;
+    
+                            .nav-subgroup-heading {
+                                padding: 0;
+    
+                                i {
+                                    padding: 0.5rem 0;
+                                }
+    
+                                a {
+                                    color: #512b2b;
+                                    padding: .5rem;
+                                    font-size: 1rem;
+                                    line-height: 1.5rem;
+                                    text-decoration: none;
+                                    width: 100%;
+    
+                                    &:hover,
+                                    &:focus {
+                                        color: #257886;
+                                    }
                                 }
                             }
                         }

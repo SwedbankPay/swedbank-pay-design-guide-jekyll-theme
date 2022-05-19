@@ -48,14 +48,18 @@ module SwedbankPay
       title_markup = title_markup(page, level, is_leaf)
       item_class = item_class(page, current_page, level, is_leaf)
       group_heading_class = group_heading_class(level)
-
+    #   <div class=\"#{group_heading_class}\">
+    #   <i class=\"material-icons\">arrow_right</i>
+    #   #{title_markup}
+    # </div>
       "<li class=\"#{item_class}\">
-        <div class=\"#{group_heading_class}\">
-          <i class=\"material-icons\">arrow_right</i>
+          
           #{title_markup}
-        </div>
-        #{sub_items_markup}
-      </li>"
+          #{item_class === "main-nav-li" || item_class === "main-nav-li active" ? "<nav class=\"sidebar-secondary-nav\">
+              <header class=\"secondary-nav-header\">Get started</header>
+                #{sub_items_markup}
+              </nav>" : sub_items_markup}
+        </li>"
     end
 
     def item_class(page, current_page, level, is_leaf)
@@ -66,7 +70,13 @@ module SwedbankPay
     end
 
     def group_class(level)
-      level.zero? ? 'nav-group' : 'nav-subgroup'
+      if level.zero?
+        'main-nav-li'
+      elsif level == 1
+        'secondary-nav-li'
+      else ''
+      end
+      # level.zero? ? 'main-nav-li' : 'secondary-nav-li'
     end
 
     def group_heading_class(level)
@@ -76,7 +86,7 @@ module SwedbankPay
 
     def title_markup(page, level, is_leaf)
       lead_title = lead_title(page)
-      return "<span>#{lead_title}</span>" if level.zero?
+      return "<a>#{lead_title}</a>" if level.zero?
 
       main_title = main_title(page, is_leaf)
 
@@ -86,10 +96,9 @@ module SwedbankPay
     def sub_items_markup(page, current_page)
       headers_markup = headers_markup(page, current_page)
       child_markup = build_markup(page.children, current_page)
-
       return '' if headers_markup.empty? && child_markup.empty?
 
-      "<ul class=\"nav-ul\">
+      "<ul class=\"#{page.level === 0 ? "secondary-nav-ul" : ''}\">
         #{headers_markup}
         #{child_markup}
       </ul>"
