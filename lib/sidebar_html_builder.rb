@@ -48,12 +48,7 @@ module SwedbankPay
       title_markup = title_markup(page, level, is_leaf)
       item_class = item_class(page, current_page, level, is_leaf)
       group_heading_class = group_heading_class(level)
-    #   <div class=\"#{group_heading_class}\">
-    #   <i class=\"material-icons\">arrow_right</i>
-    #   #{title_markup}
-    # </div>
       "<li class=\"#{item_class}\">
-          
           #{title_markup}
           #{item_class === "main-nav-li" || item_class === "main-nav-li active" ? "<nav class=\"sidebar-secondary-nav\">
               <header class=\"secondary-nav-header\">Get started</header>
@@ -65,6 +60,11 @@ module SwedbankPay
     def item_class(page, current_page, level, is_leaf)
       active = page.active?(current_page, is_leaf: is_leaf)
       item_class = group_class(level)
+      
+      if item_class != 'main-nav-li'
+        item_class += is_leaf ? ' group' : ' leaf'
+      end
+
       item_class += ' active' if active
       item_class
     end
@@ -99,7 +99,13 @@ module SwedbankPay
       return '' if headers_markup.empty? && child_markup.empty?
 
       "<ul class=\"#{page.level === 0 ? "secondary-nav-ul" : ''}\">
-        #{headers_markup}
+          #{if page.level > 0
+              "<a href=\"#\" class=\"previous-nav\">
+                <i class=\"material-icons\" aria-hidden=\"true\">arrow_back_ios</i>
+                <span>Back to #{page.parent.title}</span>
+              </a>
+              <header>#{page.title}</header>"
+          end}
         #{child_markup}
       </ul>"
     end
@@ -126,7 +132,7 @@ module SwedbankPay
     end
 
     def leaf_markup(href, title, level = 0)
-      leaf_class = level.positive? ? 'nav-leaf nav-subgroup-leaf' : 'nav-leaf'
+      leaf_class = level.positive? ? 'nav-leaf' : 'leaf'
       "<li class=\"#{leaf_class}\"><a href=\"#{href}\">#{title}</a></li>"
     end
 
