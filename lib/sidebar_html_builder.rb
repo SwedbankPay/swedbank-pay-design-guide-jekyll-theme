@@ -60,9 +60,9 @@ module SwedbankPay
     def item_class(page, current_page, level, is_leaf)
       active = page.active?(current_page, is_leaf: is_leaf)
       item_class = group_class(level)
-      
       if item_class != 'main-nav-li'
-        item_class += is_leaf ? ' group' : ' leaf'
+        item_class += page.children.empty? ? ' group' : ' leaf'
+        # item_class += is_leaf ? ' group' : ' leaf'
       end
 
       item_class += ' active' if active
@@ -99,27 +99,30 @@ module SwedbankPay
       child_markup = build_markup(page.children, current_page)
       return '' if headers_markup.empty? && child_markup.empty?
 
-      "<ul class=\"#{page.level === 0 ? "secondary-nav-ul" : ''}\">
-          #{if page.level > 0
+      "<ul class=\"#{page.level === 0 ? "secondary-nav-ul" : '1'}\">
+          #{if page.level > 0 && page.children?
               "<a href=\"#\" class=\"previous-nav\">
                 <i class=\"material-icons\" aria-hidden=\"true\">arrow_back_ios</i>
                 <span>Back to #{page.parent.title}</span>
               </a>
               <header>#{page.title}</header>"
           end}
-        #{child_markup}
+          #{headers_markup}
+          #{child_markup}
       </ul>"
     end
 
     def headers_markup(page, current_page)
       # If there's no page headers, only return a leaf item for the page itself.
       main_title = page.title.nil? ? nil : page.title.main
-      return leaf_markup(page.path, main_title, page.level) unless page.headers?
+      # leaf_markup(page.path, main_title, page.level)
+      return '' unless page.headers?
 
       # If there's no children, only return the headers as leaf node items.
       return page.headers.map { |h| header_markup(page, h) }.join unless page.children?
 
       headers_markup = page.headers.map { |h| header_markup(page, h) }.join
+      # headers_markup.inlcude? 'nav-leaf'
       headers_markup = "<ul class=\"nav-ul\">#{headers_markup}</ul>"
 
       item_markup(page, current_page, headers_markup, true)
@@ -133,7 +136,7 @@ module SwedbankPay
     end
 
     def leaf_markup(href, title, level = 0)
-      leaf_class = level.positive? ? 'nav-leaf' : 'leaf'
+      leaf_class = level.positive? ? 'leaf' : 'nav-leaf'
       "<li class=\"#{leaf_class}\"><a href=\"#{href}\">#{title}</a></li>"
     end
 

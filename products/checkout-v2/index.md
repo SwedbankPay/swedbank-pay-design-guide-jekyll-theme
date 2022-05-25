@@ -1,5 +1,3 @@
 ---
-parts:
-    first:
-
+title: Checkout v2
 ---
