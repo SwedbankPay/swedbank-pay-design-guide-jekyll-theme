@@ -51,7 +51,7 @@ module SwedbankPay
       "<li class=\"#{item_class}\">
           #{title_markup}
           #{item_class === "main-nav-li" || item_class === "main-nav-li active" ? "<nav class=\"sidebar-secondary-nav\">
-              <header class=\"secondary-nav-header\">Get started</header>
+              <header class=\"secondary-nav-header\">#{page.title}</header>
                 #{sub_items_markup}
               </nav>" : sub_items_markup}
         </li>"
@@ -86,7 +86,8 @@ module SwedbankPay
 
     def title_markup(page, level, is_leaf)
       lead_title = lead_title(page)
-      return "<a>#{lead_title}</a>" if level.zero?
+      
+      return "<a>#{lead_title}</a>" if level.zero? && lead_title != 'Home'
 
       main_title = main_title(page, is_leaf)
 
