@@ -61,15 +61,12 @@
             <div class="documentation">
                 <div class="row">
                     <div class="">
-                        <div id="dg-sidebar" class="sidebar dg-sidebar">
+                        <div id="dg-sidebar" class="sidebar dg-sidebar has-secondary-nav">
                             <nav class="sidebar-main-nav">
                                 <div class="sidebar-logo">
                                     <a href="/" class="sidebar-header">
                                         <img src="{{ design_guide_url }}/designguide/assets/swedbankpay-logo-v.svg"
                                         alt="Swedbank Pay vertical logo" class="logotype-vertical logotype-lg"/>
-                                        <div class="sidebar-header-text">
-                                            <span>{</span>developer portal<span>}</span>
-                                        </div>
                                     </a>
                                 </div>
                                 <!-- {% if site.search.enabled == true %}
@@ -92,7 +89,6 @@
                             </nav>
                         </div>
                     </div>
-
                     <main class="doc-view">
                         {% if page.layout != 'front-page' %}
                             {% include title-header.html %}

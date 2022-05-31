@@ -47,11 +47,14 @@ module SwedbankPay
       level = is_leaf ? -1 : page.level
       title_markup = title_markup(page, level, is_leaf)
       item_class = item_class(page, current_page, level, is_leaf)
+      if level.zero?
+        page.doc.xpath('//*[@id="dg-sidebar"]').first.set_attribute("class", 'sidebar dg-sidebar')
+      end
       group_heading_class = group_heading_class(level)
       "<li class=\"#{item_class}\">
           #{title_markup}
           #{item_class === "main-nav-li" || item_class === "main-nav-li active" ? "<nav class=\"sidebar-secondary-nav\">
-              <header class=\"secondary-nav-header\">#{page.title}</header>
+              <header class=\"secondary-nav-header\">#{page.title.section || page.title}</header>
                 #{sub_items_markup}
               </nav>" : sub_items_markup}
         </li>"
@@ -76,7 +79,6 @@ module SwedbankPay
         'secondary-nav-li'
       else ''
       end
-      # level.zero? ? 'main-nav-li' : 'secondary-nav-li'
     end
 
     def group_heading_class(level)
@@ -87,11 +89,11 @@ module SwedbankPay
     def title_markup(page, level, is_leaf)
       lead_title = lead_title(page)
       
-      return "<a>#{lead_title}</a>" if level.zero? && lead_title != 'Home'
+      return "<a><i class=\"material-icons-outlined\" aria-hidden=\"true\">#{page.icon}</i>#{lead_title}</a>" if level.zero? && lead_title != 'Home'
 
       main_title = main_title(page, is_leaf)
-
-      "<a href=\"#{page.path}\">#{main_title}</a>"
+      home = main_title == "Home" ? "disabled" : ""
+      "<a class=\"#{home}\" href=\"#{page.path}\"><i class=\"material-icons-outlined\" aria-hidden=\"true\">#{page.icon}</i>#{main_title}</a>"
     end
 
     def sub_items_markup(page, current_page)
@@ -105,7 +107,7 @@ module SwedbankPay
                 <i class=\"material-icons\" aria-hidden=\"true\">arrow_back_ios</i>
                 <span>Back to #{page.parent.title}</span>
               </a>
-              <header>#{page.title}</header>"
+              <header>#{page.title.section || page.title}</header>"
           end}
           #{headers_markup}
           #{child_markup}

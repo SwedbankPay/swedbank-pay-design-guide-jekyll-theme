@@ -1,4 +1,38 @@
-@import 'colors.scss';
+#dg-sidebar {
+    &.sidebar {
+        .nav-ul {
+            list-style: none;
+            overflow: hidden;
+            padding: 0;
+            top: auto;
+            position: relative;
+            transition: none;
+        }
+    }
+
+    .main-nav-ul{
+        a {
+            &.disabled {
+                ~nav {
+                    display: none;
+                }
+            }
+        }
+
+        .leaf {
+            &.active {
+                > a {
+                    &:hover {
+                        &:after {
+                            content: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* @import 'colors.scss';
 
 .sidebar {
     &.dg-sidebar {
@@ -108,3 +142,4 @@
         }
     }
 }
+ */
