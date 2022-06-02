@@ -111,10 +111,6 @@ Merchant -->>- Payer: Show Purchase complete
         end
 ```
 
-*   ① See [seamless view events][starter-seamless-view-events] for further information.
-*   ② Read more about [callback][starter-callback] handling in the technical reference.
-
-
 ## Business Redirect
 
 ```mermaid
@@ -197,8 +193,6 @@ Merchant -->>- Payer: Show Purchase complete
         note right of Merchant: Capture here only if the purchased<br/>goods don't require shipping.<br/>If shipping is required, perform capture<br/>after the goods have shipped.<br>Should only be used for <br>PaymentInstruments that support <br>Authorizations.
         end
 ```
-
-*   ① Read more about [callback][callback] handling in the technical reference.
 
 ## Business Seamless View
 
@@ -293,11 +287,7 @@ Merchant -->>- Payer: Show Purchase complete
         end
 ```
 
-*   ① See [seamless view events][seamless-view-events] for further information.
-*   ② Read more about [callback][callback] handling in the technical reference.
-
 ## Enterprise Redirect
-
 
 ```mermaid
 sequenceDiagram
@@ -370,9 +360,6 @@ Merchant -->>- Payer: Show Purchase complete
         note right of Merchant: Capture here only if the purchased<br/>goods don't require shipping.<br/>If shipping is required, perform capture<br/>after the goods have shipped.<br>Should only be used for <br>PaymentInstruments that support <br>Authorizations.
         end
 ```
-
-*   ① Read more about [callback][enterprise-callback] handling in the technical reference.
-
 
 ## Enterprise Seamless View
 
@@ -458,9 +445,6 @@ Merchant -->>- Payer: Show Purchase complete
         end
 ```
 
-*   ① See [seamless view events][enterprise-seamless-view-events] for further information.
-*   ② Read more about [callback][enterprise-callback] handling in the technical reference.
-
 ## Payments Only Redirect
 
 ```mermaid
@@ -534,8 +518,6 @@ Merchant -->>- Payer: Show Purchase complete
         note right of Merchant: Capture here only if the purchased<br/>goods don't require shipping.<br/>If shipping is required, perform capture<br/>after the goods have shipped.<br>Should only be used for <br>PaymentInstruments that support <br>Authorizations.
         end
 ```
-
-*   ① Read more about [callback][payments-callback] handling in the technical referenc
 
 ## Payments Only Seamless View
 
@@ -620,15 +602,3 @@ Merchant -->>- Payer: Show Purchase complete
         note right of Merchant: Capture here only if the purchased<br/>goods don't require shipping.<br/>If shipping is required, perform capture<br/>after the goods have shipped.<br>Should only be used for <br>PaymentInstruments that support <br>Authorizations.
         end
 ```
-
-*   ① See [seamless view events][payments-seamless-view-events] for further information.
-*   ② Read more about [callback][payments-callback] handling in the technical reference
-
-[callback]: /checkout-v3/business/features/core/callback
-[enterprise-callback]: /checkout-v3/enterprise/features/core/callback
-[payments-callback]: /checkout-v3/payments-only/features/core/callback
-[starter-callback]: /checkout-v3/starter/features/core/callback
-[seamless-view-events]: /checkout-v3/business/features/technical-reference/seamless-view-events
-[enterprise-seamless-view-events]: /checkout-v3/enterprise/features/technical-reference/seamless-view-events
-[payments-seamless-view-events]: /checkout-v3/payments-only/features/technical-reference/seamless-view-events
-[starter-seamless-view-events]: /checkout-v3/starter/features/technical-reference/seamless-view-events

@@ -188,29 +188,17 @@ window.payex.hostedView.checkout({
 First you will see a Checkin module where the payer can enter their email and
 phone number.
 
-{:.text-center}
-![screenshot of the starter implementation seamless view checkin][login-checkin]
-
 A known payer will be sent directly to the payment menu shown further below. If
 we detect that the payer is new, we give them the option to store their details
 or proceed without storing. If that happens, these checkin steps will appear.
 
-{:.text-center}
-![screenshot of asking the payer to store details][checkin-new-payer]
-
 After choosing yes or no, the payer must enter their SSN.
-
-{:.text-center}
-![screenshot of asking the payer to enter SSN while storing details][checkin-new-payer-ssn]
 
 With digital products, the payer will be sent directly to delivery options after
 they select to store their details (see below). For mixed goods, the SSN input
 view will expand and the payer must enter their shipping address. Payers
 choosing not to store credentials (guests) must also enter their shipping
 address.
-
-{:.text-center}
-![screenshot of the seamless view checkin when entering details][checkin-enter-details-mixed]
 
 After checking in, the payer's contact details and shipping address are shown
 for mixed goods. You can now perform the `GET` on the payment order and display
@@ -219,17 +207,10 @@ the available delivery option(s) to the payer.
 You are in charge of how the delivery options are displayed. This is how they
 appear in our demoshop.
 
-![screenshot of the seamless view checkin mixed and delivery options][checkin-delivery-options-mixed]
-
 For digital products only contact details will be shown.
-
-![screenshot of the seamless view checkin digital and delivery options][checkin-delivery-options-digital]
 
 When the payer chooses a delivery option, you can `PATCH` the payment order and
 open the payment menu. The payer can then proceed with the purchase.
-
-{:.text-center}
-![screenshot of the starter implementation seamless view payment menu][seamless-payment-menu-starter]
 
 Once a purchase is complete, you can perform a `GET` towards the `paymentOrders`
 resource to see the purchase state.
@@ -247,18 +228,7 @@ When implementing **Starter**, you also need to subscribe to the event
 [`onPayerIdentified`][onpayeridentified]. This is important because the
 "Remember Me" feature (to be released soon) won't work without it.
 
-You can read more about the different [Seamless View
-Events][seamless-view-events] available in the feature section.
-
 [abort-feature]: /checkout-v3/starter/features/core/abort
-[checkin-delivery-options-digital]:/assets/img/checkout/checkin-delivery-options-digital.png
-[checkin-delivery-options-mixed]:/assets/img/checkout/checkin-delivery-options-mixed.png
-[login-checkin]: /assets/img/checkout/checkin.png
-[seamless-view-events]: /checkout-v3/starter/features/technical-reference/seamless-view-events
-[seamless-payment-menu-starter]: /assets/img/checkout/seamless-payment-menu-starter.png
-[checkin-enter-details-mixed]: /assets/img/checkout/checkin-enter-shipping-address.png
-[checkin-new-payer]: /assets/img/checkout/checkin-new-payer.png
-[checkin-new-payer-ssn]: /assets/img/checkout/checkin-new-payer-ssn.png
 [onpayeridentified]: /checkout-v3/starter/features/technical-reference/seamless-view-events##onpayeridentified
 [onpayerunidentified]: /checkout-v3/starter/features/technical-reference/seamless-view-events##onpayerunidentified
 [sequence-diagrams]: /checkout-v3/sequence-diagrams#starter-seamless-view
