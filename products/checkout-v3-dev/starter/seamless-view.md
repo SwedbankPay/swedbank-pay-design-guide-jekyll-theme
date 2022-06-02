@@ -46,8 +46,7 @@ not to store credentials during checkin.
 
 In some instances you need the possibility to abort purchases. This could be if
 a payer does not complete the purchase within a reasonable timeframe. For those
-instances we have `abort`, which you can read about in the [core
-features][abort-feature]. You can only use `abort` if the payer **has not**
+instances we have `abort`. You can only use `abort` if the payer **has not**
 completed an `authorize` or a `sale`.
 
 ## Step 2: Display Checkin, Delivery Options And Payment Menu
@@ -228,7 +227,6 @@ When implementing **Starter**, you also need to subscribe to the event
 [`onPayerIdentified`][onpayeridentified]. This is important because the
 "Remember Me" feature (to be released soon) won't work without it.
 
-[abort-feature]: /checkout-v3/starter/features/core/abort
 [onpayeridentified]: /checkout-v3/starter/features/technical-reference/seamless-view-events##onpayeridentified
 [onpayerunidentified]: /checkout-v3/starter/features/technical-reference/seamless-view-events##onpayerunidentified
 [sequence-diagrams]: /checkout-v3/sequence-diagrams#starter-seamless-view
