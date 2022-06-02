@@ -1,6 +1,6 @@
 ---
 title: Page 1
-menu_order: 1
+menu_order: 3
 front_page:
   title: design guide theme
   hero: Welcome to the Swedbank Pay
@@ -8,6 +8,7 @@ front_page:
   start_heading: Begin now!
 hide_from_sidebar: false
 layout: front-page
+sidebar_icon: filter_1
 
 ---
 

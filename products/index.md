@@ -1,4 +1,5 @@
 ---
 title: Products
-sidebar_icon: palette
+sidebar_icon: category
+menu_order: 1
 ---
