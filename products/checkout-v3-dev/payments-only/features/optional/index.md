@@ -7,7 +7,6 @@ anchor_headings: false
 ---
 
 {:.heading-line}
-
 ## Optional Features
 
 {% include card-list.html %}

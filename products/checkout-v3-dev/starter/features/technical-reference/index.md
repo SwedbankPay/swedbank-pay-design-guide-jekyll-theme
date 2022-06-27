@@ -9,5 +9,6 @@ anchor_headings: false
 ---
 
 {:.heading-line}
-
 ## Technical Reference
+
+{% include card-list.html %}
