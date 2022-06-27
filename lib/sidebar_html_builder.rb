@@ -75,7 +75,8 @@ module SwedbankPay
         'main-nav-li'
       elsif level == 1
         'secondary-nav-li'
-      else ''
+      else 
+        ''
       end
     end
 
