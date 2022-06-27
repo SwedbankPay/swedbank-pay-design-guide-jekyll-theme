@@ -19,8 +19,7 @@
 })();
 
 (function () {
-    console.log(2)
-    dg.sidebar.init("dg-sidebar")
+    dg.sidebar.init("dg-sidebar");
 })();
 
 // Initialize sidebar navigation scroll activation

@@ -48,12 +48,11 @@ module SwedbankPay
       title_markup = title_markup(page, level, is_leaf)
       item_class = item_class(page, current_page, level, is_leaf)
       if level.zero?
-        page.doc.xpath('//*[@id="dg-sidebar"]').first.set_attribute("class", 'sidebar dg-sidebar')
+        page.doc.xpath('//*[@id="dg-sidebar"]').first.set_attribute('class', 'sidebar dg-sidebar')
       end
-      group_heading_class = group_heading_class(level)
       "<li class=\"#{item_class}\">
           #{title_markup}
-          #{item_class === "main-nav-li" || item_class === "main-nav-li active" ? "<nav class=\"sidebar-secondary-nav\">
+          #{item_class === 'main-nav-li' || item_class === 'main-nav-li active' ? "<nav class=\"sidebar-secondary-nav\">
               <header class=\"secondary-nav-header\">#{page.title.section || page.title}</header>
                 #{sub_items_markup}
               </nav>" : sub_items_markup}
@@ -107,7 +106,7 @@ module SwedbankPay
                 <span>Back to #{page.parent.title}</span>
               </a>
               <header>#{page.title.section || page.title}</header>"
-          end}
+            end}
           #{headers_markup}
           #{child_markup}
       </ul>"
@@ -115,7 +114,6 @@ module SwedbankPay
 
     def headers_markup(page, current_page)
       # If there's no page headers, only return a leaf item for the page itself.
-      main_title = page.title.nil? ? nil : page.title.main
       return '' unless page.headers?
 
       # If there's no children, only return the headers as leaf node items.
