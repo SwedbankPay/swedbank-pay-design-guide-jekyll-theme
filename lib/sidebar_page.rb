@@ -13,7 +13,7 @@ module SwedbankPay
   class SidebarPage
     FIXNUM_MAX = ((2**((0.size * 8) - 2)) - 1)
 
-    attr_reader :path, :title, :level, :order, :children, :name, :filename, :doc, :section, :icon 
+    attr_reader :path, :title, :level, :order, :children, :name, :filename, :doc, :section, :icon
     attr_accessor :headers, :sidebar_container, :number, :parent
 
     def initialize(jekyll_page)

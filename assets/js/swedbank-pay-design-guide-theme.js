@@ -18,10 +18,6 @@
     mermaid.init(undefined, "code.language-mermaid");
 })();
 
-(function () {
-    dg.sidebar.init("dg-sidebar");
-})();
-
 // Initialize sidebar navigation scroll activation
 (function () {
     var headings = document.querySelectorAll(".doc-container h2");
