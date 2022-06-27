@@ -1,3 +1,0 @@
----
-title: Checkout v2
----

@@ -11,3 +11,4 @@ anchor_headings: false
 {:.heading-line}
 ## Core Features
 
+{% include card-list.html %}
