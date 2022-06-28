@@ -90,7 +90,7 @@ module SwedbankPay
       return "<a><i class=\"material-icons-outlined\" aria-hidden=\"true\">#{page.icon}</i>#{lead_title}</a>" if level.zero? && lead_title != 'Home'
 
       main_title = main_title(page, is_leaf)
-      home = main_title == "Home" ? "disabled" : ""
+      home = main_title == 'Home' ? 'disabled' : ''
       "<a class=\"#{home}\" href=\"#{page.path}\"><i class=\"material-icons-outlined\" aria-hidden=\"true\">#{page.icon}</i>#{main_title}</a>"
     end
 
@@ -99,7 +99,7 @@ module SwedbankPay
       child_markup = build_markup(page.children, current_page)
       return '' if headers_markup.empty? && child_markup.empty?
 
-      "<ul class=\"#{page.level == 0 ? "secondary-nav-ul" : ''}\">
+      "<ul class=\"#{page.level == 0 ? 'secondary-nav-ul' : ''}\">
           #{if page.level > 0 && page.children?
               "<a href=\"#\" class=\"previous-nav\">
                 <i class=\"material-icons\" aria-hidden=\"true\">arrow_back_ios</i>
