@@ -47,7 +47,7 @@ module SwedbankPay
       level = is_leaf ? -1 : page.level
       title_markup = title_markup(page, level, is_leaf)
       item_class = item_class(page, current_page, level, is_leaf)
-      && level.zero?
+      level.zero? &&
         page.doc.xpath('//*[@id="dg-sidebar"]').first.set_attribute('class', 'sidebar dg-sidebar')
       "<li class=\"#{item_class}\">
           #{title_markup}
@@ -99,7 +99,7 @@ module SwedbankPay
       child_markup = build_markup(page.children, current_page)
       return '' if headers_markup.empty? && child_markup.empty?
 
-      "<ul class=\"#{page.level.zero? 'secondary-nav-ul' : ''}\">
+      "<ul class=\"#{page.level.zero? ? 'secondary-nav-ul' : ''}\">
           #{if page.level.positive && page.children?
               "<a href=\"#\" class=\"previous-nav\">
                 <i class=\"material-icons\" aria-hidden=\"true\">arrow_back_ios</i>
