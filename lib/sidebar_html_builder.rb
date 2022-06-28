@@ -98,7 +98,7 @@ module SwedbankPay
       child_markup = build_markup(page.children, current_page)
       return '' if headers_markup.empty? && child_markup.empty?
 
-      "<ul class=\"#{page.level == 0 ? 'secondary-nav-ul' : ''}\">
+      "<ul class=\"#{page.level.zero? 'secondary-nav-ul' : ''}\">
           #{if page.level > 0 && page.children?
               "<a href=\"#\" class=\"previous-nav\">
                 <i class=\"material-icons\" aria-hidden=\"true\">arrow_back_ios</i>
