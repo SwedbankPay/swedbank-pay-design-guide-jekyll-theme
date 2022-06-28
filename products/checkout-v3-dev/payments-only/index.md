@@ -52,7 +52,7 @@ testing environment.
 account.
 
 An access token is necessary since it will be used together with Payee ID to
-validate transactions. The Payee ID will serve as the door and, your token is
+validate transactions. The Payee ID will serve as the door and your token is
 the key.
 
 *   Navigate to “Access Tokens” at the top of the page.
