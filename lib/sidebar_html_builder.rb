@@ -86,8 +86,10 @@ module SwedbankPay
 
     def title_markup(page, level, is_leaf)
       lead_title = lead_title(page)
-      return "<a><i class=\"material-icons-outlined\" aria-hidden=\"true\">#{page.icon}</i>#{lead_title}</a>" 
-        if level.zero? && lead_title != 'Home'
+      return "<a>
+                <i class=\"material-icons-outlined\" aria-hidden=\"true\">#{page.icon}</i>
+                #{lead_title}
+              </a>" if level.zero? && lead_title != 'Home'
 
       main_title = main_title(page, is_leaf)
       home = main_title == 'Home' ? 'disabled' : ''
@@ -100,7 +102,7 @@ module SwedbankPay
       return '' if headers_markup.empty? && child_markup.empty?
 
       "<ul class=\"#{page.level.zero? ? 'secondary-nav-ul' : ''}\">
-          #{if page.level.positive && page.children?
+          #{if page.level.positive? && page.children?
               "<a href=\"#\" class=\"previous-nav\">
                 <i class=\"material-icons\" aria-hidden=\"true\">arrow_back_ios</i>
                 <span>Back to #{page.parent.title}</span>
