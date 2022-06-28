@@ -1,6 +1,7 @@
 ---
 title: PlantUML
 description: PlantUML Diagrams
+sidebar_icon: table_chart
 ---
 
 ## Network Diagram

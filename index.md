@@ -7,6 +7,7 @@ description: |
     text ever since the 1500s, when an unknown printer took a galley of type and
     scrambled it to make a type specimen book.
 menu_order: 0
+sidebar_icon: home
 
 ---
 
@@ -191,8 +192,8 @@ sequenceDiagram
 {% include alert.html type='success' icon='check_circle'
 body='This is a successful alert.' %}
 
-{% include alert.html icon='info_outline' header='**Informational**       *alert*'
-body='This is an **informational**   alert *with*   `<markdown/>`{:.language-html}.'
+{% include alert.html icon='info_outline' header='**Informational**       _alert_'
+body='This is an **informational**   alert _with_   `<markdown/>`{:.language-html}.'
 %}
 
 {% include alert.html type='warning' icon='warning'
@@ -256,10 +257,6 @@ and try out PayEx Checkout for yourself!' %}
 ## Small image
 
 ![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-## Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
 
 ## Definition lists can be used with HTML syntax
 

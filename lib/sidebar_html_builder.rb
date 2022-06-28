@@ -47,26 +47,36 @@ module SwedbankPay
       level = is_leaf ? -1 : page.level
       title_markup = title_markup(page, level, is_leaf)
       item_class = item_class(page, current_page, level, is_leaf)
-      group_heading_class = group_heading_class(level)
-
+      level.zero? &&
+        page.doc.xpath('//*[@id="dg-sidebar"]').first.set_attribute('class', 'sidebar dg-sidebar')
       "<li class=\"#{item_class}\">
-        <div class=\"#{group_heading_class}\">
-          <i class=\"material-icons\">arrow_right</i>
           #{title_markup}
-        </div>
-        #{sub_items_markup}
-      </li>"
+          #{item_class === 'main-nav-li' || item_class === 'main-nav-li active' ? "<nav class=\"sidebar-secondary-nav\">
+              <header class=\"secondary-nav-header\">#{page.title.section || page.title}</header>
+                #{sub_items_markup}
+              </nav>" : sub_items_markup}
+        </li>"
     end
 
     def item_class(page, current_page, level, is_leaf)
       active = page.active?(current_page, is_leaf: is_leaf)
       item_class = group_class(level)
+      if item_class != 'main-nav-li'
+        item_class += page.children.empty? ? ' group' : ' leaf'
+      end
+
       item_class += ' active' if active
       item_class
     end
 
     def group_class(level)
-      level.zero? ? 'nav-group' : 'nav-subgroup'
+      if level.zero?
+        'main-nav-li'
+      elsif level == 1
+        'secondary-nav-li'
+      else
+        ''
+      end
     end
 
     def group_heading_class(level)
@@ -76,29 +86,37 @@ module SwedbankPay
 
     def title_markup(page, level, is_leaf)
       lead_title = lead_title(page)
-      return "<span>#{lead_title}</span>" if level.zero?
+      return "<a>
+                <i class=\"material-icons-outlined\" aria-hidden=\"true\">#{page.icon}</i>
+                #{lead_title}
+              </a>" if level.zero? && lead_title != 'Home'
 
       main_title = main_title(page, is_leaf)
-
-      "<a href=\"#{page.path}\">#{main_title}</a>"
+      home = main_title == 'Home' ? 'disabled' : ''
+      "<a class=\"#{home}\" href=\"#{page.path}\"><i class=\"material-icons-outlined\" aria-hidden=\"true\">#{page.icon}</i>#{main_title}</a>"
     end
 
     def sub_items_markup(page, current_page)
       headers_markup = headers_markup(page, current_page)
       child_markup = build_markup(page.children, current_page)
-
       return '' if headers_markup.empty? && child_markup.empty?
 
-      "<ul class=\"nav-ul\">
-        #{headers_markup}
-        #{child_markup}
+      "<ul class=\"#{page.level.zero? ? 'secondary-nav-ul' : ''}\">
+          #{if page.level.positive? && page.children?
+              "<a href=\"#\" class=\"previous-nav\">
+                <i class=\"material-icons\" aria-hidden=\"true\">arrow_back_ios</i>
+                <span>Back to #{page.parent.title}</span>
+              </a>
+              <header>#{page.title.section || page.title}</header>"
+            end}
+          #{headers_markup}
+          #{child_markup}
       </ul>"
     end
 
     def headers_markup(page, current_page)
       # If there's no page headers, only return a leaf item for the page itself.
-      main_title = page.title.nil? ? nil : page.title.main
-      return leaf_markup(page.path, main_title, page.level) unless page.headers?
+      return '' unless page.headers?
 
       # If there's no children, only return the headers as leaf node items.
       return page.headers.map { |h| header_markup(page, h) }.join unless page.children?
@@ -117,7 +135,7 @@ module SwedbankPay
     end
 
     def leaf_markup(href, title, level = 0)
-      leaf_class = level.positive? ? 'nav-leaf nav-subgroup-leaf' : 'nav-leaf'
+      leaf_class = level.positive? ? 'leaf' : 'nav-leaf'
       "<li class=\"#{leaf_class}\"><a href=\"#{href}\">#{title}</a></li>"
     end
 
