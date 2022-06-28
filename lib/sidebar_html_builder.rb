@@ -99,7 +99,7 @@ module SwedbankPay
       return '' if headers_markup.empty? && child_markup.empty?
 
       "<ul class=\"#{page.level.zero? 'secondary-nav-ul' : ''}\">
-          #{if page.level > 0 && page.children?
+          #{if page.level.positive && page.children?
               "<a href=\"#\" class=\"previous-nav\">
                 <i class=\"material-icons\" aria-hidden=\"true\">arrow_back_ios</i>
                 <span>Back to #{page.parent.title}</span>
