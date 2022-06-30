@@ -87,7 +87,7 @@
   },
   "devDependencies": {
     "stylelint": "^14.9.1",
-    "stylelint-config-standard": "^25.0.0",
+    "stylelint-config-standard": "^26.0.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.4.0"
   },
   "scripts": {
