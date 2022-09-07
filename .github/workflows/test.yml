@@ -35,7 +35,7 @@ jobs:
       - name: jekyll build
         run: docker-compose run jekyll build
       - name: Upload site
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: build-site
           path: _site
@@ -96,7 +96,7 @@ jobs:
             --ignore-url http://restcookbook.com/Basics/loggingin/
 
       - name: Upload build output artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: always()
         with:
           name: verify-site
@@ -134,7 +134,7 @@ jobs:
   #           --env=production \
   #           --dry-run
   #     - name: Upload deploy
-  #       uses: actions/upload-artifact@v2
+  #       uses: actions/upload-artifact@v3
   #       if: always()
   #       with:
   #         name: deploy
