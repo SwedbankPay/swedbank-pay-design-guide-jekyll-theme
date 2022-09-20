@@ -58,6 +58,12 @@ jobs:
         with:
           distribution: adopt
           java-version: 14
+      - name: Cache HTMLProofer
+        id: cache-htmlproofer
+        uses: actions/cache@v3
+        with:
+          path: tmp/.htmlproofer
+          key: ${{ runner.os }}-htmlproofer
       - uses: kamiazya/setup-graphviz@v1
       - name: rspec
         env:
