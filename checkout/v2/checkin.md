@@ -259,9 +259,8 @@ events][checkin-events] section.
 
 ### Note on consumer data
 
-During this stage, some consumer data is stored. Read more about our [Data
-Protection Policy][data-protection] for details on which information we store
-and its duration.
+During this stage, some consumer data is stored. Read more about our Data
+Protection Policy for details on which information we store and its duration.
 
 {% include iterator.html prev_href="./"
                          prev_title="Introduction"
@@ -269,6 +268,5 @@ and its duration.
                          next_title="Payment Menu" %}
 
 [checkin-events]: /checkout/v2/features/technical-reference/checkin-events
-[data-protection]: /resources/data-protection#paymentorder-consumer-data
 [payment-menu]: payment-menu
 [iso-3166]: https://www.iso.org/iso-3166-country-codes.html

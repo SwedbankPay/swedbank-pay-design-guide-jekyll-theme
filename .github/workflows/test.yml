@@ -49,23 +49,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
       - name: Set up Ruby 2.7
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
           bundler-cache: true
-
       - uses: actions/setup-java@v3
         with:
           distribution: adopt
           java-version: 14
-
       - uses: kamiazya/setup-graphviz@v1
-
       - name: rspec
         run: bundle exec rake
-
       - name: codecov upload
         run: bundle exec rake codecov:upload || echo 'Codecov upload failed'
 
@@ -73,70 +68,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
       - name: Set up Ruby 2.7
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
           bundler-cache: true
-
       - name: rubocop
         run: bundle exec rubocop --fail-level warning --display-only-fail-level-offenses
-
-  verify:
-    env:
-      JEKYLL_PLANTUML_DOCKER_VERSION: 2.3.1
-    runs-on: ubuntu-latest
-    needs: variables
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/checkout@v3
-        with:
-          repository: SwedbankPay/jekyll-plantuml-docker
-          ref: ${{ env.JEKYLL_PLANTUML_DOCKER_VERSION }}
-          path: jekyll-plantuml-docker
-
-      - name: Set up Ruby 2.7
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.7
-          bundler-cache: true
-
-      - name: bundle install
-        working-directory: ./jekyll-plantuml-docker/.docker/entrypoint
-        run: bundle install
-
-      - name: Verify build
-        env:
-          JEKYLL_ENV: production
-          JEKYLL_DATA_DIR: ${{ github.workspace }}
-          JEKYLL_VAR_DIR: ${{ github.workspace }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_BRANCH: ${{ needs.variables.outputs.branch }}
-          GITHUB_REPOSITORY_URL: ${{ needs.variables.outputs.repository_url }}
-          DOCKER_IMAGE_NAME: swedbankpay/jekyll-plantuml
-          DOCKER_IMAGE_TAG: ${{ env.JEKYLL_PLANTUML_DOCKER_VERSION }}
-          DOCKER_IMAGE_VERSION: ${{ env.JEKYLL_PLANTUML_DOCKER_VERSION }}
-        run: ruby ./jekyll-plantuml-docker/.docker/entrypoint/lib/entrypoint.rb \
-            build \
-            --env=production \
-            --verify \
-            --site-url=https://theme.example.com/ \
-            --ignore-url=http://www.wikipedia.org \
-            --ignore-url=http://restcookbook.com/Basics/loggingin/
-
-      - name: Upload build output artifacts
-        uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: verify-site
-          path: _site
-
-      - name: Verify absolute URL
-        run: grep 'https://theme.example.com/' $(pwd)/_site/index.html
-
-      - name: Verify base URL
-        run: grep '"/assets/css/style.css"' $(pwd)/_site/index.html
 
   remark-lint:
     runs-on: ubuntu-latest

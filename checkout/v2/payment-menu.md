@@ -24,7 +24,7 @@ Payment Menu. Information like `email`, `address` and `msisdn` can still be
 added manually in the payer node. If added, it will appear prefilled in the
 Payment Menu.
 
-Remember to read up on our [URL resource][urls].
+Remember to read up on our URL resource.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl
 vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros
@@ -323,4 +323,3 @@ finalizing the payment in the [After Payment section][after-payment].
 [after-payment]: after-payment
 [operations]: /checkout/v2/features/technical-reference/operations
 [technical-reference-onconsumer-identified]: /checkout/v2/checkin#step-2-display-swedbank-pay-checkin-module
-[urls]: /checkout/v2/features/technical-reference/urls#urls-resource
