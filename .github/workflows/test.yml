@@ -58,13 +58,20 @@ jobs:
         with:
           distribution: adopt
           java-version: 14
+      - uses: kamiazya/setup-graphviz@v1
       - name: Cache HTMLProofer
         id: cache-htmlproofer
         uses: actions/cache@v3
         with:
           path: tmp/.htmlproofer
           key: ${{ runner.os }}-htmlproofer
-      - uses: kamiazya/setup-graphviz@v1
+      - name: Cache Jekyll
+        uses: actions/cache@v3
+        with:
+          path: |
+            .jekyll-cache
+            .jekyll-metadata
+          key: ${{ runner.os }}-jekyll
       - name: rspec
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
