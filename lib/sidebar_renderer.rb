@@ -55,7 +55,7 @@ module SwedbankPay
       begin
         sidebar_html = @html_builder.build(page)
 
-        File.open('_site/sidebar.html', 'w') { |f| f.write(sidebar_html) }
+        File.write('_site/sidebar.html', sidebar_html)
       rescue StandardError => e
         name = page.filename || page.name || page.to_s
         SidebarLogger.error("Unable to render sidebar for '#{name}'.")

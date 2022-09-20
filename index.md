@@ -15,7 +15,6 @@ menu_order: 0
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 *   [External absolute full link](https://www.wikipedia.org)
-*   [External protocol relative link](//www.wikipedia.org)
 *   Internal absolute full link
 *   Internal explicit relative link
 *   Internal implicit relative link
@@ -259,7 +258,7 @@ and try out PayEx Checkout for yourself!' %}
 
 ## Large image
 
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
+![Branching](https://docs.github.com/assets/cb-23923/images/help/repository/branching.png)
 
 ## Definition lists can be used with HTML syntax
 

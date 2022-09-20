@@ -126,6 +126,7 @@ RSpec.configure do |config|
     config = Jekyll.configuration(
       {
         'config' => File.join(source_dir, '_config.yml'),
+        'incremental' => true,
         'source' => source_dir,
         'destination' => dest_dir
       }
