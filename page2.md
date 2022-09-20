@@ -1,6 +1,6 @@
 ---
 title: Page 2
-menu_order: 2
+menu_order: 4
 front_page:
   title: developer portal
   hero: Welcome to the Swedbank Pay
@@ -9,6 +9,7 @@ front_page:
   start_heading: Let's get you started with easy, flexible and safe payments on your e-commerce website!
 hide_from_sidebar: false
 layout: front-page
+sidebar_icon: filter_2
 
 ---
 

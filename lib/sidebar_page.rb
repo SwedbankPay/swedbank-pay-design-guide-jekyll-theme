@@ -13,7 +13,7 @@ module SwedbankPay
   class SidebarPage
     FIXNUM_MAX = ((2**((0.size * 8) - 2)) - 1)
 
-    attr_reader :path, :title, :level, :order, :children, :name, :filename, :doc
+    attr_reader :path, :title, :level, :order, :children, :name, :filename, :doc, :section, :icon
     attr_accessor :headers, :sidebar_container, :number, :parent
 
     def initialize(jekyll_page)
@@ -26,10 +26,11 @@ module SwedbankPay
       @path = sidebar_path.to_s
       @parent = sidebar_path.parent
       @level = sidebar_path.level
-      @name = sidebar_path.name
       @hide_from_sidebar = jekyll_page['hide_from_sidebar'].nil? ? false : jekyll_page['hide_from_sidebar']
       @title = SidebarPageTitle.parse(jekyll_page, self)
       @order = menu_order(jekyll_page)
+      @section = jekyll_page['section']
+      @icon = jekyll_page['sidebar_icon']
       @children = SidebarPageCollection.new(self)
       @card_overview = jekyll_page['card_overview'].nil? ? false : jekyll_page['card_overview']
       @anchor_headings = jekyll_page['anchor_headings'].nil? ? true : jekyll_page['anchor_headings']
