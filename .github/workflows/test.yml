@@ -60,6 +60,8 @@ jobs:
           java-version: 14
       - uses: kamiazya/setup-graphviz@v1
       - name: rspec
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: bundle exec rake
       - name: codecov upload
         run: bundle exec rake codecov:upload || echo 'Codecov upload failed'
