@@ -13,8 +13,8 @@ describe sidebar do
   describe '#pages' do
     subject { sidebar.pages }
 
-    its(:count) { is_expected.to eq 211 }
-    its(:length) { is_expected.to eq 11 }
+    its(:count) { is_expected.to eq 247 }
+    its(:length) { is_expected.to eq 12 }
 
     describe '[0]' do
       let(:index) { |x| parse_index(x) }
@@ -29,10 +29,10 @@ describe sidebar do
 
     describe '[1].title' do
       let(:index) { |x| parse_index(x) }
-      it { expect(sidebar.pages[index[0]].title).to be_string 'Page 1' }
+      it { expect(sidebar.pages[index[0]].title).to be_string 'Products' }
     end
 
-    describe '[4]' do
+    describe '[5]' do
       let(:index) { |x| parse_index(x) }
 
       subject { sidebar.pages[index[0]] }
@@ -81,7 +81,7 @@ describe sidebar do
       end
     end
 
-    describe '[6]' do
+    describe '[7]' do
       let(:index) { |x| parse_index(x) }
       subject { sidebar.pages[index[0]] }
 
@@ -114,7 +114,7 @@ describe sidebar do
       end
     end
 
-    describe '[8]' do
+    describe '[9]' do
       let(:index) { |x| parse_index(x) }
       subject { sidebar.pages[index[0]] }
 
