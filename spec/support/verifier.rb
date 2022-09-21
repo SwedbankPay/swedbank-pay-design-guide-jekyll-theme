@@ -47,7 +47,6 @@ module SwedbankPay
         cache: { timeframe: { external: '1w' } },
         check_html: true,
         check_unrendered_link: true,
-        allow_missing_href: true,
         checks: %w[Links Images Scripts UnrenderedLink],
         enforce_https: true,
         log_level: :debug,
