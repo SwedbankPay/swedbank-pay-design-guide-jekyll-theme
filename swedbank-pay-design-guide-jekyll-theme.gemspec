@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.5.0'
   spec.add_runtime_dependency 'faraday', '>= 1.0.1', '< 3'
-  spec.add_runtime_dependency 'html-proofer', '>= 3.19', '< 5'
+  spec.add_runtime_dependency 'html-proofer', '>= 3.19', '< 6'
   spec.add_runtime_dependency 'jekyll', '>= 3.7', '< 5.0'
   spec.add_runtime_dependency 'jekyll-contentblocks', '~> 1', '>= 1.2'
   spec.add_runtime_dependency 'jekyll-material-icon-tag', '~> 1', '>= 1.1'
