@@ -1,16 +1,11 @@
 # frozen_string_literal: true
 
-describe 'Card Overview' do
-  include_context 'shared'
-  card_index = File.expand_path(File.join(@dest_dir, 'cards', 'index.html'))
+require 'sidebar'
 
-  describe card_index do
-    subject { File.read(card_index) }
+describe SwedbankPay::Sidebar do
+  include_context :shared, ['cards', 'index.html']
 
-    it {
-      expect(File).to exist(card_index)
-    }
-
+  describe @file do
     it 'has expected first card deck' do
       is_expected.to have_tag('article') do
         with_tag('h2#deck-1', :with => { :class => 'heading-line' }) do

@@ -3,16 +3,9 @@
 require 'sidebar'
 
 describe SwedbankPay::Sidebar do
-  include_context 'shared'
-  after_payment_path = File.expand_path(File.join(@dest_dir, 'checkout', 'v2', 'after-payment.html'))
+  include_context :shared, ['checkout', 'v2', 'after-payment.html']
 
-  describe after_payment_path do
-    subject { File.read(after_payment_path) }
-
-    it {
-      expect(File).to exist(after_payment_path)
-    }
-
+  describe @file do
     it 'has active item' do
       is_expected.to have_tag('ul.main-nav-ul') do
         with_tag('li.nav-group.active') do

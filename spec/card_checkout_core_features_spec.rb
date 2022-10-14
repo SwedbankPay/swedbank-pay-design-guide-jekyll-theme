@@ -1,16 +1,11 @@
 # frozen_string_literal: false
 
-describe 'Checkout Core Features' do
-  include_context 'shared'
-  core_features_path = File.expand_path(File.join(@dest_dir, 'checkout', 'v2', 'features', 'core', 'index.html'))
+require 'sidebar'
 
-  describe core_features_path do
-    subject { File.read(core_features_path) }
+describe SwedbankPay::Sidebar do
+  include_context :shared, ['checkout', 'v2', 'features', 'core', 'index.html']
 
-    it {
-      expect(File).to exist(core_features_path)
-    }
-
+  describe @file do
     it 'has expected cards' do
       is_expected.to have_tag('article') do
         with_tag('h2#core-features', :with => { :class => 'heading-line' }) do
