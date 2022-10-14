@@ -2,7 +2,7 @@
 
 describe 'Checkout Core Features' do
   include_context 'shared'
-  core_features_path = File.join(@dest_dir, 'checkout', 'v2', 'features', 'core', 'index.html')
+  core_features_path = File.expand_path(File.join(@dest_dir, 'checkout', 'v2', 'features', 'core', 'index.html'))
 
   describe core_features_path do
     subject { File.read(core_features_path) }

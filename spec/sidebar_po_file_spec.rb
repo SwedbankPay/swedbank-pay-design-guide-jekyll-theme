@@ -4,7 +4,7 @@ require 'sidebar'
 
 describe SwedbankPay::Sidebar do
   include_context 'shared'
-  po_path = File.join(@dest_dir, 'checkout', 'v2', 'features', 'core', 'payment-order.html')
+  po_path = File.expand_path(File.join(@dest_dir, 'checkout', 'v2', 'features', 'core', 'payment-order.html'))
 
   describe po_path do
     subject { File.read(po_path) }

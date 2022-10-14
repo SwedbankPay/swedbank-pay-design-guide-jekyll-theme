@@ -4,7 +4,7 @@ require 'sidebar'
 
 describe SwedbankPay::Sidebar do
   include_context 'shared'
-  redirect_path = File.join(@dest_dir, 'resources', 'redirect-from.html')
+  redirect_path = File.expand_path(File.join(@dest_dir, 'resources', 'redirect-from.html'))
 
   describe redirect_path do
     subject { File.read(redirect_path) }

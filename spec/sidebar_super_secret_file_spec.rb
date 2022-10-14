@@ -5,7 +5,7 @@ require 'sidebar'
 describe SwedbankPay::Sidebar do
   include_context 'shared'
   # TODO: Hidden pages should be hidden from non-hidden pages, but not from other hidden pages within the same or lower hierarchy.
-  super_secret_path = File.join(@dest_dir, 'payments', 'secrets' , 'super-secret.html')
+  super_secret_path = File.expand_path(File.join(@dest_dir, 'payments', 'secrets' , 'super-secret.html'))
 
   describe super_secret_path do
     subject { File.read(super_secret_path) }

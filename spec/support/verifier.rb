@@ -38,7 +38,7 @@ module SwedbankPay
     end
 
     def ensure_directory_not_empty!(dir)
-      html_glob = File.join(dir, '**/*.html')
+      html_glob = File.expand_path(File.join(dir, '**/*.html'))
       raise "#{dir} contains no .html files" if Dir.glob(html_glob).empty?
     end
 

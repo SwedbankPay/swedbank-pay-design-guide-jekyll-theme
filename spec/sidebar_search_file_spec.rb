@@ -4,7 +4,7 @@ require 'sidebar'
 
 describe SwedbankPay::Sidebar do
   include_context 'shared'
-  search_path = File.join(@dest_dir, 'search.html')
+  search_path = File.expand_path(File.join(@dest_dir, 'search.html'))
 
   describe search_path do
     subject { File.read(search_path) }

@@ -2,7 +2,7 @@
 
 describe 'Card Overview' do
   include_context 'shared'
-  card_index = File.join(@dest_dir, 'cards', 'index.html')
+  card_index = File.expand_path(File.join(@dest_dir, 'cards', 'index.html'))
 
   describe card_index do
     subject { File.read(card_index) }
