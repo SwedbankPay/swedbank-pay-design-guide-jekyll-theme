@@ -3,17 +3,10 @@
 require 'sidebar'
 
 describe SwedbankPay::Sidebar do
-  include_context 'shared'
+  include_context :shared, ['payments', 'secrets', 'super-secret.html']
   # TODO: Hidden pages should be hidden from non-hidden pages, but not from other hidden pages within the same or lower hierarchy.
-  super_secret_path = File.join(@dest_dir, 'payments', 'secrets' , 'super-secret.html')
 
-  describe super_secret_path do
-    subject { File.read(super_secret_path) }
-
-    it {
-      expect(File).to exist(super_secret_path)
-    }
-
+  describe @file do
     # The navigation for a section that has `hide_from_sidebar: true` should not
     # be hidden from itself.
     it 'has expected nav structure' do

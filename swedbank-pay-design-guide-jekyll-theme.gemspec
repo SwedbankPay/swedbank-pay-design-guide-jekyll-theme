@@ -16,6 +16,11 @@ Gem::Specification.new do |spec|
   file_filter        = /^(assets|_layouts|_includes|_sass|_plugins|_assets|lib|LICENSE|README)/i
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(file_filter) }
   spec.require_paths = ['lib']
+  spec.metadata      = {
+    'homepage_uri' => spec.homepage,
+    'source_code_uri' => spec.homepage,
+    'rubygems_mfa_required' => 'true'
+  }
 
   spec.required_ruby_version = '>= 2.5.0'
   spec.add_runtime_dependency 'faraday', '>= 1.0.1', '< 3'
@@ -25,7 +30,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'jekyll-redirect-from', '~> 0.16'
   spec.add_runtime_dependency 'jemoji', '~> 0.12'
   spec.add_runtime_dependency 'kramdown-plantuml', '~> 1', '>= 1.3.2'
-  spec.add_runtime_dependency 'nokogiri', '~> 1.11'
+  spec.add_runtime_dependency 'nokogiri', '~> 1', '>= 1.11'
   spec.add_runtime_dependency 'sass', '~> 3', '>= 3.7'
 
   spec.add_development_dependency 'bundler', '~> 2', '>= 2.2'

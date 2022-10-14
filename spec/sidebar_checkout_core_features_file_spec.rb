@@ -3,16 +3,9 @@
 require 'sidebar'
 
 describe SwedbankPay::Sidebar do
-  include_context 'shared'
-  checkout_core_features_path = File.join(@dest_dir, 'checkout', 'v2', 'features', 'core', 'index.html')
+  include_context :shared, ['checkout', 'v2', 'features', 'core', 'index.html']
 
-  describe checkout_core_features_path do
-    subject { File.read(checkout_core_features_path) }
-
-    it {
-      expect(File).to exist(checkout_core_features_path)
-    }
-
+  describe @file do
     it 'is missing header navigation' do
       is_expected.to have_tag('.sidebar') do
         with_tag('nav.sidebar-nav') do

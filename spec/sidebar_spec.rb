@@ -8,8 +8,6 @@ require 'sidebar_page_collection'
 sidebar = SwedbankPay::Sidebar
 
 describe sidebar do
-  include_context 'shared'
-
   describe '#pages' do
     subject { sidebar.pages }
 
