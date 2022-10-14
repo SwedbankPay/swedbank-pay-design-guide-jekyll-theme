@@ -4,20 +4,34 @@ updates:
   directory: "/"
   schedule:
     interval: daily
-    time: "03:00"
-    timezone: Europe/Oslo
-  open-pull-requests-limit: 99
+  target-branch: main
+
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+  target-branch: support/1.16.x
+
 - package-ecosystem: npm
   directory: "/"
   schedule:
     interval: daily
-    time: "03:00"
-    timezone: Europe/Oslo
-  open-pull-requests-limit: 99
+  target-branch: main
+
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  target-branch: support/1.16.x
+
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
     interval: daily
-    time: "03:00"
-    timezone: Europe/Oslo
-  open-pull-requests-limit: 99
+  target-branch: main
+
+- package-ecosystem: github-actions
+  directory: "/"
+  schedule:
+    interval: daily
+  target-branch: support/1.16.x
