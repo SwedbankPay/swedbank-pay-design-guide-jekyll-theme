@@ -19,14 +19,22 @@
 
             .show {
                 display: none;
+                width: 52rem;
             }
 
             .hide {
                 display: block;
+                width: 70vw;
             }
         }
 
         .accordion-header {
+            align-items: center;
+            border: 2px solid rgba(153, 153, 153, 0.5);
+            max-width: 80rem;
+            line-height: 2rem;
+            padding: unset;
+
             &:before {
                 bottom: 1rem;
                 margin: auto;
