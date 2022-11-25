@@ -14,9 +14,9 @@ describe SwedbankPay::Sidebar do
     }
 
     it 'has expected nav structure' do
-      is_expected.to have_tag('nav.sidebar-main-nav') do
+      is_expected.to have_tag('nav.sidebar-nav') do
         with_tag('ul.main-nav-ul') do
-          with_tag('li.group.active') do
+          with_tag('li.nav-group.active') do
             with_tag('ul.nav-ul') do
               with_tag('li.nav-subgroup.active') do
                 with_tag('div.nav-subgroup-heading') do

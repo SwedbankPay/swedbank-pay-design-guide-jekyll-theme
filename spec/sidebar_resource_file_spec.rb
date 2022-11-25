@@ -20,11 +20,11 @@ describe SwedbankPay::Sidebar do
           # that is currently empty.
           with_tag('a[href="/resources/"]', text: 'Resources')
         end
-        with_tag('li.secondary-nav-li') do
-          # with_tag('div.nav-subgroup-heading') do
+        with_tag('li.nav-subgroup') do
+          with_tag('div.nav-subgroup-heading') do
             with_tag('i.material-icons', text: 'arrow_right')
             with_tag('a[href="/resources/release-notes"]', text: 'Release Notes')
-          # end
+          end
         end
         with_tag('li.nav-leaf.nav-subgroup-leaf') do
           with_tag('a[href="/resources/sub-resources/"]', text: 'Sub-resources')
