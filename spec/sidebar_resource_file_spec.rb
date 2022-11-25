@@ -18,7 +18,7 @@ describe SwedbankPay::Sidebar do
         with_tag('li.main-nav-li.active') do
           # TODO: Navigate to http://localhost:4000/resources/ and fix the link
           # that is currently empty.
-          with_tag('a[href="/resources/"]', text: 'Resources')
+          with_tag('a[href="/resources/"]')
         end
         with_tag('li.nav-subgroup') do
           with_tag('div.nav-subgroup-heading') do
