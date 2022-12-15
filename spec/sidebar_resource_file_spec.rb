@@ -22,11 +22,10 @@ describe SwedbankPay::Sidebar do
         end
         with_tag('nav.sidebar-secondary-nav') do
           with_tag('li.secondary-nav-li') do
-            with_tag('i.material-icons', text: 'arrow_right')
             with_tag('a[href="/resources/release-notes"]', text: 'Release Notes')
           end
         end
-        with_tag('li.nav-leaf.nav-subgroup-leaf') do
+        with_tag('li.secondary-nav-li') do
           with_tag('a[href="/resources/sub-resources/"]', text: 'Sub-resources')
         end
       end

@@ -19,13 +19,11 @@ describe SwedbankPay::Sidebar do
     it "has expected nav structure" do
       is_expected.to have_tag("ul#dx-sidebar-main-nav-ul") do
         with_tag("li.secondary-nav-li.leaf.active") do
-          with_tag("i.material-icons-outlined")
           with_tag('a[href="/payments/secrets/"]', text: "Secret payments")
 
           with_tag("ul") do
             with_tag("li.leaf") do
               with_tag('a[href="/payments/secrets/"]', text: "Secret payments") do
-                with_tag("i.material-icons-outlined")
               end
               with_tag("ul.nav-ul") do
                 with_tag("li.nav-leaf") do
@@ -36,7 +34,6 @@ describe SwedbankPay::Sidebar do
 
             with_tag("li.group.active") do
               with_tag('a[href="/payments/secrets/super-secret"]', text: "Secrets in payments") do
-                with_tag("i.material-icons-outlined")
               end
             end
             with_tag("ul") do
