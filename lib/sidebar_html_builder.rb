@@ -87,6 +87,7 @@ module SwedbankPay
     def title_markup(page, level, is_leaf)
       lead_title = lead_title(page)
       return "<a href=\"#{page.path}\"><i class=\"material-icons-outlined\" aria-hidden=\"true\">#{page.icon}</i>#{lead_title}</a>" if level.zero? && lead_title != 'Home'
+      return "<a href=\"#{page.path}\">#{lead_title}</a>" if lead_title != 'Home'
 
       main_title = main_title(page, is_leaf)
       home = main_title == 'Home' ? 'disabled' : ''
