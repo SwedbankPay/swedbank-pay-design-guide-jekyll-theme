@@ -26,7 +26,7 @@
             {% if estimated_read %}
                 <div class="title-header-estimated-read">
                     <i class="material-icons">schedule</i>
-                    {{ estimated_read }} min read
+                    {{ page.content | read_time }}
                 </div>
             {% endif %}
 
