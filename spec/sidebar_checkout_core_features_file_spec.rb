@@ -14,18 +14,18 @@ describe SwedbankPay::Sidebar do
     }
 
     it 'is missing header navigation' do
-      is_expected.to have_tag('.sidebar') do
-        with_tag('nav.sidebar-nav') do
-          with_tag('ul.main-nav-ul') do
-            with_tag('li.nav-group', with: { class: 'active' }) do
-              with_tag('ul.nav-ul') do
-                with_tag('li.nav-subgroup', with: { class: 'active' }) do
+      is_expected.to have_tag('li.main-nav-li.active') do
+        with_tag('li.main-nav-li.active') do
+          with_tag('a[href="/checkout/"]')
+          with_tag('nav.sidebar-secondary-nav') do
+              with_tag('header.secondary-nav-header', Text: 'Checkout') do
+                with_tag('ul.secondary-nav-ul') do
                   with_tag('ul.nav-ul') do
                     with_tag('li.nav-subgroup', with: { class: 'active' }) do
                       with_tag('ul.nav-ul') do
                         with_tag('li.nav-subgroup', with: { class: 'active' }) do
-                          with_tag('ul.nav-ul') do
-                            with_tag('li.nav-leaf', with: { class: 'nav-subgroup-leaf' }) do
+                          with_tag('a[href="/checkout/v2/features/"]', text: 'Features') do
+                            with_tag('li', with: { class: 'leaf.active' }) do
                               with_tag('a[href="/checkout/v2/features/core/"]', text: 'Core Features')
                             end
                           end
@@ -36,7 +36,6 @@ describe SwedbankPay::Sidebar do
                 end
               end
             end
-          end
         end
       end
     end
