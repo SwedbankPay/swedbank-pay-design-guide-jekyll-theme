@@ -1,6 +1,5 @@
 ---
 title: After Payment
-estimated_read: 11
 description: |
   When the consumer has **completed** the entire
   [Checkin](/checkout/v2/checkin) and

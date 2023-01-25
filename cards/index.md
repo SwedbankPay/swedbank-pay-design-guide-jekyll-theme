@@ -1,6 +1,5 @@
 ---
 title: Cards
-estimated_read: 30
 description: Cards, cards and more cards!
 menu_order: 2
 card_overview: true

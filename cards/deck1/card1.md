@@ -1,6 +1,5 @@
 ---
 title: Deck 1 Card 1
-estimated_read: 30
 description: Deck One Card One
 card:
     icon:
