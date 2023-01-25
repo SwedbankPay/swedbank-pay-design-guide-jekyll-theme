@@ -47,8 +47,9 @@ module SwedbankPay
       level = is_leaf ? -1 : page.level
       title_markup = title_markup(page, level, is_leaf)
       item_class = item_class(page, current_page, level, is_leaf)
+      root_class = root_class(page, current_page)
       level.zero? &&
-        page.doc.xpath('//*[@id="dg-sidebar"]').first.set_attribute('class', 'sidebar dg-sidebar')
+        page.doc.xpath('//*[@id="dg-sidebar"]').first.set_attribute('class', root_class)
       "<li class=\"#{item_class}\">
           #{title_markup}
           #{item_class === 'main-nav-li' || item_class === 'main-nav-li active' ? "<nav class=\"sidebar-secondary-nav\">
@@ -56,6 +57,11 @@ module SwedbankPay
                 #{sub_items_markup}
               </nav>" : sub_items_markup}
         </li>"
+    end
+
+    def root_class(page, current_page)
+      active = page.active?(current_page)
+      active && current_page.path != '/' ? 'sidebar dg-sidebar has-secondary-nav' : 'sidebar dg-sidebar'
     end
 
     def item_class(page, current_page, level, is_leaf)

@@ -13,6 +13,10 @@ describe SwedbankPay::Sidebar do
       expect(File).to exist(index_path)
     }
 
+    it 'does not have "has-secondary-nav" class' do
+      is_expected.to have_tag('#dg-sidebar:not([class*="has-secondary-nav"])')
+    end
+
     it 'has nav leaf' do
       is_expected.to have_tag('ul#dx-sidebar-main-nav-ul') do
         with_tag('li.main-nav-li') do
