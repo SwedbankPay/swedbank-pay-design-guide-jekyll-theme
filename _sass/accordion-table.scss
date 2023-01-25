@@ -8,6 +8,7 @@
 
         .show {
             display: block;
+            width: 52rem;
         }
 
         .hide {
@@ -23,13 +24,24 @@
 
             .hide {
                 display: block;
+                width: 70vw;
             }
         }
 
         .accordion-header {
+            align-items: center;
+            background-color: $apricot;
+            border: 1px solid rgba(153, 153, 153, 0.5);
+            border-radius: 2px;
+            max-width: 80rem;
+            line-height: 2rem;
+            padding: unset;
+
             &:before {
-                bottom: 1rem;
-                margin: auto;
+                position: absolute;
+                top: 50%;
+                margin-right: 0.5rem;
+                bottom: 50%;
                 transition: .3s;
                 color: $brown;
             }
