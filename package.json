@@ -88,7 +88,7 @@
   "devDependencies": {
     "stylelint": "^14.16.1",
     "stylelint-config-standard": "^28.0.0",
-    "stylelint-declaration-block-no-ignored-properties": "^2.4.0"
+    "stylelint-declaration-block-no-ignored-properties": "^2.6.0"
   },
   "scripts": {
     "remark": "remark . --quiet"
