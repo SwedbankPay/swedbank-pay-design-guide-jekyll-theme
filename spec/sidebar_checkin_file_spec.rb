@@ -34,6 +34,7 @@ describe SwedbankPay::Sidebar do
         with_tag("div.title-header-container") do
           with_tag("h4", text: "Checkout v2")
           with_tag("h1", text: "Checkin")
+          with_tag("div.title-header-estimated-read", text: /6 min read/)
         end
       end
     end

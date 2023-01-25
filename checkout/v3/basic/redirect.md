@@ -1,6 +1,5 @@
 ---
 title: Redirect
-estimated_read: 10
 description: |
   Redirect is the simplest integration that lets Swedbank Pay handle the
   payments, while you handle your core activities.

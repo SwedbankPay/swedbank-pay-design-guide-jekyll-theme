@@ -1,7 +1,6 @@
 {% assign lead_title = page.lead_title %}
 {% assign main_title = page.main_title | default: page.title %}
 {% assign description = page.description %}
-{% assign estimated_read = page.estimated_read %}
 {% assign checkout_v3 = page.checkout_v3 %}
 {% capture max_width_class %}
     {% if page.card_overview %}
@@ -23,10 +22,11 @@
 
             <h1>{{ main_title }}</h1>
 
-            {% if estimated_read %}
+            {% assign estimated_read = page.content | read_time | plus: 0 %}
+            {% if estimated_read > 0 %}
                 <div class="title-header-estimated-read">
                     <i class="material-icons">schedule</i>
-                    {{ page.content | read_time }}
+                    {{ estimated_read }} min read
                 </div>
             {% endif %}
 

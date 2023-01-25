@@ -1,7 +1,6 @@
 ---
 section: Checkout Standard
 title: Introduction
-estimated_read: 3
 hide_from_sidebar: true
 description: |
   **Swedbank Pay Checkout** is a complete reimagination
