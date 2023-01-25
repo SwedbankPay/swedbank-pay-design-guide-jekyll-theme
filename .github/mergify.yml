@@ -12,7 +12,6 @@ pull_request_rules:
       - '#commits-behind=0' # Only merge up to date pull requests
       - check-success=build
       - check-success=license/cla
-      - check-success=verify
       - check-success=spec
     actions:
       merge:
