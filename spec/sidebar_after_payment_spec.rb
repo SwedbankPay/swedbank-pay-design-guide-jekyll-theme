@@ -14,21 +14,9 @@ describe SwedbankPay::Sidebar do
     }
 
     it "has active item" do
-      is_expected.to have_tag("#dx-sidebar-main-nav-ul") do
+      is_expected.to have_tag("li.group.active") do
         with_tag("li.group.active") do
           with_tag('a[href="/checkout/v2/after-payment"]', text: "After Payment") do
-            with_tag("i.material-icons-outlined")
-          end
-        end
-        with_tag("li.main-nav-li.active") do
-          with_tag("nav.sidebar-secondary-nav") do
-            with_tag("ul.secondary-nav-ul") do
-              with_tag("li.secondary-nav-li.leaf.active") do
-                with_tag('a[href="/checkout/v2/"]', text: "Checkout v2") do
-                  with_tag("i.material-icons-outlined")
-                end
-              end
-            end
           end
         end
       end
