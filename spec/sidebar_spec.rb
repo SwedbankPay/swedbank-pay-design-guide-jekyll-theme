@@ -13,8 +13,8 @@ describe sidebar do
   describe '#pages' do
     subject { sidebar.pages }
 
-    its(:count) { is_expected.to eq 209 }
-    its(:length) { is_expected.to eq 10 }
+    its(:count) { is_expected.to eq 247 }
+    its(:length) { is_expected.to eq 12 }
 
     describe '[0]' do
       let(:index) { |x| parse_index(x) }
@@ -27,12 +27,12 @@ describe sidebar do
       its(:title) { is_expected.to be_string 'Home' }
     end
 
-    describe '[2].title' do
+    describe '[1].title' do
       let(:index) { |x| parse_index(x) }
-      it { expect(sidebar.pages[index[0]].title).to be_string 'Page 1' }
+      it { expect(sidebar.pages[index[0]].title).to be_string 'Products' }
     end
 
-    describe '[4]' do
+    describe '[5]' do
       let(:index) { |x| parse_index(x) }
 
       subject { sidebar.pages[index[0]] }
@@ -41,7 +41,7 @@ describe sidebar do
       its(:active?, '/checkout/') { is_expected.to be true }
       its(:hidden?) { is_expected.to be false }
 
-      describe 'children[1]' do
+      describe 'children[0]' do
         subject { sidebar.pages[index[0]].children[index[1]] }
 
         its(:title) { is_expected.to be_string 'Checkout v2' }
@@ -81,7 +81,7 @@ describe sidebar do
       end
     end
 
-    describe '[6]' do
+    describe '[7]' do
       let(:index) { |x| parse_index(x) }
       subject { sidebar.pages[index[0]] }
 
@@ -114,7 +114,7 @@ describe sidebar do
       end
     end
 
-    describe '[7]' do
+    describe '[9]' do
       let(:index) { |x| parse_index(x) }
       subject { sidebar.pages[index[0]] }
 

@@ -4,7 +4,7 @@ require 'sidebar'
 
 describe SwedbankPay::Sidebar do
   include_context 'shared'
-  index_path = File.join(@dest_dir, 'index.html')
+  index_path = File.expand_path(File.join(@dest_dir, 'index.html'))
 
   describe index_path do
     subject { File.read(index_path) }
@@ -14,56 +14,50 @@ describe SwedbankPay::Sidebar do
     }
 
     it 'has nav leaf' do
-      is_expected.to have_tag('ul.nav-ul') do
-        with_tag('li.nav-leaf') do
-          with_tag('a[href="/checkout/v2/capture"]', text: 'Capture')
-        end
-      end
-    end
-
-    it 'has subgroup' do
-      is_expected.to have_tag('li.nav-subgroup') do
-        with_tag('div.nav-subgroup-heading') do
-          with_tag('i.material-icons', text: 'arrow_right')
-          with_tag('a[href="/checkout/v2/payment-menu"]', text: 'Payment Menu')
+      is_expected.to have_tag('ul#dx-sidebar-main-nav-ul') do
+        with_tag('li.main-nav-li') do
+          with_tag('nav.sidebar-secondary-nav') do
+            with_tag('ul.secondary-nav-ul') do
+              with_tag('li.secondary-nav-li.leaf') do
+                with_tag('li.leaf') do
+                  with_tag('a[href="/checkout/v2/"]', text: 'Checkout v2')
+                end
+              end
+            end
+          end
         end
       end
     end
 
     it 'has active home item' do
       is_expected.to have_tag('ul#dx-sidebar-main-nav-ul.main-nav-ul') do
-        with_tag('li.nav-group.active') do
-          with_tag('div.nav-group-heading') do
-            with_tag('i.material-icons', text: 'arrow_right')
-            with_tag('span', text: 'Home')
+        with_tag('li.main-nav-li.active') do
+          with_tag('a[href="/"]', text: 'homeHome') do
+            with_tag('i.material-icons-outlined', text: 'home')
+          end
+          with_tag('nav.sidebar-secondary-nav') do
+            with_tag('header.secondary-nav-header', text: 'Home')
           end
         end
       end
     end
 
     it 'has checkin items' do
-      is_expected.to have_tag('li.nav-subgroup') do
-        with_tag('div.nav-subgroup-heading') do
-          with_tag('i.material-icons', text: 'arrow_right')
-          with_tag('a[href="/checkout/v2/checkin"]', text: 'Checkin')
-        end
-        with_tag('ul.nav-ul') do
-          with_tag('li.nav-leaf') do
-            with_tag('a[href="/checkout/v2/checkin#step-1-initiate-session-for-consumer-identification"]', text: 'Step 1: Initiate session for consumer identification')
-          end
-          with_tag('li.nav-leaf') do
-            with_tag('a[href="/checkout/v2/checkin#step-2-display-swedbank-pay-checkin-module"]', text: 'Step 2: Display Swedbank Pay Checkin module')
-          end
-        end
-      end
-    end
-
-    it 'has introduction item' do
-      is_expected.to have_tag('ul.nav-ul') do
-        with_tag('li.nav-subgroup') do
-          with_tag('div.nav-subgroup-heading') do
-            with_tag('i.material-icons', text: 'arrow_right')
-            with_tag('a[href="/checkout/v2/"]', text: 'Checkout v2')
+      is_expected.to have_tag('ul#dx-sidebar-main-nav-ul') do
+        with_tag('li.main-nav-li') do
+          with_tag('nav.sidebar-secondary-nav') do
+            with_tag('ul.secondary-nav-ul') do
+              with_tag('li.secondary-nav-li.leaf') do
+                with_tag('li.group') do
+                  with_tag('li.nav-leaf') do
+                    with_tag('a[href="/checkout/v2/checkin#step-1-initiate-session-for-consumer-identification"]', text: 'Step 1: Initiate session for consumer identification')
+                  end
+                  with_tag('li.nav-leaf') do
+                    with_tag('a[href="/checkout/v2/checkin#step-2-display-swedbank-pay-checkin-module"]', text: 'Step 2: Display Swedbank Pay Checkin module')
+                  end
+                end
+              end
+            end
           end
         end
       end

@@ -14,20 +14,13 @@ describe SwedbankPay::Sidebar do
     }
 
     it 'has expected nav structure' do
-      is_expected.to have_tag('ul.nav-ul') do
-        with_tag('li.nav-subgroup.active') do
-          with_tag('div.nav-subgroup-heading') do
-            with_tag('i.material-icons', text: 'arrow_right')
-            with_tag('a[href="/checkout-more/after-payment"]', text: 'After payment is completed')
-          end
-          with_tag('ul.nav-ul') do
-            with_tag('li.nav-leaf') do
+      is_expected.to have_tag('li.main-nav-li.active') do
+        with_tag('a[href="/checkout-more/"]')
+      end
+          with_tag('nav.sidebar-secondary-nav') do
               with_tag('a[href="/checkout-more/after-payment#after-paaaayment"]',
                 text: 'After paaaayment')
-            end
           end
-        end
-      end
     end
 
     it 'has expected title header' do

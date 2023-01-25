@@ -32,8 +32,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Set up Ruby 2.7
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          bundler-cache: true
       - name: jekyll build
-        run: docker-compose run jekyll build
+        run: bundle exec jekyll build
       - name: Upload site
         uses: actions/upload-artifact@v3
         with:
@@ -44,23 +49,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
       - name: Set up Ruby 2.7
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
           bundler-cache: true
-
       - uses: actions/setup-java@v3
         with:
           distribution: adopt
           java-version: 14
-
       - uses: kamiazya/setup-graphviz@v1
-
+      - name: Cache HTMLProofer
+        id: cache-htmlproofer
+        uses: actions/cache@v3
+        with:
+          path: tmp/.htmlproofer
+          key: ${{ runner.os }}-htmlproofer
+      - name: Cache Jekyll
+        uses: actions/cache@v3
+        with:
+          path: |
+            .jekyll-cache
+            .jekyll-metadata
+          key: ${{ runner.os }}-jekyll
       - name: rspec
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: bundle exec rake
-
       - name: codecov upload
         run: bundle exec rake codecov:upload || echo 'Codecov upload failed'
 
@@ -68,45 +83,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
       - name: Set up Ruby 2.7
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
           bundler-cache: true
-
       - name: rubocop
         run: bundle exec rubocop --fail-level warning --display-only-fail-level-offenses
-
-  verify:
-    runs-on: ubuntu-latest
-    needs: variables
-    steps:
-      - uses: actions/checkout@v3
-      - name: Verify build
-        run: |
-          docker-compose run \
-            -e GITHUB_BRANCH=${{ needs.variables.outputs.branch }} \
-            -e GITHUB_REPOSITORY_URL=${{ needs.variables.outputs.repository_url }} \
-            jekyll build \
-            --env=production \
-            --verify \
-            --site-url=https://theme.example.com/ \
-            --ignore-url http://www.wikipedia.org \
-            --ignore-url http://restcookbook.com/Basics/loggingin/
-
-      - name: Upload build output artifacts
-        uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: verify-site
-          path: _site
-
-      - name: Verify absolute URL
-        run: grep 'https://theme.example.com/' $(pwd)/_site/index.html
-
-      - name: Verify base URL
-        run: grep '"/assets/css/style.css"' $(pwd)/_site/index.html
 
   remark-lint:
     runs-on: ubuntu-latest

@@ -15,7 +15,7 @@ funds. In addition, there are other post purchase options you need. We get to
 them later on.
 
 If you want to get an overview before proceeding, you can look at the
-[sequence diagram][sequence-diagrams]. It is also available in the sidebar if
+sequence diagram. It is also available in the sidebar if
 you want to look at it later. Let´s get going with the two first steps of the
 integration.
 
@@ -223,10 +223,6 @@ payment status towards our APIs, as the payer can make changes in the browser at
 any time.
 
 When implementing **Starter**, you also need to subscribe to the event
-[`onPayerUnidentified`][onpayerunidentified] when you implement
-[`onPayerIdentified`][onpayeridentified]. This is important because the
+`onPayerUnidentified` when you implement
+`onPayerIdentified`. This is important because the
 "Remember Me" feature (to be released soon) won't work without it.
-
-[onpayeridentified]: /checkout-v3/starter/features/technical-reference/seamless-view-events##onpayeridentified
-[onpayerunidentified]: /checkout-v3/starter/features/technical-reference/seamless-view-events##onpayerunidentified
-[sequence-diagrams]: /checkout-v3/sequence-diagrams#starter-seamless-view

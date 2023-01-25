@@ -22,6 +22,7 @@ sidebar_icon: filter_2
           button_type='primary'
           button_alignment='align-self-end'
           margin_right=true
+          to='#'
           %}
 
       {% include card-extended.html
@@ -53,28 +54,28 @@ sidebar_icon: filter_2
               text='This is how we create an inclusive environment'
               icon_content='account_circle'
               icon_outlined=true
-              to=''
+              to='#'
           %}
       </div>
       <div class="{{ card_col_class }}">
           {% include card.html title='Test data'
               text='Get the required data for testing in our interfaces'
               icon_content='content_paste'
-              to=''
+              to='#'
           %}
       </div>
       <div class="{{ card_col_class }}">
           {% include card.html title='Terminology'
           text='Get a better understanding of the terms we use'
           icon_content='menu_book'
-          to=''
+          to='#'
           %}
       </div>
       <div class="{{ card_col_class }}">
           {% include card.html title='See all resources (7)'
               text='Data protection, public migration key etc'
               no_icon=true
-              to=''
+              to='#'
           %}
       </div>
   </div>

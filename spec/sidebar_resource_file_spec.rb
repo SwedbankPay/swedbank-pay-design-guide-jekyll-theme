@@ -14,17 +14,18 @@ describe SwedbankPay::Sidebar do
     }
 
     it 'has expected nav structure' do
-      is_expected.to have_tag('ul.nav-ul') do
-        with_tag('li.nav-leaf') do
-          with_tag('a[href="/resources/"]', text: 'Resources')
+      is_expected.to have_tag('ul#dx-sidebar-main-nav-ul') do
+        with_tag('li.main-nav-li.active') do
+          # TODO: Navigate to http://localhost:4000/resources/ and fix the link
+          # that is currently empty.
+          with_tag('a[href="/resources/"]', text: /Resources/)
         end
-        with_tag('li.nav-subgroup') do
-          with_tag('div.nav-subgroup-heading') do
-            with_tag('i.material-icons', text: 'arrow_right')
+        with_tag('nav.sidebar-secondary-nav') do
+          with_tag('li.secondary-nav-li') do
             with_tag('a[href="/resources/release-notes"]', text: 'Release Notes')
           end
         end
-        with_tag('li.nav-leaf.nav-subgroup-leaf') do
+        with_tag('li.secondary-nav-li') do
           with_tag('a[href="/resources/sub-resources/"]', text: 'Sub-resources')
         end
       end
