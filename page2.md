@@ -22,6 +22,7 @@ sidebar_icon: filter_2
           button_type='primary'
           button_alignment='align-self-end'
           margin_right=true
+          to='#'
           %}
 
       {% include card-extended.html
