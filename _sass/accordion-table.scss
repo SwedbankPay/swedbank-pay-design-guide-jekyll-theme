@@ -38,8 +38,10 @@
             padding: unset;
 
             &:before {
-                bottom: 1rem;
-                margin: auto;
+                position: absolute;
+                top: 50%;
+                margin-right: 0.5rem;
+                bottom: 50%;
                 transition: .3s;
                 color: $brown;
             }
