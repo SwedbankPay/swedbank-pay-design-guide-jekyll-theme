@@ -14,14 +14,14 @@ describe SwedbankPay::Sidebar do
     }
 
     it 'has expected nav structure' do
-      is_expected.to have_tag('ul.nav-ul') do
+      expect(subject).to have_tag('ul.nav-ul') do
         with_tag('li.nav-leaf') do
         end
       end
     end
 
     it 'has release notes' do
-      is_expected.to have_tag('div.front-page-release-notes') do
+      expect(subject).to have_tag('div.front-page-release-notes') do
         with_tag('div.release-notes-container') do
           with_tag('div.release-notes-date') do
             with_tag('a[href="/resources/release-notes#28-may-2020"]', text: '28 May 2020')

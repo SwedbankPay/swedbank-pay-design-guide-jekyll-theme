@@ -52,10 +52,14 @@ module SwedbankPay
         page.doc.xpath('//*[@id="dg-sidebar"]').first.set_attribute('class', root_class)
       "<li class=\"#{item_class}\">
           #{title_markup}
-          #{item_class === 'main-nav-li' || item_class === 'main-nav-li active' ? "<nav class=\"sidebar-secondary-nav\">
+          #{if item_class === 'main-nav-li' || item_class === 'main-nav-li active'
+              "<nav class=\"sidebar-secondary-nav\">
               <header class=\"secondary-nav-header\">#{page.title.section || page.title}</header>
                 #{sub_items_markup}
-              </nav>" : sub_items_markup}
+              </nav>"
+            else
+              sub_items_markup
+            end}
         </li>"
     end
 
@@ -92,7 +96,9 @@ module SwedbankPay
 
     def title_markup(page, level, is_leaf)
       lead_title = lead_title(page)
-      return "<a href=\"#{page.path}\"><i class=\"material-icons-outlined\" aria-hidden=\"true\">#{page.icon}</i>#{lead_title}</a>" if level.zero? && lead_title != 'Home'
+      if level.zero? && lead_title != 'Home'
+        return "<a href=\"#{page.path}\"><i class=\"material-icons-outlined\" aria-hidden=\"true\">#{page.icon}</i>#{lead_title}</a>"
+      end
       return "<a href=\"#{page.path}\">#{page.section || page.title}</a>" if lead_title != 'Home'
 
       main_title = main_title(page, is_leaf)

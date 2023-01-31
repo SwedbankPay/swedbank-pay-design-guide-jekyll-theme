@@ -14,7 +14,7 @@ describe SwedbankPay::Sidebar do
     }
 
     it {
-      is_expected.to_not include('<i class="material-icons">arrow_right</i><span>Home</span>')
+      expect(subject).not_to include('<i class="material-icons">arrow_right</i><span>Home</span>')
     }
   end
 end
