@@ -310,36 +310,38 @@ body {
         text-align: center;
     }
 
-    .field-level::before {
-        font-family: 'Akkurat Mono', monospace;
-    }
+    .table {
+        .field-level {
+            &::before {
+                font-family: $font_mono;
+                color: $yellow;
+                content: '╰─╼';
+            }
 
-    .field-level code {
-        border: 2px solid $brown;
-    }
+            code {
+                border: 2px solid $yellow;
+            }
+        }
 
-    .field-level-1::before {
-        content: '╰╼';
-    }
+        .field-level-2 {
+            margin-left: 2rem;
+        }
 
-    .field-level-2::before {
-        content: '╰─╼';
-    }
+        .field-level-3 {
+            margin-left: 4rem;
+        }
 
-    .field-level-3::before {
-        content: '╰──╼';
-    }
+        .field-level-4 {
+            margin-left: 6rem;
+        }
 
-    .field-level-4::before {
-        content: '╰───╼';
-    }
+        .field-level-5 {
+            margin-left: 8rem;
+        }
 
-    .field-level-5::before {
-        content: '╰────╼';
-    }
-
-    .field-level-6::before {
-        content: '╰─────╼';
+        .field-level-6 {
+            margin-left: 10rem;
+        }
     }
 
     #github {
