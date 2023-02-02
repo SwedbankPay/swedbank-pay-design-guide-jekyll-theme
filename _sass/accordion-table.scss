@@ -73,25 +73,27 @@
 
             tbody {
                 font-size: 0.875rem;
+                font-family: $font_mono;
             
                 tr:nth-child(odd) {
                     background-color: #F9F8F6;
                 }
             
                 tr {
-                    td:not(:last-child) {
-                        font-family: $mono;
+                    td:last-child {
+                        font-family: $font_body;
                     
                         code {
-                            border: none;
-                            background-color: transparent;
-                            padding: 0;
+                            border: 1px solid #31a3ae;
+                            border-radius: 4px;
                         }
                     }
-                
-                    td:not(:last-child):not(:nth-last-child(2)) {
+                    
+                    td:not(:last-child) {
                         code {
                             font-weight: 700;
+                            background-color: transparent;
+                            padding: 0;
                         }
                     }
                 }

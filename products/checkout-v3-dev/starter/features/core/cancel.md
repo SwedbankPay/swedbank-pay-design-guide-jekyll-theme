@@ -51,8 +51,8 @@ Content-Type: application/json
 {:.table .table-striped .mb-5}
 | {% icon check %}︎ | Field                    | Type         | Description                                                                           |
 | :--------------- | :----------------------- | :----------- | :------------------------------------------------------------------------------------ |
-| {% icon check %}︎ | `transaction`            | `string`     | The transaction object contains information about this cancellation.                  |
-| {% icon check %}︎ | └➔&nbsp;`description`    | `string`     | A textual description of the reason for the cancellation.                             |
+| {% icon check %}︎ | `transaction`            | `string`     | The `transaction` object contains information about this cancellation.                  |
+| {% icon check %}︎ | └➔&nbsp;`description`    | `string`     | A textual description of the reason for the cancellation. `code fence test`                             |
 {% endcapture %}
 {% include accordion-table.html content = request_table
 %}

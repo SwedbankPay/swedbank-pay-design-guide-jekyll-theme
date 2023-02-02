@@ -79,7 +79,7 @@ $front-page-max-width: $breakpoint-lg;
 
             h3 {
                 color: $brown;
-                font-family: $headline;
+                font-family: $font_headline;
                 margin-bottom: 2rem;
                 font-size: 2.5rem;
                 line-height: 3.5rem;
@@ -97,7 +97,7 @@ $front-page-max-width: $breakpoint-lg;
             }
 
             .front-page-hero-name {
-                font-family: $mono;
+                font-family: $font_mono;
                 font-weight: bold;
                 font-size: 2.5rem;
                 color: $yellow;
@@ -111,13 +111,13 @@ $front-page-max-width: $breakpoint-lg;
 
             .front-page-hero-jumbo {
                     color: $brown;
-                    font-family: $headline;
+                    font-family: $font_headline;
                     margin-bottom: 2rem;
                     font-size: 3.5rem;
                 }
             
             .front-page-hero-lean {
-                font-family: $mono;
+                font-family: $font_mono;
             }
             
 
