@@ -42,5 +42,23 @@ describe SwedbankPay::Sidebar do
     it 'has expected page title' do
       expect(subject).to have_tag('title', text: 'Checkout v2 – Checkin')
     end
+
+    it 'has field with explicit level 1 tag' do
+      expect(subject).to have_tag('span.field-level.field-level-1') do
+        have_tag('code.language-json.highlighter-rouge', text: 'rel')
+      end
+    end
+
+    it 'has field with implicit level 1 tag' do
+      expect(subject).to have_tag('span.field-level.field-level-1') do
+        have_tag('code.language-json.highlighter-rouge', text: 'contenType')
+      end
+    end
+
+    it 'has field with explicit level 2 tag' do
+      expect(subject).to have_tag('span.field-level.field-level-2') do
+        have_tag('code.language-json.highlighter-rouge', text: 'method')
+      end
+    end
   end
 end

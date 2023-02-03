@@ -72,14 +72,14 @@ When the request has been sent, a response containing an array of operations tha
 ```
 
 {:.table .table-striped}
-| Field                 | Type     | Description                                                                                                                                       |
-| :-------------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `token`               | `string` | A session token used to initiate Checkout UI.                                                                                                     |
-| `operations`          | `array`  | The array of operation objects to choose from, described in detail in the table below.                                                            |
-| └➔&nbsp;`rel`         | `string` | The relational name of the operation, used as a programmatic identifier to find the correct operation given the current state of the application. |
-| └➔&nbsp;`method`      | `string` | The HTTP method to use when performing the operation.                                                                                             |
-| └➔&nbsp;`contentType` | `string` | The HTTP content type of the target URI. Indicates what sort of resource is to be found at the URI, how it is expected to be used and behave.     |
-| └➔&nbsp;`href`        | `string` | The target URI of the operation.                                                                                                                  |
+| Field                     | Type     | Description                                                                                                                                       |
+| :------------------------ | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
+| {% f token %}             | `string` | A session token used to initiate Checkout UI.                                                                                                     |
+| {% f operations %}        | `array`  | The array of operation objects to choose from, described in detail in the table below.                                                            |
+| {% f rel, 2 %}            | `string` | The relational name of the operation, used as a programmatic identifier to find the correct operation given the current state of the application. |
+| {% f method, 3 %}         | `string` | The HTTP method to use when performing the operation.                                                                                             |
+| {% f contentType, 2 %}    | `string` | The HTTP content type of the target URI. Indicates what sort of resource is to be found at the URI, how it is expected to be used and behave.     |
+| {% f href, 2 %}           | `string` | The target URI of the operation.                                                                                                                  |
 
 ## Step 2: Display Swedbank Pay Checkin module
 
