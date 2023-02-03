@@ -71,6 +71,7 @@ When the request has been sent, a response containing an array of operations tha
 }
 ```
 
+{% capture request_table %}
 {:.table .table-striped}
 | Field                     | Type     | Description                                                                                                                                       |
 | :------------------------ | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -80,6 +81,8 @@ When the request has been sent, a response containing an array of operations tha
 | {% f method, 3 %}         | `string` | The HTTP method to use when performing the operation.                                                                                             |
 | {% f contentType, 2 %}    | `string` | The HTTP content type of the target URI. Indicates what sort of resource is to be found at the URI, how it is expected to be used and behave.     |
 | {% f href %}              | `string` | The target URI of the operation.                                                                                                                  |
+{% endcapture %}
+{% include accordion-table.html content = request_table %}
 
 ## Step 2: Display Swedbank Pay Checkin module
 
