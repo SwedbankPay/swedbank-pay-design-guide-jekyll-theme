@@ -27,7 +27,7 @@ module SwedbankPay
 
     def segment(path)
       segments = path.sanitized.split('/').reject(&:empty?)
-      @level = segments.length.zero? ? 0 : segments.length - 1
+      @level = segments.empty? ? 0 : segments.length - 1
       segments
     end
 

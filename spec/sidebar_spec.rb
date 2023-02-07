@@ -17,9 +17,9 @@ describe sidebar do
     its(:length) { is_expected.to eq 12 }
 
     describe '[0]' do
-      let(:index) { |x| parse_index(x) }
-
       subject { sidebar.pages[index[0]] }
+
+      let(:index) { |x| parse_index(x) }
 
       its(:path) { is_expected.to eq '/' }
       its(:children) { is_expected.to be_an_instance_of SwedbankPay::SidebarPageCollection }
@@ -29,13 +29,14 @@ describe sidebar do
 
     describe '[1].title' do
       let(:index) { |x| parse_index(x) }
+
       it { expect(sidebar.pages[index[0]].title).to be_string 'Products' }
     end
 
     describe '[5]' do
-      let(:index) { |x| parse_index(x) }
-
       subject { sidebar.pages[index[0]] }
+
+      let(:index) { |x| parse_index(x) }
 
       its(:path) { is_expected.to eq '/checkout/' }
       its(:active?, '/checkout/') { is_expected.to be true }
@@ -76,14 +77,15 @@ describe sidebar do
               its(:path) { is_expected.to eq '/checkout/v2/features/core/payment-order' }
               its(:active?, '/checkout/v2/features/core/payment-order') { is_expected.to be true }
             end
-            end
+          end
         end
       end
     end
 
     describe '[7]' do
-      let(:index) { |x| parse_index(x) }
       subject { sidebar.pages[index[0]] }
+
+      let(:index) { |x| parse_index(x) }
 
       its(:title) { is_expected.to be_string 'Payments' }
 
@@ -115,8 +117,9 @@ describe sidebar do
     end
 
     describe '[9]' do
-      let(:index) { |x| parse_index(x) }
       subject { sidebar.pages[index[0]] }
+
+      let(:index) { |x| parse_index(x) }
 
       its(:title) { is_expected.to be_string 'Resources' }
 

@@ -12,9 +12,9 @@ describe 'Checkout Core Features' do
     }
 
     it 'has expected cards' do
-      is_expected.to have_tag('article') do
-        with_tag('h2#core-features', :with => { :class => 'heading-line' }) do
-          with_tag('a.header-anchor', :with => { :href => '#core-features' })
+      expect(subject).to have_tag('article') do
+        with_tag('h2#core-features', with: { class: 'heading-line' }) do
+          with_tag('a.header-anchor', with: { href: '#core-features' })
         end
         with_tag('.row.card-list') do
           with_card('3d-secure-2', '3-D Secure 2', 'Authenticating the cardholder', '3d_rotation', false)
@@ -35,15 +35,15 @@ describe 'Checkout Core Features' do
     icon_type << '-outlined' if icon_outlined
 
     with_tag('.col-lg-4') do
-      with_tag('a.dx-card', :with => { :href => href }) do
+      with_tag('a.dx-card', with: { href: href }) do
         with_tag('.dx-card-icon') do
-          with_tag('i', :text => /#{icon}/, :with => { :class => icon_type })
+          with_tag('i', text: /#{icon}/, with: { class: icon_type })
         end
         with_tag('.dx-card-content') do
-          with_tag('.h4', :text => title)
-          with_tag('span', :text => body)
+          with_tag('.h4', text: title)
+          with_tag('span', text: body)
         end
-        with_tag('i.material-icons', :text => /arrow_forward/)
+        with_tag('i.material-icons', text: /arrow_forward/)
       end
     end
   end

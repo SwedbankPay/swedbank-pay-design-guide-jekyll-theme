@@ -5,7 +5,7 @@ require 'rspec-html-matchers'
 require_relative 'rspec_description_parser'
 
 # Require matchers
-Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each {|f| require f}
+Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].sort.each { |f| require f }
 
 # Variables that should be shared across all specs in the suite.
 shared_context 'shared' do
@@ -135,7 +135,7 @@ RSpec.configure do |config|
   end
 
   # Include the shared context
-  # config.include_context 'shared', :include_shared => true
+  # config.include_context :shared, :include_shared => true
   # config.shared_context_metadata_behavior = :apply_to_host_groups
 end
 

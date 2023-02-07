@@ -14,8 +14,8 @@ describe SwedbankPay::Sidebar do
     }
 
     it 'does not have search item' do
-      is_expected.not_to have_tag('.main-nav-ul span', text: 'Search')
-      is_expected.not_to have_tag('.main-nav-ul a[href="/search"]')
+      expect(subject).not_to have_tag('.main-nav-ul span', text: 'Search')
+      expect(subject).not_to have_tag('.main-nav-ul a[href="/search"]')
     end
   end
 end

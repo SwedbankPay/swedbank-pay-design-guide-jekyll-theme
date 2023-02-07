@@ -310,6 +310,40 @@ body {
         text-align: center;
     }
 
+    .table {
+        .field-level {
+            &::before {
+                font-family: $font_mono;
+                color: $yellow;
+                content: '╰─╼';
+            }
+
+            code {
+                border: 2px solid $yellow;
+            }
+        }
+
+        .field-level-2 {
+            margin-left: 2rem;
+        }
+
+        .field-level-3 {
+            margin-left: 4rem;
+        }
+
+        .field-level-4 {
+            margin-left: 6rem;
+        }
+
+        .field-level-5 {
+            margin-left: 8rem;
+        }
+
+        .field-level-6 {
+            margin-left: 10rem;
+        }
+    }
+
     #github {
         opacity: .5;
         position: absolute;
