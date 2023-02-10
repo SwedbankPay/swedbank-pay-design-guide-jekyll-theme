@@ -2,8 +2,8 @@
 
 require 'liquid'
 
-# Jekyll
-module Jekyll
+# Module SwedbankPay
+module SwedbankPay
   # Adds a 'regex_capture' filter to Liquid. Performs a regular expression match
   # on the provided string and returns the capture as an array. Example usage:
   # {{ html | regex_capture: 'id="([^"]+)"' | first }}
@@ -15,4 +15,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_filter(Jekyll::RegexCaptureFilter)
+Liquid::Template.register_filter(SwedbankPay::RegexCaptureFilter)

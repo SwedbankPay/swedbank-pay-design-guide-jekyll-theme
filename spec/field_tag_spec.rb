@@ -4,7 +4,7 @@ require 'its'
 require 'liquid'
 require 'field_tag'
 
-describe Jekyll::FieldTag do
+describe SwedbankPay::FieldTag do
   subject(:date) { described_class.parse('f', input, nil, Liquid::ParseContext.new) }
 
   context 'with field name' do
