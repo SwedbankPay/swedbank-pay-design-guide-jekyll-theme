@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-module Jekyll
+# Module SwedbankPay
+module SwedbankPay
   # Implements the 'Level' Liquid tag.
   class FieldTag < Liquid::Tag
     def initialize(tag_name, input, _)
@@ -46,4 +47,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag('f', Jekyll::FieldTag)
+Liquid::Template.register_tag('f', SwedbankPay::FieldTag)
