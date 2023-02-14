@@ -128,6 +128,23 @@ function _handleSimpleSidebar (e) {
     });
 })();
 
+(function () {
+    document.addEventListener("DOMContentLoaded", (e) => {
+        const topbarButton = document.querySelector(".topbar-btn");
+        const newTopbarButton = topbarButton.cloneNode(true);
+        newTopbarButton.addEventListener("click", function(e) {
+            if (document.querySelector(".sidebar").classList.contains("visible")) {
+                document.querySelector(".sidebar").classList.remove("visible");
+            } else {
+                document.querySelector(".sidebar").classList.add("visible");
+            }
+        });
+
+        topbarButton.parentNode.replaceChild(newTopbarButton, topbarButton);
+    }); 
+})();
+
+
 // Initialize Tipue search
 (function() {
     $(document).ready(function () {
