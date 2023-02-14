@@ -128,15 +128,39 @@ function _handleSimpleSidebar (e) {
     });
 })();
 
+// Override the topbar click to show and hide our own sidebar
 (function () {
+    const findHomeOrLeaf = function() {
+        const path = window.location.pathname;
+        const href = window.location.href;
+        const pathIndex = href.indexOf(path);
+        const relativeUrl = href.substring(pathIndex);
+        const currentSidebarLink = document.querySelector(`.sidebar a[href$="${relativeUrl}"]`);
+        const isLeaf = currentSidebarLink !== null && currentSidebarLink !== undefined
+            ? currentSidebarLink.parentElement.classList.contains("nav-leaf")
+            : false;
+        const isHome = path === "/";
+
+        return isHome || isLeaf;
+    }
+
     document.addEventListener("DOMContentLoaded", (e) => {
         const topbarButton = document.querySelector(".topbar-btn");
         const newTopbarButton = topbarButton.cloneNode(true);
+        const sidebar = document.querySelector(".sidebar");
+        const isHomeOrLeaf = findHomeOrLeaf();
+
+        if (isHomeOrLeaf) {
+            sidebar.classList.remove("visible");
+        } else {
+            sidebar.classList.add("visible");
+        }
+        
         newTopbarButton.addEventListener("click", function(e) {
-            if (document.querySelector(".sidebar").classList.contains("visible")) {
-                document.querySelector(".sidebar").classList.remove("visible");
+            if (sidebar.classList.contains("visible")) {
+                sidebar.classList.remove("visible");
             } else {
-                document.querySelector(".sidebar").classList.add("visible");
+                sidebar.classList.add("visible");
             }
         });
 
