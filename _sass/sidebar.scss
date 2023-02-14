@@ -1,10 +1,33 @@
 .sidebar {
+    &.dg-sidebar {
+        &.visible {
+            display: block;
+        }
+    }
     @media screen and (max-width: $breakpoint-lg) {
         display: none;
     }
     &.topbar-open {
         display: block;
     }
+
+
+}
+
+.sidebar {
+    .sidebar-main-nav {
+        border-top: #fff;
+        .sidebar-logo {
+            @media screen and (max-width: $breakpoint-lg) {
+                display: none;
+            }
+        }
+        .main-nav-ul {
+            margin-top: 0;
+        }
+
+}
+    
 }
 
 #dg-sidebar {
