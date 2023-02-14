@@ -350,6 +350,11 @@ body {
         right: 4rem;
         top: 4rem;
         transition: opacity .3s;
+
+        @media screen and (max-width: $breakpoint-lg){
+            top: 6rem;
+        }
+
     }
 
     a#github:after {
