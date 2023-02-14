@@ -58,9 +58,25 @@
 
     <body>
         <div id="designguide">
+            <header id="dg-topbar" class="topbar topbar-max-md-sticky d-md-flex d-lg-none">
+                    <button type="button" class="topbar-btn" aria-label="Open menu" aria-haspopup="menu" aria-expanded="false" aria-controls="topbar-nav">
+                        <i class="material-icons topbar-btn-icon">menu</i>
+                    </button><button type="button" class="topbar-close" aria-label="Close menu">
+                        <i class="material-icons topbar-btn-icon">close</i>
+                    </button>
+                    <a class="topbar-logo" href="/" aria-label="To homepage">
+                        <img src="{{ design_guide_url }}/designguide/assets/swedbankpay-logo-v.svg" alt="swedbankpay logo" class="logotype-vertical logotype-sm" />
+                    </a>
+                    <nav class="topbar-nav">
+                        <div class="topbar-link-container">
+                            <!-- TODO: topbar-nav is currently connected to button. Need to find a way to toggle the dg-sidebar instead of topbar-nav -->
+                        </div>
+                    </nav>
+            </header>
             <div class="documentation">
                 <div class="d-md-flex">
-                    <div class="d-none d-lg-block">
+                    <!-- <div class="d-none d-lg-block"> -->
+                        <!-- Moved this into sidebar.scss -->
                         <div id="dg-sidebar" class="sidebar dg-sidebar has-secondary-nav">
                             <nav class="sidebar-main-nav">
                                 <div class="sidebar-logo">
@@ -88,7 +104,7 @@
                                 </ul>
                             </nav>
                         </div>
-                    </div>
+                    <!-- </div> -->
                 <main class="doc-view">
                     {% if page.layout != 'front-page' %}
                         {% include title-header.html %}
