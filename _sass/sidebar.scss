@@ -20,10 +20,12 @@
 
 .sidebar {
     .sidebar-main-nav {
-        border-top: #fff;
-
-        &::before {
-            background-color: #fff;
+        @media screen and (max-width: $breakpoint-lg) {
+            border-top: #fff;
+    
+            &::before {
+                background-color: #fff;
+            }
         }
         .sidebar-logo {
             @media screen and (max-width: $breakpoint-lg) {
