@@ -1,7 +1,11 @@
 .sidebar {
     &.dg-sidebar {
         &.visible {
-            display: block;
+            @media screen and (max-width: $breakpoint-lg){
+                display: block;
+                position: absolute;
+                margin-top: 80px;
+            }
         }
     }
     @media screen and (max-width: $breakpoint-lg) {
@@ -17,6 +21,10 @@
 .sidebar {
     .sidebar-main-nav {
         border-top: #fff;
+
+        &::before {
+            background-color: #fff;
+        }
         .sidebar-logo {
             @media screen and (max-width: $breakpoint-lg) {
                 display: none;
