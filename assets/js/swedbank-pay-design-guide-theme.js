@@ -187,10 +187,7 @@ function _handleSimpleSidebar (e) {
                 sidebar.classList.remove("visible");
                 newTopbarButton.style.display = "flex";
                 topbarClose.style.display = "none";
-            } else {
-                sidebar.classList.add("visible");
-                newTopbarButton.style.display = "none";
-                topbarClose.style.display = "flex";
+                document.getElementById("overlay").style.display = "none";
             }
         });
 
