@@ -149,6 +149,8 @@ function _handleSimpleSidebar (e) {
         const newTopbarButton = topbarButton.cloneNode(true);
         const sidebar = document.querySelector(".sidebar");
         const isHomeOrLeaf = findHomeOrLeaf();
+        const topbarClose = document.querySelector(".topbar-close");
+        const pageContent = document.querySelector(".doc-view");
 
         if (isHomeOrLeaf) {
             sidebar.classList.remove("visible");
@@ -159,12 +161,42 @@ function _handleSimpleSidebar (e) {
         newTopbarButton.addEventListener("click", function(e) {
             if (sidebar.classList.contains("visible")) {
                 sidebar.classList.remove("visible");
+                newTopbarButton.style.display = "flex";
+                topbarClose.style.display = "none";
             } else {
                 sidebar.classList.add("visible");
+                newTopbarButton.style.display = "none";
+                topbarClose.style.display = "flex";
+            }
+        });
+
+        topbarClose.addEventListener("click", function(e) {
+            if (sidebar.classList.contains("visible")) {
+                sidebar.classList.remove("visible");
+                newTopbarButton.style.display = "flex";
+                topbarClose.style.display = "none";
+            } else {
+                sidebar.classList.add("visible");
+                newTopbarButton.style.display = "none";
+                topbarClose.style.display = "flex";
+            }
+        });
+
+        pageContent.addEventListener("click", (e) => {
+            if (sidebar.classList.contains("visible")) {
+                sidebar.classList.remove("visible");
+                newTopbarButton.style.display = "flex";
+                topbarClose.style.display = "none";
+            } else {
+                sidebar.classList.add("visible");
+                newTopbarButton.style.display = "none";
+                topbarClose.style.display = "flex";
             }
         });
 
         topbarButton.parentNode.replaceChild(newTopbarButton, topbarButton);
+
+        
     }); 
 })();
 
