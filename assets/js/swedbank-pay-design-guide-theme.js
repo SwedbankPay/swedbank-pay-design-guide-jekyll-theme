@@ -150,10 +150,12 @@ function _handleSimpleSidebar (e) {
         const sidebar = document.querySelector(".sidebar");
         const isHomeOrLeaf = findHomeOrLeaf();
         const topbarClose = document.querySelector(".topbar-close");
-        const pageContent = document.querySelector(".doc-view");
+        const pageContent = document.querySelector("#overlay");
 
         if (isHomeOrLeaf) {
             sidebar.classList.remove("visible");
+            document.getElementById("overlay").style.display = "none";
+
         } else {
             sidebar.classList.add("visible");
         }
@@ -161,6 +163,7 @@ function _handleSimpleSidebar (e) {
         if (sidebar.classList.contains("visible")) {
             newTopbarButton.style.display = "none";
             topbarClose.style.display = "flex";
+            document.getElementById("overlay").style.display = "block";
         }
         
         newTopbarButton.addEventListener("click", function(e) {
@@ -168,10 +171,13 @@ function _handleSimpleSidebar (e) {
                 sidebar.classList.remove("visible");
                 newTopbarButton.style.display = "flex";
                 topbarClose.style.display = "none";
+                document.getElementById("overlay").style.display = "none";
+
             } else {
                 sidebar.classList.add("visible");
                 newTopbarButton.style.display = "none";
                 topbarClose.style.display = "flex";
+                document.getElementById("overlay").style.display = "block";
             }
         });
 
@@ -180,10 +186,12 @@ function _handleSimpleSidebar (e) {
                 sidebar.classList.remove("visible");
                 newTopbarButton.style.display = "flex";
                 topbarClose.style.display = "none";
+                document.getElementById("overlay").style.display = "none";
             } else {
                 sidebar.classList.add("visible");
                 newTopbarButton.style.display = "none";
                 topbarClose.style.display = "flex";
+                document.getElementById("overlay").style.display = "block";
             }
         });
 
@@ -192,12 +200,12 @@ function _handleSimpleSidebar (e) {
                 sidebar.classList.remove("visible");
                 newTopbarButton.style.display = "flex";
                 topbarClose.style.display = "none";
+                document.getElementById("overlay").style.display = "none";
             }
         });
 
         topbarButton.parentNode.replaceChild(newTopbarButton, topbarButton);
 
-        
     }); 
 })();
 
