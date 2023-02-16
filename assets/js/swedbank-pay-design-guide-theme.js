@@ -157,6 +157,11 @@ function _handleSimpleSidebar (e) {
         } else {
             sidebar.classList.add("visible");
         }
+
+        if (sidebar.classList.contains("visible")) {
+            newTopbarButton.style.display = "none";
+            topbarClose.style.display = "flex";
+        }
         
         newTopbarButton.addEventListener("click", function(e) {
             if (sidebar.classList.contains("visible")) {
@@ -187,7 +192,6 @@ function _handleSimpleSidebar (e) {
                 sidebar.classList.remove("visible");
                 newTopbarButton.style.display = "flex";
                 topbarClose.style.display = "none";
-                document.getElementById("overlay").style.display = "none";
             }
         });
 
