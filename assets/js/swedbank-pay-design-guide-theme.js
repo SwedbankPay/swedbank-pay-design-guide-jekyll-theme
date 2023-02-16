@@ -128,11 +128,12 @@ function _handleSimpleSidebar (e) {
     });
 })();
 
+
 // Override the topbar click to show and hide our own sidebar
 (function () {
-    const findHomeOrLeaf = function() {
+    const findHomeOrLeaf = function(currentUrl) {
         const path = window.location.pathname;
-        const href = window.location.href;
+        const href = currentUrl || window.location.href;
         const pathIndex = href.indexOf(path);
         const relativeUrl = href.substring(pathIndex);
         const currentSidebarLink = document.querySelector(`.sidebar a[href$="${relativeUrl}"]`);
@@ -144,26 +145,33 @@ function _handleSimpleSidebar (e) {
         return isHome || isLeaf;
     }
 
-    document.addEventListener("DOMContentLoaded", (e) => {
-        const topbarButton = document.querySelector(".topbar-btn");
-        const newTopbarButton = topbarButton.cloneNode(true);
+    const controlVisibility = function(currentUrl) {
+        const isHomeOrLeaf = findHomeOrLeaf(currentUrl);
         const sidebar = document.querySelector(".sidebar");
-        const isHomeOrLeaf = findHomeOrLeaf();
-        const topbarClose = document.querySelector(".topbar-close");
-        const pageContent = document.querySelector("#overlay");
+        const overlay = document.querySelector("#overlay");
 
         if (isHomeOrLeaf) {
             sidebar.classList.remove("visible");
-            document.getElementById("overlay").style.display = "none";
-
+            overlay.style.display = "none";
         } else {
             sidebar.classList.add("visible");
         }
 
+    }
+
+    document.addEventListener("DOMContentLoaded", (e) => {
+        const topbarButton = document.querySelector(".topbar-btn");
+        const newTopbarButton = topbarButton.cloneNode(true);
+        const sidebar = document.querySelector(".sidebar");
+        const topbarClose = document.querySelector(".topbar-close");
+        const overlay = document.querySelector("#overlay");
+
+        controlVisibility();
+
         if (sidebar.classList.contains("visible")) {
             newTopbarButton.style.display = "none";
             topbarClose.style.display = "flex";
-            document.getElementById("overlay").style.display = "block";
+            overlay.style.display = "block";
         }
         
         newTopbarButton.addEventListener("click", function(e) {
@@ -171,13 +179,13 @@ function _handleSimpleSidebar (e) {
                 sidebar.classList.remove("visible");
                 newTopbarButton.style.display = "flex";
                 topbarClose.style.display = "none";
-                document.getElementById("overlay").style.display = "none";
+                overlay.style.display = "none";
 
             } else {
                 sidebar.classList.add("visible");
                 newTopbarButton.style.display = "none";
                 topbarClose.style.display = "flex";
-                document.getElementById("overlay").style.display = "block";
+                overlay.style.display = "block";
             }
         });
 
@@ -186,22 +194,28 @@ function _handleSimpleSidebar (e) {
                 sidebar.classList.remove("visible");
                 newTopbarButton.style.display = "flex";
                 topbarClose.style.display = "none";
-                document.getElementById("overlay").style.display = "none";
+                overlay.style.display = "none";
             } else {
                 sidebar.classList.add("visible");
                 newTopbarButton.style.display = "none";
                 topbarClose.style.display = "flex";
-                document.getElementById("overlay").style.display = "block";
+                overlay.style.display = "block";
             }
         });
 
-        pageContent.addEventListener("click", (e) => {
+        overlay.addEventListener("click", (e) => {
             if (sidebar.classList.contains("visible")) {
                 sidebar.classList.remove("visible");
                 newTopbarButton.style.display = "flex";
                 topbarClose.style.display = "none";
-                document.getElementById("overlay").style.display = "none";
+                overlay.style.display = "none";
             }
+        });
+
+        document.querySelectorAll(".nav-leaf a").forEach(a =>{
+            a.addEventListener("click", (e) => {
+                controlVisibility(e.target.href);
+            });
         });
 
         topbarButton.parentNode.replaceChild(newTopbarButton, topbarButton);
