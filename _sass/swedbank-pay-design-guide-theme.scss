@@ -119,13 +119,24 @@ body {
     .dg-sidebar {
         border-right: 1px solid $background-gray;
 
+        @media screen and (max-width: $breakpoint-lg){
+            position: fixed;
+        }
+        
         .main-nav-ul {
             border-bottom: 1px solid $background-gray;
+
+            .sidebar-secondary-nav {
+                overflow-y: auto;
+            }
         }
     }
 }
 
 .documentation {
+    @media screen and (max-width: $breakpoint-lg){
+        overflow-y: auto;
+    }
     > div {
         &.row {
             margin-right: 0;
