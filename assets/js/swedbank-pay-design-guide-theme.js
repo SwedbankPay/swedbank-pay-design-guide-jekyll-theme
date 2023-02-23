@@ -149,10 +149,15 @@ function _handleSimpleSidebar (e) {
         const isHomeOrLeaf = findHomeOrLeaf(currentUrl);
         const sidebar = document.querySelector(".sidebar");
         const overlay = document.querySelector("#overlay");
+        const topbarButton = document.querySelector(".topbar-btn");
+        const topbarClose = document.querySelector(".topbar-close");
+
 
         if (isHomeOrLeaf) {
             sidebar.classList.remove("visible");
             overlay.style.display = "none";
+            topbarButton.style.display = "flex";
+            topbarClose.style.display = "none";
         } else {
             sidebar.classList.add("visible");
         }
