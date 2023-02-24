@@ -1,43 +1,41 @@
 .sidebar {
     &.dg-sidebar {
         &.visible {
-            @media screen and (max-width: $breakpoint-lg){
+            @media screen and (max-width: $breakpoint-lg) {
                 display: block;
                 position: absolute;
                 margin-top: 80px;
             }
         }
     }
+
     @media screen and (max-width: $breakpoint-lg) {
         display: none;
     }
+
     &.topbar-open {
         display: block;
     }
 
-
-}
-
-.sidebar {
     .sidebar-main-nav {
         @media screen and (max-width: $breakpoint-lg) {
-            border-top: #fff;
-    
-            &::before {
-                background-color: #fff;
+            border-top: #ffffff;
+
+            &:before {
+                background-color: #ffffff;
             }
         }
+
         .sidebar-logo {
             @media screen and (max-width: $breakpoint-lg) {
                 display: none;
             }
         }
+
         .main-nav-ul {
             margin-top: 0;
         }
-
-}
-    
+    }
 }
 
 #dg-sidebar {
@@ -63,7 +61,7 @@
 
         .leaf {
             &.active {
-                > a {
+                >a {
                     &:hover {
                         &:after {
                             content: none;

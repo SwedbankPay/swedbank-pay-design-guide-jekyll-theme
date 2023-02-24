@@ -121,7 +121,7 @@ function _handleSimpleSidebar (e) {
 
 // Remove simple sidebar functionality when proper sidebar functionality is loaded
 (function () {
-    document.addEventListener("DOMContentLoaded", (e) => {
+    document.addEventListener("DOMContentLoaded", function(e) {
         const sidebar = document.querySelector(".sidebar");
 
         sidebar.removeEventListener("click", _handleSimpleSidebar);
@@ -131,29 +131,29 @@ function _handleSimpleSidebar (e) {
 
 // Override the topbar click to show and hide our own sidebar
 (function () {
-    const findHomeOrLeaf = function(currentUrl) {
+    const isLeaf = function(currentUrl) {
         const path = window.location.pathname;
         const href = currentUrl || window.location.href;
         const pathIndex = href.indexOf(path);
         const relativeUrl = href.substring(pathIndex);
         const currentSidebarLink = document.querySelector(`.sidebar a[href$="${relativeUrl}"]`);
-        const isLeaf = currentSidebarLink !== null && currentSidebarLink !== undefined
+        return currentSidebarLink !== null && currentSidebarLink !== "undefined"
             ? currentSidebarLink.parentElement.classList.contains("nav-leaf")
             : false;
-        const isHome = path === "/";
+    };
 
-        return isHome || isLeaf;
-    }
+    const isHome = function() {
+        return window.location.pathname === "/";
+    };
 
     const controlVisibility = function(currentUrl) {
-        const isHomeOrLeaf = findHomeOrLeaf(currentUrl);
         const sidebar = document.querySelector(".sidebar");
         const overlay = document.querySelector("#overlay");
         const topbarButton = document.querySelector(".topbar-btn");
         const topbarClose = document.querySelector(".topbar-close");
 
 
-        if (isHomeOrLeaf) {
+        if (isHome() || isLeaf(currentUrl)) {
             sidebar.classList.remove("visible");
             overlay.style.display = "none";
             topbarButton.style.display = "flex";
@@ -161,10 +161,9 @@ function _handleSimpleSidebar (e) {
         } else {
             sidebar.classList.add("visible");
         }
+    };
 
-    }
-
-    document.addEventListener("DOMContentLoaded", (e) => {
+    document.addEventListener("DOMContentLoaded", function() {
         const topbarButton = document.querySelector(".topbar-btn");
         const newTopbarButton = topbarButton.cloneNode(true);
         const sidebar = document.querySelector(".sidebar");
@@ -209,7 +208,7 @@ function _handleSimpleSidebar (e) {
             }
         });
 
-        overlay.addEventListener("click", (e) => {
+        overlay.addEventListener("click", function(e) {
             if (sidebar.classList.contains("visible")) {
                 sidebar.classList.remove("visible");
                 newTopbarButton.style.display = "flex";
@@ -218,19 +217,19 @@ function _handleSimpleSidebar (e) {
             }
         });
 
-        document.querySelectorAll(".nav-leaf a").forEach(a =>{
-            a.addEventListener("click", (e) => {
+        document.querySelectorAll(".nav-leaf a").forEach(function(a) {
+            a.addEventListener("click", function(e) {
                 controlVisibility(e.target.href);
             });
         });
 
         topbarButton.parentNode.replaceChild(newTopbarButton, topbarButton);
 
-        searchButton.addEventListener("click", (e) => {
-            const searchInput = document.querySelector(".search-input")
+        searchButton.addEventListener("click", function(e) {
+            const searchInput = document.querySelector(".search-input");
 
-            if (searchInput.style.display !== 'block') {
-                searchInput.style.display = 'block'
+            if (searchInput.style.display !== "block") {
+                searchInput.style.display = "block";
                 searchInput.focus();
                 e.preventDefault();
             }
