@@ -388,16 +388,18 @@ body {
         right: 0;
         bottom: 0;
         background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-        z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+        z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
     }
   }
 
 .search-box {
-    position: fixed;
+    position: absolute;
     right: 8rem;
     top: 4rem;
+    z-index: 2;
 
     @media screen and (max-width: $breakpoint-lg) {
+        position: fixed;
         right: 1rem;
         top: 1.5rem;
         z-index: 401;
