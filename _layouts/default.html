@@ -70,9 +70,24 @@
                     </a>
             </header>
             <div class="documentation">
+                <div class="search-box search-expander">
+                    {% if site.search.enabled == true %}
+                                <form class="search d-flex"
+                                method="get" action="{{ site.search.url | relative_url }}">
+                                <input name="q" type="text" id="tipue_search_input"
+                                class="search-input"
+                                placeholder="Search in documentation"
+                                onfocus="this.placeholder=''"
+                                onblur="this.placeholder='Search in documentation'"
+                                pattern=".{3,}"
+                                title="At least 3 characters">
+                                <button id="search-btn"class="btn btn-primary btn-icon-lg" type="button" aria-label="Search button">
+                                    <i class="material-icons-outlined" aria-hidden="true">search</i>
+                                </button>
+                            </form>
+                            {% endif %}
+                </div>  
                 <div class="d-md-flex">
-                    <!-- <div class="d-none d-lg-block"> -->
-                        <!-- Moved this into sidebar.scss -->
                         <div id="dg-sidebar" class="sidebar dg-sidebar has-secondary-nav">
                             <nav class="sidebar-main-nav">
                                 <div class="sidebar-logo">
@@ -81,26 +96,10 @@
                                         alt="Swedbank Pay vertical logo" class="logotype-vertical logotype-lg"/>
                                     </a>
                                 </div>
-                                <!-- {% if site.search.enabled == true %}
-                                    <form class="search-container mx-2 my-4 px-3 py-2 d-flex"
-                                    method="get" action="{{ site.search.url | relative_url }}">
-                                    <input name="q" type="text" id="tipue_search_input"
-                                    class="search-input w-100 "
-                                    placeholder="Search in documentation"
-                                    onfocus="this.placeholder=''"
-                                    onblur="this.placeholder='Search in documentation'"
-                                    pattern=".{3,}"
-                                    title="At least 3 characters">
-                                    <button class="mb-0">
-                                        <i class="material-icons m-0" aria-hidden="true">search</i>
-                                    </button>
-                                </form>
-                                {% endif %} -->
                                 <ul id="dx-sidebar-main-nav-ul" class="main-nav-ul">
                                 </ul>
                             </nav>
                         </div>
-                    <!-- </div> -->
                 <main class="doc-view">
                     {% if page.layout != 'front-page' %}
                         {% include title-header.html %}

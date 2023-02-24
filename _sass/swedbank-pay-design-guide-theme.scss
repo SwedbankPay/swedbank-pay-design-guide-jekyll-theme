@@ -391,3 +391,23 @@ body {
         z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
     }
   }
+
+.search-box {
+    position: absolute;
+    right: 8rem;
+    top: 4rem;
+    @media screen and (max-width: $breakpoint-lg) {
+        position: absolute;
+        right: 1rem;
+        top: 1.5rem;
+        z-index: 401;
+
+        #tipue_search_input {
+            @media screen and (max-width: $breakpoint-lg) {
+                display: none;
+            }
+        }
+    }
+}
+
+
