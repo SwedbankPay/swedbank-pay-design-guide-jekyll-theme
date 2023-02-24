@@ -72,21 +72,21 @@
             <div class="documentation">
                 <div class="search-box search-expander">
                     {% if site.search.enabled == true %}
-                                <form class="search d-flex"
-                                method="get" action="{{ site.search.url | relative_url }}">
-                                <input name="q" type="text" id="tipue_search_input"
-                                class="search-input"
-                                placeholder="Search in documentation"
-                                onfocus="this.placeholder=''"
-                                onblur="this.placeholder='Search in documentation'"
-                                pattern=".{3,}"
-                                title="At least 3 characters">
-                                <button id="search-btn"class="btn btn-primary btn-icon-lg" type="button" aria-label="Search button">
-                                    <i class="material-icons-outlined" aria-hidden="true">search</i>
-                                </button>
-                            </form>
-                            {% endif %}
-                </div>  
+                    <form class="search d-flex"
+                        method="get" action="{{ site.search.url | relative_url }}">
+                        <input name="q" type="text" id="tipue_search_input"
+                            class="search-input"
+                            placeholder="Search in documentation"
+                            onfocus="this.placeholder=''"
+                            onblur="this.placeholder='Search in documentation'"
+                            pattern=".{3,}"
+                            title="At least 3 characters">
+                        <button id="search-btn"class="btn btn-primary btn-icon-lg" type="submit" aria-label="Search button">
+                            <i class="material-icons-outlined" aria-hidden="true">search</i>
+                        </button>
+                    </form>
+                    {% endif %}
+                </div>
                 <div class="d-md-flex">
                         <div id="dg-sidebar" class="sidebar dg-sidebar has-secondary-nav">
                             <nav class="sidebar-main-nav">
