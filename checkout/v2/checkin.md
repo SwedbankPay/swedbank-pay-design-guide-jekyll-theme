@@ -75,6 +75,7 @@ When the request has been sent, a response containing an array of operations tha
 {:.table .table-striped}
 | Field                     | Type     | Description                                                                                                                                       |
 | :------------------------ | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
+| {% f root, 0 %}           | `solid`  | A root, for brewing beer used to kill ghost pirates.                                                                                              |
 | {% f token %}             | `string` | A session token used to initiate Checkout UI.                                                                                                     |
 | {% f operations %}        | `array`  | The array of operation objects to choose from, described in detail in the table below.                                                            |
 | {% f rel, 2 %}            | `string` | The relational name of the operation, used as a programmatic identifier to find the correct operation given the current state of the application. |
