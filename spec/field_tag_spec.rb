@@ -37,6 +37,26 @@ describe SwedbankPay::FieldTag do
     end
   end
 
+  context 'with zero level' do
+    let(:input) { 'operations, 0' }
+
+    its(:raw) { is_expected.to eq('f operations, 0') }
+
+    its(:render, Liquid::Context.new) do
+      is_expected.to eq('<span class="field-level field-level-0"><code class="language-json highlighter-rouge">operations</code></span>')
+    end
+  end
+
+  context 'with negative level' do
+    let(:input) { 'operations, -1' }
+
+    its(:raw) { is_expected.to eq('f operations, -1') }
+
+    its(:render, Liquid::Context.new) do
+      is_expected.to eq('<span class="field-level field-level-1"><code class="language-json highlighter-rouge">operations</code></span>')
+    end
+  end
+
   context 'with nil field name' do
     let(:input) { nil }
 

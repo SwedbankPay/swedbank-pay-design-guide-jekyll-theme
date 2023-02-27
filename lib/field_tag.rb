@@ -38,9 +38,14 @@ module SwedbankPay
     def level(values)
       return 1 if values.size == 1
 
-      field_level = values[1].strip.to_i
+      field_level = values[1].strip
 
-      field_level.positive? ? field_level : 1
+      # Check if the level is a valid number, otherwise default to 1
+      return 1 unless /\A[-+]?\d*\.?\d+\z/.match(field_level)
+
+      field_level = field_level.to_i
+
+      field_level >= 0 ? field_level : 1
     rescue StandardError
       1
     end

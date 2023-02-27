@@ -330,8 +330,13 @@ body {
             }
 
             code {
-                border: 2px solid $yellow;
+                border: 1px solid $yellow;
+                border-radius: 8px;
             }
+        }
+
+        .field-level-0::before {
+            content: '';
         }
 
         .field-level-2 {
