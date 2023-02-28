@@ -38,6 +38,10 @@ module SwedbankPay
         markup << item_markup(page, current_page, sub_items_markup, false)
       end
 
+      # We need to wait with the root class replacement until here because
+      # earlier in the process, the page HTML isn't loaded yet.
+      change_root_class(current_page)
+
       markup
     end
 
@@ -47,8 +51,6 @@ module SwedbankPay
       level = is_leaf ? -1 : page.level
       title_markup = title_markup(page, level, is_leaf)
       item_class = item_class(page, current_page, level, is_leaf)
-      root_class = root_class(current_page)
-      page.doc.xpath('//*[@id="dg-sidebar"]').first.set_attribute('class', root_class)
       "<li class=\"#{item_class}\">
           #{title_markup}
           #{if item_class === 'main-nav-li' || item_class === 'main-nav-li active'
@@ -62,9 +64,11 @@ module SwedbankPay
         </li>"
     end
 
-    def root_class(current_page)
-      is_home = current_page.path == '/'
-      is_home ? 'sidebar dg-sidebar' : 'sidebar dg-sidebar has-secondary-nav'
+    def change_root_class(current_page)
+      return if current_page.path != '/'
+
+      # On 'home', set the 'class' to 'sidebar dg-sidebar' to effectively remove 'has-secondary-nav'.
+      current_page.doc.xpath('//*[@id="dg-sidebar"]').first.set_attribute('class', 'sidebar dg-sidebar')
     end
 
     def item_class(page, current_page, level, is_leaf)
