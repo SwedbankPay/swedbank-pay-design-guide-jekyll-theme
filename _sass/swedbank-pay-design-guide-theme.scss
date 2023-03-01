@@ -364,7 +364,7 @@ body {
         opacity: .5;
         position: absolute;
         right: 4rem;
-        top: 4rem;
+        top: 2rem;
         transition: opacity .3s;
 
         @media screen and (max-width: $breakpoint-lg){
@@ -400,7 +400,7 @@ body {
 .search-box {
     position: absolute;
     right: 8rem;
-    top: 4rem;
+    top: 2rem;
     z-index: 2;
 
     @media screen and (max-width: $breakpoint-lg) {
