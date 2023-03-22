@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler', '~> 2', '>= 2.2'
   spec.add_development_dependency 'codecov'
-  spec.add_development_dependency 'html-proofer', '>= 3.19', '< 5'
+  spec.add_development_dependency 'html-proofer', '>= 3.19', '< 6'
   spec.add_development_dependency 'html-proofer-unrendered-markdown', '>= 0.2'
   spec.add_development_dependency 'its'
   spec.add_development_dependency 'rake', '~> 13.0'
