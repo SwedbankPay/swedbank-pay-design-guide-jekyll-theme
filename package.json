@@ -86,7 +86,7 @@
     "unified": "^10.1.2"
   },
   "devDependencies": {
-    "stylelint": "^15.9.0",
+    "stylelint": "^15.10.1",
     "stylelint-config-standard": "^34.0.0"
   },
   "scripts": {
