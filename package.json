@@ -83,10 +83,10 @@
     "typographic-em-dashes": "^1.0.2",
     "typographic-en-dashes": "^1.0.1",
     "typographic-single-spaces": "^1.0.2",
-    "unified": "^11.0.0"
+    "unified": "^11.0.2"
   },
   "devDependencies": {
-    "stylelint": "^15.10.2",
+    "stylelint": "^15.10.3",
     "stylelint-config-standard": "^34.0.0"
   },
   "scripts": {
