@@ -29,7 +29,7 @@ layout: null
 {%- endfor -%}
 {%- if site.tipue_search.include.pages == true -%}
   {%- for page in site.html_pages -%}
-    {%- if page.url contains "/checkout-v3/" -%} {# Check if page URL contains the desired path #}
+    {%- if page.url contains "/checkout-v3/" -%}
       {%- unless page.exclude_from_search == true or excluded_files contains page.path -%}
         {%- assign has_excluded_taxonomy = false -%}
         {%- for tag in page.tags -%}
@@ -52,7 +52,7 @@ layout: null
 {%- for collection in site.tipue_search.include.collections -%}
   {%- assign documents = site.documents | where:"collection",collection -%}
   {%- for document in documents -%}
-    {%- if document.url contains "/content-v3/" -%} {# Check if document URL contains the desired path #}
+    {%- if document.url contains "/checkout-v3/" -%}
       {%- unless document.exclude_from_search == true or excluded_files contains document.path -%}
         {%- assign has_excluded_taxonomy = false -%}
         {%- for tag in document.tags -%}
