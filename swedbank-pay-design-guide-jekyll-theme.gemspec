@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'json'
-require_relative './lib/gem_version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'swedbank-pay-design-guide-jekyll-theme'
