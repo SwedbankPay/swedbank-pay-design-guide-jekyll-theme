@@ -6,8 +6,8 @@ layout: default
 {% assign front_page_title = page.front_page.title | default: 'developer portal' %}
 {% assign front_page_hero1 = page.front_page.hero1 | default: "Welcome to the" %}
 {% assign front_page_hero2 = page.front_page.hero2 | default: "Swedbank Pay" %}
-{% assign front_page_ingress = page.front_page.ingress | default: "Our developer portal gives you the full tool box for integrating our payment instruments and getting started with easy, flexible and safe payments on your e-commerce website." %}
-{% assign front_page_start_heading = page.front_page.start_heading | default: "Let's get you started with easy, flexible and safe payments on you e-commerce website!" %}
+<!--{% assign front_page_ingress = page.front_page.ingress | default: "Our developer portal gives you the full tool box for integrating our payment instruments and getting started with easy, flexible and safe payments on your e-commerce website." %}
+{% assign front_page_start_heading = page.front_page.start_heading | default: "Let's get you started with easy, flexible and safe payments on you e-commerce website!" %}-->
 
 <div class="front-page">
     {% include github.html %}
@@ -61,7 +61,7 @@ layout: default
         </div>
     </div>
     {% endif %}
-    
+
     <div class="front-page-container">
         {% contentblock intro_cards%}
 
