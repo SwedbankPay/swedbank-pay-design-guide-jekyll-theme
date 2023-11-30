@@ -52,7 +52,7 @@ jobs:
         name: ${{ steps.gem.outputs.name }}
         path: ${{ steps.gem.outputs.name }}
 
-    - uses: actions/setup-java@v3
+    - uses: actions/setup-java@v4
       with:
         distribution: adopt
         java-version: 14
