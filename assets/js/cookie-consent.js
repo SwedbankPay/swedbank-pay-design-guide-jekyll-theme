@@ -1,11 +1,22 @@
 function OptanonWrapper() { }
 
 function activateClarity() {
+    // Clarity script - do not change
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "jd3awxna38");
+    // End of Clarity script
+}
+
+function getCookie(name) {
+    if (document.cookie.split(";").some((c) => c.trim().startsWith(name + "="))) {
+      return document.cookie.split(";").find((c) => c.trim().startsWith(name + "="));
+    }
+    else {
+      return false;
+    }
 }
 
 function deleteCookie(name) {
@@ -17,15 +28,6 @@ function deleteCookie(name) {
 function inactivateClarityCookies() {
     deleteCookie("_clck");
     deleteCookie("_clsk");
-}
-
-function getCookie(name) {
-    if (document.cookie.split(";").some((c) => c.trim().startsWith(name + "="))) {
-      return document.cookie.split(";").find((c) => c.trim().startsWith(name + "="));
-    }
-    else {
-      return false;
-    }
 }
 
 window.addEventListener("OneTrustGroupsUpdated", (event) => {
