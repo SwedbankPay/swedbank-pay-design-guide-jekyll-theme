@@ -61,12 +61,12 @@ jobs:
       - uses: kamiazya/setup-graphviz@v1
       - name: Cache HTMLProofer
         id: cache-htmlproofer
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: tmp/.htmlproofer
           key: ${{ runner.os }}-htmlproofer
       - name: Cache Jekyll
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             .jekyll-cache
