@@ -20,14 +20,22 @@ like to host it locally on your computer, you have two options, manual install
 or [Docker][docker].
 The Docker installation is the one we recommend to use for its simplicity.
 
+
 ### Docker
 
-1.  Install [Docker][docker], using Linux containers.
-    Make sure virtualization is enabled on your machine.
-2.  Open a console window at the root of the repository and run
-    `docker-compose up`
+1.  [Clone this repository][clone].
+2.  [Install Docker Personal][docker]. Select default settings when prompted.
+3.  Open a console window at the root of the repository and run `docker-compose up`. This will create and run a docker container.
+    Everything specified in the repository `gemfile` will be installed and run in the container.
+5.  Run Visual Studio Code (VSC) and open the repository.
+6.  Verify that Git is installed by running `git status` in VSC terminal. If not installed, [download Git][git] and install.
+7.  Once Docker and Git are installed, run `bundle install` in VSC terminal.
+8.  If needed, run `bundle update`.
+9.  Run `bundle exec jekyll serve` to start the website.
+10. Open `http://localhost:4000` in a browser.
+   
 
-### Manual install
+### Manual install (instructions last updated 2021)
 
 1.  [Clone this repository][clone].
 2.  Jekyll is written in [Ruby][ruby], so you'll need to download and install
@@ -91,6 +99,7 @@ agreement][cla].
 [developer-portal]:     <https://developer.swedbankpay.com/>
 [docker]:               <https://www.docker.com/>
 [gems]:                 <https://rubygems.org/>
+[git]:                  <https://git-scm.com/downloads>
 [github]:               <https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme>
 [graphviz]:             <https://graphviz.org/download/>
 [license-badge]:        https://img.shields.io/github/license/SwedbankPay/swedbank-pay-design-guide-jekyll-theme
