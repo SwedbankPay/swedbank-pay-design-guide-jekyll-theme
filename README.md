@@ -32,15 +32,8 @@ theme-gem, please edit the regexp in `swedbankpay.gemspec` accordingly.
 
 1.  [Clone this repository][clone].
 2.  [Install Docker Personal][docker]. Select default settings when prompted.
-3.  Open a console window at the root of the repository and run `docker-compose up`. This will create and run a docker container.
-    Everything specified in the repository `gemfile` will be installed and run in the container.
-5.  Run Visual Studio Code (VSC) and open the repository.
-6.  Verify that Git is installed by running `git status` in VSC terminal.
-   If Git is not properly installed, you will see an error message like the one below. Just [download Git][git] and install.
-   ![Alt text](image.png)
-7.  Once Docker and Git are installed, run `bundle install` in VSC terminal.
-8.  If needed, run `bundle update`.
-9.  Run `bundle exec jekyll serve` to start the website.
+3.  Open a console window at the root of the repository and run `docker-compose up`. This will create a docker container.
+4.  Open Docker Desktop and start the container if not already running.
 10. Open `http://localhost:4000` in a browser.
    
 
@@ -52,10 +45,19 @@ theme-gem, please edit the regexp in `swedbankpay.gemspec` accordingly.
 3.  To install the [Ruby Gems][gems] this web site requires, you first need to
     install [Bundler][bundler].
 4.  Install [Graphviz][graphviz], this will require Java.
+5.  Run Visual Studio Code (VSC) and open the repository.
+6.  Verify that Git is installed by running `git status` in VSC terminal.
+   If Git is not properly installed, you will see an error message like the one below. Just [download Git][git] and install.
+   ![Alt text](image.png)
 5.  Once Ruby ,Bundler, and Graphviz, is in place, type `bundle install` inside the root
     folder of this repository.
 6.  Run `bundle exec jekyll serve` to start the website.
-7.  Open `http://localhost:4000` in a browser.
+7.  Open in a browser.
+
+   
+### Visual Studio Code plugins
+
+You might want to install plugins for Markdown, Mermaid, JSON and Liquid as this will enhance your coding experience.
 
 
 ## Contributing
