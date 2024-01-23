@@ -46,7 +46,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 });
 
 window.addEventListener("OneTrustGroupsUpdated", (event) => {
-    if (event.detail.indexOf("C0002") !== -1) {
+    if (event.detail && event.detail.indexOf("C0002") !== -1) {
       activateClarity();
     }
     else {
