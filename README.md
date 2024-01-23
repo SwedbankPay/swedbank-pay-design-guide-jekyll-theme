@@ -20,22 +20,31 @@ like to host it locally on your computer, you have two options, manual install
 or [Docker][docker].
 The Docker installation is the one we recommend to use for its simplicity.
 
+After either a Docker or manual installation Jekyll should be fired up with this theme. You can now add pages, documents,
+data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, the site will regenerate and you should see
+the changes in the browser after a refresh, just like normal.
 
-### Docker
+When the theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled. To add a custom directory to your
+theme-gem, please edit the regexp in `swedbankpay.gemspec` accordingly.
+
+
+### Docker (recommended)
 
 1.  [Clone this repository][clone].
 2.  [Install Docker Personal][docker]. Select default settings when prompted.
 3.  Open a console window at the root of the repository and run `docker-compose up`. This will create and run a docker container.
     Everything specified in the repository `gemfile` will be installed and run in the container.
 5.  Run Visual Studio Code (VSC) and open the repository.
-6.  Verify that Git is installed by running `git status` in VSC terminal. If not installed, [download Git][git] and install.
+6.  Verify that Git is installed by running `git status` in VSC terminal.
+   If Git is not properly installed, you will see an error message like the one below. Just [download Git][git] and install.
+   ![Alt text](image.png)
 7.  Once Docker and Git are installed, run `bundle install` in VSC terminal.
 8.  If needed, run `bundle update`.
 9.  Run `bundle exec jekyll serve` to start the website.
 10. Open `http://localhost:4000` in a browser.
    
 
-### Manual install (instructions last updated 2021)
+### Manual install
 
 1.  [Clone this repository][clone].
 2.  Jekyll is written in [Ruby][ruby], so you'll need to download and install
@@ -48,30 +57,6 @@ The Docker installation is the one we recommend to use for its simplicity.
 6.  Run `bundle exec jekyll serve` to start the website.
 7.  Open `http://localhost:4000` in a browser.
 
-### Required Visual Studio Code plugins
-
-*   `shd101wyy.markdown-preview-enhanced`, to render Markdown to HTML in a
-  preview window.
-*   `bpruitt-goddard.mermaid-markdown-syntax-highlighting`, to give syntax
-  highlighting to Mermaid diagrams in Markdown files.
-*   `yzhang.markdown-all-in-one`, to enable a plethora of Markdown features,
-  most importantly formatting of Markdown tables with VS Code's built-in
-  format functionality.
-*   `stkb.rewrap`, to make line-breaking text at 80 characters easier.
-*   `supperchong.pretty-json` to format selected JSON snippets in code
-  examples.
-*   `sissel.shopify-liquid` for syntax highlighting of [Liquid][liquid].
-*   [Set up a ruler at 80 characters][vsc-ruler] by
-  adding `"editor.rulers": [80]` to its configuration.
-
-Jekyll should now be fired up with this theme. You can now add pages, documents,
-data, etc. like normal to test your theme's contents. As you make modifications
-to your theme and to your content, the site will regenerate and you should see
-the changes in the browser after a refresh, just like normal.
-
-When the theme is released, only the files in `_layouts`, `_includes`, `_sass`
-and `assets` tracked with Git will be bundled. To add a custom directory to your
-theme-gem, please edit the regexp in `swedbankpay.gemspec` accordingly.
 
 ## Contributing
 
