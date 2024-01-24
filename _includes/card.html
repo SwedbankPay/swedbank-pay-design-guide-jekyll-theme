@@ -23,46 +23,51 @@ type: sdk | module - Empty type result in default card styling
 {% assign disabled = include.disabled %}
 
 {% if include.type %}
-    {% assign type = include.type %}
-    {% assign type_class = 'dx-card-' | append: type %}
+{% assign type = include.type %}
+{% assign type_class = 'dx-card-' | append: type %}
 {% else %}
-    {% assign type_class = '' %}
+{% assign type_class = '' %}
 {% endif %}
 
 {% unless icon_svg %}
-    {% if icon_content contains '/' or icon_content contains '.svg' %}
-        {% assign icon_svg = true %}
-    {% endif %}
+{% if icon_content contains '/' or icon_content contains '.svg' %}
+{% assign icon_svg = true %}
+{% endif %}
 {% endunless %}
 
-{% assign card_class = 'dx-card ' | append: type_class | strip %}
+{% assign card_class = 'cards cards-primary ' | append: type_class | strip %}
 {% if horizontal %}
-    {% assign card_class = card_class | append: ' dx-card-horizontal' | strip %}
+{% assign card_class = card_class | append: ' dx-card-horizontal' | strip %}
 {% endif %}
 
 {% if disabled %}
-    {% assign card_class = card_class | append: ' dx-card-disabled' | strip %}
-    {% assign card_tag = 'span' %}
+{% assign card_class = card_class | append: ' dx-card-disabled' | strip %}
+{% assign card_tag = 'span' %}
 {% else %}
-    {% assign card_tag = 'a' %}
-    {% capture card_attributes %}href="{{ to }}"{% endcapture %}
+{% assign card_tag = 'a' %}
+{% capture card_attributes %}href="{{ to }}"{% endcapture %}
 {% endif %}
 
 <{{ card_tag }} {{ card_attributes }} class="{{ card_class }}">
-    <span class="dx-card-icon{% if no_icon %} d-none{% endif %}">
-        {% if icon_svg %}
-            {% include {{ icon_content }} %}
-        {% else %}
-            <i class="material-icons{% if icon_outlined %}-outlined{% endif %}">
-                {{ icon_content }}
-            </i>
-        {% endif %}
-    </span>
-    <span class="dx-card-content">
-        <span class="{{ title_type }}">{{ include.title }}</span>
+    {% if icon_svg %}
+    <div class="cards-icon">
+        {% include {{ icon_content }} %}
+    </div>
+    {% endif %}
+
+    {% unless icon_svg %}
+    {% if icon_content %}
+    <div class="cards-icon">
+        <i class="material-icons material-icons-outlined" aria-hidden="true">{{ icon_content }}</i>
+    </div>
+    {% endif %}
+    {% endunless %}
+
+    <div class="cards-content">
+        <span class="h4">{{ include.title }}</span>
         <span>{{ text | markdownify }}</span>
-    </span>
+    </div>
     {% unless disabled %}
-        <i class="material-icons">arrow_forward</i>
+    <i class="material-icons">arrow_forward</i>
     {% endunless %}
 </{{ card_tag }}>

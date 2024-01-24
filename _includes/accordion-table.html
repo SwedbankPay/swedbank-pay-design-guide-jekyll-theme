@@ -1,11 +1,11 @@
 {% assign content = include.content | markdownify%}
 
-<div class="accordion accordion-table mb-4">
-    <button type="button" class="accordion-header pt-0" aria-expanded="false" aria-controls="exp-1">
+<div class="accordion">
+    <button type="button" class="accordion-header" aria-expanded="false" aria-controls="exp-1">
         <span class="mr-3 show">Show fields</span>
         <span class="mr-3 hide">Hide fields</span>
     </button>
-    <div class="accordion-body p-0" id="exp-1">
+    <div class="accordion-body" id="exp-1">
         {{ content }}
     </div>
 </div>
