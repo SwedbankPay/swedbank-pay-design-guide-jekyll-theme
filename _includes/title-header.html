@@ -22,16 +22,8 @@
 
             <h1>{{ main_title }}</h1>
 
-            {% assign estimated_read = page.content | read_time | plus: 0 %}
-            {% if estimated_read > 0 %}
-                <div class="title-header-estimated-read">
-                    <i class="material-icons">schedule</i>
-                    {{ estimated_read }} min read
-                </div>
-            {% endif %}
-
             {% if description %}
-                <p>{{ description | markdownify }}</p>
+            <p>{{ description }}</p>
             {% endif %}
         </div>
 
