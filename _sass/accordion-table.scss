@@ -1,92 +1,21 @@
 @import 'colors.scss';
 
-.accordion {
-    align-items: center;
-
-    &.accordion-table {
-        border: none;
-
+.accordion-header{
         .show {
             display: block;
-            width: 52rem;
         }
 
         .hide {
             display: none;
         }
 
-        &.accordion-open {
-            border: none;
-
+        &[aria-expanded="true"] {
             .show {
                 display: none;
             }
 
             .hide {
                 display: block;
-                width: 70vw;
-                max-width: 100%;
-                padding-left: 1rem;
             }
         }
-
-        .accordion-header {
-            align-items: center;
-            background-color: $apricot;
-            border: 1px solid rgba(153, 153, 153, 0.5);
-            border-radius: 2px;
-            max-width: 80rem;
-            line-height: 2rem;
-            padding: unset;
-
-            &:before {
-                position: absolute;
-                top: 50%;
-                margin-right: 0.5rem;
-                bottom: 50%;
-                transition: .3s;
-                color: $brown;
-            }
-
-            span {
-                font-weight: normal;
-            }
-            &:hover {
-                span {
-                    font-weight: bold;
-                }
-            }
-        }
-
-        .accordion-body {
-            @media (min-width: 1250px) {
-                width: 70vw;
-                max-width: 80rem;
-            }
-        }
-
-        table {
-            border: 1px solid rgba(153, 153, 153, 0.5);
-            border-radius: 0.25rem;
-
-            th {
-                font-size: 0.875rem;
-            }
-
-            tbody {
-                font-size: 0.875rem;
-
-                tr:nth-child(odd) {
-                    background-color: #F9F8F6;
-                }
-
-                tr {
-                    &:hover {
-                        background-color: $apricot;
-                        transition: .5s;
-                    }
-                }
-            }
-        }
-    }
 }
