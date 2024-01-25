@@ -420,6 +420,27 @@ a.header-anchor::before {
 .accordion-header[aria-expanded=true] .hide {
   display: block;
 }
+.accordion-header:hover {
+  background-color: #fbf2ea;
+}
+
+.accordion-body table {
+  border: 1px solid rgba(153, 153, 153, 0.5);
+  border-radius: 0.25rem;
+}
+.accordion-body table th {
+  font-size: 0.875rem;
+}
+.accordion-body table tbody {
+  font-size: 0.875rem;
+}
+.accordion-body table tbody tr:nth-child(odd) {
+  background-color: #F9F8F6;
+}
+.accordion-body table tbody tr:hover {
+  background-color: #fbf2ea;
+  transition: 0.5s;
+}
 
 .paragraph-highlight {
   margin: 2rem 0;
