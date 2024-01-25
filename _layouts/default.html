@@ -70,12 +70,12 @@
                     </a>
             </header>
             <div class="documentation">
-                <div class="search-box search-expander">
+                <div class="form-group search-box search-expander">
                     {% if site.search.enabled == true %}
                     <form class="search d-flex"
                         method="get" action="{{ site.search.url | relative_url }}">
                         <input name="q" type="text" id="tipue_search_input"
-                            class="search-input"
+                            class="form-control search-input"
                             placeholder="Search in documentation"
                             onfocus="this.placeholder=''"
                             onblur="this.placeholder='Search in documentation'"

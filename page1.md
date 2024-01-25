@@ -12,7 +12,7 @@ sidebar_icon: filter_1
 
 ---
 
-{% assign card_col_class="col-xxl-3 col-xl-6 col-lg-6" %}
+{% assign card_col_class="col-xl-6 col-lg-6" %}
 
 {% contentfor start %}
   <div class="row mt-4">
