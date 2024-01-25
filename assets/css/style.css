@@ -408,36 +408,38 @@ a.header-anchor::before {
   content: "#";
 }
 
-.accordion-header .show {
+.accordion .accordion-header .show {
   display: block;
 }
-.accordion-header .hide {
+.accordion .accordion-header .hide {
   display: none;
 }
-.accordion-header[aria-expanded=true] .show {
+.accordion .accordion-header[aria-expanded=true] .show {
   display: none;
 }
-.accordion-header[aria-expanded=true] .hide {
+.accordion .accordion-header[aria-expanded=true] .hide {
   display: block;
 }
-.accordion-header:hover {
+.accordion .accordion-header:hover {
   background-color: #fbf2ea;
 }
-
-.accordion-body table {
+.accordion .accordion-body {
+  padding: 0;
+}
+.accordion .accordion-body table {
   border: 1px solid rgba(153, 153, 153, 0.5);
   border-radius: 0.25rem;
 }
-.accordion-body table th {
+.accordion .accordion-body table th {
   font-size: 0.875rem;
 }
-.accordion-body table tbody {
+.accordion .accordion-body table tbody {
   font-size: 0.875rem;
 }
-.accordion-body table tbody tr:nth-child(odd) {
+.accordion .accordion-body table tbody tr:nth-child(odd) {
   background-color: #F9F8F6;
 }
-.accordion-body table tbody tr:hover {
+.accordion .accordion-body table tbody tr:hover {
   background-color: #fbf2ea;
   transition: 0.5s;
 }
