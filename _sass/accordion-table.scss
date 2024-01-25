@@ -1,6 +1,8 @@
 @import 'colors.scss';
 
-.accordion-header{
+.accordion {
+
+    .accordion-header {
         .show {
             display: block;
         }
@@ -20,31 +22,33 @@
         }
 
         &:hover {
-                background-color: $apricot;
+            background-color: $apricot;
         }
-}
+    }
 
-.accordion-body {
+    .accordion-body {
+        padding: 0;
 
-    table {
-        border: 1px solid rgba(153, 153, 153, 0.5);
-        border-radius: 0.25rem;
+        table {
+            border: 1px solid rgba(153, 153, 153, 0.5);
+            border-radius: 0.25rem;
 
-        th {
-            font-size: 0.875rem;
-        }
-
-        tbody {
-            font-size: 0.875rem;
-
-            tr:nth-child(odd) {
-                background-color: #F9F8F6;
+            th {
+                font-size: 0.875rem;
             }
 
-            tr {
-                &:hover {
-                    background-color: $apricot;
-                    transition: .5s;
+            tbody {
+                font-size: 0.875rem;
+
+                tr:nth-child(odd) {
+                    background-color: #F9F8F6;
+                }
+
+                tr {
+                    &:hover {
+                        background-color: $apricot;
+                        transition: .5s;
+                    }
                 }
             }
         }
