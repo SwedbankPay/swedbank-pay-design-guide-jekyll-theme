@@ -38,7 +38,7 @@ sidebar_icon: filter_2
           %}
 {% endcontentfor %}
 
-{% assign card_col_class="col-xxl-3 col-xl-6 col-lg-6" %}
+{% assign card_col_class="col-xl-6 col-lg-6" %}
 
 {% contentfor release_notes %}
   <h2 id="front-page-release-notes" class="heading-line heading-line-green">What's new in the documentation</h2>
