@@ -84,7 +84,6 @@
     margin-bottom: 8rem;
   }
   .front-page .front-page-top .front-page-intro-cards {
-    position: absolute;
     left: 0;
     width: 100%;
   }
@@ -734,6 +733,10 @@ body {
 .documentation .max-width-card-overview {
   max-width: 880px;
 }
+.documentation .row.card-list > div {
+  display: flex;
+  align-self: stretch;
+}
 .documentation .language-mermaid svg {
   width: 100% !important;
   height: 100%;
@@ -874,18 +877,33 @@ body {
 .search-box {
   position: absolute;
   right: 8rem;
-  top: 2rem;
+  top: 1.5rem;
   z-index: 2;
+}
+.search-box .search-input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.search-box #search-btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  height: 56px;
 }
 @media screen and (max-width: 992px) {
   .search-box {
     position: fixed;
     right: 1rem;
-    top: 1.5rem;
+    top: 1rem;
     z-index: 401;
   }
   .search-box #tipue_search_input {
     display: none;
+  }
+  .search-box #search-btn {
+    border-top-left-radius: 8px;
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: 8px;
+    border-bottom-left-radius: var(--border-radius);
   }
 }
 
