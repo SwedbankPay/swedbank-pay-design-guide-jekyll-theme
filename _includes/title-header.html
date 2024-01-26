@@ -23,7 +23,7 @@
             <h1>{{ main_title }}</h1>
 
             {% if description %}
-            <p>{{ description }}</p>
+            <p>{{ description | markdownify }}</p>
             {% endif %}
         </div>
 
