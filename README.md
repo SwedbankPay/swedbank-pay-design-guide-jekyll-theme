@@ -40,24 +40,22 @@ theme-gem, please edit the regexp in `swedbankpay.gemspec` accordingly.
 ### Manual install
 
 1.  [Clone this repository][clone].
-2.  Jekyll is written in [Ruby][ruby], so you'll need to download and install
-    that. If you're installing on Windows, choose setup with DevKit.
-3.  To install the [Ruby Gems][gems] this web site requires, you first need to
-    install [Bundler][bundler].
-4.  Install [Graphviz][graphviz], this will require Java.
-5.  Run Visual Studio Code (VSC) and open the repository.
-6.  Verify that Git is installed by running `git status` in VSC terminal.
-   If Git is not properly installed, you will see an error message like the one below. Just [download Git][git] and install.
-   ![Alt text](image.png)
-7.  Once Ruby ,Bundler, and Graphviz, is in place, type `bundle install` inside the root
-    folder of this repository.
-8.  Run `bundle exec jekyll serve` to start the website.
-9.  Open in a browser.
+2.  Close Visual Studio Code (VSC) if you have it running
+3.  Jekyll is written in [Ruby][ruby], so you'll need to download and install
+    that.
+    Note: If you're installing on Windows, choose Ruby+Devkit Installers.
+4.  Open VSC and open the repository
+5.  Verify that Git is installed by running `git status` in VSC terminal. 
+    If Git is not properly installed, you will see an error message like the one below. Just [download Git][git] and install.
+    ![Alt text](image.png)
+6.  Type `bundle install` inside the root folder of this repository.
+7.  Run `bundle exec jekyll serve` to start the website.
+8.  Open in a browser.
 
    
 ### Visual Studio Code plugins
 
-You might want to install plugins for Markdown, Mermaid, JSON and Liquid as this will enhance your coding experience.
+You might want to install plugins for Graphviz, JSON, Liquid, Markdown and Mermaid as this will enhance your coding experience.
 
 
 ## Contributing
@@ -73,7 +71,6 @@ The code within this repository is available as open source under the terms of
 the [Apache 2.0 License][license] and the [contributor's license
 agreement][cla].
 
-[bundler]:              <https://bundler.io/>
 [cla-badge]:            <https://cla-assistant.io/readme/badge/SwedbankPay/swedbank-pay-design-guide-jekyll-theme>
 [cla]:                  <https://cla-assistant.io/SwedbankPay/swedbank-pay-design-guide-jekyll-theme>
 [clone]:                <https://help.github.com/articles/cloning-a-repository/>
@@ -93,7 +90,7 @@ agreement][cla].
 [license]:              <https://opensource.org/licenses/MIT>
 [liquid]:               <https://jekyllrb.com/docs/liquid/>
 [opengraph-image]:      <https://repository-images.githubusercontent.com/209270355/36818080-53ee-11ea-896c-082addb851a6>
-[ruby]:                 <https://www.ruby-lang.org/en/>
+[ruby]:                 <https://rubyinstaller.org/downloads/archives>
 [swedbankpay]:          <https://swedbankpay.github.io/swedbank-pay-design-guide-jekyll-theme/>
 [test-badge]:           <https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/workflows/Test/badge.svg>
 [vsc-ruler]:            <https://stackoverflow.com/questions/29968499/vertical-rulers-in-visual-studio-code>
