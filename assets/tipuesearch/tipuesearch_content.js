@@ -1,5 +1,15 @@
 var tipuesearch = {"pages": [{
     "title": "3-D Secure 2",
+    "text": "",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/starter/features/core/3d-secure-2.html"
+  },{
+    "title": "3-D Secure 2",
+    "text": "",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/payments-only/features/core/3d-secure-2.html"
+  },{
+    "title": "3-D Secure 2",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v3/basic/features/core/3d-secure-2.html"
@@ -24,16 +34,6 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/checkout/v2/features/core/3d-secure-2.html"
   },{
-    "title": "3-D Secure 2",
-    "text": "",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/core/3d-secure-2.html"
-  },{
-    "title": "3-D Secure 2",
-    "text": "",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/payments-only/features/core/3d-secure-2.html"
-  },{
     "title": "",
     "text": "Uh oh:heavy_exclamation_mark: Seems like you have taken a wrong turn somewhere :construction: :dragon: This page seems to play hide and seek with you. :dragon_face: :circus_tent: Perhaps attempting a search or clicking around in the menus will help? :space_invader: Or perhaps your :princess: is in another castle? :mushroom:",
     "tags": "",
@@ -48,6 +48,11 @@ var tipuesearch = {"pages": [{
     "text": "",
     "tags": "",
     "url": "/products/checkout-v3-dev/payments-only/features/core/abort.html"
+  },{
+    "title": "After payment is completed",
+    "text": "After paaaayment Payment is done? Great, here is what will happen now. First we’ll subtract the money from your account, then a wizard will attempt a grand spell to carry the money on the back of ants to transfer it to a safe place. A secret place. A place with a secret.",
+    "tags": "",
+    "url": "/checkout-more/after-payment.html"
   },{
     "title": "After Payment",
     "text": "",
@@ -69,11 +74,6 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/checkout/v2/after-payment.html"
   },{
-    "title": "After payment is completed",
-    "text": "After paaaayment Payment is done? Great, here is what will happen now. First we’ll subtract the money from your account, then a wizard will attempt a grand spell to carry the money on the back of ants to transfer it to a safe place. A secret place. A place with a secret.",
-    "tags": "",
-    "url": "/checkout-more/after-payment.html"
-  },{
     "title": "Alpha",
     "text": "",
     "tags": "",
@@ -83,6 +83,16 @@ var tipuesearch = {"pages": [{
     "text": "",
     "tags": "",
     "url": "/resources/beta.html"
+  },{
+    "title": "Callback",
+    "text": "",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/starter/features/core/callback.html"
+  },{
+    "title": "Callback",
+    "text": "",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/payments-only/features/core/callback.html"
   },{
     "title": "Callback",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -109,15 +119,15 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/checkout/v2/features/technical-reference/callback.html"
   },{
-    "title": "Callback",
-    "text": "",
+    "title": "Cancel",
+    "text": "Cancel The cancellations resource lists the cancellation transactions on a specific payment. Create Cancel Transaction Perform the create-cancel operation to cancel a previously created payment. You can only cancel a payment - or part of payment - not yet captured. Cancel Request Request 1 2 3 4 5 6 7 8 9 10 11 12 &lt;!-- POST /psp//payments//cancellations HTTP/1.1 --&gt; POST /psp/payments/cancellations HTTP/1.1 Host: Authorization: Bearer &lt;AccessToken&gt; Content-Type: application/json { \"transaction\": { \"description\": \"Test Cancellation\", \"payeeReference\": \"ABC123\" } } Show fields Hide fields check︎ Field Type Description check︎ transaction string The transaction object contains information about this cancellation. check︎ └➔ description string A textual description of the reason for the cancellation. code fence test Cancel Response Cancel Sequence Diagram Cancel can only be done on a authorized transaction. If you do cancel after doing a part-capture you will cancel the different between the capture amount and the authorization amount. sequenceDiagram participant SwedbankPay as Swedbank Pay Merchant-&gt;&gt;SwedbankPay: POST &lt; cancellation&gt; activate Merchant activate SwedbankPay SwedbankPay--&gt;&gt;Merchant: transaction resource deactivate SwedbankPay deactivate Merchant",
     "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/core/callback.html"
+    "url": "/products/checkout-v3-dev/starter/features/core/cancel.html"
   },{
-    "title": "Callback",
+    "title": "Cancel",
     "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/payments-only/features/core/callback.html"
+    "url": "/products/checkout-v3-dev/payments-only/features/core/cancel.html"
   },{
     "title": "Cancel",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -143,16 +153,6 @@ var tipuesearch = {"pages": [{
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v2/features/core/cancel.html"
-  },{
-    "title": "Cancel",
-    "text": "Cancel The cancellations resource lists the cancellation transactions on a specific payment. Create Cancel Transaction Perform the create-cancel operation to cancel a previously created payment. You can only cancel a payment - or part of payment - not yet captured. Cancel Request Request 1 2 3 4 5 6 7 8 9 10 11 12 &lt;!-- POST /psp//payments//cancellations HTTP/1.1 --&gt; POST /psp/payments/cancellations HTTP/1.1 Host: Authorization: Bearer &lt;AccessToken&gt; Content-Type: application/json { \"transaction\": { \"description\": \"Test Cancellation\", \"payeeReference\": \"ABC123\" } } Show fields Hide fields check︎ Field Type Description check︎ transaction string The transaction object contains information about this cancellation. check︎ └➔ description string A textual description of the reason for the cancellation. code fence test Cancel Response Cancel Sequence Diagram Cancel can only be done on a authorized transaction. If you do cancel after doing a part-capture you will cancel the different between the capture amount and the authorization amount. sequenceDiagram participant SwedbankPay as Swedbank Pay Merchant-&gt;&gt;SwedbankPay: POST &lt; cancellation&gt; activate Merchant activate SwedbankPay SwedbankPay--&gt;&gt;Merchant: transaction resource deactivate SwedbankPay deactivate Merchant",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/core/cancel.html"
-  },{
-    "title": "Cancel",
-    "text": "",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/payments-only/features/core/cancel.html"
   },{
     "title": "Capture",
     "text": "",
@@ -265,6 +265,16 @@ var tipuesearch = {"pages": [{
     "url": "/checkout/v2/checkin.html"
   },{
     "title": "CompleteUrl",
+    "text": "",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/starter/features/technical-reference/complete-url.html"
+  },{
+    "title": "CompleteUrl",
+    "text": "",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/payments-only/features/technical-reference/complete-url.html"
+  },{
+    "title": "CompleteUrl",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v3/basic/features/technical-reference/complete-url.html"
@@ -289,20 +299,20 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/checkout/v2/features/technical-reference/complete-url.html"
   },{
-    "title": "CompleteUrl",
-    "text": "",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/technical-reference/complete-url.html"
-  },{
-    "title": "CompleteUrl",
-    "text": "",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/payments-only/features/technical-reference/complete-url.html"
-  },{
     "title": "Creditting?",
     "text": "Don’t read this If you see this. It means you are credited.",
     "tags": "",
     "url": "/payments/credit.html"
+  },{
+    "title": "Custom Logo",
+    "text": "",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/starter/features/optional/custom-logo.html"
+  },{
+    "title": "Custom Logo",
+    "text": "",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/payments-only/features/optional/custom-logo.html"
   },{
     "title": "Custom Logo",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -329,15 +339,15 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/checkout/v2/features/optional/custom-logo.html"
   },{
-    "title": "Custom Logo",
+    "title": "Delete Token",
     "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/optional/custom-logo.html"
+    "url": "/products/checkout-v3-dev/starter/features/optional/delete-token.html"
   },{
-    "title": "Custom Logo",
+    "title": "Delete Token",
     "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/payments-only/features/optional/custom-logo.html"
+    "url": "/products/checkout-v3-dev/payments-only/features/optional/delete-token.html"
   },{
     "title": "Delete Token",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -364,15 +374,15 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/checkout/v2/features/technical-reference/delete-token.html"
   },{
-    "title": "Delete Token",
+    "title": "Description",
     "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/optional/delete-token.html"
+    "url": "/products/checkout-v3-dev/starter/features/technical-reference/description.html"
   },{
-    "title": "Delete Token",
+    "title": "Description",
     "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/payments-only/features/optional/delete-token.html"
+    "url": "/products/checkout-v3-dev/payments-only/features/technical-reference/description.html"
   },{
     "title": "Description",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -398,16 +408,6 @@ var tipuesearch = {"pages": [{
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v2/features/technical-reference/description.html"
-  },{
-    "title": "Description",
-    "text": "",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/technical-reference/description.html"
-  },{
-    "title": "Description",
-    "text": "",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/payments-only/features/technical-reference/description.html"
   },{
     "title": "Delegated Strong Consumer Authentication",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -439,10 +439,105 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/resources/gamma.html"
   },{
+    "title": "Secret payments",
+    "text": "How we do secret payments We don’t.",
+    "tags": "",
+    "url": "/payments/secrets/"
+  },{
+    "title": "Payments",
+    "text": "",
+    "tags": "",
+    "url": "/payments/"
+  },{
     "title": "PlantUML",
     "text": "Network Diagram clientappdbqueuecloudusecaserectanglepackagefolderframecardfile State Diagram State1this is a stringthis is another stringState2 Sequence Diagrams Checkin  Payer Payer Merchant Merchant Swedbank Pay Swedbank PayStart CheckinPOST /psp/consumersrel:view-consumer-identification ①rel:view-consumer-identification ②&lt;script src=rel:view-consumer-identification.href /&gt;payex.hostedView.consumer()Consumer identification③onConsumerIdentified(consumerProfileRef) ④POST { consumerProfileRef } ⑤StoreconsumerProfileRef Payment Menu  Payer Payer Merchant Merchant Swedbank Pay Swedbank PayPayPOST /psp/paymentorders { consumerProfileRef } ①rel:view-paymentorderrel:view-paymentorder&lt;script src=rel:view-paymentorder.href /&gt;payex.hostedView.paymentMenu()Perform paymentalt[completed payment]onPaymentCompleted(paymentorder)Check payment statusGET paymentorder.idrel:paid-paymentorderGET rel:paid-paymentorder.hrefCompleted Payment OrderShow receipt[failed payment]onPaymentFailed(paymentorder)Check payment statusGET paymentorder.idrel:failed-paymentorderGET rel:failed-paymentorder.hrefFailed Payment OrderShow failure page Callback  Merchant Merchant Swedbank Pay Swedbank PayPOST { payment activity }GET paymentorder.idPayment OrderUpdate status Capture  Merchant Merchant Swedbank Pay Swedbank PayCaptureGET paymentorder.idrel:create-paymentorder-capturePOST rel:create-paymentorder-capture.hrefCapture status",
     "tags": "",
     "url": "/plantuml/"
+  },{
+    "title": "",
+    "text": "",
+    "tags": "",
+    "url": "/checkout-more/"
+  },{
+    "title": "Optional Features",
+    "text": "Optional Features copyright Custom Logo How to add your own logo. arrow_forward delete_sweep Delete Token How to delete tokens. arrow_forward",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/starter/features/optional/"
+  },{
+    "title": "Technical Reference",
+    "text": "Technical Reference link CompleteUrl Where you go when the payment is completed. arrow_forward assignment Description The purchase summed up in a few words. arrow_forward code Metadata Store payment associated data for later use. arrow_forward settings Operations Possible operations for a payment order. arrow_forward",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/starter/features/technical-reference/"
+  },{
+    "title": "Core Features",
+    "text": "Core Features 3d_rotation 3-D Secure 2 Authenticating the cardholder. arrow_forward pan_tool Abort Aborting a created payment. arrow_forward low_priority Callback Receive asynchronous, server-to-server updates from Swedbank Pay when transactions are performed on a payment. arrow_forward pan_tool Cancel Canceling the authorization and releasing the funds. arrow_forward",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/starter/features/core/"
+  },{
+    "title": "Features",
+    "text": "",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/starter/features/"
+  },{
+    "title": "Set Up",
+    "text": "Step 1: Sign Up For A Test Account A test account gives you access to our unified dashboard for managing your account across different platforms. We call this dashboard the Ecom Admin. Your test account request should be sent to: testaccount@swedbankpay.com in order to create an account for you, we need some specific information from your side: Company name: Your company name. Services you prefer: Full Checkout (Starter / Business / Enterprise) or Payments Only (Payments). Email address: To a developer or the CTO. Step 2: Wait For Response Within 8 working hours we will have created your account and sent you an email containing the following information: Merchant name: This represents your core business entity with us. Payer ID: This is how we identify you. Services: The services that are activated and ready for testing. Login credentials: You will receive a temporary password in a separate email. Step 3: Get Your Access Tokens To submit payments to us, you will be making API requests that are authenticated with an access token. How to generate your access token: Log in to: https://admin.externalintegration.payex.com/psp/beta/login/ - For testing environment. Merchant details: Here you will find information about your account. An access token is necessary since it will be used together with Payee ID to validate transactions. The Payee ID will serve as the door and, your token is the key. Navigate to “Access Tokens” at the top of the page. Choose “Add” and name the token. We suggest you name it according to what environment it is created in. Your token will only be fully visible upon creation. For security purposes, we will mask it like this 12a3**********bc4de56f. If you need to keep track of it, please save it externally in a safe place as it will remain encrypted.",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/starter/"
+  },{
+    "title": "Optional Features",
+    "text": "Optional Features copyright Custom Logo How to add your own logo. arrow_forward delete_sweep Delete Token How to delete tokens. arrow_forward",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/payments-only/features/optional/"
+  },{
+    "title": "Technical Reference",
+    "text": "Technical Reference link CompleteUrl Where you go when the payment is completed. arrow_forward assignment Description The purchase summed up in a few words. arrow_forward",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/payments-only/features/technical-reference/"
+  },{
+    "title": "Core Features",
+    "text": "Core Features 3d_rotation 3-D Secure 2 Authenticating the cardholder. arrow_forward pan_tool Abort Aborting a created payment. arrow_forward low_priority Callback Receive asynchronous, server-to-server updates from Swedbank Pay when transactions are performed on a payment. arrow_forward pan_tool Cancel Canceling the authorization and releasing the funds. arrow_forward",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/payments-only/features/core/"
+  },{
+    "title": "Features",
+    "text": "",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/payments-only/features/"
+  },{
+    "title": "Set Up",
+    "text": "Step 1: Sign Up For A Test Account A test account gives you access to our unified dashboard for managing your account across different platforms. We call this dashboard the Ecom Admin. Your test account request should be sent to: testaccount@swedbankpay.com in order to create an account for you, we need some specific information from your side: Company name: Your company name. Services you prefer: Full Checkout (Starter / Business / Enterprise) or Payments Only (Payments). Email address: To a developer or the CTO. Step 2: Wait For Response Within 8 working hours we will have created your account and sent you an email containing the following information: Merchant name: This represents your core business entity with us. Payer ID: This is how we identify you. Services: The services that are activated and ready for testing. Login credentials: You will receive a temporary password in a separate email. Step 3: Get Your Access Tokens To submit payments to us, you will be making API requests that are authenticated with an access token. How to generate your access token: Log in to: https://admin.externalintegration.payex.com/psp/beta/login/ - For testing environment. Merchant details: Here you will find information about your account. An access token is necessary since it will be used together with Payee ID to validate transactions. The Payee ID will serve as the door and your token is the key. Navigate to “Access Tokens” at the top of the page. Choose “Add” and name the token. We suggest you name it according to what environment it is created in. Your token will only be fully visible upon creation. For security purposes, we will mask it as shown in the example above. If you need to keep track of it, please save it externally in a safe place as it will remain encrypted.",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/payments-only/"
+  },{
+    "title": "Get Started",
+    "text": "Choose The Right Implementation For Your Business The customer journey varies a lot depending on your business vertical. For example, if you’re selling physical goods - like clothes, shoes or computers, you need to collect a delivery address. Unlike if you are selling digital goods, where that isn’t needed. But this is also a matter of which data you can and/or wish to collect and manage yourself. Here, you can choose between two main paths. Either you let us provide you with a Full Checkout solution (including both payer identification and payment menu) - meaning the payer themselves can choose how they’d like to pay, or you can decide to use the Payments Only option. This means that you are in charge of collecting and storing the payer data and the payment instruments to be presented. Regardless of whether you choose to go with the full checkout or payments only, we will supply you with a variety of payment instruments and features which cater to your business needs. Authentication: The process of verifying the payer’s identity. Delivery Info: Information about where the goods should be delivered. Payer Info: The payer’s personal data e.g. name, address, card number etc. PSP: The service of providing payment instruments in the checkout. What Are You Looking For?",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/"
+  },{
+    "title": "Products",
+    "text": "",
+    "tags": "",
+    "url": "/products/"
+  },{
+    "title": "Deck 2",
+    "text": "",
+    "tags": "",
+    "url": "/cards/deck2/"
+  },{
+    "title": "Deck 1",
+    "text": "",
+    "tags": "",
+    "url": "/cards/deck1/"
+  },{
+    "title": "Deck 3",
+    "text": "",
+    "tags": "",
+    "url": "/cards/deck3/"
+  },{
+    "title": "Cards",
+    "text": "1 2 3 4 5 6 7 8 9 10 11 12 &lt;div class=\"cards-icon\"&gt; &lt;i class=\"material-icons material-icons-outlined\" aria-hidden=\"true\"&gt;credit_card&lt;/i&gt; &lt;/div&gt; &lt;div class=\"cards-content\"&gt; &lt;span class=\"h4\"&gt;Default&lt;/span&gt; &lt;span&gt;&lt;p&gt;This is a default card&lt;/p&gt; &lt;/span&gt; &lt;/div&gt; &lt;i class=\"material-icons\"&gt;arrow_forward&lt;/i&gt; &lt;/a&gt; 1 2 3 4 5 6 7 8 9 10 11 12 &lt;div class=\"cards-icon\"&gt; &lt;i class=\"material-icons material-icons-outlined\" aria-hidden=\"true\"&gt;settings&lt;/i&gt; &lt;/div&gt; &lt;div class=\"cards-content\"&gt; &lt;span class=\"h4\"&gt;SDK&lt;/span&gt; &lt;span&gt;&lt;p&gt;This is a .dx-card-sdk card&lt;/p&gt; &lt;/span&gt; &lt;/div&gt; &lt;i class=\"material-icons\"&gt;arrow_forward&lt;/i&gt; &lt;/a&gt; 1 2 3 4 5 6 7 8 9 10 11 12 &lt;div class=\"cards-icon\"&gt; &lt;i class=\"material-icons material-icons-outlined\" aria-hidden=\"true\"&gt;build&lt;/i&gt; &lt;/div&gt; &lt;div class=\"cards-content\"&gt; &lt;span class=\"h4\"&gt;module&lt;/span&gt; &lt;span&gt;&lt;p&gt;This is a .dx-card-module card. This also has outlined icon&lt;/p&gt; &lt;/span&gt; &lt;/div&gt; &lt;i class=\"material-icons\"&gt;arrow_forward&lt;/i&gt; &lt;/a&gt; 1 2 3 4 5 6 7 8 9 10 11 12 &lt;div class=\"cards-icon\"&gt; &lt;i class=\"material-icons material-icons-outlined\" aria-hidden=\"true\"&gt;01&lt;/i&gt; &lt;/div&gt; &lt;div class=\"cards-content\"&gt; &lt;span class=\"h4\"&gt;Horizontal&lt;/span&gt; &lt;span&gt;&lt;p&gt;This is a dx-card-horizontal card. Icons used with this card are just numbers&lt;/p&gt; &lt;/span&gt; &lt;/div&gt; &lt;i class=\"material-icons\"&gt;arrow_forward&lt;/i&gt; &lt;/a&gt;",
+    "tags": "",
+    "url": "/cards/"
   },{
     "title": "Optional Features",
     "text": "Optional Features copyright Custom Logo How to add your own logo arrow_forward verified Delegated Strong Consumer Authentication The Checkin alternative arrow_forward cached Recur Setting up subscriptions and recurring payments arrow_forward verified_user Verify Validating the payer’s payment details arrow_forward",
@@ -579,101 +674,6 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/checkout/"
   },{
-    "title": "Secret payments",
-    "text": "How we do secret payments We don’t.",
-    "tags": "",
-    "url": "/payments/secrets/"
-  },{
-    "title": "Payments",
-    "text": "",
-    "tags": "",
-    "url": "/payments/"
-  },{
-    "title": "Optional Features",
-    "text": "Optional Features copyright Custom Logo How to add your own logo. arrow_forward delete_sweep Delete Token How to delete tokens. arrow_forward",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/optional/"
-  },{
-    "title": "Technical Reference",
-    "text": "Technical Reference link CompleteUrl Where you go when the payment is completed. arrow_forward assignment Description The purchase summed up in a few words. arrow_forward code Metadata Store payment associated data for later use. arrow_forward settings Operations Possible operations for a payment order. arrow_forward",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/technical-reference/"
-  },{
-    "title": "Core Features",
-    "text": "Core Features 3d_rotation 3-D Secure 2 Authenticating the cardholder. arrow_forward pan_tool Abort Aborting a created payment. arrow_forward low_priority Callback Receive asynchronous, server-to-server updates from Swedbank Pay when transactions are performed on a payment. arrow_forward pan_tool Cancel Canceling the authorization and releasing the funds. arrow_forward",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/core/"
-  },{
-    "title": "Features",
-    "text": "",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/"
-  },{
-    "title": "Set Up",
-    "text": "Step 1: Sign Up For A Test Account A test account gives you access to our unified dashboard for managing your account across different platforms. We call this dashboard the Ecom Admin. Your test account request should be sent to: testaccount@swedbankpay.com in order to create an account for you, we need some specific information from your side: Company name: Your company name. Services you prefer: Full Checkout (Starter / Business / Enterprise) or Payments Only (Payments). Email address: To a developer or the CTO. Step 2: Wait For Response Within 8 working hours we will have created your account and sent you an email containing the following information: Merchant name: This represents your core business entity with us. Payer ID: This is how we identify you. Services: The services that are activated and ready for testing. Login credentials: You will receive a temporary password in a separate email. Step 3: Get Your Access Tokens To submit payments to us, you will be making API requests that are authenticated with an access token. How to generate your access token: Log in to: https://admin.externalintegration.payex.com/psp/beta/login/ - For testing environment. Merchant details: Here you will find information about your account. An access token is necessary since it will be used together with Payee ID to validate transactions. The Payee ID will serve as the door and, your token is the key. Navigate to “Access Tokens” at the top of the page. Choose “Add” and name the token. We suggest you name it according to what environment it is created in. Your token will only be fully visible upon creation. For security purposes, we will mask it like this 12a3**********bc4de56f. If you need to keep track of it, please save it externally in a safe place as it will remain encrypted.",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/starter/"
-  },{
-    "title": "Optional Features",
-    "text": "Optional Features copyright Custom Logo How to add your own logo. arrow_forward delete_sweep Delete Token How to delete tokens. arrow_forward",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/payments-only/features/optional/"
-  },{
-    "title": "Technical Reference",
-    "text": "Technical Reference link CompleteUrl Where you go when the payment is completed. arrow_forward assignment Description The purchase summed up in a few words. arrow_forward",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/payments-only/features/technical-reference/"
-  },{
-    "title": "Core Features",
-    "text": "Core Features 3d_rotation 3-D Secure 2 Authenticating the cardholder. arrow_forward pan_tool Abort Aborting a created payment. arrow_forward low_priority Callback Receive asynchronous, server-to-server updates from Swedbank Pay when transactions are performed on a payment. arrow_forward pan_tool Cancel Canceling the authorization and releasing the funds. arrow_forward",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/payments-only/features/core/"
-  },{
-    "title": "Features",
-    "text": "",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/payments-only/features/"
-  },{
-    "title": "Set Up",
-    "text": "Step 1: Sign Up For A Test Account A test account gives you access to our unified dashboard for managing your account across different platforms. We call this dashboard the Ecom Admin. Your test account request should be sent to: testaccount@swedbankpay.com in order to create an account for you, we need some specific information from your side: Company name: Your company name. Services you prefer: Full Checkout (Starter / Business / Enterprise) or Payments Only (Payments). Email address: To a developer or the CTO. Step 2: Wait For Response Within 8 working hours we will have created your account and sent you an email containing the following information: Merchant name: This represents your core business entity with us. Payer ID: This is how we identify you. Services: The services that are activated and ready for testing. Login credentials: You will receive a temporary password in a separate email. Step 3: Get Your Access Tokens To submit payments to us, you will be making API requests that are authenticated with an access token. How to generate your access token: Log in to: https://admin.externalintegration.payex.com/psp/beta/login/ - For testing environment. Merchant details: Here you will find information about your account. An access token is necessary since it will be used together with Payee ID to validate transactions. The Payee ID will serve as the door and your token is the key. Navigate to “Access Tokens” at the top of the page. Choose “Add” and name the token. We suggest you name it according to what environment it is created in. Your token will only be fully visible upon creation. For security purposes, we will mask it as shown in the example above. If you need to keep track of it, please save it externally in a safe place as it will remain encrypted.",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/payments-only/"
-  },{
-    "title": "Get Started",
-    "text": "Choose The Right Implementation For Your Business The customer journey varies a lot depending on your business vertical. For example, if you’re selling physical goods - like clothes, shoes or computers, you need to collect a delivery address. Unlike if you are selling digital goods, where that isn’t needed. But this is also a matter of which data you can and/or wish to collect and manage yourself. Here, you can choose between two main paths. Either you let us provide you with a Full Checkout solution (including both payer identification and payment menu) - meaning the payer themselves can choose how they’d like to pay, or you can decide to use the Payments Only option. This means that you are in charge of collecting and storing the payer data and the payment instruments to be presented. Regardless of whether you choose to go with the full checkout or payments only, we will supply you with a variety of payment instruments and features which cater to your business needs. Authentication: The process of verifying the payer’s identity. Delivery Info: Information about where the goods should be delivered. Payer Info: The payer’s personal data e.g. name, address, card number etc. PSP: The service of providing payment instruments in the checkout. What Are You Looking For?",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/"
-  },{
-    "title": "Products",
-    "text": "",
-    "tags": "",
-    "url": "/products/"
-  },{
-    "title": "",
-    "text": "",
-    "tags": "",
-    "url": "/checkout-more/"
-  },{
-    "title": "Deck 2",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck2/"
-  },{
-    "title": "Deck 1",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck1/"
-  },{
-    "title": "Deck 3",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck3/"
-  },{
-    "title": "Cards",
-    "text": "1 2 3 4 5 6 7 8 9 10 11 12 &lt;div class=\"cards-icon\"&gt; &lt;i class=\"material-icons material-icons-outlined\" aria-hidden=\"true\"&gt;credit_card&lt;/i&gt; &lt;/div&gt; &lt;div class=\"cards-content\"&gt; &lt;span class=\"h4\"&gt;Default&lt;/span&gt; &lt;span&gt;&lt;p&gt;This is a default card&lt;/p&gt; &lt;/span&gt; &lt;/div&gt; &lt;i class=\"material-icons\"&gt;arrow_forward&lt;/i&gt; &lt;/a&gt; 1 2 3 4 5 6 7 8 9 10 11 12 &lt;div class=\"cards-icon\"&gt; &lt;i class=\"material-icons material-icons-outlined\" aria-hidden=\"true\"&gt;settings&lt;/i&gt; &lt;/div&gt; &lt;div class=\"cards-content\"&gt; &lt;span class=\"h4\"&gt;SDK&lt;/span&gt; &lt;span&gt;&lt;p&gt;This is a .dx-card-sdk card&lt;/p&gt; &lt;/span&gt; &lt;/div&gt; &lt;i class=\"material-icons\"&gt;arrow_forward&lt;/i&gt; &lt;/a&gt; 1 2 3 4 5 6 7 8 9 10 11 12 &lt;div class=\"cards-icon\"&gt; &lt;i class=\"material-icons material-icons-outlined\" aria-hidden=\"true\"&gt;build&lt;/i&gt; &lt;/div&gt; &lt;div class=\"cards-content\"&gt; &lt;span class=\"h4\"&gt;module&lt;/span&gt; &lt;span&gt;&lt;p&gt;This is a .dx-card-module card. This also has outlined icon&lt;/p&gt; &lt;/span&gt; &lt;/div&gt; &lt;i class=\"material-icons\"&gt;arrow_forward&lt;/i&gt; &lt;/a&gt; 1 2 3 4 5 6 7 8 9 10 11 12 &lt;div class=\"cards-icon\"&gt; &lt;i class=\"material-icons material-icons-outlined\" aria-hidden=\"true\"&gt;01&lt;/i&gt; &lt;/div&gt; &lt;div class=\"cards-content\"&gt; &lt;span class=\"h4\"&gt;Horizontal&lt;/span&gt; &lt;span&gt;&lt;p&gt;This is a dx-card-horizontal card. Icons used with this card are just numbers&lt;/p&gt; &lt;/span&gt; &lt;/div&gt; &lt;i class=\"material-icons\"&gt;arrow_forward&lt;/i&gt; &lt;/a&gt;",
-    "tags": "",
-    "url": "/cards/"
-  },{
     "title": "Sub-resources",
     "text": "",
     "tags": "",
@@ -710,6 +710,11 @@ var tipuesearch = {"pages": [{
     "url": "/checkout/v2/features/technical-reference/items.html"
   },{
     "title": "Metadata",
+    "text": "",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/starter/features/technical-reference/metadata.html"
+  },{
+    "title": "Metadata",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v3/basic/features/technical-reference/metadata.html"
@@ -734,10 +739,10 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/checkout/v2/features/technical-reference/metadata.html"
   },{
-    "title": "Metadata",
+    "title": "Operations",
     "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/technical-reference/metadata.html"
+    "url": "/products/checkout-v3-dev/starter/features/technical-reference/operations.html"
   },{
     "title": "Operations",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -763,11 +768,6 @@ var tipuesearch = {"pages": [{
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v2/features/technical-reference/operations.html"
-  },{
-    "title": "Operations",
-    "text": "",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/technical-reference/operations.html"
   },{
     "title": "Order Items",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -1140,14 +1140,14 @@ var tipuesearch = {"pages": [{
     "url": "/checkout/v2/features/technical-reference/seamless-view-events.html"
   },{
     "title": "Seamless View",
-    "text": "",
-    "tags": "",
-    "url": "/checkout/v3/basic/seamless-view.html"
-  },{
-    "title": "Seamless View",
     "text": "The Starter Seamless View integration consists of three main steps. Creating the payment order and checkin, displaying the payment menu, delivery options and checkin module in an iframe, and finally capturing the funds. In addition, there are other post purchase options you need. We get to them later on. If you want to get an overview before proceeding, you can look at the sequence diagram. It is also available in the sidebar if you want to look at it later. Let´s get going with the two first steps of the integration. Step 1: Create Payment Order And Checkin When the purchase is initiated, you need to create a payment order. Start by performing a POST request towards the paymentorder resource with payer information and a completeUrl. We have added productName to the payment order request in this integration. You can find it in the paymentorder field. This is required if you want to use Checkout v3. If it isn´t included in your request, you won’t get the correct operations in the response. When productName is set to checkout3, requireConsumerInfo and digitalProducts will be set to false by default. For the Starter integration, you must set requireConsumerInfo to true. If digitalProducts is set to false, you also need to add shippingAddressRestrictedToCountryCodes along with ISO standard country codes. Supported features for this integration are subscriptions (recur and unscheduled MIT), instrument mode and split settlement (subsite). There is also a guest mode option for the payers who don’t wish to store their information. When using Starter, this is triggered when the payer chooses not to store credentials during checkin. In some instances you need the possibility to abort purchases. This could be if a payer does not complete the purchase within a reasonable timeframe. For those instances we have abort. You can only use abort if the payer has not completed an authorize or a sale. Step 2: Display Checkin, Delivery Options And Payment Menu Among the operations in the POST paymentOrders response, you will find view-checkout. This is what you need to display the checkin and payment module. Response 1 2 3 4 5 6 7 8 9 10 11 { \"paymentOrder\": { \"operations\": [ { \"method\": \"GET\", \"href\": \"https://ecom.externalintegration.payex.com/payment/core/js/px.payment.client.js?token=dd728a47e3ec7be442c98eafcfd9b0207377ce04c793407eb36d07faa69a32df&amp;culture=sv-SE\", \"rel\": \"view-checkout\", \"contentType\": \"application/javascript\" }, ] } Load The Javascript Embed the href from the example above in a &lt;script&gt; element. That script will then load the Seamless View. To load the Checkout from the JavaScript URL obtained in the backend API response, it needs to be set as a script element’s src attribute. You can cause a page reload and do this with static HTML, or you can avoid the page refresh by invoking the POST to create the payment order through Ajax, and then create the script element with JavaScript. The HTML code will be unchanged in this example. JavaScript 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 var request = new XMLHttpRequest(); request.addEventListener('load', function () { response = JSON.parse(this.responseText); var script = document.createElement('script'); var operation = response.operations.find(function (o) { return o.rel === 'view-checkout'; }); script.setAttribute('src', operation.href); script.onload = function () { // When the 'view-checkout' script is loaded, we can initialize the // Payment Menu inside our 'payment-menu' container. // To open the Checkin window.payex.hostedView.checkout({ container: { checkin: \"checkin\", paymentMenu: \"paymentMenu\", }, culture: 'nb-No', // If payer is identified onPayerIdentified: function onPayerIdentified(payerIdentified) { console.log(payerIdentified); }, // If payer chooses \"Not you?\" onPayerUnidentified: function onPayerUnidentified(payerUnidentified) { console.log(payerUnidentified); }, onEventNotification: function onEventNotification(eventNotification) { console.log(eventNotification); }, }).open(\"checkin\"); }; // Append the Checkout script to the &lt;head&gt; var head = document.getElementsByTagName('head')[0]; head.appendChild(script); }); // Like before, you should replace the address here with // your own endpoint. request.open('GET', '&lt;Your-Backend-Endpoint-Here&gt;', true); request.setRequestHeader('Content-Type', 'application/json; charset=utf-8'); request.send(); When you get notified about the event onPayerIdentified, you need to do a GET on the paymentOrder. By expanding the payer field, you should get all the info you need to calculate shipping costs. You can now update the paymentOrder with a PATCH if you need to, using the patch from operations in the paymentOrder response. Response 1 2 3 4 5 6 7 8 9 HTTP/1.1 200 OK Content-Type: application/json { \"method\": \"PATCH\", \"href\": \"/paymentorders/\", \"rel\": \"update-order\", \"contentType\": \"application/json\" } JavaScript 1 2 3 4 5 6 7 8 //to open the Payment Menu window.payex.hostedView.checkout({ container: { checkin: \"checkin\", paymentMenu: \"paymentMenu\", }, culture: 'nb-No', }).open(\"paymentmenu\"); HTML 1 2 3 4 5 6 7 8 9 10 11 &lt;html&gt; &lt;head&gt; &lt;title&gt;Swedbank Pay Checkout is Awesome!&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=\"checkin\"&gt;&lt;/div&gt; &lt;div id=\"payment-menu\"&gt;&lt;/div&gt; &lt;!-- Here you can specify your own javascript file --&gt; &lt;script src=\"&lt;Your-JavaScript-File-Here&gt;\"&gt;&lt;/script&gt; &lt;/body&gt; &lt;/html&gt; How It Looks First you will see a Checkin module where the payer can enter their email and phone number. A known payer will be sent directly to the payment menu shown further below. If we detect that the payer is new, we give them the option to store their details or proceed without storing. If that happens, these checkin steps will appear. After choosing yes or no, the payer must enter their SSN. With digital products, the payer will be sent directly to delivery options after they select to store their details (see below). For mixed goods, the SSN input view will expand and the payer must enter their shipping address. Payers choosing not to store credentials (guests) must also enter their shipping address. After checking in, the payer’s contact details and shipping address are shown for mixed goods. You can now perform the GET on the payment order and display the available delivery option(s) to the payer. You are in charge of how the delivery options are displayed. This is how they appear in our demoshop. For digital products only contact details will be shown. When the payer chooses a delivery option, you can PATCH the payment order and open the payment menu. The payer can then proceed with the purchase. Once a purchase is complete, you can perform a GET towards the paymentOrders resource to see the purchase state. Events When integrating Seamless View, especially with Starter where it’s the only option, we strongly recommend that you implement the onPaid event, as it will give you the best setup. Even with this implemented, you need to check the payment status towards our APIs, as the payer can make changes in the browser at any time. When implementing Starter, you also need to subscribe to the event onPayerUnidentified when you implement onPayerIdentified. This is important because the “Remember Me” feature (to be released soon) won’t work without it.",
     "tags": "",
     "url": "/products/checkout-v3-dev/starter/seamless-view.html"
+  },{
+    "title": "Seamless View",
+    "text": "",
+    "tags": "",
+    "url": "/checkout/v3/basic/seamless-view.html"
   },{
     "title": "Search",
     "text": "",
