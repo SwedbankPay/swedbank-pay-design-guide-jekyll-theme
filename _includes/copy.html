@@ -1,0 +1,14 @@
+{%- comment -%}
+**Parameters
+title: Title
+content: Content to be copied
+{%- endcomment -%}
+
+<p class="code-view-header">
+    {{ include.title}}
+{% if include.content %}
+<button class="code-view-copy" aria-label="Copy content to clipboard" value='{{include.content}}' onclick='javascript:navigator.clipboard.writeText(this.value)'>
+    copy json
+</button>
+{% endif %}
+</p>
