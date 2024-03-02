@@ -1,0 +1,20 @@
+{%- comment -%}
+**Parameters
+title: Title
+header: header content
+json: json content
+{%- endcomment -%}
+
+<p class="code-view-header">
+    {{ include.title}}
+<button class="code-view-copy" aria-label="Copy content to clipboard" value='{{include.json}}' onclick='javascript:navigator.clipboard.writeText(this.value)'>
+    copy json
+</button>
+</p>
+````http
+{{include.header}}
+````
+
+````jsonc
+{{include.json}}
+````

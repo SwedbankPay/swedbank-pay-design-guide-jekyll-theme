@@ -1,13 +1,57 @@
 @import 'colors.scss';
+.code-view-copy {
+    display: flex;
+    font-family: Akkurat Mono,monospace;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    margin: 0;
+    padding: 0;
+    border:none;
+    background-color: #493c3b;
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+.code-view-copy:hover {
+    text-decoration: none;
+}
 
 .code-view {
     .code-view-table {
         .code-view-code {
-
             .nc,
             .nf {
                 color: $code-green;
             }
+        }
+    }
+}
+
+.language-http {   
+    .code-view {
+        .code-view-table {
+            .code-view-numbers {
+                display: none;
+            }
+
+            .code-view-code {
+                padding-left: 1rem;
+            }
+        }
+    }
+}
+
+.language-http:has(+ .language-js)
+.language-http:has(+ .language-json),
+.language-http:has(+ .language-jsonc) {
+    margin-bottom: 0 !important;
+
+    .code-view {
+        margin-bottom: 0;
+
+        .code-view-table {
+            border-radius: 0px;
         }
     }
 }
