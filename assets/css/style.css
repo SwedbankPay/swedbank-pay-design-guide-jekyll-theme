@@ -46,6 +46,10 @@
 .language-http:has(+ .language-jsonc) .code-view .code-view-table {
   border-radius: 0px;
 }
+.language-http:has(+ .language-js) .language-http:has(+ .language-json) .code-view .code-view-table pre,
+.language-http:has(+ .language-jsonc) .code-view .code-view-table pre {
+  margin-bottom: 0;
+}
 
 .front-page {
   position: relative;
