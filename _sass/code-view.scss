@@ -52,6 +52,10 @@
 
         .code-view-table {
             border-radius: 0px;
+
+            pre {
+                margin-bottom: 0;
+            }
         }
     }
 }
