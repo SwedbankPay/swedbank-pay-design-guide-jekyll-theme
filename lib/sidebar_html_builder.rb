@@ -116,7 +116,7 @@ module SwedbankPay
 
       "<ul class=\"#{page.level.zero? ? 'secondary-nav-ul' : ''}\">
           #{if page.level.positive? && page.children?
-              "<a href=\"..\\#\" class=\"previous-nav\">
+              "<a href=\"../\" class=\"previous-nav\">
                 <i class=\"material-icons\" aria-hidden=\"true\">arrow_back_ios</i>
                 <span>Back to #{page.parent.title}</span>
               </a>
