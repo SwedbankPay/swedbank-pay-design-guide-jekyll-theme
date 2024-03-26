@@ -164,14 +164,7 @@ Content-Type: application/json'
             "vatAmount": 0,
             "description": "Test transaction",
             "payeeReference": "1583846100",
-            "isOperational": true,
-            "operations": [
-                {
-                    "method": "GET",
-                    "href": "https://api.stage.payex.com/psp/creditcard/confined/payments/authorizations/authenticate/ec2a9b09-601a-42ae-8e33-a5737e1cf177",
-                    "rel": "redirect-authentication"
-                }
-            ]
+            "isOperational": true
         }
     }
 }'
