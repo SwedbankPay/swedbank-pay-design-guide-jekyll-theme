@@ -20,8 +20,8 @@ like to host it locally on your computer, you have two options, manual install
 or [Docker][docker].
 The Docker installation is the one we recommend to use for its simplicity.
 
-After either a Docker or manual installation Jekyll should be fired up with this theme. You can now add pages, documents,
-data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, the site will regenerate and you should see
+After either a Docker or manual installation Jekyll should be fired up with this theme. You can now add pages, documents, data, etc.
+to test your theme's contents. As you make modifications to your theme and to your content, the site will regenerate and you should see
 the changes in the browser after a refresh, just like normal.
 
 When the theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled. To add a custom directory to your
