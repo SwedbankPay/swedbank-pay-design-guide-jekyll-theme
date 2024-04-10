@@ -4,8 +4,7 @@
 {% assign header = include.header | markdownify | remove: '<p>' | remove: '</p>' | strip %}
 {% assign body = include.body | markdownify | remove: '<p>' | remove: '</p>' | strip %}
 
-<div
-    class="alert {{ type_class }}">
+<div class="alert {{ type_class }}">
     {% if icon != blank and icon != empty and icon != nil %}
     <i class="material-icons alert-icon mr-3">{{ icon }}</i>
     {% endif %}
