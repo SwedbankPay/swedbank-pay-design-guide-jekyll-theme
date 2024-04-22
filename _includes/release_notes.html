@@ -67,7 +67,7 @@
                         {% assign archive_version_value = archive_version_parts[0] | split: '>' %}
                         {% assign archive_version_id = archive_version | regex_capture: 'id="([^"]+)"' | first %}
                             <h4 class="h4">{{ archive_version_value[1] }}</h4>
-                            <p class="mt-2">{{ version_parts[1] }}</p>
+                            <p class="mt-2">{{ archive_version_parts[1] }}</p>
                     {% endfor %}
                         </div>
                     </div>
