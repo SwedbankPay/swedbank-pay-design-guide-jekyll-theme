@@ -29,7 +29,9 @@
         <meta name="msapplication-TileImage" content="{{ design_guide_version_url }}/icons/mstile-144x144.png">
         <meta property="og:type" value="website" />
         {%- if page.url != nil %}
-        <meta property="og:url" value="{{ page.url | absolute_url }}" />{% endif %}
+        <meta property="og:url" value="{{ page.url | absolute_url }}" />
+        {%- if page.url contains 'old-implementations' %}<meta name="robots" content="noindex">{% endif %}
+        {% endif %}
         <meta property="og:title" value="{{ title }}" />
         <meta name="title" content="{{ title }}" />
         {%- if description != nil %}
