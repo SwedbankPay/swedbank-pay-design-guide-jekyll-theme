@@ -42,7 +42,7 @@ jobs:
           GITHUB_ACTOR_EMAIL: dev@payex.com
           GITHUB_REPO: https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
         run: |
-          docker-compose run \
+          docker compose run \
             -e GITHUB_REPOSITORY_URL=${{ needs.variables.outputs.repository_url }} \
             jekyll deploy \
             --env=production
