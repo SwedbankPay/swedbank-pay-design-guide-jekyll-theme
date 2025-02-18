@@ -1,20 +1,24 @@
 {%- comment -%}
 **Parameters
 content(required): What will be displayed inside the accordion when expanded.
-button_expand_text: Text to display on the expand button. If not supplied the text 'Show fields' will be used.
-button_collapse_text: Text to display on the collapse button. If not supplied the text 'Hide fields' will be used.
+header_collapse_text: Text to display on the collapse header. If not supplied the text 'Hide fields' will be used.
+header_collapse_css: CSS class to apply to the text on the collapse header. If not supplied default style will be used.
+header_expand_text: Text to display on the expand header. If not supplied the text 'Show fields' will be used.
+header_expand_css: CSS class to apply to the text on the expand header. If not supplied default style will be used.
 accordion_id: Id of the accordion. If not supplied 'accordion-1' will be used.
 {%- endcomment -%}
 
 {% assign content = include.content | markdownify%}
 {% assign accordion_id = include.accordion_id | default: 'accordion-1' %}
-{% assign button_collapse_text = include.button_collapse_text | default: 'Hide fields' | markdownify%}
-{% assign button_expand_text = include.button_expand_text | default: 'Show fields' | markdownify%}
+{% assign header_collapse_text = include.header_collapse_text | default: 'Hide fields'%}
+{% assign header_collapse_css = include.header_collapse_css%}
+{% assign header_expand_text = include.header_expand_text | default: 'Show fields'%}
+{% assign header_expand_css = include.header_expand_css%}
 
 <div class="accordion">
     <button type="button" class="accordion-header" aria-expanded="false" aria-controls="{{accordion_id}}">
-        <span class="mr-3 show">{{button_expand_text}}</span>
-        <span class="mr-3 hide">{{button_collapse_text}}</span>
+        <span class="mr-3 show {{header_expand_css}}">{{header_expand_text}}</span>
+        <span class="mr-3 hide {{header_collapse_css}}">{{header_collapse_text}}</span>
     </button>
     <div class="accordion-body" id="{{accordion_id}}">
         {{ content }}
