@@ -8,8 +8,8 @@ accordion_id: Id of the accordion. If not supplied 'accordion-1' will be used.
 
 {% assign content = include.content | markdownify%}
 {% assign accordion_id = include.accordion_id | default: 'accordion-1' %}
-{% assign button_collapse_text = include.button_collapse_text | default: 'Hide fields'%}
-{% assign button_expand_text = include.button_expand_text | default: 'Show fields'%}
+{% assign button_collapse_text = include.button_collapse_text | default: 'Hide fields' | markdownify%}
+{% assign button_expand_text = include.button_expand_text | default: 'Show fields' | markdownify%}
 
 <div class="accordion">
     <button type="button" class="accordion-header" aria-expanded="false" aria-controls="{{accordion_id}}">
