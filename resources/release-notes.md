@@ -1,13 +1,11 @@
 ---
 title: Release Notes
+release_notes_title: Whats new
 description: |
   The **latest** updates about our releases will be
   published on this page
+release_notes: true
 ---
-
-{% include alert.html type="informative" icon="info" header="Version numbers"
-body="The version numbers used in headers on this page refers to the version of
-this very documentation, not to a version of any APIs described by it." %}
 
 ## 28 May 2020
 

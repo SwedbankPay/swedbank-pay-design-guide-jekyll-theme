@@ -1,17 +1,21 @@
 {% capture max_width_class %}
-    {% if page.layout == 'front-page' %}
-        no-padding
-    {% elsif page.card_overview %}
-        normal-padding max-width-card-overview
-    {% else %}
-        normal-padding max-width
-    {% endif %}
+{% if page.layout == 'front-page' %}
+no-padding
+{% elsif page.card_overview %}
+normal-padding max-width-card-overview
+{% elsif page.release_notes %}
+dg-front-page py-0
+{% else %}
+normal-padding max-width
+{% endif %}
 {% endcapture %}
 
 <div class="doc-container {{ max_width_class | strip }}">
     <article>
         {% if page.card_overview %}
             {% include card-overview.html %}
+        {% elsif page.release_notes %}
+            {% include release_notes.html num_of_releases_to_display=5 release_notes_title="What's new in " %}
         {% else %}
             {% include anchor_headings.html html=content anchorClass='header-anchor' %}
         {% endif %}

@@ -126,7 +126,7 @@ sidebar_icon: filter_1
 
 {% contentfor release_notes %}
   <h2 id="front-page-release-notes" class="heading-line heading-line-green">What's new in the documentation</h2>
-  {% include release_notes.html num_dates=3 %}
+  {% include release_notes.html num_of_releases_to_display=3 release_notes_title="What's new in " %}
   <a href="/resources/release-notes">See full release notes</a>
 {% endcontentfor %}
 

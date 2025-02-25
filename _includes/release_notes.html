@@ -1,30 +1,85 @@
-{% assign num_dates = include.num_dates %}
-{% for page in site.pages %}
-{% assign release_notes_url = '/resources/release-notes' %}
-{% if page.url contains release_notes_url %}
-<div class="release-notes-container">
-    {% assign dates = page.content | markdownify | split: '<h2' | slice: 1, num_dates %}
-
-    {% for date in dates %}
-        <div class="row">
-            {% assign versions = date | split: '<h3' %}
-            {% assign date_id = date | regex_capture: 'id="([^"]+)"' | first %}
-            <div class="col-md-2 release-notes-date">
-                {% assign date_value = versions[0] | remove: '</h2>' | split: '>' %}
-                <a href="{{ release_notes_url }}#{{ date_id }}">{{ date_value[1] | strip }}</a>
+{% assign num_of_releases_to_display = include.num_of_releases_to_display %}
+{% assign release_notes_title = include.release_notes_title %}
+{% if page.url contains '/release-notes' %}
+    {% for sitePage in site.pages %}
+        {% if sitePage.url == page.url %}
+            {% assign min_cnt = num_of_releases_to_display | plus: 1 %}
+            {% assign max_cnt = sitePage.content | split: '</h2>' | size %}   
+            {% assign releases = sitePage.content | markdownify | split: '<h2' | slice: 1, num_of_releases_to_display %}
+            {% assign archive = sitePage.content | markdownify | split: '<h2' | slice: min_cnt, max_cnt %}
+<section class="dg-changelog-container d-flex flex-column mb-0">
+    <div class="container dg-changelog-content">
+        <div class="row mt-3">
+            <span class="dg-changlelog-title">
+                {{ release_notes_title | append: sitePage.lead_title }}
+                <div class="dg-changelog-divider my-2"></div>
+            </span>
+            {% include alert.html type="informative" icon="info" header="Version numbers"
+            body="The version numbers used in headers on this page refers to the version of
+            this very documentation, not to a version of any APIs described by it." %}
+        </div>       
+            {% for release in releases %}
+                {% if forloop.length > 0 %}
+                    {% if forloop.last %}
+        <div class="row pb-2 mt-4">
+                        {% else %}
+        <div class="row border-bottom pb-2 mt-4">
+                    {% endif %}
+                {% endif %}
+                {% assign versions = release | split: '<h3' %}
+                {% assign release_id = release | regex_capture: 'id="([^"]+)"' | first %}
+            <div class="col-md-2 px-0 pb-2">
+                {% assign release_value = versions[0] | remove: '</h2>' | split: '>' %}
+                {{ release_value[1] | strip }}
             </div>
-            {% assign version_list = versions | shift %}
-            <div class="col-md-10">
+                {% assign version_list = versions | shift %}
+            <div class="dg-changelog-description px-0">
                 {% for version in version_list %}
                     {% assign version_parts = version | split: '</h3>' %}
                     {% assign version_value = version_parts[0] | split: '>' %}
                     {% assign version_id = version | regex_capture: 'id="([^"]+)"' | first %}
-                    <p class="h4"><a href="{{ release_notes_url }}#{{ version_id }}">{{ version_value[1] }}</a></p>
-                    {{ version_parts[1] }}
+                <h4 class="h4">{{ version_value[1] }}</h4>
+                <p class="mt-2">{{ version_parts[1] }}</p>
                 {% endfor %}
             </div>
         </div>
+            {% endfor %}
+    </div>
+
+            {% if archive.size > 0 %}
+    <div class="mb-3">
+        <div class="accordion ">
+            <button type="button" class="accordion-header" aria-expanded="false" aria-controls="archive">Archive</button>
+            <div class="accordion-body" id="archive">
+                <div class="container dg-changelog-content my-auto">
+                {% for archive_release in archive %}
+                    {% assign archive_versions = archive_release | split: '<h3' %}
+                    {% assign archive_release_id = archive_release | regex_capture: 'id="([^"]+)"' | first %}
+                    {% assign archive_release_value = archive_versions[0] | remove: '</h2>' | split: '>' %}
+                    {% assign archive_version_list = archive_versions | shift %}
+                    <div class="row border-bottom pb-2 mt-4">
+                        <div class="col-md-2 px-0 pb-2">
+                            {{ archive_release_value[1] | strip }}
+                        </div>
+                        <div class="dg-changelog-description px-0">
+                    {% for archive_version in archive_version_list %}
+                        {% assign archive_version_parts = archive_version | split: '</h3>' %}
+                        {% assign archive_version_value = archive_version_parts[0] | split: '>' %}
+                        {% assign archive_version_id = archive_version | regex_capture: 'id="([^"]+)"' | first %}
+                            <h4 class="h4">{{ archive_version_value[1] }}</h4>
+                            <p class="mt-2">{{ archive_version_parts[1] }}</p>
+                    {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+            {% endif %}
+
+</section>
+        {% endif %}
+
     {% endfor %}
-</div>
 {% endif %}
-{% endfor %}

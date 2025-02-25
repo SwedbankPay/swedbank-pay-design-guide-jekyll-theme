@@ -56,7 +56,27 @@ POST /psp/consumers HTTP/1.1
 Host: api.externalintegration.payex.com
 Authorization: Bearer <AccessToken>
 Content-Type: application/json
+```
 
+{:.code-view-header}
+HTTP response
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+
+````http
+POST /psp/consumers HTTP/1.1
+Host: api.externalintegration.payex.com
+Authorization: Bearer <AccessToken>
+Content-Type: application/json
+````
+
+{:.code-view-header}
+JSON
+
+```json
 {
     "operation": "initiate-consumer-session",
     "msisdn": "+4798765432",
@@ -70,20 +90,17 @@ Content-Type: application/json
 ```
 
 {:.code-view-header}
-Response
+JSONC (JSON with comments)
 
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-
+```jsonc
 {
-    "payment": "/psp/creditcard/payments/{{ page.payment_id }}",
+    "payment": "/psp/creditcard/payments/paymentId",
     "authorization": {
         "direct": true,
-        "cardBrand": "Visa",
-        "cardType": "Credit",
-        "issuingBank": "Utl. Visa",
-        "paymentToken": "{{ page.payment_token }}",
+        "cardBrand": "Visa", // Some comment
+        "cardType": "Credit", // Some comment
+        "issuingBank": "Utl. Visa", // Some comment
+        "paymentToken": "paymentToken",
         "maskedPan": "454778******3329",
         "expiryDate": "12/2020",
         "panToken": "cca2d98d-8bb3-4bd6-9cf3-365acbbaff96",
@@ -114,21 +131,44 @@ Content-Type: application/json
 }
 ```
 
-{:.code-view-header}
-JSON
+To show code examples you can use a code example component.
 
-```json
-{
-    "operation": "initiate-consumer-session",
-    "msisdn": "+4798765432",
-    "email": "olivia.nyhuus@example.com",
-    "consumerCountryCode": "NO",
-    "nationalIdentifier": {
-        "socialSecurityNumber": "26026708248",
-        "countryCode": "NO"
+{% include code-example.html
+    title='Code example'
+    header='POST /psp/consumers HTTP/1.1
+Host: api.externalintegration.payex.com
+Authorization: Bearer <AccessToken>
+Content-Type: application/json'
+    json= '{
+    "payment": "/psp/creditcard/payments/paymentId",
+    "authorization": {
+        "direct": true,
+        "cardBrand": "Visa", // Some comment
+        "cardType": "Credit", // Some comment
+        "issuingBank": "Utl. Visa", // Some comment
+        "paymentToken": "paymentToken",
+        "maskedPan": "454778******3329",
+        "expiryDate": "12/2020",
+        "panToken": "cca2d98d-8bb3-4bd6-9cf3-365acbbaff96",
+        "panEnrolled": true,
+        "acquirerTransactionTime": "0001-01-01T00:00:00Z",
+        "id": "/psp/creditcard/payments/7e6cdfc3-1276-44e9-9992-7cf4419750e1/authorizations/ec2a9b09-601a-42ae-8e33-a5737e1cf177",
+        "transaction": {
+            "id": "/psp/creditcard/payments/7e6cdfc3-1276-44e9-9992-7cf4419750e1/transactions/ec2a9b09-601a-42ae-8e33-a5737e1cf177",
+            "created": "2020-03-10T13:15:01.9586254Z",
+            "updated": "2020-03-10T13:15:02.0493818Z",
+            "type": "Authorization",
+            "state": "AwaitingActivity",
+            "number": 70100366758,
+            "amount": 4201,
+            "vatAmount": 0,
+            "description": "Test transaction",
+            "payeeReference": "1583846100",
+            "isOperational": true
+        }
     }
-}
-```
+}'
+    %}
 
 Here's some `<inline>`{:.language-html .highlight}
 `{ "code": true }`{:.language-js .highlight}

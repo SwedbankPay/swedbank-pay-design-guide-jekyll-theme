@@ -20,13 +20,12 @@ like to host it locally on your computer, you have two options, manual install
 or [Docker][docker].
 The Docker installation is the one we recommend to use for its simplicity.
 
-After either a Docker or manual installation Jekyll should be fired up with this theme. You can now add pages, documents,
-data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, the site will regenerate and you should see
+After either a Docker or manual installation Jekyll should be fired up with this theme. You can now add pages, documents, data, etc.
+to test your theme's contents. As you make modifications to your theme and to your content, the site will regenerate and you should see
 the changes in the browser after a refresh, just like normal.
 
 When the theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled. To add a custom directory to your
 theme-gem, please edit the regexp in `swedbankpay.gemspec` accordingly.
-
 
 ### Docker (recommended)
 
@@ -35,7 +34,6 @@ theme-gem, please edit the regexp in `swedbankpay.gemspec` accordingly.
 3.  Open a console window at the root of the repository and run `docker-compose up`.
     This will create a docker container and spin it up with everything that's specified in the repository gemfile.
 4.  Open `http://localhost:4000` in a browser.
-   
 
 ### Manual install
 
@@ -45,18 +43,16 @@ theme-gem, please edit the regexp in `swedbankpay.gemspec` accordingly.
     that.
     Note: If you're installing on Windows, choose Ruby+Devkit Installers.
 4.  Open VSC and open the repository
-5.  Verify that Git is installed by running `git status` in VSC terminal. 
+5.  Verify that Git is installed by running `git status` in VSC terminal.
     If Git is not properly installed, you will see an error message like the one below. Just [download Git][git] and install.
     ![Alt text](image.png)
 6.  Type `bundle install` inside the root folder of this repository.
 7.  Run `bundle exec jekyll serve` to start the website.
 8.  Open in a browser.
 
-   
 ### Visual Studio Code plugins
 
 You might want to install plugins for Graphviz, JSON, Liquid, Markdown and Mermaid as this will enhance your coding experience.
-
 
 ## Contributing
 
@@ -82,15 +78,11 @@ agreement][cla].
 [design-guide]:         <https://design.swedbankpay.com/>
 [developer-portal]:     <https://developer.swedbankpay.com/>
 [docker]:               <https://www.docker.com/>
-[gems]:                 <https://rubygems.org/>
 [git]:                  <https://git-scm.com/downloads>
 [github]:               <https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme>
-[graphviz]:             <https://graphviz.org/download/>
 [license-badge]:        https://img.shields.io/github/license/SwedbankPay/swedbank-pay-design-guide-jekyll-theme
 [license]:              <https://opensource.org/licenses/MIT>
-[liquid]:               <https://jekyllrb.com/docs/liquid/>
 [opengraph-image]:      <https://repository-images.githubusercontent.com/209270355/36818080-53ee-11ea-896c-082addb851a6>
 [ruby]:                 <https://rubyinstaller.org/downloads/archives>
 [swedbankpay]:          <https://swedbankpay.github.io/swedbank-pay-design-guide-jekyll-theme/>
 [test-badge]:           <https://github.com/SwedbankPay/swedbank-pay-design-guide-jekyll-theme/workflows/Test/badge.svg>
-[vsc-ruler]:            <https://stackoverflow.com/questions/29968499/vertical-rulers-in-visual-studio-code>
