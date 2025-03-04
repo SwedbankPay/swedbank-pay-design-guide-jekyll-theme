@@ -1,45 +1,106 @@
-<div class="tabs" id="tabs-showcase-example">
+{%- comment -%}
+**Parameters
+tab_list(required): An array with items having the attributes title(required), content_text (required),
+content_src(optional), mark_with_star (optional)
+default_tab_index(optional): Index of the tab to be active by default, starting from 1
+{%- endcomment -%}
+
+{% assign tabs = include.tab_list %}
+{% assign max_index = include.tab_list | size | minus:1 %}
+{% assign default_tab_index = include.default_tab_index | minus:1 | at_least:0 | at_most:max_index %}
+
+<div id="tabs-container" class="tabs">
     <ul>
-        <li class="full-checkout">
-            <a href="#full-checkout" id="full-checkout">Full Checkout</a>
+        {% for tab in tabs %}
+        <li id="{{ tab.title | replace: ' ', '_' | replace: '.', '' }}"
+            class="{% if forloop.index0 == default_tab_index %}active{% endif %}">
+            <a id="{{ forloop.index0 }}">{{ tab.title }}{% if tab.mark_with_star %}*{% endif %}</a>
         </li>
-        <li class="payments-only">
-            <a href="#payments-only" id="payments-only">Payments Only</a>
-        </li>
+        {% endfor %}
     </ul>
 </div>
-
-<section>
-    <div id="tab1">
-        <div class="tab-intro">
-            {{ include.tab1_intro | markdownify}}
-        </div>
-        <div class="tab1-content">
-            {{ include.tab1_content | markdownify}}
-        </div>
-    </div>
-    <div id="tab2" class="d-none">
-        <div class="tab-intro">
-            {{ include.tab2_intro | markdownify}}
-        </div>
-        <div>
-            {{ include.tab2_content | markdownify}}
-        </div>
-    </div>
-</section>
+<p id="tab-content-text">
+</p>
+<div id="tab-content-src">
+</div>
+{% for tab in tabs %}
+{% if tab.content_src %}
+<div class="tab-src">
+    {% capture sourced_content %}
+    {% include {{tab.content_src}} %}
+    {% endcapture %}
+    {{ sourced_content | markdownify }}
+</div>
+{% endif %}
+{% endfor %}
 
 <script>
-$( "#full-checkout" ).click(function() {
-$( "#tab2" ).addClass( "d-none" )
-$( "#tab1" ).removeClass( "d-none" )
-$( ".full-checkout" ).addClass( "active" )
-$( ".payments-only" ).removeClass( "active" )
+    var defaultIndex = {{ default_tab_index | jsonify }};
+    const allTabs = {{ tabs | jsonify }};
+    const compiledTabTextContents = allTabs?.map(tab => tab.content_text);
+    const compiledTabSrcContents = $(".tab-src");
+</script>
 
-  });
-$( "#payments-only" ).click(function() {
-$( "#tab2" ).removeClass( "d-none" )
-$( "#tab1" ).addClass( "d-none" )
-$( ".full-checkout" ).removeClass( "active" )
-$( ".payments-only" ).addClass( "active" )
-  });  
-  </script>
+<script>
+    $(document).ready(function () {
+        let tabSrcContents = [];
+        for (let index = 0; index < compiledTabSrcContents.length; index++) {
+            tabSrcContents[index] = compiledTabSrcContents[index].innerHTML;
+        }
+        $(".tab-src").remove();
+
+        $("#tabs-container ul li a").click(function () {
+            const tabTitles = $("#tabs-container ul li");
+            for (let index = 0; index < tabTitles.length; index++) {
+                tabTitles[index].classList.remove("active");
+            }
+
+            $(this).parent().addClass("active");
+            populateTabContent(this.id);
+        });
+
+        function populateTabContent(index) {
+            if (compiledTabTextContents && compiledTabTextContents[index]) {
+                $("#tab-content-text").html(compiledTabTextContents[index]);
+            } else {
+                $("#tab-content-text").html("");
+            }
+
+            if (compiledTabSrcContents && compiledTabSrcContents[index]) {
+                $("#tab-content-src").html(compiledTabSrcContents[index]);
+            }
+            else {
+                $("#tab-content-src").html("");
+            }
+        }
+
+        function setActiveTabOnLoad() {
+            const hash = window.location.hash;
+
+            if (hash) {
+                const hashParts = hash.split("-").reverse();
+                const tabTitles = $("#tabs-container ul li");
+                for (let index = 0; index < tabTitles.length; index++) {
+                    const tabTitleParts = tabTitles[index].id.split("_").reverse();
+                    
+                    if (hashParts[0] === tabTitleParts[0]) {
+                        defaultIndex = index;
+                    }
+                }
+            }
+
+            const tabTitles = $("#tabs-container ul li");
+            for (let index = 0; index < tabTitles.length; index++) {
+
+                if (index === defaultIndex) {
+                    tabTitles[index].classList.add("active");
+                } else {
+                    tabTitles[index].classList.remove("active");
+                }
+            }
+        }
+
+        setActiveTabOnLoad();
+        populateTabContent(defaultIndex);
+    });
+</script>

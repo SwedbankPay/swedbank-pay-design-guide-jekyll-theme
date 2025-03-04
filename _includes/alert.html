@@ -1,12 +1,20 @@
 {% assign type = include.type | default: 'default' %}
 {% assign type_class = 'alert-' | append: type %}
-{% assign icon = include.icon | strip %}
 {% assign header = include.header | markdownify | remove: '<p>' | remove: '</p>' | strip %}
 {% assign body = include.body | markdownify | remove: '<p>' | remove: '</p>' | strip %}
 
 <div class="alert {{ type_class }}">
-    {% if icon != blank and icon != empty and icon != nil %}
-    <i class="material-icons alert-icon mr-3">{{ icon }}</i>
+    {% if type == 'success' %}
+    <i class="swepay-icon-check-circle-filled" aria-hidden="true"></i>
+    {% endif %}
+    {% if type == 'informative' %}
+    <i class="swepay-icon-info-circle-filled" aria-hidden="true"></i>
+    {% endif %}
+    {% if type == 'warning' %}
+    <i class="swepay-icon-warning-triangle-filled" aria-hidden="true"></i>
+    {% endif %}
+    {% if type == 'danger' %}
+    <i class="swepay-icon-error-triangle-filled" aria-hidden="true"></i>
     {% endif %}
 
     {% if body != blank and body != empty and body != nil %}

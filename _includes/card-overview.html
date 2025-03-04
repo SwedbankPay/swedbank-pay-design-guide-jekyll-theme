@@ -2,7 +2,7 @@
     {% if child.children && child.children.size > 0 %}
         {% assign title = child.title | default: child.section %}
         {% capture header %}
-{:.heading-line}
+
 ## {{ title }}
         {% endcapture %}
         {% assign header =  header | markdownify %}

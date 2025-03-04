@@ -17,7 +17,7 @@ The payer will be identified with the `consumers` resource and will be
 persisted to streamline future Payment Menu processes. Payer identification
 is done through the `initiate-consumer-session` operation.
 
-{% include alert.html type="informative" icon="info" header="Guest Checkout"
+{% include alert.html type="informative" header="Guest Checkout"
 body="Note: If the payer is using the Payment Menu as a guest, you can go
 directly to step 3, which you will find on the next page." %}
 
@@ -39,6 +39,7 @@ Content-Type: application/json
 ```
 
 {:.table .table-striped}
+
 |     Required     | Field                                     | Type     | Description                                                                                                                            |
 | :--------------: | :---------------------------------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------- |
 | {% icon check %} | `operation`                               | `string` | `initiate-consumer-session`, the operation to perform.                                                                                 |
@@ -73,6 +74,7 @@ When the request has been sent, a response containing an array of operations tha
 
 {% capture request_table %}
 {:.table .table-striped}
+
 | Field                     | Type     | Description                                                                                                                                       |
 | :------------------------ | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
 | {% f root, 0 %}           | `solid`  | A root, for brewing beer used to kill ghost pirates.                                                                                              |

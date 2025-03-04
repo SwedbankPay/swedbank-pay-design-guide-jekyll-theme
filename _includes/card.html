@@ -1,26 +1,26 @@
 {%- comment -%}
 **Parameters
 title(required): Title of the card
-title_type: Determines size of the title
+image_src: Image source for the card
+image_alt_text: Alt text for the image
 icon_content: Used to generate content of dx-card-icon
-icon_outlined: Make icon_content outlined if icon_content is material-icon
-icon_svg: Handles value of icon_content as a reference to a svg-file
-no_icon: Hides dx-card-icon
 text: Text content of the card
-horizontal: Used when dx-card-horizontal is needed
+cta_text: Text for the call to action.
+use_wide: Used when dx-card-horizontal is needed
+open_in_new_tab: Used to open the link in a new tab
 to(required): Url to the page to be directed to on click
 type: sdk | module - Empty type result in default card styling
 {%- endcomment -%}
 
-{% assign title_type = include.title_type | default: 'h4', %}
+{% assign image_src = include.image_src %}
+{% assign image_alt_text = include.image_alt_text %}
+{% assign image_ratio = 'ratio-16-9'%}
 {% assign icon_content = include.icon_content %}
-{% assign icon_outlined = include.icon_outlined | default: false %}
-{% assign icon_svg = include.icon_svg | default: false %}
-{% assign no_icon = include.no_icon | default: false %}
 {% assign text = include.text %}
-{% assign horizontal = include.horizontal | default: false %}
+{% assign cta_text = include.cta_text %}
+{% assign use_wide = include.use_wide | default: false %}
+{% assign open_in_new_tab = include.open_in_new_tab | default: false %}
 {% assign to = include.to %}
-{% assign disabled = include.disabled %}
 
 {% if include.type %}
 {% assign type = include.type %}
@@ -29,45 +29,39 @@ type: sdk | module - Empty type result in default card styling
 {% assign type_class = '' %}
 {% endif %}
 
-{% unless icon_svg %}
-{% if icon_content contains '/' or icon_content contains '.svg' %}
-{% assign icon_svg = true %}
-{% endif %}
-{% endunless %}
-
 {% assign card_class = 'cards cards-primary ' | append: type_class | strip %}
-{% if horizontal %}
-{% assign card_class = card_class | append: ' dx-card-horizontal' | strip %}
+{% if use_wide %}
+{% assign card_class = card_class | append: ' cards-wide' | strip %}
+{% assign image_ratio = '1' %}
+{% endif %}
+{% if image_src %}
+{% assign icon_content = undefined %}
+{% endif %}
+{% assign target = '_self' %}
+{% if open_in_new_tab %}
+{% assign target = '_blank' %}
 {% endif %}
 
-{% if disabled %}
-{% assign card_class = card_class | append: ' dx-card-disabled' | strip %}
-{% assign card_tag = 'span' %}
-{% else %}
-{% assign card_tag = 'a' %}
 {% capture card_attributes %}href="{{ to }}"{% endcapture %}
-{% endif %}
 
-<{{ card_tag }} {{ card_attributes }} class="{{ card_class }}">
-    {% if icon_svg %}
-    <div class="cards-icon">
-        {% include {{ icon_content }} %}
-    </div>
+<a {{ card_attributes }} class="{{ card_class }}" target="{{target}}" >
+    {% if image_src %}
+    <img src="{{image_src}}" alt="{{image_alt_text}}" class="{{image_ratio}}" />
     {% endif %}
 
-    {% unless icon_svg %}
     {% if icon_content %}
-    <div class="cards-icon">
-        <i class="material-icons material-icons-outlined" aria-hidden="true">{{ icon_content }}</i>
-    </div>
+    <i class="cards-icon {{ icon_content }}" aria-hidden="true"></i>
     {% endif %}
-    {% endunless %}
 
+    <span class="h4">{{ include.title }}</span>
     <div class="cards-content">
-        <span class="h4">{{ include.title }}</span>
-        <span>{{ text | markdownify }}</span>
+        {{ text | markdownify }}
     </div>
-    {% unless disabled %}
-    <i class="material-icons">arrow_forward</i>
-    {% endunless %}
-</{{ card_tag }}>
+    <div class="cards-cta">
+        {% if cta_text %}
+        <span>{{cta_text}}</span>
+        {% endif %}
+
+        <span class="arrow"></span>
+    </div>
+</a>

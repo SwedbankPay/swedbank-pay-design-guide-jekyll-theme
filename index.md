@@ -7,7 +7,36 @@ description: |
     scrambled it to make a type specimen book.
 menu_order: 0
 sidebar_icon: home
+table_content_mac:
+  - label: Authentication
+    merchantSide: true 
+  - label: Delivery Info
+    merchantSide: true 
+  - label: Consumer Info
+    swedbankPay: true
+  - label: PSP
+    swedbankPay: true
 
+table_content_payments:
+  - label: Authentication
+    merchantSide: true 
+  - label: Delivery Info
+    merchantSide: true 
+  - label: Consumer Info
+    merchantSide: true 
+  - label: PSP
+    swedbankPay: true
+    
+tab_list:
+- title: Tab 1
+  content_text: Some intro text for tab 1.
+  content_src: example-1.md
+- title: Tab 2
+  content_src: example-2.md
+- title: Tab 3
+  content_text: Tab 3 intro text
+  content_src: example-3.md
+  mark_with_star: true
 ---
 
 {% include card-list.html card_list=page.card_list col_class="col-lg-4" %}
@@ -25,6 +54,8 @@ There should be whitespace between paragraphs.
 There should be whitespace between paragraphs. We recommend including a README,
 or a file with information about your project.
 
+___
+
 ## Header 2
 
 This is a normal paragraph following a header. GitHub is a code hosting platform
@@ -36,7 +67,179 @@ projects from anywhere.
 > When something is important enough, you do it even if the odds are not in
 > your favor.
 
+___
+
 ### Header 3
+
+This is a normal paragraph following a header 3.
+
+___
+
+#### Header 4
+
+*   This is an unordered list following a header 4.
+*   This is an unordered list following a header 4.
+*   This is an unordered list following a header 4.
+
+___
+
+##### Header 5
+
+1.  This is an ordered list following a header 5.
+2.  This is an ordered list following a header 5.
+3.  This is an ordered list following a header 5.
+
+___
+
+###### Header 6
+
+This is a normal paragraph following a header 6.
+
+___
+
+## Accordion
+
+{% capture acc-1 %}
+Here's an accordion with default headers and style, and unformatted content.
+{% endcapture %}
+{% include accordion-table.html content=acc-1 %}
+
+{% capture acc-2 %}
+{: .p .pl-3 .pr-3  }
+Here's an accordion with the same header and style on both expand and collapse. The content is formatted as one paragraph with padding.
+{% endcapture %}
+{% include accordion-table.html content=acc-2 header_text='Same header and style' header_css='font-weight-normal' %}
+
+{% capture acc-3 %}
+{: .p .pl-3 .pr-3  }
+Here's an accordion with the different header and style on expand and collapse.
+
+{: .p .pl-3 .pr-3  }
+Here we have also formatted the content as two paragraphs with padding.
+{% endcapture %}
+{% include accordion-table.html content=acc-3 header_expand_text='Expand' header_collapse_text='Collapse' header_expand_css='font-weight-normal' %}
+
+___
+
+## Cards
+
+<div class="row mt-4">
+    <div class="col">
+        {% include card.html
+        title='Card'
+        open_in_new_tab=true
+        text='A standard card that opens in a new tab'
+        to="https://design.swedbankpay.com"
+        %}
+    </div>
+    <div class="col">
+        {% include card.html
+        title='Card with button text'
+        cta_text='CTA text'
+        text='A standard card'
+        to='/#cards/'
+        %}
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col">
+        {% include card.html title='Card with image'
+            image_alt_text="The image shows a woman seated in a comfortable chair in her home using a computer to make an online payment."
+            image_src="/assets/img/betala-online.jpg"
+            text='A standard card with an image'
+            to="/#cards/"
+        %}
+    </div>
+    <div class="col">
+        {% include card.html title='Card with image, icon and button text'
+            cta_text='CTA text'
+            image_alt_text="The image shows someone seated in a cafe with a glass of juice, a cup of coffee and a cake on the table infront of them, using a card terminal to pay."
+            image_src="/assets/img/betala-med-pax-a920pro.jpg"
+            text='Note that image cards will not display any icon if the card has an image.'
+            icon_content="at-check-circle"
+            to='/#cards/'
+        %}
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col">
+        {% include card.html title='Wide card with flag icon'
+            text='A wide card'
+        icon_content="flag-icon flag-icon-se"
+            use_wide=true
+            to="/#cards/"
+        %}
+    </div>
+    <div class="col">
+        {% include card.html title='Wide card with icon and button text'
+            icon_content="at-check-circle"
+            cta_text='CTA text'
+            text='Note that wide cards will not display the button text unless the card has an image. '
+            use_wide=true
+            to="/#cards/"
+        %}
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col">
+        {% include card.html title='Wide card with image and icon'
+            icon_content="at-check-circle"
+            image_alt_text="The image shows a woman seated in a comfortable chair in her home using a computer to make an online payment."
+            image_src="/assets/img/betala-online.jpg"
+            text='Note that wide image cards will not display any icon if the card has an image.'
+            use_wide=true
+            to="/#cards/"
+        %}
+    </div>
+    <div class="col">
+        {% include card.html title='Wide card with image and button text'
+            cta_text='CTA text'
+            image_alt_text="The image shows someone seated in a cafe with a glass of juice, a cup of coffee and a cake on the table infront of them, using a card terminal to pay."
+            image_src="/assets/img/betala-med-pax-a920pro.jpg"
+            text='A wide card with an image and button text'
+            use_wide=true
+            to="/#cards/"
+        %}
+    </div>
+</div>
+
+___
+
+## Tabs
+
+{% include tabs.html tab_list=page.tab_list default_tab_index=3 %}
+
+___
+___
+
+## Table
+
+Here's a nice table.
+
+{:.table .table-plain}
+
+| col one        | col two          | col three |
+| :----------- | :---------------- | :---- |
+| ok           | good swedish fish | nice  |
+| out of stock | good and plenty   | nice  |
+| ok           | good `oreos`      | hmm   |
+| ok           | good `zoute` drop | yumm  |
+
+Here's a striped table.
+
+{:.table .table-striped}
+
+| col one        | col two          | col three |
+| :----------- | :---------------- | :---- |
+| ok           | good swedish fish | nice  |
+| out of stock | good and plenty   | nice  |
+| ok           | good `oreos`      | hmm   |
+| ok           | good `zoute` drop | yumm  |
+
+___
+
+## Code examples
 
 {:.code-view-header}
 JavaScript code with syntax highlighting.
@@ -175,29 +378,7 @@ Here's some `<inline>`{:.language-html .highlight}
 that should `.be { highlighted: according; }`{:.language-css .highlight} to
 their language.
 
-#### Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-Here's a nice, striped table.
-
-{:.table .table-striped}
-| head1        | head two          | three |
-| :----------- | :---------------- | :---- |
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
+___
 
 ## Mermaid
 
@@ -223,20 +404,22 @@ sequenceDiagram
     deactivate Merchant
 ```
 
+___
+
 ## Alerts
 
-{% include alert.html body='This is a standard alert.' %}
-
-{% include alert.html type='success' icon='check_circle'
-body='This is a successful alert.' %}
-
-{% include alert.html icon='info_outline' header='**Informational**       _alert_'
-body='This is an **informational**   alert _with_   `<markdown/>`{:.language-html}.'
+{% include alert.html type='informative' header='Informational alert'
+body='This is an **informational**   alert'
 %}
 
-{% include alert.html type='warning' icon='warning'
-header='`{ "warning": "alert" }`{:.language-js}'
+{% include alert.html type='success' header='Success'
+body='This is a successful alert.' %}
+
+{% include alert.html type='warning' header='Warning'
 body='This is a **warning**   alert with `<markdown/>`{:.language-html}.' %}
+
+{% include alert.html type='danger' header='Danger'
+body='This is an **error**   alert with `<markdown/>`{:.language-html}.' %}
 
 ## Jumbotron
 
@@ -246,6 +429,8 @@ through highly customizable and flexible components.
 
 Visit our [demoshop](https://ecom.externalintegration.payex.com/pspdemoshop)
 and try out PayEx Checkout for yourself!' %}
+
+___
 
 ## Iterator
 
@@ -267,12 +452,16 @@ and try out PayEx Checkout for yourself!' %}
 *   Item baz
 *   Item zip
 
+___
+
 ## And an ordered list
 
 1.  Item one
 2.  Item two
 3.  Item three
 4.  Item four
+
+___
 
 ## And a nested list
 
@@ -292,13 +481,19 @@ and try out PayEx Checkout for yourself!' %}
     *   level 2 item
 *   level 1 item
 
+___
+
 ## Small image
 
 ![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
 
+___
+
 ## Large image
 
 ![Branching](https://docs.github.com/assets/cb-23923/images/help/repository/branching.png)
+
+___
 
 ## Definition lists can be used with HTML syntax
 
@@ -321,9 +516,13 @@ Long, single-line code blocks should not wrap. They should horizontally scroll i
 The final element.
 ```
 
+___
+
 ## Emoji support
 
 :+1: :heavy_check_mark: :fire: 💡 :unicorn:
+
+___
 
 ## Material design icons
 

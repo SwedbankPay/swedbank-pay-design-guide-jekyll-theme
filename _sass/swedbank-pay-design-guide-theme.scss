@@ -3,15 +3,12 @@
 @import 'variables.scss';
 @import 'breakpoints.scss';
 
-@import 'card.scss';
+@import 'accordion-table.scss';
 @import 'code-view.scss';
 @import 'front-page.scss';
-@import 'heading.scss';
-@import 'accordion-table.scss';
 @import 'paragraph-highlight.scss';
 @import 'sidebar.scss';
 @import 'title-header.scss';
-@import 'tabs.scss';
 
 $bg: #f5f2f0;
 $darkened-bg: darken($bg, 10%);
@@ -20,17 +17,34 @@ img {
     max-width: 100%;
 }
 
+.cards-icon.flag-icon {
+    margin-left: var(--padding-outer);
+    line-height: var(--padding-outer);
+    background-position: right 80%;
+}
+
+.cards-wide:has(.cards-cta) :is(.flag-icon + .h4) {
+    padding-left: 0;
+}
+
 body {
     font-size: 1.125rem;
 }
 
 .table {
+
     th,
     td {
         >.material-icons {
             float: none;
         }
     }
+}
+
+.table.table-plain tbody>tr:nth-child(2n+1),
+.table.table-plain tbody td,
+.table.table-plain tbody th {
+    background-color: inherit !important;
 }
 
 .jumbotron {
@@ -131,6 +145,20 @@ body {
             }
         }
     }
+
+    .toc-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .toc-list li {
+        padding: 4px 0;
+    }
+
+    .toc-list ul {
+        padding-inline-start: 2ch;
+    }
 }
 
 .documentation {
@@ -138,7 +166,7 @@ body {
         overflow-y: auto;
     }
 
-    > div {
+    >div {
         &.row {
             margin-right: 0;
         }
@@ -221,7 +249,7 @@ body {
         max-width: 880px;
     }
 
-    .row.card-list > div {
+    .row.card-list>div {
         display: flex;
         align-self: stretch;
     }
@@ -391,16 +419,22 @@ body {
 
 #overlay {
     @media screen and (max-width: $breakpoint-lg) {
-        position: fixed; /* Sit on top of the page content */
-        display: none; /* Hidden by default */
-        width: 100%; /* Full width (cover the whole page) */
-        height: 100%; /* Full height (cover the whole page) */
+        position: fixed;
+        /* Sit on top of the page content */
+        display: none;
+        /* Hidden by default */
+        width: 100%;
+        /* Full width (cover the whole page) */
+        height: 100%;
+        /* Full height (cover the whole page) */
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-        z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Black background with opacity */
+        z-index: 3;
+        /* Specify a stack order in case you're using a different order for other elements */
     }
 }
 

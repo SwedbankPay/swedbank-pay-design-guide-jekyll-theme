@@ -9,7 +9,6 @@ menu_order: 1100
 anchor_headings: false
 ---
 
-{:.heading-line}
 ## {{ page.title }}
 
 {% include card-list.html %}

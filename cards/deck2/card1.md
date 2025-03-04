@@ -4,6 +4,6 @@ description: Deck Two Card One
 card:
     type: sdk
     icon:
-        content: api
+        content: at-coding-file
         outlined: false
 ---

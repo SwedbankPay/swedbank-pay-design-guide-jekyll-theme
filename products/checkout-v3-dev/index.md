@@ -110,7 +110,6 @@ With the **Full Checkout**, you will get access to a number of payment
 instruments. selected to support the needs of the local market. We help you
 collect and safely store the payer's data. If the payer agrees, we will store
 their information to have it prefilled the next time they shop.
-{:.heading-line}
 {% endcapture %}
 
 {% capture tab2_intro %}
@@ -120,5 +119,4 @@ their information to have it prefilled the next time they shop.
 With our payments only package, you collect the payer data and have the
 flexibility to build your own checkout flow. This implementation supports our
 full range of payment instruments.
-{:.heading-line}
 {% endcapture %}

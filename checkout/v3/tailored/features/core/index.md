@@ -39,8 +39,6 @@ card_list:
     outlined: true
 ---
 
-{:.heading-line}
-
 ## Core Features
 
 {% include card-list.html card_list=page.card_list

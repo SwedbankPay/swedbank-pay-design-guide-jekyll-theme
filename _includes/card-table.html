@@ -5,108 +5,59 @@ This card offers the table component from Design Guide
 
 **Parameters
 title(required): Title of the card
-title_type: Determines size of the title
 icon_content: Used to generate content of cards-icon
-icon_outlined: Make icon_content outlined if icon_content is material-icon
-icon_svg: Handles value of icon_content as a reference to a svg-file
-no_icon: Hides cards-icon
+header: Array of objects with table headers
+table_content: Array of objects with table content
 text: Text content of the card
 to(required): Url to the page to be directed to on click
 type: sdk | module - Empty type result in default card styling
 {%- endcomment -%}
 
-{% assign title_type = include.title_type | default: 'h2', %}
-{% assign icon_content = include.icon_content %}
-{% assign icon_outlined = include.icon_outlined | default: false %}
-{% assign icon_svg = include.icon_svg | default: false %}
-{% assign no_icon = include.no_icon | default: false %}
-{% assign text = include.text %}
-{% assign to = include.to %}
-{% assign disabled = include.disabled %}
-{% assign margin_right = include.margin_right | default false %}
+{% capture card_content %}
+<span>{{ include.text }}</span>
+<table class="table table-plain">
+    <thead>
+        <tr>
+            {% for header in include.header %}
+            <th> {% if header.badge_type %}
+                <span class="badge badge-{{header.badge_type}}">{{header.table_header}}</span>
+                {% else %}
+                {{ header.table_header }}
+                {% endif %}
+            </th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for table_content in include.table_content %}
+        <tr>
+            <th scope="row">
+                {{table_content.label}}
+            <td>
+                {% if table_content.swedbankPay %}
+                <i class="swepay-icon-check-circle-filled" aria-hidden="true"></i>
+                {% endif %}
+            </td>
+            <td>
+                {% if table_content.merchantSide %}
+                <i class="swepay-icon-check-circle-filled" aria-hidden="true"></i>
+                {% endif %}
+            </td>
+            </th>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endcapture %}
 
-
-{% unless icon_svg %}
-    {% if icon_content contains '/' or icon_content contains '.svg' %}
-        {% assign icon_svg = true %}
-    {% endif %}
-{% endunless %}
-
-{% assign card_class = 'cards cards-wide' | strip %}
-
-<div class="{{ card_class }}">
-    {% unless no_icon %} 
-        <span class="cards-icon">
-            {% if icon_svg %}
-                {% include {{ icon_content }} %}
-            {% else %}
-                <i class="material-icons{% if icon_outlined %}-outlined{% endif %}">
-                    {{ icon_content }}
-                </i>
-            {% endif %}
-        </span>
-    {% endunless %}
-    {% if include.container_content %}
-    <div>
-    {% endif %}
-    <span class="cards-content">
-        <span class="{{ title_type }}">{{ include.title }}</span>
-        {% if margin_right %}
-            <span class="text-box">{{ text | markdownify }}</span>
-        {% else %}
-            <span>{{ text | markdownify }}</span>
-        {% endif %}
-        <div class="d-flex">
-            <table class="table table-plain">
-                <thead>
-                    <tr>
-                        {% for header in include.header %}
-                        <th> {% if header.badge_type %} 
-                            <span class="badge badge-{{header.badge_type}}">{{header.table_header}}</span>
-                            {% else %}
-                            {{ header.table_header }}
-                            {% endif %}
-                        </th>
-                        {% endfor %}
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for table_content in include.table_content %}
-                    <tr>
-                        
-                        <th scope="row">
-                            <i class="material-icons{% if icon_outlined %}-outlined{% endif %}">
-                                {{table_content.icon}}
-                            </i> {{table_content.label}}
-                            <td>
-                                {% if table_content.swedbankPay %}
-                                <i class="material-icons{% if icon_outlined %}-outlined{% endif %}">
-                                    check_circle_outline
-                                </i>
-                                {% endif %}
-                            </td>
-                            <td>
-                                {% if table_content.merchantSide %}
-                                <i class="material-icons{% if icon_outlined %}-outlined{% endif %}">
-                                    check_circle_outline
-                                </i>
-                                {% endif %}
-                            </td>
-                        </th>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-            {% unless disabled %}
-            <a class="btn btn-{{include.button_type}} {{include.button_alignment}}" href="{{to}}" type="button">{{ include.button_content }}<i class="material-icons ml-2"> arrow_forward</i></a>
-            {% endunless %}
-        </div>
-    </span>
-    {% if include.container_content %}
-    </div>
-        <div class="container-right">
-        {{ include.container_content | markdownify }}
-        </div>
-    {% endif %}
+<div>
+    {% include card.html
+    cta_text=include.cta_text
+    title=include.title
+    text=card_content
+    use_wide=true
+    icon_content=include.icon_content
+    to=include.to
+    type=include.type
+    %}
 </div>
-

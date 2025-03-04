@@ -17,24 +17,17 @@ col_class(required): Describes what grid column class(es) each card should be wr
 
         {% assign card_type = card.card.type | default: card.card_type | default: include.type %}
         {% assign icon_content = card.card.icon.content | default: card.icon.content %}
-        {% assign icon_outlined = card.card.icon.outlined | default: card.icon.outlined %}
-        {% assign icon_svg = card.card.icon.svg | default: card.icon.svg %}
-        {% assign no_icon = card.card.icon.no_icon | default: card.icon.no_icon %}
-        {% assign horizontal = card.card.horizontal | default: false %}
-        {% assign disabled = card.card.disabled | default: card.disabled %}
+        {% assign use_wide = card.card.use_wide | default: false %}
 
         <div class="{{ col_class }}">
             {% include card.html
                 title=title
                 text=card.description
+                cta_text=card.cta_text
                 icon_content=icon_content
-                icon_outlined=icon_outlined
-                icon_svg=icon_svg
-                no_icon=no_icon
                 to=link_to
                 type=card_type
-                horizontal=horizontal
-                disabled=disabled
+                use_wide=use_wide
             %}
         </div>
     {% endfor %}

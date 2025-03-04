@@ -20,17 +20,15 @@ card_list:
     integration**.
   url:  /checkout/v2
   icon:
-    content: shopping_cart
+    content: at-shopping-cart
     outlined: true
 - title: Checkout v3
   description: Coming soon…
   url: /checkout/v3
   disabled: true
   icon:
-    content: shopping_cart
+    content: at-shopping-cart
     outlined: true
 ---
-
-{:.heading-line}
 
 {% include card-list.html card_list=page.card_list col_class="col-lg-4" %}

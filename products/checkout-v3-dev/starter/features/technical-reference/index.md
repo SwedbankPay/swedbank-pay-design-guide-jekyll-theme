@@ -8,7 +8,6 @@ menu_order: 1300
 anchor_headings: false
 ---
 
-{:.heading-line}
 ## Technical Reference
 
 {% include card-list.html %}

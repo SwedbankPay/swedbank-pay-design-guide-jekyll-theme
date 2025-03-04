@@ -115,7 +115,7 @@ card_list_2:
   description: The payment's prices resource
   url:  /checkout/v3/dsca/features/technical-reference/prices
   icon:
-    content: attach_money
+    content: at-credit-card
     outlined: true
 - title: Problems
   description: Information when something goes wrong
@@ -155,8 +155,6 @@ card_list_3:
     content: verified_user
     outlined: true
 ---
-
-{:.heading-line}
 
 ## Core Features
 

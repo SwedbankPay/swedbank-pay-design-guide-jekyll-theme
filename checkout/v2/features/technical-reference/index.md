@@ -96,7 +96,7 @@ card_list_2:
   description: The payment's prices resource
   url:  /checkout/v2/features/technical-reference/prices
   icon:
-    content: attach_money
+    content: at-credit-card
     outlined: true
 - title: Problems
   description: Information when something goes wrong
@@ -123,8 +123,6 @@ card_list_2:
     content: public
     outlined: true
 ---
-
-{:.heading-line}
 
 ## Technical Reference
 
