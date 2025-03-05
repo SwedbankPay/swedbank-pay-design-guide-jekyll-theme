@@ -99,16 +99,6 @@
 .front-page .front-page-top .front-page-hero a {
   color: #43d0dd;
 }
-.front-page .front-page-top .front-page-hero .front-page-hero-name {
-  font-family: "Akkurat Mono", monospace;
-  font-weight: bold;
-  font-size: 2.5rem;
-  color: #fdc129;
-  margin-bottom: 1rem;
-}
-.front-page .front-page-top .front-page-hero .front-page-hero-name span {
-  color: #fff;
-}
 .front-page .front-page-top .front-page-hero .front-page-hero-jumbo {
   color: #2f2424;
   font-family: "Swedbank Headline", "Arial", sans-serif;
@@ -117,6 +107,23 @@
 }
 .front-page .front-page-top .front-page-hero .front-page-hero-lean {
   font-family: "Akkurat Mono", monospace;
+  white-space: nowrap;
+}
+.front-page .front-page-top .front-page-hero .front-page-hero-lean::before {
+  content: " { ";
+  font-family: "Akkurat Mono", monospace;
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #fdc129;
+  margin-bottom: 1rem;
+}
+.front-page .front-page-top .front-page-hero .front-page-hero-lean::after {
+  content: " } ";
+  font-family: "Akkurat Mono", monospace;
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #fdc129;
+  margin-bottom: 1rem;
 }
 .front-page .front-page-top .front-page-intro-cards h2 {
   color: #2f2424;
@@ -803,6 +810,25 @@ body {
     display: block;
     position: absolute;
   }
+}
+
+.video-container {
+  width: 100%;
+  max-width: 330px;
+  padding: 0.5rem;
+}
+@media screen and (max-width: 992px) {
+  .video-container {
+    display: none !important;
+  }
+}
+
+.video-container video {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 872/1080;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=style.css.map */
