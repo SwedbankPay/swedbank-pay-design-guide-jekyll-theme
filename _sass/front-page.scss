@@ -57,11 +57,12 @@ $front-page-max-width: $breakpoint-lg;
 
     #github {
         top: 2.5rem;
+
         path {
             fill: $black;
         }
     }
-    
+
     .front-page-top {
         position: relative;
         margin: 0 4rem;
@@ -82,7 +83,7 @@ $front-page-max-width: $breakpoint-lg;
                 margin-bottom: 2rem;
                 font-size: 2.5rem;
                 line-height: 3.5rem;
-                
+
 
             }
 
@@ -90,35 +91,41 @@ $front-page-max-width: $breakpoint-lg;
                 color: $brown;
                 font-size: 1.125rem;
             }
-            
+
             a {
                 color: #43d0dd;
             }
 
-            .front-page-hero-name {
-                font-family: $font_mono;
-                font-weight: bold;
-                font-size: 2.5rem;
-                color: $yellow;
-                margin-bottom: 1rem;
-
-
-                span {
-                    color: $white;
-                }
+            .front-page-hero-jumbo {
+                color: $brown;
+                font-family: $font_headline;
+                margin-bottom: 2rem;
+                font-size: 3.5rem;
             }
 
-            .front-page-hero-jumbo {
-                    color: $brown;
-                    font-family: $font_headline;
-                    margin-bottom: 2rem;
-                    font-size: 3.5rem;
-                }
-            
             .front-page-hero-lean {
                 font-family: $font_mono;
+                white-space: nowrap;
+
+                &::before {
+                    content: ' { ';
+                    font-family: $font_mono;
+                    font-weight: bold;
+                    font-size: 2.5rem;
+                    color: $yellow;
+                    margin-bottom: 1rem;
+                }
+
+                &::after {
+                    content: ' } ';
+                    font-family: $font_mono;
+                    font-weight: bold;
+                    font-size: 2.5rem;
+                    color: $yellow;
+                    margin-bottom: 1rem;
+                }
             }
-            
+
 
         }
 
@@ -139,13 +146,14 @@ $front-page-max-width: $breakpoint-lg;
         }
 
         @media screen and (min-width: $breakpoint-xxl) {
-            
+
             .front-page-intro-cards {
                 left: 0;
                 width: 100%;
             }
         }
     }
+
     .front-page-container {
         max-width: $front-page-max-width;
         margin: $front-page-padding;

@@ -481,3 +481,21 @@ body {
         position: absolute;
     }
 }
+
+.video-container {
+    width: 100%;
+    max-width: 330px;
+    padding: 0.5rem;
+
+    @media screen and (max-width: $breakpoint-lg) {
+        display: none !important;
+    }
+}
+
+.video-container video {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 872 / 1080;
+    object-fit: cover;
+}
