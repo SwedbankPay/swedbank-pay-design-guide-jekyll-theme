@@ -19,18 +19,18 @@ sidebar_icon: filter_1
         {% include card.html
             title='Checkout'
             title_type='h2'
-            text='With our Checkout you get the pre-built all-in-one payment solution, complete with a checkin interface and payment menu.'
+            description='With our Checkout you get the pre-built all-in-one payment solution, complete with a checkin interface and payment menu.'
             icon_content='at-shopping-cart'
-            to='/checkout'
+            url='/checkout'
         %}
       </div>
       <div class="{{ card_col_class }}">
         {% include card.html
             title='Payments instruments'
             title_type='h2'
-            text='Payments gives you a one-by-one integration with more customization for each payment method to build your own payment menu.'
+            description='Payments gives you a one-by-one integration with more customization for each payment method to build your own payment menu.'
             icon_content='credit_card'
-            to='/payments'
+            url='/payments'
         %}
       </div>
   </div>
@@ -47,30 +47,30 @@ sidebar_icon: filter_1
   <div class="row mt-4">
       <div class="{{ card_col_class }}">
           {% include card.html title='OS development guidelines'
-              text='This is how we create an inclusive environment'
+              description='This is how we create an inclusive environment'
               icon_content='at-account'
-              to='#'
+              url='#'
           %}
       </div>
       <div class="{{ card_col_class }}">
           {% include card.html title='Test data'
-              text='Get the required data for testing in our interfaces'
+              description='Get the required data for testing in our interfaces'
               icon_content='at-clipboard'
-              to='#'
+              url='#'
           %}
       </div>
       <div class="{{ card_col_class }}">
           {% include card.html title='Terminology'
-          text='Get a better understanding of the terms we use'
+          description='Get a better understanding of the terms we use'
           icon_content='at-book'
-          to='#'
+          url='#'
           %}
       </div>
       <div class="{{ card_col_class }}">
           {% include card.html title='See all resources (7)'
-              text='Data protection, public migration key etc'
+              description='Data protection, public migration key etc'
               no_icon=true
-              to='#'
+              url='#'
           %}
       </div>
   </div>

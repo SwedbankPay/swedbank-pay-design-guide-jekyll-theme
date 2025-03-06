@@ -9,7 +9,6 @@ layout: default
 {% assign front_page_ingress = page.front_page.ingress | default: "The complete toolbox for integrating our easy and safe omnichannel payment solutions" %}
 
 <div class="front-page">
-    {% include github.html %}
     <div class="front-page-top">
         <div class="front-page-hero">
             <h3>{{ front_page_hero1 }}
@@ -62,6 +61,10 @@ layout: default
 
     <div class="front-page-container">
         {% contentblock intro_cards%}
+
+        <div class="front-page-playground">
+            {% contentblock playground %}
+        </div>
 
         <div class="front-page-cards-sdk">
             {% contentblock sdks %}

@@ -1,9 +1,17 @@
 {%- comment -%}
 **Parameters
-card_list(required): An array with items having the attributes title(required),
-    url(required), description, icon.content(required), icon.outlined, icon.svg.
-    Works with site.pages
-type: sdk | module - Empty type result in default card styling
+card_list(required): An array with items having the attributes 
+    title(required): Title of the card
+    image_src: Image source for the card
+    image_alt_text: Alt text for the image
+    icon_content: Used to generate content of dx-card-icon
+    description: Text content of the card
+    cta_text: Text for the call to action.
+    use_wide: Used when dx-card-horizontal is needed
+    open_in_new_tab: Used to open the link in a new tab
+    url(required): Url to the page to be directed to on click
+    type: sdk | module - Empty type result in default card styling
+    Works with site.pages.
 col_class(required): Describes what grid column class(es) each card should be wrapped in
 {%- endcomment -%}
 
@@ -22,10 +30,10 @@ col_class(required): Describes what grid column class(es) each card should be wr
         <div class="{{ col_class }}">
             {% include card.html
                 title=title
-                text=card.description
+                description=card.description
                 cta_text=card.cta_text
                 icon_content=icon_content
-                to=link_to
+                url=link_to
                 type=card_type
                 use_wide=use_wide
             %}

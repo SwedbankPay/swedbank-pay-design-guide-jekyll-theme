@@ -26,30 +26,30 @@ sidebar_icon: filter_2
   <div class="row mt-4">
       <div class="{{ card_col_class }}">
           {% include card.html title='OS development guidelines'
-              text='This is how we create an inclusive environment'
+              description='This is how we create an inclusive environment'
               icon_content='at-account'
-              to='#'
+              url='#'
           %}
       </div>
       <div class="{{ card_col_class }}">
           {% include card.html title='Test data'
-              text='Get the required data for testing in our interfaces'
+              description='Get the required data for testing in our interfaces'
               icon_content='at-clipboard'
-              to='#'
+              url='#'
           %}
       </div>
       <div class="{{ card_col_class }}">
           {% include card.html title='Terminology'
-          text='Get a better understanding of the terms we use'
+          description='Get a better understanding of the terms we use'
           icon_content='at-book'
-          to='#'
+          url='#'
           %}
       </div>
       <div class="{{ card_col_class }}">
           {% include card.html title='See all resources (7)'
-              text='Data protection, public migration key etc'
+              description='Data protection, public migration key etc'
               no_icon=true
-              to='#'
+              url='#'
           %}
       </div>
   </div>

@@ -4,11 +4,11 @@ title(required): Title of the card
 image_src: Image source for the card
 image_alt_text: Alt text for the image
 icon_content: Used to generate content of dx-card-icon
-text: Text content of the card
+description: Text content of the card
 cta_text: Text for the call to action.
 use_wide: Used when dx-card-horizontal is needed
 open_in_new_tab: Used to open the link in a new tab
-to(required): Url to the page to be directed to on click
+url(required): Url to the page to be directed to on click
 type: sdk | module - Empty type result in default card styling
 {%- endcomment -%}
 
@@ -16,11 +16,11 @@ type: sdk | module - Empty type result in default card styling
 {% assign image_alt_text = include.image_alt_text %}
 {% assign image_ratio = 'ratio-16-9'%}
 {% assign icon_content = include.icon_content %}
-{% assign text = include.text %}
+{% assign description = include.description %}
 {% assign cta_text = include.cta_text %}
 {% assign use_wide = include.use_wide | default: false %}
 {% assign open_in_new_tab = include.open_in_new_tab | default: false %}
-{% assign to = include.to %}
+{% assign url = include.url %}
 
 {% if include.type %}
 {% assign type = include.type %}
@@ -42,7 +42,7 @@ type: sdk | module - Empty type result in default card styling
 {% assign target = '_blank' %}
 {% endif %}
 
-{% capture card_attributes %}href="{{ to }}"{% endcapture %}
+{% capture card_attributes %}href="{{ url }}"{% endcapture %}
 
 <a {{ card_attributes }} class="{{ card_class }}" target="{{target}}" >
     {% if image_src %}
@@ -55,7 +55,7 @@ type: sdk | module - Empty type result in default card styling
 
     <span class="h4">{{ include.title }}</span>
     <div class="cards-content">
-        {{ text | markdownify }}
+        {{ description | markdownify }}
     </div>
     <div class="cards-cta">
         {% if cta_text %}

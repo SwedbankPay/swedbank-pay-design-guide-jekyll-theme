@@ -482,6 +482,14 @@ body {
     }
 }
 
+.playground-cta {
+    margin-top: 2.5rem;
+
+    @media screen and (max-width: $breakpoint-lg) {
+        margin-top: 0;
+    }
+}
+
 .video-container {
     width: 100%;
     max-width: 330px;

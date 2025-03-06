@@ -39,8 +39,6 @@ tab_list:
   mark_with_star: true
 ---
 
-{% include card-list.html card_list=page.card_list col_class="col-lg-4" %}
-
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 *   [External absolute full link](https://www.wikipedia.org)
@@ -128,16 +126,16 @@ ___
         {% include card.html
         title='Card'
         open_in_new_tab=true
-        text='A standard card that opens in a new tab'
-        to="https://design.swedbankpay.com"
+        description='A standard card that opens in a new tab'
+        url="https://design.swedbankpay.com"
         %}
     </div>
     <div class="col">
         {% include card.html
         title='Card with button text'
         cta_text='CTA text'
-        text='A standard card'
-        to='/#cards/'
+        description='A standard card'
+        url='/#cards/'
         %}
     </div>
 </div>
@@ -146,8 +144,8 @@ ___
         {% include card.html title='Card with image'
             image_alt_text="The image shows a woman seated in a comfortable chair in her home using a computer to make an online payment."
             image_src="/assets/img/betala-online.jpg"
-            text='A standard card with an image'
-            to="/#cards/"
+            description='A standard card with an image'
+            url="/#cards/"
         %}
     </div>
     <div class="col">
@@ -155,28 +153,28 @@ ___
             cta_text='CTA text'
             image_alt_text="The image shows someone seated in a cafe with a glass of juice, a cup of coffee and a cake on the table infront of them, using a card terminal to pay."
             image_src="/assets/img/betala-med-pax-a920pro.jpg"
-            text='Note that image cards will not display any icon if the card has an image.'
+            description='Note that image cards will not display any icon if the card has an image.'
             icon_content="at-check-circle"
-            to='/#cards/'
+            url='/#cards/'
         %}
     </div>
 </div>
 <div class="row mt-4">
     <div class="col">
         {% include card.html title='Wide card with flag icon'
-            text='A wide card'
+            description='A wide card'
         icon_content="flag-icon flag-icon-se"
             use_wide=true
-            to="/#cards/"
+            url="/#cards/"
         %}
     </div>
     <div class="col">
         {% include card.html title='Wide card with icon and button text'
             icon_content="at-check-circle"
             cta_text='CTA text'
-            text='Note that wide cards will not display the button text unless the card has an image. '
+            description='Note that wide cards will not display the button text unless the card has an image. '
             use_wide=true
-            to="/#cards/"
+            url="/#cards/"
         %}
     </div>
 </div>
@@ -187,9 +185,9 @@ ___
             icon_content="at-check-circle"
             image_alt_text="The image shows a woman seated in a comfortable chair in her home using a computer to make an online payment."
             image_src="/assets/img/betala-online.jpg"
-            text='Note that wide image cards will not display any icon if the card has an image.'
+            description='Note that wide image cards will not display any icon if the card has an image.'
             use_wide=true
-            to="/#cards/"
+            url="/#cards/"
         %}
     </div>
     <div class="col">
@@ -197,9 +195,9 @@ ___
             cta_text='CTA text'
             image_alt_text="The image shows someone seated in a cafe with a glass of juice, a cup of coffee and a cake on the table infront of them, using a card terminal to pay."
             image_src="/assets/img/betala-med-pax-a920pro.jpg"
-            text='A wide card with an image and button text'
+            description='A wide card with an image and button text'
             use_wide=true
-            to="/#cards/"
+            url="/#cards/"
         %}
     </div>
 </div>
