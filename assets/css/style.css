@@ -79,11 +79,21 @@
   z-index: 0;
   border-radius: 1rem;
 }
+@media screen and (max-width: 768px) {
+  .front-page .front-page-top {
+    margin: 0;
+  }
+}
 .front-page .front-page-top .front-page-hero {
   position: relative;
   margin-bottom: 1.5rem;
   z-index: 1;
   padding: 1.5rem;
+}
+@media screen and (max-width: 768px) {
+  .front-page .front-page-top .front-page-hero {
+    padding: 0;
+  }
 }
 .front-page .front-page-top .front-page-hero h3 {
   color: #2f2424;
@@ -91,6 +101,13 @@
   margin-bottom: 2rem;
   font-size: 2.5rem;
   line-height: 3.5rem;
+}
+@media screen and (max-width: 768px) {
+  .front-page .front-page-top .front-page-hero h3 {
+    font-size: 1.25rem;
+    line-height: 2.25rem;
+    margin-bottom: 1rem;
+  }
 }
 .front-page .front-page-top .front-page-hero p {
   color: #2f2424;
@@ -105,25 +122,26 @@
   margin-bottom: 2rem;
   font-size: 3.5rem;
 }
+@media screen and (max-width: 768px) {
+  .front-page .front-page-top .front-page-hero .front-page-hero-jumbo {
+    font-size: 2.25rem;
+  }
+}
 .front-page .front-page-top .front-page-hero .front-page-hero-lean {
   font-family: "Akkurat Mono", monospace;
   white-space: nowrap;
 }
 .front-page .front-page-top .front-page-hero .front-page-hero-lean::before {
-  content: " { ";
+  content: " {";
   font-family: "Akkurat Mono", monospace;
   font-weight: bold;
-  font-size: 2.5rem;
   color: #fdc129;
-  margin-bottom: 1rem;
 }
 .front-page .front-page-top .front-page-hero .front-page-hero-lean::after {
-  content: " } ";
+  content: "} ";
   font-family: "Akkurat Mono", monospace;
   font-weight: bold;
-  font-size: 2.5rem;
   color: #fdc129;
-  margin-bottom: 1rem;
 }
 .front-page .front-page-top .front-page-intro-cards h2 {
   color: #2f2424;
@@ -809,6 +827,15 @@ body {
   .topbar-logo {
     display: block;
     position: absolute;
+  }
+}
+
+.playground-cta {
+  margin-top: 2.5rem;
+}
+@media screen and (max-width: 992px) {
+  .playground-cta {
+    margin-top: 0;
   }
 }
 
