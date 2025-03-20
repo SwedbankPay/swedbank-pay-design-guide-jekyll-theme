@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
     'rubygems_mfa_required' => 'true'
   }
 
-  spec.required_ruby_version = '>= 3.1.0'
+  spec.required_ruby_version = '>= 2.5.0'
   spec.add_runtime_dependency 'faraday', '>= 1.0.1', '< 3'
   spec.add_runtime_dependency 'jekyll', '>= 3.7', '< 5.0'
   spec.add_runtime_dependency 'jekyll-contentblocks', '~> 1', '>= 1.2'

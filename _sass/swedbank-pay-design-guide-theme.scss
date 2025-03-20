@@ -47,6 +47,13 @@ body {
     background-color: inherit !important;
 }
 
+.tabs-container {
+
+    a {
+        cursor: pointer !important;
+    }
+}
+
 .jumbotron {
     /* TODO: Make .jumbotron @extend .slab. */
     font-family: Roboto, sans-serif;
