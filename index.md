@@ -135,7 +135,7 @@ ___
         title='Card with button text'
         cta_text='CTA text'
         description='A standard card'
-        url='cards'
+        url='/#cards/'
         %}
     </div>
 </div>
@@ -145,7 +145,7 @@ ___
             image_alt_text="The image shows a woman seated in a comfortable chair in her home using a computer to make an online payment."
             image_src="/assets/img/betala-online.jpg"
             description='A standard card with an image'
-            url='cards'
+            url="/#cards/"
         %}
     </div>
     <div class="col">
@@ -155,7 +155,7 @@ ___
             image_src="/assets/img/betala-med-pax-a920pro.jpg"
             description='Note that image cards will not display any icon if the card has an image.'
             icon_content="at-check-circle"
-            url='cards'
+            url='/#cards/'
         %}
     </div>
 </div>
@@ -163,9 +163,9 @@ ___
     <div class="col">
         {% include card.html title='Wide card with flag icon'
             description='A wide card'
-            icon_content="flag-icon flag-icon-se"
+        icon_content="flag-icon flag-icon-se"
             use_wide=true
-            url='cards'
+            url="/#cards/"
         %}
     </div>
     <div class="col">
@@ -174,7 +174,7 @@ ___
             cta_text='CTA text'
             description='Note that wide cards will not display the button text unless the card has an image. '
             use_wide=true
-            url='cards'
+            url="/#cards/"
         %}
     </div>
 </div>
@@ -187,7 +187,7 @@ ___
             image_src="/assets/img/betala-online.jpg"
             description='Note that wide image cards will not display any icon if the card has an image.'
             use_wide=true
-            url='cards'
+            url="/#cards/"
         %}
     </div>
     <div class="col">
@@ -197,7 +197,7 @@ ___
             image_src="/assets/img/betala-med-pax-a920pro.jpg"
             description='A wide card with an image and button text'
             use_wide=true
-            url='cards'
+            url="/#cards/"
         %}
     </div>
 </div>
