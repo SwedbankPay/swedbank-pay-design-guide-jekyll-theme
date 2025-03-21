@@ -33,6 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'nokogiri', '~> 1.11'
   spec.add_runtime_dependency 'sass', '~> 3', '>= 3.7'
   spec.add_runtime_dependency 'awesome_print'
+  spec.add_runtime_dependency 'rubocop-rails', '~> 2.15.2'
 
   spec.add_development_dependency 'bundler', '~> 2', '>= 2.2'
   spec.add_development_dependency 'codecov'
@@ -44,6 +45,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec-html-matchers'
   spec.add_development_dependency 'rubocop'
   spec.add_development_dependency 'rubocop-performance'
+  spec.add_development_dependency 'rubocop-rails', '~> 2.15.2'
   spec.add_development_dependency 'rubocop-rake'
   spec.add_development_dependency 'rubocop-rspec'
   spec.add_development_dependency 'awesome_print'
