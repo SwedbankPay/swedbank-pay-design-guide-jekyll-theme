@@ -14,7 +14,7 @@ default_tab_index(optional): Index of the tab to be active by default, starting 
         {% for tab in tabs %}
         <li id="{{ tab.title | replace: ' ', '_' | replace: '.', '' }}"
             class="{% if forloop.index0 == default_tab_index %}active{% endif %}">
-            <a id="{{ forloop.index0 }}">{{ tab.title }}{% if tab.mark_with_star %}*{% endif %}</a>
+            <a href="#" id="{{ forloop.index0 }}">{{ tab.title }}{% if tab.mark_with_star %}*{% endif %}</a>
         </li>
         {% endfor %}
     </ul>
