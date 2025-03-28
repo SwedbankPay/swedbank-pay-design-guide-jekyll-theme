@@ -4,7 +4,6 @@ require:
 - rubocop-rspec
 AllCops:
   NewCops: enable
-  TargetRubyVersion: 2.7
   Exclude:
     - "Rakefile"
     - "_site/**/*"

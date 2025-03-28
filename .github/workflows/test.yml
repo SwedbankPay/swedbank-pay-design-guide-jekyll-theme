@@ -93,9 +93,11 @@ jobs:
           cond: ${{ github.event_name == 'pull_request' }}
           if_true: github-pr-review
           if_false: github-check
-#      - run: gem install securerandom -v 0.3.2
-#      - run: gem install activesupport -v 7.1.5.1
-#      - run: gem install rubocop-rails -v 2.30.3
+      # Specific versions needed for Ruby 2.7 #
+      - run: gem install securerandom -v 0.3.2
+      - run: gem install activesupport -v 7.1.5.1
+      - run: gem install rubocop-rails -v 2.30.3
+      # ------------------------------------ #
       - uses: reviewdog/action-rubocop@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
