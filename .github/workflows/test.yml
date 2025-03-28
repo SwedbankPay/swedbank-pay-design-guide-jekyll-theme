@@ -93,7 +93,7 @@ jobs:
           cond: ${{ github.event_name == 'pull_request' }}
           if_true: github-pr-review
           if_false: github-check
-      - run: gem install rubocop-rails -v 2.21.2
+      - run: gem install rubocop-rails -v 2.15.0
       - uses: reviewdog/action-rubocop@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
