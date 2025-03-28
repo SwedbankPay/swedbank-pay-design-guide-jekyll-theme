@@ -41,8 +41,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'its'
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec'
-  spec.add_development_dependency 'rspec-html-matchers'
-  spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'rspec-html-matchers'+
   spec.add_development_dependency 'rubocop-performance'
   spec.add_development_dependency 'rubocop-rake'
   spec.add_development_dependency 'rubocop-rspec'
