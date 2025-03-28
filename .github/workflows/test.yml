@@ -98,6 +98,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: ${{ steps.reporter.outputs.value }}
+          rubocop_version: 1.63.1
 
   remark-lint:
     runs-on: ubuntu-latest
