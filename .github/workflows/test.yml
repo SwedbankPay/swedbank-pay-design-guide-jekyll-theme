@@ -87,18 +87,17 @@ jobs:
         with:
           ruby-version: 2.7
           bundler-cache: true
-      - run: gem install rubocop -v 1.63.1
       - uses: haya14busa/action-cond@v1
         id: reporter
         with:
           cond: ${{ github.event_name == 'pull_request' }}
           if_true: github-pr-review
           if_false: github-check
+      - run: gem install rubocop-rails -v 2.21.2
       - uses: reviewdog/action-rubocop@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: ${{ steps.reporter.outputs.value }}
-          rubocop_version: 1.63.1
 
   remark-lint:
     runs-on: ubuntu-latest
