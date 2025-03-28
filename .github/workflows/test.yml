@@ -94,6 +94,7 @@ jobs:
           if_true: github-pr-review
           if_false: github-check
       - run: gem install securerandom -v 0.3.2
+      - run: gem install activesupport -v 7.1.5.1
       - run: gem install rubocop-rails -v 2.15.0
       - uses: reviewdog/action-rubocop@v2
         with:
