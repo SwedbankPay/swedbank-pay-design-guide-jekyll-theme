@@ -65,14 +65,20 @@ RSpec/ContextWording:
   Exclude:
     - 'spec/spec_helper.rb'
 
-# Offense count: 3
-# Configuration parameters: Include, CustomTransform, IgnoreMethods, SpecSuffixOnly.
-# Include: **/*_spec*rb*, **/spec/**/*
-RSpec/FilePath:
+# Offense count: 2
+# Configuration parameters: Include, CustomTransform, IgnoreMethods, IgnoreMetadata.
+# Include: **/*_spec.rb
+RSpec/SpecFilePathFormat:
   Exclude:
     - 'spec/read_time_filter_spec.rb'
-    - 'spec/regex_capture_filter.spec'
     - 'spec/rspec_description_parser_spec.rb'
+
+# Offense count: 1
+# Configuration parameters: Include.
+# Include: **/*_spec*rb*, **/spec/**/*
+RSpec/SpecFilePathSuffix:
+  Exclude:
+    - 'spec/regex_capture_filter.spec'
 
 # Offense count: 1
 # Configuration parameters: AssignmentOnly.
