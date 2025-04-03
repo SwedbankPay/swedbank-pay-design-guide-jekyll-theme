@@ -1946,6 +1946,7 @@ your favor.</p>
 <p>The src content for <strong>Example 1</strong></p>
 
 
+    
 </div>
 
 <div class="tab-src">
@@ -1961,6 +1962,7 @@ your favor.</p>
 <p>The src content for <strong>Example 2</strong></p>
 
 
+    
 </div>
 
 <div class="tab-src">
@@ -1976,13 +1978,20 @@ your favor.</p>
 <p>The src content for <strong>Example 3</strong></p>
 
 
+    
 </div>
 
 <script>
     var defaultIndex = 2;
     const allTabs = [{"title":"Tab 1","content_text":"Some intro text for tab 1.","content_src":"example-1.md"},{"title":"Tab 2","content_src":"example-2.md"},{"title":"Tab 3","content_text":"Tab 3 intro text","content_src":"example-3.md","mark_with_star":true}];
     const compiledTabTextContents = allTabs?.map(tab => tab.content_text);
-    const compiledTabSrcContents = $(".tab-src");
+    const compiledTabSrcContents = $(".tab-src"); 
+    const hasReleaseNotes = null;
+    if(hasReleaseNotes){
+        const container = $(".doc-container");
+        container.attr("class", "doc-container dg-front-page py-0");
+    }
+    
 </script>
 
 <script>
