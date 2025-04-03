@@ -1,8 +1,9 @@
 {%- comment -%}
 **Parameters
 tab_list(required): An array with items having the attributes title(required), content_text (required),
-content_src(optional), mark_with_star (optional)
+content_src(optional), mark_with_star (optional).
 default_tab_index(optional): Index of the tab to be active by default, starting from 1
+has_release_notes(optional): Indicate if the tabs contains release notes.
 {%- endcomment -%}
 
 {% assign tabs = include.tab_list %}
@@ -29,7 +30,12 @@ default_tab_index(optional): Index of the tab to be active by default, starting 
     {% capture sourced_content %}
     {% include {{tab.content_src}} %}
     {% endcapture %}
+
+    {% if include.has_release_notes %}
+    {% include release_notes.html release_notes=sourced_content num_of_releases_to_display=5 %}
+    {% else %}
     {{ sourced_content | markdownify }}
+    {% endif %}
 </div>
 {% endif %}
 {% endfor %}
@@ -38,7 +44,13 @@ default_tab_index(optional): Index of the tab to be active by default, starting 
     var defaultIndex = {{ default_tab_index | jsonify }};
     const allTabs = {{ tabs | jsonify }};
     const compiledTabTextContents = allTabs?.map(tab => tab.content_text);
-    const compiledTabSrcContents = $(".tab-src");
+    const compiledTabSrcContents = $(".tab-src"); 
+    const hasReleaseNotes = {{ include.has_release_notes | jsonify }};
+    if(hasReleaseNotes){
+        const container = $(".doc-container");
+        container.attr("class", "doc-container dg-front-page py-0");
+    }
+    
 </script>
 
 <script>

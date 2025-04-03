@@ -1,19 +1,32 @@
+{%- comment -%}
+**Parameters
+release_notes: The release notes pages to use if sitePage.content cannot be used.
+{%- endcomment -%}
+
+{% assign release_notes = include.release_notes %}
 {% assign num_of_releases_to_display = include.num_of_releases_to_display %}
-{% assign release_notes_title = include.release_notes_title %}
+{% assign min_cnt = num_of_releases_to_display | plus: 1 %}
+
 {% if page.url contains '/release-notes' %}
-    {% for sitePage in site.pages %}
-        {% if sitePage.url == page.url %}
-            {% assign min_cnt = num_of_releases_to_display | plus: 1 %}
-            {% assign max_cnt = sitePage.content | split: '</h2>' | size %}   
-            {% assign releases = sitePage.content | markdownify | split: '<h2' | slice: 1, num_of_releases_to_display %}
-            {% assign archive = sitePage.content | markdownify | split: '<h2' | slice: min_cnt, max_cnt %}
+    {% if release_notes %}
+        {% assign max_cnt = release_notes | markdownify | split: '</h2>' | size %}   
+        {% assign releases = release_notes | markdownify | split: '<h2' | slice: 1, num_of_releases_to_display %}
+        {% assign archive = release_notes | markdownify | split: '<h2' | slice: min_cnt, max_cnt %}
+    {% else %}
+        {% for sitePage in site.pages %}
+            {% if sitePage.url == page.url %}
+                {% assign max_cnt = sitePage.content | markdownify | split: '</h2>' | size %}   
+                {% assign releases = sitePage.content | markdownify | split: '<h2' | slice: 1, num_of_releases_to_display %}
+                {% assign archive = sitePage.content | markdownify | split: '<h2' | slice: min_cnt, max_cnt %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endif %}
+
+{% if page.url contains '/release-notes' %}
 <section class="dg-changelog-container d-flex flex-column mb-0">
     <div class="container dg-changelog-content">
         <div class="row mt-3">
-            <span class="dg-changlelog-title">
-                {{ release_notes_title | append: sitePage.lead_title }}
-                <div class="dg-changelog-divider my-2"></div>
-            </span>
             {% include alert.html type="informative" icon="info" header="Version numbers"
             body="The version numbers used in headers on this page refers to the version of
             this very documentation, not to a version of any APIs described by it." %}
@@ -33,7 +46,7 @@
                 {{ release_value[1] | strip }}
             </div>
                 {% assign version_list = versions | shift %}
-            <div class="dg-changelog-description px-0">
+            <div class="col dg-changelog-description px-0">
                 {% for version in version_list %}
                     {% assign version_parts = version | split: '</h3>' %}
                     {% assign version_value = version_parts[0] | split: '>' %}
@@ -79,7 +92,4 @@
             {% endif %}
 
 </section>
-        {% endif %}
-
-    {% endfor %}
 {% endif %}
