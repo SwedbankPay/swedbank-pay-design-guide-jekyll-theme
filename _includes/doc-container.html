@@ -3,7 +3,7 @@
 normal-padding
 {% elsif page.card_overview %}
 normal-padding max-width-card-overview
-{% elsif page.release_notes %}
+{% elsif page.has_release_notes %}
 dg-front-page py-0
 {% else %}
 normal-padding max-width
@@ -14,8 +14,8 @@ normal-padding max-width
     <article>
         {% if page.card_overview %}
             {% include card-overview.html %}
-        {% elsif page.release_notes %}
-            {% include release_notes.html num_of_releases_to_display=5 release_notes_title="What's new in " %}
+        {% elsif page.has_release_notes %}
+            {% include release_notes.html num_of_releases_to_display=5 %}
         {% else %}
             {% include anchor_headings.html html=content anchorClass='header-anchor' %}
         {% endif %}

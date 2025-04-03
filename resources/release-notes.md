@@ -1,10 +1,9 @@
 ---
 title: Release Notes
-release_notes_title: Whats new
 description: |
   The **latest** updates about our releases will be
   published on this page
-release_notes: true
+has_release_notes: true
 ---
 
 ## 28 May 2020
