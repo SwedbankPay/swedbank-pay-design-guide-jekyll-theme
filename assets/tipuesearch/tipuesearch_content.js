@@ -2,17 +2,17 @@ var tipuesearch = {"pages": [{
     "title": "3-D Secure 2",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
-    "url": "/checkout/v3/dsca/features/core/3d-secure-2.html"
-  },{
-    "title": "3-D Secure 2",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
     "url": "/checkout/v3/standard/features/core/3d-secure-2.html"
   },{
     "title": "3-D Secure 2",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v3/basic/features/core/3d-secure-2.html"
+  },{
+    "title": "3-D Secure 2",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
+    "url": "/checkout/v3/dsca/features/core/3d-secure-2.html"
   },{
     "title": "3-D Secure 2",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -27,12 +27,12 @@ var tipuesearch = {"pages": [{
     "title": "3-D Secure 2",
     "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/core/3d-secure-2.html"
+    "url": "/products/checkout-v3-dev/payments-only/features/core/3d-secure-2.html"
   },{
     "title": "3-D Secure 2",
     "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/payments-only/features/core/3d-secure-2.html"
+    "url": "/products/checkout-v3-dev/starter/features/core/3d-secure-2.html"
   },{
     "title": "",
     "text": "Uh oh:heavy_exclamation_mark: Seems like you have taken a wrong turn somewhere :construction: :dragon: This page seems to play hide and seek with you. :dragon_face: :circus_tent: Perhaps attempting a search or clicking around in the menus will help? :space_invader: Or perhaps your :princess: is in another castle? :mushroom:",
@@ -42,12 +42,12 @@ var tipuesearch = {"pages": [{
     "title": "Abort",
     "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/core/abort.html"
+    "url": "/products/checkout-v3-dev/payments-only/features/core/abort.html"
   },{
     "title": "Abort",
     "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/payments-only/features/core/abort.html"
+    "url": "/products/checkout-v3-dev/starter/features/core/abort.html"
   },{
     "title": "After Payment",
     "text": "",
@@ -87,17 +87,17 @@ var tipuesearch = {"pages": [{
     "title": "Callback",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
-    "url": "/checkout/v3/dsca/features/technical-reference/callback.html"
-  },{
-    "title": "Callback",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
     "url": "/checkout/v3/standard/features/technical-reference/callback.html"
   },{
     "title": "Callback",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v3/basic/features/technical-reference/callback.html"
+  },{
+    "title": "Callback",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
+    "url": "/checkout/v3/dsca/features/technical-reference/callback.html"
   },{
     "title": "Callback",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -112,17 +112,12 @@ var tipuesearch = {"pages": [{
     "title": "Callback",
     "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/core/callback.html"
+    "url": "/products/checkout-v3-dev/payments-only/features/core/callback.html"
   },{
     "title": "Callback",
     "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/payments-only/features/core/callback.html"
-  },{
-    "title": "Cancel",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
-    "url": "/checkout/v3/dsca/features/core/cancel.html"
+    "url": "/products/checkout-v3-dev/starter/features/core/callback.html"
   },{
     "title": "Cancel",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -137,6 +132,11 @@ var tipuesearch = {"pages": [{
     "title": "Cancel",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
+    "url": "/checkout/v3/dsca/features/core/cancel.html"
+  },{
+    "title": "Cancel",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
     "url": "/checkout/v3/tailored/features/core/cancel.html"
   },{
     "title": "Cancel",
@@ -145,14 +145,14 @@ var tipuesearch = {"pages": [{
     "url": "/checkout/v2/features/core/cancel.html"
   },{
     "title": "Cancel",
-    "text": "Cancel The cancellations resource lists the cancellation transactions on a specific payment. Create Cancel Transaction Perform the create-cancel operation to cancel a previously created payment. You can only cancel a payment - or part of payment - not yet captured. Cancel Request Request 1 2 3 4 5 6 7 8 9 10 11 12 &lt;!-- POST /psp//payments//cancellations HTTP/1.1 --&gt; POST /psp/payments/cancellations HTTP/1.1 Host: Authorization: Bearer &lt;AccessToken&gt; Content-Type: application/json { \"transaction\": { \"description\": \"Test Cancellation\", \"payeeReference\": \"ABC123\" } } Show fields Hide fields check︎ Field Type Description check︎ transaction string The transaction object contains information about this cancellation. check︎ └➔ description string A textual description of the reason for the cancellation. code fence test Cancel Response Cancel Sequence Diagram Cancel can only be done on a authorized transaction. If you do cancel after doing a part-capture you will cancel the different between the capture amount and the authorization amount. sequenceDiagram participant SwedbankPay as Swedbank Pay Merchant-&gt;&gt;SwedbankPay: POST &lt; cancellation&gt; activate Merchant activate SwedbankPay SwedbankPay--&gt;&gt;Merchant: transaction resource deactivate SwedbankPay deactivate Merchant",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/core/cancel.html"
-  },{
-    "title": "Cancel",
     "text": "",
     "tags": "",
     "url": "/products/checkout-v3-dev/payments-only/features/core/cancel.html"
+  },{
+    "title": "Cancel",
+    "text": "Cancel The cancellations resource lists the cancellation transactions on a specific payment. Create Cancel Transaction Perform the create-cancel operation to cancel a previously created payment. You can only cancel a payment - or part of payment - not yet captured. Cancel Request Request 1 2 3 4 5 6 7 8 9 10 11 12 &lt;!-- POST /psp//payments//cancellations HTTP/1.1 --&gt; POST /psp/payments/cancellations HTTP/1.1 Host: Authorization: Bearer &lt;AccessToken&gt; Content-Type: application/json { \"transaction\": { \"description\": \"Test Cancellation\", \"payeeReference\": \"ABC123\" } } Show fields Hide fields check︎ Field Type Description check︎ transaction string The transaction object contains information about this cancellation. check︎ └➔ description string A textual description of the reason for the cancellation. code fence test Cancel Response Cancel Sequence Diagram Cancel can only be done on a authorized transaction. If you do cancel after doing a part-capture you will cancel the different between the capture amount and the authorization amount. sequenceDiagram participant SwedbankPay as Swedbank Pay Merchant-&gt;&gt;SwedbankPay: POST &lt; cancellation&gt; activate Merchant activate SwedbankPay SwedbankPay--&gt;&gt;Merchant: transaction resource deactivate SwedbankPay deactivate Merchant",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/starter/features/core/cancel.html"
   },{
     "title": "Capture",
     "text": "",
@@ -174,55 +174,50 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/checkout/v2/capture.html"
   },{
-    "title": "Deck 1 Card 1",
+    "title": "Deck 3 Card 1",
     "text": "",
     "tags": "",
-    "url": "/cards/deck1/card1.html"
+    "url": "/cards/deck3/card1.html"
   },{
     "title": "Deck 2 Card 1",
     "text": "",
     "tags": "",
     "url": "/cards/deck2/card1.html"
   },{
-    "title": "Deck 3 Card 1",
+    "title": "Deck 1 Card 1",
     "text": "",
     "tags": "",
-    "url": "/cards/deck3/card1.html"
-  },{
-    "title": "Deck 1 Card 2",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck1/card2.html"
-  },{
-    "title": "Deck 2 Card 2",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck2/card2.html"
+    "url": "/cards/deck1/card1.html"
   },{
     "title": "Deck 3 Card 2",
     "text": "",
     "tags": "",
     "url": "/cards/deck3/card2.html"
   },{
-    "title": "Deck 1 Card 3",
+    "title": "Deck 2 Card 2",
     "text": "",
     "tags": "",
-    "url": "/cards/deck1/card3.html"
+    "url": "/cards/deck2/card2.html"
   },{
-    "title": "Deck 2 Card 3",
+    "title": "Deck 1 Card 2",
     "text": "",
     "tags": "",
-    "url": "/cards/deck2/card3.html"
+    "url": "/cards/deck1/card2.html"
   },{
     "title": "Deck 3 Card 3",
     "text": "",
     "tags": "",
     "url": "/cards/deck3/card3.html"
   },{
-    "title": "Checkin Events",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "title": "Deck 2 Card 3",
+    "text": "",
     "tags": "",
-    "url": "/checkout/v3/dsca/features/technical-reference/checkin-events.html"
+    "url": "/cards/deck2/card3.html"
+  },{
+    "title": "Deck 1 Card 3",
+    "text": "",
+    "tags": "",
+    "url": "/cards/deck1/card3.html"
   },{
     "title": "Checkin Events",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -237,6 +232,11 @@ var tipuesearch = {"pages": [{
     "title": "Checkin Events",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
+    "url": "/checkout/v3/dsca/features/technical-reference/checkin-events.html"
+  },{
+    "title": "Checkin Events",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
     "url": "/checkout/v3/tailored/features/technical-reference/checkin-events.html"
   },{
     "title": "Checkin Events",
@@ -247,12 +247,12 @@ var tipuesearch = {"pages": [{
     "title": "Checkout – Checkin",
     "text": "",
     "tags": "",
-    "url": "/checkout/v3/dsca/checkin.html"
+    "url": "/checkout/v3/standard/checkin.html"
   },{
     "title": "Checkout – Checkin",
     "text": "",
     "tags": "",
-    "url": "/checkout/v3/standard/checkin.html"
+    "url": "/checkout/v3/dsca/checkin.html"
   },{
     "title": "Checkout – Checkin",
     "text": "",
@@ -267,17 +267,17 @@ var tipuesearch = {"pages": [{
     "title": "CompleteUrl",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
-    "url": "/checkout/v3/dsca/features/technical-reference/complete-url.html"
-  },{
-    "title": "CompleteUrl",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
     "url": "/checkout/v3/standard/features/technical-reference/complete-url.html"
   },{
     "title": "CompleteUrl",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v3/basic/features/technical-reference/complete-url.html"
+  },{
+    "title": "CompleteUrl",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
+    "url": "/checkout/v3/dsca/features/technical-reference/complete-url.html"
   },{
     "title": "CompleteUrl",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -292,22 +292,17 @@ var tipuesearch = {"pages": [{
     "title": "CompleteUrl",
     "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/technical-reference/complete-url.html"
+    "url": "/products/checkout-v3-dev/payments-only/features/technical-reference/complete-url.html"
   },{
     "title": "CompleteUrl",
     "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/payments-only/features/technical-reference/complete-url.html"
+    "url": "/products/checkout-v3-dev/starter/features/technical-reference/complete-url.html"
   },{
     "title": "Creditting?",
     "text": "Don’t read this If you see this. It means you are credited.",
     "tags": "",
     "url": "/payments/credit.html"
-  },{
-    "title": "Custom Logo",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
-    "url": "/checkout/v3/dsca/features/optional/custom-logo.html"
   },{
     "title": "Custom Logo",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -322,6 +317,11 @@ var tipuesearch = {"pages": [{
     "title": "Custom Logo",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
+    "url": "/checkout/v3/dsca/features/optional/custom-logo.html"
+  },{
+    "title": "Custom Logo",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
     "url": "/checkout/v3/tailored/features/optional/custom-logo.html"
   },{
     "title": "Custom Logo",
@@ -332,17 +332,12 @@ var tipuesearch = {"pages": [{
     "title": "Custom Logo",
     "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/optional/custom-logo.html"
+    "url": "/products/checkout-v3-dev/payments-only/features/optional/custom-logo.html"
   },{
     "title": "Custom Logo",
     "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/payments-only/features/optional/custom-logo.html"
-  },{
-    "title": "Delete Token",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
-    "url": "/checkout/v3/dsca/features/technical-reference/delete-token.html"
+    "url": "/products/checkout-v3-dev/starter/features/optional/custom-logo.html"
   },{
     "title": "Delete Token",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -357,6 +352,11 @@ var tipuesearch = {"pages": [{
     "title": "Delete Token",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
+    "url": "/checkout/v3/dsca/features/technical-reference/delete-token.html"
+  },{
+    "title": "Delete Token",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
     "url": "/checkout/v3/tailored/features/technical-reference/delete-token.html"
   },{
     "title": "Delete Token",
@@ -367,17 +367,12 @@ var tipuesearch = {"pages": [{
     "title": "Delete Token",
     "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/optional/delete-token.html"
+    "url": "/products/checkout-v3-dev/payments-only/features/optional/delete-token.html"
   },{
     "title": "Delete Token",
     "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/payments-only/features/optional/delete-token.html"
-  },{
-    "title": "Description",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
-    "url": "/checkout/v3/dsca/features/technical-reference/description.html"
+    "url": "/products/checkout-v3-dev/starter/features/optional/delete-token.html"
   },{
     "title": "Description",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -392,6 +387,11 @@ var tipuesearch = {"pages": [{
     "title": "Description",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
+    "url": "/checkout/v3/dsca/features/technical-reference/description.html"
+  },{
+    "title": "Description",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
     "url": "/checkout/v3/tailored/features/technical-reference/description.html"
   },{
     "title": "Description",
@@ -402,17 +402,12 @@ var tipuesearch = {"pages": [{
     "title": "Description",
     "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/technical-reference/description.html"
+    "url": "/products/checkout-v3-dev/payments-only/features/technical-reference/description.html"
   },{
     "title": "Description",
     "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/payments-only/features/technical-reference/description.html"
-  },{
-    "title": "Delegated Strong Consumer Authentication",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
-    "url": "/checkout/v3/dsca/features/optional/dsca.html"
+    "url": "/products/checkout-v3-dev/starter/features/technical-reference/description.html"
   },{
     "title": "Delegated Strong Consumer Authentication",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -423,6 +418,11 @@ var tipuesearch = {"pages": [{
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v3/basic/features/optional/dsca.html"
+  },{
+    "title": "Delegated Strong Consumer Authentication",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
+    "url": "/checkout/v3/dsca/features/optional/dsca.html"
   },{
     "title": "Delegated Strong Consumer Authentication",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -438,41 +438,6 @@ var tipuesearch = {"pages": [{
     "text": "",
     "tags": "",
     "url": "/resources/gamma.html"
-  },{
-    "title": "Secret payments",
-    "text": "How we do secret payments We don’t.",
-    "tags": "",
-    "url": "/payments/secrets/"
-  },{
-    "title": "Payments",
-    "text": "",
-    "tags": "",
-    "url": "/payments/"
-  },{
-    "title": "Technical Reference",
-    "text": "Technical Reference Callback Receive asynchronous, server-to-server updates from Swedbank Pay when transactions are performed on a payment. Checkin Events Possible events during Checkin. CompleteUrl Where you go when the payment is completed. Delete Token How to delete tokens. Description The purchase summed up in a few words. Metadata Store payment associated data for later use. PayeeInfo Payment specific merchant information. PayeeReference The merchant’s reference for a specific payment. Payment Menu Events Possible events during Payment Menu payments. Operations Possible operations for a payment order. Payment State Different states in the payment process. PaymentUrl Redirecting the payer back to your site. Prices The payment’s prices resource. Problems Information when something goes wrong. Seamless View Events Possible events during Seamless View payments. Purchase The bread and butter of the payments.",
-    "tags": "",
-    "url": "/checkout/v3/dsca/features/technical-reference/"
-  },{
-    "title": "Optional Features",
-    "text": "Optional Features Custom Logo How to add your own logo Delegated Strong Consumer Authentication The Checkin alternative Recur Setting up subscriptions and recurring payments Verify Validating the payer’s payment details",
-    "tags": "",
-    "url": "/checkout/v3/dsca/features/optional/"
-  },{
-    "title": "Core Features",
-    "text": "Core Features 3-D Secure 2 Authenticating the cardholder Cancel Cancelling the authorization and releasing the funds Capture Capturing the authorized funds Reversal How to reverse a payment Settlement &amp; Reconciliation Balancing the books",
-    "tags": "",
-    "url": "/checkout/v3/dsca/features/core/"
-  },{
-    "title": "Features",
-    "text": "Core Features 3-D Secure 2 Authenticating the cardholder Cancel Cancelling the authorization and releasing the funds Capture Capturing the authorized funds Reversal How to reverse a payment Settlement &amp; Reconciliation Balancing the books Technical Reference Callback Getting updates about payment or transaction changes Checkin Events Possible events during Checkin CompleteUrl Where you go when the payment is completed Delete Token How to delete tokens Description The purchase summed up in a few words Metadata Store payment associated data for later use PayeeInfo Payment specific merchant information PayeeReference The merchant’s reference for a specific payment Payment Menu Events Possible events during Payment Menu payments Operations Possible operations for a payment order Payment State Different states in the payment process PaymentUrl Redirecting the payer back to your site Prices The payment’s prices resource Problems Information when something goes wrong Seamless View Events Possible events during Seamless View payments Optional Features Custom Logo How to add your own logo Delegated Strong Consumer Authentication The Checkin alternative Recur Setting up subscriptions and recurring payments Verify Validating the payer’s payment details",
-    "tags": "",
-    "url": "/checkout/v3/dsca/features/"
-  },{
-    "title": "Introduction",
-    "text": "",
-    "tags": "",
-    "url": "/checkout/v3/dsca/"
   },{
     "title": "Technical Reference",
     "text": "Technical Reference Callback Receive asynchronous, server-to-server updates from Swedbank Pay when transactions are performed on a payment. Checkin Events Possible events during Checkin. CompleteUrl Where you go when the payment is completed. Delete Token How to delete tokens. Description The purchase summed up in a few words. Metadata Store payment associated data for later use. PayeeInfo Payment specific merchant information. PayeeReference The merchant’s reference for a specific payment. Payment Menu Events Possible events during Payment Menu payments. Operations Possible operations for a payment order. Payment State Different states in the payment process. PaymentUrl Redirecting the payer back to your site. Prices The payment’s prices resource. Problems Information when something goes wrong. Seamless View Events Possible events during Seamless View payments. Purchase The bread and butter of the payments.",
@@ -523,6 +488,31 @@ var tipuesearch = {"pages": [{
     "text": "",
     "tags": "",
     "url": "/checkout/v3/basic/"
+  },{
+    "title": "Technical Reference",
+    "text": "Technical Reference Callback Receive asynchronous, server-to-server updates from Swedbank Pay when transactions are performed on a payment. Checkin Events Possible events during Checkin. CompleteUrl Where you go when the payment is completed. Delete Token How to delete tokens. Description The purchase summed up in a few words. Metadata Store payment associated data for later use. PayeeInfo Payment specific merchant information. PayeeReference The merchant’s reference for a specific payment. Payment Menu Events Possible events during Payment Menu payments. Operations Possible operations for a payment order. Payment State Different states in the payment process. PaymentUrl Redirecting the payer back to your site. Prices The payment’s prices resource. Problems Information when something goes wrong. Seamless View Events Possible events during Seamless View payments. Purchase The bread and butter of the payments.",
+    "tags": "",
+    "url": "/checkout/v3/dsca/features/technical-reference/"
+  },{
+    "title": "Optional Features",
+    "text": "Optional Features Custom Logo How to add your own logo Delegated Strong Consumer Authentication The Checkin alternative Recur Setting up subscriptions and recurring payments Verify Validating the payer’s payment details",
+    "tags": "",
+    "url": "/checkout/v3/dsca/features/optional/"
+  },{
+    "title": "Core Features",
+    "text": "Core Features 3-D Secure 2 Authenticating the cardholder Cancel Cancelling the authorization and releasing the funds Capture Capturing the authorized funds Reversal How to reverse a payment Settlement &amp; Reconciliation Balancing the books",
+    "tags": "",
+    "url": "/checkout/v3/dsca/features/core/"
+  },{
+    "title": "Features",
+    "text": "Core Features 3-D Secure 2 Authenticating the cardholder Cancel Cancelling the authorization and releasing the funds Capture Capturing the authorized funds Reversal How to reverse a payment Settlement &amp; Reconciliation Balancing the books Technical Reference Callback Getting updates about payment or transaction changes Checkin Events Possible events during Checkin CompleteUrl Where you go when the payment is completed Delete Token How to delete tokens Description The purchase summed up in a few words Metadata Store payment associated data for later use PayeeInfo Payment specific merchant information PayeeReference The merchant’s reference for a specific payment Payment Menu Events Possible events during Payment Menu payments Operations Possible operations for a payment order Payment State Different states in the payment process PaymentUrl Redirecting the payer back to your site Prices The payment’s prices resource Problems Information when something goes wrong Seamless View Events Possible events during Seamless View payments Optional Features Custom Logo How to add your own logo Delegated Strong Consumer Authentication The Checkin alternative Recur Setting up subscriptions and recurring payments Verify Validating the payer’s payment details",
+    "tags": "",
+    "url": "/checkout/v3/dsca/features/"
+  },{
+    "title": "Introduction",
+    "text": "",
+    "tags": "",
+    "url": "/checkout/v3/dsca/"
   },{
     "title": "Technical Reference",
     "text": "Technical Reference Callback Receive asynchronous, server-to-server updates from Swedbank Pay when transactions are performed on a payment. Checkin Events Possible events during Checkin. CompleteUrl Where you go when the payment is completed. Delete Token How to delete tokens. Description The purchase summed up in a few words. Metadata Store payment associated data for later use. PayeeInfo Payment specific merchant information. PayeeReference The merchant’s reference for a specific payment. Payment Menu Events Possible events during Payment Menu payments. Operations Possible operations for a payment order. Payment State Different states in the payment process. PaymentUrl Redirecting the payer back to your site. Prices The payment’s prices resource. Problems Information when something goes wrong. Seamless View Events Possible events during Seamless View payments. Purchase The bread and butter of the payments.",
@@ -584,30 +574,45 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/checkout/"
   },{
-    "title": "Technical Reference",
-    "text": "Technical Reference CompleteUrl Where you go when the payment is completed. Description The purchase summed up in a few words. Metadata Store payment associated data for later use. Operations Possible operations for a payment order.",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/technical-reference/"
-  },{
-    "title": "Optional Features",
-    "text": "Optional Features Custom Logo How to add your own logo. Delete Token How to delete tokens.",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/optional/"
-  },{
-    "title": "Core Features",
-    "text": "Core Features 3-D Secure 2 Authenticating the cardholder. Abort Aborting a created payment. Callback Receive asynchronous, server-to-server updates from Swedbank Pay when transactions are performed on a payment. Cancel Canceling the authorization and releasing the funds.",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/core/"
-  },{
-    "title": "Features",
+    "title": "Deck 3",
     "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/starter/features/"
+    "url": "/cards/deck3/"
   },{
-    "title": "Set Up",
-    "text": "Step 1: Sign Up For A Test Account A test account gives you access to our unified dashboard for managing your account across different platforms. We call this dashboard the Ecom Admin. Your test account request should be sent to: testaccount@swedbankpay.com in order to create an account for you, we need some specific information from your side: Company name: Your company name. Services you prefer: Full Checkout (Starter / Business / Enterprise) or Payments Only (Payments). Email address: To a developer or the CTO. Step 2: Wait For Response Within 8 working hours we will have created your account and sent you an email containing the following information: Merchant name: This represents your core business entity with us. Payer ID: This is how we identify you. Services: The services that are activated and ready for testing. Login credentials: You will receive a temporary password in a separate email. Step 3: Get Your Access Tokens To submit payments to us, you will be making API requests that are authenticated with an access token. How to generate your access token: Log in to: https://admin.externalintegration.payex.com/psp/beta/login/ - For testing environment. Merchant details: Here you will find information about your account. An access token is necessary since it will be used together with Payee ID to validate transactions. The Payee ID will serve as the door and, your token is the key. Navigate to “Access Tokens” at the top of the page. Choose “Add” and name the token. We suggest you name it according to what environment it is created in. Your token will only be fully visible upon creation. For security purposes, we will mask it like this 12a3**********bc4de56f. If you need to keep track of it, please save it externally in a safe place as it will remain encrypted.",
+    "title": "Deck 2",
+    "text": "",
     "tags": "",
-    "url": "/products/checkout-v3-dev/starter/"
+    "url": "/cards/deck2/"
+  },{
+    "title": "Deck 1",
+    "text": "",
+    "tags": "",
+    "url": "/cards/deck1/"
+  },{
+    "title": "Cards",
+    "text": "1 2 3 4 5 6 7 8 9 10 11 12 13 &lt;i class=\"cards-icon at-credit-card\" aria-hidden=\"true\"&gt;&lt;/i&gt; &lt;span class=\"h4\"&gt;Default&lt;/span&gt; &lt;div class=\"cards-content\"&gt; &lt;p&gt;This is a default card&lt;/p&gt; &lt;/div&gt; &lt;div class=\"cards-cta\"&gt; &lt;span class=\"arrow\"&gt;&lt;/span&gt; &lt;/div&gt; &lt;/a&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 &lt;i class=\"cards-icon at-settings\" aria-hidden=\"true\"&gt;&lt;/i&gt; &lt;span class=\"h4\"&gt;SDK&lt;/span&gt; &lt;div class=\"cards-content\"&gt; &lt;p&gt;This is a .dx-card-sdk card&lt;/p&gt; &lt;/div&gt; &lt;div class=\"cards-cta\"&gt; &lt;span class=\"arrow\"&gt;&lt;/span&gt; &lt;/div&gt; &lt;/a&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 &lt;i class=\"cards-icon at-build\" aria-hidden=\"true\"&gt;&lt;/i&gt; &lt;span class=\"h4\"&gt;module&lt;/span&gt; &lt;div class=\"cards-content\"&gt; &lt;p&gt;This is a .dx-card-module card. This also has outlined icon&lt;/p&gt; &lt;/div&gt; &lt;div class=\"cards-cta\"&gt; &lt;span class=\"arrow\"&gt;&lt;/span&gt; &lt;/div&gt; &lt;/a&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 &lt;i class=\"cards-icon 01\" aria-hidden=\"true\"&gt;&lt;/i&gt; &lt;span class=\"h4\"&gt;Use wide card&lt;/span&gt; &lt;div class=\"cards-content\"&gt; &lt;p&gt;This is a dx-card-horizontal card. Icons used with this card are just numbers&lt;/p&gt; &lt;/div&gt; &lt;div class=\"cards-cta\"&gt; &lt;span class=\"arrow\"&gt;&lt;/span&gt; &lt;/div&gt; &lt;/a&gt;",
+    "tags": "",
+    "url": "/cards/"
+  },{
+    "title": "PlantUML",
+    "text": "Network Diagram clientappdbqueuecloudusecaserectanglepackagefolderframecardfile State Diagram State1this is a stringthis is another stringState2 Sequence Diagrams Checkin  Payer Payer Merchant Merchant Swedbank Pay Swedbank PayStart CheckinPOST /psp/consumersrel:view-consumer-identification ①rel:view-consumer-identification ②&lt;script src=rel:view-consumer-identification.href /&gt;payex.hostedView.consumer()Consumer identification③onConsumerIdentified(consumerProfileRef) ④POST { consumerProfileRef } ⑤StoreconsumerProfileRef Payment Menu  Payer Payer Merchant Merchant Swedbank Pay Swedbank PayPayPOST /psp/paymentorders { consumerProfileRef } ①rel:view-paymentorderrel:view-paymentorder&lt;script src=rel:view-paymentorder.href /&gt;payex.hostedView.paymentMenu()Perform paymentalt[completed payment]onPaymentCompleted(paymentorder)Check payment statusGET paymentorder.idrel:paid-paymentorderGET rel:paid-paymentorder.hrefCompleted Payment OrderShow receipt[failed payment]onPaymentFailed(paymentorder)Check payment statusGET paymentorder.idrel:failed-paymentorderGET rel:failed-paymentorder.hrefFailed Payment OrderShow failure page Callback  Merchant Merchant Swedbank Pay Swedbank PayPOST { payment activity }GET paymentorder.idPayment OrderUpdate status Capture  Merchant Merchant Swedbank Pay Swedbank PayCaptureGET paymentorder.idrel:create-paymentorder-capturePOST rel:create-paymentorder-capture.hrefCapture status",
+    "tags": "",
+    "url": "/plantuml/"
+  },{
+    "title": "Sub-resources",
+    "text": "",
+    "tags": "",
+    "url": "/resources/sub-resources/"
+  },{
+    "title": "Resources",
+    "text": "The page at the end of this link should redirect back here",
+    "tags": "",
+    "url": "/resources/"
+  },{
+    "title": "",
+    "text": "",
+    "tags": "",
+    "url": "/checkout-more/"
   },{
     "title": "Technical Reference",
     "text": "Technical Reference CompleteUrl Where you go when the payment is completed. Description The purchase summed up in a few words.",
@@ -634,6 +639,31 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/products/checkout-v3-dev/payments-only/"
   },{
+    "title": "Technical Reference",
+    "text": "Technical Reference CompleteUrl Where you go when the payment is completed. Description The purchase summed up in a few words. Metadata Store payment associated data for later use. Operations Possible operations for a payment order.",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/starter/features/technical-reference/"
+  },{
+    "title": "Optional Features",
+    "text": "Optional Features Custom Logo How to add your own logo. Delete Token How to delete tokens.",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/starter/features/optional/"
+  },{
+    "title": "Core Features",
+    "text": "Core Features 3-D Secure 2 Authenticating the cardholder. Abort Aborting a created payment. Callback Receive asynchronous, server-to-server updates from Swedbank Pay when transactions are performed on a payment. Cancel Canceling the authorization and releasing the funds.",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/starter/features/core/"
+  },{
+    "title": "Features",
+    "text": "",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/starter/features/"
+  },{
+    "title": "Set Up",
+    "text": "Step 1: Sign Up For A Test Account A test account gives you access to our unified dashboard for managing your account across different platforms. We call this dashboard the Ecom Admin. Your test account request should be sent to: testaccount@swedbankpay.com in order to create an account for you, we need some specific information from your side: Company name: Your company name. Services you prefer: Full Checkout (Starter / Business / Enterprise) or Payments Only (Payments). Email address: To a developer or the CTO. Step 2: Wait For Response Within 8 working hours we will have created your account and sent you an email containing the following information: Merchant name: This represents your core business entity with us. Payer ID: This is how we identify you. Services: The services that are activated and ready for testing. Login credentials: You will receive a temporary password in a separate email. Step 3: Get Your Access Tokens To submit payments to us, you will be making API requests that are authenticated with an access token. How to generate your access token: Log in to: https://admin.externalintegration.payex.com/psp/beta/login/ - For testing environment. Merchant details: Here you will find information about your account. An access token is necessary since it will be used together with Payee ID to validate transactions. The Payee ID will serve as the door and, your token is the key. Navigate to “Access Tokens” at the top of the page. Choose “Add” and name the token. We suggest you name it according to what environment it is created in. Your token will only be fully visible upon creation. For security purposes, we will mask it like this 12a3**********bc4de56f. If you need to keep track of it, please save it externally in a safe place as it will remain encrypted.",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/starter/"
+  },{
     "title": "Get Started",
     "text": "Choose The Right Implementation For Your Business The customer journey varies a lot depending on your business vertical. For example, if you’re selling physical goods - like clothes, shoes or computers, you need to collect a delivery address. Unlike if you are selling digital goods, where that isn’t needed. But this is also a matter of which data you can and/or wish to collect and manage yourself. Here, you can choose between two main paths. Either you let us provide you with a Full Checkout solution (including both payer identification and payment menu) - meaning the payer themselves can choose how they’d like to pay, or you can decide to use the Payments Only option. This means that you are in charge of collecting and storing the payer data and the payment instruments to be presented. Regardless of whether you choose to go with the full checkout or payments only, we will supply you with a variety of payment instruments and features which cater to your business needs. Authentication: The process of verifying the payer’s identity. Delivery Info: Information about where the goods should be delivered. Payer Info: The payer’s personal data e.g. name, address, card number etc. PSP: The service of providing payment instruments in the checkout. What Are You Looking For?",
     "tags": "",
@@ -644,60 +674,30 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/products/"
   },{
-    "title": "Sub-resources",
+    "title": "Secret payments",
+    "text": "How we do secret payments We don’t.",
+    "tags": "",
+    "url": "/payments/secrets/"
+  },{
+    "title": "Payments",
     "text": "",
     "tags": "",
-    "url": "/resources/sub-resources/"
-  },{
-    "title": "Resources",
-    "text": "The page at the end of this link should redirect back here",
-    "tags": "",
-    "url": "/resources/"
-  },{
-    "title": "",
-    "text": "",
-    "tags": "",
-    "url": "/checkout-more/"
-  },{
-    "title": "PlantUML",
-    "text": "Network Diagram clientappdbqueuecloudusecaserectanglepackagefolderframecardfile State Diagram State1this is a stringthis is another stringState2 Sequence Diagrams Checkin  Payer Payer Merchant Merchant Swedbank Pay Swedbank PayStart CheckinPOST /psp/consumersrel:view-consumer-identification ①rel:view-consumer-identification ②&lt;script src=rel:view-consumer-identification.href /&gt;payex.hostedView.consumer()Consumer identification③onConsumerIdentified(consumerProfileRef) ④POST { consumerProfileRef } ⑤StoreconsumerProfileRef Payment Menu  Payer Payer Merchant Merchant Swedbank Pay Swedbank PayPayPOST /psp/paymentorders { consumerProfileRef } ①rel:view-paymentorderrel:view-paymentorder&lt;script src=rel:view-paymentorder.href /&gt;payex.hostedView.paymentMenu()Perform paymentalt[completed payment]onPaymentCompleted(paymentorder)Check payment statusGET paymentorder.idrel:paid-paymentorderGET rel:paid-paymentorder.hrefCompleted Payment OrderShow receipt[failed payment]onPaymentFailed(paymentorder)Check payment statusGET paymentorder.idrel:failed-paymentorderGET rel:failed-paymentorder.hrefFailed Payment OrderShow failure page Callback  Merchant Merchant Swedbank Pay Swedbank PayPOST { payment activity }GET paymentorder.idPayment OrderUpdate status Capture  Merchant Merchant Swedbank Pay Swedbank PayCaptureGET paymentorder.idrel:create-paymentorder-capturePOST rel:create-paymentorder-capture.hrefCapture status",
-    "tags": "",
-    "url": "/plantuml/"
-  },{
-    "title": "Deck 1",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck1/"
-  },{
-    "title": "Deck 2",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck2/"
-  },{
-    "title": "Deck 3",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck3/"
-  },{
-    "title": "Cards",
-    "text": "1 2 3 4 5 6 7 8 9 10 11 12 13 &lt;i class=\"cards-icon at-credit-card\" aria-hidden=\"true\"&gt;&lt;/i&gt; &lt;span class=\"h4\"&gt;Default&lt;/span&gt; &lt;div class=\"cards-content\"&gt; &lt;p&gt;This is a default card&lt;/p&gt; &lt;/div&gt; &lt;div class=\"cards-cta\"&gt; &lt;span class=\"arrow\"&gt;&lt;/span&gt; &lt;/div&gt; &lt;/a&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 &lt;i class=\"cards-icon at-settings\" aria-hidden=\"true\"&gt;&lt;/i&gt; &lt;span class=\"h4\"&gt;SDK&lt;/span&gt; &lt;div class=\"cards-content\"&gt; &lt;p&gt;This is a .dx-card-sdk card&lt;/p&gt; &lt;/div&gt; &lt;div class=\"cards-cta\"&gt; &lt;span class=\"arrow\"&gt;&lt;/span&gt; &lt;/div&gt; &lt;/a&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 &lt;i class=\"cards-icon at-build\" aria-hidden=\"true\"&gt;&lt;/i&gt; &lt;span class=\"h4\"&gt;module&lt;/span&gt; &lt;div class=\"cards-content\"&gt; &lt;p&gt;This is a .dx-card-module card. This also has outlined icon&lt;/p&gt; &lt;/div&gt; &lt;div class=\"cards-cta\"&gt; &lt;span class=\"arrow\"&gt;&lt;/span&gt; &lt;/div&gt; &lt;/a&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 &lt;i class=\"cards-icon 01\" aria-hidden=\"true\"&gt;&lt;/i&gt; &lt;span class=\"h4\"&gt;Use wide card&lt;/span&gt; &lt;div class=\"cards-content\"&gt; &lt;p&gt;This is a dx-card-horizontal card. Icons used with this card are just numbers&lt;/p&gt; &lt;/div&gt; &lt;div class=\"cards-cta\"&gt; &lt;span class=\"arrow\"&gt;&lt;/span&gt; &lt;/div&gt; &lt;/a&gt;",
-    "tags": "",
-    "url": "/cards/"
+    "url": "/payments/"
   },{
     "title": "Home",
     "text": "Text can be bold, italic, or strikethrough. External absolute full link Internal absolute full link Internal explicit relative link Internal implicit relative link Internal absolute link There should be whitespace between paragraphs. There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project. Header 2 This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere. This is a blockquote following a header. When something is important enough, you do it even if the odds are not in your favor. Header 3 This is a normal paragraph following a header 3. Header 4 This is an unordered list following a header 4. This is an unordered list following a header 4. This is an unordered list following a header 4. Header 5 This is an ordered list following a header 5. This is an ordered list following a header 5. This is an ordered list following a header 5. Header 6 This is a normal paragraph following a header 6. Accordion Show fields Hide fields Here’s an accordion with default headers and style, and unformatted content. Same header and style Same header and style Here’s an accordion with the same header and style on both expand and collapse. The content is formatted as one paragraph with padding. Expand Collapse Here’s an accordion with the different header and style on expand and collapse. Here we have also formatted the content as two paragraphs with padding. Cards Card A standard card that opens in a new tab Card with button text A standard card CTA text Card with image A standard card with an image Card with image, icon and button text Note that image cards will not display any icon if the card has an image. CTA text Wide card with flag icon A wide card Wide card with icon and button text Note that wide cards will not display the button text unless the card has an image. CTA text Wide card with image and icon Note that wide image cards will not display any icon if the card has an image. Wide card with image and button text A wide card with an image and button text CTA text Tabs Tab 1 Tab 2 Tab 3* Example 1 The src content for Example 1 Example 2 The src content for Example 2 Example 3 The src content for Example 3 Table Here’s a nice table. col one col two col three ok good swedish fish nice out of stock good and plenty nice ok good oreos hmm ok good zoute drop yumm Here’s a striped table. col one col two col three ok good swedish fish nice out of stock good and plenty nice ok good oreos hmm ok good zoute drop yumm Code examples JavaScript code with syntax highlighting. 1 2 3 4 var fun = function lang(l) { dateformat.i18n = require('./lang/' + l) return true; } HTTP request 1 2 3 4 POST /psp/consumers HTTP/1.1 Host: api.externalintegration.payex.com Authorization: Bearer &lt;AccessToken&gt; Content-Type: application/json HTTP response 1 2 HTTP/1.1 200 OK Content-Type: application/json 1 2 3 4 POST /psp/consumers HTTP/1.1 Host: api.externalintegration.payex.com Authorization: Bearer &lt;AccessToken&gt; Content-Type: application/json JSON 1 2 3 4 5 6 7 8 9 10 { \"operation\": \"initiate-consumer-session\", \"msisdn\": \"+4798765432\", \"email\": \"olivia.nyhuus@example.com\", \"consumerCountryCode\": \"NO\", \"nationalIdentifier\": { \"socialSecurityNumber\": \"26026708248\", \"countryCode\": \"NO\" } } JSONC (JSON with comments) 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 { \"payment\": \"/psp/creditcard/payments/paymentId\", \"authorization\": { \"direct\": true, \"cardBrand\": \"Visa\", // Some comment \"cardType\": \"Credit\", // Some comment \"issuingBank\": \"Utl. Visa\", // Some comment \"paymentToken\": \"paymentToken\", \"maskedPan\": \"454778******3329\", \"expiryDate\": \"12/2020\", \"panToken\": \"cca2d98d-8bb3-4bd6-9cf3-365acbbaff96\", \"panEnrolled\": true, \"acquirerTransactionTime\": \"0001-01-01T00:00:00Z\", \"id\": \"/psp/creditcard/payments/7e6cdfc3-1276-44e9-9992-7cf4419750e1/authorizations/ec2a9b09-601a-42ae-8e33-a5737e1cf177\", \"transaction\": { \"id\": \"/psp/creditcard/payments/7e6cdfc3-1276-44e9-9992-7cf4419750e1/transactions/ec2a9b09-601a-42ae-8e33-a5737e1cf177\", \"created\": \"2020-03-10T13:15:01.9586254Z\", \"updated\": \"2020-03-10T13:15:02.0493818Z\", \"type\": \"Authorization\", \"state\": \"AwaitingActivity\", \"number\": 70100366758, \"amount\": 4201, \"vatAmount\": 0, \"description\": \"Test transaction\", \"payeeReference\": \"1583846100\", \"isOperational\": true, \"operations\": [ { \"method\": \"GET\", \"href\": \"https://api.stage.payex.com/psp/creditcard/confined/payments/authorizations/authenticate/ec2a9b09-601a-42ae-8e33-a5737e1cf177\", \"rel\": \"redirect-authentication\" } ] } } } To show code examples you can use a code example component. Code example Copy json to clipboard 1 2 3 4 POST /psp/consumers HTTP/1.1 Host: api.externalintegration.payex.com Authorization: Bearer &lt;AccessToken&gt; Content-Type: application/json 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 { \"payment\": \"/psp/creditcard/payments/paymentId\", \"authorization\": { \"direct\": true, \"cardBrand\": \"Visa\", // Some comment \"cardType\": \"Credit\", // Some comment \"issuingBank\": \"Utl. Visa\", // Some comment \"paymentToken\": \"paymentToken\", \"maskedPan\": \"454778******3329\", \"expiryDate\": \"12/2020\", \"panToken\": \"cca2d98d-8bb3-4bd6-9cf3-365acbbaff96\", \"panEnrolled\": true, \"acquirerTransactionTime\": \"0001-01-01T00:00:00Z\", \"id\": \"/psp/creditcard/payments/7e6cdfc3-1276-44e9-9992-7cf4419750e1/authorizations/ec2a9b09-601a-42ae-8e33-a5737e1cf177\", \"transaction\": { \"id\": \"/psp/creditcard/payments/7e6cdfc3-1276-44e9-9992-7cf4419750e1/transactions/ec2a9b09-601a-42ae-8e33-a5737e1cf177\", \"created\": \"2020-03-10T13:15:01.9586254Z\", \"updated\": \"2020-03-10T13:15:02.0493818Z\", \"type\": \"Authorization\", \"state\": \"AwaitingActivity\", \"number\": 70100366758, \"amount\": 4201, \"vatAmount\": 0, \"description\": \"Test transaction\", \"payeeReference\": \"1583846100\", \"isOperational\": true } } } Here’s some &lt;inline&gt; { \"code\": true } that should .be { highlighted: according; } to their language. Mermaid sequenceDiagram participant Merchant participant SwedbankPay activate SwedbankPay SwedbankPay-&gt;&gt;Merchant: POST &lt;callbackUrl&gt; activate Merchant note right of SwedbankPay: Callback POST by SwedbankPay Merchant-&gt;&gt;SwedbankPay: Callback response deactivate Merchant deactivate SwedbankPay activate Merchant Merchant-&gt;&gt;SwedbankPay: GET &lt;payment instrument&gt; payment note left of Merchant: First API request activate SwedbankPay SwedbankPay--&gt;&gt;Merchant: payment resource deactivate SwedbankPay deactivate Merchant Alerts Informational alert: This is an informational alert Success: This is a successful alert. Warning: This is a warning alert with &lt;markdown/&gt;. Danger: This is an error alert with &lt;markdown/&gt;. Jumbotron PayEx Checkout is a complete reimagination of the checkout experience, integrating seamlessly into the merchant website through highly customizable and flexible components. Visit our demoshop and try out PayEx Checkout for yourself! Iterator Next Previous Go back Go forward There’s a horizontal rule below this Here is an unordered list Item foo Item bar Item baz Item zip And an ordered list Item one Item two Item three Item four And a nested list level 1 item level 2 item level 2 item level 3 item level 3 item level 1 item level 2 item level 2 item level 2 item level 1 item level 2 item level 2 item level 1 item Small image Large image Definition lists can be used with HTML syntax Name Godzilla Born 1952 Birthplace Japan Color Green Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this. The final element. Emoji support :+1: :heavy_check_mark: :fire: 💡 :unicorn: Material design icons check line_weight gavel visibility work alarm_on touch_app",
     "tags": "",
     "url": "/"
   },{
-    "title": "Starter",
-    "text": "This is the option where Swedbank Pay does it all. Verifying your consumer, collecting billing and shipping addresses, storing consumer information and providing you with the full range of available payment methods. The only way of integrating our Starter implementation is Seamless View. With Seamless View, the payer stays at your site, and you initiate the Swedbank Pay authentication and purchase module in an iframe. The checkin and purchase component will be styled by Swedbank Pay. Read more about the integration by clicking the link below. This product supports Danish da-DK, English (US) en-US, Finnish fi-FI, Norwegian nb-NO, and Swedish sv-SE.",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/starter/introduction.html"
-  },{
     "title": "Payments Only",
     "text": "Payments Only is where you get to be in charge of everything. You handle the consumer verification with a strong customer authentication, collect the consumer information needed to calculate shipping costs, and store the information yourself. We provide you with our full range of payment methods. There are two ways of integrating the Payments Only implementation. Redirect and Seamless View. With Redirect, the payer is sent to a Swedbank Pay page, where we handle the purchase process. The payer is redirected back to you when the purchase is completed or if the payer aborts the purchase. The purchase page will be styled by Swedbank Pay. With Seamless View, the payer stays at your site, and you initiate the Swedbank Pay purchase module in an iframe. The purchase component will be styled by Swedbank Pay. Read more about our two integration alternatives by clicking the links below. This product supports Danish da-DK, English (US) en-US, Finnish fi-FI, Norwegian nb-NO, and Swedish sv-SE.",
     "tags": "",
     "url": "/products/checkout-v3-dev/payments-only/introduction.html"
+  },{
+    "title": "Starter",
+    "text": "This is the option where Swedbank Pay does it all. Verifying your consumer, collecting billing and shipping addresses, storing consumer information and providing you with the full range of available payment methods. The only way of integrating our Starter implementation is Seamless View. With Seamless View, the payer stays at your site, and you initiate the Swedbank Pay authentication and purchase module in an iframe. The checkin and purchase component will be styled by Swedbank Pay. Read more about the integration by clicking the link below. This product supports Danish da-DK, English (US) en-US, Finnish fi-FI, Norwegian nb-NO, and Swedish sv-SE.",
+    "tags": "",
+    "url": "/products/checkout-v3-dev/starter/introduction.html"
   },{
     "title": "Invoicing",
     "text": "Invoices It’s a weird thing this invoice, some like it, most dont. I have no particularly strong feeling seeing that I am just text on a page.",
@@ -712,17 +712,17 @@ var tipuesearch = {"pages": [{
     "title": "Metadata",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
-    "url": "/checkout/v3/dsca/features/technical-reference/metadata.html"
-  },{
-    "title": "Metadata",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
     "url": "/checkout/v3/standard/features/technical-reference/metadata.html"
   },{
     "title": "Metadata",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v3/basic/features/technical-reference/metadata.html"
+  },{
+    "title": "Metadata",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
+    "url": "/checkout/v3/dsca/features/technical-reference/metadata.html"
   },{
     "title": "Metadata",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -742,17 +742,17 @@ var tipuesearch = {"pages": [{
     "title": "Operations",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
-    "url": "/checkout/v3/dsca/features/technical-reference/operations.html"
-  },{
-    "title": "Operations",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
     "url": "/checkout/v3/standard/features/technical-reference/operations.html"
   },{
     "title": "Operations",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v3/basic/features/technical-reference/operations.html"
+  },{
+    "title": "Operations",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
+    "url": "/checkout/v3/dsca/features/technical-reference/operations.html"
   },{
     "title": "Operations",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -787,17 +787,17 @@ var tipuesearch = {"pages": [{
     "title": "PayeeInfo",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
-    "url": "/checkout/v3/dsca/features/technical-reference/payee-info.html"
-  },{
-    "title": "PayeeInfo",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
     "url": "/checkout/v3/standard/features/technical-reference/payee-info.html"
   },{
     "title": "PayeeInfo",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v3/basic/features/technical-reference/payee-info.html"
+  },{
+    "title": "PayeeInfo",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
+    "url": "/checkout/v3/dsca/features/technical-reference/payee-info.html"
   },{
     "title": "PayeeInfo",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -812,17 +812,17 @@ var tipuesearch = {"pages": [{
     "title": "PayeeReference",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
-    "url": "/checkout/v3/dsca/features/technical-reference/payee-reference.html"
-  },{
-    "title": "PayeeReference",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
     "url": "/checkout/v3/standard/features/technical-reference/payee-reference.html"
   },{
     "title": "PayeeReference",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v3/basic/features/technical-reference/payee-reference.html"
+  },{
+    "title": "PayeeReference",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
+    "url": "/checkout/v3/dsca/features/technical-reference/payee-reference.html"
   },{
     "title": "PayeeReference",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -837,17 +837,17 @@ var tipuesearch = {"pages": [{
     "title": "Payment Menu Events",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
-    "url": "/checkout/v3/dsca/features/technical-reference/payment-menu-events.html"
-  },{
-    "title": "Payment Menu Events",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
     "url": "/checkout/v3/standard/features/technical-reference/payment-menu-events.html"
   },{
     "title": "Payment Menu Events",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v3/basic/features/technical-reference/payment-menu-events.html"
+  },{
+    "title": "Payment Menu Events",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
+    "url": "/checkout/v3/dsca/features/technical-reference/payment-menu-events.html"
   },{
     "title": "Payment Menu Events",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -862,12 +862,12 @@ var tipuesearch = {"pages": [{
     "title": "Payment Menu",
     "text": "",
     "tags": "",
-    "url": "/checkout/v3/dsca/payment-menu.html"
+    "url": "/checkout/v3/standard/payment-menu.html"
   },{
     "title": "Payment Menu",
     "text": "",
     "tags": "",
-    "url": "/checkout/v3/standard/payment-menu.html"
+    "url": "/checkout/v3/dsca/payment-menu.html"
   },{
     "title": "Payment Menu",
     "text": "",
@@ -887,17 +887,17 @@ var tipuesearch = {"pages": [{
     "title": "PaymentOrders Capture",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
-    "url": "/checkout/v3/dsca/features/core/payment-order-capture.html"
-  },{
-    "title": "PaymentOrders Capture",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
     "url": "/checkout/v3/standard/features/core/payment-order-capture.html"
   },{
     "title": "PaymentOrders Capture",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v3/basic/features/core/payment-order-capture.html"
+  },{
+    "title": "PaymentOrders Capture",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
+    "url": "/checkout/v3/dsca/features/core/payment-order-capture.html"
   },{
     "title": "PaymentOrders Capture",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -922,17 +922,17 @@ var tipuesearch = {"pages": [{
     "title": "Payment State",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
-    "url": "/checkout/v3/dsca/features/technical-reference/payment-state.html"
-  },{
-    "title": "Payment State",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
     "url": "/checkout/v3/standard/features/technical-reference/payment-state.html"
   },{
     "title": "Payment State",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v3/basic/features/technical-reference/payment-state.html"
+  },{
+    "title": "Payment State",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
+    "url": "/checkout/v3/dsca/features/technical-reference/payment-state.html"
   },{
     "title": "Payment State",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -947,17 +947,17 @@ var tipuesearch = {"pages": [{
     "title": "PaymentUrl",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
-    "url": "/checkout/v3/dsca/features/technical-reference/payment-url.html"
-  },{
-    "title": "PaymentUrl",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
     "url": "/checkout/v3/standard/features/technical-reference/payment-url.html"
   },{
     "title": "PaymentUrl",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v3/basic/features/technical-reference/payment-url.html"
+  },{
+    "title": "PaymentUrl",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
+    "url": "/checkout/v3/dsca/features/technical-reference/payment-url.html"
   },{
     "title": "PaymentUrl",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -970,19 +970,14 @@ var tipuesearch = {"pages": [{
     "url": "/checkout/v2/features/technical-reference/payment-url.html"
   },{
     "title": "Post Purchase",
-    "text": "The purchase should now be complete. But what if the purchase is cancelled or the payer wants to return goods? For these scenarios, we have cancel and reversal.",
-    "tags": "",
-    "url": "/products/checkout-v3-dev/starter/post-purchase.html"
-  },{
-    "title": "Post Purchase",
     "text": "The purchase should now be complete. But what if the purchase is cancelled or the payer wants to return goods? For these instances, we have cancel and reversal.",
     "tags": "",
     "url": "/products/checkout-v3-dev/payments-only/post-purchase.html"
   },{
-    "title": "Prices",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "title": "Post Purchase",
+    "text": "The purchase should now be complete. But what if the purchase is cancelled or the payer wants to return goods? For these scenarios, we have cancel and reversal.",
     "tags": "",
-    "url": "/checkout/v3/dsca/features/technical-reference/prices.html"
+    "url": "/products/checkout-v3-dev/starter/post-purchase.html"
   },{
     "title": "Prices",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -997,17 +992,17 @@ var tipuesearch = {"pages": [{
     "title": "Prices",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
+    "url": "/checkout/v3/dsca/features/technical-reference/prices.html"
+  },{
+    "title": "Prices",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
     "url": "/checkout/v3/tailored/features/technical-reference/prices.html"
   },{
     "title": "Prices",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v2/features/technical-reference/prices.html"
-  },{
-    "title": "Problems",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
-    "url": "/checkout/v3/dsca/features/technical-reference/problems.html"
   },{
     "title": "Problems",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -1022,17 +1017,17 @@ var tipuesearch = {"pages": [{
     "title": "Problems",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
+    "url": "/checkout/v3/dsca/features/technical-reference/problems.html"
+  },{
+    "title": "Problems",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
     "url": "/checkout/v3/tailored/features/technical-reference/problems.html"
   },{
     "title": "Problems",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v2/features/technical-reference/problems.html"
-  },{
-    "title": "Purchase",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
-    "url": "/checkout/v3/dsca/features/technical-reference/purchase.html"
   },{
     "title": "Purchase",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -1047,6 +1042,11 @@ var tipuesearch = {"pages": [{
     "title": "Purchase",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
+    "url": "/checkout/v3/dsca/features/technical-reference/purchase.html"
+  },{
+    "title": "Purchase",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
     "url": "/checkout/v3/tailored/features/technical-reference/purchase.html"
   },{
     "title": "Purchase",
@@ -1057,17 +1057,17 @@ var tipuesearch = {"pages": [{
     "title": "Recur",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
-    "url": "/checkout/v3/dsca/features/optional/recur.html"
-  },{
-    "title": "Recur",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
     "url": "/checkout/v3/standard/features/optional/recur.html"
   },{
     "title": "Recur",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v3/basic/features/optional/recur.html"
+  },{
+    "title": "Recur",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
+    "url": "/checkout/v3/dsca/features/optional/recur.html"
   },{
     "title": "Recur",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -1092,17 +1092,17 @@ var tipuesearch = {"pages": [{
     "title": "Reversal",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
-    "url": "/checkout/v3/dsca/features/core/reversal.html"
-  },{
-    "title": "Reversal",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
     "url": "/checkout/v3/standard/features/core/reversal.html"
   },{
     "title": "Reversal",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v3/basic/features/core/reversal.html"
+  },{
+    "title": "Reversal",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
+    "url": "/checkout/v3/dsca/features/core/reversal.html"
   },{
     "title": "Reversal",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -1117,17 +1117,17 @@ var tipuesearch = {"pages": [{
     "title": "Seamless View Events",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
-    "url": "/checkout/v3/dsca/features/technical-reference/seamless-view-events.html"
-  },{
-    "title": "Seamless View Events",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
     "url": "/checkout/v3/standard/features/technical-reference/seamless-view-events.html"
   },{
     "title": "Seamless View Events",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v3/basic/features/technical-reference/seamless-view-events.html"
+  },{
+    "title": "Seamless View Events",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
+    "url": "/checkout/v3/dsca/features/technical-reference/seamless-view-events.html"
   },{
     "title": "Seamless View Events",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -1167,17 +1167,17 @@ var tipuesearch = {"pages": [{
     "title": "Settlement &amp; Reconciliation",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
-    "url": "/checkout/v3/dsca/features/core/settlement-reconciliation.html"
-  },{
-    "title": "Settlement &amp; Reconciliation",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
     "url": "/checkout/v3/standard/features/core/settlement-reconciliation.html"
   },{
     "title": "Settlement &amp; Reconciliation",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v3/basic/features/core/settlement-reconciliation.html"
+  },{
+    "title": "Settlement &amp; Reconciliation",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
+    "url": "/checkout/v3/dsca/features/core/settlement-reconciliation.html"
   },{
     "title": "Settlement &amp; Reconciliation",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
@@ -1212,17 +1212,17 @@ var tipuesearch = {"pages": [{
     "title": "Verify",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
-    "url": "/checkout/v3/dsca/features/optional/verify.html"
-  },{
-    "title": "Verify",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
-    "tags": "",
     "url": "/checkout/v3/standard/features/optional/verify.html"
   },{
     "title": "Verify",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
     "tags": "",
     "url": "/checkout/v3/basic/features/optional/verify.html"
+  },{
+    "title": "Verify",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
+    "tags": "",
+    "url": "/checkout/v3/dsca/features/optional/verify.html"
   },{
     "title": "Verify",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, nisl vel facilisis sollicitudin, libero augue laoreet massa, quis imperdiet eros turpis ut arcu. Maecenas vitae fringilla sem. Nunc libero libero, eleifend a pulvinar id, imperdiet sed massa. Donec dictum tortor sed orci consequat elementum. Sed sollicitudin finibus libero eu maximus. Aliquam bibendum ipsum id arcu aliquam, vitae laoreet sapien pretium. Mauris non commodo neque. Sed vel leo orci.",
