@@ -25,12 +25,7 @@ release_notes: The release notes pages to use if sitePage.content cannot be used
 
 {% if page.url contains '/release-notes' %}
 <section class="dg-changelog-container d-flex flex-column mb-0">
-    <div class="container dg-changelog-content">
-        <div class="row mt-3">
-            {% include alert.html type="informative" icon="info" header="Version numbers"
-            body="The version numbers used in headers on this page refers to the version of
-            this very documentation, not to a version of any APIs described by it." %}
-        </div>       
+    <div class="container dg-changelog-content">       
             {% for release in releases %}
                 {% if forloop.length > 0 %}
                     {% if forloop.last %}
