@@ -231,58 +231,6 @@ function _handleSimpleSidebar(e) {
     });
 })();
 
-//set SearchHintText color depending on background
-(function () {
-    document.addEventListener("DOMContentLoaded", function () {
-        const searchHintTexts = document.querySelectorAll("#search-hint-text");
-        let visibleSearchHintText = null;
-        searchHintTexts.forEach(function (el) {
-            if (el.offsetParent !== null) { // visible in DOM
-                visibleSearchHintText = el;
-            }
-        });
-        if (visibleSearchHintText) {
-            let parentElement = visibleSearchHintText.parentElement;
-            let siblingWithTitleHeader = null;
-            if (parentElement && parentElement.nextElementSibling) {
-                siblingWithTitleHeader = parentElement.nextElementSibling.querySelector(".title-header");
-            }
-
-            let bgColor = "white";
-            
-            if (siblingWithTitleHeader) {
-                bgColor = window.getComputedStyle(siblingWithTitleHeader).backgroundColor;
-            }
-
-            // Check for fully transparent background
-            const isTransparent = bgColor === "transparent" || /^rgba\(\s*\d+,\s*\d+,\s*\d+,\s*0\s*\)$/.test(bgColor);
-
-            // Function to calculate luminance
-            function getLuminance(rgb) {
-                const match = rgb.match(/\d+/g);
-                if (!match) return 1; // fallback to white
-                // Convert to sRGB
-                let [r, g, b] = match.map(Number).map(v => v / 255);
-                [r, g, b] = [r, g, b].map(c => {
-                    return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
-                });
-                return 0.2126 * r + 0.7152 * g + 0.0722 * b;
-            }
-
-            let luminance = 1; // default to high luminance
-            if (!isTransparent) {
-                luminance = getLuminance(bgColor);
-            }
-
-            // Set color: dark text on light bg, light text on dark bg
-            if (luminance > 0.5)
-                visibleSearchHintText.classList.remove("light");
-            else
-                visibleSearchHintText.classList.add("light");
-        }
-    });
-})();
-
 // Initialize Tipue search
 (function () {
     $(document).ready(function () {

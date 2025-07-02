@@ -1,0 +1,22 @@
+#tipue_search_content {
+
+    nav {
+        display: flex;
+        font-family: Swedbank Headline, Arial, sans-serif;
+        font-family: var(--brand-headline);
+        justify-content: center;
+        margin: 1rem 0;
+        padding-left: 0;
+
+        ul {
+            display: flex;
+            cursor: pointer;
+
+            li {
+                border-radius: .125rem;
+                display: flex;
+                margin: .5rem;
+            }
+        }
+    }
+}

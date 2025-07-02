@@ -9,6 +9,7 @@
 @import 'paragraph-highlight.scss';
 @import 'sidebar.scss';
 @import 'title-header.scss';
+@import 'tipue_search.scss';
 
 $bg: #f5f2f0;
 $darkened-bg: darken($bg, 10%);
@@ -472,8 +473,7 @@ body {
             border-bottom-left-radius: var(--border-radius);
         }
 
-        #tipue_search_input,
-        #search-hint-text {
+        #tipue_search_input {
             display: none;
         }
 
@@ -481,10 +481,6 @@ body {
             max-width: 54px;
         }
     }
-}
-
-.light {
-    color: white !important;
 }
 
 .topbar-logo {

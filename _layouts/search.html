@@ -6,7 +6,7 @@ layout: default
         placeholder="Search in documentation" onfocus="this.placeholder=''"
         onblur="this.placeholder='Search in documentation'" pattern=".{3,}" title="At least 3 characters">
     <script>
-        (function() {
+        (function () {
             var params = new URLSearchParams(window.location.search);
             var q = params.get('q');
             if (q) {
@@ -18,6 +18,7 @@ layout: default
         <i class="material-icons-outlined" aria-hidden="true">search</i>
     </button>
 </form>
-<p id="search-hint-text" class="hint-text mb-5">Tip: Try using quotes for more precise results. Ex: "online payments"</p>
+<p id="search-hint-text" class="hint-text mb-5">Tip: Try using quotes for more precise
+    results. <code>online payments</code> will give a different result compare to <code>"online payments"</code></p>
 
 <div id="tipue_search_content"></div>
