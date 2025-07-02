@@ -72,8 +72,8 @@
                     </a>
             </header>
             <div class="documentation">
-                <div class="form-group search-box search-expander">
-                    {% if site.search.enabled == true %}
+                <div id="search-box-container" class="form-group search-box search-expander">
+                    {% if site.search.enabled == true and page.name != "search.md" %}
                     <form class="search d-flex"
                         method="get" action="{{ site.search.url | relative_url }}">
                         <input name="q" type="text" id="tipue_search_input"
@@ -87,6 +87,7 @@
                             <i class="material-icons-outlined" aria-hidden="true">search</i>
                         </button>
                     </form>
+                    <p id="search-hint-text" class="hint-text">Tip: Try using quotes for more precise results.</p>
                     {% endif %}
                 </div>
                 <div class="d-md-flex">
