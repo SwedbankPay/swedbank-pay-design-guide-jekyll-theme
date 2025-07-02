@@ -453,6 +453,24 @@
   content: url(../img/external-url-dark-bg.svg);
 }
 
+#tipue_search_content nav {
+  display: flex;
+  font-family: Swedbank Headline, Arial, sans-serif;
+  font-family: var(--brand-headline);
+  justify-content: center;
+  margin: 1rem 0;
+  padding-left: 0;
+}
+#tipue_search_content nav ul {
+  display: flex;
+  cursor: pointer;
+}
+#tipue_search_content nav ul li {
+  border-radius: 0.125rem;
+  display: flex;
+  margin: 0.5rem;
+}
+
 img {
   max-width: 100%;
 }
@@ -824,17 +842,12 @@ body {
     border-bottom-left-radius: 8px;
     border-bottom-left-radius: var(--border-radius);
   }
-  .search-box #tipue_search_input,
-  .search-box #search-hint-text {
+  .search-box #tipue_search_input {
     display: none;
   }
   .search-box #search-box-container {
     max-width: 54px;
   }
-}
-
-.light {
-  color: white !important;
 }
 
 @media screen and (max-width: 576px) {
