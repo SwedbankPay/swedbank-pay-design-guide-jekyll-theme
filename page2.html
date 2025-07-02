@@ -86,7 +86,7 @@
                     </a>
             </header>
             <div class="documentation">
-                <div class="form-group search-box search-expander">
+                <div id="search-box-container" class="form-group search-box search-expander">
                     
                     <form class="search d-flex" method="get" action="/search">
                         <input name="q" type="text" id="tipue_search_input" class="form-control search-input" placeholder="Search in documentation" onfocus="this.placeholder=''" onblur="this.placeholder='Search in documentation'" pattern=".{3,}" title="At least 3 characters">
@@ -94,6 +94,7 @@
                             <i class="material-icons-outlined" aria-hidden="true">search</i>
                         </button>
                     </form>
+                    <p id="search-hint-text" class="hint-text">Tip: Try using quotes for more precise results.</p>
                     
                 </div>
                 <div class="d-md-flex">
