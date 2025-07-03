@@ -456,19 +456,44 @@
 #tipue_search_content nav {
   display: flex;
   font-family: Swedbank Headline, Arial, sans-serif;
-  font-family: var(--brand-headline);
   justify-content: center;
   margin: 1rem 0;
   padding-left: 0;
 }
 #tipue_search_content nav ul {
   display: flex;
-  cursor: pointer;
+  color: #2f2424;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  line-height: 24px;
 }
 #tipue_search_content nav ul li {
   border-radius: 0.125rem;
   display: flex;
   margin: 0.5rem;
+  color: #2f2424;
+}
+#tipue_search_content nav ul li a {
+  border: 2px solid transparent;
+  color: #2f2424;
+  cursor: pointer;
+  min-width: 1.75rem;
+  padding-top: 0.1rem;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  max-height: 29.6px;
+}
+#tipue_search_content nav ul li a:hover {
+  border: 2px solid #2f2424;
+  border-radius: 0.125rem;
+}
+#tipue_search_content nav ul li.current {
+  background-color: #2f2424;
+}
+#tipue_search_content nav ul li.current a {
+  color: white;
 }
 
 img {
