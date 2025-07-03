@@ -22,5 +22,4 @@ updates:
     timezone: Europe/Oslo
   open-pull-requests-limit: 99
   ignore:
-    - dependency-name: gittools/actions/gitversion/setup
-    - dependency-name: gittools/actions/gitversion/execute
+    - dependency-name: gittools/actions/gitversion
