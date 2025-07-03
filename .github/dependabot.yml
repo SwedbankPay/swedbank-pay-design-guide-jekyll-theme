@@ -22,4 +22,4 @@ updates:
     timezone: Europe/Oslo
   open-pull-requests-limit: 99
   ignore:
-    - dependency-name: gittools/actions/gitversion
+    - dependency-name: gittools/actions
