@@ -11,7 +11,7 @@ jobs:
       repository_url: ${{ steps.variables.outputs.repository_url }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -33,7 +33,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Set up Ruby 2.7
         uses: ruby/setup-ruby@v1
         with:
@@ -50,7 +50,7 @@ jobs:
   spec:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Set up Ruby 2.7
         uses: ruby/setup-ruby@v1
         with:
@@ -84,7 +84,7 @@ jobs:
   rubocop:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
@@ -108,7 +108,7 @@ jobs:
   remark-lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: haya14busa/action-cond@v1
         id: reporter
         with:
@@ -123,7 +123,7 @@ jobs:
   # deploy-dry-run:
   #   runs-on: ubuntu-latest
   #   steps:
-  #     - uses: actions/checkout@v4
+  #     - uses: actions/checkout@v5
   #     - name: deploy dry-run
   #       run: |
   #         docker compose run \
