@@ -21,7 +21,6 @@ plugins:
   - remark-lint-list-item-bullet-indent
   - remark-lint-list-item-content-indent
   - remark-lint-maximum-heading-length: 120
-  - remark-lint-no-auto-link-without-protocol
   - remark-lint-no-blockquote-without-marker
   - remark-lint-no-consecutive-blank-lines
   - remark-lint-no-duplicate-definitions
