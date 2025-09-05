@@ -115,7 +115,7 @@ jobs:
           cond: ${{ github.event_name == 'pull_request' }}
           if_true: github-pr-review
           if_false: github-check
-      - uses: reviewdog/action-remark-lint@v5.17
+      - uses: reviewdog/action-remark-lint@v5.18
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: ${{ steps.reporter.outputs.value }}
