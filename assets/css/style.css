@@ -547,6 +547,162 @@ body {
   margin-bottom: 0;
 }
 
+/** API object detailed table styles **/
+/* Container */
+.api-compact {
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fff;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.api-compact .header {
+  display: grid;
+  grid-template-columns: 1fr 74px 68px;
+  gap: 12px;
+  padding: 10px 14px;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Item */
+.api-item {
+  position: relative;
+}
+
+.api-item > summary {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 80px 70px;
+  gap: 12px;
+  align-items: start;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.api-item > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Chevron (expanderingsikon) */
+.api-item > summary .chev {
+  display: inline-block;
+  width: 1em;
+  margin-right: 6px;
+  transition: transform 0.2s ease;
+  transform-origin: 50% 50%;
+}
+
+.api-item[open] > summary .chev {
+  transform: rotate(90deg);
+}
+
+/* Field/Type/Req */
+.api-item .field {
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  position: relative;
+}
+
+.api-item .field code {
+  border-radius: 6px;
+  border: 1px solid #fdc129;
+}
+
+.api-item .type code {
+  font-size: 0.9em;
+  background: #f6f8fa;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.field-level::before {
+  font-family: "Akkurat Mono", monospace;
+  color: #fdc129;
+  content: "╰─╼";
+}
+
+.field-level-0::before {
+  content: "";
+}
+
+.api-item .req {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.api-item .desc {
+  padding: 0 14px 16px 38px;
+}
+
+/* Indrag (summary) – inga vänsterkanter, endast spacing */
+.api-item[data-level="0"] > summary .field {
+  padding-left: 0;
+}
+
+.api-item[data-level="1"] > summary .field {
+  padding-left: 14px;
+}
+
+.api-item[data-level="2"] > summary .field {
+  padding-left: 32px;
+}
+
+.api-item[data-level="3"] > summary .field {
+  padding-left: 50px;
+}
+
+/* Description – nivå (level+1) med kort lokal linje (valfritt: ta bort border-left om du vill noll linjer) */
+.indent-1 {
+  margin-left: 12px;
+}
+
+.indent-2 {
+  margin-left: 22px;
+}
+
+.indent-3 {
+  margin-left: 38px;
+}
+
+/* Hover/fokus */
+.api-item:hover > summary, .api-item:hover .desc, .api-item:focus-within > summary, .api-item:focus-within .desc {
+  background: #fafafa;
+}
+
+/* Children wrapper */
+.api-children {
+  padding-left: 0;
+  margin: 6px 0 10px 0;
+}
+
+.api-children .api-item {
+  border-bottom: none;
+}
+
+/* Mobil */
+@media (max-width: 640px) {
+  .api-compact .header {
+    display: none;
+  }
+  .api-item > summary {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .api-item .type, .api-item .req {
+    opacity: 0.85;
+    font-weight: 500;
+    justify-content: flex-start;
+  }
+}
+/** API object detailed table styles - END **/
 #designguide .designguide-header .topbar-info a {
   margin-left: 5px;
   color: rgba(34, 34, 34, 0.75);
