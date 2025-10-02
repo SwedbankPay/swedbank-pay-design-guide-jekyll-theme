@@ -114,19 +114,20 @@ body {
   content: "";
 }
 .api-item .req{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
-.api-item .desc{padding:0 14px 16px 38px}
+.api-item .desc{padding:0 14px 16px 16px}
 
 /* Indrag (summary) – inga vänsterkanter, endast spacing */
-.api-item[data-level="0"]>summary .field{padding-left:0}
-.api-item[data-level="1"]>summary .field{padding-left:14px}
-.api-item[data-level="2"]>summary .field{padding-left:32px}
-.api-item[data-level="3"]>summary .field{padding-left:50px}
+.api-item[data-level="0"]>summary .field,.api-item[data-level="1"]>summary .field{padding-left:0}
+.api-item[data-level="2"]>summary .field{padding-left:22px}
+.api-item[data-level="3"]>summary .field{padding-left:44px}
+.api-item[data-level="4"]>summary .field{padding-left:70px;}
 
 /* Description – nivå (level+1) med kort lokal linje (valfritt: ta bort border-left om du vill noll linjer) */
-.indent-1{margin-left:12px;}
-.indent-2{margin-left:22px;}
-.indent-3{margin-left:38px;}
-.indent-4{margin-left:50px;}
+.indent-0{margin-left:4px;}
+.indent-1{margin-left:26px;}
+.indent-2{margin-left:48px;}
+.indent-3{margin-left:70px;}
+.indent-4{margin-left:92px;}
 
 /* Hover/fokus */
 .api-item:hover>summary,.api-item:hover .desc,.api-item:focus-within>summary,.api-item:focus-within .desc{background:#fafafa}
