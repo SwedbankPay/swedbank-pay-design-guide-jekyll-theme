@@ -672,6 +672,10 @@ body {
   margin-left: 38px;
 }
 
+.indent-4 {
+  margin-left: 50px;
+}
+
 /* Hover/fokus */
 .api-item:hover > summary, .api-item:hover .desc, .api-item:focus-within > summary, .api-item:focus-within .desc {
   background: #fafafa;
