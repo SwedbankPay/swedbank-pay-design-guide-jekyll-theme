@@ -13,6 +13,7 @@
 
 $bg: #f5f2f0;
 $darkened-bg: darken($bg, 10%);
+$chev-scale: 1.6;
 
 img {
     max-width: 100%;
@@ -94,12 +95,13 @@ body {
 
 /* Item */
 .api-item{position:relative}
-.api-item>summary{list-style:none;display:grid;grid-template-columns:1fr 80px 70px;gap:12px;align-items:start;padding:10px 14px;cursor:pointer}
+.api-item>summary{list-style:none;display:grid;grid-template-columns:1fr 80px 70px;gap:12px;align-items:start;padding:10px 14px;cursor:pointer;border-left:3px solid transparent;}
 .api-item>summary::-webkit-details-marker{display:none}
+.api-item > summary:hover{background:#f8fafc;border-left-color:#fdc129;}
 
 /* Chevron (expanderingsikon) */
-.api-item>summary .chev{display:inline-block;width:1em;margin-right:6px;transition:transform .2s ease;transform-origin:50% 50%}
-.api-item[open]>summary .chev{transform:rotate(90deg)}
+.api-item>summary .chev{display:inline-block;width:1em;margin-right:6px;transform:scale($chev-scale);transform-origin:50% 50%;transition:transform .2s ease;}
+.api-item[open]>summary .chev{transform:scale($chev-scale) rotate(90deg);}
 
 /* Field/Type/Req */
 .api-item .field{font-weight:600;display:inline-flex;align-items:center;gap:8px;min-width:0;position:relative}
