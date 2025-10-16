@@ -580,10 +580,16 @@ body {
   align-items: start;
   padding: 10px 14px;
   cursor: pointer;
+  border-left: 3px solid transparent;
 }
 
 .api-item > summary::-webkit-details-marker {
   display: none;
+}
+
+.api-item > summary:hover {
+  background: #f8fafc;
+  border-left-color: #fdc129;
 }
 
 /* Chevron (expanderingsikon) */
@@ -591,12 +597,13 @@ body {
   display: inline-block;
   width: 1em;
   margin-right: 6px;
-  transition: transform 0.2s ease;
+  transform: scale(1.6);
   transform-origin: 50% 50%;
+  transition: transform 0.2s ease;
 }
 
 .api-item[open] > summary .chev {
-  transform: rotate(90deg);
+  transform: scale(1.6) rotate(90deg);
 }
 
 /* Field/Type/Req */
