@@ -550,12 +550,13 @@ body {
 /** API object detailed table styles **/
 /* Container */
 .api-compact {
-  border: 1px solid #e5e7eb;
+  border: 1px solid #EBE7E2;
   border-radius: 4px;
   overflow: hidden;
-  background: #fff;
+  background: #FFF;
   font-size: 0.95rem;
   margin-bottom: 1rem;
+  margin-top: 2em;
 }
 
 .api-compact .header {
@@ -564,7 +565,8 @@ body {
   gap: 12px;
   padding: 10px 14px;
   font-weight: 600;
-  border-bottom: 1px solid #e5e7eb;
+  background-color: #F9F8F6;
+  border-bottom: 2px solid #EBE7E2;
 }
 
 /* Item */
@@ -587,18 +589,9 @@ body {
   display: none;
 }
 
-/* Chevron (expanderingsikon) */
-.api-item > summary .chev {
-  display: inline-block;
-  width: 1em;
-  margin-right: 6px;
-  transform: scale(1.6);
-  transform-origin: 50% 50%;
-  transition: transform 0.2s ease;
-}
-
-.api-item[open] > summary .chev {
-  transform: scale(1.6) rotate(90deg);
+/* Expanderingsikon */
+.api-item[open] > summary i.chev {
+  transform: rotate(45deg);
 }
 
 /* Field/Type/Req */
@@ -646,7 +639,7 @@ body {
   border-bottom: thin solid lightgray;
 }
 
-/* Indrag (summary) – inga vänsterkanter, endast spacing */
+/* Indrag (summary) */
 .api-item[data-level="0"] > summary .field, .api-item[data-level="1"] > summary .field {
   padding-left: 0;
 }
@@ -663,7 +656,7 @@ body {
   padding-left: 70px;
 }
 
-/* Description – nivå (level+1) med kort lokal linje (valfritt: ta bort border-left om du vill noll linjer) */
+/* Description – nivå (level+1) med kort lokal linje*/
 .indent-0 {
   margin-left: 4px;
 }
@@ -687,7 +680,7 @@ body {
 /* Hover/fokus */
 .api-item:has(> summary:hover) > summary,
 .api-item:has(> .desc:hover) > summary {
-  background: #f8fafc;
+  background: #fafafa;
   border-left-color: #fdc129;
 }
 
