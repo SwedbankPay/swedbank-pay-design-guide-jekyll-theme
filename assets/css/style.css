@@ -685,11 +685,6 @@ body {
 }
 
 /* Hover/fokus */
-/*
-.api-item > summary:hover{background:#f8fafc;border-left-color:#fdc129;}
-.api-item:hover>summary,.api-item:hover .desc,.api-item:focus-within>summary,.api-item:focus-within .desc{background:#fafafa}
-.api-item[open] > summary:hover + .desc,.api-item[open]:has(> .desc:hover) > summary {border-left-color:#fdc129;} */
-/* Accent när DENNA posts summary ELLER desc är hovrade */
 .api-item:has(> summary:hover) > summary,
 .api-item:has(> .desc:hover) > summary {
   background: #f8fafc;
@@ -713,7 +708,7 @@ body {
 /* Tangentbordsstöd: accent på summary när dess egna desc får fokus */
 .api-item:has(> .desc:focus-within) > summary,
 .api-item:has(> summary:focus-visible) > summary {
-  background: #f8fafc;
+  background: #fafafa;
   border-left-color: #fdc129;
 }
 
