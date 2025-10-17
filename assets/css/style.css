@@ -564,7 +564,7 @@ body {
   grid-template-columns: 1fr 74px 68px;
   gap: 12px;
   padding: 10px 14px;
-  font-weight: 600;
+  font-weight: 550;
   background-color: #F9F8F6;
   border-bottom: 2px solid #EBE7E2;
 }
@@ -592,11 +592,12 @@ body {
 /* Expanderingsikon */
 .api-item[open] > summary i.chev {
   transform: rotate(45deg);
+  color: #EE7023;
 }
 
 /* Field/Type/Req */
 .api-item .field {
-  font-weight: 600;
+  font-weight: 550;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -606,7 +607,7 @@ body {
 
 .api-item .field code {
   border-radius: 6px;
-  border: 1px solid #fdc129;
+  border: 1px solid #EE7023;
 }
 
 .api-item .type code {
@@ -618,7 +619,7 @@ body {
 
 .field-level::before {
   font-family: "Akkurat Mono", monospace;
-  color: #fdc129;
+  color: #EE7023;
   content: "╰─╼";
 }
 
@@ -634,7 +635,7 @@ body {
 }
 
 .api-item .desc {
-  padding: 0 14px 16px 16px;
+  padding: 16px 14px 16px 16px;
   border-left: 3px solid transparent;
   border-bottom: thin solid lightgray;
 }
@@ -677,16 +678,24 @@ body {
   margin-left: 92px;
 }
 
-/* Hover/fokus */
-.api-item:has(> summary:hover) > summary,
-.api-item:has(> .desc:hover) > summary {
+/* Öppen */
+.api-item[open] > .desc {
   background: #fafafa;
-  border-left-color: #fdc129;
 }
 
-/* Bakgrund på just DENNA desc vid hover/fokus på summary/desc */
+/* Hover */
+.api-item:has(> summary:hover) > summary,
+.api-item:has(> .desc:hover) > summary {
+  background: #EBE7E2;
+  border-left-color: #EE7023;
+}
+
 .api-item:has(> summary:hover) > .desc,
-.api-item:has(> .desc:hover) > .desc,
+.api-item:has(> .desc:hover) > .desc {
+  background: #EBE7E2;
+}
+
+/* Fokus */
 .api-item:has(> summary:focus-visible) > .desc,
 .api-item:has(> .desc:focus-within) > .desc {
   background: #fafafa;
@@ -695,14 +704,14 @@ body {
 /* Vänsterkantsaccent på just DENNA desc när summary ELLER desc hovras */
 .api-item[open]:has(> summary:hover) > .desc,
 .api-item[open]:has(> .desc:hover) > .desc {
-  border-left-color: #fdc129;
+  border-left-color: #EE7023;
 }
 
 /* Tangentbordsstöd: accent på summary när dess egna desc får fokus */
 .api-item:has(> .desc:focus-within) > summary,
 .api-item:has(> summary:focus-visible) > summary {
   background: #fafafa;
-  border-left-color: #fdc129;
+  border-left-color: #EE7023;
 }
 
 /* Children wrapper */
