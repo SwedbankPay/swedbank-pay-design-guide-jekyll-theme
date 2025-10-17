@@ -13,7 +13,6 @@
 
 $bg: #f5f2f0;
 $darkened-bg: darken($bg, 10%);
-$chev-scale: 1.6;
 
 img {
     max-width: 100%;
@@ -90,17 +89,16 @@ body {
 
 /** API object detailed table styles **/
 /* Container */
-.api-compact{border:1px solid #e5e7eb;border-radius:4px;overflow:hidden;background:#fff;font-size:.95rem;margin-bottom: 1rem;}
-.api-compact .header{display:grid;grid-template-columns:1fr 74px 68px;gap:12px;padding:10px 14px;font-weight:600;border-bottom:1px solid #e5e7eb}
+.api-compact{border:1px solid #EBE7E2;border-radius:4px;overflow:hidden;background:#FFF;font-size:.95rem;margin-bottom: 1rem;margin-top: 2em;}
+.api-compact .header{display:grid;grid-template-columns:1fr 74px 68px;gap:12px;padding:10px 14px;font-weight:600;background-color: #F9F8F6;border-bottom:2px solid #EBE7E2;}
 
 /* Item */
 .api-item{position:relative}
 .api-item>summary{list-style:none;display:grid;grid-template-columns:1fr 80px 70px;gap:12px;align-items:start;padding:10px 14px;cursor:pointer;border-left:3px solid transparent;}
 .api-item>summary::-webkit-details-marker{display:none}
 
-/* Chevron (expanderingsikon) */
-.api-item>summary .chev{display:inline-block;width:1em;margin-right:6px;transform:scale($chev-scale);transform-origin:50% 50%;transition:transform .2s ease;}
-.api-item[open]>summary .chev{transform:scale($chev-scale) rotate(90deg);}
+/* Expanderingsikon */
+.api-item[open]>summary i.chev{transform:rotate(45deg);}
 
 /* Field/Type/Req */
 .api-item .field{font-weight:600;display:inline-flex;align-items:center;gap:8px;min-width:0;position:relative}
@@ -117,13 +115,13 @@ body {
 .api-item .req{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
 .api-item .desc{padding:0 14px 16px 16px;border-left:3px solid transparent;border-bottom: thin solid lightgray;}
 
-/* Indrag (summary) – inga vänsterkanter, endast spacing */
+/* Indrag (summary) */
 .api-item[data-level="0"]>summary .field,.api-item[data-level="1"]>summary .field{padding-left:0}
 .api-item[data-level="2"]>summary .field{padding-left:22px}
 .api-item[data-level="3"]>summary .field{padding-left:44px}
 .api-item[data-level="4"]>summary .field{padding-left:70px;}
 
-/* Description – nivå (level+1) med kort lokal linje (valfritt: ta bort border-left om du vill noll linjer) */
+/* Description – nivå (level+1) med kort lokal linje*/
 .indent-0{margin-left:4px;}
 .indent-1{margin-left:26px;}
 .indent-2{margin-left:48px;}
@@ -134,7 +132,7 @@ body {
 
 .api-item:has(> summary:hover) > summary,
 .api-item:has(> .desc:hover) > summary {
-  background:#f8fafc;
+  background:#fafafa;
   border-left-color:#fdc129;
 }
 
