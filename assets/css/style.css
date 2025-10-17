@@ -587,11 +587,6 @@ body {
   display: none;
 }
 
-.api-item > summary:hover {
-  background: #f8fafc;
-  border-left-color: #fdc129;
-}
-
 /* Chevron (expanderingsikon) */
 .api-item > summary .chev {
   display: inline-block;
@@ -647,6 +642,8 @@ body {
 
 .api-item .desc {
   padding: 0 14px 16px 16px;
+  border-left: 3px solid transparent;
+  border-bottom: thin solid lightgray;
 }
 
 /* Indrag (summary) – inga vänsterkanter, endast spacing */
@@ -688,8 +685,36 @@ body {
 }
 
 /* Hover/fokus */
-.api-item:hover > summary, .api-item:hover .desc, .api-item:focus-within > summary, .api-item:focus-within .desc {
+/*
+.api-item > summary:hover{background:#f8fafc;border-left-color:#fdc129;}
+.api-item:hover>summary,.api-item:hover .desc,.api-item:focus-within>summary,.api-item:focus-within .desc{background:#fafafa}
+.api-item[open] > summary:hover + .desc,.api-item[open]:has(> .desc:hover) > summary {border-left-color:#fdc129;} */
+/* Accent när DENNA posts summary ELLER desc är hovrade */
+.api-item:has(> summary:hover) > summary,
+.api-item:has(> .desc:hover) > summary {
+  background: #f8fafc;
+  border-left-color: #fdc129;
+}
+
+/* Bakgrund på just DENNA desc vid hover/fokus på summary/desc */
+.api-item:has(> summary:hover) > .desc,
+.api-item:has(> .desc:hover) > .desc,
+.api-item:has(> summary:focus-visible) > .desc,
+.api-item:has(> .desc:focus-within) > .desc {
   background: #fafafa;
+}
+
+/* Vänsterkantsaccent på just DENNA desc när summary ELLER desc hovras */
+.api-item[open]:has(> summary:hover) > .desc,
+.api-item[open]:has(> .desc:hover) > .desc {
+  border-left-color: #fdc129;
+}
+
+/* Tangentbordsstöd: accent på summary när dess egna desc får fokus */
+.api-item:has(> .desc:focus-within) > summary,
+.api-item:has(> summary:focus-visible) > summary {
+  background: #f8fafc;
+  border-left-color: #fdc129;
 }
 
 /* Children wrapper */
