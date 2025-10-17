@@ -97,7 +97,6 @@ body {
 .api-item{position:relative}
 .api-item>summary{list-style:none;display:grid;grid-template-columns:1fr 80px 70px;gap:12px;align-items:start;padding:10px 14px;cursor:pointer;border-left:3px solid transparent;}
 .api-item>summary::-webkit-details-marker{display:none}
-.api-item > summary:hover{background:#f8fafc;border-left-color:#fdc129;}
 
 /* Chevron (expanderingsikon) */
 .api-item>summary .chev{display:inline-block;width:1em;margin-right:6px;transform:scale($chev-scale);transform-origin:50% 50%;transition:transform .2s ease;}
@@ -116,7 +115,7 @@ body {
   content: "";
 }
 .api-item .req{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
-.api-item .desc{padding:0 14px 16px 16px}
+.api-item .desc{padding:0 14px 16px 16px;border-left:3px solid transparent;border-bottom: thin solid lightgray;}
 
 /* Indrag (summary) – inga vänsterkanter, endast spacing */
 .api-item[data-level="0"]>summary .field,.api-item[data-level="1"]>summary .field{padding-left:0}
@@ -132,7 +131,37 @@ body {
 .indent-4{margin-left:92px;}
 
 /* Hover/fokus */
+/*
+.api-item > summary:hover{background:#f8fafc;border-left-color:#fdc129;}
 .api-item:hover>summary,.api-item:hover .desc,.api-item:focus-within>summary,.api-item:focus-within .desc{background:#fafafa}
+.api-item[open] > summary:hover + .desc,.api-item[open]:has(> .desc:hover) > summary {border-left-color:#fdc129;} */
+/* Accent när DENNA posts summary ELLER desc är hovrade */
+.api-item:has(> summary:hover) > summary,
+.api-item:has(> .desc:hover) > summary {
+  background:#f8fafc;
+  border-left-color:#fdc129;
+}
+
+/* Bakgrund på just DENNA desc vid hover/fokus på summary/desc */
+.api-item:has(> summary:hover) > .desc,
+.api-item:has(> .desc:hover) > .desc,
+.api-item:has(> summary:focus-visible) > .desc,
+.api-item:has(> .desc:focus-within) > .desc {
+  background:#fafafa;
+}
+
+/* Vänsterkantsaccent på just DENNA desc när summary ELLER desc hovras */
+.api-item[open]:has(> summary:hover) > .desc,
+.api-item[open]:has(> .desc:hover) > .desc {
+  border-left-color:#fdc129;
+}
+
+/* Tangentbordsstöd: accent på summary när dess egna desc får fokus */
+.api-item:has(> .desc:focus-within) > summary,
+.api-item:has(> summary:focus-visible) > summary {
+  background:#f8fafc;
+  border-left-color:#fdc129;
+}
 
 /* Children wrapper */
 .api-children{padding-left:0;margin:6px 0 10px 0}
