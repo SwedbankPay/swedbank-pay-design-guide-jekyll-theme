@@ -592,7 +592,6 @@ body {
 /* Expanderingsikon */
 .api-item[open] > summary i.chev {
   transform: rotate(45deg);
-  color: #EE7023;
 }
 
 /* Field/Type/Req */
