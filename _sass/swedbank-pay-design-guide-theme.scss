@@ -98,7 +98,7 @@ body {
 .api-item>summary::-webkit-details-marker{display:none}
 
 /* Expanderingsikon */
-.api-item[open]>summary i.chev{transform:rotate(45deg);color:#EE7023;}
+.api-item[open]>summary i.chev{transform:rotate(45deg);}
 
 /* Field/Type/Req */
 .api-item .field{font-weight:550;display:inline-flex;align-items:center;gap:8px;min-width:0;position:relative}
