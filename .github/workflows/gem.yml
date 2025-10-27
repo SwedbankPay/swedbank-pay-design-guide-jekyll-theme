@@ -49,7 +49,7 @@ jobs:
       run: .github/scripts/build_gem.sh --version "${{ needs.variables.outputs.version }}"
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: ${{ steps.gem.outputs.name }}
         path: ${{ steps.gem.outputs.name }}

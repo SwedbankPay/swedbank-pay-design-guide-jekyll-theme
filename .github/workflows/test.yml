@@ -42,7 +42,7 @@ jobs:
       - name: jekyll build
         run: bundle exec jekyll build
       - name: Upload site
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: build-site
           path: _site
@@ -131,7 +131,7 @@ jobs:
   #           --env=production \
   #           --dry-run
   #     - name: Upload deploy
-  #       uses: actions/upload-artifact@v4
+  #       uses: actions/upload-artifact@v5
   #       if: always()
   #       with:
   #         name: deploy
