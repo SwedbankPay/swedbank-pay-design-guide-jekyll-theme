@@ -50,11 +50,6 @@
         <link rel="icon" type="image/png" sizes="16x16" href="{{ design_guide_url }}/icons/favicon-16x16.png">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ design_guide_url }}/icons/favicon-32x32.png">
         <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
-        {% if site.custom_head_scripts %}
-        {% for script in site.custom_head_scripts %}
-        <script src="{{ script | relative_url }}"></script>
-        {% endfor %}
-        {% endif %}
         {%- include apple-mobile-headers.html design_guide_url=design_guide_url -%}
         <script src="{{ '/assets/js/mermaid.min.js' | relative_url }}"></script>
         {%- if site.search.enabled == true %}
