@@ -1,0 +1,51 @@
+#tipue_search_content {
+
+    nav {
+        display: flex;
+        font-family: Swedbank Headline, Arial, sans-serif;
+        justify-content: center;
+        margin: 1rem 0;
+        padding-left: 0;
+
+        ul {
+            display: flex;
+            color: #2f2424;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-left: 0;
+            line-height: 24px;
+
+            li {
+                border-radius: .125rem;
+                display: flex;
+                margin: .5rem;
+                color: #2f2424;
+
+                a {
+                    border: 2px solid transparent;
+                    color: #2f2424;
+                    cursor: pointer;
+                    min-width: 1.75rem;
+                    padding-top: .1rem;
+                    text-align: center;
+                    -webkit-text-decoration: none;
+                    text-decoration: none;
+                    max-height: 29.6px;
+
+                    &:hover {
+                        border: 2px solid #2f2424;
+                        border-radius: .125rem;
+                    }
+                }
+
+                &.current {
+                    background-color: #2f2424;
+
+                    a {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

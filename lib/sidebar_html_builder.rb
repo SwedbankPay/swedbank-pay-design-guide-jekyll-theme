@@ -65,9 +65,9 @@ module SwedbankPay
     end
 
     def change_root_class(current_page)
-      return if current_page.path != '/'
-
-      # On 'home', set the 'class' to 'sidebar dg-sidebar' to effectively remove 'has-secondary-nav'.
+      return unless current_page.path == '/search/' || current_page.path == '/'
+      
+      # On 'home' or 'search', set the 'class' to 'sidebar dg-sidebar' to effectively remove 'has-secondary-nav'.
       current_page.doc.xpath('//*[@id="dg-sidebar"]').first.set_attribute('class', 'sidebar dg-sidebar')
     end
 

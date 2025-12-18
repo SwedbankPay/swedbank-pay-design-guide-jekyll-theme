@@ -28,20 +28,22 @@ module SwedbankPay
       return if pages.empty?
 
       pages.each do |page|
-        sidebar_html = render_sidebar(page)
-        name = page.filename || page.name || page.to_s
+        unless page.filename.include?('404.html')
+          sidebar_html = render_sidebar(page)
+          name = page.filename || page.name || page.to_s
 
-        if sidebar_html.nil?
-          SidebarLogger.warn("No HTML rendered for #{name}.")
-          next
+          if sidebar_html.nil?
+            SidebarLogger.warn("No HTML rendered for #{name}.")
+            next
+          end
+
+          if page.sidebar_container.nil?
+            SidebarLogger.warn("No sidebar container found in '#{name}'. #{page.filename}")
+            next
+          end
+
+          page.sidebar_container.inner_html = sidebar_html
         end
-
-        if page.sidebar_container.nil?
-          SidebarLogger.warn("No sidebar container found in '#{name}'. #{page.filename}")
-          next
-        end
-
-        page.sidebar_container.inner_html = sidebar_html
 
         page.save
 
