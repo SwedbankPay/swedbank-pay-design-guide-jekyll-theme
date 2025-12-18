@@ -1,11 +1,11 @@
 {%- assign lead_title = page.lead_title -%}
 {%- if lead_title == nil and page.sidebar.navigation == nil -%}
-    {%- unless page.name contains "index" -%}
-        {%- assign dirname = page.dir | split: "/" | last | remove: "/" | capitalize -%}
-        {%- unless dirname == "" -%}
-            {%- assign lead_title = dirname -%}
-        {%- endunless -%}
-    {%- endunless -%}
+{%- unless page.name contains "index" -%}
+{%- assign dirname = page.dir | split: "/" | last | remove: "/" | capitalize -%}
+{%- unless dirname == "" -%}
+{%- assign lead_title = dirname -%}
+{%- endunless -%}
+{%- endunless -%}
 {%- endif -%}
 {%- assign main_title = page.main_title | default: page.title | default: "PayEx Design Guide theme for Jekyll" -%}
 {%- capture title -%}{%- if lead_title != nil -%}{{ lead_title }} – {% endif %}{{ main_title }}{%- endcapture -%}
@@ -15,7 +15,8 @@
 {%- assign design_guide_version = site.design_guide.version | default: '7.1.0' -%}
 {%- assign design_guide_url = design_guide_base_url | append: '/v/' | append: design_guide_version -%}
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{{ site.lang | default: " en-US" }}">
+
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,7 +31,8 @@
         <meta property="og:type" value="website" />
         {%- if page.url != nil %}
         <meta property="og:url" value="{{ page.url | absolute_url }}" />
-        {%- if page.url contains 'old-implementations' %}<meta name="robots" content="noindex">{% endif %}
+        {%- if page.url contains 'old-implementations' %}
+        <meta name="robots" content="noindex">{% endif %}
         {% endif %}
         <meta property="og:title" value="{{ title }}" />
         <meta name="title" content="{{ title }}" />
@@ -42,19 +44,24 @@
         <title>{{ title }}</title>
         <link rel="stylesheet" href="{{ design_guide_url }}/styles/swedbankpay.css" />
         <link rel="stylesheet" href="{{ design_guide_url }}/styles/documentation-swedbankpay.css" />
-        <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
-        <link rel="stylesheet" href="{{ "/assets/css/pygments-autumn.css" | relative_url }}">
+        <link rel="stylesheet" href="{{ " /assets/css/style.css" | relative_url }}">
+        <link rel="stylesheet" href="{{ " /assets/css/pygments-autumn.css" | relative_url }}">
         <link rel="shortcut icon" href="{{ design_guide_url }}/icons/favicon.ico">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ design_guide_url }}/icons/favicon-16x16.png">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ design_guide_url }}/icons/favicon-32x32.png">
         <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
+        {% if site.custom_head_scripts %}
+        {% for script in site.custom_head_scripts %}
+        <script src="{{ script | relative_url }}"></script>
+        {% endfor %}
+        {% endif %}
         {%- include apple-mobile-headers.html design_guide_url=design_guide_url -%}
         <script src="{{ '/assets/js/mermaid.min.js' | relative_url }}"></script>
         {%- if site.search.enabled == true %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="{{ "/assets/tipuesearch/tipuesearch_content.js" | relative_url }}"></script>
-        <script src="{{ "/assets/tipuesearch/tipuesearch_set.js" | relative_url }}"></script>
-        <script src="{{ "/assets/tipuesearch/tipuesearch.min.js" | relative_url }}"></script>
+        <script src="{{ " /assets/tipuesearch/tipuesearch_content.js" | relative_url }}"></script>
+        <script src="{{ " /assets/tipuesearch/tipuesearch_set.js" | relative_url }}"></script>
+        <script src="{{ " /assets/tipuesearch/tipuesearch.min.js" | relative_url }}"></script>
         {%- endif %}
     </head>
 
@@ -62,59 +69,58 @@
         <div id="overlay"></div>
         <div id="designguide">
             <header id="dg-topbar" class="topbar topbar-max-md-sticky d-md-flex d-lg-none">
-                    <button type="button" class="topbar-btn" aria-label="Open menu" aria-haspopup="menu" aria-expanded="false" aria-controls="topbar-nav">
-                        <i class="material-icons topbar-btn-icon">menu</i>
-                    </button><button type="button" class="topbar-close" aria-label="Close menu">
-                        <i class="material-icons topbar-btn-icon">close</i>
-                    </button>
-                    <a class="topbar-logo" href="/" aria-label="To homepage">
-                        <img src="{{ design_guide_url }}/designguide/assets/swedbankpay-logo-v.svg" alt="swedbankpay logo" class="logotype-vertical logotype-sm" />
-                    </a>
+                <button type="button" class="topbar-btn" aria-label="Open menu" aria-haspopup="menu"
+                    aria-expanded="false" aria-controls="topbar-nav">
+                    <i class="material-icons topbar-btn-icon">menu</i>
+                </button><button type="button" class="topbar-close" aria-label="Close menu">
+                    <i class="material-icons topbar-btn-icon">close</i>
+                </button>
+                <a class="topbar-logo" href="/" aria-label="To homepage">
+                    <img src="{{ design_guide_url }}/designguide/assets/swedbankpay-logo-v.svg" alt="swedbankpay logo"
+                        class="logotype-vertical logotype-sm" />
+                </a>
             </header>
             <div class="documentation">
                 <div id="search-box-container" class="form-group search-box search-expander">
                     {% if site.search.enabled == true and page.name != "search.md" %}
-                    <form class="search d-flex"
-                        method="get" action="{{ site.search.url | relative_url }}">
-                        <input name="q" type="text" id="tipue_search_input"
-                            class="form-control search-input"
-                            placeholder="Search in documentation"
-                            onfocus="this.placeholder=''"
-                            onblur="this.placeholder='Search in documentation'"
-                            pattern=".{3,}"
+                    <form class="search d-flex" method="get" action="{{ site.search.url | relative_url }}">
+                        <input name="q" type="text" id="tipue_search_input" class="form-control search-input"
+                            placeholder="Search in documentation" onfocus="this.placeholder=''"
+                            onblur="this.placeholder='Search in documentation'" pattern=".{3,}"
                             title="At least 3 characters">
-                        <button id="search-btn"class="btn btn-primary btn-icon-lg" type="submit" aria-label="Search button">
+                        <button id="search-btn" class="btn btn-primary btn-icon-lg" type="submit"
+                            aria-label="Search button">
                             <i class="material-icons-outlined" aria-hidden="true">search</i>
                         </button>
                     </form>
                     {% endif %}
                 </div>
                 <div class="d-md-flex">
-                        <div id="dg-sidebar" class="sidebar dg-sidebar has-secondary-nav">
-                            <nav class="sidebar-main-nav">
-                                <div class="sidebar-logo">
-                                    <a href="/" class="sidebar-header">
-                                        <img src="{{ design_guide_url }}/designguide/assets/swedbankpay-logo-v.svg"
-                                        alt="Swedbank Pay vertical logo" class="logotype-vertical logotype-lg"/>
-                                    </a>
-                                </div>
-                                <ul id="dx-sidebar-main-nav-ul" class="main-nav-ul">
-                                </ul>
-                            </nav>
-                        </div>
-                <main class="doc-view">
-                    {% if page.layout != 'front-page' %}
+                    <div id="dg-sidebar" class="sidebar dg-sidebar has-secondary-nav">
+                        <nav class="sidebar-main-nav">
+                            <div class="sidebar-logo">
+                                <a href="/" class="sidebar-header">
+                                    <img src="{{ design_guide_url }}/designguide/assets/swedbankpay-logo-v.svg"
+                                        alt="Swedbank Pay vertical logo" class="logotype-vertical logotype-lg" />
+                                </a>
+                            </div>
+                            <ul id="dx-sidebar-main-nav-ul" class="main-nav-ul">
+                            </ul>
+                        </nav>
+                    </div>
+                    <main class="doc-view">
+                        {% if page.layout != 'front-page' %}
                         {% include title-header.html %}
-                    {% endif %}
-                    {% include doc-container.html %}
-                </main>
+                        {% endif %}
+                        {% include doc-container.html %}
+                    </main>
                 </div>
             </div>
         </div>
         <script src="{{ design_guide_url }}/scripts/dg.js" global="true" autoload="true"></script>
         <script src="{{ '/assets/js/swedbank-pay-design-guide-theme.js' | relative_url }}"></script>
         {%- if site.google_analytics.tracking_id %}
-            {% include google_analytics.html %}
+        {% include google_analytics.html %}
         {%- endif %}
     </body>
 
