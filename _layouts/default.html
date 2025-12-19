@@ -44,19 +44,19 @@
         <title>{{ title }}</title>
         <link rel="stylesheet" href="{{ design_guide_url }}/styles/swedbankpay.css" />
         <link rel="stylesheet" href="{{ design_guide_url }}/styles/documentation-swedbankpay.css" />
-        <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
-        <link rel="stylesheet" href="{{ "/assets/css/pygments-autumn.css" | relative_url }}">
+        <link rel="stylesheet" href="{{- "/assets/css/style.css" | relative_url -}}">
+        <link rel="stylesheet" href="{{- "/assets/css/pygments-autumn.css" | relative_url -}}">
         <link rel="shortcut icon" href="{{ design_guide_url }}/icons/favicon.ico">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ design_guide_url }}/icons/favicon-16x16.png">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ design_guide_url }}/icons/favicon-32x32.png">
         <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
         {%- include apple-mobile-headers.html design_guide_url=design_guide_url -%}
-        <script src="{{ '/assets/js/mermaid.min.js' | relative_url }}"></script>
+        <script src="{{- '/assets/js/mermaid.min.js' | relative_url -}}"></script>
         {%- if site.search.enabled == true %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="{{ "/assets/tipuesearch/tipuesearch_content.js" | relative_url }}"></script>
-        <script src="{{ "/assets/tipuesearch/tipuesearch_set.js" | relative_url }}"></script>
-        <script src="{{ "/assets/tipuesearch/tipuesearch.min.js" | relative_url }}"></script>
+        <script src="{{- "/assets/tipuesearch/tipuesearch_content.js" | relative_url -}}"></script>
+        <script src="{{- "/assets/tipuesearch/tipuesearch_set.js" | relative_url -}}"></script>
+        <script src="{{- "/assets/tipuesearch/tipuesearch.min.js" | relative_url -}}"></script>
         {%- endif %}
     </head>
 
