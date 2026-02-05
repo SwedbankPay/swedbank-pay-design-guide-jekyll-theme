@@ -604,3 +604,32 @@ body {
     aspect-ratio: 872 / 1080;
     object-fit: cover;
 }
+
+table.test-data {
+    td:nth-child(2),
+    th:nth-child(2) {
+        min-width: 130px;
+    }
+
+    td:nth-child(n+3),
+    th:nth-child(n+3) {
+        width: auto;
+    }
+
+    td:last-child,
+    th:last-child {
+        width: 100%;
+    }
+
+    td,
+    th {
+        padding: .5rem 0.5em;
+    }
+    
+    td:first-child,
+    th:first-child,
+    td:last-child,
+    th:last-child {
+        padding: .5rem 1em;
+    }
+}
