@@ -1,0 +1,11 @@
+{%- comment -%}
+**Parameters
+content: Content to copy to clipboard
+label: Aria label text (optional, defaults to "Copy to clipboard")
+tooltip: Tooltip text (optional, defaults to "Copy to clipboard")
+{%- endcomment -%}
+
+{%- assign buttonLabel = include.label | default: "Copy to clipboard" -%}
+{%- assign buttonTooltip = include.tooltip | default: "Copy to clipboard" -%}
+
+<button aria-describedby="tooltipCopy" class="code-view-copy tooltip" aria-label="{{ buttonLabel }}" value='{{include.content}}' onclick='javascript:navigator.clipboard.writeText(this.value)'><i class="at-clipboard small" aria-hidden="true"></i><div role="tooltip">{{ buttonTooltip }}</div></button>
