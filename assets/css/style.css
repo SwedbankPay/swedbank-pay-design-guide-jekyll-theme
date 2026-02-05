@@ -1108,4 +1108,27 @@ body {
   object-fit: cover;
 }
 
+table.test-data td:nth-child(2),
+table.test-data th:nth-child(2) {
+  min-width: 130px;
+}
+table.test-data td:nth-child(n+3),
+table.test-data th:nth-child(n+3) {
+  width: auto;
+}
+table.test-data td:last-child,
+table.test-data th:last-child {
+  width: 100%;
+}
+table.test-data td,
+table.test-data th {
+  padding: 0.5rem 0.5em;
+}
+table.test-data td:first-child,
+table.test-data th:first-child,
+table.test-data td:last-child,
+table.test-data th:last-child {
+  padding: 0.5rem 1em;
+}
+
 /*# sourceMappingURL=style.css.map */
