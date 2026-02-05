@@ -97,7 +97,7 @@ jobs:
           if_false: github-check
       # Specific versions needed for Ruby 2.7 #
       - run: gem install securerandom -v 0.3.2
-      - run: gem install activesupport -v 7.1.5.1
+      - run: gem install activesupport -v 6.1.7.10
       - run: gem install rubocop-rails -v 2.30.3
       # ------------------------------------ #
       - uses: reviewdog/action-rubocop@v2
