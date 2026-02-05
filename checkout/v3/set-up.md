@@ -43,7 +43,7 @@ with an Access Token.
 
 To generate your Access Token:
 
--   **Log in to:** <https://admin.externalintegration.payex.com/psp/beta/login/>
+-   **Log in to:** <https://merchantportal.externalintegration.swedbankpay.com/psp/home>
   for testing environment.
 -   **Merchant details:** Here you will find information about your account.
 

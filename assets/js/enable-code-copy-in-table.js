@@ -2,7 +2,7 @@
 // Adds a copy button next to every <code> element in the table
 document.addEventListener('DOMContentLoaded', function() {
   // Find all tables with class enable-copy
-  document.querySelectorAll('table.enable-copy').forEach(table => {
+  document.querySelectorAll('table.enable-code-copy').forEach(table => {
     // Find all <code> elements in the table
     const codeElements = table.querySelectorAll('td code');
     
@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Add button after the code element
       const cell = codeElement.parentElement;
+      cell.style.whiteSpace = 'nowrap';
       cell.appendChild(document.createTextNode(' '));
       cell.appendChild(button);
     });
