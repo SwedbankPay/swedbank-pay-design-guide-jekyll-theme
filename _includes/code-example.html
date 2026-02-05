@@ -8,7 +8,7 @@ json: json content
 <p class="code-view-header">
     {{ include.title}}
     {% if include.json %}
-    <button aria-describedby="tooltipCopy" class="code-view-copy tooltip" aria-label="Copy json to clipboard" value='{{include.json}}' onclick='javascript:navigator.clipboard.writeText(this.value)'><i class="at-clipboard small" aria-hidden="true"></i><div role="tooltip">Copy json to clipboard</div></button>
+    {% include copy-button.html content=include.json label="Copy json to clipboard" tooltip="Copy json to clipboard" %}
     {% endif %}
 </p>
 {% if include.header %}
