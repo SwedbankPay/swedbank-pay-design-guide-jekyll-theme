@@ -17,6 +17,12 @@
     text-decoration: none;
 }
 
+.enable-copy .code-view-copy {
+    background-color: inherit;
+    color: inherit;
+    display: inline-flex;
+}
+
 .code-view {
     .code-view-table {
         .code-view-code {
