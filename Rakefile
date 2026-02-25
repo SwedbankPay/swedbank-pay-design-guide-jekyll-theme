@@ -52,4 +52,4 @@ task :htmlproofer do
   }).run
 end
 
-default: ['spec']
+task default: ['spec']
