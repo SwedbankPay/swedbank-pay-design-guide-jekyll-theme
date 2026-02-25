@@ -2,11 +2,11 @@
 title: Page 2
 menu_order: 4
 front_page:
-  title: developer portal
-  hero: Welcome to the Swedbank Pay
-  ingress: Here you'll find the full toolbox for how to integrate our payment solutions and acquaint yourself with their different features and functionalities.
-  show_merchants_bar: false
-  start_heading: Let's get you started with easy, flexible and safe payments on your e-commerce website!
+    title: developer portal
+    hero: Welcome to the Swedbank Pay
+    ingress: Here you'll find the full toolbox for how to integrate our payment solutions and acquaint yourself with their different features and functionalities.
+    show_merchants_bar: false
+    start_heading: Let's get you started!
 hide_from_sidebar: false
 layout: front-page
 sidebar_icon: filter_2

@@ -15,24 +15,7 @@ sidebar_icon: filter_1
 
 {% contentfor start %}
   <div class="row mt-4">
-      <div class="{{ card_col_class }}">
-        {% include card.html
-            title='Checkout'
-            title_type='h2'
-            description='With our Checkout you get the pre-built all-in-one payment solution, complete with a checkin interface and payment menu.'
-            icon_content='at-shopping-cart'
-            url='/checkout'
-        %}
-      </div>
-      <div class="{{ card_col_class }}">
-        {% include card.html
-            title='Payments instruments'
-            title_type='h2'
-            description='Payments gives you a one-by-one integration with more customization for each payment method to build your own payment menu.'
-            icon_content='credit_card'
-            url='/payments'
-        %}
-      </div>
+      <!-- Checkout och Payments kort borttagna -->
   </div>
 {% endcontentfor %}
 

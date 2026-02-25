@@ -17,15 +17,7 @@ table_content_mac:
   - label: PSP
     swedbankPay: true
 
-table_content_payments:
-  - label: Authentication
-    merchantSide: true 
-  - label: Delivery Info
-    merchantSide: true 
-  - label: Consumer Info
-    merchantSide: true 
-  - label: PSP
-    swedbankPay: true
+
     
 tab_list:
 - title: Tab 1
