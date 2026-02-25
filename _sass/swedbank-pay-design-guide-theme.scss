@@ -89,90 +89,200 @@ body {
 
 /** API object detailed table styles **/
 /* Container */
-.api-compact{border:1px solid #EBE7E2;border-radius:4px;overflow:hidden;background:#FFF;font-size:.95rem;margin-bottom: 1rem;margin-top: 2em;}
-.api-compact .header{display:grid;grid-template-columns:1fr 74px 68px;gap:12px;padding:10px 14px;font-weight:550;background-color: #F9F8F6;border-bottom:2px solid #EBE7E2;}
+.api-compact {
+    border: 1px solid #EBE7E2;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #FFF;
+    font-size: .95rem;
+    margin-bottom: 1rem;
+    margin-top: 2em;
+}
+
+.api-compact .header {
+    display: grid;
+    grid-template-columns: 1fr 74px 68px;
+    gap: 12px;
+    padding: 10px 14px;
+    font-weight: 550;
+    background-color: #F9F8F6;
+    border-bottom: 2px solid #EBE7E2;
+}
 
 /* Item */
-.api-item{position:relative}
-.api-item>summary{list-style:none;display:grid;grid-template-columns:1fr 80px 70px;gap:12px;align-items:start;padding:10px 14px;cursor:pointer;border-left:3px solid transparent;}
-.api-item>summary::-webkit-details-marker{display:none}
+.api-item {
+    position: relative
+}
+
+.api-item>summary {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 80px 70px;
+    gap: 12px;
+    align-items: start;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+}
+
+.api-item>summary::-webkit-details-marker {
+    display: none
+}
 
 /* Expanderingsikon */
-.api-item[open]>summary i.chev{transform:rotate(45deg);}
+.api-item[open]>summary i.chev {
+    transform: rotate(45deg);
+}
 
 /* Field/Type/Req */
-.api-item .field{font-weight:550;display:inline-flex;align-items:center;gap:8px;min-width:0;position:relative}
-.api-item .field code{border-radius:6px;border: 1px solid #EE7023;}
-.api-item .type code{font-size:.9em;background:#f6f8fa;padding:2px 6px;border-radius:6px;}
+.api-item .field {
+    font-weight: 550;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    position: relative
+}
+
+.api-item .field code {
+    border-radius: 6px;
+    border: 1px solid #EE7023;
+}
+
+.api-item .type code {
+    font-size: .9em;
+    background: #f6f8fa;
+    padding: 2px 6px;
+    border-radius: 6px;
+}
+
 .field-level::before {
-  font-family: "Akkurat Mono", monospace;
-  color: #EE7023;
-  content: "╰─╼";
+    font-family: "Akkurat Mono", monospace;
+    color: #EE7023;
+    content: "╰─╼";
 }
+
 .field-level-0::before {
-  content: "";
+    content: "";
 }
-.api-item .req{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
-.api-item .desc{padding:16px 14px 16px 16px;border-left:3px solid transparent;border-bottom: thin solid lightgray;}
+
+.api-item .req {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap
+}
+
+.api-item .desc {
+    padding: 16px 14px 16px 16px;
+    border-left: 3px solid transparent;
+    border-bottom: thin solid lightgray;
+}
 
 /* Indrag (summary) */
-.api-item[data-level="0"]>summary .field,.api-item[data-level="1"]>summary .field{padding-left:0}
-.api-item[data-level="2"]>summary .field{padding-left:22px}
-.api-item[data-level="3"]>summary .field{padding-left:44px}
-.api-item[data-level="4"]>summary .field{padding-left:70px;}
+.api-item[data-level="0"]>summary .field,
+.api-item[data-level="1"]>summary .field {
+    padding-left: 0
+}
+
+.api-item[data-level="2"]>summary .field {
+    padding-left: 22px
+}
+
+.api-item[data-level="3"]>summary .field {
+    padding-left: 44px
+}
+
+.api-item[data-level="4"]>summary .field {
+    padding-left: 70px;
+}
 
 /* Description – nivå (level+1) med kort lokal linje*/
-.indent-0{margin-left:4px;}
-.indent-1{margin-left:26px;}
-.indent-2{margin-left:48px;}
-.indent-3{margin-left:70px;}
-.indent-4{margin-left:92px;}
+.indent-0 {
+    margin-left: 4px;
+}
+
+.indent-1 {
+    margin-left: 26px;
+}
+
+.indent-2 {
+    margin-left: 48px;
+}
+
+.indent-3 {
+    margin-left: 70px;
+}
+
+.indent-4 {
+    margin-left: 92px;
+}
 
 /* Öppen */
-.api-item[open] > .desc {
-  background:#fafafa;
+.api-item[open]>.desc {
+    background: #fafafa;
 }
 
 /* Hover */
-.api-item:has(> summary:hover) > summary,
-.api-item:has(> .desc:hover) > summary {
-  background:#EBE7E2;
-  border-left-color:#EE7023;
+.api-item:has(> summary:hover)>summary,
+.api-item:has(> .desc:hover)>summary {
+    background: #EBE7E2;
+    border-left-color: #EE7023;
 }
-.api-item:has(> summary:hover) > .desc,
-.api-item:has(> .desc:hover) > .desc {
-  background:#EBE7E2;
+
+.api-item:has(> summary:hover)>.desc,
+.api-item:has(> .desc:hover)>.desc {
+    background: #EBE7E2;
 }
 
 /* Fokus */
-.api-item:has(> summary:focus-visible) > .desc,
-.api-item:has(> .desc:focus-within) > .desc {
-  background:#fafafa;
+.api-item:has(> summary:focus-visible)>.desc,
+.api-item:has(> .desc:focus-within)>.desc {
+    background: #fafafa;
 }
 
 /* Vänsterkantsaccent på just DENNA desc när summary ELLER desc hovras */
-.api-item[open]:has(> summary:hover) > .desc,
-.api-item[open]:has(> .desc:hover) > .desc {
-  border-left-color:#EE7023;
+.api-item[open]:has(> summary:hover)>.desc,
+.api-item[open]:has(> .desc:hover)>.desc {
+    border-left-color: #EE7023;
 }
 
 /* Tangentbordsstöd: accent på summary när dess egna desc får fokus */
-.api-item:has(> .desc:focus-within) > summary,
-.api-item:has(> summary:focus-visible) > summary {
-  background:#fafafa;
-  border-left-color:#EE7023;
+.api-item:has(> .desc:focus-within)>summary,
+.api-item:has(> summary:focus-visible)>summary {
+    background: #fafafa;
+    border-left-color: #EE7023;
 }
 
 /* Children wrapper */
-.api-children{padding-left:0;margin:6px 0 10px 0}
-.api-children .api-item{border-bottom:none}
+.api-children {
+    padding-left: 0;
+    margin: 6px 0 10px 0
+}
+
+.api-children .api-item {
+    border-bottom: none
+}
 
 /* Mobil */
-@media (max-width:640px){
-  .api-compact .header{display:none}
-  .api-item>summary{grid-template-columns:1fr;gap:6px}
-  .api-item .type,.api-item .req{opacity:.85;font-weight:500;justify-content:flex-start}
+@media (max-width:640px) {
+    .api-compact .header {
+        display: none
+    }
+
+    .api-item>summary {
+        grid-template-columns: 1fr;
+        gap: 6px
+    }
+
+    .api-item .type,
+    .api-item .req {
+        opacity: .85;
+        font-weight: 500;
+        justify-content: flex-start
+    }
 }
+
 /** API object detailed table styles - END **/
 
 
@@ -252,6 +362,110 @@ body {
 
     .toc-list ul {
         padding-inline-start: 2ch;
+    }
+}
+
+#mermaidDialogDiagram,
+.language-mermaid {
+    $brand-success-light: #f2f7eb;
+    $black: #222;
+    $brown: #2f2424;
+    $actor-dark: #EE7023;
+    $actor-light: #FFBA69;
+    $label-dark: #4C2D2C;
+    $label-light: #4C2D2C;
+    $activation-dark: #EE7023;
+    $activation-light: #FFBA69;
+    $note-dark: #aa3;
+    $note-light: #fff5ad;
+
+    svg {
+        width: 100% !important;
+        height: 100%;
+    }
+
+    rect.actor {
+        stroke: $actor-dark !important;
+        fill: $actor-light !important;
+    }
+
+    .activation0,
+    .activation1,
+    .activation2 {
+        fill: $activation-light !important;
+        stroke: $activation-dark !important;
+    }
+
+    text.actor {
+        font-family: Arial, sans-serif !important;
+        font-size: 1rem !important;
+        font-weight: 700 !important;
+    }
+
+    .actor-line {
+        stroke: $actor-light !important;
+        stroke-width: 4 !important;
+    }
+
+    .messageLine0 {
+        stroke-width: 2 !important;
+        stroke-dasharray: "2 2";
+        marker-end: "url(#arrowhead)";
+        stroke: $black !important;
+    }
+
+    .messageLine1 {
+        stroke-width: 1.5;
+        stroke-dasharray: "2 2";
+        stroke: $brown !important;
+    }
+
+    #arrowhead {
+        fill: $brown !important;
+    }
+
+    .messageText {
+        fill: $black !important;
+        stroke: none;
+        font-family: Arial, sans-serif !important;
+        font-size: 1rem !important;
+    }
+
+    .labelBox {
+        stroke: $label-dark !important;
+        fill: $label-light !important;
+    }
+
+    .labelText {
+        fill: #FFF !important;
+        font-family: Arial, sans-serif !important;
+        font-weight: 700 !important;
+    }
+
+    .loopText {
+        fill: $black !important;
+        stroke: none;
+        font-family: Arial, sans-serif !important;
+        font-size: 1rem !important;
+    }
+
+    .loopLine {
+        stroke-width: 2;
+        stroke-dasharray: "2 2";
+        marker-end: "url(#arrowhead)";
+        stroke: $label-dark !important;
+    }
+
+    .note {
+        stroke: $note-dark !important;
+        fill: $note-light !important;
+    }
+
+    .noteText {
+        fill: $black !important;
+        stroke: none;
+        font-family: Arial, sans-serif !important;
+        font-size: 1rem !important;
     }
 }
 
@@ -346,104 +560,6 @@ body {
     .row.card-list>div {
         display: flex;
         align-self: stretch;
-    }
-
-    .language-mermaid {
-        $apricot: #fbf2ea;
-        $pink: #efb7b6;
-        $brand-info-light: #e8eff9;
-        $brand-success-light: #f2f7eb;
-        $darker-apricot: darken($apricot, 10%);
-        $black: #222;
-        $brown: #2f2424;
-
-        svg {
-            width: 100% !important;
-            height: 100%;
-        }
-
-        rect.actor {
-            fill: $apricot !important;
-            stroke: $darker-apricot !important;
-        }
-
-        .activation0,
-        .activation1,
-        .activation2 {
-            fill: $brand-success-light !important;
-            stroke: darken($brand-success-light, 10%) !important;
-        }
-
-        text.actor {
-            font-family: Arial, sans-serif !important;
-            font-size: 1rem !important;
-        }
-
-        .actor-line {
-            stroke: $apricot !important;
-            stroke-width: 4 !important;
-        }
-
-        .messageLine0 {
-            stroke-width: 2 !important;
-            stroke-dasharray: "2 2";
-            marker-end: "url(#arrowhead)";
-            stroke: $black !important;
-        }
-
-        .messageLine1 {
-            stroke-width: 1.5;
-            stroke-dasharray: "2 2";
-            stroke: $brown !important;
-        }
-
-        #arrowhead {
-            fill: $brown !important;
-        }
-
-        .messageText {
-            fill: $black !important;
-            stroke: none;
-            font-family: Arial, sans-serif !important;
-            font-size: 1rem !important;
-        }
-
-        .labelBox {
-            stroke: $pink !important;
-            fill: $pink !important;
-        }
-
-        .labelText {
-            fill: $black !important;
-            stroke: none;
-            font-family: Arial, sans-serif !important;
-        }
-
-        .loopText {
-            fill: $black !important;
-            stroke: none;
-            font-family: Arial, sans-serif !important;
-            font-size: 1rem !important;
-        }
-
-        .loopLine {
-            stroke-width: 2;
-            stroke-dasharray: "2 2";
-            marker-end: "url(#arrowhead)";
-            stroke: $pink !important;
-        }
-
-        .note {
-            stroke: darken($brand-info-light, 20%) !important;
-            fill: $brand-info-light !important;
-        }
-
-        .noteText {
-            fill: $black !important;
-            stroke: none;
-            font-family: Arial, sans-serif !important;
-            font-size: 1rem !important;
-        }
     }
 
     .plantuml {
@@ -606,6 +722,7 @@ body {
 }
 
 table.test-data {
+
     td:nth-child(2),
     th:nth-child(2) {
         min-width: 130px;
@@ -625,7 +742,7 @@ table.test-data {
     th {
         padding: .5rem 0.5em;
     }
-    
+
     td:first-child,
     th:first-child,
     td:last-child,

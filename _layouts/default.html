@@ -44,8 +44,9 @@
         <title>{{ title }}</title>
         <link rel="stylesheet" href="{{ design_guide_url }}/styles/swedbankpay.css" />
         <link rel="stylesheet" href="{{ design_guide_url }}/styles/documentation-swedbankpay.css" />
-        <link rel="stylesheet" href="{{- "/assets/css/style.css" | relative_url -}}">
-        <link rel="stylesheet" href="{{- "/assets/css/pygments-autumn.css" | relative_url -}}">
+        <link rel="stylesheet" href="{{- " /assets/css/style.css" | relative_url -}}">
+        <link rel="stylesheet" href="{{- " /assets/css/pygments-autumn.css" | relative_url -}}">
+        <link rel="stylesheet" href="{{ '/assets/css/mermaid-dialog.css' | relative_url }}">
         <link rel="shortcut icon" href="{{ design_guide_url }}/icons/favicon.ico">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ design_guide_url }}/icons/favicon-16x16.png">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ design_guide_url }}/icons/favicon-32x32.png">
@@ -54,9 +55,10 @@
         <script src="{{- '/assets/js/mermaid.min.js' | relative_url -}}"></script>
         {%- if site.search.enabled == true %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="{{- "/assets/tipuesearch/tipuesearch_content.js" | relative_url -}}"></script>
-        <script src="{{- "/assets/tipuesearch/tipuesearch_set.js" | relative_url -}}"></script>
-        <script src="{{- "/assets/tipuesearch/tipuesearch.min.js" | relative_url -}}"></script>
+        <script src="{{- " /assets/tipuesearch/tipuesearch_content.js" | relative_url -}}"></script>
+        <script src="{{- " /assets/tipuesearch/tipuesearch_set.js" | relative_url -}}"></script>
+        <script src="{{- " /assets/tipuesearch/tipuesearch.min.js" | relative_url -}}"></script>
+        <script src="{{- " /assets/js/dialog-polyfill.js" | relative_url -}}"></script>
         {%- endif %}
     </head>
 
@@ -112,10 +114,12 @@
                 </div>
             </div>
         </div>
+        {% include mermaid-dialog.html %}
         <script src="{{ design_guide_url }}/scripts/dg.js" global="true" autoload="true"></script>
         <script src="{{ '/assets/js/swedbank-pay-design-guide-theme.js' | relative_url }}"></script>
         <script src="{{ '/assets/js/cookie-consent.js' | relative_url }}"></script>
         <script src="{{ '/assets/js/enable-code-copy-in-table.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/mermaid-dialog.js' | relative_url }}"></script>
         {%- if site.google_analytics.tracking_id %}
         {% include google_analytics.html %}
         {%- endif %}
