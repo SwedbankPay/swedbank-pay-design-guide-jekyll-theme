@@ -646,7 +646,8 @@ body {
 }
 
 /* Indrag (summary) */
-.api-item[data-level="0"] > summary .field, .api-item[data-level="1"] > summary .field {
+.api-item[data-level="0"] > summary .field,
+.api-item[data-level="1"] > summary .field {
   padding-left: 0;
 }
 
@@ -738,7 +739,8 @@ body {
     grid-template-columns: 1fr;
     gap: 6px;
   }
-  .api-item .type, .api-item .req {
+  .api-item .type,
+  .api-item .req {
     opacity: 0.85;
     font-weight: 500;
     justify-content: flex-start;
@@ -818,6 +820,98 @@ body {
   padding-inline-start: 2ch;
 }
 
+#mermaidDialogDiagram svg,
+.language-mermaid svg {
+  width: 100% !important;
+  height: 100%;
+}
+#mermaidDialogDiagram rect.actor,
+.language-mermaid rect.actor {
+  stroke: #EE7023 !important;
+  fill: #FFBA69 !important;
+}
+#mermaidDialogDiagram .activation0,
+#mermaidDialogDiagram .activation1,
+#mermaidDialogDiagram .activation2,
+.language-mermaid .activation0,
+.language-mermaid .activation1,
+.language-mermaid .activation2 {
+  fill: #FFBA69 !important;
+  stroke: #EE7023 !important;
+}
+#mermaidDialogDiagram text.actor,
+.language-mermaid text.actor {
+  font-family: Arial, sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+}
+#mermaidDialogDiagram .actor-line,
+.language-mermaid .actor-line {
+  stroke: #FFBA69 !important;
+  stroke-width: 4 !important;
+}
+#mermaidDialogDiagram .messageLine0,
+.language-mermaid .messageLine0 {
+  stroke-width: 2 !important;
+  stroke-dasharray: "2 2";
+  marker-end: "url(#arrowhead)";
+  stroke: #222 !important;
+}
+#mermaidDialogDiagram .messageLine1,
+.language-mermaid .messageLine1 {
+  stroke-width: 1.5;
+  stroke-dasharray: "2 2";
+  stroke: #2f2424 !important;
+}
+#mermaidDialogDiagram #arrowhead,
+.language-mermaid #arrowhead {
+  fill: #2f2424 !important;
+}
+#mermaidDialogDiagram .messageText,
+.language-mermaid .messageText {
+  fill: #222 !important;
+  stroke: none;
+  font-family: Arial, sans-serif !important;
+  font-size: 1rem !important;
+}
+#mermaidDialogDiagram .labelBox,
+.language-mermaid .labelBox {
+  stroke: #4C2D2C !important;
+  fill: #4C2D2C !important;
+}
+#mermaidDialogDiagram .labelText,
+.language-mermaid .labelText {
+  fill: #FFF !important;
+  font-family: Arial, sans-serif !important;
+  font-weight: 700 !important;
+}
+#mermaidDialogDiagram .loopText,
+.language-mermaid .loopText {
+  fill: #222 !important;
+  stroke: none;
+  font-family: Arial, sans-serif !important;
+  font-size: 1rem !important;
+}
+#mermaidDialogDiagram .loopLine,
+.language-mermaid .loopLine {
+  stroke-width: 2;
+  stroke-dasharray: "2 2";
+  marker-end: "url(#arrowhead)";
+  stroke: #4C2D2C !important;
+}
+#mermaidDialogDiagram .note,
+.language-mermaid .note {
+  stroke: #aa3 !important;
+  fill: #fff5ad !important;
+}
+#mermaidDialogDiagram .noteText,
+.language-mermaid .noteText {
+  fill: #222 !important;
+  stroke: none;
+  font-family: Arial, sans-serif !important;
+  font-size: 1rem !important;
+}
+
 @media screen and (max-width: 992px) {
   .documentation {
     overflow-y: auto;
@@ -891,79 +985,6 @@ body {
 .documentation .row.card-list > div {
   display: flex;
   align-self: stretch;
-}
-.documentation .language-mermaid svg {
-  width: 100% !important;
-  height: 100%;
-}
-.documentation .language-mermaid rect.actor {
-  fill: #fbf2ea !important;
-  stroke: #f3d7bf !important;
-}
-.documentation .language-mermaid .activation0,
-.documentation .language-mermaid .activation1,
-.documentation .language-mermaid .activation2 {
-  fill: #f2f7eb !important;
-  stroke: #dae8c7 !important;
-}
-.documentation .language-mermaid text.actor {
-  font-family: Arial, sans-serif !important;
-  font-size: 1rem !important;
-}
-.documentation .language-mermaid .actor-line {
-  stroke: #fbf2ea !important;
-  stroke-width: 4 !important;
-}
-.documentation .language-mermaid .messageLine0 {
-  stroke-width: 2 !important;
-  stroke-dasharray: "2 2";
-  marker-end: "url(#arrowhead)";
-  stroke: #222 !important;
-}
-.documentation .language-mermaid .messageLine1 {
-  stroke-width: 1.5;
-  stroke-dasharray: "2 2";
-  stroke: #2f2424 !important;
-}
-.documentation .language-mermaid #arrowhead {
-  fill: #2f2424 !important;
-}
-.documentation .language-mermaid .messageText {
-  fill: #222 !important;
-  stroke: none;
-  font-family: Arial, sans-serif !important;
-  font-size: 1rem !important;
-}
-.documentation .language-mermaid .labelBox {
-  stroke: #efb7b6 !important;
-  fill: #efb7b6 !important;
-}
-.documentation .language-mermaid .labelText {
-  fill: #222 !important;
-  stroke: none;
-  font-family: Arial, sans-serif !important;
-}
-.documentation .language-mermaid .loopText {
-  fill: #222 !important;
-  stroke: none;
-  font-family: Arial, sans-serif !important;
-  font-size: 1rem !important;
-}
-.documentation .language-mermaid .loopLine {
-  stroke-width: 2;
-  stroke-dasharray: "2 2";
-  marker-end: "url(#arrowhead)";
-  stroke: #efb7b6 !important;
-}
-.documentation .language-mermaid .note {
-  stroke: #97b7e4 !important;
-  fill: #e8eff9 !important;
-}
-.documentation .language-mermaid .noteText {
-  fill: #222 !important;
-  stroke: none;
-  font-family: Arial, sans-serif !important;
-  font-size: 1rem !important;
 }
 .documentation .plantuml {
   text-align: center;

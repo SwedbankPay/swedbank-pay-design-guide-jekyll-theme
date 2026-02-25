@@ -1,0 +1,17 @@
+#mermaid-dialog {
+  width: fit-content;
+  max-width: 90vw;
+}
+
+#mermaid-dialog .dialog-body {
+  user-select: text;
+  cursor: text;
+}
+#mermaidDialogDiagram svg {
+  user-select: text;
+  pointer-events: auto;
+  cursor: text !important;
+}
+#mermaidDialogDiagram text {
+  user-select: text;
+}
