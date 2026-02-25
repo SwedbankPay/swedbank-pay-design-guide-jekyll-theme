@@ -3,7 +3,7 @@
         80
     ],
     "editor.codeActionsOnSave": {
-        "source.fixAll.markdownlint": "explicit"
+        "source.fixAll.markdownlint": true
     },
     "html.format.indentInnerHtml": true,
 
