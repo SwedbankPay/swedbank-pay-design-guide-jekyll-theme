@@ -59,6 +59,7 @@ module SwedbankPay
         url_ignore: [
           'http://www.wikipedia.org',
           'http://restcookbook.com/Basics/loggingin/',
+          'https://www.iso.org/iso-3166-country-codes.html',
           /iso\.org\/iso-3166-country-codes\.html/
         ]
       }
