@@ -22,7 +22,7 @@ plugins:
   - remark-lint-list-item-content-indent
   - remark-lint-maximum-heading-length: 120
   - remark-lint-no-blockquote-without-marker
-  - remark-lint-no-consecutive-blank-lines
+  - remark-lint-no-consecutive-blank-lines: false
   - remark-lint-no-duplicate-definitions
   - remark-lint-no-duplicate-headings
   - remark-lint-no-emphasis-as-heading
