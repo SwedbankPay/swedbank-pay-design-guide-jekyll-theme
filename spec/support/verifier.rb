@@ -58,7 +58,8 @@ module SwedbankPay
         typheous: { verbose: true },
         url_ignore: [
           'http://www.wikipedia.org',
-          'http://restcookbook.com/Basics/loggingin/'
+          'http://restcookbook.com/Basics/loggingin/',
+          /iso\.org\/iso-3166-country-codes\.html/
         ]
       }
     end
