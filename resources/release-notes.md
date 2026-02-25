@@ -31,13 +31,13 @@ has_release_notes: true
 
 ### Version 1.9.2
 
-*   Corrected table in
-
+* Added a new Trustly Payments section.
+* Added information about in the section.
 ## 01 May 2020
 
 ### Version 1.9.1
-
-*   Corrected sequence diagrams in Swish Payments and
+* Updated Swish Redirect requests.
+* Added `orderReference` information in Payment Order Callback in.
   Vipps Payments.
 *   The `description` field is now more thoroughly described for all requests it's
   present in.

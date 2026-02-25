@@ -41,11 +41,11 @@ tab_list:
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-*   [External absolute full link](https://www.wikipedia.org)
-*   Internal absolute full link
-*   Internal explicit relative link
-*   Internal implicit relative link
-*   Internal absolute link
+ *   [External absolute full link](https://www.wikipedia.org)
+ *   Internal absolute full link
+ *   Internal explicit relative link
+ *   Internal implicit relative link
+ *   Internal absolute link
 
 There should be whitespace between paragraphs.
 

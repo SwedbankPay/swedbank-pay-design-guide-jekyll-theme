@@ -45,4 +45,11 @@ task :clean do
   Jekyll::Commands::Clean.process({})
 end
 
-task default: ['spec']
+task :htmlproofer do
+  HTMLProofer.check_directory('_site', {
+    :disable_external => false,
+    :url_ignore => [/iso\.org\/iso-3166-country-codes\.html/]
+  }).run
+end
+
+default: ['spec']
