@@ -6,7 +6,9 @@
 #mermaid-dialog .dialog-body {
   user-select: text;
   cursor: text;
+  padding-bottom: 64px;
 }
+
 #mermaidDialogDiagram svg {
   user-select: text;
   pointer-events: auto;
@@ -14,4 +16,18 @@
 }
 #mermaidDialogDiagram text {
   user-select: text;
+}
+
+/* Hide the mermaid title text from the diagram since it's shown in the dialog header */
+#mermaidDialogDiagram text[y^="-"] {
+  display: none;
+}
+
+/* Style the mermaid title text in the inline diagram*/
+svg[id^="mermaid-"] text[y^="-"] {
+  font-family: "Swedbank Headline", "Arial", sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  fill: #333;
+  text-anchor: middle;
 }
