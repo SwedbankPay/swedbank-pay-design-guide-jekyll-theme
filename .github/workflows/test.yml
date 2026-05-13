@@ -11,18 +11,18 @@ jobs:
       repository_url: ${{ steps.variables.outputs.repository_url }}
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
         with:
           fetch-depth: 0
 
       # dependabot: ignore
-      - uses: gittools/actions/gitversion/setup@v3.2.0
+      - uses: gittools/actions/gitversion/setup@441c43ddefe9c8f5b8e8cee0257bcf06d518d2d3 # v3.2.0
         with:
           versionSpec: '5.x.x'
 
       # dependabot: ignore
       - id: gitversion
-        uses: gittools/actions/gitversion/execute@v3.2.0
+        uses: gittools/actions/gitversion/execute@441c43ddefe9c8f5b8e8cee0257bcf06d518d2d3 # v3.2.0
 
       - name: Generate variables
         id: variables
@@ -33,16 +33,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
       - name: Set up Ruby 2.7
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@6aaa311d81eba98ae12eaffbcb63296ace0efcde # v1.307.0
         with:
           ruby-version: 2.7
           bundler-cache: true
       - name: jekyll build
         run: bundle exec jekyll build
       - name: Upload site
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
         with:
           name: build-site
           path: _site
@@ -50,25 +50,25 @@ jobs:
   spec:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
       - name: Set up Ruby 2.7
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@6aaa311d81eba98ae12eaffbcb63296ace0efcde # v1.307.0
         with:
           ruby-version: 2.7
           bundler-cache: true
-      - uses: actions/setup-java@v5
+      - uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654 # v5
         with:
           distribution: adopt
           java-version: 14
-      - uses: kamiazya/setup-graphviz@v1
+      - uses: kamiazya/setup-graphviz@a7bb4e619462b01f66e57eb6c13238cb3697b674 # v1
       - name: Cache HTMLProofer
         id: cache-htmlproofer
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: tmp/.htmlproofer
           key: ${{ runner.os }}-htmlproofer
       - name: Cache Jekyll
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: |
             .jekyll-cache
@@ -84,12 +84,12 @@ jobs:
   rubocop:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
-      - uses: ruby/setup-ruby@v1
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+      - uses: ruby/setup-ruby@6aaa311d81eba98ae12eaffbcb63296ace0efcde # v1.307.0
         with:
           ruby-version: 2.7
           bundler-cache: true
-      - uses: haya14busa/action-cond@v1
+      - uses: haya14busa/action-cond@94f77f7a80cd666cb3155084e428254fea4281fd # v1
         id: reporter
         with:
           cond: ${{ github.event_name == 'pull_request' }}
@@ -101,7 +101,7 @@ jobs:
       - run: gem install activesupport -v 6.1.7.8
       - run: gem install rubocop-rails -v 2.30.3
       # ------------------------------------ #
-      - uses: reviewdog/action-rubocop@v2
+      - uses: reviewdog/action-rubocop@b6d5e953a5fc0bf3ab65254e77730ea2174d6d6d # v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: ${{ steps.reporter.outputs.value }}
@@ -109,14 +109,14 @@ jobs:
   remark-lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
-      - uses: haya14busa/action-cond@v1
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+      - uses: haya14busa/action-cond@94f77f7a80cd666cb3155084e428254fea4281fd # v1
         id: reporter
         with:
           cond: ${{ github.event_name == 'pull_request' }}
           if_true: github-pr-review
           if_false: github-check
-      - uses: reviewdog/action-remark-lint@v5.18
+      - uses: reviewdog/action-remark-lint@82225f7db5b4a3caaca3052733b6800fa7d109b0 # v5.18
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: ${{ steps.reporter.outputs.value }}
