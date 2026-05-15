@@ -25,7 +25,7 @@
 
 /* Style the mermaid title text in the inline diagram*/
 svg[id^="mermaid-"] text[y^="-"] {
-  font-family: "Swedbank Headline", "Arial", sans-serif;
+  font-family: "Swedbank Headline", "Roboto", sans-serif;
   font-size: 1.2rem;
   font-weight: bold;
   fill: #333;

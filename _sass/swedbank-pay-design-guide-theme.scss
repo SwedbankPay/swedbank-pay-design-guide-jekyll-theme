@@ -14,6 +14,10 @@
 $bg: #f5f2f0;
 $darkened-bg: darken($bg, 10%);
 
+body, p, li, td, th, span, div, a, label, input, button, select, textarea {
+    font-family: $font_body !important;
+}
+
 img {
     max-width: 100%;
 }
@@ -397,7 +401,7 @@ body {
     }
 
     text.actor {
-        font-family: Arial, sans-serif !important;
+        font-family: Roboto, sans-serif !important;
         font-size: 1rem !important;
         font-weight: 700 !important;
     }
@@ -427,7 +431,7 @@ body {
     .messageText {
         fill: $black !important;
         stroke: none;
-        font-family: Arial, sans-serif !important;
+        font-family: Roboto, sans-serif !important;
         font-size: 1rem !important;
     }
 
@@ -438,14 +442,14 @@ body {
 
     .labelText {
         fill: #FFF !important;
-        font-family: Arial, sans-serif !important;
+        font-family: Roboto, sans-serif !important;
         font-weight: 700 !important;
     }
 
     .loopText {
         fill: $black !important;
         stroke: none;
-        font-family: Arial, sans-serif !important;
+        font-family: Roboto, sans-serif !important;
         font-size: 1rem !important;
     }
 
@@ -464,7 +468,7 @@ body {
     .noteText {
         fill: $black !important;
         stroke: none;
-        font-family: Arial, sans-serif !important;
+        font-family: Roboto, sans-serif !important;
         font-size: 1rem !important;
     }
 }
