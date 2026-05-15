@@ -103,7 +103,7 @@
 }
 .front-page .front-page-top .front-page-hero h3 {
   color: #2f2424;
-  font-family: "Swedbank Headline", "Arial", sans-serif;
+  font-family: "Swedbank Headline", "Roboto", sans-serif;
   margin-bottom: 2rem;
   font-size: 2.5rem;
   line-height: 3.5rem;
@@ -124,7 +124,7 @@
 }
 .front-page .front-page-top .front-page-hero .front-page-hero-jumbo {
   color: #2f2424;
-  font-family: "Swedbank Headline", "Arial", sans-serif;
+  font-family: "Swedbank Headline", "Roboto", sans-serif;
   margin-bottom: 2rem;
   font-size: 3.5rem;
 }
@@ -461,7 +461,7 @@
 
 #tipue_search_content nav {
   display: flex;
-  font-family: Swedbank Headline, Arial, sans-serif;
+  font-family: Swedbank Headline, Roboto, sans-serif;
   justify-content: center;
   margin: 1rem 0;
   padding-left: 0;
@@ -500,6 +500,10 @@
 }
 #tipue_search_content nav ul li.current a {
   color: white;
+}
+
+body, p, li, td, th, span, div, a, label, input, button, select, textarea {
+  font-family: "Roboto", sans-serif !important;
 }
 
 img {
@@ -841,7 +845,7 @@ body {
 }
 #mermaidDialogDiagram text.actor,
 .language-mermaid text.actor {
-  font-family: Arial, sans-serif !important;
+  font-family: Roboto, sans-serif !important;
   font-size: 1rem !important;
   font-weight: 700 !important;
 }
@@ -871,7 +875,7 @@ body {
 .language-mermaid .messageText {
   fill: #222 !important;
   stroke: none;
-  font-family: Arial, sans-serif !important;
+  font-family: Roboto, sans-serif !important;
   font-size: 1rem !important;
 }
 #mermaidDialogDiagram .labelBox,
@@ -882,14 +886,14 @@ body {
 #mermaidDialogDiagram .labelText,
 .language-mermaid .labelText {
   fill: #FFF !important;
-  font-family: Arial, sans-serif !important;
+  font-family: Roboto, sans-serif !important;
   font-weight: 700 !important;
 }
 #mermaidDialogDiagram .loopText,
 .language-mermaid .loopText {
   fill: #222 !important;
   stroke: none;
-  font-family: Arial, sans-serif !important;
+  font-family: Roboto, sans-serif !important;
   font-size: 1rem !important;
 }
 #mermaidDialogDiagram .loopLine,
@@ -908,7 +912,7 @@ body {
 .language-mermaid .noteText {
   fill: #222 !important;
   stroke: none;
-  font-family: Arial, sans-serif !important;
+  font-family: Roboto, sans-serif !important;
   font-size: 1rem !important;
 }
 
