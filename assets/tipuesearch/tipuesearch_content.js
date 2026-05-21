@@ -19,70 +19,50 @@ var tipuesearch = {"pages": [{
     "tags": "",
     "url": "/cards/deck1/card1.html"
   },{
-    "title": "Deck 3 Card 1",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck3/card1.html"
-  },{
     "title": "Deck 2 Card 1",
     "text": "",
     "tags": "",
     "url": "/cards/deck2/card1.html"
+  },{
+    "title": "Deck 3 Card 1",
+    "text": "",
+    "tags": "",
+    "url": "/cards/deck3/card1.html"
   },{
     "title": "Deck 1 Card 2",
     "text": "",
     "tags": "",
     "url": "/cards/deck1/card2.html"
   },{
-    "title": "Deck 3 Card 2",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck3/card2.html"
-  },{
     "title": "Deck 2 Card 2",
     "text": "",
     "tags": "",
     "url": "/cards/deck2/card2.html"
+  },{
+    "title": "Deck 3 Card 2",
+    "text": "",
+    "tags": "",
+    "url": "/cards/deck3/card2.html"
   },{
     "title": "Deck 1 Card 3",
     "text": "",
     "tags": "",
     "url": "/cards/deck1/card3.html"
   },{
-    "title": "Deck 3 Card 3",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck3/card3.html"
-  },{
     "title": "Deck 2 Card 3",
     "text": "",
     "tags": "",
     "url": "/cards/deck2/card3.html"
   },{
+    "title": "Deck 3 Card 3",
+    "text": "",
+    "tags": "",
+    "url": "/cards/deck3/card3.html"
+  },{
     "title": "Gamma",
     "text": "",
     "tags": "",
     "url": "/resources/gamma.html"
-  },{
-    "title": "Deck 1",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck1/"
-  },{
-    "title": "Deck 3",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck3/"
-  },{
-    "title": "Deck 2",
-    "text": "",
-    "tags": "",
-    "url": "/cards/deck2/"
-  },{
-    "title": "Cards",
-    "text": "1 2 3 4 5 6 7 8 9 10 11 12 13 &lt;i class=\"cards-icon at-credit-card\" aria-hidden=\"true\"&gt;&lt;/i&gt; &lt;span class=\"h4\"&gt;Default&lt;/span&gt; &lt;div class=\"cards-content\"&gt; &lt;p&gt;This is a default card&lt;/p&gt; &lt;/div&gt; &lt;div class=\"cards-cta\"&gt; &lt;span class=\"arrow\"&gt;&lt;/span&gt; &lt;/div&gt; &lt;/a&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 &lt;i class=\"cards-icon at-settings\" aria-hidden=\"true\"&gt;&lt;/i&gt; &lt;span class=\"h4\"&gt;SDK&lt;/span&gt; &lt;div class=\"cards-content\"&gt; &lt;p&gt;This is a .dx-card-sdk card&lt;/p&gt; &lt;/div&gt; &lt;div class=\"cards-cta\"&gt; &lt;span class=\"arrow\"&gt;&lt;/span&gt; &lt;/div&gt; &lt;/a&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 &lt;i class=\"cards-icon at-build\" aria-hidden=\"true\"&gt;&lt;/i&gt; &lt;span class=\"h4\"&gt;module&lt;/span&gt; &lt;div class=\"cards-content\"&gt; &lt;p&gt;This is a .dx-card-module card. This also has outlined icon&lt;/p&gt; &lt;/div&gt; &lt;div class=\"cards-cta\"&gt; &lt;span class=\"arrow\"&gt;&lt;/span&gt; &lt;/div&gt; &lt;/a&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 &lt;i class=\"cards-icon 01\" aria-hidden=\"true\"&gt;&lt;/i&gt; &lt;span class=\"h4\"&gt;Use wide card&lt;/span&gt; &lt;div class=\"cards-content\"&gt; &lt;p&gt;This is a dx-card-horizontal card. Icons used with this card are just numbers&lt;/p&gt; &lt;/div&gt; &lt;div class=\"cards-cta\"&gt; &lt;span class=\"arrow\"&gt;&lt;/span&gt; &lt;/div&gt; &lt;/a&gt;",
-    "tags": "",
-    "url": "/cards/"
   },{
     "title": "Sub-resources",
     "text": "",
@@ -93,6 +73,26 @@ var tipuesearch = {"pages": [{
     "text": "The page at the end of this link should redirect back here",
     "tags": "",
     "url": "/resources/"
+  },{
+    "title": "Deck 1",
+    "text": "",
+    "tags": "",
+    "url": "/cards/deck1/"
+  },{
+    "title": "Deck 2",
+    "text": "",
+    "tags": "",
+    "url": "/cards/deck2/"
+  },{
+    "title": "Deck 3",
+    "text": "",
+    "tags": "",
+    "url": "/cards/deck3/"
+  },{
+    "title": "Cards",
+    "text": "1 2 3 4 5 6 7 8 9 10 11 12 13 &lt;i class=\"cards-icon at-credit-card\" aria-hidden=\"true\"&gt;&lt;/i&gt; &lt;span class=\"h4\"&gt;Default&lt;/span&gt; &lt;div class=\"cards-content\"&gt; &lt;p&gt;This is a default card&lt;/p&gt; &lt;/div&gt; &lt;div class=\"cards-cta\"&gt; &lt;span class=\"arrow\"&gt;&lt;/span&gt; &lt;/div&gt; &lt;/a&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 &lt;i class=\"cards-icon at-settings\" aria-hidden=\"true\"&gt;&lt;/i&gt; &lt;span class=\"h4\"&gt;SDK&lt;/span&gt; &lt;div class=\"cards-content\"&gt; &lt;p&gt;This is a .dx-card-sdk card&lt;/p&gt; &lt;/div&gt; &lt;div class=\"cards-cta\"&gt; &lt;span class=\"arrow\"&gt;&lt;/span&gt; &lt;/div&gt; &lt;/a&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 &lt;i class=\"cards-icon at-build\" aria-hidden=\"true\"&gt;&lt;/i&gt; &lt;span class=\"h4\"&gt;module&lt;/span&gt; &lt;div class=\"cards-content\"&gt; &lt;p&gt;This is a .dx-card-module card. This also has outlined icon&lt;/p&gt; &lt;/div&gt; &lt;div class=\"cards-cta\"&gt; &lt;span class=\"arrow\"&gt;&lt;/span&gt; &lt;/div&gt; &lt;/a&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 &lt;i class=\"cards-icon 01\" aria-hidden=\"true\"&gt;&lt;/i&gt; &lt;span class=\"h4\"&gt;Use wide card&lt;/span&gt; &lt;div class=\"cards-content\"&gt; &lt;p&gt;This is a dx-card-horizontal card. Icons used with this card are just numbers&lt;/p&gt; &lt;/div&gt; &lt;div class=\"cards-cta\"&gt; &lt;span class=\"arrow\"&gt;&lt;/span&gt; &lt;/div&gt; &lt;/a&gt;",
+    "tags": "",
+    "url": "/cards/"
   },{
     "title": "PlantUML",
     "text": "Network Diagram clientappdbqueuecloudusecaserectanglepackagefolderframecardfile State Diagram State1this is a stringthis is another stringState2 Sequence Diagrams Checkin  Payer Payer Merchant Merchant Swedbank Pay Swedbank PayStart CheckinPOST /psp/consumersrel:view-consumer-identification ①rel:view-consumer-identification ②&lt;script src=rel:view-consumer-identification.href /&gt;payex.hostedView.consumer()Consumer identification③onConsumerIdentified(consumerProfileRef) ④POST { consumerProfileRef } ⑤StoreconsumerProfileRef Payment Menu  Payer Payer Merchant Merchant Swedbank Pay Swedbank PayPayPOST /psp/paymentorders { consumerProfileRef } ①rel:view-paymentorderrel:view-paymentorder&lt;script src=rel:view-paymentorder.href /&gt;payex.hostedView.paymentMenu()Perform paymentalt[completed payment]onPaymentCompleted(paymentorder)Check payment statusGET paymentorder.idrel:paid-paymentorderGET rel:paid-paymentorder.hrefCompleted Payment OrderShow receipt[failed payment]onPaymentFailed(paymentorder)Check payment statusGET paymentorder.idrel:failed-paymentorderGET rel:failed-paymentorder.hrefFailed Payment OrderShow failure page Callback  Merchant Merchant Swedbank Pay Swedbank PayPOST { payment activity }GET paymentorder.idPayment OrderUpdate status Capture  Merchant Merchant Swedbank Pay Swedbank PayCaptureGET paymentorder.idrel:create-paymentorder-capturePOST rel:create-paymentorder-capture.hrefCapture status",
